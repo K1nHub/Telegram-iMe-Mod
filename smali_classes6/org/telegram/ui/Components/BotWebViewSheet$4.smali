@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 488
+    .line 494
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 491
+    .line 497
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -46,7 +46,7 @@
 
     if-nez v0, :cond_0
 
-    .line 492
+    .line 498
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, p1, Landroid/graphics/Point;->x:I
@@ -71,7 +71,7 @@
 
     move-result p1
 
-    .line 494
+    .line 500
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 

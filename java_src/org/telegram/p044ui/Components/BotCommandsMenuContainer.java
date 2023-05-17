@@ -18,7 +18,7 @@ import androidx.core.view.NestedScrollingParent;
 import androidx.core.view.NestedScrollingParentHelper;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.BotCommandsMenuContainer */
 /* loaded from: classes6.dex */
@@ -54,7 +54,7 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
         this.topBackground = new Paint(1);
         this.dismissed = true;
         this.nestedScrollingParentHelper = new NestedScrollingParentHelper(this);
-        this.shadowDrawable = context.getResources().getDrawable(C3242R.C3244drawable.sheet_shadow_round).mutate();
+        this.shadowDrawable = context.getResources().getDrawable(C3290R.C3292drawable.sheet_shadow_round).mutate();
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Components.BotCommandsMenuContainer.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p044ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
@@ -69,16 +69,16 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
                     y = 0.0f;
                 }
                 BotCommandsMenuContainer.this.scrollYOffset = y;
-                float m50dp = y - AndroidUtilities.m50dp(8);
-                if (m50dp > BitmapDescriptorFactory.HUE_RED) {
-                    int i = (int) m50dp;
-                    BotCommandsMenuContainer.this.shadowDrawable.setBounds(-AndroidUtilities.m50dp(8), i - AndroidUtilities.m50dp(24), getMeasuredWidth() + AndroidUtilities.m50dp(8), i);
+                float m54dp = y - AndroidUtilities.m54dp(8);
+                if (m54dp > BitmapDescriptorFactory.HUE_RED) {
+                    int i = (int) m54dp;
+                    BotCommandsMenuContainer.this.shadowDrawable.setBounds(-AndroidUtilities.m54dp(8), i - AndroidUtilities.m54dp(24), getMeasuredWidth() + AndroidUtilities.m54dp(8), i);
                     BotCommandsMenuContainer.this.shadowDrawable.draw(canvas);
                 }
-                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, m50dp, getMeasuredWidth(), getMeasuredHeight() + AndroidUtilities.m50dp(16), BotCommandsMenuContainer.this.backgroundPaint);
+                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, m54dp, getMeasuredWidth(), getMeasuredHeight() + AndroidUtilities.m54dp(16), BotCommandsMenuContainer.this.backgroundPaint);
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set((getMeasuredWidth() / 2.0f) - AndroidUtilities.m50dp(12), m50dp - AndroidUtilities.m50dp(4), (getMeasuredWidth() / 2.0f) + AndroidUtilities.m50dp(12), m50dp);
-                canvas.drawRoundRect(rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), BotCommandsMenuContainer.this.topBackground);
+                rectF.set((getMeasuredWidth() / 2.0f) - AndroidUtilities.m54dp(12), m54dp - AndroidUtilities.m54dp(4), (getMeasuredWidth() / 2.0f) + AndroidUtilities.m54dp(12), m54dp);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), BotCommandsMenuContainer.this.topBackground);
                 super.dispatchDraw(canvas);
             }
         };
@@ -117,7 +117,7 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
         if (this.dismissed) {
             return;
         }
-        if (this.listView.getTranslationY() > AndroidUtilities.m50dp(16)) {
+        if (this.listView.getTranslationY() > AndroidUtilities.m54dp(16)) {
             dismiss();
         } else {
             playEnterAnim(false);
@@ -194,7 +194,7 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
             return;
         }
         RecyclerListView recyclerListView = this.listView;
-        recyclerListView.setTranslationY((recyclerListView.getMeasuredHeight() - this.listView.getPaddingTop()) + AndroidUtilities.m50dp(16));
+        recyclerListView.setTranslationY((recyclerListView.getMeasuredHeight() - this.listView.getPaddingTop()) + AndroidUtilities.m54dp(16));
         playEnterAnim(true);
         this.entering = false;
     }
@@ -223,7 +223,7 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
         this.dismissed = true;
         cancelCurrentAnimation();
         RecyclerListView recyclerListView = this.listView;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(recyclerListView, FrameLayout.TRANSLATION_Y, recyclerListView.getTranslationY(), (getMeasuredHeight() - this.scrollYOffset) + AndroidUtilities.m50dp(40));
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(recyclerListView, FrameLayout.TRANSLATION_Y, recyclerListView.getTranslationY(), (getMeasuredHeight() - this.scrollYOffset) + AndroidUtilities.m54dp(40));
         this.currentAnimation = ofFloat;
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.BotCommandsMenuContainer.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -240,16 +240,18 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.scrollYOffset - AndroidUtilities.m50dp(24)) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.scrollYOffset - AndroidUtilities.m54dp(24)) {
             return super.dispatchTouchEvent(motionEvent);
         }
         return false;
     }
 
     public void updateColors() {
-        this.topBackground.setColor(Theme.getColor("key_sheet_scrollUp"));
-        this.backgroundPaint.setColor(Theme.getColor("windowBackgroundWhite"));
-        this.shadowDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhite"), PorterDuff.Mode.MULTIPLY));
+        this.topBackground.setColor(Theme.getColor(Theme.key_sheet_scrollUp));
+        Paint paint = this.backgroundPaint;
+        int i = Theme.key_windowBackgroundWhite;
+        paint.setColor(Theme.getColor(i));
+        this.shadowDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
         invalidate();
     }
 }

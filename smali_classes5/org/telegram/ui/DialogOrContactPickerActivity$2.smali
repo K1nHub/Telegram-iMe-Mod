@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogOrContactPickerActivity;)V
     .locals 0
 
-    .line 141
+    .line 147
     iput-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$2;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onSearchCollapse()V
     .locals 2
 
-    .line 152
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$2;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$000(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/DialogsActivity;
@@ -50,7 +50,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->closeSearchField(Z)V
 
-    .line 153
+    .line 159
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$2;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$100(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/ContactsActivity;
@@ -69,7 +69,7 @@
 .method public onSearchExpand()V
     .locals 3
 
-    .line 144
+    .line 150
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$2;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$000(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/DialogsActivity;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->openSearchField(Ljava/lang/String;Z)V
 
-    .line 145
+    .line 151
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$2;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$100(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/ContactsActivity;
@@ -99,7 +99,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->openSearchField(Ljava/lang/String;Z)V
 
-    .line 146
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$2;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$200(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -118,7 +118,7 @@
 .method public onTextChanged(Landroid/widget/EditText;)V
     .locals 2
 
-    .line 158
+    .line 164
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$2;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$000(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/DialogsActivity;
@@ -139,7 +139,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setSearchFieldText(Ljava/lang/String;)V
 
-    .line 159
+    .line 165
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$2;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$100(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/ContactsActivity;

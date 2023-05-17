@@ -96,9 +96,9 @@
     .line 67
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "dialogBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v2
 
@@ -174,9 +174,9 @@
     .line 155
     iget-object p2, p0, Lorg/telegram/ui/Components/SharingLocationsAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const-string p3, "dialogScrollGlow"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
 
-    invoke-virtual {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p3
 
@@ -256,7 +256,7 @@
     invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/PickerBottomLayout;-><init>(Landroid/content/Context;Z)V
 
     .line 177
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p1
 
@@ -295,9 +295,9 @@
     .line 180
     iget-object p1, p2, Lorg/telegram/ui/Components/PickerBottomLayout;->cancelButton:Landroid/widget/TextView;
 
-    const-string v1, "dialogTextRed"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v1
 
@@ -328,9 +328,9 @@
     .line 188
     iget-object p1, p2, Lorg/telegram/ui/Components/PickerBottomLayout;->doneButtonTextView:Landroid/widget/TextView;
 
-    const-string v1, "dialogTextBlue2"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v1
 
@@ -480,11 +480,11 @@
     return-object p1
 .end method
 
-.method static synthetic access$800(Lorg/telegram/ui/Components/SharingLocationsAlert;Ljava/lang/String;)I
+.method static synthetic access$800(Lorg/telegram/ui/Components/SharingLocationsAlert;I)I
     .locals 0
 
     .line 43
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 

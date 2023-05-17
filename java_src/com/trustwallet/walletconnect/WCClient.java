@@ -99,25 +99,25 @@ public class WCClient extends WebSocketListener {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0157  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01d7  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01dd  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x01e3  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01e9  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01ef  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0090  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01d8  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01de  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x01e4  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01ea  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01f0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public WCClient(com.google.gson.GsonBuilder r8, okhttp3.OkHttpClient r9) {
         /*
-            Method dump skipped, instructions count: 507
+            Method dump skipped, instructions count: 508
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.trustwallet.walletconnect.WCClient.<init>(com.google.gson.GsonBuilder, okhttp3.OkHttpClient):void");

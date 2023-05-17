@@ -11,7 +11,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingTransactionActionsBinding;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -73,21 +73,23 @@ public final class StakingTransactionActionButtonsView extends FrameLayout {
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
         forkContentStakingTransactionActionsBinding.buttonAction.applyColors();
         AppCompatTextView setupColors$lambda$6$lambda$4 = forkContentStakingTransactionActionsBinding.buttonConditions;
-        setupColors$lambda$6$lambda$4.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText"));
-        setupColors$lambda$6$lambda$4.setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), 0, Theme.getColor("listSelectorSDK21")));
+        setupColors$lambda$6$lambda$4.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText));
+        int cornerRadius = getCornerRadius();
+        int i = Theme.key_listSelector;
+        setupColors$lambda$6$lambda$4.setBackground(Theme.createSimpleSelectorRoundRectDrawable(cornerRadius, 0, Theme.getColor(i)));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$4, "setupColors$lambda$6$lambda$4");
         ViewExtKt.withMediumTypeface(setupColors$lambda$6$lambda$4);
         AppCompatTextView appCompatTextView = forkContentStakingTransactionActionsBinding.buttonApproveInfo;
-        appCompatTextView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText4"));
-        appCompatTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), 0, Theme.getColor("listSelectorSDK21")));
+        appCompatTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
+        appCompatTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), 0, Theme.getColor(i)));
     }
 
     private final void setupView() {
         setupColors();
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
         forkContentStakingTransactionActionsBinding.buttonAction.setForcedCustomHeight(36);
-        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3242R.string.staking_deposit_conditions));
-        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3242R.string.wallet_swap_process_what_is_approve));
+        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3290R.string.staking_deposit_conditions));
+        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3290R.string.wallet_swap_process_what_is_approve));
         addView(this.binding.getRoot());
     }
 }

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/GroupCreateActivity$GroupCreateActivityDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final didSelectUsers(Ljava/util/ArrayList;)V
+.method public final onItemClick(Landroid/view/View;I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PrivacyUsersActivity;->$r8$lambda$nZLD1c6Mys3UYP7HT_KtwsAeMIE(Lorg/telegram/ui/PrivacyUsersActivity;Ljava/util/ArrayList;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PrivacyUsersActivity;->$r8$lambda$l3zt42NyuG1mt-FhjrDASCRs-dc(Lorg/telegram/ui/PrivacyUsersActivity;Landroid/view/View;I)V
 
     return-void
 .end method

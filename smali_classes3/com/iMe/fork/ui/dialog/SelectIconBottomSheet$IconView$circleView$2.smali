@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/view/View;
     .locals 1
 
-    .line 139
+    .line 146
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView$circleView$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;->access$initCircleView(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;)Landroid/view/View;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 139
+    .line 146
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView$circleView$2;->invoke()Landroid/view/View;
 
     move-result-object v0

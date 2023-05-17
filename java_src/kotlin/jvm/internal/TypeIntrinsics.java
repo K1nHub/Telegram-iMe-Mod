@@ -1,6 +1,8 @@
 package kotlin.jvm.internal;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import kotlin.Function;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -26,6 +28,7 @@ import kotlin.jvm.functions.Function7;
 import kotlin.jvm.functions.Function8;
 import kotlin.jvm.functions.Function9;
 import kotlin.jvm.internal.markers.KMappedMarker;
+import kotlin.jvm.internal.markers.KMutableCollection;
 import kotlin.jvm.internal.markers.KMutableIterable;
 import kotlin.jvm.internal.markers.KMutableList;
 /* loaded from: classes4.dex */
@@ -62,6 +65,21 @@ public class TypeIntrinsics {
         }
     }
 
+    public static Collection asMutableCollection(Object obj) {
+        if ((obj instanceof KMappedMarker) && !(obj instanceof KMutableCollection)) {
+            throwCce(obj, "kotlin.collections.MutableCollection");
+        }
+        return castToCollection(obj);
+    }
+
+    public static Collection castToCollection(Object obj) {
+        try {
+            return (Collection) obj;
+        } catch (ClassCastException e) {
+            throw throwCce(e);
+        }
+    }
+
     public static List asMutableList(Object obj) {
         if ((obj instanceof KMappedMarker) && !(obj instanceof KMutableList)) {
             throwCce(obj, "kotlin.collections.MutableList");
@@ -72,6 +90,21 @@ public class TypeIntrinsics {
     public static List castToList(Object obj) {
         try {
             return (List) obj;
+        } catch (ClassCastException e) {
+            throw throwCce(e);
+        }
+    }
+
+    public static Map asMutableMap(Object obj) {
+        if (obj instanceof KMappedMarker) {
+            throwCce(obj, "kotlin.collections.MutableMap");
+        }
+        return castToMap(obj);
+    }
+
+    public static Map castToMap(Object obj) {
+        try {
+            return (Map) obj;
         } catch (ClassCastException e) {
             throw throwCce(e);
         }

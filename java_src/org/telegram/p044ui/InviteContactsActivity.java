@@ -36,7 +36,7 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -44,7 +44,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.GroupCreateSectionCell;
@@ -107,38 +107,38 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             int childCount = getChildCount();
             int size = View.MeasureSpec.getSize(i);
             int i6 = 32;
-            int m50dp = size - AndroidUtilities.m50dp(32);
-            int m50dp2 = AndroidUtilities.m50dp(12);
-            int m50dp3 = AndroidUtilities.m50dp(12);
+            int m54dp = size - AndroidUtilities.m54dp(32);
+            int m54dp2 = AndroidUtilities.m54dp(12);
+            int m54dp3 = AndroidUtilities.m54dp(12);
             int i7 = 0;
             int i8 = 0;
             int i9 = 0;
             while (i7 < childCount) {
                 View childAt = getChildAt(i7);
                 if (childAt instanceof GroupCreateSpan) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(i6), 1073741824));
-                    if (childAt == this.removingSpan || childAt.getMeasuredWidth() + i8 <= m50dp) {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(i6), 1073741824));
+                    if (childAt == this.removingSpan || childAt.getMeasuredWidth() + i8 <= m54dp) {
                         i3 = 12;
                     } else {
                         i3 = 12;
-                        m50dp2 += childAt.getMeasuredHeight() + AndroidUtilities.m50dp(12);
+                        m54dp2 += childAt.getMeasuredHeight() + AndroidUtilities.m54dp(12);
                         i8 = 0;
                     }
-                    if (childAt.getMeasuredWidth() + i9 > m50dp) {
-                        m50dp3 += childAt.getMeasuredHeight() + AndroidUtilities.m50dp(i3);
+                    if (childAt.getMeasuredWidth() + i9 > m54dp) {
+                        m54dp3 += childAt.getMeasuredHeight() + AndroidUtilities.m54dp(i3);
                         i4 = 16;
                         i9 = 0;
                     } else {
                         i4 = 16;
                     }
-                    int m50dp4 = AndroidUtilities.m50dp(i4) + i8;
+                    int m54dp4 = AndroidUtilities.m54dp(i4) + i8;
                     if (!this.animationStarted) {
                         View view = this.removingSpan;
                         if (childAt == view) {
-                            childAt.setTranslationX(AndroidUtilities.m50dp(i4) + i9);
-                            childAt.setTranslationY(m50dp3);
+                            childAt.setTranslationX(AndroidUtilities.m54dp(i4) + i9);
+                            childAt.setTranslationY(m54dp3);
                         } else if (view != null) {
-                            float f = m50dp4;
+                            float f = m54dp4;
                             if (childAt.getTranslationX() != f) {
                                 i5 = 1;
                                 c = 0;
@@ -147,7 +147,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                                 i5 = 1;
                                 c = 0;
                             }
-                            float f2 = m50dp2;
+                            float f2 = m54dp2;
                             if (childAt.getTranslationY() != f2) {
                                 ArrayList<Animator> arrayList = this.animators;
                                 float[] fArr = new float[i5];
@@ -155,46 +155,46 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                                 arrayList.add(ObjectAnimator.ofFloat(childAt, "translationY", fArr));
                             }
                         } else {
-                            childAt.setTranslationX(m50dp4);
-                            childAt.setTranslationY(m50dp2);
+                            childAt.setTranslationX(m54dp4);
+                            childAt.setTranslationY(m54dp2);
                         }
                     }
                     if (childAt != this.removingSpan) {
-                        i8 += childAt.getMeasuredWidth() + AndroidUtilities.m50dp(9);
+                        i8 += childAt.getMeasuredWidth() + AndroidUtilities.m54dp(9);
                     }
-                    i9 += childAt.getMeasuredWidth() + AndroidUtilities.m50dp(9);
+                    i9 += childAt.getMeasuredWidth() + AndroidUtilities.m54dp(9);
                 }
                 i7++;
                 i6 = 32;
             }
             if (AndroidUtilities.isTablet()) {
-                min = AndroidUtilities.m50dp(366) / 3;
+                min = AndroidUtilities.m54dp(366) / 3;
             } else {
                 Point point = AndroidUtilities.displaySize;
-                min = (Math.min(point.x, point.y) - AndroidUtilities.m50dp(164)) / 3;
+                min = (Math.min(point.x, point.y) - AndroidUtilities.m54dp(164)) / 3;
             }
-            if (m50dp - i8 < min) {
-                m50dp2 += AndroidUtilities.m50dp(44);
+            if (m54dp - i8 < min) {
+                m54dp2 += AndroidUtilities.m54dp(44);
                 i8 = 0;
             }
-            if (m50dp - i9 < min) {
-                m50dp3 += AndroidUtilities.m50dp(44);
+            if (m54dp - i9 < min) {
+                m54dp3 += AndroidUtilities.m54dp(44);
             }
-            InviteContactsActivity.this.editText.measure(View.MeasureSpec.makeMeasureSpec(m50dp - i8, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(32), 1073741824));
+            InviteContactsActivity.this.editText.measure(View.MeasureSpec.makeMeasureSpec(m54dp - i8, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(32), 1073741824));
             if (!this.animationStarted) {
-                int m50dp5 = m50dp3 + AndroidUtilities.m50dp(44);
-                int m50dp6 = i8 + AndroidUtilities.m50dp(16);
-                InviteContactsActivity.this.fieldY = m50dp2;
+                int m54dp5 = m54dp3 + AndroidUtilities.m54dp(44);
+                int m54dp6 = i8 + AndroidUtilities.m54dp(16);
+                InviteContactsActivity.this.fieldY = m54dp2;
                 if (this.currentAnimation == null) {
-                    InviteContactsActivity.this.containerHeight = m50dp5;
-                    InviteContactsActivity.this.editText.setTranslationX(m50dp6);
+                    InviteContactsActivity.this.containerHeight = m54dp5;
+                    InviteContactsActivity.this.editText.setTranslationX(m54dp6);
                     InviteContactsActivity.this.editText.setTranslationY(InviteContactsActivity.this.fieldY);
                 } else {
-                    int m50dp7 = m50dp2 + AndroidUtilities.m50dp(44);
-                    if (InviteContactsActivity.this.containerHeight != m50dp7) {
-                        this.animators.add(ObjectAnimator.ofInt(InviteContactsActivity.this, "containerHeight", m50dp7));
+                    int m54dp7 = m54dp2 + AndroidUtilities.m54dp(44);
+                    if (InviteContactsActivity.this.containerHeight != m54dp7) {
+                        this.animators.add(ObjectAnimator.ofInt(InviteContactsActivity.this, "containerHeight", m54dp7));
                     }
-                    float f3 = m50dp6;
+                    float f3 = m54dp6;
                     if (InviteContactsActivity.this.editText.getTranslationX() != f3) {
                         this.animators.add(ObjectAnimator.ofFloat(InviteContactsActivity.this.editText, "translationX", f3));
                     }
@@ -333,11 +333,11 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.allSpans.clear();
         this.selectedContacts.clear();
         this.currentDeletingSpan = null;
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("InviteFriends", C3242R.string.InviteFriends));
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.InviteContactsActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("InviteFriends", C3290R.string.InviteFriends));
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.InviteContactsActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     InviteContactsActivity.this.finishFragment();
@@ -347,28 +347,28 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         ViewGroup viewGroup = new ViewGroup(context) { // from class: org.telegram.ui.InviteContactsActivity.2
             @Override // android.view.View
             protected void onMeasure(int i, int i2) {
-                int m50dp;
+                int m54dp;
                 int size = View.MeasureSpec.getSize(i);
                 int size2 = View.MeasureSpec.getSize(i2);
                 setMeasuredDimension(size, size2);
                 if (AndroidUtilities.isTablet() || size2 > size) {
-                    m50dp = AndroidUtilities.m50dp(144);
+                    m54dp = AndroidUtilities.m54dp(144);
                 } else {
-                    m50dp = AndroidUtilities.m50dp(56);
+                    m54dp = AndroidUtilities.m54dp(56);
                 }
-                InviteContactsActivity.this.infoTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m50dp, Integer.MIN_VALUE));
-                InviteContactsActivity.this.counterView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(48), 1073741824));
+                InviteContactsActivity.this.infoTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
+                InviteContactsActivity.this.counterView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
                 int measuredHeight = InviteContactsActivity.this.infoTextView.getVisibility() == 0 ? InviteContactsActivity.this.infoTextView.getMeasuredHeight() : InviteContactsActivity.this.counterView.getMeasuredHeight();
-                InviteContactsActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m50dp, Integer.MIN_VALUE));
+                InviteContactsActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
                 InviteContactsActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - measuredHeight, 1073741824));
-                InviteContactsActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - AndroidUtilities.m50dp(72), 1073741824));
+                InviteContactsActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - AndroidUtilities.m54dp(72), 1073741824));
             }
 
             @Override // android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
                 InviteContactsActivity.this.scrollView.layout(0, 0, InviteContactsActivity.this.scrollView.getMeasuredWidth(), InviteContactsActivity.this.scrollView.getMeasuredHeight());
                 InviteContactsActivity.this.listView.layout(0, InviteContactsActivity.this.scrollView.getMeasuredHeight(), InviteContactsActivity.this.listView.getMeasuredWidth(), InviteContactsActivity.this.scrollView.getMeasuredHeight() + InviteContactsActivity.this.listView.getMeasuredHeight());
-                InviteContactsActivity.this.emptyView.layout(0, InviteContactsActivity.this.scrollView.getMeasuredHeight() + AndroidUtilities.m50dp(72), InviteContactsActivity.this.emptyView.getMeasuredWidth(), InviteContactsActivity.this.scrollView.getMeasuredHeight() + InviteContactsActivity.this.emptyView.getMeasuredHeight());
+                InviteContactsActivity.this.emptyView.layout(0, InviteContactsActivity.this.scrollView.getMeasuredHeight() + AndroidUtilities.m54dp(72), InviteContactsActivity.this.emptyView.getMeasuredWidth(), InviteContactsActivity.this.scrollView.getMeasuredHeight() + InviteContactsActivity.this.emptyView.getMeasuredHeight());
                 int i5 = i4 - i2;
                 int measuredHeight = i5 - InviteContactsActivity.this.infoTextView.getMeasuredHeight();
                 InviteContactsActivity.this.infoTextView.layout(0, measuredHeight, InviteContactsActivity.this.infoTextView.getMeasuredWidth(), InviteContactsActivity.this.infoTextView.getMeasuredHeight() + measuredHeight);
@@ -395,14 +395,14 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     return false;
                 }
                 rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                rect.top += InviteContactsActivity.this.fieldY + AndroidUtilities.m50dp(20);
-                rect.bottom += InviteContactsActivity.this.fieldY + AndroidUtilities.m50dp(50);
+                rect.top += InviteContactsActivity.this.fieldY + AndroidUtilities.m54dp(20);
+                rect.bottom += InviteContactsActivity.this.fieldY + AndroidUtilities.m54dp(50);
                 return super.requestChildRectangleOnScreen(view, rect, z);
             }
         };
         this.scrollView = scrollView;
         scrollView.setVerticalScrollBarEnabled(false);
-        AndroidUtilities.setScrollViewEdgeEffectColor(this.scrollView, Theme.getColor("windowBackgroundWhite"));
+        AndroidUtilities.setScrollViewEdgeEffectColor(this.scrollView, Theme.getColor(Theme.key_windowBackgroundWhite));
         viewGroup2.addView(this.scrollView);
         SpansContainer spansContainer = new SpansContainer(context);
         this.spansContainer = spansContainer;
@@ -423,9 +423,9 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         };
         this.editText = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 18.0f);
-        this.editText.setHintColor(Theme.getColor("groupcreate_hintText"));
-        this.editText.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        this.editText.setCursorColor(Theme.getColor("groupcreate_cursor"));
+        this.editText.setHintColor(Theme.getColor(Theme.key_groupcreate_hintText));
+        this.editText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        this.editText.setCursorColor(Theme.getColor(Theme.key_groupcreate_cursor));
         this.editText.setCursorWidth(1.5f);
         this.editText.setInputType(655536);
         this.editText.setSingleLine(true);
@@ -437,7 +437,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.editText.setImeOptions(268435462);
         this.editText.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         this.spansContainer.addView(this.editText);
-        this.editText.setHintText(LocaleController.getString("SearchFriends", C3242R.string.SearchFriends));
+        this.editText.setHintText(LocaleController.getString("SearchFriends", C3290R.string.SearchFriends));
         this.editText.setCustomSelectionActionModeCallback(new ActionMode.Callback(this) { // from class: org.telegram.ui.InviteContactsActivity.5
             @Override // android.view.ActionMode.Callback
             public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
@@ -492,7 +492,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     InviteContactsActivity.this.adapter.searchDialogs(InviteContactsActivity.this.editText.getText().toString());
                     InviteContactsActivity.this.listView.setFastScrollVisible(false);
                     InviteContactsActivity.this.listView.setVerticalScrollBarEnabled(true);
-                    InviteContactsActivity.this.emptyView.setText(LocaleController.getString("NoResult", C3242R.string.NoResult));
+                    InviteContactsActivity.this.emptyView.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
                     return;
                 }
                 InviteContactsActivity.this.closeSearch();
@@ -504,7 +504,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         } else {
             this.emptyView.showTextView();
         }
-        this.emptyView.setText(LocaleController.getString("NoContacts", C3242R.string.NoContacts));
+        this.emptyView.setText(LocaleController.getString("NoContacts", C3290R.string.NoContacts));
         viewGroup2.addView(this.emptyView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 1, false);
         RecyclerListView recyclerListView = new RecyclerListView(context);
@@ -538,17 +538,20 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         });
         TextView textView = new TextView(context);
         this.infoTextView = textView;
-        textView.setBackgroundColor(Theme.getColor("contacts_inviteBackground"));
-        this.infoTextView.setTextColor(Theme.getColor("contacts_inviteText"));
+        int i = Theme.key_contacts_inviteBackground;
+        textView.setBackgroundColor(Theme.getColor(i));
+        TextView textView2 = this.infoTextView;
+        int i2 = Theme.key_contacts_inviteText;
+        textView2.setTextColor(Theme.getColor(i2));
         this.infoTextView.setGravity(17);
-        this.infoTextView.setText(LocaleController.getString("InviteFriendsHelp", C3242R.string.InviteFriendsHelp));
+        this.infoTextView.setText(LocaleController.getString("InviteFriendsHelp", C3290R.string.InviteFriendsHelp));
         this.infoTextView.setTextSize(1, 13.0f);
         this.infoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.infoTextView.setPadding(AndroidUtilities.m50dp(17), AndroidUtilities.m50dp(9), AndroidUtilities.m50dp(17), AndroidUtilities.m50dp(9));
+        this.infoTextView.setPadding(AndroidUtilities.m54dp(17), AndroidUtilities.m54dp(9), AndroidUtilities.m54dp(17), AndroidUtilities.m54dp(9));
         viewGroup2.addView(this.infoTextView, LayoutHelper.createFrame(-1, -2, 83));
         FrameLayout frameLayout = new FrameLayout(context);
         this.counterView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor("contacts_inviteBackground"));
+        frameLayout.setBackgroundColor(Theme.getColor(i));
         this.counterView.setVisibility(4);
         viewGroup2.addView(this.counterView, LayoutHelper.createFrame(-1, 48, 83));
         this.counterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda0
@@ -560,23 +563,23 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         this.counterView.addView(linearLayout, LayoutHelper.createFrame(-2, -1, 17));
-        TextView textView2 = new TextView(context);
-        this.counterTextView = textView2;
-        textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.counterTextView.setTextSize(1, 14.0f);
-        this.counterTextView.setTextColor(Theme.getColor("contacts_inviteBackground"));
-        this.counterTextView.setGravity(17);
-        this.counterTextView.setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m50dp(10), Theme.getColor("contacts_inviteText")));
-        this.counterTextView.setMinWidth(AndroidUtilities.m50dp(20));
-        this.counterTextView.setPadding(AndroidUtilities.m50dp(6), 0, AndroidUtilities.m50dp(6), AndroidUtilities.m50dp(1));
-        linearLayout.addView(this.counterTextView, LayoutHelper.createLinear(-2, 20, 16, 0, 0, 10, 0));
         TextView textView3 = new TextView(context);
-        this.textView = textView3;
-        textView3.setTextSize(1, 14.0f);
-        this.textView.setTextColor(Theme.getColor("contacts_inviteText"));
+        this.counterTextView = textView3;
+        textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+        this.counterTextView.setTextSize(1, 14.0f);
+        this.counterTextView.setTextColor(Theme.getColor(i));
+        this.counterTextView.setGravity(17);
+        this.counterTextView.setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(10), Theme.getColor(i2)));
+        this.counterTextView.setMinWidth(AndroidUtilities.m54dp(20));
+        this.counterTextView.setPadding(AndroidUtilities.m54dp(6), 0, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(1));
+        linearLayout.addView(this.counterTextView, LayoutHelper.createLinear(-2, 20, 16, 0, 0, 10, 0));
+        TextView textView4 = new TextView(context);
+        this.textView = textView4;
+        textView4.setTextSize(1, 14.0f);
+        this.textView.setTextColor(Theme.getColor(i2));
         this.textView.setGravity(17);
-        this.textView.setCompoundDrawablePadding(AndroidUtilities.m50dp(8));
-        this.textView.setText(LocaleController.getString("InviteToTelegram", C3242R.string.InviteToTelegram).toUpperCase());
+        this.textView.setCompoundDrawablePadding(AndroidUtilities.m54dp(8));
+        this.textView.setText(LocaleController.getString("InviteToTelegram", C3290R.string.InviteToTelegram).toUpperCase());
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         linearLayout.addView(this.textView, LayoutHelper.createLinear(-2, -2, 16));
         updateHint();
@@ -596,7 +599,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 intent.putExtra("android.intent.extra.TEXT", inviteText);
                 getParentActivity().startActivityForResult(Intent.createChooser(intent, inviteText), 500);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         } else if ((view instanceof InviteUserCell) && (contact = (inviteUserCell = (InviteUserCell) view).getContact()) != null) {
             boolean containsKey = this.selectedContacts.containsKey(contact.key);
@@ -638,7 +641,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             intent.putExtra("sms_body", ContactsController.getInstance(this.currentAccount).getInviteText(i));
             getParentActivity().startActivityForResult(intent, 500);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         finishFragment();
     }
@@ -706,7 +709,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.adapter.searchDialogs(null);
         this.listView.setFastScrollVisible(true);
         this.listView.setVerticalScrollBarEnabled(false);
-        this.emptyView.setText(LocaleController.getString("NoContacts", C3242R.string.NoContacts));
+        this.emptyView.setText(LocaleController.getString("NoContacts", C3290R.string.NoContacts));
     }
 
     private void fetchContacts() {
@@ -772,7 +775,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             FrameLayout frameLayout;
             if (i == 1) {
                 InviteTextCell inviteTextCell = new InviteTextCell(this.context);
-                inviteTextCell.setTextAndIcon(LocaleController.getString("ShareTelegram", C3242R.string.ShareTelegram), C3242R.C3244drawable.share);
+                inviteTextCell.setTextAndIcon(LocaleController.getString("ShareTelegram", C3290R.string.ShareTelegram), C3290R.C3292drawable.share);
                 frameLayout = inviteTextCell;
             } else {
                 frameLayout = new InviteUserCell(this.context, true);
@@ -819,7 +822,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     timer.cancel();
                 }
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
             if (str == null) {
                 this.searchResult.clear();
@@ -829,16 +832,16 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             }
             Timer timer2 = new Timer();
             this.searchTimer = timer2;
-            timer2.schedule(new C56981(str), 200L, 300L);
+            timer2.schedule(new C57911(str), 200L, 300L);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.InviteContactsActivity$InviteAdapter$1 */
         /* loaded from: classes5.dex */
-        public class C56981 extends TimerTask {
+        public class C57911 extends TimerTask {
             final /* synthetic */ String val$query;
 
-            C56981(String str) {
+            C57911(String str) {
                 this.val$query = str;
             }
 
@@ -848,13 +851,13 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     InviteAdapter.this.searchTimer.cancel();
                     InviteAdapter.this.searchTimer = null;
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
                 final String str = this.val$query;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteContactsActivity.InviteAdapter.C56981.this.lambda$run$1(str);
+                        InviteContactsActivity.InviteAdapter.C57911.this.lambda$run$1(str);
                     }
                 });
             }
@@ -864,7 +867,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteContactsActivity.InviteAdapter.C56981.this.lambda$run$0(str);
+                        InviteContactsActivity.InviteAdapter.C57911.this.lambda$run$0(str);
                     }
                 });
             }
@@ -993,7 +996,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     org.telegram.p044ui.InviteContactsActivity.InviteAdapter.access$2600(r3, r1, r2)
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.InviteContactsActivity.InviteAdapter.C56981.lambda$run$0(java.lang.String):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.InviteContactsActivity.InviteAdapter.C57911.lambda$run$0(java.lang.String):void");
             }
         }
 
@@ -1039,52 +1042,69 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
         };
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.scrollView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, "fastScrollActive"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, "fastScrollInactive"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, "fastScrollText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "emptyListPlaceholder"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_PROGRESSBAR, null, null, null, null, "progressCircle"));
-        arrayList.add(new ThemeDescription(this.editText, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.editText, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, "groupcreate_hintText"));
-        arrayList.add(new ThemeDescription(this.editText, ThemeDescription.FLAG_CURSORCOLOR, null, null, null, null, "groupcreate_cursor"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{GroupCreateSectionCell.class}, null, null, null, "graySection"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{GroupCreateSectionCell.class}, new String[]{"drawable"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "groupcreate_sectionShadow"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateSectionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "groupcreate_sectionText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{InviteUserCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "groupcreate_sectionText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{InviteUserCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{InviteUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkbox"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{InviteUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkboxCheck"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{InviteUserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{InviteUserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{InviteUserCell.class}, null, Theme.avatarDrawables, null, "avatar_text"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundRed"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundOrange"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundViolet"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundGreen"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundCyan"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundBlue"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundPink"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{InviteTextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{InviteTextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayIcon"));
-        arrayList.add(new ThemeDescription(this.spansContainer, 0, new Class[]{GroupCreateSpan.class}, null, null, null, "groupcreate_spanBackground"));
-        arrayList.add(new ThemeDescription(this.spansContainer, 0, new Class[]{GroupCreateSpan.class}, null, null, null, "groupcreate_spanText"));
-        arrayList.add(new ThemeDescription(this.spansContainer, 0, new Class[]{GroupCreateSpan.class}, null, null, null, "groupcreate_spanDelete"));
-        arrayList.add(new ThemeDescription(this.spansContainer, 0, new Class[]{GroupCreateSpan.class}, null, null, null, "avatar_backgroundBlue"));
-        arrayList.add(new ThemeDescription(this.infoTextView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "contacts_inviteText"));
-        arrayList.add(new ThemeDescription(this.infoTextView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "contacts_inviteBackground"));
-        arrayList.add(new ThemeDescription(this.counterView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "contacts_inviteBackground"));
-        arrayList.add(new ThemeDescription(this.counterTextView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "contacts_inviteBackground"));
-        arrayList.add(new ThemeDescription(this.textView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "contacts_inviteText"));
-        arrayList.add(new ThemeDescription(this.counterTextView, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "contacts_inviteText"));
+        View view = this.fragmentView;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_windowBackgroundWhite;
+        arrayList.add(new ThemeDescription(view, i, null, null, null, null, i2));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i3 = ThemeDescription.FLAG_BACKGROUND;
+        int i4 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i3, null, null, null, null, i4));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i4));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.scrollView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, Theme.key_fastScrollActive));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, Theme.key_fastScrollInactive));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, Theme.key_fastScrollText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_emptyListPlaceholder));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_PROGRESSBAR, null, null, null, null, Theme.key_progressCircle));
+        EditTextBoldCursor editTextBoldCursor = this.editText;
+        int i5 = ThemeDescription.FLAG_TEXTCOLOR;
+        int i6 = Theme.key_windowBackgroundWhiteBlackText;
+        arrayList.add(new ThemeDescription(editTextBoldCursor, i5, null, null, null, null, i6));
+        arrayList.add(new ThemeDescription(this.editText, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_groupcreate_hintText));
+        arrayList.add(new ThemeDescription(this.editText, ThemeDescription.FLAG_CURSORCOLOR, null, null, null, null, Theme.key_groupcreate_cursor));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{GroupCreateSectionCell.class}, null, null, null, Theme.key_graySection));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{GroupCreateSectionCell.class}, new String[]{"drawable"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_groupcreate_sectionShadow));
+        int i7 = Theme.key_groupcreate_sectionText;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateSectionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{InviteUserCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{InviteUserCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{InviteUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_checkbox));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{InviteUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_checkboxCheck));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{InviteUserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueText));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{InviteUserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{InviteUserCell.class}, null, Theme.avatarDrawables, null, Theme.key_avatar_text));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundRed));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundOrange));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundViolet));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundGreen));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundCyan));
+        int i8 = Theme.key_avatar_backgroundBlue;
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, i8));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundPink));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{InviteTextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{InviteTextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayIcon));
+        arrayList.add(new ThemeDescription(this.spansContainer, 0, new Class[]{GroupCreateSpan.class}, null, null, null, Theme.key_groupcreate_spanBackground));
+        arrayList.add(new ThemeDescription(this.spansContainer, 0, new Class[]{GroupCreateSpan.class}, null, null, null, Theme.key_groupcreate_spanText));
+        arrayList.add(new ThemeDescription(this.spansContainer, 0, new Class[]{GroupCreateSpan.class}, null, null, null, Theme.key_groupcreate_spanDelete));
+        arrayList.add(new ThemeDescription(this.spansContainer, 0, new Class[]{GroupCreateSpan.class}, null, null, null, i8));
+        TextView textView = this.infoTextView;
+        int i9 = ThemeDescription.FLAG_TEXTCOLOR;
+        int i10 = Theme.key_contacts_inviteText;
+        arrayList.add(new ThemeDescription(textView, i9, null, null, null, null, i10));
+        TextView textView2 = this.infoTextView;
+        int i11 = ThemeDescription.FLAG_BACKGROUND;
+        int i12 = Theme.key_contacts_inviteBackground;
+        arrayList.add(new ThemeDescription(textView2, i11, null, null, null, null, i12));
+        arrayList.add(new ThemeDescription(this.counterView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i12));
+        arrayList.add(new ThemeDescription(this.counterTextView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i12));
+        arrayList.add(new ThemeDescription(this.textView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i10));
+        arrayList.add(new ThemeDescription(this.counterTextView, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i10));
         return arrayList;
     }
 

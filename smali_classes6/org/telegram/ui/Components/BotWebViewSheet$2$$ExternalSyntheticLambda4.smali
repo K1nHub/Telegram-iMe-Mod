@@ -34,30 +34,34 @@
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 9
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 11
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet$2;
+    move-object v0, p0
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/tgnet/TLRPC$User;
+    iget-object v1, v0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet$2;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;->f$2:Ljava/lang/String;
+    iget-object v2, v0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;->f$3:Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;
+    iget-object v3, v0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;->f$2:Ljava/lang/String;
 
-    move-object v4, p1
+    iget-object v4, v0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;->f$3:Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;
 
-    move-object v5, p2
+    move-object v5, p1
 
-    move-object v6, p3
+    move-object v6, p2
 
-    move v7, p4
+    move-object v7, p3
 
-    move-object v8, p5
+    move v8, p4
 
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/BotWebViewSheet$2;->$r8$lambda$o2Q8TDLAYilS4YmXnMM82hV8--I(Lorg/telegram/ui/Components/BotWebViewSheet$2;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    move-object/from16 v9, p5
 
-    move-result p1
+    move-object/from16 v10, p6
 
-    return p1
+    invoke-static/range {v1 .. v10}, Lorg/telegram/ui/Components/BotWebViewSheet$2;->$r8$lambda$cD8G8Ma5nQwhQfrSMkq8YKtby5o(Lorg/telegram/ui/Components/BotWebViewSheet$2;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+
+    move-result v1
+
+    return v1
 .end method

@@ -46,25 +46,25 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
-    .line 1698
+    .line 1679
     invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x2
 
     new-array v0, p1, [Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
 
-    .line 1693
+    .line 1674
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backgroundThreadDrawHolder:[Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
 
-    .line 1699
+    .line 1680
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    const-string v0, "listSelectorSDK21"
+    .line 1681
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    .line 1700
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -85,28 +85,28 @@
     return-void
 .end method
 
-.method static synthetic access$14400(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;)Lorg/telegram/ui/Components/AnimatedEmojiSpan;
+.method static synthetic access$13800(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;)Lorg/telegram/ui/Components/AnimatedEmojiSpan;
     .locals 0
 
-    .line 1684
+    .line 1665
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     return-object p0
 .end method
 
-.method static synthetic access$14500(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;)[Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
+.method static synthetic access$13900(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;)[Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
     .locals 0
 
-    .line 1684
+    .line 1665
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backgroundThreadDrawHolder:[Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
 
     return-object p0
 .end method
 
-.method static synthetic access$19502(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;Lorg/telegram/ui/Components/EmojiView$EmojiPack;)Lorg/telegram/ui/Components/EmojiView$EmojiPack;
+.method static synthetic access$18702(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;Lorg/telegram/ui/Components/EmojiView$EmojiPack;)Lorg/telegram/ui/Components/EmojiView$EmojiPack;
     .locals 0
 
-    .line 1684
+    .line 1665
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->pack:Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
     return-object p1
@@ -115,7 +115,7 @@
 .method static synthetic access$5800(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;)Z
     .locals 0
 
-    .line 1684
+    .line 1665
     iget-boolean p0, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->isRecent:Z
 
     return p0
@@ -124,7 +124,7 @@
 .method private synthetic lambda$setPressed$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1741
+    .line 1722
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -137,7 +137,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->pressedProgress:F
 
-    .line 1742
+    .line 1723
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
     return-void
@@ -148,7 +148,7 @@
 .method public getSpan()Lorg/telegram/ui/Components/AnimatedEmojiSpan;
     .locals 1
 
-    .line 1713
+    .line 1694
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     return-object v0
@@ -157,7 +157,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 1760
+    .line 1741
     invoke-virtual {p0}, Landroid/widget/ImageView;->isPressed()Z
 
     move-result v0
@@ -176,7 +176,7 @@
 
     const/high16 v3, 0x447a0000    # 1000.0f
 
-    .line 1761
+    .line 1742
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
 
     div-float/2addr v3, v4
@@ -195,14 +195,14 @@
 
     const/4 v2, 0x0
 
-    .line 1762
+    .line 1743
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->pressedProgress:F
 
-    .line 1763
+    .line 1744
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
     :cond_0
@@ -210,7 +210,7 @@
 
     const v2, 0x3e4ccccd    # 0.2f
 
-    .line 1765
+    .line 1746
     iget v3, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->pressedProgress:F
 
     sub-float/2addr v1, v3
@@ -219,10 +219,10 @@
 
     add-float/2addr v1, v0
 
-    .line 1766
+    .line 1747
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1767
+    .line 1748
     invoke-virtual {p0}, Landroid/widget/ImageView;->getMeasuredWidth()I
 
     move-result v0
@@ -243,10 +243,10 @@
 
     invoke-virtual {p1, v1, v1, v0, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1768
+    .line 1749
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1769
+    .line 1750
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -255,12 +255,12 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 1723
+    .line 1704
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.view.View"
 
-    .line 1724
+    .line 1705
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
@@ -269,7 +269,7 @@
 .method public onMeasure(II)V
     .locals 0
 
-    .line 1718
+    .line 1699
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -286,10 +286,10 @@
 .method public setImageDrawable(Landroid/graphics/drawable/Drawable;Z)V
     .locals 0
 
-    .line 1704
+    .line 1685
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1705
+    .line 1686
     iput-boolean p2, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->isRecent:Z
 
     return-void
@@ -298,30 +298,30 @@
 .method public setPressed(Z)V
     .locals 3
 
-    .line 1729
+    .line 1710
     invoke-virtual {p0}, Landroid/widget/ImageView;->isPressed()Z
 
     move-result v0
 
     if-eq v0, p1, :cond_1
 
-    .line 1730
+    .line 1711
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setPressed(Z)V
 
-    .line 1731
+    .line 1712
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
     if-eqz p1, :cond_0
 
-    .line 1733
+    .line 1714
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 1734
+    .line 1715
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 1735
+    .line 1716
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -329,7 +329,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1738
+    .line 1719
     iget p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->pressedProgress:F
 
     const/4 v0, 0x0
@@ -350,21 +350,21 @@
 
     aput v0, v1, p1
 
-    .line 1739
+    .line 1720
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1740
+    .line 1721
     new-instance v0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1744
+    .line 1725
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji$1;
@@ -373,7 +373,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1751
+    .line 1732
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
@@ -384,14 +384,14 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1752
+    .line 1733
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1753
+    .line 1734
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -403,7 +403,7 @@
 .method public setSpan(Lorg/telegram/ui/Components/AnimatedEmojiSpan;)V
     .locals 0
 
-    .line 1709
+    .line 1690
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     return-void

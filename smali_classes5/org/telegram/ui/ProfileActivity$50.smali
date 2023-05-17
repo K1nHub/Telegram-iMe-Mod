@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 11280
+    .line 11437
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$50;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,17 +35,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 11283
+    .line 11440
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$50;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ProfileActivity;->access$12302(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;)Landroid/view/View;
+    invoke-static {p1, v0}, Lorg/telegram/ui/ProfileActivity;->access$12502(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;)Landroid/view/View;
 
-    .line 11284
+    .line 11441
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$50;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$33100(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$33200(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
 
     move-result-object p1
 

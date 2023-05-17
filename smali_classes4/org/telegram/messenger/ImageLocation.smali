@@ -1357,7 +1357,7 @@
     .line 340
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    const-string v1, "stripped"
+    const-string/jumbo v1, "stripped"
 
     if-eqz v0, :cond_8
 

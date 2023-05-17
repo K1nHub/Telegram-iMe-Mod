@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    const-string v3, "supported"
+    const-string/jumbo v3, "supported"
 
     const-wide/32 v4, 0x5265c00
 
@@ -99,7 +99,7 @@
 
     const/4 v9, 0x3
 
-    const-string v10, "skus"
+    const-string/jumbo v10, "skus"
 
     const-wide/32 v11, 0x5265c00
 

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import p034j$.util.Iterator;
 import p034j$.util.function.Consumer;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class zzo<E> implements Iterator<E>, p034j$.util.Iterator {
     @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {

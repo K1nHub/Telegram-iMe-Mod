@@ -105,7 +105,7 @@
 
     move-result-object v0
 
-    const-string v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -117,7 +117,7 @@
 
     move-result-object p1
 
-    const-string v0, "this as java.lang.String).toUpperCase(locale)"
+    const-string/jumbo v0, "this as java.lang.String).toUpperCase(locale)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -129,7 +129,7 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String).substring(startIndex)"
+    const-string/jumbo p1, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -155,7 +155,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "suffix"
+    const-string/jumbo v0, "suffix"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -603,7 +603,7 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String\u2026replace(oldChar, newChar)"
+    const-string/jumbo p1, "this as java.lang.String\u2026replace(oldChar, newChar)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -757,7 +757,7 @@
 
     move-result-object p0
 
-    const-string p1, "stringBuilder.append(this, i, length).toString()"
+    const-string/jumbo p1, "stringBuilder.append(this, i, length).toString()"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

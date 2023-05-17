@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 223
+    .line 248
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$2;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
-    .line 225
+    .line 250
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -46,7 +46,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 228
+    .line 253
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$2;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$200(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/util/ArrayList;
@@ -69,7 +69,7 @@
 
     const/4 v4, 0x0
 
-    .line 233
+    .line 258
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -77,7 +77,7 @@
 
     if-ge v4, v5, :cond_2
 
-    .line 234
+    .line 259
     invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
@@ -86,7 +86,7 @@
 
     goto :goto_1
 
-    .line 238
+    .line 263
     :cond_0
     invoke-virtual {p0, v5}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
@@ -96,7 +96,7 @@
 
     if-gt v6, v0, :cond_1
 
-    .line 240
+    .line 265
     invoke-virtual {v5}, Landroid/view/View;->getTop()I
 
     move-result v6
@@ -105,7 +105,7 @@
 
     move-result v2
 
-    .line 241
+    .line 266
     invoke-virtual {v5}, Landroid/view/View;->getBottom()I
 
     move-result v5
@@ -123,14 +123,14 @@
     :cond_2
     if-ge v2, v3, :cond_3
 
-    .line 246
+    .line 271
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$2;->backgroundPaint:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    const-string v4, "windowBackgroundWhite"
+    iget-object v4, p0, Lorg/telegram/ui/Components/RecyclerListView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v4, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
@@ -140,7 +140,7 @@
 
     int-to-float v6, v2
 
-    .line 247
+    .line 272
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v0
@@ -155,7 +155,7 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 250
+    .line 275
     :cond_3
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 

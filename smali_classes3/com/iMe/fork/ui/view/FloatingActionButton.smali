@@ -212,15 +212,15 @@
 
     move-result v0
 
-    const-string v1, "chats_actionBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const-string v2, "chats_actionPressedBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionPressedBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -237,9 +237,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chats_actionIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionIcon:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

@@ -2,56 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+.implements Lorg/telegram/ui/Components/EditTextCaption$EditTextCaptionDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject;
-
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$1:Lorg/telegram/messenger/MessageObject;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$2:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 8
+.method public final onSpansChanged()V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$1:Lorg/telegram/messenger/MessageObject;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$Hx0dbdOnoE-SuZqEeZqTNYZgWVs(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda69;->f$2:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
-
-    move-object v3, p1
-
-    move-object v4, p2
-
-    move-object v5, p3
-
-    move v6, p4
-
-    move-object v7, p5
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$uK6MtuHHsnU78F-Hd9ArCoDzmp8(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$KeyboardButton;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

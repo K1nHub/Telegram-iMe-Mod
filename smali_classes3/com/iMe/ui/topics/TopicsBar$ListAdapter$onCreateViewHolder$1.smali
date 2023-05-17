@@ -26,7 +26,7 @@
 
     const-string p1, "context"
 
-    .line 252
+    .line 269
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v2, 0x0
@@ -57,7 +57,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 254
+    .line 271
     invoke-virtual {p0}, Lcom/iMe/ui/topics/TopicView;->getTopic()Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     move-result-object v0
@@ -108,7 +108,7 @@
     :goto_1
     if-nez v1, :cond_3
 
-    .line 255
+    .line 272
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsBar;->access$getEditingAnimationProgress$p(Lcom/iMe/ui/topics/TopicsBar;)F
@@ -133,7 +133,7 @@
 
     const v1, 0x3f28f5c3    # 0.66f
 
-    .line 256
+    .line 273
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
@@ -144,8 +144,8 @@
 
     invoke-virtual {p1, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 257
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
+    .line 274
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
 
@@ -153,7 +153,7 @@
 
     int-to-float v1, v1
 
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v2
 
@@ -163,9 +163,9 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 259
+    .line 276
     :cond_3
-    invoke-super {p0, p1}, Lcom/iMe/ui/topics/TopicView;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
     return-void
 .end method

@@ -2,50 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field public final synthetic f$0:J
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$2:Landroid/content/DialogInterface$OnClickListener;
+.field public final synthetic f$1:Landroid/graphics/Rect;
 
 
 # direct methods
-.method public synthetic constructor <init>(JLorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/DialogInterface$OnClickListener;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/graphics/Rect;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$0:J
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$2:Landroid/content/DialogInterface$OnClickListener;
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$1:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .locals 7
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 2
 
-    iget-wide v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$0:J
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$1:Landroid/graphics/Rect;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;->f$2:Landroid/content/DialogInterface$OnClickListener;
-
-    move-object v4, p1
-
-    move v5, p2
-
-    move-object v6, p3
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$DGOHyBla3yZWTuPTw5Oe7ti5l4U(JLorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/DialogInterface$OnClickListener;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$DHAK8Ftzyd1k1HF42xk3-CmBoSw(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/graphics/Rect;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

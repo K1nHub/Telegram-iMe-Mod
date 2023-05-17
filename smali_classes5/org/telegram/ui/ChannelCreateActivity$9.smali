@@ -75,9 +75,9 @@
 
     iget-object v4, p0, Lorg/telegram/ui/ChannelCreateActivity$9;->this$0:Lorg/telegram/ui/ChannelCreateActivity;
 
-    const-string v5, "windowBackgroundWhiteRedText4"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v4
 

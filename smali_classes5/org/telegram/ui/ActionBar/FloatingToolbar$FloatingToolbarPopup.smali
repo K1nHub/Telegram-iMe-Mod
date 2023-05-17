@@ -1157,29 +1157,29 @@
 
     move-result v1
 
-    const-string v2, "listSelectorSDK21"
-
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     if-nez v1, :cond_0
 
     .line 998
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
-    const-string v4, "dialogTextBlack"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
 
     move-result v1
 
     .line 999
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
-    invoke-static {v4, v2}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    move-result v2
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+    move-result v3
+
+    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -1195,16 +1195,16 @@
 
     move-result v1
 
-    const/4 v4, 0x2
+    const/4 v3, 0x2
 
-    if-ne v1, v4, :cond_1
+    if-ne v1, v3, :cond_1
 
     const v1, -0x50506
 
-    const v2, 0x40ffffff    # 7.9999995f
+    const v3, 0x40ffffff    # 7.9999995f
 
     .line 1002
-    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -1216,20 +1216,22 @@
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
-    const-string v4, "windowBackgroundWhiteBlackText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
 
     move-result v1
 
     .line 1005
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
-    invoke-static {v4, v2}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    move-result v2
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+    move-result v3
+
+    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 

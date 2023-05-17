@@ -123,9 +123,9 @@
     .line 61
     sget-object p2, Lorg/telegram/ui/Components/LetterDrawable;->paint:Landroid/graphics/Paint;
 
-    const-string v0, "sharedMedia_linkPlaceholder"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_sharedMedia_linkPlaceholder:I
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 
@@ -134,9 +134,9 @@
     .line 62
     sget-object p2, Lorg/telegram/ui/Components/LetterDrawable;->namePaint:Landroid/text/TextPaint;
 
-    const-string v0, "sharedMedia_linkPlaceholderText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_sharedMedia_linkPlaceholderText:I
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 

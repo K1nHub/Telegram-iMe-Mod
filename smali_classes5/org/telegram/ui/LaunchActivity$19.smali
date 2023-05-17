@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/LaunchActivity$19;
-.super Lorg/telegram/ui/DialogsActivity;
+.super Ljava/lang/Object;
 .source "LaunchActivity.java"
+
+# interfaces
+.implements Lorg/telegram/ui/ChatRightsEditActivity$ChatRightsEditActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->openDialogsToSend(ZZ)V
+    value = Lorg/telegram/ui/LaunchActivity;->lambda$runLinkRequest$62(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;ZLjava/lang/String;ILorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$User;JLjava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,129 +18,55 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/LaunchActivity;
+.field final synthetic val$fragment:Lorg/telegram/ui/DialogsActivity;
+
+.field final synthetic val$intentAccount:I
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/os/Bundle;)V
+.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/DialogsActivity;I)V
     .locals 0
 
-    .line 3697
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 4496
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$19;->val$fragment:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
+    iput p3, p0, Lorg/telegram/ui/LaunchActivity$19;->val$intentAccount:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public shouldShowNextButton(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;Z)Z
+.method public didChangeOwner(Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lorg/telegram/ui/DialogsActivity;",
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/Long;",
-            ">;",
-            "Ljava/lang/CharSequence;",
-            "Z)Z"
-        }
-    .end annotation
 
-    .line 3700
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
+    return-void
+.end method
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2000(Lorg/telegram/ui/LaunchActivity;)Landroid/net/Uri;
+.method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
+    .locals 0
+
+    .line 4499
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->val$fragment:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
+
+    .line 4500
+    iget p1, p0, Lorg/telegram/ui/LaunchActivity$19;->val$intentAccount:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
+
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->closeChats:I
 
     const/4 p3, 0x0
 
-    if-eqz p1, :cond_0
+    new-array p3, p3, [Ljava/lang/Object;
 
-    return p3
+    invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 3703
-    :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2100(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    const/4 p4, 0x1
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2100(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result p1
-
-    if-ne p1, p4, :cond_1
-
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    return p4
-
-    .line 3706
-    :cond_1
-    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
-
-    move-result p1
-
-    if-gt p1, p4, :cond_3
-
-    .line 3707
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2200(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/String;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    return p4
-
-    .line 3709
-    :cond_2
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2300(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_3
-
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2300(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result p1
-
-    if-lez p1, :cond_3
-
-    return p4
-
-    :cond_3
-    return p3
+    return-void
 .end method

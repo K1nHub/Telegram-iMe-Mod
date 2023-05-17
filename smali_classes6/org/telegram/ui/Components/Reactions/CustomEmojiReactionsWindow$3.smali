@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 166
+    .line 168
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$3;->val$reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public onLongPressed(Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;)V
     .locals 4
 
-    .line 169
+    .line 171
     iget-boolean v0, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->isDefaultReaction:Z
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 170
+    .line 172
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$3;->val$reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object v2, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->reaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 172
+    .line 174
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$3;->val$reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 

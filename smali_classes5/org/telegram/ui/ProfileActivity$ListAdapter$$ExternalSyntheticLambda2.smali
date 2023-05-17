@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback;
+.implements Landroid/view/View$OnClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/ProfileActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$ListAdapter;->$r8$lambda$7I0ZC3n2TlnAIqUkKnGAGojw-QA(Lorg/telegram/ui/ProfileActivity;)V
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity$ListAdapter;->$r8$lambda$TQdUAWPzwag9MLv8txaKw8Zq6B8(Landroid/view/View;)V
 
     return-void
 .end method

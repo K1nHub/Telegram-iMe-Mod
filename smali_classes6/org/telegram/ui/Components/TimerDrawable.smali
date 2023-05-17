@@ -182,16 +182,14 @@
     .line 153
     iget-boolean v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->isDialog:Z
 
-    const-string v3, "actionBarDefaultTitle"
-
-    const/4 v4, -0x1
+    const/4 v3, -0x1
 
     if-eqz v2, :cond_0
 
     .line 154
     iget-object v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->timePaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setColor(I)V
 
     goto :goto_0
 
@@ -209,27 +207,29 @@
     .line 157
     iget-object v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->paint:Landroid/graphics/Paint;
 
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
     iget-object v5, p0, Lorg/telegram/ui/Components/TimerDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    const-string v6, "actionBarDefault"
+    invoke-static {v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    invoke-static {v6, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    move-result v4
 
-    move-result v5
-
-    invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 159
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->timePaint:Landroid/text/TextPaint;
 
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+
     iget-object v5, p0, Lorg/telegram/ui/Components/TimerDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v5
+    move-result v4
 
-    invoke-virtual {v2, v5}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setColor(I)V
 
     goto :goto_0
 
@@ -237,21 +237,21 @@
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->timePaint:Landroid/text/TextPaint;
 
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
+
     iget-object v5, p0, Lorg/telegram/ui/Components/TimerDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    const-string v6, "actionBarDefaultSubmenuItemIcon"
+    invoke-static {v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    invoke-static {v6, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    move-result v4
 
-    move-result v5
-
-    invoke-virtual {v2, v5}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setColor(I)V
 
     .line 164
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->currentTtlIcon:Landroid/graphics/drawable/Drawable;
 
-    const/high16 v5, 0x40000000    # 2.0f
+    const/high16 v4, 0x40000000    # 2.0f
 
     if-eqz v2, :cond_5
 
@@ -277,47 +277,49 @@
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
     move-result-object v6
 
-    invoke-virtual {v6}, Landroid/graphics/Rect;->centerY()I
+    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
 
     move-result v6
 
     int-to-float v6, v6
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    div-float/2addr v6, v4
 
-    move-result-object v7
+    iget-object v7, p0, Lorg/telegram/ui/Components/TimerDrawable;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {v7}, Landroid/graphics/Rect;->width()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    div-float/2addr v7, v5
-
-    iget-object v8, p0, Lorg/telegram/ui/Components/TimerDrawable;->paint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v2, v6, v7, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v2, v5, v6, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 167
-    iget-object v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
-    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    iget-object v5, p0, Lorg/telegram/ui/Components/TimerDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v2, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
     .line 168
-    iget v3, p0, Lorg/telegram/ui/Components/TimerDrawable;->iconColor:I
+    iget v5, p0, Lorg/telegram/ui/Components/TimerDrawable;->iconColor:I
 
-    if-eq v3, v2, :cond_3
+    if-eq v5, v2, :cond_3
 
     .line 169
     iput v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->iconColor:I
 
     .line 170
-    iget-object v3, p0, Lorg/telegram/ui/Components/TimerDrawable;->currentTtlIcon:Landroid/graphics/drawable/Drawable;
+    iget-object v5, p0, Lorg/telegram/ui/Components/TimerDrawable;->currentTtlIcon:Landroid/graphics/drawable/Drawable;
 
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
 
@@ -325,7 +327,7 @@
 
     invoke-direct {v6, v2, v7}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v3, v6}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v5, v6}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 173
     :cond_3
@@ -338,9 +340,9 @@
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v3
+    move-result-object v5
 
-    iget v3, v3, Landroid/graphics/Rect;->left:I
+    iget v5, v5, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
@@ -376,7 +378,7 @@
 
     add-int/2addr v8, v9
 
-    invoke-virtual {v2, v3, v6, v7, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v2, v5, v6, v7, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 175
     iget-object v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->currentTtlIcon:Landroid/graphics/drawable/Drawable;
@@ -391,11 +393,11 @@
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v3}, Landroid/graphics/Rect;->centerX()I
+    invoke-virtual {v5}, Landroid/graphics/Rect;->centerX()I
 
-    move-result v3
+    move-result v5
 
     const/high16 v6, 0x41280000    # 10.5f
 
@@ -403,7 +405,7 @@
 
     move-result v7
 
-    sub-int/2addr v3, v7
+    sub-int/2addr v5, v7
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
@@ -466,12 +468,12 @@
     add-int/2addr v9, v6
 
     .line 177
-    invoke-virtual {v2, v3, v7, v8, v9}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v2, v5, v7, v8, v9}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 180
-    iget-object v3, p0, Lorg/telegram/ui/Components/TimerDrawable;->currentTtlIcon:Landroid/graphics/drawable/Drawable;
+    iget-object v5, p0, Lorg/telegram/ui/Components/TimerDrawable;->currentTtlIcon:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v3, v2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v5, v2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     .line 181
     iget-object v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->currentTtlIcon:Landroid/graphics/drawable/Drawable;
@@ -493,18 +495,18 @@
     const/4 v2, 0x0
 
     .line 187
-    sget v3, Lorg/telegram/messenger/AndroidUtilities;->density:F
+    sget v5, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     const/high16 v6, 0x40400000    # 3.0f
 
-    cmpl-float v3, v3, v6
+    cmpl-float v5, v5, v6
 
-    if-nez v3, :cond_6
+    if-nez v5, :cond_6
 
     goto :goto_2
 
     :cond_6
-    move v4, v2
+    move v3, v2
 
     .line 190
     :goto_2
@@ -527,17 +529,17 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/TimerDrawable;->timeWidth:F
 
-    div-float/2addr v2, v5
+    div-float/2addr v2, v4
 
-    float-to-double v2, v2
+    float-to-double v5, v2
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+    invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
 
-    move-result-wide v2
+    move-result-wide v5
 
-    sub-double/2addr v0, v2
+    sub-double/2addr v0, v5
 
-    int-to-double v2, v4
+    int-to-double v2, v3
 
     add-double/2addr v0, v2
 
@@ -557,7 +559,7 @@
 
     int-to-float v1, v1
 
-    div-float/2addr v1, v5
+    div-float/2addr v1, v4
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -572,23 +574,23 @@
     :cond_7
     div-int/lit8 v0, v0, 0x2
 
-    int-to-double v2, v0
+    int-to-double v5, v0
 
     iget v0, p0, Lorg/telegram/ui/Components/TimerDrawable;->timeWidth:F
 
-    div-float/2addr v0, v5
+    div-float/2addr v0, v4
 
-    float-to-double v6, v0
+    float-to-double v7, v0
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->ceil(D)D
+    invoke-static {v7, v8}, Ljava/lang/Math;->ceil(D)D
 
-    move-result-wide v6
+    move-result-wide v7
 
-    sub-double/2addr v2, v6
+    sub-double/2addr v5, v7
 
-    double-to-int v0, v2
+    double-to-int v0, v5
 
-    add-int/2addr v0, v4
+    add-int/2addr v0, v3
 
     int-to-float v0, v0
 
@@ -598,7 +600,7 @@
 
     int-to-float v1, v1
 
-    div-float/2addr v1, v5
+    div-float/2addr v1, v4
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 

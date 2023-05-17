@@ -22,10 +22,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 3
 
-    .line 2539
+    .line 2548
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2540
+    .line 2549
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -36,17 +36,17 @@
 
     const/high16 v1, 0x41400000    # 12.0f
 
-    .line 2541
+    .line 2550
     invoke-virtual {v0, p1, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2542
+    .line 2551
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const/4 v0, -0x1
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2543
+    .line 2552
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const/16 v0, 0xb
@@ -55,9 +55,9 @@
 
     move-result v0
 
-    const-string v1, "chat_emojiPanelStickerSetName"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelStickerSetName:I
 
-    invoke-static {v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p2
 
@@ -73,7 +73,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2544
+    .line 2553
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const-string p2, "fonts/rmedium.ttf"
@@ -84,7 +84,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2545
+    .line 2554
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const/4 p2, 0x4
@@ -111,7 +111,7 @@
 
     invoke-virtual {p1, v0, v1, p2, v2}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 2546
+    .line 2555
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     const/4 p2, -0x2

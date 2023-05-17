@@ -40,10 +40,10 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 767
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

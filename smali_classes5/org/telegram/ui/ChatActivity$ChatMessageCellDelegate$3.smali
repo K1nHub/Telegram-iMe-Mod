@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->lambda$didPressReaction$6(Lorg/telegram/ui/Components/ReactedUsersListView;Ljava/util/ArrayList;)V
+    value = Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->lambda$didPressReaction$9(Lorg/telegram/ui/Components/ReactedUsersListView;Ljava/util/ArrayList;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 33124
+    .line 33203
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$3;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/EmojiPacksAlert;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;)V
@@ -35,10 +35,10 @@
 .method public dismiss()V
     .locals 2
 
-    .line 33127
+    .line 33206
     invoke-super {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
 
-    .line 33128
+    .line 33207
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$3;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;

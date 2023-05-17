@@ -19,7 +19,7 @@ public final class TrackSelectionOverride implements Bundleable {
     public static final Bundleable.Creator<TrackSelectionOverride> CREATOR = TrackSelectionOverride$$ExternalSyntheticLambda0.INSTANCE;
 
     public TrackSelectionOverride(TrackGroup trackGroup, int i) {
-        this(trackGroup, ImmutableList.m739of(Integer.valueOf(i)));
+        this(trackGroup, ImmutableList.m743of(Integer.valueOf(i)));
     }
 
     public TrackSelectionOverride(TrackGroup trackGroup, List<Integer> list) {

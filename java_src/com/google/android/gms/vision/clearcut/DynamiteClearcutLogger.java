@@ -6,7 +6,7 @@ import androidx.annotation.RecentlyNonNull;
 import com.google.android.gms.internal.vision.zze;
 import com.google.android.gms.internal.vision.zzfi;
 import com.google.android.gms.internal.vision.zzi;
-import com.google.android.gms.vision.C0709L;
+import com.google.android.gms.vision.C0714L;
 import java.util.concurrent.ExecutorService;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @Keep
@@ -22,7 +22,7 @@ public class DynamiteClearcutLogger {
 
     public final void zza(int i, zzfi.zzo zzoVar) {
         if (i == 3 && !this.zzb.zza()) {
-            C0709L.m749v("Skipping image analysis log due to rate limiting", new Object[0]);
+            C0714L.m753v("Skipping image analysis log due to rate limiting", new Object[0]);
         } else {
             zza.execute(new zza(this, i, zzoVar));
         }

@@ -189,10 +189,10 @@
     .line 133
     invoke-virtual {v9, v5, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v10, "dialogTextBlack"
-
     .line 134
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -362,10 +362,10 @@
     .line 159
     invoke-virtual {v9, v5, v12}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v12, "dialogTextGray3"
-
     .line 160
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
+
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
@@ -436,9 +436,9 @@
     .line 171
     iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v12, "windowBackgroundWhiteHintText"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
@@ -447,9 +447,9 @@
     .line 172
     iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v12, "windowBackgroundWhiteBlackText"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -465,21 +465,21 @@
     .line 174
     iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v14, "windowBackgroundWhiteInputField"
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
-    invoke-virtual {v0, v14}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v14}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v14
 
-    const-string v15, "windowBackgroundWhiteInputFieldActivated"
+    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-virtual {v0, v15}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v15}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v15
 
-    const-string v10, "windowBackgroundWhiteRedText3"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v10
 
@@ -593,7 +593,7 @@
     :goto_4
     iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 

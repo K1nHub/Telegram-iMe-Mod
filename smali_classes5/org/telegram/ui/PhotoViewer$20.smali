@@ -1,6 +1,9 @@
 .class Lorg/telegram/ui/PhotoViewer$20;
-.super Lorg/telegram/ui/Components/RadialProgressView;
+.super Ljava/lang/Object;
 .source "PhotoViewer.java"
+
+# interfaces
+.implements Lorg/telegram/ui/Components/VideoForwardDrawable$VideoForwardDrawableDelegate;
 
 
 # annotations
@@ -19,13 +22,13 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
-    .line 5392
+    .line 5980
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$20;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RadialProgressView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -35,55 +38,20 @@
 .method public invalidate()V
     .locals 1
 
-    .line 5403
-    invoke-super {p0}, Landroid/view/View;->invalidate()V
-
-    .line 5404
+    .line 5988
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$20;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 5405
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$20;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    :cond_0
     return-void
 .end method
 
-.method public setAlpha(F)V
+.method public onAnimationEnd()V
     .locals 0
 
-    .line 5395
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RadialProgressView;->setAlpha(F)V
-
-    .line 5396
-    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$20;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    .line 5397
-    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$20;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
-
-    :cond_0
     return-void
 .end method

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
     .locals 0
 
-    .line 452
+    .line 460
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-direct {p0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
@@ -35,12 +35,12 @@
 .method public invalidate()V
     .locals 1
 
-    .line 455
+    .line 463
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->invalidate()V
 
-    .line 456
+    .line 464
     invoke-super {p0}, Lorg/telegram/messenger/ImageReceiver;->invalidate()V
 
     return-void
@@ -49,12 +49,12 @@
 .method protected setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
     .locals 1
 
-    .line 461
+    .line 469
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->invalidate()V
 
-    .line 462
+    .line 470
     invoke-super/range {p0 .. p5}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
 
     move-result p1

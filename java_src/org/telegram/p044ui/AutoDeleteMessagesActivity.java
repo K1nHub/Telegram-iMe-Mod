@@ -14,12 +14,12 @@ import android.widget.ScrollView;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.AutoDeleteMessagesActivity;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -71,11 +71,11 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("AutoDeleteMessages", C3242R.string.AutoDeleteMessages));
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.AutoDeleteMessagesActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("AutoDeleteMessages", C3290R.string.AutoDeleteMessages));
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.AutoDeleteMessagesActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     AutoDeleteMessagesActivity.this.finishFragment();
@@ -85,7 +85,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         FrameLayout frameLayout2 = frameLayout;
-        frameLayout2.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         ScrollView scrollView = new ScrollView(getContext());
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
@@ -99,38 +99,38 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         LinearLayout linearLayout2 = new LinearLayout(getContext());
         this.checkBoxContainer = linearLayout2;
         linearLayout2.setOrientation(1);
-        this.checkBoxContainer.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        this.checkBoxContainer.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         linearLayout.addView(this.checkBoxContainer, LayoutHelper.createLinear(-1, -2));
         HeaderCell headerCell = new HeaderCell(getContext());
-        headerCell.setText(LocaleController.getString("MessageLifetime", C3242R.string.MessageLifetime));
+        headerCell.setText(LocaleController.getString("MessageLifetime", C3290R.string.MessageLifetime));
         this.checkBoxContainer.addView(headerCell);
         RadioCellInternal radioCellInternal = new RadioCellInternal(this, getContext());
         this.offCell = radioCellInternal;
-        radioCellInternal.setText(LocaleController.getString("ShortMessageLifetimeForever", C3242R.string.ShortMessageLifetimeForever), false, true);
+        radioCellInternal.setText(LocaleController.getString("ShortMessageLifetimeForever", C3290R.string.ShortMessageLifetimeForever), false, true);
         RadioCellInternal radioCellInternal2 = this.offCell;
         radioCellInternal2.time = 0;
         this.checkBoxContainer.addView(radioCellInternal2);
         RadioCellInternal radioCellInternal3 = new RadioCellInternal(this, getContext());
         this.afterOneDay = radioCellInternal3;
-        radioCellInternal3.setText(LocaleController.getString("AutoDeleteAfter1Day", C3242R.string.AutoDeleteAfter1Day), false, true);
+        radioCellInternal3.setText(LocaleController.getString("AutoDeleteAfter1Day", C3290R.string.AutoDeleteAfter1Day), false, true);
         RadioCellInternal radioCellInternal4 = this.afterOneDay;
         radioCellInternal4.time = 1440;
         this.checkBoxContainer.addView(radioCellInternal4);
         RadioCellInternal radioCellInternal5 = new RadioCellInternal(this, getContext());
         this.afterOneWeek = radioCellInternal5;
-        radioCellInternal5.setText(LocaleController.getString("AutoDeleteAfter1Week", C3242R.string.AutoDeleteAfter1Week), false, true);
+        radioCellInternal5.setText(LocaleController.getString("AutoDeleteAfter1Week", C3290R.string.AutoDeleteAfter1Week), false, true);
         RadioCellInternal radioCellInternal6 = this.afterOneWeek;
         radioCellInternal6.time = 10080;
         this.checkBoxContainer.addView(radioCellInternal6);
         RadioCellInternal radioCellInternal7 = new RadioCellInternal(this, getContext());
         this.afterOneMonth = radioCellInternal7;
-        radioCellInternal7.setText(LocaleController.getString("AutoDeleteAfter1Month", C3242R.string.AutoDeleteAfter1Month), false, true);
+        radioCellInternal7.setText(LocaleController.getString("AutoDeleteAfter1Month", C3290R.string.AutoDeleteAfter1Month), false, true);
         RadioCellInternal radioCellInternal8 = this.afterOneMonth;
         radioCellInternal8.time = 44640;
         this.checkBoxContainer.addView(radioCellInternal8);
         RadioCellInternal radioCellInternal9 = new RadioCellInternal(this, getContext());
         this.customTimeButton = radioCellInternal9;
-        radioCellInternal9.setText(LocaleController.getString("SetCustomTime", C3242R.string.SetCustomTime), false, false);
+        radioCellInternal9.setText(LocaleController.getString("SetCustomTime", C3290R.string.SetCustomTime), false, false);
         this.customTimeButton.hideRadioButton();
         this.checkBoxContainer.addView(this.customTimeButton);
         this.arrayList.add(this.offCell);
@@ -140,7 +140,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         this.arrayList.add(this.customTimeButton);
         updateItems();
         TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
-        textInfoPrivacyCell.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString("GlobalAutoDeleteInfo", C3242R.string.GlobalAutoDeleteInfo), new RunnableC34952()));
+        textInfoPrivacyCell.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString("GlobalAutoDeleteInfo", C3290R.string.GlobalAutoDeleteInfo), new RunnableC35452()));
         linearLayout.addView(textInfoPrivacyCell, LayoutHelper.createLinear(-1, -2));
         selectDate(this.startFromTtl, false);
         return this.fragmentView;
@@ -149,8 +149,8 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.AutoDeleteMessagesActivity$2 */
     /* loaded from: classes5.dex */
-    public class RunnableC34952 implements Runnable {
-        RunnableC34952() {
+    public class RunnableC35452 implements Runnable {
+        RunnableC35452() {
         }
 
         @Override // java.lang.Runnable
@@ -160,7 +160,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             usersSelectActivity.setDelegate(new UsersSelectActivity.FilterUsersActivityDelegate() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$2$$ExternalSyntheticLambda1
                 @Override // org.telegram.p044ui.UsersSelectActivity.FilterUsersActivityDelegate
                 public final void didSelectChats(ArrayList arrayList, int i) {
-                    AutoDeleteMessagesActivity.RunnableC34952.this.lambda$run$1(arrayList, i);
+                    AutoDeleteMessagesActivity.RunnableC35452.this.lambda$run$1(arrayList, i);
                 }
             });
             AutoDeleteMessagesActivity.this.presentFragment(usersSelectActivity);
@@ -171,7 +171,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AutoDeleteMessagesActivity.RunnableC34952.this.lambda$run$0(arrayList);
+                    AutoDeleteMessagesActivity.RunnableC35452.this.lambda$run$0(arrayList);
                 }
             }, 100L);
         }
@@ -185,16 +185,16 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
                 AutoDeleteMessagesActivity.this.getMessagesController().setDialogHistoryTTL(((Long) arrayList.get(i)).longValue(), AutoDeleteMessagesActivity.this.getSelectedTime() * 60);
             }
             if (AutoDeleteMessagesActivity.this.getSelectedTime() > 0) {
-                BulletinFactory.m27of(AutoDeleteMessagesActivity.this).createSimpleBulletin(C3242R.raw.fire_on, AndroidUtilities.replaceTags(LocaleController.formatString("AutodeleteTimerEnabledForChats", C3242R.string.AutodeleteTimerEnabledForChats, LocaleController.formatTTLString(AutoDeleteMessagesActivity.this.getSelectedTime() * 60), LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size()))))).show();
+                BulletinFactory.m29of(AutoDeleteMessagesActivity.this).createSimpleBulletin(C3290R.raw.fire_on, AndroidUtilities.replaceTags(LocaleController.formatString("AutodeleteTimerEnabledForChats", C3290R.string.AutodeleteTimerEnabledForChats, LocaleController.formatTTLString(AutoDeleteMessagesActivity.this.getSelectedTime() * 60), LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size()))))).show();
             } else {
-                BulletinFactory.m27of(AutoDeleteMessagesActivity.this).createSimpleBulletin(C3242R.raw.fire_off, LocaleController.formatString("AutodeleteTimerDisabledForChats", C3242R.string.AutodeleteTimerDisabledForChats, LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size())))).show();
+                BulletinFactory.m29of(AutoDeleteMessagesActivity.this).createSimpleBulletin(C3290R.raw.fire_off, LocaleController.formatString("AutodeleteTimerDisabledForChats", C3290R.string.AutodeleteTimerDisabledForChats, LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size())))).show();
             }
         }
     }
 
     private void updateItems() {
         for (int i = 0; i < this.arrayList.size(); i++) {
-            this.arrayList.get(i).setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor("windowBackgroundWhite"), Theme.getColor("listSelectorSDK21")));
+            this.arrayList.get(i).setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_windowBackgroundWhite), Theme.getColor(Theme.key_listSelector)));
             this.arrayList.get(i).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -207,13 +207,13 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.AutoDeleteMessagesActivity$3 */
     /* loaded from: classes5.dex */
-    public class C34963 implements AlertsCreator.ScheduleDatePickerDelegate {
+    public class C35463 implements AlertsCreator.ScheduleDatePickerDelegate {
         @Override // org.telegram.p044ui.Components.AlertsCreator.ScheduleDatePickerDelegate
         public /* synthetic */ ArrayList getSelectedDialogs() {
             return AlertsCreator.ScheduleDatePickerDelegate.CC.$default$getSelectedDialogs(this);
         }
 
-        C34963() {
+        C35463() {
         }
 
         @Override // org.telegram.p044ui.Components.AlertsCreator.ScheduleDatePickerDelegate
@@ -221,7 +221,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AutoDeleteMessagesActivity.C34963.this.lambda$didSelectDate$0(i);
+                    AutoDeleteMessagesActivity.C35463.this.lambda$didSelectDate$0(i);
                 }
             }, 50L);
         }
@@ -235,16 +235,16 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$updateItems$2(final View view) {
         if (view == this.customTimeButton) {
-            AlertsCreator.createAutoDeleteDatePickerDialog(getContext(), 1, null, new C34963());
+            AlertsCreator.createAutoDeleteDatePickerDialog(getContext(), 1, null, new C35463());
             return;
         }
         int i = ((RadioCellInternal) view).time;
         if (getSelectedTime() == 0 && i > 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setTitle(LocaleController.getString("MessageLifetime", C3242R.string.MessageLifetime));
-            builder.setMessage(LocaleController.formatString("AutoDeleteConfirmMessage", C3242R.string.AutoDeleteConfirmMessage, LocaleController.formatTTLString(i * 60)));
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), AutoDeleteMessagesActivity$$ExternalSyntheticLambda1.INSTANCE);
-            builder.setPositiveButton(LocaleController.getString("Enable", C3242R.string.Enable), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda0
+            builder.setTitle(LocaleController.getString("MessageLifetime", C3290R.string.MessageLifetime));
+            builder.setMessage(LocaleController.formatString("AutoDeleteConfirmMessage", C3290R.string.AutoDeleteConfirmMessage, LocaleController.formatTTLString(i * 60)));
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), AutoDeleteMessagesActivity$$ExternalSyntheticLambda1.INSTANCE);
+            builder.setPositiveButton(LocaleController.getString("Enable", C3290R.string.Enable), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     AutoDeleteMessagesActivity.this.lambda$updateItems$1(view, dialogInterface, i2);
@@ -313,7 +313,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         RadioCellInternal radioCellInternal = new RadioCellInternal(this, getContext());
         radioCellInternal.custom = true;
         radioCellInternal.time = i;
-        radioCellInternal.setText(LocaleController.formatString("AutoDeleteAfterShort", C3242R.string.AutoDeleteAfterShort, LocaleController.formatTTLString(i * 60)), false, true);
+        radioCellInternal.setText(LocaleController.formatString("AutoDeleteAfterShort", C3290R.string.AutoDeleteAfterShort, LocaleController.formatTTLString(i * 60)), false, true);
         this.arrayList.add(size, radioCellInternal);
         this.checkBoxContainer.addView(radioCellInternal, size);
         updateItems();
@@ -332,7 +332,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         if (!z || (i = ((RadioCellInternal) view).time) <= 0) {
             return;
         }
-        BulletinFactory.m27of(this).createSimpleBulletin(C3242R.raw.fire_on, AndroidUtilities.replaceTags(LocaleController.formatString("AutoDeleteGlobalTimerEnabled", C3242R.string.AutoDeleteGlobalTimerEnabled, LocaleController.formatTTLString(i * 60)))).show();
+        BulletinFactory.m29of(this).createSimpleBulletin(C3290R.raw.fire_on, AndroidUtilities.replaceTags(LocaleController.formatString("AutoDeleteGlobalTimerEnabled", C3290R.string.AutoDeleteGlobalTimerEnabled, LocaleController.formatTTLString(i * 60)))).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

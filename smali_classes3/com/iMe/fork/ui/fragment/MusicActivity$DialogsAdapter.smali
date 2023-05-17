@@ -179,7 +179,7 @@
 
     if-eqz p1, :cond_0
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING_CELL:I
 
     goto :goto_0
 
@@ -195,7 +195,7 @@
 
     if-eqz p1, :cond_1
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->DIALOGS_EMPTY_CELL:I
 
     goto :goto_0
 
@@ -229,7 +229,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 10
+    .locals 11
 
     const-string v0, "holder"
 
@@ -240,6 +240,8 @@
 
     .line 466
     instance-of v1, v0, Lorg/telegram/ui/Cells/DialogsEmptyCell;
+
+    const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
@@ -255,7 +257,7 @@
 
     move-result p1
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->setType(I)V
+    invoke-virtual {v0, p1, v2}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->setType(IZ)V
 
     goto :goto_1
 
@@ -280,57 +282,57 @@
 
     move-result-wide v0
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v3, 0x0
 
-    cmp-long v2, v0, v2
+    cmp-long v3, v0, v3
 
-    if-lez v2, :cond_1
+    if-lez v3, :cond_1
 
     .line 469
-    iget-object v2, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
+    iget-object v3, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v2
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v3
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
+    iget-object v3, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v2
-
-    neg-long v3, v0
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    neg-long v4, v0
 
-    move-result-object v2
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object v3
 
     :goto_0
-    move-object v4, v2
+    move-object v5, v3
 
     .line 470
-    iget-object v2, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
+    iget-object v3, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
-    invoke-static {v2}, Lcom/iMe/fork/ui/fragment/MusicActivity;->access$getCountsMap$p(Lcom/iMe/fork/ui/fragment/MusicActivity;)Landroid/util/LongSparseArray;
+    invoke-static {v3}, Lcom/iMe/fork/ui/fragment/MusicActivity;->access$getCountsMap$p(Lcom/iMe/fork/ui/fragment/MusicActivity;)Landroid/util/LongSparseArray;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, v0, v1}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v3, v0, v1}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -344,15 +346,13 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    new-array v2, v1, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
     const-string v3, "MusicFiles"
 
-    invoke-static {v3, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
     .line 471
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -363,18 +363,18 @@
 
     check-cast p1, Lorg/telegram/ui/Cells/ProfileSearchCell;
 
-    const/4 v5, 0x0
-
     const/4 v6, 0x0
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     const/4 v9, 0x0
 
-    move-object v3, p1
+    const/4 v10, 0x0
+
+    move-object v4, p1
 
     .line 472
-    invoke-virtual/range {v3 .. v9}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
+    invoke-virtual/range {v4 .. v10}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
 
     .line 473
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->getDialogs()Ljava/util/List;
@@ -387,10 +387,10 @@
 
     if-eq p2, v0, :cond_2
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     :cond_2
-    iput-boolean v1, p1, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
+    iput-boolean v2, p1, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
 
     :cond_3
     :goto_1
@@ -416,7 +416,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 454
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING_CELL:I
 
     const/4 v0, -0x2
 
@@ -449,7 +449,7 @@
 
     .line 457
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->DIALOGS_EMPTY_CELL:I
 
     if-ne p2, p1, :cond_1
 

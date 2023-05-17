@@ -246,10 +246,10 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/TrendingStickersLayout;->searchLayout:Landroid/widget/FrameLayout;
 
-    const-string v2, "dialogBackground"
-
     .line 193
-    invoke-direct {v0, v2}, Lorg/telegram/ui/Components/TrendingStickersLayout;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-direct {v0, v2}, Lorg/telegram/ui/Components/TrendingStickersLayout;->getThemedColor(I)I
 
     move-result v2
 
@@ -400,10 +400,10 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/TrendingStickersLayout;->shadowView:Landroid/view/View;
 
-    const-string v4, "dialogShadowLine"
-
     .line 339
-    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/TrendingStickersLayout;->getThemedColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/TrendingStickersLayout;->getThemedColor(I)I
 
     move-result v4
 
@@ -652,39 +652,16 @@
     return p1
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 1028
     iget-object v0, p0, Lorg/telegram/ui/Components/TrendingStickersLayout;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 1029
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -1163,9 +1140,9 @@
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/TrendingStickersLayout;->paint:Landroid/graphics/Paint;
 
-    const-string v1, "featuredStickers_addButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1314,6 +1291,8 @@
 
     sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
     const/4 v8, 0x0
 
     const/4 v9, 0x0
@@ -1322,11 +1301,9 @@
 
     const/4 v11, 0x0
 
-    const-string v12, "dialogShadowLine"
-
     move-object v5, v2
 
-    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -1337,6 +1314,8 @@
 
     sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
     const/16 v16, 0x0
 
     const/16 v17, 0x0
@@ -1345,11 +1324,9 @@
 
     const/16 v19, 0x0
 
-    const-string v20, "dialogBackground"
-
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

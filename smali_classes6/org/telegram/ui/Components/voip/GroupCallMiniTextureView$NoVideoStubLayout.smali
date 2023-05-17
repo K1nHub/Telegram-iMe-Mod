@@ -201,15 +201,15 @@
     .line 1612
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;->paint:Landroid/graphics/Paint;
 
-    const-string p2, "voipgroup_listeningText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
-    const-string v0, "voipgroup_speakingText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -366,25 +366,25 @@
 
     new-array v9, v4, [I
 
-    const-string v4, "voipgroup_mutedByAdminGradient"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     aput v4, v9, v1
 
-    const-string v1, "voipgroup_mutedByAdminGradient3"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient3:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     aput v1, v9, v2
 
-    const-string v1, "voipgroup_mutedByAdminGradient2"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient2:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -420,17 +420,17 @@
 
     new-array v8, v3, [I
 
-    const-string v3, "voipgroup_muteButton"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_muteButton:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     aput v3, v8, v1
 
-    const-string v1, "voipgroup_muteButton3"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_muteButton3:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -464,17 +464,17 @@
 
     new-array v8, v3, [I
 
-    const-string v3, "voipgroup_unmuteButton2"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_unmuteButton2:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     aput v3, v8, v1
 
-    const-string v1, "voipgroup_unmuteButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_unmuteButton:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

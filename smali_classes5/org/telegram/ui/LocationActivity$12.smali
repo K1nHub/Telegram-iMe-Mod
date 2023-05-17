@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LocationActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1249
+    .line 1258
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$12;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Adapters/LocationActivitySearchAdapter;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public notifyDataSetChanged()V
     .locals 5
 
-    .line 1252
+    .line 1261
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$12;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$1500(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1253
+    .line 1262
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$12;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$1500(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -63,20 +63,20 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setShowSearchProgress(Z)V
 
-    .line 1255
+    .line 1264
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$12;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$3200(Lorg/telegram/ui/LocationActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$3300(Lorg/telegram/ui/LocationActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 1256
+    .line 1265
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$12;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$3200(Lorg/telegram/ui/LocationActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$3300(Lorg/telegram/ui/LocationActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -112,7 +112,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1258
+    .line 1267
     :cond_1
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 

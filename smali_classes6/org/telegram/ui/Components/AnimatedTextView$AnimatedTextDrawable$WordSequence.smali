@@ -27,7 +27,7 @@
 .method public constructor <init>(Ljava/lang/CharSequence;)V
     .locals 9
 
-    .line 426
+    .line 476
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
@@ -36,15 +36,15 @@
 
     new-array p1, v0, [Ljava/lang/CharSequence;
 
-    .line 428
+    .line 478
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
-    .line 429
+    .line 479
     iput v0, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->length:I
 
     return-void
 
-    .line 432
+    .line 482
     :cond_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -56,7 +56,7 @@
 
     move v2, v1
 
-    .line 434
+    .line 484
     :goto_0
     iget v3, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->length:I
 
@@ -64,7 +64,7 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 435
+    .line 485
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
@@ -83,7 +83,7 @@
 
     add-int/2addr v2, v1
 
-    .line 440
+    .line 490
     new-array v2, v2, [Ljava/lang/CharSequence;
 
     iput-object v2, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
@@ -94,7 +94,7 @@
 
     move v5, v3
 
-    .line 442
+    .line 492
     :goto_1
     iget v6, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->length:I
 
@@ -102,14 +102,14 @@
 
     if-eq v2, v6, :cond_3
 
-    .line 443
+    .line 493
     invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v6
 
     if-ne v6, v4, :cond_5
 
-    .line 444
+    .line 494
     :cond_3
     iget-object v6, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
@@ -157,7 +157,7 @@
 
     move v1, v0
 
-    .line 480
+    .line 530
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
@@ -165,7 +165,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 481
+    .line 531
     aget-object v2, v2, v1
 
     invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
@@ -174,7 +174,7 @@
 
     if-ge p1, v2, :cond_0
 
-    .line 482
+    .line 532
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
     aget-object v0, v0, v1
@@ -185,7 +185,7 @@
 
     return p1
 
-    .line 483
+    .line 533
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
@@ -208,14 +208,14 @@
 .method public chars()Lj$/util/stream/IntStream;
     .locals 2
 
-    .line 509
+    .line 559
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
     if-lt v0, v1, :cond_0
 
-    .line 510
+    .line 560
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->toCharSequence()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -253,14 +253,14 @@
 .method public codePoints()Lj$/util/stream/IntStream;
     .locals 2
 
-    .line 517
+    .line 567
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
     if-lt v0, v1, :cond_0
 
-    .line 518
+    .line 568
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->toCharSequence()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -298,7 +298,7 @@
 .method public length()I
     .locals 1
 
-    .line 475
+    .line 525
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
     array-length v0, v0
@@ -309,7 +309,7 @@
 .method public subSequence(II)Ljava/lang/CharSequence;
     .locals 1
 
-    .line 491
+    .line 541
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
@@ -328,7 +328,7 @@
 .method public toCharSequence()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 504
+    .line 554
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
     invoke-static {v0}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -341,14 +341,14 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 496
+    .line 546
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 497
+    .line 547
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
@@ -356,7 +356,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 498
+    .line 548
     aget-object v2, v2, v1
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
@@ -365,7 +365,7 @@
 
     goto :goto_0
 
-    .line 500
+    .line 550
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -379,7 +379,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 467
+    .line 517
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
     array-length v1, v0
@@ -388,7 +388,7 @@
 
     goto :goto_0
 
-    .line 470
+    .line 520
     :cond_0
     aget-object p1, v0, p1
 

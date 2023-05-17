@@ -85,7 +85,7 @@
 
     const/4 v3, 0x2
 
-    const-string v4, "spdy/3.1"
+    const-string/jumbo v4, "spdy/3.1"
 
     .line 53
     invoke-direct {v1, v2, v3, v4}, Lokhttp3/Protocol;-><init>(Ljava/lang/String;ILjava/lang/String;)V

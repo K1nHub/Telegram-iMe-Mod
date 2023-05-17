@@ -39,7 +39,7 @@
 
     iget-boolean v3, p0, Lcom/iMe/fork/controller/RecentChatsController$$ExternalSyntheticLambda2;->f$2:Z
 
-    invoke-static {v0, v1, v2, v3}, Lcom/iMe/fork/controller/RecentChatsController;->$r8$lambda$Wf_sriXIER47BBUIyOobglsJBdg(Lcom/iMe/fork/controller/RecentChatsController;JZ)V
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/fork/controller/RecentChatsController;->$r8$lambda$4sV11_8x2mp67rcaNOrR6VjuBsY(Lcom/iMe/fork/controller/RecentChatsController;JZ)V
 
     return-void
 .end method

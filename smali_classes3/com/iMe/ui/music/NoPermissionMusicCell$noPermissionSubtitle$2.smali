@@ -76,11 +76,11 @@
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 50
-    invoke-static {v1}, Lcom/iMe/ui/music/NoPermissionMusicCell;->access$getSubtitleColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/iMe/ui/music/NoPermissionMusicCell;->access$getSubtitleColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

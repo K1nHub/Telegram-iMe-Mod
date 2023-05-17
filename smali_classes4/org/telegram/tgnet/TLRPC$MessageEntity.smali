@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 34958
+    .line 35807
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 
     goto/16 :goto_0
 
-    .line 34968
+    .line 35817
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityTextUrl;
 
@@ -40,7 +40,7 @@
 
     goto/16 :goto_0
 
-    .line 35025
+    .line 35874
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBankCard;
 
@@ -48,7 +48,7 @@
 
     goto/16 :goto_0
 
-    .line 34977
+    .line 35826
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityPre;
 
@@ -56,7 +56,7 @@
 
     goto/16 :goto_0
 
-    .line 35010
+    .line 35859
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityHashtag;
 
@@ -64,7 +64,7 @@
 
     goto/16 :goto_0
 
-    .line 34983
+    .line 35832
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUrl;
 
@@ -72,7 +72,7 @@
 
     goto/16 :goto_0
 
-    .line 34971
+    .line 35820
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBotCommand;
 
@@ -80,7 +80,7 @@
 
     goto/16 :goto_0
 
-    .line 34974
+    .line 35823
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityEmail;
 
@@ -88,7 +88,7 @@
 
     goto/16 :goto_0
 
-    .line 35001
+    .line 35850
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityAnimatedEmoji;
 
@@ -96,7 +96,7 @@
 
     goto :goto_0
 
-    .line 35004
+    .line 35853
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCashtag;
 
@@ -104,7 +104,7 @@
 
     goto :goto_0
 
-    .line 34995
+    .line 35844
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityMentionName_layer131;
 
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 34992
+    .line 35841
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntitySpoiler;
 
@@ -120,7 +120,7 @@
 
     goto :goto_0
 
-    .line 35013
+    .line 35862
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCode;
 
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 34998
+    .line 35847
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessageEntityMentionName;
 
@@ -136,7 +136,7 @@
 
     goto :goto_0
 
-    .line 35019
+    .line 35868
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBlockquote;
 
@@ -144,7 +144,7 @@
 
     goto :goto_0
 
-    .line 34989
+    .line 35838
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityMention;
 
@@ -152,7 +152,7 @@
 
     goto :goto_0
 
-    .line 35031
+    .line 35880
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityMentionName;
 
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 35034
+    .line 35883
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 35016
+    .line 35865
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityStrike;
 
@@ -176,7 +176,7 @@
 
     goto :goto_0
 
-    .line 35007
+    .line 35856
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBold;
 
@@ -184,7 +184,7 @@
 
     goto :goto_0
 
-    .line 34980
+    .line 35829
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnknown;
 
@@ -192,7 +192,7 @@
 
     goto :goto_0
 
-    .line 35022
+    .line 35871
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnderline;
 
@@ -200,7 +200,7 @@
 
     goto :goto_0
 
-    .line 35028
+    .line 35877
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityPhone;
 
@@ -208,7 +208,7 @@
 
     goto :goto_0
 
-    .line 34986
+    .line 35835
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEntityItalic;
 
@@ -221,7 +221,7 @@
 
     goto :goto_1
 
-    .line 35038
+    .line 35887
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -251,7 +251,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 35041
+    .line 35890
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

@@ -30,7 +30,7 @@ public class URLSpanMono extends MetricAffectingSpan {
 
     @Override // android.text.style.MetricAffectingSpan
     public void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(AndroidUtilities.m50dp(SharedConfig.fontSize - 1));
+        textPaint.setTextSize(AndroidUtilities.m54dp(SharedConfig.fontSize - 1));
         textPaint.setFlags(textPaint.getFlags() | 128);
         TextStyleSpan.TextStyleRun textStyleRun = this.style;
         if (textStyleRun != null) {
@@ -42,14 +42,14 @@ public class URLSpanMono extends MetricAffectingSpan {
 
     @Override // android.text.style.CharacterStyle
     public void updateDrawState(TextPaint textPaint) {
-        textPaint.setTextSize(AndroidUtilities.m50dp(SharedConfig.fontSize - 1));
+        textPaint.setTextSize(AndroidUtilities.m54dp(SharedConfig.fontSize - 1));
         byte b = this.currentType;
         if (b == 2) {
             textPaint.setColor(-1);
         } else if (b == 1) {
-            textPaint.setColor(Theme.getColor("chat_messageTextOut"));
+            textPaint.setColor(Theme.getColor(Theme.key_chat_messageTextOut));
         } else {
-            textPaint.setColor(Theme.getColor("chat_messageTextIn"));
+            textPaint.setColor(Theme.getColor(Theme.key_chat_messageTextIn));
         }
         TextStyleSpan.TextStyleRun textStyleRun = this.style;
         if (textStyleRun != null) {

@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/Paint/Views/StickerView;
 .source "LPhotoPaintView.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->createSticker(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Z)Lorg/telegram/ui/Components/Paint/Views/StickerView;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,116 +19,46 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
-    .locals 0
+.method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;Lorg/telegram/ui/Components/Point;FFLorg/telegram/ui/Components/Size;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;)V
+    .locals 9
 
-    .line 2835
-    iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    move-object v8, p0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v0, p1
+
+    .line 2731
+    iput-object v0, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move v3, p4
+
+    move v4, p5
+
+    move-object v5, p6
+
+    move-object/from16 v6, p7
+
+    move-object/from16 v7, p8
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/Paint/Views/StickerView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;FFLorg/telegram/ui/Components/Size;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method protected didSetAnimatedSticker(Lorg/telegram/ui/Components/RLottieDrawable;)V
+    .locals 1
 
-    .line 2838
+    .line 2734
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->didSetAnimatedSticker(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
-    move-result-object v0
-
-    instance-of v0, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 2841
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
-
-    move-result-object v0
-
-    .line 2842
-    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4000(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    if-eqz v0, :cond_1
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4100(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4200(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
-
-    if-nez v1, :cond_1
-
-    sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
-
-    if-nez v1, :cond_1
-
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 2843
-    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
-
-    .line 2844
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
-
-    .line 2845
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4300(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
-
-    .line 2846
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4300(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    const-wide/16 v1, 0x64
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
-
-    :cond_1
     return-void
 .end method

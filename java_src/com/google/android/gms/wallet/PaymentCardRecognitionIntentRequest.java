@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class PaymentCardRecognitionIntentRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentCardRecognitionIntentRequest> CREATOR = new zzy();
-    @SafeParcelable.Field(m775id = 1)
+    @SafeParcelable.Field(m779id = 1)
     int zza;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -48,7 +48,7 @@ public class PaymentCardRecognitionIntentRequest extends AbstractSafeParcelable 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PaymentCardRecognitionIntentRequest(@SafeParcelable.Param(m774id = 1) int i) {
+    public PaymentCardRecognitionIntentRequest(@SafeParcelable.Param(m778id = 1) int i) {
         this.zza = i;
     }
 }

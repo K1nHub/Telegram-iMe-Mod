@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;Landroid/content/Context;Lorg/telegram/ui/ChangeUsernameActivity;)V
     .locals 0
 
-    .line 615
+    .line 664
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 619
+    .line 668
     invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -46,7 +46,7 @@
 
     move-result-object p1
 
-    .line 620
+    .line 669
     invoke-virtual {p1}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -67,19 +67,19 @@
 
     const-string v4, " "
 
-    .line 622
+    .line 671
     invoke-virtual {p1, v0, v3, v4}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 623
+    .line 672
     new-instance v3, Landroid/text/style/ForegroundColorSpan;
 
     iget-object v4, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;
 
     iget-object v4, v4, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    const-string v5, "windowBackgroundWhiteRedText4"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v4
 
@@ -87,7 +87,7 @@
 
     invoke-virtual {p1, v3, v2, v0, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 625
+    .line 674
     :cond_0
     invoke-virtual {p1}, Landroid/text/SpannableStringBuilder;->length()I
 
@@ -101,35 +101,35 @@
 
     check-cast v0, [Lorg/telegram/ui/Components/TypefaceSpan;
 
-    .line 626
+    .line 675
     :goto_0
     array-length v3, v0
 
     if-ge v2, v3, :cond_1
 
-    .line 627
+    .line 676
     new-instance v3, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1$1;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1$1;-><init>(Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1;)V
 
     aget-object v4, v0, v2
 
-    .line 640
+    .line 689
     invoke-virtual {p1, v4}, Landroid/text/SpannableStringBuilder;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v4
 
     aget-object v5, v0, v2
 
-    .line 641
+    .line 690
     invoke-virtual {p1, v5}, Landroid/text/SpannableStringBuilder;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v5
 
-    .line 627
+    .line 676
     invoke-virtual {p1, v3, v4, v5, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 644
+    .line 693
     aget-object v3, v0, v2
 
     invoke-virtual {p1, v3}, Landroid/text/SpannableStringBuilder;->removeSpan(Ljava/lang/Object;)V
@@ -138,7 +138,7 @@
 
     goto :goto_0
 
-    .line 648
+    .line 697
     :cond_1
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 

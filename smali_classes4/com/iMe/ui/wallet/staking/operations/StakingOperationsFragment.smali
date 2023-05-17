@@ -540,7 +540,7 @@
 
     move-result-object v0
 
-    const-string v1, "setupActionBar$lambda$13$lambda$12"
+    const-string/jumbo v1, "setupActionBar$lambda$13$lambda$12"
 
     .line 200
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -724,6 +724,8 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -732,11 +734,9 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "actionBarDefault"
-
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v2, 0x0
 
@@ -749,6 +749,8 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
@@ -757,11 +759,9 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "actionBarDefaultIcon"
-
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x1
 
@@ -774,15 +774,15 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const-string v11, "actionBarDefaultTitle"
-
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x2
 
@@ -795,11 +795,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const-string v11, "actionBarDefaultSelector"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x3
 
@@ -1205,18 +1205,21 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->setElevation(F)V
 
-    const-string v3, "actionBarTabLine"
+    .line 115
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarTabLine:I
 
-    const-string v4, "actionBarTabActiveText"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarTabActiveText:I
 
-    const-string v5, "actionBarTabUnactiveText"
+    .line 116
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarTabUnactiveText:I
 
-    const-string v6, "actionBarTabSelector"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarTabSelector:I
 
-    const-string v7, "actionBarDefault"
+    .line 117
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
     .line 114
-    invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->setColors(IIIII)V
 
     return-void
 .end method

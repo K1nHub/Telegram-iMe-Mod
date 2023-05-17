@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.p015ts.TsPayloadReader;
@@ -58,10 +58,10 @@ public final class PesReader implements TsPayloadReader {
             int i2 = this.state;
             if (i2 != 0 && i2 != 1) {
                 if (i2 == 2) {
-                    Log.m792w(TAG, "Unexpected start indicator reading extended header");
+                    Log.m796w(TAG, "Unexpected start indicator reading extended header");
                 } else if (i2 == 3) {
                     if (this.payloadSize != -1) {
-                        Log.m792w(TAG, "Unexpected start indicator: expected " + this.payloadSize + " more bytes");
+                        Log.m796w(TAG, "Unexpected start indicator: expected " + this.payloadSize + " more bytes");
                     }
                     this.reader.packetFinished();
                 } else {
@@ -135,7 +135,7 @@ public final class PesReader implements TsPayloadReader {
         this.pesScratch.setPosition(0);
         int readBits = this.pesScratch.readBits(24);
         if (readBits != 1) {
-            Log.m792w(TAG, "Unexpected start code prefix: " + readBits);
+            Log.m796w(TAG, "Unexpected start code prefix: " + readBits);
             this.payloadSize = -1;
             return false;
         }
@@ -155,7 +155,7 @@ public final class PesReader implements TsPayloadReader {
             int i = ((readBits2 + 6) - 9) - readBits3;
             this.payloadSize = i;
             if (i < 0) {
-                Log.m792w(TAG, "Found negative packet payload size: " + this.payloadSize);
+                Log.m796w(TAG, "Found negative packet payload size: " + this.payloadSize);
                 this.payloadSize = -1;
             }
         }
@@ -164,7 +164,7 @@ public final class PesReader implements TsPayloadReader {
 
     private void parseHeaderExtension() {
         this.pesScratch.setPosition(0);
-        this.timeUs = C0470C.TIME_UNSET;
+        this.timeUs = C0475C.TIME_UNSET;
         if (this.ptsFlag) {
             this.pesScratch.skipBits(4);
             this.pesScratch.skipBits(1);

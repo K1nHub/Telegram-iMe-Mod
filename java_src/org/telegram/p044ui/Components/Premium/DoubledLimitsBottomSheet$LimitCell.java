@@ -17,16 +17,16 @@ class DoubledLimitsBottomSheet$LimitCell extends LinearLayout {
     public DoubledLimitsBottomSheet$LimitCell(Context context) {
         super(context);
         setOrientation(1);
-        setPadding(AndroidUtilities.m50dp(6), 0, AndroidUtilities.m50dp(6), 0);
+        setPadding(AndroidUtilities.m54dp(6), 0, AndroidUtilities.m54dp(6), 0);
         TextView textView = new TextView(context);
         this.title = textView;
         textView.setTextSize(1, 15.0f);
         this.title.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.title.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.title.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         addView(this.title, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 0, 16, 0, 16, 0));
         TextView textView2 = new TextView(context);
         this.subtitle = textView2;
-        textView2.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+        textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
         this.subtitle.setTextSize(1, 14.0f);
         addView(this.subtitle, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 0, 16, 1, 16, 0));
         LimitPreviewView limitPreviewView = new LimitPreviewView(context, 0, 10, 20);
@@ -37,7 +37,7 @@ class DoubledLimitsBottomSheet$LimitCell extends LinearLayout {
     public void setData(DoubledLimitsBottomSheet$Limit doubledLimitsBottomSheet$Limit) {
         this.title.setText(doubledLimitsBottomSheet$Limit.title);
         this.subtitle.setText(doubledLimitsBottomSheet$Limit.subtitle);
-        this.previewView.premiumCount.setText(Integer.toString(doubledLimitsBottomSheet$Limit.premiumLimit));
-        this.previewView.defaultCount.setText(Integer.toString(doubledLimitsBottomSheet$Limit.defaultLimit));
+        this.previewView.premiumCount.setText(String.format("%d", Integer.valueOf(doubledLimitsBottomSheet$Limit.premiumLimit)));
+        this.previewView.defaultCount.setText(String.format("%d", Integer.valueOf(doubledLimitsBottomSheet$Limit.defaultLimit)));
     }
 }

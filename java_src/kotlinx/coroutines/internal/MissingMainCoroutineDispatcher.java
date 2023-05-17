@@ -1,7 +1,9 @@
 package kotlinx.coroutines.internal;
 
 import kotlin.KotlinNothingValueException;
+import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
+import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.Delay;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -14,6 +16,12 @@ public final class MissingMainCoroutineDispatcher extends MainCoroutineDispatche
     @Override // kotlinx.coroutines.MainCoroutineDispatcher
     public MainCoroutineDispatcher getImmediate() {
         return this;
+    }
+
+    @Override // kotlinx.coroutines.Delay
+    /* renamed from: scheduleResumeAfterDelay  reason: collision with other method in class */
+    public /* bridge */ /* synthetic */ void mo1605scheduleResumeAfterDelay(long j, CancellableContinuation cancellableContinuation) {
+        scheduleResumeAfterDelay(j, (CancellableContinuation<? super Unit>) cancellableContinuation);
     }
 
     public MissingMainCoroutineDispatcher(Throwable th, String str) {
@@ -29,7 +37,12 @@ public final class MissingMainCoroutineDispatcher extends MainCoroutineDispatche
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public Void mo1566dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public Void mo1604dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        missing();
+        throw new KotlinNothingValueException();
+    }
+
+    public Void scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
         missing();
         throw new KotlinNothingValueException();
     }

@@ -235,6 +235,6 @@ final class zzft extends zzek<Integer> implements zzfy<Integer>, zzhk {
     static {
         zzft zzftVar = new zzft(new int[0], 0);
         zza = zzftVar;
-        zzftVar.mo760b_();
+        zzftVar.mo764b_();
     }
 }

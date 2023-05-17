@@ -6,7 +6,7 @@ import java.util.RandomAccess;
 /* loaded from: classes.dex */
 public interface zzfy<E> extends List<E>, RandomAccess {
     /* renamed from: b_ */
-    void mo760b_();
+    void mo764b_();
 
     boolean zza();
 

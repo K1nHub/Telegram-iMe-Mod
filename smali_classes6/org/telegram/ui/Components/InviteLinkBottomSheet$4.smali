@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
-    .line 431
+    .line 429
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$4;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$4;->val$error:Lorg/telegram/tgnet/TLRPC$TL_error;
@@ -46,17 +46,17 @@
 .method public run()V
     .locals 5
 
-    .line 434
+    .line 432
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$4;->val$error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     if-nez v0, :cond_0
 
-    .line 435
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$4;->val$response:Lorg/telegram/tgnet/TLObject;
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Vector;
 
-    .line 436
+    .line 434
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -67,7 +67,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 437
+    .line 435
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$4;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->users:Ljava/util/HashMap;
@@ -82,7 +82,7 @@
 
     invoke-virtual {v2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 438
+    .line 436
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$4;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->adapter:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;

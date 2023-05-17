@@ -297,6 +297,19 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         }
     }
 
+    public static <T> List<T> reversed(Iterable<? extends T> iterable) {
+        List<T> mutableList;
+        List<T> list;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        if ((iterable instanceof Collection) && ((Collection) iterable).size() <= 1) {
+            list = toList(iterable);
+            return list;
+        }
+        mutableList = toMutableList(iterable);
+        CollectionsKt___CollectionsJvmKt.reverse(mutableList);
+        return mutableList;
+    }
+
     public static <T extends Comparable<? super T>> List<T> sorted(Iterable<? extends T> iterable) {
         List<T> mutableList;
         List<T> asList;
@@ -446,9 +459,34 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return list;
     }
 
+    public static <T> Set<T> intersect(Iterable<? extends T> iterable, Iterable<? extends T> other) {
+        Set<T> mutableSet;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(other, "other");
+        mutableSet = toMutableSet(iterable);
+        CollectionsKt__MutableCollectionsKt.retainAll(mutableSet, other);
+        return mutableSet;
+    }
+
     public static <T> Set<T> toMutableSet(Iterable<? extends T> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         return iterable instanceof Collection ? new LinkedHashSet((Collection) iterable) : (Set) toCollection(iterable, new LinkedHashSet());
+    }
+
+    public static <T extends Comparable<? super T>> T maxOrNull(Iterable<? extends T> iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Iterator<? extends T> it = iterable.iterator();
+        if (it.hasNext()) {
+            T next = it.next();
+            while (it.hasNext()) {
+                T next2 = it.next();
+                if (next.compareTo(next2) < 0) {
+                    next = next2;
+                }
+            }
+            return next;
+        }
+        return null;
     }
 
     public static <T extends Comparable<? super T>> T minOrNull(Iterable<? extends T> iterable) {
@@ -470,6 +508,25 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     public static <T> List<List<T>> chunked(Iterable<? extends T> iterable, int i) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         return windowed(iterable, i, i, true);
+    }
+
+    public static <T> List<T> minus(Iterable<? extends T> iterable, T t) {
+        int collectionSizeOrDefault;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
+        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+        boolean z = false;
+        for (T t2 : iterable) {
+            boolean z2 = true;
+            if (!z && Intrinsics.areEqual(t2, t)) {
+                z = true;
+                z2 = false;
+            }
+            if (z2) {
+                arrayList.add(t2);
+            }
+        }
+        return arrayList;
     }
 
     public static <T> List<T> plus(Collection<? extends T> collection, T t) {
@@ -595,7 +652,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(other, 10);
         ArrayList arrayList = new ArrayList(Math.min(collectionSizeOrDefault, collectionSizeOrDefault2));
         while (it.hasNext() && it2.hasNext()) {
-            arrayList.add(TuplesKt.m80to(it.next(), it2.next()));
+            arrayList.add(TuplesKt.m85to(it.next(), it2.next()));
         }
         return arrayList;
     }
@@ -612,7 +669,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         T next = it.next();
         while (it.hasNext()) {
             T next2 = it.next();
-            arrayList.add(TuplesKt.m80to(next, next2));
+            arrayList.add(TuplesKt.m85to(next, next2));
             next = next2;
         }
         return arrayList;

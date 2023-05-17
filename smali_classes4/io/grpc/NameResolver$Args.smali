@@ -69,7 +69,7 @@
 
     iput-object p1, p0, Lio/grpc/NameResolver$Args;->proxyDetector:Lio/grpc/ProxyDetector;
 
-    const-string p1, "syncContext not set"
+    const-string/jumbo p1, "syncContext not set"
 
     .line 431
     invoke-static {p3, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -198,7 +198,7 @@
 
     iget-object v1, p0, Lio/grpc/NameResolver$Args;->syncContext:Lio/grpc/SynchronizationContext;
 
-    const-string v2, "syncContext"
+    const-string/jumbo v2, "syncContext"
 
     .line 526
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

@@ -92,10 +92,10 @@ public final class ImageRadioCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(50) + (this.needDivider ? 1 : 0));
-        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m50dp(34);
-        getRadioButton().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(22), 1073741824));
-        getImageView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(30), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(30), 1073741824));
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m54dp(34);
+        getRadioButton().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(22), 1073741824));
+        getImageView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(30), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(30), 1073741824));
         getTextView().measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
     }
 
@@ -103,7 +103,7 @@ public final class ImageRadioCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 
@@ -131,9 +131,9 @@ public final class ImageRadioCell extends FrameLayout {
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setTextSize(1, 16.0f);
         if (this.dialog) {
-            textView.setTextColor(Theme.getColor("dialogTextBlack"));
+            textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         } else {
-            textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         }
         return textView;
     }
@@ -141,11 +141,11 @@ public final class ImageRadioCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final RadioButton initRadioButton() {
         RadioButton radioButton = new RadioButton(getContext());
-        radioButton.setSize(AndroidUtilities.m50dp(20));
+        radioButton.setSize(AndroidUtilities.m54dp(20));
         if (this.dialog) {
-            radioButton.setColor(Theme.getColor("dialogRadioBackground"), Theme.getColor("dialogRadioBackgroundChecked"));
+            radioButton.setColor(Theme.getColor(Theme.key_dialogRadioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
         } else {
-            radioButton.setColor(Theme.getColor("radioBackground"), Theme.getColor("radioBackgroundChecked"));
+            radioButton.setColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_radioBackgroundChecked));
         }
         return radioButton;
     }

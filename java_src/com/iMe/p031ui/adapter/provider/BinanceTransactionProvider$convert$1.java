@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: BinanceTransactionProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BinanceTransactionProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class BinanceTransactionProvider$convert$1 extends Lambda implements Function1<TimeWithClockView, Unit> {
     final /* synthetic */ BinanceTransactionItem $item;
 

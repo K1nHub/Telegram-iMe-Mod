@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ChannelDetailsPresenter.kt */
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsPresenter$onSubscribeClick$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ChannelDetailsPresenter$onSubscribeClick$1 extends Lambda implements Function1<TLRPC$Chat, ObservableSource<? extends Boolean>> {
     final /* synthetic */ ChannelDetailsPresenter this$0;
 

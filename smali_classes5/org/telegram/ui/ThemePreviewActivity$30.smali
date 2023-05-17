@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$30;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "ThemePreviewActivity.java"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ThemePreviewActivity;->animateMotionChange()V
+    value = Lorg/telegram/ui/ThemePreviewActivity;->selectPattern(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,25 +25,38 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 3405
+    .line 2787
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$30;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 3408
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$30;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    .line 2790
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    move-result-object p1
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$7102(Lorg/telegram/ui/ThemePreviewActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    .line 2792
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$30;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$100(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ThemePreviewActivity$BackgroundView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
     return-void
 .end method

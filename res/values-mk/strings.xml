@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Допрете за да се префрлите на избирање ден</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Префрли на режим за внесување текст</string>
     <string name="mtrl_picker_toggle_to_year_selection">Допрете за да се префрлите на избирање година</string>
+    <string name="nav_app_bar_navigate_up_description">Оди нагоре</string>
+    <string name="nav_app_bar_open_drawer_description">Отворете ја фиоката за навигација</string>
     <string name="password_toggle_content_description">Прикажи ја лозинката</string>
     <string name="search_menu_title">Пребарај</string>
     <string name="status_bar_notification_info_overflow">999+</string>

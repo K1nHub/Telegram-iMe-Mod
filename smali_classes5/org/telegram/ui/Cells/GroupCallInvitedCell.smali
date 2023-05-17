@@ -12,7 +12,7 @@
 
 .field private dividerPaint:Landroid/graphics/Paint;
 
-.field private grayIconColor:Ljava/lang/String;
+.field private grayIconColor:I
 
 .field private muteButton:Landroid/widget/ImageView;
 
@@ -34,10 +34,10 @@
     .line 44
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v2, "voipgroup_mutedIcon"
-
     .line 39
-    iput-object v2, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIcon:I
+
+    iput v2, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:I
 
     .line 46
     new-instance v2, Landroid/graphics/Paint;
@@ -46,10 +46,10 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->dividerPaint:Landroid/graphics/Paint;
 
-    const-string v3, "voipgroup_actionBar"
-
     .line 47
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBar:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -144,10 +144,10 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v3, "voipgroup_nameText"
-
     .line 56
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -289,9 +289,9 @@
     .line 65
     iget-object v2, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->statusTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    iget-object v6, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -409,9 +409,9 @@
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    iget-object v6, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -467,12 +467,12 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 131
+    .line 129
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->needDivider:Z
 
     if-eqz v0, :cond_2
 
-    .line 132
+    .line 130
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x44
@@ -537,7 +537,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 134
+    .line 132
     :cond_2
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -560,7 +560,7 @@
 .method public getUser()Lorg/telegram/tgnet/TLRPC$User;
     .locals 1
 
-    .line 112
+    .line 110
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
     return-object v0
@@ -569,7 +569,7 @@
 .method public hasAvatarSet()Z
     .locals 1
 
-    .line 116
+    .line 114
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -594,7 +594,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 121
+    .line 119
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -684,23 +684,13 @@
     return-void
 .end method
 
-.method public setGrayIconColor(Ljava/lang/String;I)V
+.method public setGrayIconColor(II)V
     .locals 2
 
     .line 103
-    iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:Ljava/lang/String;
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
+    iput p1, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:I
 
     .line 104
-    iput-object p1, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->grayIconColor:Ljava/lang/String;
-
-    .line 106
-    :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->muteButton:Landroid/widget/ImageView;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
@@ -711,12 +701,12 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 107
+    .line 105
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->statusTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 108
+    .line 106
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->muteButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;

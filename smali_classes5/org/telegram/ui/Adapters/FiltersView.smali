@@ -73,20 +73,13 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->SharedMediaTab2:I
 
-    const-string v5, "SharedMediaTab2"
-
-    .line 72
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhotoVideo;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterPhotoVideo;-><init>()V
 
     const/4 v6, 0x0
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(ILjava/lang/String;Lorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
+    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(IILorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
 
     aput-object v2, v1, v6
 
@@ -96,20 +89,13 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->SharedLinksTab2:I
 
-    const-string v5, "SharedLinksTab2"
-
-    .line 73
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterUrl;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterUrl;-><init>()V
 
     const/4 v6, 0x2
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(ILjava/lang/String;Lorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
+    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(IILorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
 
     const/4 v3, 0x1
 
@@ -121,18 +107,11 @@
 
     sget v5, Lorg/telegram/messenger/R$string;->SharedFilesTab2:I
 
-    const-string v7, "SharedFilesTab2"
-
-    .line 74
-    invoke-static {v7, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterDocument;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterDocument;-><init>()V
 
-    invoke-direct {v2, v4, v5, v7, v3}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(ILjava/lang/String;Lorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
+    invoke-direct {v2, v4, v5, v7, v3}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(IILorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
 
     aput-object v2, v1, v6
 
@@ -142,20 +121,13 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->SharedMusicTab2:I
 
-    const-string v5, "SharedMusicTab2"
-
-    .line 75
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterMusic;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterMusic;-><init>()V
 
     const/4 v6, 0x3
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(ILjava/lang/String;Lorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
+    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(IILorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
 
     aput-object v2, v1, v6
 
@@ -165,18 +137,11 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->SharedVoiceTab2:I
 
-    const-string v5, "SharedVoiceTab2"
-
-    .line 76
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterRoundVoice;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterRoundVoice;-><init>()V
 
-    invoke-direct {v2, v3, v4, v5, v0}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(ILjava/lang/String;Lorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
+    invoke-direct {v2, v3, v4, v5, v0}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(IILorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
 
     const/4 v0, 0x4
 
@@ -339,10 +304,10 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorRadius(I)V
 
-    const-string p1, "listSelectorSDK21"
-
     .line 207
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p1
 
@@ -2186,13 +2151,15 @@
         }
     .end annotation
 
-    .line 841
+    .line 855
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 842
+    .line 856
     new-instance v9, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_graySection:I
 
     const/4 v3, 0x0
 
@@ -2204,18 +2171,18 @@
 
     const/4 v7, 0x0
 
-    const-string v8, "graySection"
-
     move-object v1, v9
 
     move-object/from16 v2, p0
 
-    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 843
+    .line 857
     new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    sget v17, Lorg/telegram/ui/ActionBar/Theme;->key_graySectionText:I
 
     const/4 v12, 0x0
 
@@ -2227,13 +2194,11 @@
 
     const/16 v16, 0x0
 
-    const-string v17, "key_graySectionText"
-
     move-object v10, v1
 
     move-object/from16 v11, p0
 
-    invoke-direct/range {v10 .. v17}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v10 .. v17}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -2281,7 +2246,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 849
+    .line 863
     invoke-virtual {p0}, Landroid/view/ViewGroup;->isEnabled()Z
 
     move-result v0
@@ -2292,7 +2257,7 @@
 
     return p1
 
-    .line 852
+    .line 866
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -2325,7 +2290,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 857
+    .line 871
     invoke-virtual {p0}, Landroid/view/ViewGroup;->isEnabled()Z
 
     move-result v0
@@ -2336,7 +2301,7 @@
 
     return p1
 
-    .line 860
+    .line 874
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -2580,15 +2545,9 @@
 
     sget p3, Lorg/telegram/messenger/R$string;->ArchiveSearchFilter:I
 
-    const-string v2, "ArchiveSearchFilter"
-
-    invoke-static {v2, p3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p3
-
     const/4 v2, 0x7
 
-    invoke-direct {p1, p2, p3, v0, v2}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(ILjava/lang/String;Lorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
+    invoke-direct {p1, p2, p3, v0, v2}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;-><init>(IILorg/telegram/tgnet/TLRPC$MessagesFilter;I)V
 
     .line 263
     iget-object p2, p0, Lorg/telegram/ui/Adapters/FiltersView;->usersFilters:Ljava/util/ArrayList;
@@ -2745,11 +2704,11 @@
 
     goto :goto_2
 
-    :cond_5
-    const-string v0, "listSelectorSDK21"
-
     .line 627
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    :cond_5
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result v0
 

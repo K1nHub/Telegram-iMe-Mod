@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 57652
+    .line 58665
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 57661
+    .line 58674
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$Updates;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$Updates;
 
     move-result-object p1
@@ -49,12 +49,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 57665
+    .line 58678
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channels_deleteHistory;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 57666
+    .line 58679
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_deleteHistory;->for_everyone:Z
 
     if-eqz v0, :cond_0
@@ -73,15 +73,15 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_deleteHistory;->flags:I
 
-    .line 57667
+    .line 58680
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 57668
+    .line 58681
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_deleteHistory;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 57669
+    .line 58682
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_deleteHistory;->max_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

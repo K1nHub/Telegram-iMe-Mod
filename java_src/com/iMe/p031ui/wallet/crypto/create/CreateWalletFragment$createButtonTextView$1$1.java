@@ -14,7 +14,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateWalletFragment.kt */
@@ -72,7 +72,7 @@ public final class CreateWalletFragment$createButtonTextView$1$1 extends Lambda 
                         CollectionsKt__CollectionsKt.throwIndexOverflow();
                     }
                     if (!Intrinsics.areEqual(((CreateWalletScreenType.WordsCheck) createWalletFragment2.currentType).getSecretWords().get(((Number) obj).intValue()), ((CreateWalletFragment.NumericEditText) createWalletFragment2.editTexts.get(i)).getText().toString())) {
-                        createWalletFragment2.showAlertDialog(new DialogModel(LocaleController.getInternalString(C3242R.string.wallet_backup_test_time_alert_title), LocaleController.getInternalString(C3242R.string.wallet_backup_test_time_alert_text), LocaleController.getInternalString(C3242R.string.wallet_backup_test_time_alert_button_see), LocaleController.getInternalString(C3242R.string.wallet_backup_test_time_alert_button_try)), C2095xc3945669.INSTANCE, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda0
+                        createWalletFragment2.showAlertDialog(new DialogModel(LocaleController.getInternalString(C3290R.string.wallet_backup_test_time_alert_title), LocaleController.getInternalString(C3290R.string.wallet_backup_test_time_alert_text), LocaleController.getInternalString(C3290R.string.wallet_backup_test_time_alert_button_see), LocaleController.getInternalString(C3290R.string.wallet_backup_test_time_alert_button_try)), C2134xc3945669.INSTANCE, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda0
                             @Override // com.iMe.fork.utils.Callbacks$Callback
                             public final void invoke() {
                                 CreateWalletFragment.this.finishFragment();

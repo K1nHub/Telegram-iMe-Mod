@@ -1,18 +1,14 @@
 package com.iMe.p031ui.topics;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.core.content.ContextCompat;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.iMe.common.TelegramThemeKeys$Common;
-import com.iMe.common.TelegramThemeKeys$Dialog;
 import com.iMe.fork.enums.DialogType;
 import com.iMe.model.common.FilterItem;
 import com.iMe.storage.data.repository.topics.Topic;
@@ -25,7 +21,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -33,16 +29,12 @@ import org.telegram.p044ui.Components.LayoutHelper;
 /* compiled from: TopicView.kt */
 /* renamed from: com.iMe.ui.topics.TopicView */
 /* loaded from: classes3.dex */
-public class TopicView extends LinearLayout {
-    private Boolean archive;
-    private final Paint backgroundPaint;
-    private DialogType dialogType;
+public class TopicView extends FrameLayout {
     private final int iconSize;
     private final Lazy iconView$delegate;
     private boolean isActive;
-    private Boolean isFilter;
-    private Boolean messagesContextMenu;
     private final Lazy nameTextView$delegate;
+    private final Lazy ovalLayout$delegate;
     public int position;
     private TopicModel topic;
 
@@ -69,14 +61,15 @@ public class TopicView extends LinearLayout {
         super(context, attributeSet, i);
         Lazy lazy;
         Lazy lazy2;
+        Lazy lazy3;
         Intrinsics.checkNotNullParameter(context, "context");
         this.iconSize = i2;
-        lazy = LazyKt__LazyJVMKt.lazy(new TopicView$iconView$2(this));
-        this.iconView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TopicView$nameTextView$2(this));
-        this.nameTextView$delegate = lazy2;
-        this.backgroundPaint = new Paint(1);
-        setGravity(17);
+        lazy = LazyKt__LazyJVMKt.lazy(new TopicView$ovalLayout$2(this));
+        this.ovalLayout$delegate = lazy;
+        lazy2 = LazyKt__LazyJVMKt.lazy(new TopicView$iconView$2(this));
+        this.iconView$delegate = lazy2;
+        lazy3 = LazyKt__LazyJVMKt.lazy(new TopicView$nameTextView$2(this));
+        this.nameTextView$delegate = lazy3;
         setClipToPadding(false);
         init();
     }
@@ -89,6 +82,10 @@ public class TopicView extends LinearLayout {
         this.topic = topicModel;
     }
 
+    private final LinearLayout getOvalLayout() {
+        return (LinearLayout) this.ovalLayout$delegate.getValue();
+    }
+
     private final ImageView getIconView() {
         return (ImageView) this.iconView$delegate.getValue();
     }
@@ -99,7 +96,6 @@ public class TopicView extends LinearLayout {
 
     public final void setFilterItem(FilterItem item) {
         Intrinsics.checkNotNullParameter(item, "item");
-        this.isFilter = Boolean.TRUE;
         setTopic(TopicModel.Companion.createMockupWithTitle(item.getTitle()), item.isSelected());
     }
 
@@ -114,18 +110,18 @@ public class TopicView extends LinearLayout {
         this.isActive = z;
         if (topic.getTopicId() == -2) {
             TextView nameTextView = getNameTextView();
-            String internalString = LocaleController.getInternalString(C3242R.string.topics_title_notopic);
+            String internalString = LocaleController.getInternalString(C3290R.string.topics_title_notopic);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.topics_title_notopic)");
             String upperCase = internalString.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
             nameTextView.setText(upperCase);
-            ViewExtKt.gone(getIconView());
+            ViewExtKt.gone$default(getIconView(), false, 1, null);
         } else if (topic.isUserTopic()) {
-            getNameTextView().setText(Emoji.replaceEmoji(topic.getName(), getNameTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(15), false));
+            getNameTextView().setText(Emoji.replaceEmoji(topic.getName(), getNameTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(15), false));
             if (topic.getIcon() == null) {
-                ViewExtKt.gone(getIconView());
+                ViewExtKt.gone$default(getIconView(), false, 1, null);
             } else {
-                ViewExtKt.visible(getIconView());
+                ViewExtKt.visible$default(getIconView(), false, 1, null);
                 ImageView iconView = getIconView();
                 Topic icon = topic.getIcon();
                 Intrinsics.checkNotNull(icon);
@@ -146,9 +142,9 @@ public class TopicView extends LinearLayout {
                 nameTextView2.setText(upperCase2);
             }
             if (topic.getTopicId() == -2) {
-                ViewExtKt.gone(getIconView());
+                ViewExtKt.gone$default(getIconView(), false, 1, null);
             } else {
-                ViewExtKt.visible(getIconView());
+                ViewExtKt.visible$default(getIconView(), false, 1, null);
                 getIconView().setImageResource(component3);
             }
         }
@@ -157,7 +153,6 @@ public class TopicView extends LinearLayout {
 
     public final void setDialogType(DialogType dialogType, boolean z) {
         Intrinsics.checkNotNullParameter(dialogType, "dialogType");
-        this.dialogType = dialogType;
         this.isActive = z;
         TextView nameTextView = getNameTextView();
         String internalString = LocaleController.getInternalString(dialogType.getNameResId());
@@ -172,13 +167,12 @@ public class TopicView extends LinearLayout {
     public final void setArchive(boolean z, boolean z2) {
         int i;
         int i2;
-        this.archive = Boolean.valueOf(z);
         this.isActive = z2;
         TextView nameTextView = getNameTextView();
         if (z) {
-            i = C3242R.string.folder_fab_settings_fab_archive;
+            i = C3290R.string.folder_fab_settings_fab_archive;
         } else {
-            i = C3242R.string.main_list;
+            i = C3290R.string.main_list;
         }
         String internalString = LocaleController.getInternalString(i);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(\n     …tring.main_list\n        )");
@@ -187,9 +181,9 @@ public class TopicView extends LinearLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i2 = C3242R.C3244drawable.fork_custom_forward_switch_archive;
+            i2 = C3290R.C3292drawable.fork_custom_forward_switch_archive;
         } else {
-            i2 = C3242R.C3244drawable.fork_custom_forward_switch_main;
+            i2 = C3290R.C3292drawable.fork_custom_forward_switch_main;
         }
         iconView.setImageResource(i2);
         updateColors();
@@ -197,9 +191,8 @@ public class TopicView extends LinearLayout {
 
     public final void setMessagesContextMenu(boolean z, boolean z2) {
         int i;
-        this.messagesContextMenu = Boolean.valueOf(z);
         this.isActive = z2;
-        String title = z ? LocaleController.getInternalString(C3242R.string.settings_interface_message_header) : LocaleController.getString(C3242R.string.MediaTab);
+        String title = z ? LocaleController.getInternalString(C3290R.string.settings_interface_message_header) : LocaleController.getString(C3290R.string.MediaTab);
         TextView nameTextView = getNameTextView();
         Intrinsics.checkNotNullExpressionValue(title, "title");
         String upperCase = title.toUpperCase(Locale.ROOT);
@@ -207,74 +200,40 @@ public class TopicView extends LinearLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i = C3242R.C3244drawable.fork_settings_chat;
+            i = C3290R.C3292drawable.fork_settings_chat;
         } else {
-            i = C3242R.C3244drawable.fork_cloud_filter_image;
+            i = C3290R.C3292drawable.fork_cloud_filter_image;
         }
         iconView.setImageResource(i);
         updateColors();
     }
 
     public final void updateColors() {
-        int color;
-        if (this.messagesContextMenu != null || this.archive != null || this.isFilter != null) {
-            color = Theme.getColor("chats_actionBackground");
-        } else {
-            DialogType dialogType = this.dialogType;
-            if (dialogType != null) {
-                Intrinsics.checkNotNull(dialogType);
-                color = Theme.getColor(TelegramThemeKeys$Common.buildDialogTypeActiveBackgroundKey(dialogType));
-            } else {
-                TopicModel topicModel = this.topic;
-                boolean z = false;
-                if (topicModel != null && topicModel.getTopicId() == -2) {
-                    z = true;
-                }
-                if (!z) {
-                    TopicModel topicModel2 = this.topic;
-                    if ((topicModel2 != null ? Boolean.valueOf(topicModel2.isUserTopic()) : null) != null) {
-                        color = Theme.getColor("iMe_dialogs_userTopicActiveBackground");
-                    } else {
-                        TopicModel topicModel3 = this.topic;
-                        if ((topicModel3 != null ? Boolean.valueOf(topicModel3.isAutoTopic()) : null) == null) {
-                            return;
-                        }
-                        TopicModel topicModel4 = this.topic;
-                        Topic icon = topicModel4 != null ? topicModel4.getIcon() : null;
-                        Intrinsics.checkNotNull(icon);
-                        color = Theme.getColor(TelegramThemeKeys$Dialog.buildTopicActiveBackgroundKey(icon));
-                    }
-                } else if (Theme.isCurrentThemeDefault()) {
-                    color = ContextCompat.getColor(getContext(), C3242R.C3243color.fork_color);
-                } else {
-                    color = Theme.getColor("chats_actionBackground");
-                }
-            }
-        }
-        Paint paint = this.backgroundPaint;
-        if (!this.isActive) {
-            color = Theme.getColor("iMe_dialogs_topicInactiveBackground");
-        }
-        paint.setColor(color);
-        getNameTextView().setTextColor(this.isActive ? Theme.getColor("iMe_dialogs_topicActiveText") : -1);
-        getIconView().setColorFilter(new PorterDuffColorFilter(this.isActive ? Theme.getColor("iMe_dialogs_topicActiveText") : -1, PorterDuff.Mode.SRC_IN));
+        LinearLayout ovalLayout = getOvalLayout();
+        Drawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.m54dp(24), this.isActive ? Theme.getColor(Theme.key_chats_actionBackground) : Theme.getColor(Theme.key_chats_unreadCounterMuted));
+        createRoundRectDrawable.setAlpha(this.isActive ? 255 : 110);
+        ovalLayout.setBackground(createRoundRectDrawable);
+        getNameTextView().setTextColor(Theme.getColor(this.isActive ? Theme.key_chats_actionIcon : Theme.key_windowBackgroundWhiteBlackText));
+        getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(this.isActive ? Theme.key_chats_actionIcon : Theme.key_windowBackgroundWhiteBlackText), PorterDuff.Mode.SRC_IN));
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.LinearLayout, android.view.View
-    public void onDraw(Canvas canvas) {
-        Intrinsics.checkNotNullParameter(canvas, "canvas");
-        canvas.drawRoundRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.m50dp(this.iconSize), AndroidUtilities.m50dp(this.iconSize), this.backgroundPaint);
-    }
-
     private final void init() {
-        setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(14), 0);
         setWillNotDraw(false);
+        getOvalLayout().setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(14), 0);
+        LinearLayout ovalLayout = getOvalLayout();
         ImageView iconView = getIconView();
         int i = this.iconSize;
-        addView(iconView, LayoutHelper.createLinear(i, i));
-        addView(getNameTextView(), LayoutHelper.createLinear(-2, this.iconSize, 17, 4, 0, 0, 0));
+        ovalLayout.addView(iconView, LayoutHelper.createLinear(i, i, 16));
+        getOvalLayout().addView(getNameTextView(), LayoutHelper.createLinear(-2, this.iconSize, 16, 4, 0, 0, 0));
+        addView(getOvalLayout(), LayoutHelper.createFrame(-2, 24, 16, 8, 0, 8, 0));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final LinearLayout initOvalLayout() {
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setGravity(16);
+        return linearLayout;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

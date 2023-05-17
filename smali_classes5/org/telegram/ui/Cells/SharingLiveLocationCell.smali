@@ -103,9 +103,9 @@
     .line 78
     iget-object p4, p0, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v0, "windowBackgroundWhiteBlackText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(I)I
 
     move-result v0
 
@@ -274,9 +274,9 @@
     .line 88
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->distanceTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string p2, "windowBackgroundWhiteGrayText3"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText3:I
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(I)I
 
     move-result p2
 
@@ -478,39 +478,16 @@
     return-object p0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 302
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 303
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -749,20 +726,20 @@
 
     if-nez v0, :cond_8
 
-    const-string v0, "dialog_liveLocationProgress"
-
     .line 285
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialog_liveLocationProgress:I
+
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(I)I
 
     move-result v0
 
     goto :goto_6
 
-    :cond_8
-    const-string v0, "location_liveLocationProgress"
-
     .line 287
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(Ljava/lang/String;)I
+    :cond_8
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_location_liveLocationProgress:I
+
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(I)I
 
     move-result v0
 
@@ -1235,9 +1212,9 @@
     .line 159
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "location_sendLocationIcon"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLocationIcon:I
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(I)I
 
     move-result v4
 
@@ -1247,10 +1224,10 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    const-string v3, "location_placeLocationBackground"
-
     .line 160
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_location_placeLocationBackground:I
+
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->getThemedColor(I)I
 
     move-result v3
 

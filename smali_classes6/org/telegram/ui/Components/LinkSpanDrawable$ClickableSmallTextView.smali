@@ -38,7 +38,7 @@
 
     const/4 v0, 0x0
 
-    .line 634
+    .line 632
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -47,17 +47,17 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 1
 
-    .line 638
+    .line 636
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
-    .line 646
+    .line 644
     new-instance p1, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;-><init>(Landroid/view/View;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
-    .line 647
+    .line 645
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -66,7 +66,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->linkBackgroundPaint:Landroid/graphics/Paint;
 
-    .line 639
+    .line 637
     iput-object p2, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
@@ -75,7 +75,7 @@
 .method private getLinkColor()I
     .locals 3
 
-    .line 643
+    .line 641
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getTextColor()I
 
     move-result v0
@@ -106,20 +106,20 @@
 .method private synthetic lambda$onTouchEvent$0(Lorg/telegram/ui/Components/LinkSpanDrawable;)V
     .locals 1
 
-    .line 681
+    .line 679
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     if-ne v0, p1, :cond_0
 
-    .line 682
+    .line 680
     invoke-virtual {p0}, Landroid/view/View;->performLongClick()Z
 
     const/4 p1, 0x0
 
-    .line 683
+    .line 681
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 684
+    .line 682
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->clear()V
@@ -133,14 +133,14 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 651
+    .line 649
     invoke-virtual {p0}, Landroid/view/View;->isClickable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 652
+    .line 650
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
@@ -171,7 +171,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 653
+    .line 651
     iget-object v1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->linkBackgroundPaint:Landroid/graphics/Paint;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->getLinkColor()I
@@ -182,7 +182,7 @@
 
     const/4 v1, 0x4
 
-    .line 654
+    .line 652
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -199,11 +199,11 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 657
+    .line 655
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 659
+    .line 657
     invoke-virtual {p0}, Landroid/view/View;->isClickable()Z
 
     move-result v0
@@ -218,7 +218,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 660
+    .line 658
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -228,21 +228,21 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 10
 
-    .line 668
+    .line 666
     invoke-virtual {p0}, Landroid/view/View;->isClickable()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 669
+    .line 667
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
     return p1
 
-    .line 671
+    .line 669
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
@@ -252,7 +252,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 672
+    .line 670
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -261,7 +261,7 @@
 
     if-nez v0, :cond_1
 
-    .line 673
+    .line 671
     new-instance v0, Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -276,22 +276,22 @@
 
     invoke-direct {v0, v3, v4, v5, p1}, Lorg/telegram/ui/Components/LinkSpanDrawable;-><init>(Landroid/text/style/CharacterStyle;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;FF)V
 
-    .line 674
+    .line 672
     invoke-direct {p0}, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->getLinkColor()I
 
     move-result p1
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/LinkSpanDrawable;->setColor(I)V
 
-    .line 675
+    .line 673
     iput-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 676
+    .line 674
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->addLink(Lorg/telegram/ui/Components/LinkSpanDrawable;)V
 
-    .line 677
+    .line 675
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkSpanDrawable;->obtainNewPath()Lorg/telegram/ui/Components/LinkPath;
@@ -300,14 +300,14 @@
 
     const/4 p1, 0x0
 
-    .line 678
+    .line 676
     invoke-virtual {v4, v3, v1, p1, p1}, Lorg/telegram/ui/Components/LinkPath;->setCurrentLayout(Landroid/text/Layout;IFF)V
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    .line 679
+    .line 677
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result p1
@@ -336,24 +336,24 @@
 
     invoke-virtual/range {v4 .. v9}, Lorg/telegram/ui/Components/LinkPath;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 680
+    .line 678
     new-instance p1, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0, v0}, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;Lorg/telegram/ui/Components/LinkSpanDrawable;)V
 
-    .line 686
+    .line 684
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v0
 
     int-to-long v0, v0
 
-    .line 680
+    .line 678
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return v2
 
-    .line 689
+    .line 687
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -361,26 +361,26 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 690
+    .line 688
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->clear()V
 
-    .line 691
+    .line 689
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     if-eqz p1, :cond_2
 
-    .line 692
+    .line 690
     invoke-virtual {p0}, Landroid/view/View;->performClick()Z
 
-    .line 694
+    .line 692
     :cond_2
     iput-object v3, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     return v2
 
-    .line 697
+    .line 695
     :cond_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -390,17 +390,17 @@
 
     if-ne v0, v4, :cond_4
 
-    .line 698
+    .line 696
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->clear()V
 
-    .line 699
+    .line 697
     iput-object v3, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     return v2
 
-    .line 703
+    .line 701
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 

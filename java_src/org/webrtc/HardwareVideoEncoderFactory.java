@@ -40,7 +40,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
         if (context instanceof EglBase14.Context) {
             this.sharedContext = (EglBase14.Context) context;
         } else {
-            Logging.m14w(TAG, "No shared EglBase.Context.  Encoders will not use texture mode.");
+            Logging.m16w(TAG, "No shared EglBase.Context.  Encoders will not use texture mode.");
             this.sharedContext = null;
         }
         this.enableIntelVp8Encoder = z;
@@ -122,7 +122,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
                     sb.append(", ");
                 }
             }
-            FileLog.m47e("can't create video encoder " + videoCodecMimeType.mimeType() + ", supported codecs" + ((Object) sb));
+            FileLog.m51e("can't create video encoder " + videoCodecMimeType.mimeType() + ", supported codecs" + ((Object) sb));
         }
         return mediaCodecInfo;
     }
@@ -135,7 +135,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
         if (VoIPService.getSharedInstance() == null || VoIPService.getSharedInstance().groupCall == null) {
             Instance.ServerConfig globalServerConfig = Instance.getGlobalServerConfig();
             if (globalServerConfig.enable_h264_encoder || globalServerConfig.enable_h265_encoder || globalServerConfig.enable_vp8_encoder || globalServerConfig.enable_vp9_encoder) {
-                int i = C66451.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
+                int i = C67471.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
                 if (i != 1) {
                     if (i != 2) {
                         if (i != 3) {
@@ -158,7 +158,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.HardwareVideoEncoderFactory$1 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C66451 {
+    public static /* synthetic */ class C67471 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
         static {
@@ -256,7 +256,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     }
 
     private int getKeyFrameIntervalSec(VideoCodecMimeType videoCodecMimeType) {
-        int i = C66451.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
+        int i = C67471.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
         if (i == 1 || i == 2) {
             return 100;
         }

@@ -102,7 +102,7 @@
 
     if-ne p1, v0, :cond_0
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     goto :goto_0
 
@@ -116,7 +116,7 @@
 
     if-ne p1, v0, :cond_1
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     goto :goto_0
 
@@ -130,7 +130,7 @@
 
     if-ne p1, v0, :cond_2
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     goto :goto_0
 
@@ -168,7 +168,7 @@
 
     move-result p1
 
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p1, v0, :cond_0
 
@@ -184,7 +184,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 6
+    .locals 5
 
     const-string v0, "holder"
 
@@ -203,7 +203,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 248
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     const/4 v1, 0x0
 
@@ -274,7 +274,7 @@
 
     .line 254
     :cond_2
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, v0, :cond_5
 
@@ -331,7 +331,7 @@
 
     .line 260
     :cond_5
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-ne p2, v0, :cond_9
 
@@ -349,8 +349,6 @@
 
     move-result v0
 
-    const-string v4, "windowBackgroundGrayShadow"
-
     if-eqz v0, :cond_6
 
     const/4 v0, 0x0
@@ -365,7 +363,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {p2, v0, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -384,13 +384,13 @@
 
     move-result-object v0
 
-    sget-object v5, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter$WhenMappings;->$EnumSwitchMapping$0:[I
+    sget-object v4, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
 
-    aget v0, v5, v0
+    aget v0, v4, v0
 
     if-eq v0, v3, :cond_8
 
@@ -427,7 +427,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {p2, v0, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -460,7 +462,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 224
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p2, p1, :cond_0
 
@@ -483,9 +485,7 @@
 
     .line 227
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
-
-    const-string v0, "windowBackgroundWhite"
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, p1, :cond_1
 
@@ -500,7 +500,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
     .line 228
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -510,7 +512,7 @@
 
     .line 230
     :cond_1
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-ne p2, p1, :cond_2
 
@@ -545,7 +547,9 @@
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
 
     .line 232
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$$ExternalSyntheticLambda38;->f$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->$r8$lambda$gpalCrXT6cFosi-7ZbmUMEwhAZ8(Lorg/telegram/ui/Components/ChatAttachAlert;ZILjava/lang/String;)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->$r8$lambda$6mfh3dcxN3lpDIxW8cRED1qm5Dg(Lorg/telegram/ui/Components/ChatAttachAlert;ZILjava/lang/String;)V
 
     return-void
 .end method

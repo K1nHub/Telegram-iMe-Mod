@@ -10,15 +10,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzha extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzha> CREATOR = new zzhb();
-    @SafeParcelable.Field(m775id = 1)
+    @SafeParcelable.Field(m779id = 1)
     public final int zza;
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     public final int zzb;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     public final byte[] zzc;
 
     @SafeParcelable.Constructor
-    public zzha(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) int i2, @SafeParcelable.Param(m774id = 3) byte[] bArr) {
+    public zzha(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) int i2, @SafeParcelable.Param(m778id = 3) byte[] bArr) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = bArr;

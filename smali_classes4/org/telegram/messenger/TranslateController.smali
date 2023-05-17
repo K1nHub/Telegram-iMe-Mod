@@ -14,7 +14,7 @@
 
 
 # static fields
-.field private static final GROUPING_TRANSLATIONS_TIMEOUT:I = 0xc8
+.field private static final GROUPING_TRANSLATIONS_TIMEOUT:I = 0x50
 
 .field private static final MAX_MESSAGES_PER_REQUEST:I = 0x14
 
@@ -60,6 +60,10 @@
 
 
 # instance fields
+.field private chatTranslateEnabled:Ljava/lang/Boolean;
+
+.field private contextTranslateEnabled:Ljava/lang/Boolean;
+
 .field private final detectedDialogLanguage:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -196,14 +200,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$IkMi4mmqMdVclurnlvqUgGIOvbU(Lorg/telegram/messenger/TranslateController;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->lambda$checkDialogMessages$6(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$Izbsi3oMmMtyTU9XHYi7b58MJcA(Lorg/telegram/messenger/TranslateController;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;JI)V
     .locals 0
 
@@ -256,14 +252,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ctLeByDZBb_z0y-o2ZGcNRbnvV4(Lorg/telegram/messenger/TranslateController;J)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->lambda$checkDialogMessages$7(J)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$gDWsyzIHot8WVgGXT8pTUzpqrHo(Lorg/telegram/messenger/TranslateController;Lorg/telegram/messenger/MessageObject;JI)V
     .locals 0
 
@@ -280,10 +268,26 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$i-qaioFew0ECkzOhMbqg3mTMAyw(Lorg/telegram/messenger/TranslateController;J)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->lambda$checkDialogMessageSure$7(J)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$kuDfWCqsyjbBtDSrRkPTpHDUejg(Lorg/telegram/messenger/TranslateController;)V
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController;->loadTranslatingDialogsCached()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$tSl8ye-3mnvcypd0KyXsJwxm8nw(Lorg/telegram/messenger/TranslateController;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->lambda$checkDialogMessageSure$6(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     return-void
 .end method
@@ -349,7 +353,7 @@
 
     const-string/jumbo v11, "uk"
 
-    .line 274
+    .line 287
     filled-new-array/range {v0 .. v11}, [Ljava/lang/String;
 
     move-result-object v0
@@ -362,7 +366,7 @@
 
     const-string v1, "af"
 
-    const-string v2, "sq"
+    const-string/jumbo v2, "sq"
 
     const-string v3, "am"
 
@@ -518,49 +522,49 @@
 
     const-string v79, "ru"
 
-    const-string v80, "sm"
+    const-string/jumbo v80, "sm"
 
     const-string v81, "gd"
 
-    const-string v82, "sr"
+    const-string/jumbo v82, "sr"
 
-    const-string v83, "st"
+    const-string/jumbo v83, "st"
 
-    const-string v84, "sn"
+    const-string/jumbo v84, "sn"
 
     const-string v85, "sd"
 
-    const-string v86, "si"
+    const-string/jumbo v86, "si"
 
-    const-string v87, "sk"
+    const-string/jumbo v87, "sk"
 
-    const-string v88, "sl"
+    const-string/jumbo v88, "sl"
 
-    const-string v89, "so"
+    const-string/jumbo v89, "so"
 
     const-string v90, "es"
 
-    const-string v91, "su"
+    const-string/jumbo v91, "su"
 
-    const-string v92, "sw"
+    const-string/jumbo v92, "sw"
 
-    const-string v93, "sv"
+    const-string/jumbo v93, "sv"
 
-    const-string v94, "tl"
+    const-string/jumbo v94, "tl"
 
-    const-string v95, "tg"
+    const-string/jumbo v95, "tg"
 
-    const-string v96, "ta"
+    const-string/jumbo v96, "ta"
 
     const-string/jumbo v97, "tt"
 
-    const-string v98, "te"
+    const-string/jumbo v98, "te"
 
-    const-string v99, "th"
+    const-string/jumbo v99, "th"
 
     const-string/jumbo v100, "tr"
 
-    const-string v101, "tk"
+    const-string/jumbo v101, "tk"
 
     const-string/jumbo v102, "uk"
 
@@ -582,7 +586,7 @@
 
     const-string/jumbo v111, "zu"
 
-    .line 278
+    .line 291
     filled-new-array/range {v1 .. v111}, [Ljava/lang/String;
 
     move-result-object v0
@@ -595,7 +599,7 @@
 
     const/4 v0, 0x0
 
-    .line 315
+    .line 328
     sput-object v0, Lorg/telegram/messenger/TranslateController;->suggestedLanguageCodes:Ljava/util/LinkedHashSet;
 
     return-void
@@ -658,21 +662,21 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
-    .line 599
+    .line 618
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/TranslateController;->pendingLanguageChecks:Ljava/util/ArrayList;
 
-    .line 691
+    .line 710
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
-    .line 692
+    .line 711
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -699,12 +703,12 @@
 
     const-string v0, "_"
 
-    .line 320
+    .line 333
     new-instance v1, Ljava/util/LinkedHashSet;
 
     invoke-direct {v1}, Ljava/util/LinkedHashSet;-><init>()V
 
-    .line 322
+    .line 335
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -725,10 +729,10 @@
     :catch_0
     move-exception v2
 
-    .line 324
+    .line 337
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 327
+    .line 340
     :goto_0
     :try_start_1
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -754,10 +758,10 @@
     :catch_1
     move-exception v2
 
-    .line 329
+    .line 342
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 332
+    .line 345
     :goto_1
     :try_start_2
     invoke-static {}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->getRestrictedLanguages()Ljava/util/HashSet;
@@ -773,10 +777,10 @@
     :catch_2
     move-exception v2
 
-    .line 334
+    .line 347
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 337
+    .line 350
     :goto_2
     :try_start_3
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -789,12 +793,12 @@
 
     check-cast v2, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 338
+    .line 351
     invoke-virtual {v2}, Landroid/view/inputmethod/InputMethodManager;->getEnabledInputMethodList()Ljava/util/List;
 
     move-result-object v3
 
-    .line 339
+    .line 352
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -814,12 +818,12 @@
 
     const/4 v5, 0x1
 
-    .line 340
+    .line 353
     invoke-virtual {v2, v4, v5}, Landroid/view/inputmethod/InputMethodManager;->getEnabledInputMethodSubtypeList(Landroid/view/inputmethod/InputMethodInfo;Z)Ljava/util/List;
 
     move-result-object v4
 
-    .line 341
+    .line 354
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -840,7 +844,7 @@
 
     const-string v6, "keyboard"
 
-    .line 342
+    .line 355
     invoke-virtual {v5}, Landroid/view/inputmethod/InputMethodSubtype;->getMode()Ljava/lang/String;
 
     move-result-object v7
@@ -851,21 +855,21 @@
 
     if-eqz v6, :cond_1
 
-    .line 343
+    .line 356
     invoke-virtual {v5}, Landroid/view/inputmethod/InputMethodSubtype;->getLocale()Ljava/lang/String;
 
     move-result-object v5
 
     if-eqz v5, :cond_2
 
-    .line 344
+    .line 357
     invoke-virtual {v5, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-eqz v6, :cond_2
 
-    .line 345
+    .line 358
     invoke-virtual {v5, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v5
@@ -874,7 +878,7 @@
 
     aget-object v5, v5, v6
 
-    .line 347
+    .line 360
     :cond_2
     invoke-static {v5}, Lorg/telegram/ui/Components/TranslateAlert2;->languageName(Ljava/lang/String;)Ljava/lang/String;
 
@@ -882,7 +886,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 348
+    .line 361
     invoke-virtual {v1, v5}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
@@ -892,10 +896,10 @@
     :catch_3
     move-exception v0
 
-    .line 354
+    .line 367
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 356
+    .line 369
     :cond_3
     sput-object v1, Lorg/telegram/messenger/TranslateController;->suggestedLanguageCodes:Ljava/util/LinkedHashSet;
 
@@ -907,20 +911,20 @@
 
     if-eqz p1, :cond_8
 
-    .line 642
+    .line 661
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-nez v0, :cond_0
 
     goto/16 :goto_4
 
-    .line 646
+    .line 665
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v0
 
-    .line 647
+    .line 666
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogMessages:Ljava/util/HashMap;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -935,7 +939,7 @@
 
     if-nez v2, :cond_1
 
-    .line 649
+    .line 668
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogMessages:Ljava/util/HashMap;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -944,13 +948,13 @@
 
     new-instance v4, Lorg/telegram/messenger/TranslateController$TranslatableDecision;
 
-    invoke-direct {v4, p0}, Lorg/telegram/messenger/TranslateController$TranslatableDecision;-><init>(Lorg/telegram/messenger/TranslateController;)V
+    invoke-direct {v4}, Lorg/telegram/messenger/TranslateController$TranslatableDecision;-><init>()V
 
     invoke-virtual {v2, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v2, v4
 
-    .line 652
+    .line 671
     :cond_1
     invoke-static {p1}, Lorg/telegram/messenger/TranslateController;->isTranslatable(Lorg/telegram/messenger/MessageObject;)Z
 
@@ -970,7 +974,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 654
+    .line 673
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -985,7 +989,7 @@
     :cond_3
     move v3, v6
 
-    .line 657
+    .line 676
     :goto_0
     invoke-static {p1}, Lorg/telegram/messenger/TranslateController;->isTranslatable(Lorg/telegram/messenger/MessageObject;)Z
 
@@ -999,14 +1003,14 @@
 
     if-eqz v7, :cond_4
 
-    .line 659
+    .line 678
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-nez v4, :cond_4
 
-    .line 660
+    .line 679
     invoke-static {}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->getRestrictedLanguages()Ljava/util/HashSet;
 
     move-result-object v4
@@ -1029,7 +1033,7 @@
     :goto_1
     if-eqz v3, :cond_5
 
-    .line 665
+    .line 684
     iget-object v4, v2, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->unknown:Ljava/util/Set;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -1047,7 +1051,7 @@
     :cond_5
     if-eqz v5, :cond_6
 
-    .line 667
+    .line 686
     iget-object v4, v2, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->certainlyTranslatable:Ljava/util/Set;
 
     goto :goto_2
@@ -1069,7 +1073,7 @@
     :goto_3
     if-nez v3, :cond_7
 
-    .line 671
+    .line 690
     iget-object v3, p0, Lorg/telegram/messenger/TranslateController;->detectedDialogLanguage:Ljava/util/HashMap;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1082,7 +1086,7 @@
 
     invoke-virtual {v3, v4, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 674
+    .line 693
     :cond_7
     iget-object p1, v2, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->certainlyTranslatable:Ljava/util/Set;
 
@@ -1090,14 +1094,14 @@
 
     move-result p1
 
-    .line 675
+    .line 694
     iget-object v3, v2, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->unknown:Ljava/util/Set;
 
     invoke-interface {v3}, Ljava/util/Set;->size()I
 
     move-result v3
 
-    .line 676
+    .line 695
     iget-object v2, v2, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->certainlyNotTranslatable:Ljava/util/Set;
 
     invoke-interface {v2}, Ljava/util/Set;->size()I
@@ -1138,7 +1142,7 @@
 
     if-gez p1, :cond_8
 
-    .line 683
+    .line 702
     iget-object p1, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogs:Ljava/util/Set;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1147,7 +1151,7 @@
 
     invoke-interface {p1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 684
+    .line 703
     iget-object p1, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogMessages:Ljava/util/HashMap;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1156,7 +1160,7 @@
 
     invoke-virtual {p1, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 685
+    .line 704
     new-instance p1, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0, v0, v1}, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/TranslateController;J)V
@@ -1173,7 +1177,7 @@
 .method private checkLanguage(Lorg/telegram/messenger/MessageObject;)V
     .locals 8
 
-    .line 601
+    .line 620
     invoke-static {}, Lorg/telegram/messenger/LanguageDetector;->hasSupport()Z
 
     move-result v0
@@ -1182,7 +1186,7 @@
 
     return-void
 
-    .line 604
+    .line 623
     :cond_0
     invoke-static {p1}, Lorg/telegram/messenger/TranslateController;->isTranslatable(Lorg/telegram/messenger/MessageObject;)Z
 
@@ -1204,7 +1208,7 @@
 
     goto :goto_0
 
-    .line 607
+    .line 626
     :cond_1
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -1212,23 +1216,23 @@
 
     if-eqz v0, :cond_2
 
-    .line 608
+    .line 627
     invoke-direct {p0, p1}, Lorg/telegram/messenger/TranslateController;->checkDialogTranslatable(Lorg/telegram/messenger/MessageObject;)V
 
     return-void
 
-    .line 612
+    .line 631
     :cond_2
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v4
 
-    .line 613
+    .line 632
     invoke-direct {p0, p1}, Lorg/telegram/messenger/TranslateController;->hash(Lorg/telegram/messenger/MessageObject;)I
 
     move-result v6
 
-    .line 614
+    .line 633
     invoke-virtual {p0, v4, v5}, Lorg/telegram/messenger/TranslateController;->isDialogTranslatable(J)Z
 
     move-result v0
@@ -1237,7 +1241,7 @@
 
     return-void
 
-    .line 617
+    .line 636
     :cond_3
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->pendingLanguageChecks:Ljava/util/ArrayList;
 
@@ -1253,7 +1257,7 @@
 
     return-void
 
-    .line 621
+    .line 640
     :cond_4
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->pendingLanguageChecks:Ljava/util/ArrayList;
 
@@ -1263,7 +1267,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 623
+    .line 642
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v7, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda9;
@@ -1286,7 +1290,7 @@
 .method private checkTranslation(Lorg/telegram/messenger/MessageObject;ZZ)V
     .locals 8
 
-    .line 464
+    .line 477
     invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
 
     move-result v0
@@ -1298,14 +1302,14 @@
     :cond_0
     if-eqz p1, :cond_9
 
-    .line 467
+    .line 480
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-nez v0, :cond_1
 
     goto/16 :goto_1
 
-    .line 471
+    .line 484
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
@@ -1315,15 +1319,15 @@
 
     if-nez p3, :cond_2
 
-    .line 473
+    .line 486
     iget-object v1, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v1, :cond_2
 
-    .line 474
+    .line 487
     invoke-direct {p0, v1, p2, v0}, Lorg/telegram/messenger/TranslateController;->checkTranslation(Lorg/telegram/messenger/MessageObject;ZZ)V
 
-    .line 477
+    .line 490
     :cond_2
     invoke-static {p1}, Lorg/telegram/messenger/TranslateController;->isTranslatable(Lorg/telegram/messenger/MessageObject;)Z
 
@@ -1333,7 +1337,7 @@
 
     return-void
 
-    .line 481
+    .line 494
     :cond_3
     invoke-virtual {p0, v5, v6}, Lorg/telegram/messenger/TranslateController;->isTranslatingDialog(J)Z
 
@@ -1341,12 +1345,12 @@
 
     if-nez v1, :cond_4
 
-    .line 482
+    .line 495
     invoke-direct {p0, p1}, Lorg/telegram/messenger/TranslateController;->checkLanguage(Lorg/telegram/messenger/MessageObject;)V
 
     return-void
 
-    .line 486
+    .line 499
     :cond_4
     invoke-virtual {p0, v5, v6}, Lorg/telegram/messenger/TranslateController;->getDialogTranslateTo(J)Ljava/lang/String;
 
@@ -1354,7 +1358,7 @@
 
     if-nez p3, :cond_6
 
-    .line 488
+    .line 501
     iget-object v1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
@@ -1380,7 +1384,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 489
+    .line 502
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -1389,7 +1393,7 @@
 
     iput-object v3, p1, Lorg/telegram/tgnet/TLRPC$Message;->translatedToLanguage:Ljava/lang/String;
 
-    .line 490
+    .line 503
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
     iput-object v2, p1, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
@@ -1399,14 +1403,14 @@
     :cond_6
     if-eqz p2, :cond_9
 
-    .line 494
+    .line 507
     invoke-virtual {p0, v5, v6}, Lorg/telegram/messenger/TranslateController;->isTranslatingDialog(J)Z
 
     move-result p2
 
     if-eqz p2, :cond_9
 
-    .line 496
+    .line 509
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
@@ -1426,12 +1430,12 @@
     :cond_7
     if-eqz p3, :cond_9
 
-    .line 524
+    .line 537
     invoke-direct {p0, p1}, Lorg/telegram/messenger/TranslateController;->keepReplyMessage(Lorg/telegram/messenger/MessageObject;)V
 
     goto :goto_1
 
-    .line 497
+    .line 510
     :cond_8
     :goto_0
     iget p2, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
@@ -1450,7 +1454,7 @@
 
     invoke-virtual {p2, v1, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 498
+    .line 511
     new-instance p2, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda16;
 
     move-object v1, p2
@@ -1473,7 +1477,7 @@
 .method private clearAllKeptReplyMessages(J)V
     .locals 1
 
-    .line 902
+    .line 925
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->keptReplyMessageObjects:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1488,7 +1492,7 @@
 .method private currentLanguage()Ljava/lang/String;
     .locals 2
 
-    .line 155
+    .line 168
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -1503,7 +1507,7 @@
 
     const-string v1, "_"
 
-    .line 157
+    .line 170
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
@@ -1527,14 +1531,14 @@
         }
     .end annotation
 
-    .line 291
+    .line 304
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 292
+    .line 305
     :goto_0
     sget-object v2, Lorg/telegram/messenger/TranslateController;->allLanguages:Ljava/util/List;
 
@@ -1544,12 +1548,12 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 293
+    .line 306
     new-instance v2, Lorg/telegram/messenger/TranslateController$Language;
 
     invoke-direct {v2}, Lorg/telegram/messenger/TranslateController$Language;-><init>()V
 
-    .line 294
+    .line 307
     sget-object v3, Lorg/telegram/messenger/TranslateController;->allLanguages:Ljava/util/List;
 
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1562,7 +1566,7 @@
 
     const-string v4, "no"
 
-    .line 295
+    .line 308
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -1571,10 +1575,10 @@
 
     const-string v3, "nb"
 
-    .line 296
+    .line 309
     iput-object v3, v2, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
-    .line 298
+    .line 311
     :cond_0
     iget-object v3, v2, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
@@ -1588,7 +1592,7 @@
 
     iput-object v3, v2, Lorg/telegram/messenger/TranslateController$Language;->displayName:Ljava/lang/String;
 
-    .line 299
+    .line 312
     iget-object v3, v2, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
     const/4 v4, 0x1
@@ -1603,14 +1607,14 @@
 
     iput-object v3, v2, Lorg/telegram/messenger/TranslateController$Language;->ownDisplayName:Ljava/lang/String;
 
-    .line 300
+    .line 313
     iget-object v3, v2, Lorg/telegram/messenger/TranslateController$Language;->displayName:Ljava/lang/String;
 
     if-nez v3, :cond_1
 
     goto :goto_1
 
-    .line 303
+    .line 316
     :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1643,7 +1647,7 @@
 
     iput-object v3, v2, Lorg/telegram/messenger/TranslateController$Language;->q:Ljava/lang/String;
 
-    .line 304
+    .line 317
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_1
@@ -1651,7 +1655,7 @@
 
     goto :goto_0
 
-    .line 306
+    .line 319
     :cond_3
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1659,7 +1663,7 @@
 
     if-lt v1, v2, :cond_4
 
-    .line 307
+    .line 320
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
@@ -1668,7 +1672,7 @@
 
     move-result-object v1
 
-    .line 308
+    .line 321
     new-instance v2, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda11;
 
     invoke-direct {v2, v1}, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda11;-><init>(Landroid/icu/text/Collator;)V
@@ -1677,7 +1681,7 @@
 
     goto :goto_2
 
-    .line 310
+    .line 323
     :cond_4
     sget-object v1, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->INSTANCE:Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;
 
@@ -1702,14 +1706,14 @@
         }
     .end annotation
 
-    .line 390
+    .line 403
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/LocaleController;->languagesDict:Ljava/util/HashMap;
 
-    .line 391
+    .line 404
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -1720,7 +1724,7 @@
 
     const/4 v0, 0x0
 
-    .line 392
+    .line 405
     :goto_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1728,7 +1732,7 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 393
+    .line 406
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1737,7 +1741,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 394
+    .line 407
     iget-object v3, v2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->shortName:Ljava/lang/String;
 
     if-eqz v3, :cond_0
@@ -1761,7 +1765,7 @@
 
     if-nez v2, :cond_2
 
-    .line 395
+    .line 408
     :cond_1
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -1772,7 +1776,7 @@
 
     goto :goto_0
 
-    .line 400
+    .line 413
     :cond_3
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -1782,12 +1786,12 @@
 
     move-result-object v0
 
-    .line 401
+    .line 414
     new-instance v2, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda12;
 
     invoke-direct {v2, v0}, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/messenger/LocaleController$LocaleInfo;)V
 
-    .line 426
+    .line 439
     invoke-static {v1, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     return-object v1
@@ -1806,27 +1810,27 @@
         }
     .end annotation
 
-    .line 360
+    .line 373
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 361
+    .line 374
     sget-object v1, Lorg/telegram/messenger/TranslateController;->suggestedLanguageCodes:Ljava/util/LinkedHashSet;
 
     if-nez v1, :cond_0
 
-    .line 362
+    .line 375
     invoke-static {}, Lorg/telegram/messenger/TranslateController;->analyzeSuggestedLanguageCodes()V
 
-    .line 363
+    .line 376
     sget-object v1, Lorg/telegram/messenger/TranslateController;->suggestedLanguageCodes:Ljava/util/LinkedHashSet;
 
     if-nez v1, :cond_0
 
     return-object v0
 
-    .line 367
+    .line 380
     :cond_0
     sget-object v1, Lorg/telegram/messenger/TranslateController;->suggestedLanguageCodes:Ljava/util/LinkedHashSet;
 
@@ -1834,7 +1838,7 @@
 
     move-result-object v1
 
-    .line 368
+    .line 381
     :cond_1
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -1843,14 +1847,14 @@
 
     if-eqz v2, :cond_6
 
-    .line 369
+    .line 382
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    .line 370
+    .line 383
     invoke-static {v2, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -1888,26 +1892,26 @@
 
     goto :goto_0
 
-    .line 373
+    .line 386
     :cond_3
     new-instance v4, Lorg/telegram/messenger/TranslateController$Language;
 
     invoke-direct {v4}, Lorg/telegram/messenger/TranslateController$Language;-><init>()V
 
-    .line 374
+    .line 387
     iput-object v2, v4, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
-    .line 375
+    .line 388
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
-    .line 376
+    .line 389
     iput-object v5, v4, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
-    .line 378
+    .line 391
     :cond_4
     iget-object v2, v4, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
@@ -1921,7 +1925,7 @@
 
     iput-object v2, v4, Lorg/telegram/messenger/TranslateController$Language;->displayName:Ljava/lang/String;
 
-    .line 379
+    .line 392
     iget-object v2, v4, Lorg/telegram/messenger/TranslateController$Language;->code:Ljava/lang/String;
 
     const/4 v3, 0x1
@@ -1936,14 +1940,14 @@
 
     iput-object v2, v4, Lorg/telegram/messenger/TranslateController$Language;->ownDisplayName:Ljava/lang/String;
 
-    .line 380
+    .line 393
     iget-object v2, v4, Lorg/telegram/messenger/TranslateController$Language;->displayName:Ljava/lang/String;
 
     if-nez v2, :cond_5
 
     goto :goto_0
 
-    .line 383
+    .line 396
     :cond_5
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1971,7 +1975,7 @@
 
     iput-object v2, v4, Lorg/telegram/messenger/TranslateController$Language;->q:Ljava/lang/String;
 
-    .line 384
+    .line 397
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -1994,7 +1998,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 151
+    .line 164
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v2
@@ -2029,7 +2033,7 @@
 
     const/4 v0, 0x0
 
-    .line 317
+    .line 330
     sput-object v0, Lorg/telegram/messenger/TranslateController;->suggestedLanguageCodes:Ljava/util/LinkedHashSet;
 
     return-void
@@ -2042,12 +2046,12 @@
 
     if-eqz p0, :cond_1
 
-    .line 83
+    .line 96
     iget-object v1, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v1, :cond_1
 
-    .line 85
+    .line 98
     invoke-virtual {p0}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result v1
@@ -2085,7 +2089,7 @@
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 94
+    .line 107
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -2108,7 +2112,7 @@
 
     return-void
 
-    .line 886
+    .line 909
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->keptReplyMessageObjects:Ljava/util/HashMap;
 
@@ -2128,7 +2132,7 @@
 
     if-nez v0, :cond_1
 
-    .line 888
+    .line 911
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->keptReplyMessageObjects:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
@@ -2147,7 +2151,7 @@
 
     move-object v0, v2
 
-    .line 890
+    .line 913
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
@@ -2162,7 +2166,7 @@
     return-void
 .end method
 
-.method private synthetic lambda$checkDialogMessages$6(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.method private synthetic lambda$checkDialogMessageSure$6(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 8
 
     const/4 v0, 0x0
@@ -2171,7 +2175,7 @@
 
     move v2, v1
 
-    .line 565
+    .line 584
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2189,14 +2193,14 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 566
+    .line 585
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    .line 567
+    .line 586
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -2205,7 +2209,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 568
+    .line 587
     iget-object v6, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v6, :cond_1
@@ -2214,18 +2218,18 @@
 
     goto :goto_1
 
-    .line 571
+    .line 590
     :cond_0
     iget-object v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
-    .line 572
+    .line 591
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Message;->translatedToLanguage:Ljava/lang/String;
 
     iput-object v5, v6, Lorg/telegram/tgnet/TLRPC$Message;->translatedToLanguage:Ljava/lang/String;
 
-    .line 573
+    .line 592
     invoke-virtual {v3, v0}, Lorg/telegram/messenger/MessageObject;->updateTranslation(Z)Z
 
     move-result v3
@@ -2243,7 +2247,7 @@
     :cond_2
     if-eqz v2, :cond_3
 
-    .line 578
+    .line 597
     iget p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2266,10 +2270,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$checkDialogMessages$7(J)V
+.method private synthetic lambda$checkDialogMessageSure$7(J)V
     .locals 6
 
-    .line 550
+    .line 569
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->messagesController:Lorg/telegram/messenger/MessagesController;
 
     iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->dialogMessage:Landroidx/collection/LongSparseArray;
@@ -2284,7 +2288,7 @@
 
     return-void
 
-    .line 554
+    .line 573
     :cond_0
     new-instance p2, Ljava/util/ArrayList;
 
@@ -2292,7 +2296,7 @@
 
     const/4 v0, 0x0
 
-    .line 555
+    .line 574
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2300,7 +2304,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 556
+    .line 575
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2309,14 +2313,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 557
+    .line 576
     iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-nez v2, :cond_1
 
     goto :goto_1
 
-    .line 561
+    .line 580
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -2342,7 +2346,7 @@
     :goto_1
     const/4 v1, 0x0
 
-    .line 558
+    .line 577
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_2
@@ -2350,7 +2354,7 @@
 
     goto :goto_0
 
-    .line 563
+    .line 582
     :cond_3
     new-instance v0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda6;
 
@@ -2364,7 +2368,7 @@
 .method private synthetic lambda$checkDialogTranslatable$13(J)V
     .locals 3
 
-    .line 686
+    .line 705
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2393,14 +2397,14 @@
 .method private synthetic lambda$checkLanguage$10(Lorg/telegram/messenger/MessageObject;JI)V
     .locals 2
 
-    .line 634
+    .line 653
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     const-string/jumbo v1, "und"
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->originalLanguage:Ljava/lang/String;
 
-    .line 635
+    .line 654
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
@@ -2409,7 +2413,7 @@
 
     invoke-virtual {v0, p2, p3, p1}, Lorg/telegram/messenger/MessagesStorage;->updateMessageCustomParams(JLorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 636
+    .line 655
     iget-object p1, p0, Lorg/telegram/messenger/TranslateController;->pendingLanguageChecks:Ljava/util/ArrayList;
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2424,7 +2428,7 @@
 .method private synthetic lambda$checkLanguage$11(Lorg/telegram/messenger/MessageObject;JILjava/lang/Exception;)V
     .locals 6
 
-    .line 633
+    .line 652
     new-instance p5, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda8;
 
     move-object v0, p5
@@ -2447,7 +2451,7 @@
 .method private synthetic lambda$checkLanguage$12(Lorg/telegram/messenger/MessageObject;JI)V
     .locals 9
 
-    .line 624
+    .line 643
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
@@ -2484,13 +2488,13 @@
 
     const-string/jumbo p1, "und"
 
-    .line 629
+    .line 648
     :cond_0
     iget-object v0, p2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->originalLanguage:Ljava/lang/String;
 
-    .line 630
+    .line 649
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
@@ -2499,7 +2503,7 @@
 
     invoke-virtual {p1, p3, p4, v0}, Lorg/telegram/messenger/MessagesStorage;->updateMessageCustomParams(JLorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 631
+    .line 650
     iget-object p1, p0, Lorg/telegram/messenger/TranslateController;->pendingLanguageChecks:Ljava/util/ArrayList;
 
     invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2508,7 +2512,7 @@
 
     invoke-virtual {p1, p3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 632
+    .line 651
     invoke-direct {p0, p2}, Lorg/telegram/messenger/TranslateController;->checkDialogTranslatable(Lorg/telegram/messenger/MessageObject;)V
 
     return-void
@@ -2517,7 +2521,7 @@
 .method private synthetic lambda$checkLanguage$9(Lorg/telegram/messenger/MessageObject;JILjava/lang/String;)V
     .locals 8
 
-    .line 624
+    .line 643
     new-instance v7, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda5;
 
     move-object v0, v7
@@ -2542,20 +2546,20 @@
 .method private synthetic lambda$checkTranslation$4(Lorg/telegram/messenger/MessageObject;ZJLorg/telegram/tgnet/TLRPC$TL_textWithEntities;Ljava/lang/String;)V
     .locals 4
 
-    .line 499
+    .line 512
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iput-object p6, v0, Lorg/telegram/tgnet/TLRPC$Message;->translatedToLanguage:Ljava/lang/String;
 
-    .line 500
+    .line 513
     iput-object p5, v0, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
     if-eqz p2, :cond_0
 
-    .line 502
+    .line 515
     invoke-direct {p0, p1}, Lorg/telegram/messenger/TranslateController;->keepReplyMessage(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 505
+    .line 518
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -2565,7 +2569,7 @@
 
     invoke-virtual {p2, p3, p4, v0}, Lorg/telegram/messenger/MessagesStorage;->updateMessageCustomParams(JLorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 506
+    .line 519
     iget p2, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2584,7 +2588,7 @@
 
     invoke-virtual {p2, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 508
+    .line 521
     iget-object p2, p0, Lorg/telegram/messenger/TranslateController;->messagesController:Lorg/telegram/messenger/MessagesController;
 
     iget-object p2, p2, Lorg/telegram/messenger/MessagesController;->dialogMessage:Landroidx/collection/LongSparseArray;
@@ -2599,7 +2603,7 @@
 
     move p3, v3
 
-    .line 510
+    .line 523
     :goto_0
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -2607,7 +2611,7 @@
 
     if-ge p3, p4, :cond_2
 
-    .line 511
+    .line 524
     invoke-virtual {p2, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p4
@@ -2616,7 +2620,7 @@
 
     if-eqz p4, :cond_1
 
-    .line 512
+    .line 525
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v0
@@ -2627,22 +2631,22 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 513
+    .line 526
     iget-object p1, p4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iput-object p6, p1, Lorg/telegram/tgnet/TLRPC$Message;->translatedToLanguage:Ljava/lang/String;
 
-    .line 514
+    .line 527
     iput-object p5, p1, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
-    .line 515
+    .line 528
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->updateTranslation()Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 516
+    .line 529
     iget p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2676,7 +2680,7 @@
 .method private static synthetic lambda$getLanguages$1(Landroid/icu/text/Collator;Lorg/telegram/messenger/TranslateController$Language;Lorg/telegram/messenger/TranslateController$Language;)I
     .locals 0
 
-    .line 308
+    .line 321
     iget-object p1, p1, Lorg/telegram/messenger/TranslateController$Language;->displayName:Ljava/lang/String;
 
     iget-object p2, p2, Lorg/telegram/messenger/TranslateController$Language;->displayName:Ljava/lang/String;
@@ -2691,7 +2695,7 @@
 .method private static synthetic lambda$getLanguages$2(Lorg/telegram/messenger/TranslateController$Language;)Ljava/lang/String;
     .locals 0
 
-    .line 310
+    .line 323
     iget-object p0, p0, Lorg/telegram/messenger/TranslateController$Language;->displayName:Ljava/lang/String;
 
     return-object p0
@@ -2713,7 +2717,7 @@
 
     return v1
 
-    .line 407
+    .line 420
     :cond_1
     sget-object p0, Lorg/telegram/messenger/TranslateController;->languagesOrder:Ljava/util/List;
 
@@ -2723,7 +2727,7 @@
 
     move-result p0
 
-    .line 408
+    .line 421
     sget-object v2, Lorg/telegram/messenger/TranslateController;->languagesOrder:Ljava/util/List;
 
     iget-object v3, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
@@ -2750,7 +2754,7 @@
 
     return v1
 
-    .line 416
+    .line 429
     :cond_4
     iget p0, p1, Lorg/telegram/messenger/LocaleController$LocaleInfo;->serverIndex:I
 
@@ -2758,7 +2762,7 @@
 
     if-ne p0, v2, :cond_5
 
-    .line 417
+    .line 430
     iget-object p0, p1, Lorg/telegram/messenger/LocaleController$LocaleInfo;->name:Ljava/lang/String;
 
     iget-object p1, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->name:Ljava/lang/String;
@@ -2788,7 +2792,7 @@
 .method private synthetic lambda$invalidateTranslation$5(Lorg/telegram/messenger/MessageObject;J)V
     .locals 4
 
-    .line 541
+    .line 554
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2825,37 +2829,37 @@
 .method private synthetic lambda$pushToTranslate$14(Lorg/telegram/messenger/TranslateController$PendingTranslation;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;J)V
     .locals 6
 
-    .line 785
+    .line 807
     monitor-enter p0
 
-    .line 786
+    .line 808
     :try_start_0
     iget-object v0, p1, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
-    .line 787
+    .line 809
     iget-object v1, p1, Lorg/telegram/messenger/TranslateController$PendingTranslation;->callbacks:Ljava/util/ArrayList;
 
-    .line 788
+    .line 810
     iget-object v2, p1, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageTexts:Ljava/util/ArrayList;
 
-    .line 789
+    .line 811
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 790
+    .line 812
     instance-of v3, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_translateResult;
 
     const/4 v4, 0x0
 
     if-eqz v3, :cond_0
 
-    .line 791
+    .line 813
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_translateResult;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_translateResult;->result:Ljava/util/ArrayList;
 
-    .line 792
+    .line 814
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result p3
@@ -2873,7 +2877,7 @@
     :goto_0
     if-ge p4, p3, :cond_2
 
-    .line 794
+    .line 816
     invoke-virtual {v1, p4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p5
@@ -2909,7 +2913,7 @@
 
     const-string p2, "TO_LANG_INVALID"
 
-    .line 796
+    .line 818
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-virtual {p2, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2918,10 +2922,10 @@
 
     if-eqz p2, :cond_1
 
-    .line 797
+    .line 819
     invoke-virtual {p0, p4, p5, v4}, Lorg/telegram/messenger/TranslateController;->toggleTranslatingDialog(JZ)Z
 
-    .line 798
+    .line 820
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -2957,7 +2961,7 @@
     :cond_1
     move p2, v4
 
-    .line 800
+    .line 822
     :goto_1
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -2965,7 +2969,7 @@
 
     if-ge p2, p3, :cond_2
 
-    .line 801
+    .line 823
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p3
@@ -2982,12 +2986,12 @@
 
     goto :goto_1
 
-    .line 804
+    .line 826
     :cond_2
     :goto_2
     monitor-enter p0
 
-    .line 805
+    .line 827
     :goto_3
     :try_start_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2996,7 +3000,7 @@
 
     if-ge v4, p1, :cond_3
 
-    .line 806
+    .line 828
     iget-object p1, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3009,7 +3013,7 @@
 
     goto :goto_3
 
-    .line 808
+    .line 830
     :cond_3
     monitor-exit p0
 
@@ -3027,7 +3031,7 @@
     :catchall_1
     move-exception p1
 
-    .line 789
+    .line 811
     :try_start_2
     monitor-exit p0
     :try_end_2
@@ -3039,7 +3043,7 @@
 .method private synthetic lambda$pushToTranslate$15(Lorg/telegram/messenger/TranslateController$PendingTranslation;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 781
+    .line 803
     new-instance v7, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda10;
 
     move-object v0, v7
@@ -3064,10 +3068,10 @@
 .method private synthetic lambda$pushToTranslate$16(JLorg/telegram/messenger/TranslateController$PendingTranslation;)V
     .locals 3
 
-    .line 765
+    .line 787
     monitor-enter p0
 
-    .line 766
+    .line 788
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->pendingTranslations:Ljava/util/HashMap;
 
@@ -3083,17 +3087,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 768
+    .line 790
     invoke-virtual {v0, p3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 769
+    .line 791
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 770
+    .line 792
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->pendingTranslations:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3102,25 +3106,25 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 773
+    .line 795
     :cond_0
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 775
+    .line 797
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;-><init>()V
 
-    .line 776
+    .line 798
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->flags:I
 
     or-int/lit8 v1, v1, 0x1
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->flags:I
 
-    .line 777
+    .line 799
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -3131,17 +3135,17 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 778
+    .line 800
     iget-object v1, p3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->id:Ljava/util/ArrayList;
 
-    .line 779
+    .line 801
     iget-object v1, p3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->language:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_translateText;->to_lang:Ljava/lang/String;
 
-    .line 781
+    .line 803
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
@@ -3154,14 +3158,14 @@
 
     move-result p1
 
-    .line 810
+    .line 832
     monitor-enter p0
 
-    .line 811
+    .line 833
     :try_start_1
     iput p1, p3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->reqId:I
 
-    .line 812
+    .line 834
     monitor-exit p0
 
     return-void
@@ -3178,7 +3182,7 @@
     :catchall_1
     move-exception p1
 
-    .line 773
+    .line 795
     :try_start_2
     monitor-exit p0
     :try_end_2
@@ -3190,10 +3194,10 @@
 .method private synthetic lambda$setDialogTranslateTo$0(JLjava/lang/String;)V
     .locals 3
 
-    .line 185
+    .line 198
     monitor-enter p0
 
-    .line 186
+    .line 199
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translateDialogLanguage:Ljava/util/HashMap;
 
@@ -3203,7 +3207,7 @@
 
     invoke-virtual {v0, v1, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 187
+    .line 200
     iget-object p3, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3212,15 +3216,15 @@
 
     invoke-interface {p3, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 188
+    .line 201
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController;->saveTranslatingDialogsCache()V
 
-    .line 189
+    .line 202
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 190
+    .line 203
     iget p3, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3254,7 +3258,7 @@
     :catchall_0
     move-exception p1
 
-    .line 189
+    .line 202
     :try_start_1
     monitor-exit p0
     :try_end_1
@@ -3266,7 +3270,7 @@
 .method private loadTranslatingDialogsCached()V
     .locals 11
 
-    .line 907
+    .line 930
     invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
 
     move-result v0
@@ -3275,7 +3279,7 @@
 
     return-void
 
-    .line 911
+    .line 934
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->messagesController:Lorg/telegram/messenger/MessagesController;
 
@@ -3298,12 +3302,12 @@
     :cond_1
     const-string v1, ";"
 
-    .line 915
+    .line 938
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 917
+    .line 940
     invoke-static {}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->getRestrictedLanguages()Ljava/util/HashSet;
 
     move-result-object v1
@@ -3312,13 +3316,13 @@
 
     move v4, v3
 
-    .line 918
+    .line 941
     :goto_0
     array-length v5, v0
 
     if-ge v4, v5, :cond_8
 
-    .line 919
+    .line 942
     aget-object v5, v0, v4
 
     const-string v6, "="
@@ -3327,7 +3331,7 @@
 
     move-result-object v5
 
-    .line 920
+    .line 943
     array-length v6, v5
 
     const/4 v7, 0x2
@@ -3336,7 +3340,7 @@
 
     goto :goto_1
 
-    .line 923
+    .line 946
     :cond_2
     aget-object v6, v5, v3
 
@@ -3346,7 +3350,7 @@
 
     const/4 v6, 0x1
 
-    .line 924
+    .line 947
     aget-object v5, v5, v6
 
     const-string v10, ">"
@@ -3355,14 +3359,14 @@
 
     move-result-object v5
 
-    .line 925
+    .line 948
     array-length v10, v5
 
     if-eq v10, v7, :cond_3
 
     goto :goto_1
 
-    .line 928
+    .line 951
     :cond_3
     aget-object v7, v5, v3
 
@@ -3370,7 +3374,7 @@
 
     const-string v6, "null"
 
-    .line 929
+    .line 952
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v10
@@ -3379,7 +3383,7 @@
 
     move-object v7, v2
 
-    .line 930
+    .line 953
     :cond_4
     invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3392,7 +3396,7 @@
     :cond_5
     if-eqz v7, :cond_7
 
-    .line 932
+    .line 955
     iget-object v6, p0, Lorg/telegram/messenger/TranslateController;->detectedDialogLanguage:Ljava/util/HashMap;
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3401,14 +3405,14 @@
 
     invoke-virtual {v6, v10, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 933
+    .line 956
     invoke-virtual {v1, v7}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v6
 
     if-nez v6, :cond_6
 
-    .line 934
+    .line 957
     iget-object v6, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3417,7 +3421,7 @@
 
     invoke-interface {v6, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 935
+    .line 958
     iget-object v6, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogs:Ljava/util/Set;
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3429,7 +3433,7 @@
     :cond_6
     if-eqz v5, :cond_7
 
-    .line 938
+    .line 961
     iget-object v6, p0, Lorg/telegram/messenger/TranslateController;->translateDialogLanguage:Ljava/util/HashMap;
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3444,7 +3448,7 @@
 
     goto :goto_0
 
-    .line 943
+    .line 966
     :cond_8
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->messagesController:Lorg/telegram/messenger/MessagesController;
 
@@ -3460,12 +3464,12 @@
 
     if-eqz v0, :cond_9
 
-    .line 945
+    .line 968
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 946
+    .line 969
     :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -3473,7 +3477,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 948
+    .line 971
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
@@ -3500,7 +3504,7 @@
     :catch_0
     move-exception v1
 
-    .line 950
+    .line 973
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_2
@@ -3529,16 +3533,16 @@
 
     goto/16 :goto_2
 
-    .line 715
+    .line 735
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v0
 
-    .line 718
+    .line 738
     monitor-enter p0
 
-    .line 719
+    .line 739
     :try_start_0
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController;->pendingTranslations:Ljava/util/HashMap;
 
@@ -3554,7 +3558,7 @@
 
     if-nez v2, :cond_1
 
-    .line 721
+    .line 741
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController;->pendingTranslations:Ljava/util/HashMap;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3569,7 +3573,7 @@
 
     move-object v2, v4
 
-    .line 724
+    .line 744
     :cond_1
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -3579,7 +3583,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 725
+    .line 745
     new-instance v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;
 
     invoke-direct {v3, v4}, Lorg/telegram/messenger/TranslateController$PendingTranslation;-><init>(Lorg/telegram/messenger/TranslateController$1;)V
@@ -3588,7 +3592,7 @@
 
     goto :goto_0
 
-    .line 727
+    .line 747
     :cond_2
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -3602,7 +3606,7 @@
 
     check-cast v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;
 
-    .line 730
+    .line 750
     :goto_0
     iget-object v5, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
@@ -3620,7 +3624,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 731
+    .line 751
     monitor-exit p0
 
     return-void
@@ -3628,7 +3632,7 @@
     :cond_3
     const/4 v5, 0x0
 
-    .line 735
+    .line 755
     iget-object v6, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v6, :cond_4
@@ -3637,38 +3641,38 @@
 
     if-eqz v6, :cond_4
 
-    .line 736
+    .line 756
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     move-result v5
 
     goto :goto_1
 
-    .line 737
+    .line 757
     :cond_4
     iget-object v6, p1, Lorg/telegram/messenger/MessageObject;->caption:Ljava/lang/CharSequence;
 
     if-eqz v6, :cond_5
 
-    .line 738
+    .line 758
     invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
 
     move-result v5
 
     goto :goto_1
 
-    .line 739
+    .line 759
     :cond_5
     iget-object v6, p1, Lorg/telegram/messenger/MessageObject;->messageText:Ljava/lang/CharSequence;
 
     if-eqz v6, :cond_6
 
-    .line 740
+    .line 760
     invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
 
     move-result v5
 
-    .line 743
+    .line 763
     :cond_6
     :goto_1
     iget v6, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->symbolsCount:I
@@ -3681,7 +3685,7 @@
 
     iget-object v6, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
-    .line 744
+    .line 764
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v6
@@ -3692,24 +3696,34 @@
 
     if-lt v6, v7, :cond_8
 
-    .line 745
+    .line 765
     :cond_7
+    iget-object v6, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->runnable:Ljava/lang/Runnable;
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 766
+    iget-object v3, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->runnable:Ljava/lang/Runnable;
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 767
     new-instance v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;
 
     invoke-direct {v3, v4}, Lorg/telegram/messenger/TranslateController$PendingTranslation;-><init>(Lorg/telegram/messenger/TranslateController$1;)V
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 748
+    .line 770
     :cond_8
     iget-object v2, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->runnable:Ljava/lang/Runnable;
 
     if-eqz v2, :cond_9
 
-    .line 749
+    .line 771
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 751
+    .line 773
     :cond_9
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
@@ -3723,7 +3737,7 @@
 
     invoke-interface {v2, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 752
+    .line 774
     iget-object v2, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -3736,62 +3750,71 @@
 
     invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 754
+    .line 776
     iget-object v2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v2, :cond_a
 
-    .line 755
+    .line 777
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;-><init>()V
 
-    .line 756
+    .line 778
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     iput-object v2, v4, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->text:Ljava/lang/String;
 
-    .line 757
+    .line 779
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
 
     iput-object p1, v4, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
-    .line 759
+    .line 781
     :cond_a
     iget-object p1, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageTexts:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 760
+    .line 782
     iget-object p1, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->callbacks:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 761
+    .line 783
     iput-object p2, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->language:Ljava/lang/String;
 
-    .line 762
+    .line 784
     iget p1, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->symbolsCount:I
 
     add-int/2addr p1, v5
 
     iput p1, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->symbolsCount:I
 
-    .line 764
+    .line 786
     new-instance p1, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda4;
 
     invoke-direct {p1, p0, v0, v1, v3}, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/TranslateController;JLorg/telegram/messenger/TranslateController$PendingTranslation;)V
 
     iput-object p1, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->runnable:Ljava/lang/Runnable;
 
-    const-wide/16 p2, 0xc8
+    .line 836
+    iget p2, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->delay:I
 
-    .line 814
+    int-to-long p2, p2
+
     invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 815
+    .line 837
+    iget p1, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->delay:I
+
+    div-int/lit8 p1, p1, 0x2
+
+    iput p1, v3, Lorg/telegram/messenger/TranslateController$PendingTranslation;->delay:I
+
+    .line 838
     monitor-exit p0
 
     return-void
@@ -3813,7 +3836,7 @@
 .method private resetTranslatingDialogsCache()V
     .locals 2
 
-    .line 994
+    .line 1017
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings(I)Landroid/content/SharedPreferences;
@@ -3844,12 +3867,12 @@
 .method private saveTranslatingDialogsCache()V
     .locals 8
 
-    .line 957
+    .line 980
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 958
+    .line 981
     iget-object v1, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -3858,7 +3881,7 @@
 
     const/4 v2, 0x1
 
-    .line 960
+    .line 983
     :catch_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -3867,7 +3890,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 962
+    .line 985
     :try_start_0
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3883,7 +3906,7 @@
 
     const-string v5, ";"
 
-    .line 964
+    .line 987
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_0
@@ -3891,7 +3914,7 @@
 
     const/4 v2, 0x0
 
-    .line 969
+    .line 992
     :cond_1
     iget-object v5, p0, Lorg/telegram/messenger/TranslateController;->detectedDialogLanguage:Ljava/util/HashMap;
 
@@ -3913,7 +3936,7 @@
 
     move-object v5, v6
 
-    .line 973
+    .line 996
     :cond_2
     :try_start_1
     invoke-virtual {p0, v3, v4}, Lorg/telegram/messenger/TranslateController;->getDialogTranslateTo(J)Ljava/lang/String;
@@ -3927,7 +3950,7 @@
     :cond_3
     move-object v6, v7
 
-    .line 977
+    .line 1000
     :goto_1
     invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -3947,20 +3970,20 @@
 
     goto :goto_0
 
-    .line 981
+    .line 1004
     :cond_4
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 982
+    .line 1005
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .line 983
+    .line 1006
     :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -3968,7 +3991,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 985
+    .line 1008
     :try_start_2
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3997,12 +4020,12 @@
     :catch_1
     move-exception v3
 
-    .line 987
+    .line 1010
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_2
 
-    .line 990
+    .line 1013
     :cond_5
     iget v2, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
@@ -4040,10 +4063,10 @@
 .method public cancelAllTranslations()V
     .locals 6
 
-    .line 847
+    .line 870
     monitor-enter p0
 
-    .line 848
+    .line 871
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->pendingTranslations:Ljava/util/HashMap;
 
@@ -4070,7 +4093,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 850
+    .line 873
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -4088,19 +4111,19 @@
 
     check-cast v2, Lorg/telegram/messenger/TranslateController$PendingTranslation;
 
-    .line 851
+    .line 874
     iget-object v3, v2, Lorg/telegram/messenger/TranslateController$PendingTranslation;->runnable:Ljava/lang/Runnable;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 852
+    .line 875
     iget v3, v2, Lorg/telegram/messenger/TranslateController$PendingTranslation;->reqId:I
 
     const/4 v4, -0x1
 
     if-eq v3, v4, :cond_1
 
-    .line 853
+    .line 876
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v3
@@ -4111,7 +4134,7 @@
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
 
-    .line 854
+    .line 877
     iget-object v2, v2, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -4131,14 +4154,14 @@
 
     check-cast v3, Ljava/lang/Integer;
 
-    .line 855
+    .line 878
     iget-object v4, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
     invoke-interface {v4, v3}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 861
+    .line 884
     :cond_2
     monitor-exit p0
 
@@ -4157,10 +4180,10 @@
 .method public cancelTranslations(J)V
     .locals 5
 
-    .line 865
+    .line 888
     monitor-enter p0
 
-    .line 866
+    .line 889
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->pendingTranslations:Ljava/util/HashMap;
 
@@ -4176,7 +4199,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 868
+    .line 891
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -4194,19 +4217,19 @@
 
     check-cast v1, Lorg/telegram/messenger/TranslateController$PendingTranslation;
 
-    .line 869
+    .line 892
     iget-object v2, v1, Lorg/telegram/messenger/TranslateController$PendingTranslation;->runnable:Ljava/lang/Runnable;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 870
+    .line 893
     iget v2, v1, Lorg/telegram/messenger/TranslateController$PendingTranslation;->reqId:I
 
     const/4 v3, -0x1
 
     if-eq v2, v3, :cond_0
 
-    .line 871
+    .line 894
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
@@ -4217,7 +4240,7 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
 
-    .line 872
+    .line 895
     iget-object v1, v1, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -4237,14 +4260,14 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 873
+    .line 896
     iget-object v3, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
     invoke-interface {v3, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 877
+    .line 900
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->pendingTranslations:Ljava/util/HashMap;
 
@@ -4254,7 +4277,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 879
+    .line 902
     :cond_2
     monitor-exit p0
 
@@ -4270,11 +4293,34 @@
     throw p1
 .end method
 
-.method public checkDialogMessages(J)V
+.method public checkDialogMessage(J)V
+    .locals 1
+
+    .line 559
+    invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 560
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->checkDialogMessageSure(J)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public checkDialogMessageSure(J)V
     .locals 2
 
-    .line 546
-    invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
+    .line 565
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -4282,7 +4328,7 @@
 
     return-void
 
-    .line 549
+    .line 568
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -4304,26 +4350,26 @@
 .method public checkRestrictedLanguagesUpdate()V
     .locals 7
 
-    .line 432
+    .line 445
     monitor-enter p0
 
-    .line 433
+    .line 446
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogMessages:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 435
+    .line 448
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 436
+    .line 449
     invoke-static {}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->getRestrictedLanguages()Ljava/util/HashSet;
 
     move-result-object v1
 
-    .line 437
+    .line 450
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogs:Ljava/util/Set;
 
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -4348,7 +4394,7 @@
 
     move-result-wide v3
 
-    .line 438
+    .line 451
     iget-object v5, p0, Lorg/telegram/messenger/TranslateController;->detectedDialogLanguage:Ljava/util/HashMap;
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -4363,17 +4409,17 @@
 
     if-eqz v5, :cond_0
 
-    .line 439
+    .line 452
     invoke-virtual {v1, v5}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 440
+    .line 453
     invoke-virtual {p0, v3, v4}, Lorg/telegram/messenger/TranslateController;->cancelTranslations(J)V
 
-    .line 441
+    .line 454
     iget-object v5, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -4382,7 +4428,7 @@
 
     invoke-interface {v5, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 442
+    .line 455
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -4391,16 +4437,16 @@
 
     goto :goto_0
 
-    .line 445
+    .line 458
     :cond_1
     iget-object v1, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogs:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->clear()V
 
-    .line 446
+    .line 459
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController;->saveTranslatingDialogsCache()V
 
-    .line 448
+    .line 461
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -4422,7 +4468,7 @@
 
     move-result-wide v1
 
-    .line 449
+    .line 462
     iget v3, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -4453,7 +4499,7 @@
 
     goto :goto_1
 
-    .line 451
+    .line 464
     :cond_2
     monitor-exit p0
 
@@ -4474,7 +4520,7 @@
 
     const/4 v0, 0x0
 
-    .line 460
+    .line 473
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/messenger/TranslateController;->checkTranslation(Lorg/telegram/messenger/MessageObject;ZZ)V
 
     return-void
@@ -4483,48 +4529,48 @@
 .method public cleanup()V
     .locals 1
 
-    .line 586
+    .line 605
     invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->cancelAllTranslations()V
 
-    .line 587
+    .line 606
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController;->resetTranslatingDialogsCache()V
 
-    .line 589
+    .line 608
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 590
+    .line 609
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogs:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 591
+    .line 610
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogMessages:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 592
+    .line 611
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translateDialogLanguage:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 593
+    .line 612
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->detectedDialogLanguage:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 594
+    .line 613
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->keptReplyMessageObjects:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 595
+    .line 614
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 596
+    .line 615
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
@@ -4535,7 +4581,7 @@
 .method public findReplyMessageObject(JI)Lorg/telegram/messenger/MessageObject;
     .locals 1
 
-    .line 894
+    .line 917
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->keptReplyMessageObjects:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -4554,7 +4600,7 @@
 
     return-object p1
 
-    .line 898
+    .line 921
     :cond_0
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4572,7 +4618,7 @@
 .method public getDialogDetectedLanguage(J)Ljava/lang/String;
     .locals 1
 
-    .line 456
+    .line 469
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->detectedDialogLanguage:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -4591,7 +4637,7 @@
 .method public getDialogTranslateTo(J)Ljava/lang/String;
     .locals 2
 
-    .line 163
+    .line 176
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translateDialogLanguage:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -4606,14 +4652,14 @@
 
     if-nez v0, :cond_1
 
-    .line 165
+    .line 178
     invoke-static {}, Lorg/telegram/ui/Components/TranslateAlert2;->getToLanguage()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 166
+    .line 179
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->getDialogDetectedLanguage(J)Ljava/lang/String;
 
     move-result-object p1
@@ -4624,7 +4670,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 167
+    .line 180
     :cond_0
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController;->currentLanguage()Ljava/lang/String;
 
@@ -4633,7 +4679,7 @@
     :cond_1
     const-string p1, "nb"
 
-    .line 170
+    .line 183
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -4649,7 +4695,7 @@
 .method public invalidateTranslation(Lorg/telegram/messenger/MessageObject;)V
     .locals 4
 
-    .line 530
+    .line 543
     invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
 
     move-result v0
@@ -4661,30 +4707,30 @@
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 533
+    .line 546
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-nez v0, :cond_1
 
     goto :goto_0
 
-    .line 536
+    .line 549
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v0
 
-    .line 537
+    .line 550
     iget-object v2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     const/4 v3, 0x0
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->translatedToLanguage:Ljava/lang/String;
 
-    .line 538
+    .line 551
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
-    .line 539
+    .line 552
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -4693,7 +4739,7 @@
 
     invoke-virtual {v2, v0, v1, v3}, Lorg/telegram/messenger/MessagesStorage;->updateMessageCustomParams(JLorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 540
+    .line 553
     new-instance v2, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda7;
 
     invoke-direct {v2, p0, p1, v0, v1}, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/messenger/TranslateController;Lorg/telegram/messenger/MessageObject;J)V
@@ -4708,18 +4754,37 @@
 .method public isChatTranslateEnabled()Z
     .locals 3
 
-    .line 71
-    iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
+    .line 74
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->chatTranslateEnabled:Ljava/lang/Boolean;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings(I)Landroid/content/SharedPreferences;
+    if-nez v0, :cond_0
+
+    .line 75
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->messagesController:Lorg/telegram/messenger/MessagesController;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    const-string/jumbo v1, "translate_chat_button"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const-string/jumbo v2, "translate_chat_button"
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/telegram/messenger/TranslateController;->chatTranslateEnabled:Ljava/lang/Boolean;
+
+    .line 77
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->chatTranslateEnabled:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
@@ -4729,10 +4794,15 @@
 .method public isContextTranslateEnabled()Z
     .locals 4
 
-    .line 75
-    iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
+    .line 81
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->contextTranslateEnabled:Ljava/lang/Boolean;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings(I)Landroid/content/SharedPreferences;
+    if-nez v0, :cond_0
+
+    .line 82
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->messagesController:Lorg/telegram/messenger/MessagesController;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -4740,15 +4810,29 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "translate_button"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const-string/jumbo v3, "translate_button"
 
-    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v1, v3, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
-    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v0, v3, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/telegram/messenger/TranslateController;->contextTranslateEnabled:Ljava/lang/Boolean;
+
+    .line 84
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->contextTranslateEnabled:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
@@ -4758,21 +4842,21 @@
 .method public isDialogTranslatable(J)Z
     .locals 2
 
-    .line 100
+    .line 113
     invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 101
+    .line 114
     invoke-static {p1, p2}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 102
+    .line 115
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -4787,7 +4871,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogs:Ljava/util/Set;
 
-    .line 104
+    .line 117
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -4813,6 +4897,12 @@
     .locals 1
 
     .line 67
+    invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isChatTranslateEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -4820,12 +4910,6 @@
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isChatTranslateEnabled()Z
 
     move-result v0
 
@@ -4845,7 +4929,7 @@
 .method public isTranslateDialogHidden(J)Z
     .locals 3
 
-    .line 109
+    .line 122
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -4862,7 +4946,7 @@
 
     return p1
 
-    .line 112
+    .line 125
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -4876,12 +4960,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 114
+    .line 127
     iget-boolean p1, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->translations_disabled:Z
 
     return p1
 
-    .line 116
+    .line 129
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -4893,7 +4977,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 118
+    .line 131
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$UserFull;->translations_disabled:Z
 
     return p1
@@ -4907,12 +4991,12 @@
 .method public isTranslating(Lorg/telegram/messenger/MessageObject;)Z
     .locals 2
 
-    .line 819
+    .line 842
     monitor-enter p0
 
     if-eqz p1, :cond_0
 
-    .line 820
+    .line 843
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
@@ -4957,7 +5041,7 @@
 
     return p1
 
-    .line 821
+    .line 844
     :goto_1
     monitor-exit p0
     :try_end_0
@@ -4975,7 +5059,7 @@
 
     return v0
 
-    .line 828
+    .line 851
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
@@ -4989,11 +5073,11 @@
 
     return v0
 
-    .line 831
+    .line 854
     :cond_1
     monitor-enter p0
 
-    .line 832
+    .line 855
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
@@ -5013,7 +5097,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 833
+    .line 856
     monitor-exit p0
 
     return v1
@@ -5021,7 +5105,7 @@
     :cond_2
     if-eqz p2, :cond_4
 
-    .line 836
+    .line 859
     iget-object p1, p2, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -5041,7 +5125,7 @@
 
     check-cast p2, Lorg/telegram/messenger/MessageObject;
 
-    .line 837
+    .line 860
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController;->loadingTranslations:Ljava/util/Set;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -5058,12 +5142,12 @@
 
     if-eqz p2, :cond_3
 
-    .line 838
+    .line 861
     monitor-exit p0
 
     return v1
 
-    .line 842
+    .line 865
     :cond_4
     monitor-exit p0
 
@@ -5082,7 +5166,7 @@
 .method public isTranslatingDialog(J)Z
     .locals 1
 
-    .line 124
+    .line 137
     invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
 
     move-result v0
@@ -5112,19 +5196,64 @@
     return p1
 .end method
 
-.method public setContextTranslateEnabled(Z)V
+.method public setChatTranslateEnabled(Z)V
     .locals 2
 
-    .line 79
-    iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
+    .line 92
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->messagesController:Lorg/telegram/messenger/MessagesController;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings(I)Landroid/content/SharedPreferences;
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/telegram/messenger/TranslateController;->chatTranslateEnabled:Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    const-string/jumbo v1, "translate_chat_button"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public setContextTranslateEnabled(Z)V
+    .locals 2
+
+    .line 88
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->messagesController:Lorg/telegram/messenger/MessagesController;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/telegram/messenger/TranslateController;->contextTranslateEnabled:Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
 
     const-string/jumbo v1, "translate_button"
 
@@ -5140,7 +5269,7 @@
 .method public setDialogTranslateTo(JLjava/lang/String;)V
     .locals 4
 
-    .line 177
+    .line 190
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->getDialogTranslateTo(J)Ljava/lang/String;
 
     move-result-object v0
@@ -5153,7 +5282,7 @@
 
     return-void
 
-    .line 181
+    .line 194
     :cond_0
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->isTranslatingDialog(J)Z
 
@@ -5161,7 +5290,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 184
+    .line 197
     new-instance v0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/TranslateController;JLjava/lang/String;)V
@@ -5172,11 +5301,11 @@
 
     goto :goto_0
 
-    .line 193
+    .line 206
     :cond_1
     monitor-enter p0
 
-    .line 194
+    .line 207
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translateDialogLanguage:Ljava/util/HashMap;
 
@@ -5186,19 +5315,19 @@
 
     invoke-virtual {v0, v1, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 195
+    .line 208
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 198
+    .line 211
     :goto_0
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->cancelTranslations(J)V
 
-    .line 199
+    .line 212
     monitor-enter p0
 
-    .line 200
+    .line 213
     :try_start_1
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
 
@@ -5208,12 +5337,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 201
+    .line 214
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 202
+    .line 215
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5242,7 +5371,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 204
+    .line 217
     invoke-static {p3}, Lorg/telegram/ui/Components/TranslateAlert2;->setToLanguage(Ljava/lang/String;)V
 
     return-void
@@ -5250,7 +5379,7 @@
     :catchall_0
     move-exception p1
 
-    .line 201
+    .line 214
     :try_start_2
     monitor-exit p0
     :try_end_2
@@ -5261,7 +5390,7 @@
     :catchall_1
     move-exception p1
 
-    .line 195
+    .line 208
     :try_start_3
     monitor-exit p0
     :try_end_3
@@ -5275,7 +5404,7 @@
 
     const/4 v0, 0x0
 
-    .line 240
+    .line 253
     invoke-virtual {p0, p1, p2, p3, v0}, Lorg/telegram/messenger/TranslateController;->setHideTranslateDialog(JZZ)V
 
     return-void
@@ -5284,12 +5413,12 @@
 .method public setHideTranslateDialog(JZZ)V
     .locals 4
 
-    .line 244
+    .line 257
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_togglePeerTranslations;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_togglePeerTranslations;-><init>()V
 
-    .line 245
+    .line 258
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -5300,10 +5429,10 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_togglePeerTranslations;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 246
+    .line 259
     iput-boolean p3, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_togglePeerTranslations;->disabled:Z
 
-    .line 247
+    .line 260
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
@@ -5312,7 +5441,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 249
+    .line 262
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -5327,17 +5456,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 251
+    .line 264
     iput-boolean p3, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->translations_disabled:Z
 
-    .line 252
+    .line 265
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
 
     invoke-virtual {v2, v0, v1}, Lorg/telegram/messenger/MessagesStorage;->updateChatInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;Z)V
 
-    .line 254
+    .line 267
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -5349,23 +5478,23 @@
 
     if-eqz v0, :cond_1
 
-    .line 256
+    .line 269
     iput-boolean p3, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->translations_disabled:Z
 
-    .line 257
+    .line 270
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
 
     invoke-virtual {v2, v0, v1}, Lorg/telegram/messenger/MessagesStorage;->updateUserInfo(Lorg/telegram/tgnet/TLRPC$UserFull;Z)V
 
-    .line 260
+    .line 273
     :cond_1
     monitor-enter p0
 
     if-eqz p3, :cond_2
 
-    .line 262
+    .line 275
     :try_start_0
     iget-object p3, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
@@ -5377,7 +5506,7 @@
 
     goto :goto_0
 
-    .line 264
+    .line 277
     :cond_2
     iget-object p3, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
@@ -5387,18 +5516,18 @@
 
     invoke-interface {p3, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 266
+    .line 279
     :goto_0
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 267
+    .line 280
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController;->saveTranslatingDialogsCache()V
 
     if-nez p4, :cond_3
 
-    .line 270
+    .line 283
     iget p3, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5437,7 +5566,7 @@
     :catchall_0
     move-exception p1
 
-    .line 266
+    .line 279
     :try_start_1
     monitor-exit p0
     :try_end_1
@@ -5449,7 +5578,7 @@
 .method public toggleTranslatingDialog(J)V
     .locals 1
 
-    .line 128
+    .line 141
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->isTranslatingDialog(J)Z
 
     move-result v0
@@ -5464,7 +5593,7 @@
 .method public toggleTranslatingDialog(JZ)Z
     .locals 5
 
-    .line 132
+    .line 145
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->isTranslatingDialog(J)Z
 
     move-result v0
@@ -5479,7 +5608,7 @@
 
     if-nez v0, :cond_0
 
-    .line 134
+    .line 147
     iget-object p3, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -5488,7 +5617,7 @@
 
     invoke-interface {p3, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 135
+    .line 148
     iget p3, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5521,7 +5650,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 138
+    .line 151
     iget-object p3, p0, Lorg/telegram/messenger/TranslateController;->translatingDialogs:Ljava/util/Set;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -5530,7 +5659,7 @@
 
     invoke-interface {p3, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 139
+    .line 152
     iget p3, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5553,12 +5682,12 @@
 
     invoke-virtual {p3, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 140
+    .line 153
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/TranslateController;->cancelTranslations(J)V
 
     goto :goto_0
 
-    .line 143
+    .line 156
     :cond_1
     :goto_1
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController;->saveTranslatingDialogsCache()V
@@ -5569,7 +5698,7 @@
 .method public updateDialogFull(J)V
     .locals 5
 
-    .line 208
+    .line 221
     invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
 
     move-result v0
@@ -5584,7 +5713,7 @@
 
     goto :goto_2
 
-    .line 212
+    .line 225
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
@@ -5596,7 +5725,7 @@
 
     move-result v0
 
-    .line 215
+    .line 228
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -5611,12 +5740,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 217
+    .line 230
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$ChatFull;->translations_disabled:Z
 
     goto :goto_0
 
-    .line 219
+    .line 232
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -5628,7 +5757,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 221
+    .line 234
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$UserFull;->translations_disabled:Z
 
     goto :goto_0
@@ -5636,13 +5765,13 @@
     :cond_2
     move v1, v2
 
-    .line 225
+    .line 238
     :goto_0
     monitor-enter p0
 
     if-eqz v1, :cond_3
 
-    .line 227
+    .line 240
     :try_start_0
     iget-object v3, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
@@ -5654,7 +5783,7 @@
 
     goto :goto_1
 
-    .line 229
+    .line 242
     :cond_3
     iget-object v3, p0, Lorg/telegram/messenger/TranslateController;->hideTranslateDialogs:Ljava/util/Set;
 
@@ -5664,7 +5793,7 @@
 
     invoke-interface {v3, v4}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 231
+    .line 244
     :goto_1
     monitor-exit p0
     :try_end_0
@@ -5672,10 +5801,10 @@
 
     if-eq v0, v1, :cond_4
 
-    .line 234
+    .line 247
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController;->saveTranslatingDialogsCache()V
 
-    .line 235
+    .line 248
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5714,7 +5843,7 @@
     :catchall_0
     move-exception p1
 
-    .line 231
+    .line 244
     :try_start_1
     monitor-exit p0
     :try_end_1

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->$r8$lambda$V1SFOfhwaZQtnTVdELsXZhzX8QM(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;)V
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->$r8$lambda$-RTApAPYyxSvNLlrplhJMXWKMMM(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;)V
 
     return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->$r8$lambda$EfeiLMaAW3RRtWrN8xf5WkKYgMo(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;IIF)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->$r8$lambda$sEdKmmgAYveVtsoI80nl2cr1N_k(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;IIF)V
 
     return-void
 .end method

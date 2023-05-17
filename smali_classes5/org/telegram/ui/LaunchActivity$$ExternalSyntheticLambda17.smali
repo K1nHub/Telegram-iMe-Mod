@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-.field public final synthetic f$1:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/CheckBoxCell;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda17;->f$1:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/LaunchActivity;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Cells/CheckBoxCell;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda17;->f$1:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$9hIUjeWjzVWJarDfS4dvflk1wQE(Lorg/telegram/ui/Cells/CheckBoxCell;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$9KfU0SeHd_GqEDJ9C05iL_9OtL8(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;)V
 
     return-void
 .end method

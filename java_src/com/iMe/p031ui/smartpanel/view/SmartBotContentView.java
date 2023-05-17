@@ -19,7 +19,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.VideoEditedInfo;
@@ -96,15 +96,15 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                     if (tLRPC$Document != null) {
                         TLRPC$PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90);
                         Size size3 = this.size;
-                        size3.width = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1458w : 100;
-                        size3.height = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1457h : 100;
+                        size3.width = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1464w : 100;
+                        size3.height = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1463h : 100;
                         int size4 = media.document.attributes.size();
                         while (i2 < size4) {
                             TLRPC$DocumentAttribute tLRPC$DocumentAttribute = media.document.attributes.get(i2);
                             if ((tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeVideo)) {
                                 Size size5 = this.size;
-                                size5.width = tLRPC$DocumentAttribute.f1438w;
-                                size5.height = tLRPC$DocumentAttribute.f1437h;
+                                size5.width = tLRPC$DocumentAttribute.f1444w;
+                                size5.height = tLRPC$DocumentAttribute.f1443h;
                                 break;
                             }
                             i2++;
@@ -117,8 +117,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute2 = media.content.attributes.get(i2);
                                 if ((tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size7 = this.size;
-                                    size7.width = tLRPC$DocumentAttribute2.f1438w;
-                                    size7.height = tLRPC$DocumentAttribute2.f1437h;
+                                    size7.width = tLRPC$DocumentAttribute2.f1444w;
+                                    size7.height = tLRPC$DocumentAttribute2.f1443h;
                                     break;
                                 }
                                 i2++;
@@ -131,8 +131,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                                     TLRPC$DocumentAttribute tLRPC$DocumentAttribute3 = media.thumb.attributes.get(i2);
                                     if ((tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeVideo)) {
                                         Size size9 = this.size;
-                                        size9.width = tLRPC$DocumentAttribute3.f1438w;
-                                        size9.height = tLRPC$DocumentAttribute3.f1437h;
+                                        size9.width = tLRPC$DocumentAttribute3.f1444w;
+                                        size9.height = tLRPC$DocumentAttribute3.f1443h;
                                         break;
                                     }
                                     i2++;
@@ -146,8 +146,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                                     TLRPC$PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(arrayList, photoSize.intValue());
                                     if (closestPhotoSizeWithSize2 != null) {
                                         Size size10 = this.size;
-                                        size10.width = closestPhotoSizeWithSize2.f1458w;
-                                        size10.height = closestPhotoSizeWithSize2.f1457h;
+                                        size10.width = closestPhotoSizeWithSize2.f1464w;
+                                        size10.height = closestPhotoSizeWithSize2.f1463h;
                                     }
                                 }
                             }
@@ -244,8 +244,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
         };
         smartBotContentAdapter.setHasStableIds(true);
         smartBotContentAdapter.setTextData(content, this.currentBotResponseType);
-        textView.setText(LocaleController.getInternalString(C3242R.string.chat_send_panel_neurobot_not_have_gifs));
-        textView.setTextColor(ContextCompat.getColor(context, C3242R.C3243color.gray_message));
+        textView.setText(LocaleController.getInternalString(C3290R.string.chat_send_panel_neurobot_not_have_gifs));
+        textView.setTextColor(ContextCompat.getColor(context, C3290R.C3291color.gray_message));
         textView.setTextSize(14.0f);
         textView.setVisibility(8);
         recyclerListView.setAdapter(smartBotContentAdapter);
@@ -264,8 +264,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                 if (Intrinsics.areEqual(parent.getLayoutManager(), SmartBotContentView.this.listViewLayoutManager)) {
                     int childAdapterPosition = parent.getChildAdapterPosition(view);
                     if (SmartBotContentView.this.listViewAdapter.getItem(childAdapterPosition) instanceof TabBotMediaAnswerItem) {
-                        outRect.top = AndroidUtilities.m51dp(2.0f);
-                        outRect.right = SmartBotContentView.this.listViewLayoutManager.isLastInRow(childAdapterPosition) ? 0 : AndroidUtilities.m51dp(2.0f);
+                        outRect.top = AndroidUtilities.m55dp(2.0f);
+                        outRect.right = SmartBotContentView.this.listViewLayoutManager.isLastInRow(childAdapterPosition) ? 0 : AndroidUtilities.m55dp(2.0f);
                     }
                 }
             }

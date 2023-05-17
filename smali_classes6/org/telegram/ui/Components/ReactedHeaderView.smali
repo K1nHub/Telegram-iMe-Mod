@@ -162,14 +162,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ReactedHeaderView;->flickerLoadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
-    const-string p3, "actionBarDefaultSubmenuBackground"
-
-    const-string p4, "listSelectorSDK21"
-
-    const/4 p5, 0x0
-
     .line 61
-    invoke-virtual {p2, p3, p4, p5}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
+
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    const/4 p5, -0x1
+
+    invoke-virtual {p2, p3, p4, p5}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(III)V
 
     .line 62
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactedHeaderView;->flickerLoadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
@@ -190,8 +190,6 @@
 
     const/4 p4, -0x2
 
-    const/4 p5, -0x1
-
     invoke-static {p4, p5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p4
@@ -205,10 +203,10 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ReactedHeaderView;->titleView:Landroid/widget/TextView;
 
-    const-string p4, "actionBarDefaultSubmenuItem"
-
     .line 67
-    invoke-static {p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
+
+    invoke-static {p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p4
 
@@ -336,9 +334,9 @@
     .line 81
     new-instance p4, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string p5, "actionBarDefaultSubmenuItemIcon"
+    sget p5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
 
-    invoke-static {p5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p5
 

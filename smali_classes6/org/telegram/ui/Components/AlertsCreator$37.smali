@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$37;
-.super Lorg/telegram/ui/Components/ReportAlert;
+.super Landroid/widget/LinearLayout;
 .source "AlertsCreator.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->lambda$createReportAlert$125([IILorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/content/DialogInterface;I)V
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createMuteForPickerDialog(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,115 +15,101 @@
 
 
 # instance fields
-.field final synthetic val$dialog_id:J
+.field ignoreLayout:Z
 
-.field final synthetic val$messageId:I
-
-.field final synthetic val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field final synthetic val$numberPicker:Lorg/telegram/ui/Components/NumberPicker;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/BaseFragment;IJ)V
+.method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;)V
     .locals 0
 
-    .line 4575
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+    .line 4311
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$numberPicker:Lorg/telegram/ui/Components/NumberPicker;
 
-    iput p4, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$messageId:I
+    invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    iput-wide p5, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$dialog_id:J
+    const/4 p1, 0x0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;I)V
+    .line 4313
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->ignoreLayout:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dismissInternal()V
-    .locals 2
+.method protected onMeasure(II)V
+    .locals 3
 
-    .line 4579
-    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
+    const/4 v0, 0x1
 
-    .line 4580
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+    .line 4317
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->ignoreLayout:Z
 
-    instance-of v1, v0, Lorg/telegram/ui/ChatActivity;
+    .line 4319
+    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
-    if-eqz v1, :cond_0
+    iget v1, v0, Landroid/graphics/Point;->x:I
 
-    .line 4581
-    check-cast v0, Lorg/telegram/ui/ChatActivity;
+    iget v0, v0, Landroid/graphics/Point;->y:I
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->checkAdjustResize()V
+    if-le v1, v0, :cond_0
+
+    const/4 v0, 0x3
+
+    goto :goto_0
 
     :cond_0
+    const/4 v0, 0x5
+
+    .line 4324
+    :goto_0
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$numberPicker:Lorg/telegram/ui/Components/NumberPicker;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
+
+    .line 4325
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$numberPicker:Lorg/telegram/ui/Components/NumberPicker;
+
+    invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    const/16 v2, 0x2a
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    mul-int/2addr v2, v0
+
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    const/4 v0, 0x0
+
+    .line 4326
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->ignoreLayout:Z
+
+    .line 4327
+    invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
+
     return-void
 .end method
 
-.method protected onSend(ILjava/lang/String;)V
-    .locals 4
+.method public requestLayout()V
+    .locals 1
 
-    .line 4587
-    new-instance v0, Ljava/util/ArrayList;
+    .line 4332
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->ignoreLayout:Z
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    if-eqz v0, :cond_0
 
-    .line 4588
-    iget v1, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$messageId:I
+    return-void
 
-    if-eqz v1, :cond_0
-
-    .line 4589
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 4591
+    .line 4335
     :cond_0
-    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    invoke-super {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 
-    invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v1
-
-    iget-wide v2, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$dialog_id:J
-
-    invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->getInputPeer(J)Lorg/telegram/tgnet/TLRPC$InputPeer;
-
-    move-result-object v1
-
-    .line 4592
-    invoke-static {v1, p1, p2, v0}, Lorg/telegram/ui/Components/AlertsCreator;->sendReport(Lorg/telegram/tgnet/TLRPC$InputPeer;ILjava/lang/String;Ljava/util/ArrayList;)V
-
-    .line 4593
-    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$37;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    instance-of p2, p1, Lorg/telegram/ui/ChatActivity;
-
-    if-eqz p2, :cond_1
-
-    .line 4594
-    check-cast p1, Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_1
-
-    const-wide/16 v0, 0x0
-
-    const/16 p2, 0x4a
-
-    const/4 v2, 0x0
-
-    .line 4596
-    invoke-virtual {p1, v0, v1, p2, v2}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
-
-    :cond_1
     return-void
 .end method

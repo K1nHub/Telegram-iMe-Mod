@@ -12,9 +12,11 @@
 
 .field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,13 +27,15 @@
 
     iput-object p3, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda23;->f$2:Lorg/telegram/tgnet/TLObject;
 
+    iput-object p4, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda23;->f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -39,7 +43,9 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda23;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$nFNBDLxpahmDGI_TGNpFCTCbl_w(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
+    iget-object v3, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda23;->f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$yaZMo4hK6sfIqgTHImEBpKF7wT0(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
 
     return-void
 .end method

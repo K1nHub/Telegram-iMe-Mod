@@ -10,7 +10,7 @@ public final class Invocation {
     private final Method method;
 
     /* renamed from: of */
-    public static Invocation m8of(Method method, List<?> list) {
+    public static Invocation m10of(Method method, List<?> list) {
         Utils.checkNotNull(method, "method == null");
         Utils.checkNotNull(list, "arguments == null");
         return new Invocation(method, new ArrayList(list));

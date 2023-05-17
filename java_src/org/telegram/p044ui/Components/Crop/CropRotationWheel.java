@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -69,7 +69,7 @@ public class CropRotationWheel extends FrameLayout {
         this.bluePaint.setAntiAlias(true);
         ImageView imageView = new ImageView(context);
         this.mirrorButton = imageView;
-        imageView.setImageResource(C3242R.C3244drawable.msg_photo_flip);
+        imageView.setImageResource(C3290R.C3292drawable.msg_photo_flip);
         this.mirrorButton.setBackgroundDrawable(Theme.createSelectorDrawable(1090519039));
         this.mirrorButton.setScaleType(ImageView.ScaleType.CENTER);
         this.mirrorButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda1
@@ -86,11 +86,11 @@ public class CropRotationWheel extends FrameLayout {
                 return lambda$new$1;
             }
         });
-        this.mirrorButton.setContentDescription(LocaleController.getString("AccDescrMirror", C3242R.string.AccDescrMirror));
+        this.mirrorButton.setContentDescription(LocaleController.getString("AccDescrMirror", C3290R.string.AccDescrMirror));
         addView(this.mirrorButton, LayoutHelper.createFrame(70, 64, 19));
         ImageView imageView2 = new ImageView(context);
         this.aspectRatioButton = imageView2;
-        imageView2.setImageResource(C3242R.C3244drawable.msg_photo_cropfix);
+        imageView2.setImageResource(C3290R.C3292drawable.msg_photo_cropfix);
         this.aspectRatioButton.setBackgroundDrawable(Theme.createSelectorDrawable(1090519039));
         this.aspectRatioButton.setScaleType(ImageView.ScaleType.CENTER);
         this.aspectRatioButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda0
@@ -100,11 +100,11 @@ public class CropRotationWheel extends FrameLayout {
             }
         });
         this.aspectRatioButton.setVisibility(8);
-        this.aspectRatioButton.setContentDescription(LocaleController.getString("AccDescrAspectRatio", C3242R.string.AccDescrAspectRatio));
+        this.aspectRatioButton.setContentDescription(LocaleController.getString("AccDescrAspectRatio", C3290R.string.AccDescrAspectRatio));
         addView(this.aspectRatioButton, LayoutHelper.createFrame(70, 64, 19));
         ImageView imageView3 = new ImageView(context);
         this.rotation90Button = imageView3;
-        imageView3.setImageResource(C3242R.C3244drawable.msg_photo_rotate);
+        imageView3.setImageResource(C3290R.C3292drawable.msg_photo_rotate);
         this.rotation90Button.setBackgroundDrawable(Theme.createSelectorDrawable(1090519039));
         this.rotation90Button.setScaleType(ImageView.ScaleType.CENTER);
         this.rotation90Button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda2
@@ -113,12 +113,12 @@ public class CropRotationWheel extends FrameLayout {
                 CropRotationWheel.this.lambda$new$3(view);
             }
         });
-        this.rotation90Button.setContentDescription(LocaleController.getString("AccDescrRotate", C3242R.string.AccDescrRotate));
+        this.rotation90Button.setContentDescription(LocaleController.getString("AccDescrRotate", C3290R.string.AccDescrRotate));
         addView(this.rotation90Button, LayoutHelper.createFrame(70, 64, 21));
         TextPaint textPaint = new TextPaint(1);
         this.degreesTextPaint = textPaint;
         textPaint.setColor(-1);
-        this.degreesTextPaint.setTextSize(AndroidUtilities.m50dp(14));
+        this.degreesTextPaint.setTextSize(AndroidUtilities.m54dp(14));
         setWillNotDraw(false);
         setRotation(BitmapDescriptorFactory.HUE_RED, false);
     }
@@ -154,16 +154,16 @@ public class CropRotationWheel extends FrameLayout {
     }
 
     public void setMirrored(boolean z) {
-        this.mirrorButton.setColorFilter(z ? new PorterDuffColorFilter(Theme.getColor("dialogFloatingButton"), PorterDuff.Mode.MULTIPLY) : null);
+        this.mirrorButton.setColorFilter(z ? new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogFloatingButton), PorterDuff.Mode.MULTIPLY) : null);
     }
 
     public void setRotated(boolean z) {
-        this.rotation90Button.setColorFilter(z ? new PorterDuffColorFilter(Theme.getColor("dialogFloatingButton"), PorterDuff.Mode.MULTIPLY) : null);
+        this.rotation90Button.setColorFilter(z ? new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogFloatingButton), PorterDuff.Mode.MULTIPLY) : null);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(400)), 1073741824), i2);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(400)), 1073741824), i2);
     }
 
     public void reset(boolean z) {
@@ -262,19 +262,19 @@ public class CropRotationWheel extends FrameLayout {
             i = i2 + 1;
         }
         this.bluePaint.setAlpha(255);
-        this.tempRect.left = (width - AndroidUtilities.m51dp(2.5f)) / 2;
-        this.tempRect.top = (height - AndroidUtilities.m50dp(22)) / 2;
-        this.tempRect.right = (AndroidUtilities.m51dp(2.5f) + width) / 2;
-        this.tempRect.bottom = (height + AndroidUtilities.m50dp(22)) / 2;
-        canvas.drawRoundRect(this.tempRect, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), this.bluePaint);
-        canvas.drawText(this.degreesText, (width - this.degreesTextPaint.measureText(this.degreesText)) / 2.0f, AndroidUtilities.m50dp(14), this.degreesTextPaint);
+        this.tempRect.left = (width - AndroidUtilities.m55dp(2.5f)) / 2;
+        this.tempRect.top = (height - AndroidUtilities.m54dp(22)) / 2;
+        this.tempRect.right = (AndroidUtilities.m55dp(2.5f) + width) / 2;
+        this.tempRect.bottom = (height + AndroidUtilities.m54dp(22)) / 2;
+        canvas.drawRoundRect(this.tempRect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), this.bluePaint);
+        canvas.drawText(this.degreesText, (width - this.degreesTextPaint.measureText(this.degreesText)) / 2.0f, AndroidUtilities.m54dp(14), this.degreesTextPaint);
     }
 
     protected void drawLine(Canvas canvas, int i, float f, int i2, int i3, boolean z, Paint paint) {
-        int m50dp = (int) ((i2 / 2.0f) - AndroidUtilities.m50dp(70));
-        int cos = (int) (m50dp * Math.cos(Math.toRadians(90.0f - ((i * 5) + f))));
+        int m54dp = (int) ((i2 / 2.0f) - AndroidUtilities.m54dp(70));
+        int cos = (int) (m54dp * Math.cos(Math.toRadians(90.0f - ((i * 5) + f))));
         int i4 = (i2 / 2) + cos;
-        float abs = Math.abs(cos) / m50dp;
+        float abs = Math.abs(cos) / m54dp;
         int min = Math.min(255, Math.max(0, (int) ((1.0f - (abs * abs)) * 255.0f)));
         if (z) {
             paint = this.bluePaint;
@@ -282,8 +282,8 @@ public class CropRotationWheel extends FrameLayout {
         Paint paint2 = paint;
         paint2.setAlpha(min);
         int i5 = z ? 4 : 2;
-        int m50dp2 = AndroidUtilities.m50dp(z ? 16 : 12);
+        int m54dp2 = AndroidUtilities.m54dp(z ? 16 : 12);
         int i6 = i5 / 2;
-        canvas.drawRect(i4 - i6, (i3 - m50dp2) / 2, i4 + i6, (i3 + m50dp2) / 2, paint2);
+        canvas.drawRect(i4 - i6, (i3 - m54dp2) / 2, i4 + i6, (i3 + m54dp2) / 2, paint2);
     }
 }

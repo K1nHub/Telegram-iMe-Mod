@@ -11,27 +11,27 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzab extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzab> CREATOR = new zzac();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     public String zza;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     public String zzb;
-    @SafeParcelable.Field(m775id = 4)
+    @SafeParcelable.Field(m779id = 4)
     public zzkv zzc;
-    @SafeParcelable.Field(m775id = 5)
+    @SafeParcelable.Field(m779id = 5)
     public long zzd;
-    @SafeParcelable.Field(m775id = 6)
+    @SafeParcelable.Field(m779id = 6)
     public boolean zze;
-    @SafeParcelable.Field(m775id = 7)
+    @SafeParcelable.Field(m779id = 7)
     public String zzf;
-    @SafeParcelable.Field(m775id = 8)
+    @SafeParcelable.Field(m779id = 8)
     public final zzat zzg;
-    @SafeParcelable.Field(m775id = 9)
+    @SafeParcelable.Field(m779id = 9)
     public long zzh;
-    @SafeParcelable.Field(m775id = 10)
+    @SafeParcelable.Field(m779id = 10)
     public zzat zzi;
-    @SafeParcelable.Field(m775id = 11)
+    @SafeParcelable.Field(m779id = 11)
     public final long zzj;
-    @SafeParcelable.Field(m775id = 12)
+    @SafeParcelable.Field(m779id = 12)
     public final zzat zzk;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -69,7 +69,7 @@ public final class zzab extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzab(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) zzkv zzkvVar, @SafeParcelable.Param(m774id = 5) long j, @SafeParcelable.Param(m774id = 6) boolean z, @SafeParcelable.Param(m774id = 7) String str3, @SafeParcelable.Param(m774id = 8) zzat zzatVar, @SafeParcelable.Param(m774id = 9) long j2, @SafeParcelable.Param(m774id = 10) zzat zzatVar2, @SafeParcelable.Param(m774id = 11) long j3, @SafeParcelable.Param(m774id = 12) zzat zzatVar3) {
+    public zzab(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2, @SafeParcelable.Param(m778id = 4) zzkv zzkvVar, @SafeParcelable.Param(m778id = 5) long j, @SafeParcelable.Param(m778id = 6) boolean z, @SafeParcelable.Param(m778id = 7) String str3, @SafeParcelable.Param(m778id = 8) zzat zzatVar, @SafeParcelable.Param(m778id = 9) long j2, @SafeParcelable.Param(m778id = 10) zzat zzatVar2, @SafeParcelable.Param(m778id = 11) long j3, @SafeParcelable.Param(m778id = 12) zzat zzatVar3) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = zzkvVar;

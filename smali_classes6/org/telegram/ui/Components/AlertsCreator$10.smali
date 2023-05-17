@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$10;
-.super Ljava/lang/Object;
+.super Landroid/widget/TextView;
 .source "AlertsCreator.java"
-
-# interfaces
-.implements Landroid/text/TextWatcher;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createChangeBioAlert(Ljava/lang/String;JLandroid/content/Context;I)V
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createClearDaysDialogAlert(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,91 +14,38 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
-
-.field final synthetic val$maxSymbolsCount:I
-
-
 # direct methods
-.method constructor <init>(ILorg/telegram/ui/Components/NumberTextView;)V
+.method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 2375
-    iput p1, p0, Lorg/telegram/ui/Components/AlertsCreator$10;->val$maxSymbolsCount:I
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$10;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2361
+    invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 4
+.method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+    .locals 2
 
-    .line 2388
-    iget v0, p0, Lorg/telegram/ui/Components/AlertsCreator$10;->val$maxSymbolsCount:I
+    .line 2364
+    invoke-virtual {p0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
 
-    invoke-interface {p1}, Landroid/text/Editable;->length()I
+    move-result-object v0
 
-    move-result v1
+    invoke-virtual {v0}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    invoke-static {p1, v2, v1}, Ljava/lang/Character;->codePointCount(Ljava/lang/CharSequence;II)I
+    const/4 v1, 0x0
 
-    move-result p1
+    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;Z)Ljava/lang/CharSequence;
 
-    sub-int/2addr v0, p1
+    move-result-object p1
 
-    const/16 p1, 0x1e
-
-    if-ge v0, p1, :cond_1
-
-    .line 2390
-    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$10;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
-
-    invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
-
-    move-result v1
-
-    const/4 v3, 0x1
-
-    if-nez v1, :cond_0
-
-    move v2, v3
-
-    :cond_0
-    invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
-
-    .line 2391
-    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$10;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
-
-    invoke-static {p1, v3}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
-
-    goto :goto_0
-
-    .line 2393
-    :cond_1
-    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$10;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
-
-    invoke-static {p1, v2}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
-
-    :goto_0
-    return-void
-.end method
-
-.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
+    .line 2365
+    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
     return-void
 .end method

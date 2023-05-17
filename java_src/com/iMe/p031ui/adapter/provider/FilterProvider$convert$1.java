@@ -14,7 +14,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FilterProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.FilterProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FilterProvider$convert$1 extends Lambda implements Function1<RecyclerView, Unit> {
     final /* synthetic */ FiltersListItem $item;
     final /* synthetic */ FilterProvider this$0;

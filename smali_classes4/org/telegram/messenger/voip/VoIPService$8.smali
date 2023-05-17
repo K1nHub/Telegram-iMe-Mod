@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/voip/VoIPService;)V
     .locals 0
 
-    .line 3522
+    .line 3547
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$8;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-direct {p0}, Landroid/media/AudioDeviceCallback;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAudioDevicesAdded([Landroid/media/AudioDeviceInfo;)V
     .locals 0
 
-    .line 3525
+    .line 3550
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$8;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {p1}, Lorg/telegram/messenger/voip/VoIPService;->access$2600(Lorg/telegram/messenger/voip/VoIPService;)V
@@ -46,7 +46,7 @@
 .method public onAudioDevicesRemoved([Landroid/media/AudioDeviceInfo;)V
     .locals 0
 
-    .line 3530
+    .line 3555
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$8;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {p1}, Lorg/telegram/messenger/voip/VoIPService;->access$2600(Lorg/telegram/messenger/voip/VoIPService;)V

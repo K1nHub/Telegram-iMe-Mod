@@ -36,7 +36,7 @@
 
     move-object v5, p4
 
-    .line 238
+    .line 239
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;-><init>(Landroid/content/Context;IZILandroidx/recyclerview/widget/RecyclerView;)V
 
     return-void
@@ -59,7 +59,7 @@
 
     new-array v0, v0, [I
 
-    .line 256
+    .line 257
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getHeight()I
 
     move-result v1
@@ -70,7 +70,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 257
+    .line 258
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result v2
@@ -85,7 +85,7 @@
 
     sub-int/2addr v2, p1
 
-    .line 258
+    .line 259
     invoke-virtual {p2}, Landroid/graphics/Rect;->height()I
 
     move-result p1
@@ -96,14 +96,14 @@
 
     sub-int/2addr v2, p2
 
-    .line 259
+    .line 260
     invoke-static {p2, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v3
 
     sub-int/2addr p1, v1
 
-    .line 260
+    .line 261
     invoke-static {p2, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 261
+    .line 262
     :cond_0
     invoke-static {v2, p1}, Ljava/lang/Math;->min(II)I
 
@@ -137,7 +137,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 240
+    .line 241
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -148,10 +148,10 @@
 
     invoke-direct {p2, v0, p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1$smoothScrollToPosition$linearSmoothScroller$1;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/content/Context;)V
 
-    .line 249
+    .line 250
     invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 250
+    .line 251
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
     return-void

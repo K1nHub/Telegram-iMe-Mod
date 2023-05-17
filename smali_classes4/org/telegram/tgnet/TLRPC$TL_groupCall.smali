@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2501
+    .line 2921
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$GroupCall;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 2506
+    .line 2926
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +50,7 @@
     :cond_0
     move v1, v3
 
-    .line 2507
+    .line 2927
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->join_muted:Z
 
@@ -65,7 +65,7 @@
     :cond_1
     move v1, v3
 
-    .line 2508
+    .line 2928
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->can_change_join_muted:Z
 
@@ -80,7 +80,7 @@
     :cond_2
     move v1, v3
 
-    .line 2509
+    .line 2929
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->join_date_asc:Z
 
@@ -95,7 +95,7 @@
     :cond_3
     move v1, v3
 
-    .line 2510
+    .line 2930
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->schedule_start_subscribed:Z
 
@@ -110,7 +110,7 @@
     :cond_4
     move v1, v3
 
-    .line 2511
+    .line 2931
     :goto_4
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->can_start_video:Z
 
@@ -125,7 +125,7 @@
     :cond_5
     move v1, v3
 
-    .line 2512
+    .line 2932
     :goto_5
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->record_video_active:Z
 
@@ -140,7 +140,7 @@
     :cond_6
     move v1, v3
 
-    .line 2513
+    .line 2933
     :goto_6
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->rtmp_stream:Z
 
@@ -153,46 +153,46 @@
     :cond_7
     move v2, v3
 
-    .line 2514
+    .line 2934
     :goto_7
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->listeners_hidden:Z
 
-    .line 2515
+    .line 2935
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->id:J
 
-    .line 2516
+    .line 2936
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->access_hash:J
 
-    .line 2517
+    .line 2937
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->participants_count:I
 
-    .line 2518
+    .line 2938
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
     and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_8
 
-    .line 2519
+    .line 2939
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->title:Ljava/lang/String;
 
-    .line 2521
+    .line 2941
     :cond_8
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
@@ -200,14 +200,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 2522
+    .line 2942
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->stream_dc_id:I
 
-    .line 2524
+    .line 2944
     :cond_9
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
@@ -215,14 +215,14 @@
 
     if-eqz v0, :cond_a
 
-    .line 2525
+    .line 2945
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->record_start_date:I
 
-    .line 2527
+    .line 2947
     :cond_a
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
@@ -230,14 +230,14 @@
 
     if-eqz v0, :cond_b
 
-    .line 2528
+    .line 2948
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->schedule_date:I
 
-    .line 2530
+    .line 2950
     :cond_b
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
@@ -245,14 +245,14 @@
 
     if-eqz v0, :cond_c
 
-    .line 2531
+    .line 2951
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->unmuted_video_count:I
 
-    .line 2533
+    .line 2953
     :cond_c
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -260,7 +260,7 @@
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->unmuted_video_limit:I
 
-    .line 2534
+    .line 2954
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -273,12 +273,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2538
+    .line 2958
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_groupCall;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2539
+    .line 2959
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->join_muted:Z
 
     if-eqz v0, :cond_0
@@ -297,7 +297,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
-    .line 2540
+    .line 2960
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->can_change_join_muted:Z
 
     if-eqz v1, :cond_1
@@ -312,7 +312,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
-    .line 2541
+    .line 2961
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->join_date_asc:Z
 
     if-eqz v1, :cond_2
@@ -327,7 +327,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
-    .line 2542
+    .line 2962
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->schedule_start_subscribed:Z
 
     if-eqz v1, :cond_3
@@ -342,7 +342,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
-    .line 2543
+    .line 2963
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->can_start_video:Z
 
     if-eqz v1, :cond_4
@@ -357,7 +357,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
-    .line 2544
+    .line 2964
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->record_video_active:Z
 
     if-eqz v1, :cond_5
@@ -372,7 +372,7 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
-    .line 2545
+    .line 2965
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->rtmp_stream:Z
 
     if-eqz v1, :cond_6
@@ -387,7 +387,7 @@
     :goto_6
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
-    .line 2546
+    .line 2966
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->listeners_hidden:Z
 
     if-eqz v1, :cond_7
@@ -402,37 +402,37 @@
     :goto_7
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
-    .line 2547
+    .line 2967
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2548
+    .line 2968
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 2549
+    .line 2969
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->access_hash:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 2550
+    .line 2970
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->participants_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2551
+    .line 2971
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
     and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_8
 
-    .line 2552
+    .line 2972
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 2554
+    .line 2974
     :cond_8
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
@@ -440,12 +440,12 @@
 
     if-eqz v0, :cond_9
 
-    .line 2555
+    .line 2975
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->stream_dc_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2557
+    .line 2977
     :cond_9
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
@@ -453,12 +453,12 @@
 
     if-eqz v0, :cond_a
 
-    .line 2558
+    .line 2978
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->record_start_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2560
+    .line 2980
     :cond_a
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
@@ -466,12 +466,12 @@
 
     if-eqz v0, :cond_b
 
-    .line 2561
+    .line 2981
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->schedule_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2563
+    .line 2983
     :cond_b
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->flags:I
 
@@ -479,18 +479,18 @@
 
     if-eqz v0, :cond_c
 
-    .line 2564
+    .line 2984
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->unmuted_video_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2566
+    .line 2986
     :cond_c
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->unmuted_video_limit:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2567
+    .line 2987
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->version:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

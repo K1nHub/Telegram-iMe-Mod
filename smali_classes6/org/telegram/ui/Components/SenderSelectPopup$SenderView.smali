@@ -116,10 +116,10 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->title:Landroid/widget/TextView;
 
-    const-string v3, "actionBarDefaultSubmenuItem"
-
     .line 513
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -147,7 +147,7 @@
     iput-object v2, p0, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->subtitle:Landroid/widget/TextView;
 
     .line 520
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

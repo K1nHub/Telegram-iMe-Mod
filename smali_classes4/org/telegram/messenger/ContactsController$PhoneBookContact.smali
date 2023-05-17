@@ -30,7 +30,7 @@
 .method private constructor <init>(Lorg/telegram/messenger/ContactsController;)V
     .locals 0
 
-    .line 3005
+    .line 3023
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController$PhoneBookContact;->this$0:Lorg/telegram/messenger/ContactsController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Lorg/telegram/messenger/ContactsController$1;)V
     .locals 0
 
-    .line 3005
+    .line 3023
     invoke-direct {p0, p1}, Lorg/telegram/messenger/ContactsController$PhoneBookContact;-><init>(Lorg/telegram/messenger/ContactsController;)V
 
     return-void

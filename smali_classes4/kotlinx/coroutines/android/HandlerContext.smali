@@ -95,6 +95,15 @@
     return-void
 .end method
 
+.method public static final synthetic access$getHandler$p(Lkotlinx/coroutines/android/HandlerContext;)Landroid/os/Handler;
+    .locals 0
+
+    .line 114
+    iget-object p0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
+
+    return-object p0
+.end method
+
 .method private final cancelOnRejection(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
     .locals 3
 
@@ -251,6 +260,59 @@
 
     :goto_1
     return p1
+.end method
+
+.method public scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 17
+    new-instance v0, Lkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1;
+
+    invoke-direct {v0, p3, p0}, Lkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1;-><init>(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/android/HandlerContext;)V
+
+    .line 150
+    iget-object v1, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
+
+    const-wide v2, 0x3fffffffffffffffL    # 1.9999999999999998
+
+    invoke-static {p1, p2, v2, v3}, Lkotlin/ranges/RangesKt;->coerceAtMost(JJ)J
+
+    move-result-wide p1
+
+    invoke-virtual {v1, v0, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 151
+    new-instance p1, Lkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$1;
+
+    invoke-direct {p1, p0, v0}, Lkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$1;-><init>(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
+
+    invoke-interface {p3, p1}, Lkotlinx/coroutines/CancellableContinuation;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
+
+    goto :goto_0
+
+    .line 153
+    :cond_0
+    invoke-interface {p3}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1, v0}, Lkotlinx/coroutines/android/HandlerContext;->cancelOnRejection(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
+
+    :goto_0
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

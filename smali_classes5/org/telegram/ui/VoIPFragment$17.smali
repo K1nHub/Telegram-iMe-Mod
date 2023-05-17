@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 1808
+    .line 1809
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment$17;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1811
+    .line 1812
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$17;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$3100(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -46,7 +46,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 1812
+    .line 1813
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$17;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$3100(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -55,7 +55,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1813
+    .line 1814
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$17;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$3100(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -66,7 +66,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1814
+    .line 1815
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$17;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$3100(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -75,7 +75,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1815
+    .line 1816
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$17;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$3100(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;

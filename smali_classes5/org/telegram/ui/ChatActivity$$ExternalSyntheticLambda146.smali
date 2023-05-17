@@ -27,11 +27,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda146;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/util/List;
+    check-cast p1, Ljava/lang/Boolean;
 
-    check-cast p2, Ljava/lang/Boolean;
+    check-cast p2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$AGQRqvFt1KKeRTKcpAqega2WAJ0(Lorg/telegram/ui/ChatActivity;Ljava/util/List;Ljava/lang/Boolean;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$BovLyAvMN08Y9cMusjQvyKg9Fzc(Lorg/telegram/ui/ChatActivity;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     return-void
 .end method

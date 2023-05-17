@@ -12,7 +12,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -49,7 +49,7 @@ public class TermsOfServiceView extends FrameLayout {
 
     public TermsOfServiceView(Context context) {
         super(context);
-        setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         int i = Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0;
         if (i > 0) {
             View view = new View(context);
@@ -59,39 +59,41 @@ public class TermsOfServiceView extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         ImageView imageView = new ImageView(context);
-        imageView.setImageResource(C3242R.C3244drawable.logo_middle);
+        imageView.setImageResource(C3290R.C3292drawable.logo_middle);
         linearLayout.addView(imageView, LayoutHelper.createLinear(-2, -2, 3, 0, 28, 0, 0));
         TextView textView = new TextView(context);
         this.titleTextView = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        textView.setTextColor(Theme.getColor(i2));
         this.titleTextView.setTextSize(1, 17.0f);
         this.titleTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.titleTextView.setText(LocaleController.getString("PrivacyPolicyAndTerms", C3242R.string.PrivacyPolicyAndTerms));
+        this.titleTextView.setText(LocaleController.getString("PrivacyPolicyAndTerms", C3290R.string.PrivacyPolicyAndTerms));
         linearLayout.addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 3, 0, 20, 0, 0));
         TextView textView2 = new TextView(context);
         this.textView = textView2;
-        textView2.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        this.textView.setLinkTextColor(Theme.getColor("windowBackgroundWhiteLinkText"));
+        textView2.setTextColor(Theme.getColor(i2));
+        this.textView.setLinkTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText));
         this.textView.setTextSize(1, 15.0f);
         this.textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
         this.textView.setGravity(51);
-        this.textView.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
+        this.textView.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
         linearLayout.addView(this.textView, LayoutHelper.createLinear(-1, -2, 3, 0, 15, 0, 15));
         ScrollView scrollView = new ScrollView(context);
         this.scrollView = scrollView;
         scrollView.setVerticalScrollBarEnabled(false);
         this.scrollView.setOverScrollMode(2);
-        this.scrollView.setPadding(AndroidUtilities.m51dp(24.0f), i, AndroidUtilities.m51dp(24.0f), AndroidUtilities.m51dp(75.0f));
+        this.scrollView.setPadding(AndroidUtilities.m55dp(24.0f), i, AndroidUtilities.m55dp(24.0f), AndroidUtilities.m55dp(75.0f));
         this.scrollView.addView(linearLayout, new FrameLayout.LayoutParams(-1, -2));
         addView(this.scrollView, LayoutHelper.createLinear(-1, -2));
         TextView textView3 = new TextView(context);
-        textView3.setText(LocaleController.getString("Decline", C3242R.string.Decline).toUpperCase());
+        textView3.setText(LocaleController.getString("Decline", C3290R.string.Decline).toUpperCase());
         textView3.setGravity(17);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+        int i3 = Theme.key_windowBackgroundWhiteGrayText;
+        textView3.setTextColor(Theme.getColor(i3));
         textView3.setTextSize(1, 14.0f);
-        textView3.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor("windowBackgroundWhiteGrayText")));
-        textView3.setPadding(AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(10), AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(10));
+        textView3.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor(i3)));
+        textView3.setPadding(AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(10));
         addView(textView3, LayoutHelper.createFrame(-2, -2, 83, 16, 0, 16, 16));
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
@@ -100,13 +102,13 @@ public class TermsOfServiceView extends FrameLayout {
             }
         });
         TextView textView4 = new TextView(context);
-        textView4.setText(LocaleController.getString(RtspHeaders.ACCEPT, C3242R.string.Accept));
+        textView4.setText(LocaleController.getString(RtspHeaders.ACCEPT, C3290R.string.Accept));
         textView4.setGravity(17);
         textView4.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView4.setTextColor(-1);
         textView4.setTextSize(1, 14.0f);
-        textView4.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(4), -11491093, -12346402));
-        textView4.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
+        textView4.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), -11491093, -12346402));
+        textView4.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
         addView(textView4, LayoutHelper.createFrame(-2, 42, 85, 16, 0, 16, 16));
         textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
@@ -115,9 +117,9 @@ public class TermsOfServiceView extends FrameLayout {
             }
         });
         View view2 = new View(context);
-        view2.setBackgroundColor(Theme.getColor("divider"));
+        view2.setBackgroundColor(Theme.getColor(Theme.key_divider));
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, 1);
-        layoutParams.bottomMargin = AndroidUtilities.m51dp(75.0f);
+        layoutParams.bottomMargin = AndroidUtilities.m55dp(75.0f);
         layoutParams.gravity = 80;
         addView(view2, layoutParams);
     }
@@ -125,30 +127,30 @@ public class TermsOfServiceView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$4(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-        builder.setTitle(LocaleController.getString("TermsOfService", C3242R.string.TermsOfService));
-        builder.setPositiveButton(LocaleController.getString("DeclineDeactivate", C3242R.string.DeclineDeactivate), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda2
+        builder.setTitle(LocaleController.getString("TermsOfService", C3290R.string.TermsOfService));
+        builder.setPositiveButton(LocaleController.getString("DeclineDeactivate", C3290R.string.DeclineDeactivate), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 TermsOfServiceView.this.lambda$new$3(dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Back", C3242R.string.Back), null);
-        builder.setMessage(LocaleController.getString("TosUpdateDecline", C3242R.string.TosUpdateDecline));
+        builder.setNegativeButton(LocaleController.getString("Back", C3290R.string.Back), null);
+        builder.setMessage(LocaleController.getString("TosUpdateDecline", C3290R.string.TosUpdateDecline));
         builder.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$3(DialogInterface dialogInterface, int i) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage(LocaleController.getString("TosDeclineDeleteAccount", C3242R.string.TosDeclineDeleteAccount));
-        builder.setTitle(LocaleController.getString("AppName", C3242R.string.AppName));
-        builder.setPositiveButton(LocaleController.getString("Deactivate", C3242R.string.Deactivate), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda0
+        builder.setMessage(LocaleController.getString("TosDeclineDeleteAccount", C3290R.string.TosDeclineDeleteAccount));
+        builder.setTitle(LocaleController.getString("AppName", C3290R.string.AppName));
+        builder.setPositiveButton(LocaleController.getString("Deactivate", C3290R.string.Deactivate), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface2, int i2) {
                 TermsOfServiceView.this.lambda$new$2(dialogInterface2, i2);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
         builder.show();
     }
 
@@ -182,19 +184,19 @@ public class TermsOfServiceView extends FrameLayout {
         try {
             alertDialog.dismiss();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         if (tLObject instanceof TLRPC$TL_boolTrue) {
             MessagesController.getInstance(this.currentAccount).performLogout(0);
         } else if (tLRPC$TL_error == null || tLRPC$TL_error.code != -1000) {
-            String string = LocaleController.getString("ErrorOccurred", C3242R.string.ErrorOccurred);
+            String string = LocaleController.getString("ErrorOccurred", C3290R.string.ErrorOccurred);
             if (tLRPC$TL_error != null) {
                 string = string + "\n" + tLRPC$TL_error.text;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setTitle(LocaleController.getString("AppName", C3242R.string.AppName));
+            builder.setTitle(LocaleController.getString("AppName", C3290R.string.AppName));
             builder.setMessage(string);
-            builder.setPositiveButton(LocaleController.getString("OK", C3242R.string.OK), null);
+            builder.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), null);
             builder.show();
         }
     }
@@ -203,15 +205,15 @@ public class TermsOfServiceView extends FrameLayout {
     public /* synthetic */ void lambda$new$6(View view) {
         if (this.currentTos.min_age_confirm != 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-            builder.setTitle(LocaleController.getString("TosAgeTitle", C3242R.string.TosAgeTitle));
-            builder.setPositiveButton(LocaleController.getString("Agree", C3242R.string.Agree), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda1
+            builder.setTitle(LocaleController.getString("TosAgeTitle", C3290R.string.TosAgeTitle));
+            builder.setPositiveButton(LocaleController.getString("Agree", C3290R.string.Agree), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     TermsOfServiceView.this.lambda$new$5(dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
-            builder.setMessage(LocaleController.formatString("TosAgeText", C3242R.string.TosAgeText, LocaleController.formatPluralString("Years", this.currentTos.min_age_confirm, new Object[0])));
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
+            builder.setMessage(LocaleController.formatString("TosAgeText", C3290R.string.TosAgeText, LocaleController.formatPluralString("Years", this.currentTos.min_age_confirm, new Object[0])));
             builder.show();
             return;
         }
@@ -226,7 +228,7 @@ public class TermsOfServiceView extends FrameLayout {
     private void accept() {
         this.delegate.onAcceptTerms(this.currentAccount);
         TLRPC$TL_help_acceptTermsOfService tLRPC$TL_help_acceptTermsOfService = new TLRPC$TL_help_acceptTermsOfService();
-        tLRPC$TL_help_acceptTermsOfService.f1483id = this.currentTos.f1485id;
+        tLRPC$TL_help_acceptTermsOfService.f1489id = this.currentTos.f1491id;
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_help_acceptTermsOfService, TermsOfServiceView$$ExternalSyntheticLambda7.INSTANCE);
     }
 
@@ -236,7 +238,7 @@ public class TermsOfServiceView extends FrameLayout {
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tLRPC$TL_help_termsOfService.text);
         MessageObject.addEntitiesToText(spannableStringBuilder, tLRPC$TL_help_termsOfService.entities, false, false, false, false);
-        addBulletsToText(spannableStringBuilder, '-', AndroidUtilities.m51dp(10.0f), -11491093, AndroidUtilities.m51dp(4.0f));
+        addBulletsToText(spannableStringBuilder, '-', AndroidUtilities.m55dp(10.0f), -11491093, AndroidUtilities.m55dp(4.0f));
         this.textView.setText(spannableStringBuilder);
         this.currentTos = tLRPC$TL_help_termsOfService;
         this.currentAccount = i;

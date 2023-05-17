@@ -59,38 +59,38 @@
     .line 19
     sget v0, Lorg/telegram/messenger/R$id;->text_notification_message:I
 
-    const-string v2, "chats_message"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
 
-    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 20
     sget v2, Lorg/telegram/messenger/R$id;->text_notification_date:I
 
-    const-string v3, "chats_date"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_date:I
 
-    invoke-static {p1, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 21
     sget v3, Lorg/telegram/messenger/R$id;->text_notification_category:I
 
-    const-string v4, "chats_name"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_name:I
 
-    invoke-static {p1, v3, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v3, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 22
     sget v4, Lorg/telegram/messenger/R$id;->view_read_mark:I
 
-    const-string v5, "chats_actionBackground"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     const/high16 v6, 0x40400000    # 3.0f
 
-    invoke-static {p1, v4, v5, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedRoundedBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;F)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v4, v5, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedRoundedBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IIF)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 

@@ -17,10 +17,10 @@ import org.xmlpull.v1.XmlPullParser;
 public class PathInterpolatorCompat implements Interpolator {
 
     /* renamed from: mX */
-    private float[] f51mX;
+    private float[] f54mX;
 
     /* renamed from: mY */
-    private float[] f52mY;
+    private float[] f55mY;
 
     public PathInterpolatorCompat(Context context, AttributeSet attributeSet, XmlPullParser xmlPullParser) {
         this(context.getResources(), context.getTheme(), attributeSet, xmlPullParser);
@@ -82,21 +82,21 @@ public class PathInterpolatorCompat implements Interpolator {
         if (min <= 0) {
             throw new IllegalArgumentException("The Path has a invalid length " + length);
         }
-        this.f51mX = new float[min];
-        this.f52mY = new float[min];
+        this.f54mX = new float[min];
+        this.f55mY = new float[min];
         float[] fArr = new float[2];
         for (int i2 = 0; i2 < min; i2++) {
             pathMeasure.getPosTan((i2 * length) / (min - 1), fArr, null);
-            this.f51mX[i2] = fArr[0];
-            this.f52mY[i2] = fArr[1];
+            this.f54mX[i2] = fArr[0];
+            this.f55mY[i2] = fArr[1];
         }
-        if (Math.abs(this.f51mX[0]) <= 1.0E-5d && Math.abs(this.f52mY[0]) <= 1.0E-5d) {
+        if (Math.abs(this.f54mX[0]) <= 1.0E-5d && Math.abs(this.f55mY[0]) <= 1.0E-5d) {
             int i3 = min - 1;
-            if (Math.abs(this.f51mX[i3] - 1.0f) <= 1.0E-5d && Math.abs(this.f52mY[i3] - 1.0f) <= 1.0E-5d) {
+            if (Math.abs(this.f54mX[i3] - 1.0f) <= 1.0E-5d && Math.abs(this.f55mY[i3] - 1.0f) <= 1.0E-5d) {
                 float f = BitmapDescriptorFactory.HUE_RED;
                 int i4 = 0;
                 while (i < min) {
-                    float[] fArr2 = this.f51mX;
+                    float[] fArr2 = this.f54mX;
                     int i5 = i4 + 1;
                     float f2 = fArr2[i4];
                     if (f2 < f) {
@@ -115,14 +115,14 @@ public class PathInterpolatorCompat implements Interpolator {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("The Path must start at (0,0) and end at (1,1) start: ");
-        sb.append(this.f51mX[0]);
+        sb.append(this.f54mX[0]);
         sb.append(",");
-        sb.append(this.f52mY[0]);
+        sb.append(this.f55mY[0]);
         sb.append(" end:");
         int i6 = min - 1;
-        sb.append(this.f51mX[i6]);
+        sb.append(this.f54mX[i6]);
         sb.append(",");
-        sb.append(this.f52mY[i6]);
+        sb.append(this.f55mY[i6]);
         throw new IllegalArgumentException(sb.toString());
     }
 
@@ -135,21 +135,21 @@ public class PathInterpolatorCompat implements Interpolator {
             return 1.0f;
         }
         int i = 0;
-        int length = this.f51mX.length - 1;
+        int length = this.f54mX.length - 1;
         while (length - i > 1) {
             int i2 = (i + length) / 2;
-            if (f < this.f51mX[i2]) {
+            if (f < this.f54mX[i2]) {
                 length = i2;
             } else {
                 i = i2;
             }
         }
-        float[] fArr = this.f51mX;
+        float[] fArr = this.f54mX;
         float f2 = fArr[length] - fArr[i];
         if (f2 == BitmapDescriptorFactory.HUE_RED) {
-            return this.f52mY[i];
+            return this.f55mY[i];
         }
-        float[] fArr2 = this.f52mY;
+        float[] fArr2 = this.f55mY;
         float f3 = fArr2[i];
         return f3 + (((f - fArr[i]) / f2) * (fArr2[length] - f3));
     }

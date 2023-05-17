@@ -455,7 +455,7 @@
 
     goto/16 :goto_9
 
-    .line 204
+    .line 207
     :pswitch_0
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -481,7 +481,7 @@
 
     if-nez v2, :cond_12
 
-    .line 205
+    .line 208
     iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->LimitReachedFavoriteGifs:I
@@ -508,7 +508,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 206
+    .line 209
     sget v2, Lorg/telegram/messenger/R$string;->LimitReachedFavoriteGifsSubtitle:I
 
     new-array v3, v12, [Ljava/lang/Object;
@@ -541,14 +541,14 @@
 
     move-result-object v1
 
-    .line 212
+    .line 215
     iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_9
 
-    .line 214
+    .line 217
     :cond_12
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
@@ -576,7 +576,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 215
+    .line 218
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->LimitReachedFavoriteGifsSubtitlePremium:I
@@ -593,7 +593,7 @@
 
     goto/16 :goto_9
 
-    .line 189
+    .line 192
     :pswitch_1
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -619,7 +619,7 @@
 
     if-nez v2, :cond_13
 
-    .line 190
+    .line 193
     iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->LimitReachedFavoriteStickers:I
@@ -646,7 +646,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 191
+    .line 194
     sget v2, Lorg/telegram/messenger/R$string;->LimitReachedFavoriteStickersSubtitle:I
 
     new-array v3, v12, [Ljava/lang/Object;
@@ -679,14 +679,14 @@
 
     move-result-object v1
 
-    .line 197
+    .line 200
     iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_9
 
-    .line 199
+    .line 202
     :cond_13
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
@@ -714,7 +714,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 200
+    .line 203
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->LimitReachedFavoriteStickersSubtitlePremium:I
@@ -731,7 +731,7 @@
 
     goto/16 :goto_9
 
-    .line 185
+    .line 188
     :pswitch_2
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
@@ -745,14 +745,14 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 186
+    .line 189
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto/16 :goto_9
 
-    .line 181
+    .line 184
     :pswitch_3
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
@@ -766,14 +766,14 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 182
+    .line 185
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto/16 :goto_9
 
-    .line 219
+    .line 222
     :pswitch_4
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
@@ -787,7 +787,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 220
+    .line 223
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
@@ -795,7 +795,7 @@
     goto/16 :goto_9
 
     :pswitch_5
-    if-eqz v13, :cond_1b
+    if-eqz v13, :cond_1c
 
     .line 135
     iget-boolean v1, v13, Lorg/telegram/tgnet/TLRPC$StickerSet;->masks:Z
@@ -930,7 +930,7 @@
     goto/16 :goto_9
 
     :pswitch_6
-    if-eqz v13, :cond_1b
+    if-eqz v13, :cond_1c
 
     .line 171
     iget-boolean v1, v13, Lorg/telegram/tgnet/TLRPC$StickerSet;->masks:Z
@@ -971,8 +971,48 @@
 
     goto/16 :goto_9
 
-    .line 175
+    .line 174
     :cond_17
+    iget-boolean v1, v13, Lorg/telegram/tgnet/TLRPC$StickerSet;->emojis:Z
+
+    if-eqz v1, :cond_18
+
+    .line 175
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
+
+    sget v2, Lorg/telegram/messenger/R$string;->EmojiArchived:I
+
+    const-string v3, "EmojiArchived"
+
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 176
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
+
+    sget v2, Lorg/telegram/messenger/R$string;->EmojiArchivedInfo:I
+
+    new-array v3, v12, [Ljava/lang/Object;
+
+    iget-object v4, v13, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
+
+    aput-object v4, v3, v10
+
+    const-string v4, "EmojiArchivedInfo"
+
+    invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_9
+
+    .line 178
+    :cond_18
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->StickersArchived:I
@@ -985,7 +1025,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 176
+    .line 179
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->StickersArchivedInfo:I
@@ -1007,12 +1047,12 @@
     goto/16 :goto_9
 
     :pswitch_7
-    if-eqz v13, :cond_1b
+    if-eqz v13, :cond_1c
 
     .line 153
     iget-boolean v1, v13, Lorg/telegram/tgnet/TLRPC$StickerSet;->masks:Z
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_19
 
     .line 154
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
@@ -1049,10 +1089,10 @@
     goto :goto_9
 
     .line 156
-    :cond_18
+    :cond_19
     iget-boolean v1, v13, Lorg/telegram/tgnet/TLRPC$StickerSet;->emojis:Z
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1b
 
     .line 157
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
@@ -1067,7 +1107,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    if-le v9, v12, :cond_19
+    if-le v9, v12, :cond_1a
 
     .line 159
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
@@ -1085,7 +1125,7 @@
     goto :goto_9
 
     .line 161
-    :cond_19
+    :cond_1a
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->EmojiRemovedInfo:I
@@ -1107,7 +1147,7 @@
     goto :goto_9
 
     .line 164
-    :cond_1a
+    :cond_1b
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->StickersRemoved:I
@@ -1139,7 +1179,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_1b
+    :cond_1c
     :goto_9
     return-void
 
@@ -1182,17 +1222,17 @@
 .method private static synthetic lambda$new$0(Landroid/content/Context;)V
     .locals 2
 
-    .line 192
+    .line 195
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->findActivity(Landroid/content/Context;)Landroid/app/Activity;
 
     move-result-object p0
 
-    .line 193
+    .line 196
     instance-of v0, p0, Lorg/telegram/ui/LaunchActivity;
 
     if-eqz v0, :cond_0
 
-    .line 194
+    .line 197
     check-cast p0, Lorg/telegram/ui/LaunchActivity;
 
     new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment;
@@ -1214,17 +1254,17 @@
 .method private static synthetic lambda$new$1(Landroid/content/Context;)V
     .locals 2
 
-    .line 207
+    .line 210
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->findActivity(Landroid/content/Context;)Landroid/app/Activity;
 
     move-result-object p0
 
-    .line 208
+    .line 211
     instance-of v0, p0, Lorg/telegram/ui/LaunchActivity;
 
     if-eqz v0, :cond_0
 
-    .line 209
+    .line 212
     check-cast p0, Lorg/telegram/ui/LaunchActivity;
 
     new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment;

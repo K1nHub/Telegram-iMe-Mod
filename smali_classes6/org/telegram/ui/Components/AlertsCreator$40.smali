@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$40;
-.super Landroid/view/ViewOutlineProvider;
+.super Landroid/widget/TextView;
 .source "AlertsCreator.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createDrawOverlayPermissionDialog(Landroid/app/Activity;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createCalendarPickerDialog(Landroid/content/Context;JLorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,50 +15,26 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 5219
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    .line 4527
+    invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .locals 6
+.method public getAccessibilityClassName()Ljava/lang/CharSequence;
+    .locals 1
 
-    .line 5222
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
+    .line 4530
+    const-class v0, Landroid/widget/Button;
 
-    move-result v3
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+    move-result-object v0
 
-    move-result p1
-
-    const/4 v0, 0x6
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    add-int v4, p1, v0
-
-    const/high16 p1, 0x40c00000    # 6.0f
-
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
-
-    move-result v5
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v0, p2
-
-    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
-
-    return-void
+    return-object v0
 .end method

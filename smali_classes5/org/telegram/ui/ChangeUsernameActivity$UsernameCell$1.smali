@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;Z)V
     .locals 0
 
-    .line 872
+    .line 942
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell$1;->this$0:Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell$1;->val$loading:Z
@@ -39,10 +39,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 875
+    .line 945
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell$1;->this$0:Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->access$2100(Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->access$2300(Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;)Landroid/widget/ImageView;
 
     move-result-object p1
 

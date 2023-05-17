@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;I)V
     .locals 0
 
-    .line 2247
+    .line 1981
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$11;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;-><init>(Lorg/telegram/ui/Components/EmojiView;I)V
@@ -37,14 +37,14 @@
 
     if-nez p2, :cond_0
 
-    .line 2257
+    .line 1991
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$11;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$7402(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$6802(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 2259
+    .line 1993
     :cond_0
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
 
@@ -54,12 +54,12 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 1
 
-    .line 2250
+    .line 1984
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$11;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$8500(Lorg/telegram/ui/Components/EmojiView;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$7900(Lorg/telegram/ui/Components/EmojiView;)V
 
-    .line 2251
+    .line 1985
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
     return-void

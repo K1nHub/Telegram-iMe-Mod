@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/ImageView;
     .locals 1
 
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell$pinnedImageView$2;->this$0:Lcom/iMe/fork/ui/view/AvatarDrawableCell;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->access$initPinnedImageView(Lcom/iMe/fork/ui/view/AvatarDrawableCell;)Landroid/widget/ImageView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 32
+    .line 33
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell$pinnedImageView$2;->invoke()Landroid/widget/ImageView;
 
     move-result-object v0

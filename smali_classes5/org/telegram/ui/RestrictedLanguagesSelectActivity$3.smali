@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)V
     .locals 0
 
-    .line 284
+    .line 296
     iput-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$3;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 288
+    .line 300
     iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$3;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;

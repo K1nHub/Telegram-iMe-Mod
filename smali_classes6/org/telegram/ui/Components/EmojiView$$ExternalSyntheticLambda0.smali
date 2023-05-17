@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$s5WEDQP6EyfYgsnzg3sb7UCnIrs(Lorg/telegram/ui/Components/EmojiView;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$Hdrvy6u7ALGNUaWFUE_4j1beE2A(Lorg/telegram/ui/Components/EmojiView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

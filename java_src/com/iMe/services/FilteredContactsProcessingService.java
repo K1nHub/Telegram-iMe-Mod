@@ -24,7 +24,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -38,7 +38,7 @@ public final class FilteredContactsProcessingService extends Service implements 
     private boolean isWaitingForNetwork;
     private int processedContactsCount;
     private final List<Long> contactsIds = new ArrayList();
-    private final int notificationChannelId = IdFabric$ServiceNotifications.contacts_processing;
+    private final int notificationChannelId = IdFabric$ServiceNotifications.CONTACTS_PROCESSING;
     private final int[] notifications = {NotificationCenter.didUpdateConnectionState};
     private ContactsFilter contactsFilter = ContactsFilter.BLOCKED;
     private ContactsActionType contactsActionType = ContactsActionType.defaultValue;
@@ -170,7 +170,7 @@ public final class FilteredContactsProcessingService extends Service implements 
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ContactsProcessingChannel", C3242R.C3244drawable.fork_ic_contacts_24, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ContactsProcessingChannel", C3290R.C3292drawable.fork_ic_contacts_24, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -183,7 +183,7 @@ public final class FilteredContactsProcessingService extends Service implements 
                 }
             });
         } else {
-            stopServiceWithToast(C3242R.string.contacts_processing_success);
+            stopServiceWithToast(C3290R.string.contacts_processing_success);
         }
     }
 
@@ -253,7 +253,7 @@ public final class FilteredContactsProcessingService extends Service implements 
         if (th == null) {
             this$0.processNextContactsPart();
         } else {
-            this$0.stopServiceWithToast(C3242R.string.contacts_processing_error);
+            this$0.stopServiceWithToast(C3290R.string.contacts_processing_error);
         }
     }
 
@@ -276,9 +276,9 @@ public final class FilteredContactsProcessingService extends Service implements 
             return;
         }
         if (WhenMappings.$EnumSwitchMapping$1[state.ordinal()] == 1) {
-            string = LocaleController.formatStringInternal(C3242R.string.contacts_processing, Integer.valueOf(this.processedContactsCount), Integer.valueOf(this.contactsIds.size()));
+            string = LocaleController.formatStringInternal(C3290R.string.contacts_processing, Integer.valueOf(this.processedContactsCount), Integer.valueOf(this.contactsIds.size()));
         } else {
-            string = LocaleController.getString("WaitingForNetwork", C3242R.string.WaitingForNetwork);
+            string = LocaleController.getString("WaitingForNetwork", C3290R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {

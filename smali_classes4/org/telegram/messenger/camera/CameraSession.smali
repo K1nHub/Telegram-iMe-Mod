@@ -2062,7 +2062,7 @@
 
     sget-object v1, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
-    const-string v4, "sf2wifixx"
+    const-string/jumbo v4, "sf2wifixx"
 
     invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

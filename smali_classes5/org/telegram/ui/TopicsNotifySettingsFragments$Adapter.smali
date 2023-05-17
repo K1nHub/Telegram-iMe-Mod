@@ -202,27 +202,27 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 3
 
-    const/4 v0, 0x1
+    const/4 v0, -0x1
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const-string v2, "windowBackgroundWhite"
+    if-eq p2, v1, :cond_3
 
-    if-eq p2, v0, :cond_3
+    const/4 v1, 0x2
 
-    const/4 v0, 0x2
+    if-eq p2, v1, :cond_2
 
-    if-eq p2, v0, :cond_2
+    const/4 v1, 0x3
 
-    const/4 v0, 0x3
+    if-eq p2, v1, :cond_1
 
-    if-eq p2, v0, :cond_1
+    const/4 v1, 0x4
 
-    const/4 v0, 0x4
+    if-eq p2, v1, :cond_0
 
-    if-eq p2, v0, :cond_0
+    const/4 p1, 0x0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 230
     :cond_0
@@ -237,116 +237,121 @@
     .line 231
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsDeleteAllException:I
 
-    const-string v0, "NotificationsDeleteAllException"
+    const-string v1, "NotificationsDeleteAllException"
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
-
-    const-string p1, "windowBackgroundWhiteRedText5"
+    invoke-virtual {p2, p1, v1}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
 
     .line 232
-    invoke-virtual {p2, v1, p1}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-virtual {p2, v0, p1}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
     .line 234
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    move-object v1, p2
-
     goto :goto_0
 
     .line 227
     :cond_1
-    new-instance v1, Lorg/telegram/ui/Cells/ShadowSectionCell;
+    new-instance p2, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
     goto :goto_0
 
     .line 216
     :cond_2
-    new-instance v1, Lorg/telegram/ui/Cells/TopicExceptionCell;
+    new-instance p2, Lorg/telegram/ui/Cells/TopicExceptionCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/TopicExceptionCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TopicExceptionCell;-><init>(Landroid/content/Context;)V
 
     .line 217
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
-    invoke-virtual {v1, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_0
 
     .line 220
     :cond_3
-    new-instance v1, Lorg/telegram/ui/Cells/TextCell;
+    new-instance p2, Lorg/telegram/ui/Cells/TextCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
     .line 221
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsAddAnException:I
 
-    const-string p2, "NotificationsAddAnException"
+    const-string v2, "NotificationsAddAnException"
 
-    invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
-    sget p2, Lorg/telegram/messenger/R$drawable;->msg_contact_add:I
+    sget v2, Lorg/telegram/messenger/R$drawable;->msg_contact_add:I
 
-    invoke-virtual {v1, p1, p2, v0}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
-
-    const-string p1, "windowBackgroundWhiteBlueIcon"
-
-    const-string p2, "windowBackgroundWhiteBlueButton"
+    invoke-virtual {p2, p1, v2, v1}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
     .line 222
-    invoke-virtual {v1, p1, p2}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
+
+    invoke-virtual {p2, p1, v1}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
     .line 224
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
-    invoke-virtual {v1, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    :goto_0
+    move-object p1, p2
 
     .line 237
-    :goto_0
-    new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
+    :goto_1
+    new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
-    const/4 p2, -0x1
+    const/4 v1, -0x2
 
-    const/4 v0, -0x2
+    invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
-    invoke-direct {p1, p2, v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v1, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 238
-    new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
+    new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    invoke-direct {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
 
-    return-object p1
+    return-object p2
 .end method

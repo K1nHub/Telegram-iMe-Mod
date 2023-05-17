@@ -56,7 +56,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "size "
+    const-string/jumbo v1, "size "
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

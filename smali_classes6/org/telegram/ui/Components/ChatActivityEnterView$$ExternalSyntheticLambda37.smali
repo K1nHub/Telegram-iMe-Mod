@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
@@ -22,14 +22,14 @@
 
 
 # virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
+.method public final invoke(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$Qe8Pb_yH2eptzTDmGJFwVw67xjw(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/view/View;)Z
+    check-cast p1, Ljava/lang/String;
 
-    move-result p1
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$p2Rmy0HEnYQWb--ZFC9mWjox0YY(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/String;)V
 
-    return p1
+    return-void
 .end method

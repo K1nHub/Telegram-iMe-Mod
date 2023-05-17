@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 63136
+    .line 64149
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Dialog;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 63140
+    .line 64153
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +50,7 @@
     :cond_0
     move v1, v2
 
-    .line 63141
+    .line 64154
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->pinned:Z
 
@@ -60,11 +60,11 @@
 
     move v2, v3
 
-    .line 63142
+    .line 64155
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_mark:Z
 
-    .line 63143
+    .line 64156
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -75,49 +75,49 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 63144
+    .line 64157
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->top_message:I
 
-    .line 63145
+    .line 64158
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->read_inbox_max_id:I
 
-    .line 63146
+    .line 64159
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->read_outbox_max_id:I
 
-    .line 63147
+    .line 64160
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
-    .line 63148
+    .line 64161
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_mentions_count:I
 
-    .line 63149
+    .line 64162
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_reactions_count:I
 
-    .line 63150
+    .line 64163
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -128,21 +128,21 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
-    .line 63151
+    .line 64164
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
     and-int/2addr v0, v3
 
     if-eqz v0, :cond_2
 
-    .line 63152
+    .line 64165
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->pts:I
 
-    .line 63154
+    .line 64167
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
@@ -150,7 +150,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 63155
+    .line 64168
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -161,7 +161,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->draft:Lorg/telegram/tgnet/TLRPC$DraftMessage;
 
-    .line 63157
+    .line 64170
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
@@ -169,14 +169,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 63158
+    .line 64171
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
 
-    .line 63160
+    .line 64173
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
@@ -184,7 +184,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 63161
+    .line 64174
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -198,12 +198,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 63166
+    .line 64179
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_dialog;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63167
+    .line 64180
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->pinned:Z
 
     if-eqz v0, :cond_0
@@ -222,7 +222,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
-    .line 63168
+    .line 64181
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_mark:Z
 
     if-eqz v1, :cond_1
@@ -237,62 +237,62 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
-    .line 63169
+    .line 64182
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63170
+    .line 64183
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 63171
+    .line 64184
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->top_message:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63172
+    .line 64185
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->read_inbox_max_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63173
+    .line 64186
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->read_outbox_max_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63174
+    .line 64187
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63175
+    .line 64188
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_mentions_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63176
+    .line 64189
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_reactions_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63177
+    .line 64190
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 63178
+    .line 64191
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_2
 
-    .line 63179
+    .line 64192
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->pts:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63181
+    .line 64194
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
@@ -300,12 +300,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 63182
+    .line 64195
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->draft:Lorg/telegram/tgnet/TLRPC$DraftMessage;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 63184
+    .line 64197
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
@@ -313,12 +313,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 63185
+    .line 64198
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63187
+    .line 64200
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
@@ -326,7 +326,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 63188
+    .line 64201
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->ttl_period:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

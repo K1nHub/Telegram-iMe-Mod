@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout$MediaSearchAdapter;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 6473
+    .line 6489
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaSearchAdapter$1;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$MediaSearchAdapter;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Cells/SharedAudioCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method public needPlayMessage(Lorg/telegram/messenger/MessageObject;)Z
     .locals 4
 
-    .line 6476
+    .line 6492
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
     move-result v0
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 6483
+    .line 6499
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
@@ -60,7 +60,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 6484
+    .line 6500
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -88,7 +88,7 @@
     :cond_1
     return v1
 
-    .line 6477
+    .line 6493
     :cond_2
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
@@ -99,7 +99,7 @@
 
     move-result v0
 
-    .line 6478
+    .line 6494
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -120,14 +120,14 @@
     :goto_1
     invoke-virtual {v2, v3, v1}, Lorg/telegram/messenger/MediaController;->setVoiceMessagesPlaylist(Ljava/util/ArrayList;Z)V
 
-    .line 6479
+    .line 6495
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isRoundVideo()Z
 
     move-result p1
 
     if-eqz p1, :cond_4
 
-    .line 6480
+    .line 6496
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1

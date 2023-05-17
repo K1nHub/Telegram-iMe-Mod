@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
     .locals 0
 
-    .line 479
+    .line 481
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public run()V
     .locals 3
 
-    .line 482
+    .line 484
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$002(Lorg/telegram/ui/Components/PullForegroundDrawable;Z)Z
 
-    .line 483
+    .line 485
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$100(Lorg/telegram/ui/Components/PullForegroundDrawable;)Landroid/animation/ValueAnimator;
@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 484
+    .line 486
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$100(Lorg/telegram/ui/Components/PullForegroundDrawable;)Landroid/animation/ValueAnimator;
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 486
+    .line 488
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
@@ -71,7 +71,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$202(Lorg/telegram/ui/Components/PullForegroundDrawable;F)F
 
-    .line 487
+    .line 489
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     const/4 v1, 0x2
@@ -86,7 +86,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$102(Lorg/telegram/ui/Components/PullForegroundDrawable;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 488
+    .line 490
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$100(Lorg/telegram/ui/Components/PullForegroundDrawable;)Landroid/animation/ValueAnimator;
@@ -101,7 +101,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 489
+    .line 491
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$100(Lorg/telegram/ui/Components/PullForegroundDrawable;)Landroid/animation/ValueAnimator;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 490
+    .line 492
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$100(Lorg/telegram/ui/Components/PullForegroundDrawable;)Landroid/animation/ValueAnimator;
@@ -125,7 +125,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 491
+    .line 493
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->access$100(Lorg/telegram/ui/Components/PullForegroundDrawable;)Landroid/animation/ValueAnimator;

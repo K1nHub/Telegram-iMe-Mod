@@ -193,13 +193,13 @@
 
     if-ne p1, v0, :cond_0
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CREATE_ALBUM:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->BOTTOM_SHEET_CELL:I
 
     goto :goto_0
 
     .line 212
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->ALBUM:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->PROFILE_SEARCH_CELL:I
 
     :goto_0
     return p1
@@ -270,9 +270,9 @@
     .line 236
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v3, "switchTrackChecked"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -285,9 +285,9 @@
     .line 237
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v3, "checkboxCheck"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -303,10 +303,10 @@
 
     invoke-direct {v2, p2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    const-string p2, "windowBackgroundWhiteBlueText4"
-
     .line 240
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -466,7 +466,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 219
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CREATE_ALBUM:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->BOTTOM_SHEET_CELL:I
 
     if-ne p2, p1, :cond_0
 

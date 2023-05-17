@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ProfileActivity;->lambda$createView$15(JLandroid/content/Context;Landroid/view/View;IFF)V
+    value = Lorg/telegram/ui/ProfileActivity;->lambda$createView$16(JLandroid/content/Context;Landroid/view/View;IFF)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 3629
+    .line 3702
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 3632
+    .line 3705
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void

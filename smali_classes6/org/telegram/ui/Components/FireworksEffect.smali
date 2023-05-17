@@ -81,9 +81,9 @@
     .line 64
     iget-object v0, p0, Lorg/telegram/ui/Components/FireworksEffect;->particlePaint:Landroid/graphics/Paint;
 
-    const-string v1, "actionBarDefaultTitle"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

@@ -40,6 +40,17 @@
     return p1
 .end method
 
+.method public getParent()Lkotlinx/coroutines/Job;
+    .locals 1
+
+    .line 1465
+    invoke-virtual {p0}, Lkotlinx/coroutines/JobNode;->getJob()Lkotlinx/coroutines/JobSupport;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 

@@ -165,13 +165,13 @@
     .line 81
     new-instance p1, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    const-string v2, "premiumGradient1"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
-    const-string v3, "premiumGradient2"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient2:I
 
-    const/4 v4, 0x0
+    const/4 v4, -0x1
 
-    invoke-direct {p1, v2, v3, v4, v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p1, v2, v3, v4, v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIII)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
@@ -203,11 +203,11 @@
     .line 90
     new-instance p1, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    const-string v1, "premiumGradient3"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient3:I
 
-    const-string v4, "premiumGradient4"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient4:I
 
-    invoke-direct {p1, v2, v3, v1, v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p1, v2, v3, v1, v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIII)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->outlineGradient:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
@@ -1076,7 +1076,7 @@
 .method private synthetic lambda$onGiftPremium$10(Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 296
+    .line 297
     new-instance v7, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$$ExternalSyntheticLambda8;
 
     move-object v0, v7
@@ -1116,7 +1116,7 @@
 
     const/4 v0, 0x1
 
-    .line 290
+    .line 291
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->onGiftSuccess(Z)V
 
     return-void
@@ -1125,14 +1125,14 @@
 .method private synthetic lambda$onGiftPremium$8(Lcom/android/billingclient/api/BillingResult;)V
     .locals 0
 
-    .line 289
+    .line 290
     invoke-virtual {p1}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 290
+    .line 291
     new-instance p1, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$$ExternalSyntheticLambda6;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)V
@@ -1146,12 +1146,12 @@
 .method private synthetic lambda$onGiftPremium$9(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;)V
     .locals 1
 
-    .line 297
+    .line 298
     instance-of p1, p1, Lorg/telegram/tgnet/TLRPC$TL_boolTrue;
 
     if-eqz p1, :cond_0
 
-    .line 298
+    .line 299
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
     move-result-object p1
@@ -1174,7 +1174,7 @@
 
     move-result-object v0
 
-    .line 299
+    .line 300
     invoke-static {p3}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->access$000(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;)Lcom/android/billingclient/api/ProductDetails;
 
     move-result-object p3
@@ -1183,12 +1183,12 @@
 
     move-result-object p3
 
-    .line 300
+    .line 301
     invoke-virtual {p3}, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;->build()Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;
 
     move-result-object p3
 
-    .line 298
+    .line 299
     invoke-static {p3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p3
@@ -1200,7 +1200,7 @@
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 302
+    .line 303
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -1240,7 +1240,7 @@
 
     move v1, v0
 
-    .line 329
+    .line 330
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->giftTiers:Ljava/util/List;
 
@@ -1250,7 +1250,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 330
+    .line 331
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->dummyCell:Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->giftTiers:Ljava/util/List;
@@ -1263,7 +1263,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->bind(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;)V
 
-    .line 331
+    .line 332
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->dummyCell:Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;
 
     const/high16 v3, 0x40000000    # 2.0f
@@ -1280,7 +1280,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 332
+    .line 333
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->giftTiers:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1291,7 +1291,7 @@
 
     iput v1, v2, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->yOffset:I
 
-    .line 333
+    .line 334
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->dummyCell:Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -1304,7 +1304,7 @@
 
     goto :goto_0
 
-    .line 336
+    .line 337
     :cond_0
     iput v1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->totalGradientHeight:I
 
@@ -1444,9 +1444,12 @@
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
 
+    .line 279
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
+
     goto :goto_1
 
-    .line 281
+    .line 282
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
@@ -1464,12 +1467,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 282
+    .line 283
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;-><init>()V
 
-    .line 283
+    .line 284
     iget v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1484,7 +1487,7 @@
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 284
+    .line 285
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->access$000(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;)Lcom/android/billingclient/api/ProductDetails;
 
     move-result-object v2
@@ -1493,14 +1496,14 @@
 
     move-result-object v2
 
-    .line 285
+    .line 286
     invoke-virtual {v2}, Lcom/android/billingclient/api/ProductDetails$OneTimePurchaseOfferDetails;->getPriceCurrencyCode()Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;->currency:Ljava/lang/String;
 
-    .line 286
+    .line 287
     invoke-virtual {v2}, Lcom/android/billingclient/api/ProductDetails$OneTimePurchaseOfferDetails;->getPriceAmountMicros()J
 
     move-result-wide v2
@@ -1539,7 +1542,7 @@
 
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;->amount:J
 
-    .line 288
+    .line 289
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
     move-result-object v2
@@ -1554,15 +1557,15 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/messenger/BillingController;->addResultListener(Ljava/lang/String;Landroidx/core/util/Consumer;)V
 
-    .line 294
+    .line 295
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;-><init>()V
 
-    .line 295
+    .line 296
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_canPurchasePremium;->purpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
 
-    .line 296
+    .line 297
     iget v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1924,7 +1927,7 @@
 .method protected createAdapter()Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
     .locals 1
 
-    .line 346
+    .line 347
     new-instance v0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;-><init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)V
@@ -1935,7 +1938,7 @@
 .method protected getTitle()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 341
+    .line 342
     sget v0, Lorg/telegram/messenger/R$string;->GiftTelegramPremiumTitle:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -1948,10 +1951,10 @@
 .method protected onPreMeasure(II)V
     .locals 0
 
-    .line 323
+    .line 324
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->onPreMeasure(II)V
 
-    .line 324
+    .line 325
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1968,10 +1971,10 @@
 .method public onViewCreated(Landroid/widget/FrameLayout;)V
     .locals 9
 
-    .line 311
+    .line 312
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->onViewCreated(Landroid/widget/FrameLayout;)V
 
-    .line 313
+    .line 314
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1984,7 +1987,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
-    .line 315
+    .line 316
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1993,7 +1996,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 316
+    .line 317
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     const/4 v2, -0x1
@@ -2016,10 +2019,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const-string v1, "dialogBackground"
+    .line 318
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    .line 317
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v1
 
@@ -2031,7 +2034,7 @@
 
     const/16 v3, 0x50
 
-    .line 318
+    .line 319
     invoke-static {v1, v2, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1

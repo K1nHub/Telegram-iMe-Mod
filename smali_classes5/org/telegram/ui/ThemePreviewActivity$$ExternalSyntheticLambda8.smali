@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$gY31pKcksQNaOAf5d5dnfUM8s-k(Lorg/telegram/ui/ThemePreviewActivity;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$v4IdGjzbgGKIhl7AXlwhcEEkixU(Lorg/telegram/ui/ThemePreviewActivity;Landroid/view/View;)V
 
     return-void
 .end method

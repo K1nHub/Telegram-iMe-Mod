@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
     .locals 0
 
-    .line 5385
+    .line 5401
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$31;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
     if-nez p3, :cond_0
 
-    .line 5403
+    .line 5419
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$31;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$8200(Lorg/telegram/ui/Components/SharedMediaLayout;Ljava/lang/String;)V
@@ -60,7 +60,7 @@
 
     const-string p2, "mailto:"
 
-    .line 5406
+    .line 5422
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p2
@@ -69,7 +69,7 @@
 
     const/4 p2, 0x7
 
-    .line 5407
+    .line 5423
     invoke-virtual {p1, p2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
@@ -79,7 +79,7 @@
     :cond_1
     const-string p2, "tel:"
 
-    .line 5408
+    .line 5424
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p2
@@ -88,12 +88,12 @@
 
     const/4 p2, 0x4
 
-    .line 5409
+    .line 5425
     invoke-virtual {p1, p2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 5411
+    .line 5427
     :cond_2
     :goto_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
@@ -108,7 +108,7 @@
 .method public canPerformActions()Z
     .locals 1
 
-    .line 5393
+    .line 5409
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$31;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$8100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -123,7 +123,7 @@
 .method public needOpenWebView(Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;)V
     .locals 1
 
-    .line 5388
+    .line 5404
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$31;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$8000(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;)V
@@ -136,7 +136,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 5399
+    .line 5415
     new-instance p2, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$31;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -151,7 +151,7 @@
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5400
+    .line 5416
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v0, 0x2
@@ -160,7 +160,7 @@
 
     const/4 v1, 0x0
 
-    .line 5401
+    .line 5417
     sget v2, Lorg/telegram/messenger/R$string;->Open:I
 
     const-string v3, "Open"
@@ -189,7 +189,7 @@
 
     invoke-virtual {p2, v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 5414
+    .line 5430
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$31;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2300(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -204,7 +204,7 @@
 
     goto :goto_0
 
-    .line 5416
+    .line 5432
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$31;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 

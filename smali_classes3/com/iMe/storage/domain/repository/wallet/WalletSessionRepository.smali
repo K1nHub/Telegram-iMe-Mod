@@ -35,12 +35,10 @@
 .method public abstract logout()Lio/reactivex/Completable;
 .end method
 
-.method public abstract refreshToken(Ljava/lang/String;)Lio/reactivex/Observable;
+.method public abstract refreshToken()Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
+            "()",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Lcom/iMe/storage/domain/model/wallet/SessionTokens;",

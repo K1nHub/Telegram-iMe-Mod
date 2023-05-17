@@ -31,7 +31,7 @@ public final class MultiReplyRepository {
     public final Single<MessageLinkPattern> requestPattern(MessageObject message, TLRPC$Chat currentChat) {
         Intrinsics.checkNotNullParameter(message, "message");
         Intrinsics.checkNotNullParameter(currentChat, "currentChat");
-        Single<MessageLinkPattern> subscribeOn = Observable.concat(this.messageLinkCache.getLinkPatternFromCache(currentChat.f1427id), getLinkPatternFromApi(message, currentChat)).firstOrError().subscribeOn(this.schedulersProvider.mo694io());
+        Single<MessageLinkPattern> subscribeOn = Observable.concat(this.messageLinkCache.getLinkPatternFromCache(currentChat.f1433id), getLinkPatternFromApi(message, currentChat)).firstOrError().subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "concat(\n            mess…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -46,7 +46,7 @@ public final class MultiReplyRepository {
                 linkPatternFromApi$lambda$0 = MultiReplyRepository.getLinkPatternFromApi$lambda$0(Function1.this, obj);
                 return linkPatternFromApi$lambda$0;
             }
-        }).subscribeOn(this.schedulersProvider.mo694io());
+        }).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "private fun getLinkPatte…ulersProvider.io())\n    }");
         return subscribeOn;
     }

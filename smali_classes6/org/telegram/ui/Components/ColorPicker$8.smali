@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ColorPicker;Z)V
     .locals 0
 
-    .line 901
+    .line 905
     iput-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$8;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ColorPicker$8;->val$value:Z
@@ -39,15 +39,15 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 904
+    .line 908
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ColorPicker$8;->val$value:Z
 
     if-nez p1, :cond_0
 
-    .line 905
+    .line 909
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$8;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$800(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/TextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$900(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/TextView;
 
     move-result-object p1
 

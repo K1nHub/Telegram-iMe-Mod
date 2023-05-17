@@ -1,6 +1,6 @@
 package com.google.protobuf;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.List;
@@ -75,9 +75,9 @@ public final class Internal {
     }
 
     static {
-        Charset.forName(C0470C.ASCII_NAME);
+        Charset.forName(C0475C.ASCII_NAME);
         UTF_8 = Charset.forName("UTF-8");
-        Charset.forName(C0470C.ISO88591_NAME);
+        Charset.forName(C0475C.ISO88591_NAME);
         byte[] bArr = new byte[0];
         EMPTY_BYTE_ARRAY = bArr;
         EMPTY_BYTE_BUFFER = ByteBuffer.wrap(bArr);

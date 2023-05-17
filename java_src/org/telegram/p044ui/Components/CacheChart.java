@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SvgHelper;
@@ -35,7 +35,7 @@ import org.telegram.tgnet.ConnectionsManager;
 /* renamed from: org.telegram.ui.Components.CacheChart */
 /* loaded from: classes6.dex */
 public class CacheChart extends View {
-    private static final String[] DEFAULT_COLORS = {"statisticChartLine_lightblue", "statisticChartLine_blue", "statisticChartLine_green", "statisticChartLine_red", "statisticChartLine_lightgreen", "statisticChartLine_orange", "statisticChartLine_cyan", "statisticChartLine_purple", "statisticChartLine_golden"};
+    private static final int[] DEFAULT_COLORS = {Theme.key_statisticChartLine_lightblue, Theme.key_statisticChartLine_blue, Theme.key_statisticChartLine_green, Theme.key_statisticChartLine_red, Theme.key_statisticChartLine_lightgreen, Theme.key_statisticChartLine_orange, Theme.key_statisticChartLine_cyan, Theme.key_statisticChartLine_purple, Theme.key_statisticChartLine_golden};
     private static final int[] DEFAULT_PARTICLES;
     private static Long loadedStart;
     private static long particlesStart;
@@ -94,9 +94,9 @@ public class CacheChart extends View {
     }
 
     static {
-        int i = C3242R.raw.cache_videos;
-        int i2 = C3242R.raw.cache_other;
-        DEFAULT_PARTICLES = new int[]{C3242R.raw.cache_photos, i, C3242R.raw.cache_documents, C3242R.raw.cache_music, i, C3242R.raw.cache_stickers, C3242R.raw.cache_profile_photos, i2, i2};
+        int i = C3290R.raw.cache_videos;
+        int i2 = C3290R.raw.cache_other;
+        DEFAULT_PARTICLES = new int[]{C3290R.raw.cache_photos, i, C3290R.raw.cache_documents, C3290R.raw.cache_music, i, C3290R.raw.cache_stickers, C3290R.raw.cache_profile_photos, i2, i2};
         particlesStart = -1L;
     }
 
@@ -149,7 +149,7 @@ public class CacheChart extends View {
             this.text.setTextColor(-1);
             this.text.setAnimationProperties(0.35f, 0L, 200L, cubicBezierInterpolator);
             this.text.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.text.setTextSize(AndroidUtilities.m50dp(15));
+            this.text.setTextSize(AndroidUtilities.m54dp(15));
             this.text.setGravity(17);
             this.path = new Path();
             this.paint = new Paint(1);
@@ -280,7 +280,7 @@ public class CacheChart extends View {
             float f7;
             float f8 = this.selectedAnimated.set(this.selected ? 1.0f : 0.0f);
             this.rectF.set(rectF);
-            this.rectF.inset((-AndroidUtilities.m50dp(9)) * f8, f8 * (-AndroidUtilities.m50dp(9)));
+            this.rectF.inset((-AndroidUtilities.m54dp(9)) * f8, f8 * (-AndroidUtilities.m54dp(9)));
             float centerX = (float) (this.rectF.centerX() + ((Math.cos(CacheChart.toRad(f)) * (this.rectF.width() + rectF2.width())) / 4.0d));
             float centerY = (float) (this.rectF.centerY() + ((Math.sin(CacheChart.toRad(f)) * (this.rectF.width() + rectF2.width())) / 4.0d));
             float f9 = f5 * this.textAlphaAnimated.set(this.textAlpha) * f4;
@@ -326,7 +326,7 @@ public class CacheChart extends View {
         this(context, 9, DEFAULT_COLORS, 0, DEFAULT_PARTICLES);
     }
 
-    public CacheChart(Context context, int i, String[] strArr, int i2, int[] iArr) {
+    public CacheChart(Context context, int i, int[] iArr, int i2, int[] iArr2) {
         super(context);
         this.chartMeasureBounds = new RectF();
         this.chartBounds = new RectF();
@@ -350,15 +350,15 @@ public class CacheChart extends View {
         this.selectedIndex = -1;
         setLayerType(2, null);
         this.sectionsCount = i;
-        this.particles = iArr;
+        this.particles = iArr2;
         this.type = i2;
         this.svgParticles = i2 == 0;
         this.sectors = new Sector[i];
         this.loadingBackgroundPaint.setStyle(Paint.Style.STROKE);
-        this.loadingBackgroundPaint.setColor(Theme.getColor("listSelectorSDK21"));
+        this.loadingBackgroundPaint.setColor(Theme.getColor(Theme.key_listSelector));
         this.completePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        this.completeGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(200), new int[]{7263574, -9513642, -12469647, 4307569}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.07f, 0.93f, 1.0f}, Shader.TileMode.CLAMP);
-        this.completeTextGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(200), new int[]{7263574, -9513642, -12469647, 4307569}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.07f, 0.93f, 1.0f}, Shader.TileMode.CLAMP);
+        this.completeGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(200), new int[]{7263574, -9513642, -12469647, 4307569}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.07f, 0.93f, 1.0f}, Shader.TileMode.CLAMP);
+        this.completeTextGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(200), new int[]{7263574, -9513642, -12469647, 4307569}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.07f, 0.93f, 1.0f}, Shader.TileMode.CLAMP);
         this.completeGradientMatrix = new Matrix();
         this.completeTextGradientMatrix = new Matrix();
         this.completePaintStroke.setShader(this.completeGradient);
@@ -367,23 +367,23 @@ public class CacheChart extends View {
         this.completePaintStroke.setStrokeCap(Paint.Cap.ROUND);
         this.completePaintStroke.setStrokeJoin(Paint.Join.ROUND);
         this.topText.setAnimationProperties(0.2f, 0L, 450L, cubicBezierInterpolator);
-        this.topText.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.topText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.topText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.topText.setTextSize(AndroidUtilities.m50dp(32));
+        this.topText.setTextSize(AndroidUtilities.m54dp(32));
         this.topText.setGravity(17);
         this.bottomText.setAnimationProperties(0.6f, 0L, 450L, cubicBezierInterpolator);
-        this.bottomText.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
-        this.bottomText.setTextSize(AndroidUtilities.m50dp(12));
+        this.bottomText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
+        this.bottomText.setTextSize(AndroidUtilities.m54dp(12));
         this.bottomText.setGravity(17);
         this.topCompleteText.setAnimationProperties(0.2f, 0L, 450L, cubicBezierInterpolator);
         this.topCompleteText.getPaint().setShader(this.completeTextGradient);
         this.topCompleteText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.topCompleteText.setTextSize(AndroidUtilities.m50dp(32));
+        this.topCompleteText.setTextSize(AndroidUtilities.m54dp(32));
         this.topCompleteText.setGravity(17);
         this.bottomCompleteText.setAnimationProperties(0.6f, 0L, 450L, cubicBezierInterpolator);
         this.bottomCompleteText.getPaint().setShader(this.completeTextGradient);
         this.bottomCompleteText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.bottomCompleteText.setTextSize(AndroidUtilities.m50dp(12));
+        this.bottomCompleteText.setTextSize(AndroidUtilities.m54dp(12));
         this.bottomCompleteText.setGravity(17);
         int i3 = 0;
         while (true) {
@@ -393,10 +393,10 @@ public class CacheChart extends View {
             }
             Sector sector = new Sector();
             sectorArr[i3] = sector;
-            int blendOver = Theme.blendOver(Theme.getColor(strArr[i3]), ConnectionsManager.FileTypeAudio);
-            int blendOver2 = Theme.blendOver(Theme.getColor(strArr[i3]), 822083583);
-            AndroidUtilities.m50dp(50);
-            RadialGradient radialGradient = new RadialGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(86), new int[]{blendOver2, blendOver}, new float[]{0.3f, 1.0f}, Shader.TileMode.CLAMP);
+            int blendOver = Theme.blendOver(Theme.getColor(iArr[i3]), ConnectionsManager.FileTypeAudio);
+            int blendOver2 = Theme.blendOver(Theme.getColor(iArr[i3]), 822083583);
+            AndroidUtilities.m54dp(50);
+            RadialGradient radialGradient = new RadialGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(86), new int[]{blendOver2, blendOver}, new float[]{0.3f, 1.0f}, Shader.TileMode.CLAMP);
             sector.gradient = radialGradient;
             Matrix matrix = new Matrix();
             sector.gradientMatrix = matrix;
@@ -422,7 +422,7 @@ public class CacheChart extends View {
             }
             if (sectorArr[i].particle == null) {
                 if (this.svgParticles) {
-                    sectorArr[i].particle = SvgHelper.getBitmap(this.particles[i], AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(16), -1);
+                    sectorArr[i].particle = SvgHelper.getBitmap(this.particles[i], AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(16), -1);
                 } else {
                     sectorArr[i].particle = BitmapFactory.decodeResource(getContext().getResources(), this.particles[i]);
                 }
@@ -460,7 +460,7 @@ public class CacheChart extends View {
         if (atan2 < BitmapDescriptorFactory.HUE_RED) {
             atan2 += 360.0f;
         }
-        if (distance > this.chartInnerBounds.width() / 2.0f && distance < (this.chartBounds.width() / 2.0f) + AndroidUtilities.m50dp(14)) {
+        if (distance > this.chartInnerBounds.width() / 2.0f && distance < (this.chartBounds.width() / 2.0f) + AndroidUtilities.m54dp(14)) {
             i = 0;
             while (true) {
                 Sector[] sectorArr = this.sectors;
@@ -538,7 +538,7 @@ public class CacheChart extends View {
         public long size;
 
         /* renamed from: of */
-        public static SegmentSize m26of(long j, boolean z) {
+        public static SegmentSize m28of(long j, boolean z) {
             SegmentSize segmentSize = new SegmentSize();
             segmentSize.size = j;
             segmentSize.selected = z;
@@ -805,7 +805,7 @@ public class CacheChart extends View {
         float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dpf2(38.0f), AndroidUtilities.dpf2(10.0f), Math.max(f9, f10));
         this.chartInnerBounds.inset(lerp2, lerp2);
         char c = 0;
-        float lerp3 = AndroidUtilities.lerp(0, AndroidUtilities.m50dp(60), f9);
+        float lerp3 = AndroidUtilities.lerp(0, AndroidUtilities.m54dp(60), f9);
         if (start == null) {
             start = Long.valueOf(System.currentTimeMillis());
         }
@@ -917,18 +917,18 @@ public class CacheChart extends View {
                 drawable.checkBounds = true;
                 drawable.size1 = 18;
                 drawable.distributionAlgorithm = false;
-                drawable.excludeRadius = AndroidUtilities.m50dp(80);
+                drawable.excludeRadius = AndroidUtilities.m54dp(80);
                 StarParticlesView.Drawable drawable2 = this.completeDrawable;
-                drawable2.f1715k3 = 0.85f;
-                drawable2.f1714k2 = 0.85f;
-                drawable2.f1713k1 = 0.85f;
+                drawable2.f1722k3 = 0.85f;
+                drawable2.f1721k2 = 0.85f;
+                drawable2.f1720k1 = 0.85f;
                 drawable2.init();
                 z = true;
             } else {
                 z = false;
             }
             if (z || (rectF = this.completePathBounds) == null || !rectF.equals(this.chartMeasureBounds)) {
-                float min3 = Math.min(getMeasuredHeight(), Math.min(getMeasuredWidth(), AndroidUtilities.m50dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION)));
+                float min3 = Math.min(getMeasuredHeight(), Math.min(getMeasuredWidth(), AndroidUtilities.m54dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION)));
                 this.completeDrawable.rect.set(f3, f3, min3, min3);
                 this.completeDrawable.rect.offset((getMeasuredWidth() - this.completeDrawable.rect.width()) / 2.0f, (getMeasuredHeight() - this.completeDrawable.rect.height()) / 2.0f);
                 this.completeDrawable.rect2.set(f3, f3, getMeasuredWidth(), getMeasuredHeight());
@@ -998,9 +998,9 @@ public class CacheChart extends View {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i);
-        int m50dp = AndroidUtilities.m50dp(heightDp());
-        int m50dp2 = AndroidUtilities.m50dp((int) TsExtractor.TS_STREAM_TYPE_AC4);
-        this.chartMeasureBounds.set((size - m50dp2) / 2.0f, (m50dp - m50dp2) / 2.0f, (size + m50dp2) / 2.0f, (m50dp2 + m50dp) / 2.0f);
+        int m54dp = AndroidUtilities.m54dp(heightDp());
+        int m54dp2 = AndroidUtilities.m54dp((int) TsExtractor.TS_STREAM_TYPE_AC4);
+        this.chartMeasureBounds.set((size - m54dp2) / 2.0f, (m54dp - m54dp2) / 2.0f, (size + m54dp2) / 2.0f, (m54dp2 + m54dp) / 2.0f);
         this.completeGradientMatrix.reset();
         this.completeGradientMatrix.setTranslate(this.chartMeasureBounds.left, BitmapDescriptorFactory.HUE_RED);
         this.completeGradient.setLocalMatrix(this.completeGradientMatrix);
@@ -1011,12 +1011,12 @@ public class CacheChart extends View {
         this.completeTextGradient.setLocalMatrix(this.completeTextGradientMatrix);
         StarParticlesView.Drawable drawable = this.completeDrawable;
         if (drawable != null) {
-            drawable.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(140));
+            drawable.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(140));
             this.completeDrawable.rect.offset((getMeasuredWidth() - this.completeDrawable.rect.width()) / 2.0f, (getMeasuredHeight() - this.completeDrawable.rect.height()) / 2.0f);
             this.completeDrawable.rect2.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
             this.completeDrawable.resetPositions();
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m50dp, 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m54dp, 1073741824));
     }
 
     @Override // android.view.View

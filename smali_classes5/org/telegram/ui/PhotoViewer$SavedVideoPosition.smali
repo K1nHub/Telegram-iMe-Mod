@@ -24,13 +24,13 @@
 .method public constructor <init>(FJ)V
     .locals 0
 
-    .line 936
+    .line 1351
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 937
+    .line 1352
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$SavedVideoPosition;->position:F
 
-    .line 938
+    .line 1353
     iput-wide p2, p0, Lorg/telegram/ui/PhotoViewer$SavedVideoPosition;->timestamp:J
 
     return-void

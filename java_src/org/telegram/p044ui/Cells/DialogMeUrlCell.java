@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
@@ -59,11 +59,11 @@ public class DialogMeUrlCell extends BaseCell {
         super(context);
         this.avatarImage = new ImageReceiver(this);
         this.avatarDrawable = new AvatarDrawable();
-        this.messageTop = AndroidUtilities.m50dp(40);
-        this.avatarTop = AndroidUtilities.m50dp(10);
+        this.messageTop = AndroidUtilities.m54dp(40);
+        this.avatarTop = AndroidUtilities.m54dp(10);
         this.currentAccount = UserConfig.selectedAccount;
         Theme.createDialogsResources(context);
-        this.avatarImage.setRoundRadius(AndroidUtilities.m50dp(26));
+        this.avatarImage.setRoundRadius(AndroidUtilities.m54dp(26));
     }
 
     public void setRecentMeUrl(TLRPC$RecentMeUrl tLRPC$RecentMeUrl) {
@@ -85,7 +85,7 @@ public class DialogMeUrlCell extends BaseCell {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(72) + (this.useSeparator ? 1 : 0));
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(72) + (this.useSeparator ? 1 : 0));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -98,7 +98,7 @@ public class DialogMeUrlCell extends BaseCell {
     public void buildLayout() {
         String str;
         int measuredWidth;
-        int m50dp;
+        int m54dp;
         int measuredWidth2;
         TextPaint textPaint = Theme.dialogs_namePaint[0];
         TextPaint textPaint2 = Theme.dialogs_messagePaint[0];
@@ -109,11 +109,11 @@ public class DialogMeUrlCell extends BaseCell {
             TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.recentMeUrl.chat_id));
             this.drawVerified = chat.verified;
             if (!LocaleController.isRTL) {
-                this.nameLockLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
-                this.nameLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline + 4);
+                this.nameLockLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
+                this.nameLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline + 4);
             } else {
-                this.nameLockLeft = getMeasuredWidth() - AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
-                this.nameLeft = AndroidUtilities.m50dp(14);
+                this.nameLockLeft = getMeasuredWidth() - AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
+                this.nameLeft = AndroidUtilities.m54dp(14);
             }
             str = chat.title;
             this.avatarDrawable.setInfo(chat);
@@ -121,19 +121,19 @@ public class DialogMeUrlCell extends BaseCell {
         } else if (tLRPC$RecentMeUrl instanceof TLRPC$TL_recentMeUrlUser) {
             TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.recentMeUrl.user_id));
             if (!LocaleController.isRTL) {
-                this.nameLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
+                this.nameLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
             } else {
-                this.nameLeft = AndroidUtilities.m50dp(14);
+                this.nameLeft = AndroidUtilities.m54dp(14);
             }
             if (user != null) {
                 if (user.bot) {
-                    this.nameLockTop = AndroidUtilities.m51dp(16.5f);
+                    this.nameLockTop = AndroidUtilities.m55dp(16.5f);
                     if (!LocaleController.isRTL) {
-                        this.nameLockLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
-                        this.nameLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline + 4);
+                        this.nameLockLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
+                        this.nameLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline + 4);
                     } else {
-                        this.nameLockLeft = getMeasuredWidth() - AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
-                        this.nameLeft = AndroidUtilities.m50dp(14);
+                        this.nameLockLeft = getMeasuredWidth() - AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
+                        this.nameLeft = AndroidUtilities.m54dp(14);
                     }
                 }
                 this.drawVerified = user.verified;
@@ -143,18 +143,18 @@ public class DialogMeUrlCell extends BaseCell {
             this.avatarImage.setForUserOrChat(user, this.avatarDrawable, this.recentMeUrl);
         } else if (tLRPC$RecentMeUrl instanceof TLRPC$TL_recentMeUrlStickerSet) {
             if (!LocaleController.isRTL) {
-                this.nameLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
+                this.nameLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
             } else {
-                this.nameLeft = AndroidUtilities.m50dp(14);
+                this.nameLeft = AndroidUtilities.m54dp(14);
             }
             str = this.recentMeUrl.set.set.title;
             this.avatarDrawable.setInfo(5L, str, null);
             this.avatarImage.setImage(ImageLocation.getForDocument(this.recentMeUrl.set.cover), null, this.avatarDrawable, null, this.recentMeUrl, 0);
         } else if (tLRPC$RecentMeUrl instanceof TLRPC$TL_recentMeUrlChatInvite) {
             if (!LocaleController.isRTL) {
-                this.nameLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
+                this.nameLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
             } else {
-                this.nameLeft = AndroidUtilities.m50dp(14);
+                this.nameLeft = AndroidUtilities.m54dp(14);
             }
             TLRPC$ChatInvite tLRPC$ChatInvite = this.recentMeUrl.chat_invite;
             TLRPC$Chat tLRPC$Chat = tLRPC$ChatInvite.chat;
@@ -173,17 +173,17 @@ public class DialogMeUrlCell extends BaseCell {
                 str = str3;
             }
             if (!LocaleController.isRTL) {
-                this.nameLockLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
-                this.nameLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline + 4);
+                this.nameLockLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
+                this.nameLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline + 4);
             } else {
-                this.nameLockLeft = getMeasuredWidth() - AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
-                this.nameLeft = AndroidUtilities.m50dp(14);
+                this.nameLockLeft = getMeasuredWidth() - AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
+                this.nameLeft = AndroidUtilities.m54dp(14);
             }
         } else if (tLRPC$RecentMeUrl instanceof TLRPC$TL_recentMeUrlUnknown) {
             if (!LocaleController.isRTL) {
-                this.nameLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
+                this.nameLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
             } else {
-                this.nameLeft = AndroidUtilities.m50dp(14);
+                this.nameLeft = AndroidUtilities.m54dp(14);
             }
             this.avatarImage.setImage(null, null, this.avatarDrawable, null, this.recentMeUrl, 0);
             str = "Url";
@@ -193,46 +193,46 @@ public class DialogMeUrlCell extends BaseCell {
         }
         String str4 = MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + this.recentMeUrl.url;
         if (TextUtils.isEmpty(str)) {
-            str = LocaleController.getString("HiddenName", C3242R.string.HiddenName);
+            str = LocaleController.getString("HiddenName", C3290R.string.HiddenName);
         }
         if (!LocaleController.isRTL) {
             measuredWidth = getMeasuredWidth() - this.nameLeft;
-            m50dp = AndroidUtilities.m50dp(14);
+            m54dp = AndroidUtilities.m54dp(14);
         } else {
             measuredWidth = getMeasuredWidth() - this.nameLeft;
-            m50dp = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
+            m54dp = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
         }
-        int i = measuredWidth - m50dp;
+        int i = measuredWidth - m54dp;
         if (this.drawNameLock) {
-            i -= AndroidUtilities.m50dp(4) + Theme.dialogs_lockDrawable.getIntrinsicWidth();
+            i -= AndroidUtilities.m54dp(4) + Theme.dialogs_lockDrawable.getIntrinsicWidth();
         }
         if (this.drawVerified) {
-            int m50dp2 = AndroidUtilities.m50dp(6) + Theme.dialogs_verifiedDrawable.getIntrinsicWidth();
-            i -= m50dp2;
+            int m54dp2 = AndroidUtilities.m54dp(6) + Theme.dialogs_verifiedDrawable.getIntrinsicWidth();
+            i -= m54dp2;
             if (LocaleController.isRTL) {
-                this.nameLeft += m50dp2;
+                this.nameLeft += m54dp2;
             }
         }
-        int max = Math.max(AndroidUtilities.m50dp(12), i);
+        int max = Math.max(AndroidUtilities.m54dp(12), i);
         try {
-            this.nameLayout = new StaticLayout(TextUtils.ellipsize(str.replace('\n', ' '), textPaint, max - AndroidUtilities.m50dp(12), TextUtils.TruncateAt.END), textPaint, max, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+            this.nameLayout = new StaticLayout(TextUtils.ellipsize(str.replace('\n', ' '), textPaint, max - AndroidUtilities.m54dp(12), TextUtils.TruncateAt.END), textPaint, max, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
-        int measuredWidth3 = getMeasuredWidth() - AndroidUtilities.m50dp(AndroidUtilities.leftBaseline + 16);
+        int measuredWidth3 = getMeasuredWidth() - AndroidUtilities.m54dp(AndroidUtilities.leftBaseline + 16);
         if (!LocaleController.isRTL) {
-            this.messageLeft = AndroidUtilities.m50dp(AndroidUtilities.leftBaseline);
-            measuredWidth2 = AndroidUtilities.m50dp(AndroidUtilities.isTablet() ? 13 : 9);
+            this.messageLeft = AndroidUtilities.m54dp(AndroidUtilities.leftBaseline);
+            measuredWidth2 = AndroidUtilities.m54dp(AndroidUtilities.isTablet() ? 13 : 9);
         } else {
-            this.messageLeft = AndroidUtilities.m50dp(16);
-            measuredWidth2 = getMeasuredWidth() - AndroidUtilities.m50dp(AndroidUtilities.isTablet() ? 65 : 61);
+            this.messageLeft = AndroidUtilities.m54dp(16);
+            measuredWidth2 = getMeasuredWidth() - AndroidUtilities.m54dp(AndroidUtilities.isTablet() ? 65 : 61);
         }
-        this.avatarImage.setImageCoords(measuredWidth2, this.avatarTop, AndroidUtilities.m50dp(52), AndroidUtilities.m50dp(52));
-        int max2 = Math.max(AndroidUtilities.m50dp(12), measuredWidth3);
+        this.avatarImage.setImageCoords(measuredWidth2, this.avatarTop, AndroidUtilities.m54dp(52), AndroidUtilities.m54dp(52));
+        int max2 = Math.max(AndroidUtilities.m54dp(12), measuredWidth3);
         try {
-            this.messageLayout = new StaticLayout(TextUtils.ellipsize(str4, textPaint2, max2 - AndroidUtilities.m50dp(12), TextUtils.TruncateAt.END), textPaint2, max2, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+            this.messageLayout = new StaticLayout(TextUtils.ellipsize(str4, textPaint2, max2 - AndroidUtilities.m54dp(12), TextUtils.TruncateAt.END), textPaint2, max2, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
         } catch (Exception e2) {
-            FileLog.m45e(e2);
+            FileLog.m49e(e2);
         }
         if (LocaleController.isRTL) {
             StaticLayout staticLayout = this.nameLayout;
@@ -240,7 +240,7 @@ public class DialogMeUrlCell extends BaseCell {
                 float lineLeft = this.nameLayout.getLineLeft(0);
                 double ceil = Math.ceil(this.nameLayout.getLineWidth(0));
                 if (this.drawVerified) {
-                    this.nameMuteLeft = (int) (((this.nameLeft + (max - ceil)) - AndroidUtilities.m50dp(6)) - Theme.dialogs_verifiedDrawable.getIntrinsicWidth());
+                    this.nameMuteLeft = (int) (((this.nameLeft + (max - ceil)) - AndroidUtilities.m54dp(6)) - Theme.dialogs_verifiedDrawable.getIntrinsicWidth());
                 }
                 if (lineLeft == BitmapDescriptorFactory.HUE_RED) {
                     double d = max;
@@ -272,7 +272,7 @@ public class DialogMeUrlCell extends BaseCell {
                 }
             }
             if (this.drawVerified) {
-                this.nameMuteLeft = (int) (this.nameLeft + lineRight + AndroidUtilities.m50dp(6));
+                this.nameMuteLeft = (int) (this.nameLeft + lineRight + AndroidUtilities.m54dp(6));
             }
         }
         StaticLayout staticLayout4 = this.messageLayout;
@@ -304,7 +304,7 @@ public class DialogMeUrlCell extends BaseCell {
         }
         if (this.nameLayout != null) {
             canvas.save();
-            canvas.translate(this.nameLeft, AndroidUtilities.m50dp(13));
+            canvas.translate(this.nameLeft, AndroidUtilities.m54dp(13));
             this.nameLayout.draw(canvas);
             canvas.restore();
         }
@@ -314,21 +314,21 @@ public class DialogMeUrlCell extends BaseCell {
             try {
                 this.messageLayout.draw(canvas);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
             canvas.restore();
         }
         if (this.drawVerified) {
-            BaseCell.setDrawableBounds(Theme.dialogs_verifiedDrawable, this.nameMuteLeft, AndroidUtilities.m51dp(16.5f));
-            BaseCell.setDrawableBounds(Theme.dialogs_verifiedCheckDrawable, this.nameMuteLeft, AndroidUtilities.m51dp(16.5f));
+            BaseCell.setDrawableBounds(Theme.dialogs_verifiedDrawable, this.nameMuteLeft, AndroidUtilities.m55dp(16.5f));
+            BaseCell.setDrawableBounds(Theme.dialogs_verifiedCheckDrawable, this.nameMuteLeft, AndroidUtilities.m55dp(16.5f));
             Theme.dialogs_verifiedDrawable.draw(canvas);
             Theme.dialogs_verifiedCheckDrawable.draw(canvas);
         }
         if (this.useSeparator) {
             if (LocaleController.isRTL) {
-                canvas.drawLine(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.m50dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.m54dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, Theme.dividerPaint);
             } else {
-                canvas.drawLine(AndroidUtilities.m50dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(AndroidUtilities.m54dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
             }
         }
         this.avatarImage.draw(canvas);

@@ -1033,13 +1033,11 @@
     .line 125
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const-string v6, "chats_actionBackground"
+    const/16 v6, 0x15
 
-    const/16 v9, 0x15
+    const-string v9, "tabLayout"
 
-    const-string v10, "tabLayout"
-
-    if-lt v4, v9, :cond_6
+    if-lt v4, v6, :cond_6
 
     const/high16 v4, 0x40c00000    # 6.0f
 
@@ -1051,14 +1049,14 @@
 
     if-nez v1, :cond_4
 
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v9}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v1, v3
 
     :cond_4
-    const-string v4, "windowBackgroundWhite"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -1069,12 +1067,14 @@
 
     if-nez v1, :cond_5
 
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v9}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v1, v3
 
     :cond_5
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -1086,7 +1086,7 @@
 
     if-nez v1, :cond_7
 
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v9}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v1, v3
 
@@ -1100,22 +1100,24 @@
 
     if-nez v1, :cond_8
 
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v9}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v1, v3
 
     :cond_8
-    const-string v4, "windowBackgroundWhiteBlackText"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    move-result v6
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v1, v4, v6}, Lcom/google/android/material/tabs/TabLayout;->setTabTextColors(II)V
+    move-result v10
+
+    invoke-virtual {v1, v4, v10}, Lcom/google/android/material/tabs/TabLayout;->setTabTextColors(II)V
 
     .line 132
     new-instance v1, Lcom/iMe/ui/shop/view/custom/NonSwipeableViewPager;
@@ -1145,18 +1147,18 @@
     move-object v1, v3
 
     :cond_9
-    iget-object v6, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->pagerAdapter:Landroidx/viewpager/widget/PagerAdapter;
+    iget-object v10, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->pagerAdapter:Landroidx/viewpager/widget/PagerAdapter;
 
-    if-nez v6, :cond_a
+    if-nez v10, :cond_a
 
-    const-string v6, "pagerAdapter"
+    const-string v10, "pagerAdapter"
 
-    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    move-object v6, v3
+    move-object v10, v3
 
     :cond_a
-    invoke-virtual {v1, v6}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
+    invoke-virtual {v1, v10}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
     .line 135
     iget-object v1, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->viewPager:Lcom/iMe/ui/shop/view/custom/NonSwipeableViewPager;
@@ -1168,30 +1170,30 @@
     move-object v1, v3
 
     :cond_b
-    const/4 v6, 0x3
+    const/4 v10, 0x3
 
-    invoke-virtual {v1, v6}, Landroidx/viewpager/widget/ViewPager;->setOffscreenPageLimit(I)V
+    invoke-virtual {v1, v10}, Landroidx/viewpager/widget/ViewPager;->setOffscreenPageLimit(I)V
 
     .line 136
     iget-object v1, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->tabLayout:Lcom/iMe/ui/shop/view/custom/CustomTabLayout;
 
     if-nez v1, :cond_c
 
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v9}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v1, v3
 
     :cond_c
-    iget-object v6, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->viewPager:Lcom/iMe/ui/shop/view/custom/NonSwipeableViewPager;
+    iget-object v10, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->viewPager:Lcom/iMe/ui/shop/view/custom/NonSwipeableViewPager;
 
-    if-nez v6, :cond_d
+    if-nez v10, :cond_d
 
     invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    move-object v6, v3
+    move-object v10, v3
 
     :cond_d
-    invoke-virtual {v1, v6}, Lcom/google/android/material/tabs/TabLayout;->setupWithViewPager(Landroidx/viewpager/widget/ViewPager;)V
+    invoke-virtual {v1, v10}, Lcom/google/android/material/tabs/TabLayout;->setupWithViewPager(Landroidx/viewpager/widget/ViewPager;)V
 
     .line 137
     new-instance v1, Lcom/google/android/material/appbar/AppBarLayout;
@@ -1199,13 +1201,13 @@
     invoke-direct {v1, v7}, Lcom/google/android/material/appbar/AppBarLayout;-><init>(Landroid/content/Context;)V
 
     .line 138
-    iget-object v6, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->tabLayout:Lcom/iMe/ui/shop/view/custom/CustomTabLayout;
+    iget-object v10, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->tabLayout:Lcom/iMe/ui/shop/view/custom/CustomTabLayout;
 
-    if-nez v6, :cond_e
+    if-nez v10, :cond_e
 
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v9}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    move-object v6, v3
+    move-object v10, v3
 
     :cond_e
     const/4 v11, -0x2
@@ -1214,30 +1216,30 @@
 
     move-result-object v12
 
-    invoke-virtual {v1, v6, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v10, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 139
-    iget-object v6, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->tabLayout:Lcom/iMe/ui/shop/view/custom/CustomTabLayout;
+    iget-object v10, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->tabLayout:Lcom/iMe/ui/shop/view/custom/CustomTabLayout;
 
-    if-nez v6, :cond_f
+    if-nez v10, :cond_f
 
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v9}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    move-object v6, v3
+    move-object v10, v3
 
     :cond_f
-    invoke-virtual {v6}, Landroid/widget/HorizontalScrollView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v10}, Landroid/widget/HorizontalScrollView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v6
+    move-result-object v9
 
     const-string v10, "null cannot be cast to non-null type com.google.android.material.appbar.AppBarLayout.LayoutParams"
 
-    invoke-static {v6, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v6, Lcom/google/android/material/appbar/AppBarLayout$LayoutParams;
+    check-cast v9, Lcom/google/android/material/appbar/AppBarLayout$LayoutParams;
 
     .line 140
-    invoke-virtual {v6, v9}, Lcom/google/android/material/appbar/AppBarLayout$LayoutParams;->setScrollFlags(I)V
+    invoke-virtual {v9, v6}, Lcom/google/android/material/appbar/AppBarLayout$LayoutParams;->setScrollFlags(I)V
 
     .line 143
     iget-object v6, v0, Lcom/iMe/ui/shop/NeurobotsStoreActivity;->baseViewsContainer:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
@@ -1597,9 +1599,9 @@
     move-object v1, v3
 
     :cond_20
-    const-string v4, "emptyListPlaceholder"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_emptyListPlaceholder:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 

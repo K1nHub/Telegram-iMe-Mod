@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/DialogsActivity$2;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "DialogsActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->openQrCodeScan()V
+    value = Lorg/telegram/ui/DialogsActivity;->updateTopicsBar()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,97 +17,63 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
+.field final synthetic val$isVisible:Z
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Z)V
     .locals 0
 
-    .line 706
+    .line 772
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$2;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$2;->val$isVisible:Z
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic didFindMrzInfo(Lorg/telegram/messenger/MrzRecognizer$Result;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate$-CC;->$default$didFindMrzInfo(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;Lorg/telegram/messenger/MrzRecognizer$Result;)V
-
-    return-void
-.end method
-
-.method public didFindQr(Ljava/lang/String;)V
-    .locals 3
-
-    .line 709
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$2;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$100(Lorg/telegram/ui/DialogsActivity;)I
-
-    move-result v0
-
-    sget v1, Lcom/iMe/common/IdFabric$CustomType;->QR_CODE_SCANNER_CHAT_LINK:I
-
-    if-ne v0, v1, :cond_0
-
-    .line 710
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$2;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->closeSearchField()V
-
-    .line 711
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$2;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, p1, v1, v2}, Lorg/telegram/ui/Components/AlertsCreator;->showOpenUrlAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;ZZ)V
-
-    goto :goto_0
-
-    .line 713
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$2;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/DialogsActivity;->processQr(Ljava/lang/String;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method public synthetic getSubtitleText()Ljava/lang/String;
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    invoke-static {p0}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate$-CC;->$default$getSubtitleText(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;)Ljava/lang/String;
+    .line 775
+    iget-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$2;->val$isVisible:Z
 
-    move-result-object v0
+    if-nez p1, :cond_0
 
-    return-object v0
-.end method
+    .line 776
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$2;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-.method public synthetic onDismiss()V
-    .locals 0
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$300(Lorg/telegram/ui/DialogsActivity;)Lcom/iMe/ui/topics/TopicsBar;
 
-    invoke-static {p0}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate$-CC;->$default$onDismiss(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;)V
+    move-result-object p1
 
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 778
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$2;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$400(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    .line 779
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$2;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$500(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
+
+    :cond_1
     return-void
-.end method
-
-.method public synthetic processQr(Ljava/lang/String;Ljava/lang/Runnable;)Z
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate$-CC;->$default$processQr(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;Ljava/lang/String;Ljava/lang/Runnable;)Z
-
-    move-result p1
-
-    return p1
 .end method

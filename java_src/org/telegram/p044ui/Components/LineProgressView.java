@@ -34,7 +34,7 @@ public class LineProgressView extends View {
             Paint paint = new Paint(1);
             progressPaint = paint;
             paint.setStrokeCap(Paint.Cap.ROUND);
-            progressPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+            progressPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         }
     }
 
@@ -129,7 +129,6 @@ public class LineProgressView extends View {
             }
             this.cellFlickerDrawable.setParentWidth(getMeasuredWidth());
             this.cellFlickerDrawable.draw(canvas, this.rect, getHeight() / 2.0f, null);
-            invalidate();
         }
         updateAnimation();
     }

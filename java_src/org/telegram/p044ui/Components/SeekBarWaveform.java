@@ -386,7 +386,7 @@ public class SeekBarWaveform {
             canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.progress * (this.width + dpf2) * f3, this.height, paintOuter);
         }
         if (f2 > BitmapDescriptorFactory.HUE_RED) {
-            if (this.loadingPaint == null || Math.abs(this.loadingPaintWidth - this.width) > AndroidUtilities.m50dp(8) || this.loadingPaintColor1 != this.innerColor || this.loadingPaintColor2 != this.outerColor) {
+            if (this.loadingPaint == null || Math.abs(this.loadingPaintWidth - this.width) > AndroidUtilities.m54dp(8) || this.loadingPaintColor1 != this.innerColor || this.loadingPaintColor2 != this.outerColor) {
                 if (this.loadingPaint == null) {
                     this.loadingPaint = new Paint(1);
                 }
@@ -413,11 +413,11 @@ public class SeekBarWaveform {
 
     private void addBar(Path path, float f, float f2) {
         float dpf2 = AndroidUtilities.dpf2(2.0f);
-        int m50dp = (this.height - AndroidUtilities.m50dp(14)) / 2;
+        int m54dp = (this.height - AndroidUtilities.m54dp(14)) / 2;
         float f3 = f2 * this.waveScaling;
         RectF rectF = AndroidUtilities.rectTmp;
         float f4 = dpf2 / 2.0f;
-        rectF.set((AndroidUtilities.dpf2(1.0f) + f) - f4, AndroidUtilities.m50dp(7) + m50dp + ((-f3) - f4), f + AndroidUtilities.dpf2(1.0f) + f4, m50dp + AndroidUtilities.m50dp(7) + f3 + f4);
+        rectF.set((AndroidUtilities.dpf2(1.0f) + f) - f4, AndroidUtilities.m54dp(7) + m54dp + ((-f3) - f4), f + AndroidUtilities.dpf2(1.0f) + f4, m54dp + AndroidUtilities.m54dp(7) + f3 + f4);
         path.addRoundRect(rectF, dpf2, dpf2, Path.Direction.CW);
     }
 

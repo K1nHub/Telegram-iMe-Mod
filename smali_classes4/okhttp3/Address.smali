@@ -78,7 +78,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "socketFactory"
+    const-string/jumbo v0, "socketFactory"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -249,7 +249,7 @@
 .method public final equalsNonHost$okhttp(Lokhttp3/Address;)Z
     .locals 2
 
-    const-string v0, "that"
+    const-string/jumbo v0, "that"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

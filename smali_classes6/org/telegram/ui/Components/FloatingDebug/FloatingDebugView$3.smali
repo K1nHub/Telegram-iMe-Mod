@@ -207,10 +207,10 @@
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    const-string v0, "windowBackgroundWhiteBlueHeader"
-
     .line 263
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -229,10 +229,10 @@
 
     check-cast p1, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;
 
-    const-string v0, "dialogTextBlack"
-
     .line 257
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

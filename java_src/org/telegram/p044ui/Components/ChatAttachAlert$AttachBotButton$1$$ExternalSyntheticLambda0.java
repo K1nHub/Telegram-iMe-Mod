@@ -12,7 +12,7 @@ public final /* synthetic */ class ChatAttachAlert$AttachBotButton$1$$ExternalSy
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final void didSetImage(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
-        ChatAttachAlert.AttachBotButton.C42321.lambda$new$0(imageReceiver, z, z2, z3);
+        ChatAttachAlert.AttachBotButton.C42881.lambda$new$0(imageReceiver, z, z2, z3);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate

@@ -787,6 +787,20 @@
     return-object p0
 .end method
 
+.method public registerTypeAdapterFactory(Lcom/google/gson/TypeAdapterFactory;)Lcom/google/gson/GsonBuilder;
+    .locals 1
+
+    .line 638
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 639
+    iget-object v0, p0, Lcom/google/gson/GsonBuilder;->factories:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-object p0
+.end method
+
 .method public serializeNulls()Lcom/google/gson/GsonBuilder;
     .locals 1
 

@@ -32,7 +32,7 @@ public class GroupCreateDividerItemDecoration extends RecyclerView.ItemDecoratio
             View childAt2 = i < childCount + (-1) ? recyclerView.getChildAt(i + 1) : null;
             if (recyclerView.getChildAdapterPosition(childAt) >= this.skipRows && !(childAt instanceof GroupCreateSectionCell) && !(childAt2 instanceof GroupCreateSectionCell)) {
                 float bottom = childAt.getBottom();
-                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(72), bottom, width - (LocaleController.isRTL ? AndroidUtilities.m50dp(72) : 0), bottom, Theme.dividerPaint);
+                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(72), bottom, width - (LocaleController.isRTL ? AndroidUtilities.m54dp(72) : 0), bottom, Theme.dividerPaint);
             }
             i++;
         }

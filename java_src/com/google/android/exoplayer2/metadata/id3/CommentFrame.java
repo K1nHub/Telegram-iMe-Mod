@@ -20,20 +20,20 @@ public final class CommentFrame extends Id3Frame {
     };
 
     /* renamed from: ID */
-    public static final String f112ID = "COMM";
+    public static final String f115ID = "COMM";
     public final String description;
     public final String language;
     public final String text;
 
     public CommentFrame(String str, String str2, String str3) {
-        super(f112ID);
+        super(f115ID);
         this.language = str;
         this.description = str2;
         this.text = str3;
     }
 
     CommentFrame(Parcel parcel) {
-        super(f112ID);
+        super(f115ID);
         this.language = (String) Util.castNonNull(parcel.readString());
         this.description = (String) Util.castNonNull(parcel.readString());
         this.text = (String) Util.castNonNull(parcel.readString());
@@ -61,12 +61,12 @@ public final class CommentFrame extends Id3Frame {
 
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame
     public String toString() {
-        return this.f114id + ": language=" + this.language + ", description=" + this.description;
+        return this.f117id + ": language=" + this.language + ", description=" + this.description;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f114id);
+        parcel.writeString(this.f117id);
         parcel.writeString(this.language);
         parcel.writeString(this.text);
     }

@@ -38,7 +38,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
     .locals 0
 
-    .line 385
+    .line 492
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -49,7 +49,7 @@
 .method private synthetic lambda$onItemClick$0()V
     .locals 1
 
-    .line 391
+    .line 498
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatEditActivity;->onSuccessDeleteAlbum()V
@@ -60,7 +60,7 @@
 .method private synthetic lambda$onItemClick$1(Z)V
     .locals 3
 
-    .line 391
+    .line 498
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
@@ -69,7 +69,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$000(Lorg/telegram/ui/ChatEditActivity;)J
+    invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$200(Lorg/telegram/ui/ChatEditActivity;)J
 
     move-result-wide v0
 
@@ -93,7 +93,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 390
+    .line 497
     iget-object v1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     const/4 v2, 0x0
@@ -102,7 +102,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatEditActivity;->access$400(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-static {v1}, Lorg/telegram/ui/ChatEditActivity;->access$900(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v5
 
@@ -129,16 +129,16 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 395
+    .line 502
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$500(Lorg/telegram/ui/ChatEditActivity;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1000(Lorg/telegram/ui/ChatEditActivity;)Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 396
+    .line 503
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -150,10 +150,10 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 399
+    .line 506
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$600(Lorg/telegram/ui/ChatEditActivity;)V
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1100(Lorg/telegram/ui/ChatEditActivity;)V
 
     :cond_2
     :goto_0

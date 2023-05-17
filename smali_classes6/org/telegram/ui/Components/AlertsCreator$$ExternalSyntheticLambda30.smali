@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/MessagesStorage$IntCallback;
+.field public final synthetic f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final synthetic f$1:Landroidx/core/util/Consumer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage$IntCallback;)V
+.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/messenger/MessagesStorage$IntCallback;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda30;->f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda30;->f$1:Landroidx/core/util/Consumer;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/messenger/MessagesStorage$IntCallback;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda30;->f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$K-Mh_Xbt58iQ0YtuuMDOWdiFlE8(Lorg/telegram/messenger/MessagesStorage$IntCallback;Landroid/content/DialogInterface;I)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda30;->f$1:Landroidx/core/util/Consumer;
+
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$-qi_bCxXbua5KOaIK4J_N7lM9h0(Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

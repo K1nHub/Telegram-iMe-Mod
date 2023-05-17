@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemeActivity$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 2035
+    .line 2048
     invoke-direct {p0, p2}, Lorg/telegram/ui/ThemeActivity$TintRecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 2038
+    .line 2051
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -46,7 +46,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2039
+    .line 2052
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 2041
+    .line 2054
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 

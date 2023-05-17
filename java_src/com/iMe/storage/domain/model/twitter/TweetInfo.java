@@ -1,6 +1,7 @@
 package com.iMe.storage.domain.model.twitter;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TweetInfo.kt */
 /* loaded from: classes3.dex */
@@ -11,19 +12,24 @@ public final class TweetInfo {
     private final long createdAt;
 
     /* renamed from: id */
-    private final long f350id;
+    private final long f354id;
     private final boolean isLiked;
     private final int likesCount;
+    private final List<MediaInfoDomain> mediaInfo;
     private final int quotesCount;
     private final int retweetsCount;
     private final String text;
 
     public final long component1() {
-        return this.f350id;
+        return this.f354id;
     }
 
     public final boolean component10() {
         return this.isLiked;
+    }
+
+    public final List<MediaInfoDomain> component11() {
+        return this.mediaInfo;
     }
 
     public final String component2() {
@@ -58,12 +64,13 @@ public final class TweetInfo {
         return this.createdAt;
     }
 
-    public final TweetInfo copy(long j, String authorName, String authorNickname, String avatarUrl, int i, int i2, int i3, String text, long j2, boolean z) {
+    public final TweetInfo copy(long j, String authorName, String authorNickname, String avatarUrl, int i, int i2, int i3, String text, long j2, boolean z, List<MediaInfoDomain> mediaInfo) {
         Intrinsics.checkNotNullParameter(authorName, "authorName");
         Intrinsics.checkNotNullParameter(authorNickname, "authorNickname");
         Intrinsics.checkNotNullParameter(avatarUrl, "avatarUrl");
         Intrinsics.checkNotNullParameter(text, "text");
-        return new TweetInfo(j, authorName, authorNickname, avatarUrl, i, i2, i3, text, j2, z);
+        Intrinsics.checkNotNullParameter(mediaInfo, "mediaInfo");
+        return new TweetInfo(j, authorName, authorNickname, avatarUrl, i, i2, i3, text, j2, z, mediaInfo);
     }
 
     public boolean equals(Object obj) {
@@ -72,32 +79,33 @@ public final class TweetInfo {
         }
         if (obj instanceof TweetInfo) {
             TweetInfo tweetInfo = (TweetInfo) obj;
-            return this.f350id == tweetInfo.f350id && Intrinsics.areEqual(this.authorName, tweetInfo.authorName) && Intrinsics.areEqual(this.authorNickname, tweetInfo.authorNickname) && Intrinsics.areEqual(this.avatarUrl, tweetInfo.avatarUrl) && this.likesCount == tweetInfo.likesCount && this.quotesCount == tweetInfo.quotesCount && this.retweetsCount == tweetInfo.retweetsCount && Intrinsics.areEqual(this.text, tweetInfo.text) && this.createdAt == tweetInfo.createdAt && this.isLiked == tweetInfo.isLiked;
+            return this.f354id == tweetInfo.f354id && Intrinsics.areEqual(this.authorName, tweetInfo.authorName) && Intrinsics.areEqual(this.authorNickname, tweetInfo.authorNickname) && Intrinsics.areEqual(this.avatarUrl, tweetInfo.avatarUrl) && this.likesCount == tweetInfo.likesCount && this.quotesCount == tweetInfo.quotesCount && this.retweetsCount == tweetInfo.retweetsCount && Intrinsics.areEqual(this.text, tweetInfo.text) && this.createdAt == tweetInfo.createdAt && this.isLiked == tweetInfo.isLiked && Intrinsics.areEqual(this.mediaInfo, tweetInfo.mediaInfo);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m702m = ((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f350id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCount) * 31) + this.quotesCount) * 31) + this.retweetsCount) * 31) + this.text.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.createdAt)) * 31;
+        int m706m = ((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f354id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCount) * 31) + this.quotesCount) * 31) + this.retweetsCount) * 31) + this.text.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.createdAt)) * 31;
         boolean z = this.isLiked;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m702m + i;
+        return ((m706m + i) * 31) + this.mediaInfo.hashCode();
     }
 
     public String toString() {
-        return "TweetInfo(id=" + this.f350id + ", authorName=" + this.authorName + ", authorNickname=" + this.authorNickname + ", avatarUrl=" + this.avatarUrl + ", likesCount=" + this.likesCount + ", quotesCount=" + this.quotesCount + ", retweetsCount=" + this.retweetsCount + ", text=" + this.text + ", createdAt=" + this.createdAt + ", isLiked=" + this.isLiked + ')';
+        return "TweetInfo(id=" + this.f354id + ", authorName=" + this.authorName + ", authorNickname=" + this.authorNickname + ", avatarUrl=" + this.avatarUrl + ", likesCount=" + this.likesCount + ", quotesCount=" + this.quotesCount + ", retweetsCount=" + this.retweetsCount + ", text=" + this.text + ", createdAt=" + this.createdAt + ", isLiked=" + this.isLiked + ", mediaInfo=" + this.mediaInfo + ')';
     }
 
-    public TweetInfo(long j, String authorName, String authorNickname, String avatarUrl, int i, int i2, int i3, String text, long j2, boolean z) {
+    public TweetInfo(long j, String authorName, String authorNickname, String avatarUrl, int i, int i2, int i3, String text, long j2, boolean z, List<MediaInfoDomain> mediaInfo) {
         Intrinsics.checkNotNullParameter(authorName, "authorName");
         Intrinsics.checkNotNullParameter(authorNickname, "authorNickname");
         Intrinsics.checkNotNullParameter(avatarUrl, "avatarUrl");
         Intrinsics.checkNotNullParameter(text, "text");
-        this.f350id = j;
+        Intrinsics.checkNotNullParameter(mediaInfo, "mediaInfo");
+        this.f354id = j;
         this.authorName = authorName;
         this.authorNickname = authorNickname;
         this.avatarUrl = avatarUrl;
@@ -107,10 +115,11 @@ public final class TweetInfo {
         this.text = text;
         this.createdAt = j2;
         this.isLiked = z;
+        this.mediaInfo = mediaInfo;
     }
 
     public final long getId() {
-        return this.f350id;
+        return this.f354id;
     }
 
     public final String getAuthorName() {
@@ -147,5 +156,9 @@ public final class TweetInfo {
 
     public final boolean isLiked() {
         return this.isLiked;
+    }
+
+    public final List<MediaInfoDomain> getMediaInfo() {
+        return this.mediaInfo;
     }
 }

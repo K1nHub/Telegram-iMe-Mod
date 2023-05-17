@@ -6,14 +6,16 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Lifecycle.kt */
 /* loaded from: classes.dex */
 public abstract class Lifecycle {
+    private AtomicReference<Object> internalScopeRef = new AtomicReference<>();
+
     public abstract void addObserver(LifecycleObserver lifecycleObserver);
 
     public abstract State getCurrentState();
 
     public abstract void removeObserver(LifecycleObserver lifecycleObserver);
 
-    public Lifecycle() {
-        new AtomicReference();
+    public final AtomicReference<Object> getInternalScopeRef() {
+        return this.internalScopeRef;
     }
 
     /* compiled from: Lifecycle.kt */

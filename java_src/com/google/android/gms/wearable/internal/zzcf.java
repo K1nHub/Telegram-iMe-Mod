@@ -10,19 +10,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzcf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzcf> CREATOR = new zzcg();
-    @SafeParcelable.Field(m775id = 1)
+    @SafeParcelable.Field(m779id = 1)
     public final int zza;
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     public final boolean zzb;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     public final boolean zzc;
-    @SafeParcelable.Field(m775id = 4)
+    @SafeParcelable.Field(m779id = 4)
     public final boolean zzd;
-    @SafeParcelable.Field(m775id = 5)
+    @SafeParcelable.Field(m779id = 5)
     public final boolean zze;
 
     @SafeParcelable.Constructor
-    public zzcf(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) boolean z, @SafeParcelable.Param(m774id = 3) boolean z2, @SafeParcelable.Param(m774id = 4) boolean z3, @SafeParcelable.Param(m774id = 5) boolean z4) {
+    public zzcf(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) boolean z, @SafeParcelable.Param(m778id = 3) boolean z2, @SafeParcelable.Param(m778id = 4) boolean z3, @SafeParcelable.Param(m778id = 5) boolean z4) {
         this.zza = i;
         this.zzb = z;
         this.zzc = z2;

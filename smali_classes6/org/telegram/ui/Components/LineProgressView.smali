@@ -448,10 +448,7 @@
 
     invoke-virtual {v0, p1, v1, v3, v2}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
 
-    .line 131
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    .line 134
+    .line 133
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/Components/LineProgressView;->updateAnimation()V
 

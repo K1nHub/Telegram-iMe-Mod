@@ -2,32 +2,82 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lio/reactivex/disposables/Disposable;
+.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
+
+.field public final synthetic f$1:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+.field public final synthetic f$2:F
+
+.field public final synthetic f$3:F
+
+.field public final synthetic f$4:F
+
+.field public final synthetic f$5:F
+
+.field public final synthetic f$6:F
+
+.field public final synthetic f$7:F
+
+.field public final synthetic f$8:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lio/reactivex/disposables/Disposable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/CubicBezierInterpolator;FFFFFFF)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$0:Lio/reactivex/disposables/Disposable;
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/PhotoViewer;
+
+    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$1:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    iput p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$2:F
+
+    iput p4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$3:F
+
+    iput p5, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$4:F
+
+    iput p6, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$5:F
+
+    iput p7, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$6:F
+
+    iput p8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$7:F
+
+    iput p9, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$8:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancel(Landroid/content/DialogInterface;)V
-    .locals 1
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 10
 
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$0:Lio/reactivex/disposables/Disposable;
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$wSBxXOoHn0JghU1PzuwGZYkXXTI(Lio/reactivex/disposables/Disposable;Landroid/content/DialogInterface;)V
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$1:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    iget v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$2:F
+
+    iget v3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$3:F
+
+    iget v4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$4:F
+
+    iget v5, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$5:F
+
+    iget v6, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$6:F
+
+    iget v7, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$7:F
+
+    iget v8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda13;->f$8:F
+
+    move-object v9, p1
+
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$C8TAJBY5YokU5hmLGTXhx0fQmxQ(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/CubicBezierInterpolator;FFFFFFFLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

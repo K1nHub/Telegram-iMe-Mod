@@ -18,7 +18,7 @@ public final class EventStream {
     }
 
     /* renamed from: id */
-    public String m800id() {
+    public String m804id() {
         return this.schemeIdUri + "/" + this.value;
     }
 }

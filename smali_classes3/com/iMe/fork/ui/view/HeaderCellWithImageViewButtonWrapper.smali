@@ -203,7 +203,7 @@
 .end method
 
 .method private final initImageView()Landroidx/appcompat/widget/AppCompatImageView;
-    .locals 2
+    .locals 4
 
     .line 57
     new-instance v0, Landroidx/appcompat/widget/AppCompatImageView;
@@ -224,8 +224,14 @@
     .line 177
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
 
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
     .line 59
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     return-object v0
 .end method
@@ -267,18 +273,18 @@
 
     move-result-object v1
 
-    const-string v2, "windowBackgroundWhiteBlueHeader"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v1, "windowBackgroundWhite"
-
     .line 45
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -289,10 +295,10 @@
 
     move-result-object v0
 
-    const-string v1, "windowBackgroundWhiteGrayIcon"
-
     .line 48
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

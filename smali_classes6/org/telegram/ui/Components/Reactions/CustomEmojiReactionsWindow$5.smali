@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)V
     .locals 0
 
-    .line 298
+    .line 300
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->val$enter:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 301
+    .line 303
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$400(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
 
-    .line 302
+    .line 304
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->val$enter:Z
@@ -69,29 +69,29 @@
 
     const/4 v0, 0x1
 
-    .line 304
+    .line 306
     iput-boolean v0, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionFinished:Z
 
-    .line 305
+    .line 307
     iget-object p1, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-virtual {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->resetBackgroundBitmaps()V
 
-    .line 306
+    .line 308
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->onCustomEmojiWindowOpened()V
 
-    .line 307
+    .line 309
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->containerView:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 309
+    .line 311
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -105,23 +105,23 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setCustomEmojiEnterProgress(F)V
 
-    .line 310
+    .line 312
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->val$enter:Z
 
     if-eqz p1, :cond_2
 
-    .line 311
+    .line 313
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$500(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)V
 
-    .line 313
+    .line 315
     :cond_2
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->val$enter:Z
 
     if-nez p1, :cond_3
 
-    .line 314
+    .line 316
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -130,13 +130,13 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setSkipDraw(Z)V
 
-    .line 316
+    .line 318
     :cond_3
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->val$enter:Z
 
     if-nez p1, :cond_4
 
-    .line 317
+    .line 319
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$5;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->removeView()V

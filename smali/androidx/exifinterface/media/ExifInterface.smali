@@ -3465,6 +3465,55 @@
     .end array-data
 .end method
 
+.method public constructor <init>(Ljava/io/File;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 3933
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 3890
+    sget-object v0, Landroidx/exifinterface/media/ExifInterface;->EXIF_TAGS:[[Landroidx/exifinterface/media/ExifInterface$ExifTag;
+
+    array-length v1, v0
+
+    new-array v1, v1, [Ljava/util/HashMap;
+
+    iput-object v1, p0, Landroidx/exifinterface/media/ExifInterface;->mAttributes:[Ljava/util/HashMap;
+
+    .line 3892
+    new-instance v1, Ljava/util/HashSet;
+
+    array-length v0, v0
+
+    invoke-direct {v1, v0}, Ljava/util/HashSet;-><init>(I)V
+
+    iput-object v1, p0, Landroidx/exifinterface/media/ExifInterface;->mAttributesOffsets:Ljava/util/Set;
+
+    .line 3893
+    sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
+
+    iput-object v0, p0, Landroidx/exifinterface/media/ExifInterface;->mExifByteOrder:Ljava/nio/ByteOrder;
+
+    const-string v0, "file cannot be null"
+
+    .line 3935
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 3937
+    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Landroidx/exifinterface/media/ExifInterface;->initForFilename(Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/io/InputStream;)V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;

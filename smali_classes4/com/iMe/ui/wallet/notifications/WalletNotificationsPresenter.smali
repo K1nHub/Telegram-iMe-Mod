@@ -86,7 +86,7 @@
 .method private static final loadNotification$lambda$4(Lcom/iMe/ui/wallet/notifications/WalletNotificationsPresenter;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

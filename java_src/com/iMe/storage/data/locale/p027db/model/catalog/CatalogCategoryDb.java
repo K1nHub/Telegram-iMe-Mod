@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class CatalogCategoryDb {
 
     /* renamed from: id */
-    private final long f287id;
+    private final long f291id;
     private final String title;
     private final int total;
 
@@ -18,28 +18,28 @@ public final class CatalogCategoryDb {
         }
         if (obj instanceof CatalogCategoryDb) {
             CatalogCategoryDb catalogCategoryDb = (CatalogCategoryDb) obj;
-            return this.f287id == catalogCategoryDb.f287id && Intrinsics.areEqual(this.title, catalogCategoryDb.title) && this.total == catalogCategoryDb.total;
+            return this.f291id == catalogCategoryDb.f291id && Intrinsics.areEqual(this.title, catalogCategoryDb.title) && this.total == catalogCategoryDb.total;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f287id) * 31) + this.title.hashCode()) * 31) + this.total;
+        return (((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f291id) * 31) + this.title.hashCode()) * 31) + this.total;
     }
 
     public String toString() {
-        return "CatalogCategoryDb(id=" + this.f287id + ", title=" + this.title + ", total=" + this.total + ')';
+        return "CatalogCategoryDb(id=" + this.f291id + ", title=" + this.title + ", total=" + this.total + ')';
     }
 
     public CatalogCategoryDb(long j, String title, int i) {
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f287id = j;
+        this.f291id = j;
         this.title = title;
         this.total = i;
     }
 
     public final long getId() {
-        return this.f287id;
+        return this.f291id;
     }
 
     public final String getTitle() {

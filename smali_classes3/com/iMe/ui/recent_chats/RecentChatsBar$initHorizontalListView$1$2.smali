@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 77
+    .line 69
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -47,14 +47,14 @@
 
     const/4 p2, 0x4
 
-    .line 79
+    .line 71
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
 
     iput p3, p1, Landroid/graphics/Rect;->right:I
 
-    .line 80
+    .line 72
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

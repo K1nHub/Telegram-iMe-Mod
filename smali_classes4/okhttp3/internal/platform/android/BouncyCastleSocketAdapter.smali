@@ -80,7 +80,7 @@
         }
     .end annotation
 
-    const-string p2, "sslSocket"
+    const-string/jumbo p2, "sslSocket"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -103,7 +103,7 @@
 
     move-result-object p2
 
-    const-string v0, "sslParameters"
+    const-string/jumbo v0, "sslParameters"
 
     .line 53
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -141,7 +141,7 @@
 .method public getSelectedProtocol(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
     .locals 1
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -200,7 +200,7 @@
 .method public matchesSocket(Ljavax/net/ssl/SSLSocket;)Z
     .locals 1
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

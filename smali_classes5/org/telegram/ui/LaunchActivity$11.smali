@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/LaunchActivity$11;
-.super Lorg/telegram/ui/DialogsActivity;
+.super Ljava/lang/Object;
 .source "LaunchActivity.java"
+
+# interfaces
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->lambda$onCreate$8(Landroidx/recyclerview/widget/ItemTouchHelper;Landroid/view/View;IFF)Z
+    value = Lorg/telegram/ui/LaunchActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,190 +18,69 @@
 
 
 # instance fields
-.field private chatArgs:Landroid/os/Bundle;
-
 .field final synthetic this$0:Lorg/telegram/ui/LaunchActivity;
-
-.field final synthetic val$accountNumber:I
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-6MBs04yTggWBEkP5jO6xjYSAD4(Lorg/telegram/ui/LaunchActivity$11;Lorg/telegram/ui/ChatActivity;)V
+.method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/LaunchActivity$11;->lambda$onTransitionAnimationEnd$0(Lorg/telegram/ui/ChatActivity;)V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/os/Bundle;I)V
-    .locals 0
-
-    .line 1203
+    .line 1398
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput p3, p0, Lorg/telegram/ui/LaunchActivity$11;->val$accountNumber:I
-
-    invoke-direct {p0, p2}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
-
-    return-void
-.end method
-
-.method private synthetic lambda$onTransitionAnimationEnd$0(Lorg/telegram/ui/ChatActivity;)V
-    .locals 4
-
-    .line 1247
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/iMe/fork/ui/view/FragmentPreviewMenu;
-
-    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    iget-object v2, v2, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
-
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->getParentActionBarLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, p1, v3}, Lcom/iMe/fork/ui/view/FragmentPreviewMenu;-><init>(Lorg/telegram/ui/ActionBar/INavigationLayout;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-
-    invoke-interface {v0, p1, v1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->presentFragmentAsPreviewWithMenu(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onPreviewChatOpened(Landroid/os/Bundle;)V
-    .locals 0
+.method public onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 1
 
-    .line 1214
-    invoke-super {p0, p1}, Lorg/telegram/ui/DialogsActivity;->onPreviewChatOpened(Landroid/os/Bundle;)V
+    .line 1401
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    .line 1215
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->chatArgs:Landroid/os/Bundle;
+    invoke-virtual {p1}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
-    .line 1216
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$1100(Lorg/telegram/ui/LaunchActivity;)Lj$/util/function/Consumer;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/$r8$wrapper$java$util$function$Consumer$-WRP;->convert(Lj$/util/function/Consumer;)Ljava/util/function/Consumer;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Landroid/view/WindowManager;->addCrossWindowBlurEnabledListener(Ljava/util/function/Consumer;)V
 
     return-void
 .end method
 
-.method public onPreviewOpenAnimationEnd()V
-    .locals 3
+.method public onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 1
 
-    .line 1256
-    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPreviewOpenAnimationEnd()V
-
-    .line 1257
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    iget-object v0, v0, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setAllowOpenDrawer(ZZ)V
-
-    .line 1258
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    iget-object v0, v0, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setDrawCurrentPreviewFragmentAbove(Z)V
-
-    .line 1259
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    iget v1, p0, Lorg/telegram/ui/LaunchActivity$11;->val$accountNumber:I
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LaunchActivity;->switchToAccount(IZ)V
-
-    .line 1260
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getView()Landroid/view/ViewGroup;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
-
-    return-void
-.end method
-
-.method public onTransitionAnimationEnd(ZZ)V
-    .locals 2
-
-    .line 1225
-    invoke-super {p0, p1, p2}, Lorg/telegram/ui/DialogsActivity;->onTransitionAnimationEnd(ZZ)V
-
-    if-nez p1, :cond_1
-
-    if-eqz p2, :cond_1
-
-    .line 1228
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->chatArgs:Landroid/os/Bundle;
-
-    if-eqz p1, :cond_0
-
-    .line 1229
-    new-instance p1, Lorg/telegram/ui/LaunchActivity$11$1;
-
-    iget-object p2, p0, Lorg/telegram/ui/LaunchActivity$11;->chatArgs:Landroid/os/Bundle;
-
-    invoke-direct {p1, p0, p2}, Lorg/telegram/ui/LaunchActivity$11$1;-><init>(Lorg/telegram/ui/LaunchActivity$11;Landroid/os/Bundle;)V
-
-    .line 1246
-    iget p2, p0, Lorg/telegram/ui/LaunchActivity$11;->val$accountNumber:I
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->setCurrentAccount(I)V
-
-    .line 1247
-    new-instance p2, Lorg/telegram/ui/LaunchActivity$11$$ExternalSyntheticLambda0;
-
-    invoke-direct {p2, p0, p1}, Lorg/telegram/ui/LaunchActivity$11$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LaunchActivity$11;Lorg/telegram/ui/ChatActivity;)V
-
-    const-wide/16 v0, 0x96
-
-    invoke-static {p2, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
-
-    goto :goto_0
-
-    .line 1249
-    :cond_0
+    .line 1406
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object p1, p1, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setDrawCurrentPreviewFragmentAbove(Z)V
-
-    .line 1250
-    :goto_0
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-virtual {p1}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object p1
 
-    invoke-interface {p1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getView()Landroid/view/ViewGroup;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    move-result-object p1
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$1100(Lorg/telegram/ui/LaunchActivity;)Lj$/util/function/Consumer;
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
+    move-result-object v0
 
-    :cond_1
+    invoke-static {v0}, Lj$/wrappers/$r8$wrapper$java$util$function$Consumer$-WRP;->convert(Lj$/util/function/Consumer;)Ljava/util/function/Consumer;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Landroid/view/WindowManager;->removeCrossWindowBlurEnabledListener(Ljava/util/function/Consumer;)V
+
     return-void
 .end method

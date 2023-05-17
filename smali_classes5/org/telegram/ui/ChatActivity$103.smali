@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/ChatActivity$103;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "ChatActivity.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -22,207 +19,97 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$vBkMfbzvpuM8azxEYhI7knyeduY(Lorg/telegram/ui/ChatActivity$103;Landroid/animation/ValueAnimator;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$103;->lambda$run$0(Landroid/animation/ValueAnimator;)V
-
-    return-void
-.end method
-
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 24086
+    .line 24065
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private synthetic lambda$run$0(Landroid/animation/ValueAnimator;)V
-    .locals 1
-
-    .line 24101
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->access$45602(Lorg/telegram/ui/ChatActivity;F)F
-
-    .line 24102
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$10600(Lorg/telegram/ui/ChatActivity;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 24089
+    .line 24077
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45700(Lorg/telegram/ui/ChatActivity;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45400(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    if-eq v0, p0, :cond_0
+    if-eqz v0, :cond_0
 
-    return-void
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 24092
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45400(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 24078
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$45402(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
     :cond_0
+    return-void
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    .line 24068
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45800(Lorg/telegram/ui/ChatActivity;)Landroid/widget/FrameLayout;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45400(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45400(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    .line 24093
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
+    move-result p1
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45800(Lorg/telegram/ui/ChatActivity;)Landroid/widget/FrameLayout;
+    if-eqz p1, :cond_0
 
-    move-result-object v0
+    .line 24069
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v1, 0x1
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$45502(Lorg/telegram/ui/ChatActivity;F)F
 
-    move-result-object v2
+    .line 24070
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$10700(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 24094
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
+    .line 24071
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$45402(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    if-eqz v0, :cond_1
-
-    .line 24095
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
-
-    .line 24096
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2}, Lorg/telegram/ui/ChatActivity;->access$45502(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
-
-    .line 24098
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    new-instance v2, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
-
-    invoke-static {v0, v2}, Lorg/telegram/ui/ChatActivity;->access$45502(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [F
-
-    .line 24099
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$45600(Lorg/telegram/ui/ChatActivity;)F
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    aput v2, v0, v3
-
-    const/4 v2, 0x0
-
-    aput v2, v0, v1
-
-    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object v0
-
-    .line 24100
-    new-instance v2, Lorg/telegram/ui/ChatActivity$103$$ExternalSyntheticLambda0;
-
-    invoke-direct {v2, p0}, Lorg/telegram/ui/ChatActivity$103$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$103;)V
-
-    invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    .line 24104
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$45500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v2
-
-    new-array v1, v1, [Landroid/animation/Animator;
-
-    aput-object v0, v1, v3
-
-    invoke-virtual {v2, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
-
-    .line 24105
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    const-wide/16 v1, 0xc8
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
-
-    .line 24106
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    new-instance v1, Lorg/telegram/ui/ChatActivity$103$1;
-
-    invoke-direct {v1, p0}, Lorg/telegram/ui/ChatActivity$103$1;-><init>(Lorg/telegram/ui/ChatActivity$103;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    .line 24124
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$103;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$45500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
-
-    :cond_2
+    :cond_0
     return-void
 .end method

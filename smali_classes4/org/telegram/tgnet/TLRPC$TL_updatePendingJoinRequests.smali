@@ -33,10 +33,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 33503
+    .line 34352
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 33508
+    .line 34357
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,7 +51,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 5
 
-    .line 33511
+    .line 34360
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -62,14 +62,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 33512
+    .line 34361
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;->requests_pending:I
 
-    .line 33513
+    .line 34362
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -84,7 +84,7 @@
 
     return-void
 
-    .line 33516
+    .line 34365
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -108,7 +108,7 @@
 
     throw p1
 
-    .line 33520
+    .line 34369
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -117,7 +117,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 33522
+    .line 34371
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;->recent_requesters:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
@@ -141,34 +141,34 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 4
 
-    .line 33527
+    .line 34376
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 33528
+    .line 34377
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 33529
+    .line 34378
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;->requests_pending:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 33530
+    .line 34379
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 33531
+    .line 34380
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;->recent_requesters:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 33532
+    .line 34381
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -176,7 +176,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 33534
+    .line 34383
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;->recent_requesters:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

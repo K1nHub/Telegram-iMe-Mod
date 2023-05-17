@@ -25,31 +25,31 @@
 
 .field protected isEmptyViewVisible:Z
 
-.field protected keyActionBarUnscrolled:Ljava/lang/String;
+.field protected keyActionBarUnscrolled:I
 
-.field protected keyInviteMembersBackground:Ljava/lang/String;
+.field protected keyInviteMembersBackground:I
 
-.field protected keyLastSeenText:Ljava/lang/String;
+.field protected keyLastSeenText:I
 
-.field protected keyLastSeenTextUnscrolled:Ljava/lang/String;
+.field protected keyLastSeenTextUnscrolled:I
 
-.field protected keyListSelector:Ljava/lang/String;
+.field protected keyListSelector:I
 
-.field protected keyListViewBackground:Ljava/lang/String;
+.field protected keyListViewBackground:I
 
-.field protected keyNameText:Ljava/lang/String;
+.field protected keyNameText:I
 
-.field protected keyScrollUp:Ljava/lang/String;
+.field protected keyScrollUp:I
 
-.field protected keySearchBackground:Ljava/lang/String;
+.field protected keySearchBackground:I
 
-.field protected keySearchIcon:Ljava/lang/String;
+.field protected keySearchIcon:I
 
-.field protected keySearchIconUnscrolled:Ljava/lang/String;
+.field protected keySearchIconUnscrolled:I
 
-.field protected keySearchPlaceholder:Ljava/lang/String;
+.field protected keySearchPlaceholder:I
 
-.field protected keySearchText:Ljava/lang/String;
+.field protected keySearchText:I
 
 .field protected final layoutManager:Lorg/telegram/ui/Components/FillLastLinearLayoutManager;
 
@@ -109,62 +109,62 @@
     .line 66
     iput-boolean p2, p0, Lorg/telegram/ui/Components/UsersAlertBase;->isEmptyViewVisible:Z
 
-    const-string p4, "key_sheet_scrollUp"
-
     .line 68
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyScrollUp:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
-    const-string p4, "listSelectorSDK21"
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyScrollUp:I
 
     .line 69
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListSelector:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    const-string p4, "dialogSearchBackground"
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListSelector:I
 
     .line 70
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchBackground:I
 
-    const-string p4, "windowBackgroundWhite"
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:I
 
     .line 71
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:I
 
     .line 72
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListViewBackground:Ljava/lang/String;
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListViewBackground:I
 
     .line 73
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyActionBarUnscrolled:Ljava/lang/String;
-
-    const-string p4, "windowBackgroundWhiteBlackText"
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyActionBarUnscrolled:I
 
     .line 74
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyNameText:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    const-string p4, "windowBackgroundWhiteGrayText"
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyNameText:I
 
     .line 75
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenText:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenText:I
 
     .line 76
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenTextUnscrolled:Ljava/lang/String;
-
-    const-string p4, "dialogSearchHint"
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenTextUnscrolled:I
 
     .line 77
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
 
-    const-string p4, "dialogSearchText"
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:I
 
     .line 78
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchText:I
 
-    const-string p4, "dialogSearchIcon"
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:I
 
     .line 79
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIcon:Ljava/lang/String;
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchIcon:I
+
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIcon:I
 
     .line 80
-    iput-object p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIconUnscrolled:Ljava/lang/String;
+    iput p4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIconUnscrolled:I
 
     .line 86
     invoke-virtual {p0}, Lorg/telegram/ui/Components/UsersAlertBase;->updateColorKeys()V
@@ -270,13 +270,13 @@
     .line 107
     iget-object p3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->flickerLoadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:I
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:Ljava/lang/String;
+    iget v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:I
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyActionBarUnscrolled:Ljava/lang/String;
+    iget v4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyActionBarUnscrolled:I
 
-    invoke-virtual {p3, v0, v3, v4}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p3, v0, v3, v4}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(III)V
 
     .line 109
     new-instance p3, Lorg/telegram/ui/Components/StickerEmptyView;
@@ -360,15 +360,15 @@
     .line 116
     iget-object p3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyNameText:Ljava/lang/String;
+    iget v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyNameText:I
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenText:Ljava/lang/String;
+    iget v4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenText:I
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:I
 
-    iget-object v6, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:Ljava/lang/String;
+    iget v6, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:I
 
-    invoke-virtual {p3, v3, v4, v5, v6}, Lorg/telegram/ui/Components/StickerEmptyView;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p3, v3, v4, v5, v6}, Lorg/telegram/ui/Components/StickerEmptyView;->setColors(IIII)V
 
     .line 117
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -433,9 +433,9 @@
     .line 140
     iget-object p3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListSelector:Ljava/lang/String;
+    iget v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListSelector:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -537,10 +537,10 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->shadow:Landroid/view/View;
 
-    const-string p1, "dialogShadowLine"
-
     .line 170
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -717,22 +717,22 @@
     return p0
 .end method
 
-.method static synthetic access$2100(Lorg/telegram/ui/Components/UsersAlertBase;Ljava/lang/String;)I
+.method static synthetic access$2100(Lorg/telegram/ui/Components/UsersAlertBase;I)I
     .locals 0
 
     .line 45
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$2200(Lorg/telegram/ui/Components/UsersAlertBase;Ljava/lang/String;)I
+.method static synthetic access$2200(Lorg/telegram/ui/Components/UsersAlertBase;I)I
     .locals 0
 
     .line 45
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1012,15 +1012,15 @@
     iput p1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->colorProgress:F
 
     .line 351
-    iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListViewBackground:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListViewBackground:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1068,15 +1068,15 @@
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
 
     .line 358
-    iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenTextUnscrolled:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenTextUnscrolled:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenText:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1085,15 +1085,15 @@
     move-result v0
 
     .line 359
-    iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIconUnscrolled:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIconUnscrolled:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIcon:Ljava/lang/String;
+    iget v3, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIcon:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1151,15 +1151,15 @@
 
     if-eqz v4, :cond_1
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIcon:Ljava/lang/String;
+    iget v4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIcon:I
 
     goto :goto_1
 
     :cond_1
-    iget-object v4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIconUnscrolled:Ljava/lang/String;
+    iget v4, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIconUnscrolled:I
 
     :goto_1
-    invoke-virtual {v3, v4, p1}, Lorg/telegram/ui/Cells/GroupCallUserCell;->setGrayIconColor(Ljava/lang/String;I)V
+    invoke-virtual {v3, v4, p1}, Lorg/telegram/ui/Cells/GroupCallUserCell;->setGrayIconColor(II)V
 
     :cond_2
     :goto_2

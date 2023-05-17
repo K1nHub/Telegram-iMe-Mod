@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$35wI_XMWHhNZ_EroLRgz7uZBGU0(Lorg/telegram/ui/Components/ShareAlert;Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$wIMbegXvlauZwlhrQx8bb9uvjqc(Lorg/telegram/ui/Components/ShareAlert;Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
 
     return-void
 .end method

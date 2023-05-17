@@ -9,7 +9,7 @@ public abstract class TransitionOptions<CHILD extends TransitionOptions<CHILD, T
     private TransitionFactory<? super TranscodeType> transitionFactory = NoTransition.getFactory();
 
     /* renamed from: clone */
-    public final CHILD m878clone() {
+    public final CHILD m886clone() {
         try {
             return (CHILD) super.clone();
         } catch (CloneNotSupportedException e) {

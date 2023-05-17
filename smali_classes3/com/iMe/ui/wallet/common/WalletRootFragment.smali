@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 7 View.kt\nandroidx/core/view/ViewKt\n+ 8 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,279:1\n13#2,4:280\n13#2,4:284\n56#3,6:288\n1855#4,2:294\n1855#4,2:296\n1855#4,2:307\n2634#4:315\n233#5,9:298\n215#6,2:309\n262#7,2:311\n262#7,2:313\n1#8:316\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n*L\n46#1:280,4\n47#1:284,4\n48#1:288,6\n81#1:294,2\n86#1:296,2\n124#1:307,2\n231#1:315\n90#1:298,9\n138#1:309,2\n145#1:311,2\n149#1:313,2\n231#1:316\n*E\n"
+    value = "SMAP\nWalletRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 7 View.kt\nandroidx/core/view/ViewKt\n+ 8 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,279:1\n13#2,4:280\n13#2,4:284\n56#3,6:288\n1855#4,2:294\n1855#4,2:296\n1855#4,2:307\n2634#4:315\n247#5,9:298\n215#6,2:309\n262#7,2:311\n262#7,2:313\n1#8:316\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n*L\n46#1:280,4\n47#1:284,4\n48#1:288,6\n81#1:294,2\n86#1:296,2\n124#1:307,2\n231#1:315\n90#1:298,9\n138#1:309,2\n145#1:311,2\n149#1:313,2\n231#1:316\n*E\n"
 .end annotation
 
 
@@ -557,9 +557,9 @@
     .line 120
     iget-object p0, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletGlobalBinding;->realtimeBlur:Lcom/github/mmin18/widget/RealtimeBlurView;
 
-    const-string v0, "chats_actionBackground"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -828,9 +828,9 @@
     .line 199
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletGlobalBinding;->realtimeBlur:Lcom/github/mmin18/widget/RealtimeBlurView;
 
-    const-string v2, "chats_actionBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -851,7 +851,7 @@
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -864,7 +864,7 @@
 
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -937,7 +937,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 233
+    .line 247
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
@@ -998,6 +998,8 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -1006,11 +1008,9 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "actionBarDefault"
-
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v2, 0x0
 
@@ -1023,6 +1023,8 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
@@ -1031,11 +1033,9 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "actionBarDefaultIcon"
-
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x1
 
@@ -1048,15 +1048,15 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const-string v11, "actionBarDefaultTitle"
-
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x2
 
@@ -1069,11 +1069,13 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const-string v11, "actionBarDefaultSelector"
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move v11, v14
+
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x3
 
@@ -1082,15 +1084,19 @@
     .line 116
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v8, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
+    sget v9, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const-string v11, "actionBarDefaultSelector"
+    const/4 v11, 0x0
 
-    move-object v4, v2
+    const/4 v12, 0x0
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/4 v13, 0x0
+
+    move-object v7, v2
+
+    invoke-direct/range {v7 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x4
 
@@ -1104,16 +1110,23 @@
 
     invoke-direct {v10, v0}, Lcom/iMe/ui/wallet/common/WalletRootFragment$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/common/WalletRootFragment;)V
 
+    .line 122
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const-string v11, "chats_actionBackground"
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
 
     move-object v4, v2
 
     .line 117
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x5
 

@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 4548
+    .line 4968
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$PollResults;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 4553
+    .line 4973
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +50,7 @@
     :cond_0
     move v1, v2
 
-    .line 4554
+    .line 4974
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->min:Z
 
@@ -62,7 +62,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 4556
+    .line 4976
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -73,7 +73,7 @@
 
     return-void
 
-    .line 4559
+    .line 4979
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -93,7 +93,7 @@
 
     throw p1
 
-    .line 4563
+    .line 4983
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -104,7 +104,7 @@
     :goto_1
     if-ge v5, v0, :cond_4
 
-    .line 4565
+    .line 4985
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -117,7 +117,7 @@
 
     return-void
 
-    .line 4569
+    .line 4989
     :cond_3
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
 
@@ -127,7 +127,7 @@
 
     goto :goto_1
 
-    .line 4572
+    .line 4992
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->flags:I
 
@@ -135,14 +135,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 4573
+    .line 4993
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->total_voters:I
 
-    .line 4575
+    .line 4995
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->flags:I
 
@@ -150,7 +150,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 4576
+    .line 4996
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -161,7 +161,7 @@
 
     return-void
 
-    .line 4579
+    .line 4999
     :cond_6
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -181,7 +181,7 @@
 
     throw p1
 
-    .line 4583
+    .line 5003
     :cond_7
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -190,7 +190,7 @@
     :goto_2
     if-ge v2, v0, :cond_8
 
-    .line 4585
+    .line 5005
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->recent_voters:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -216,12 +216,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 4591
+    .line 5011
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer111;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4592
+    .line 5012
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->min:Z
 
     if-eqz v0, :cond_0
@@ -240,10 +240,10 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->flags:I
 
-    .line 4593
+    .line 5013
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4594
+    .line 5014
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->flags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -254,17 +254,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 4595
+    .line 5015
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4596
+    .line 5016
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 4597
+    .line 5017
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v1
@@ -272,7 +272,7 @@
     :goto_1
     if-ge v3, v0, :cond_1
 
-    .line 4599
+    .line 5019
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -287,7 +287,7 @@
 
     goto :goto_1
 
-    .line 4602
+    .line 5022
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->flags:I
 
@@ -295,12 +295,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 4603
+    .line 5023
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->total_voters:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4605
+    .line 5025
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->flags:I
 
@@ -308,23 +308,23 @@
 
     if-eqz v0, :cond_3
 
-    .line 4606
+    .line 5026
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4607
+    .line 5027
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->recent_voters:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 4608
+    .line 5028
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_2
     if-ge v1, v0, :cond_3
 
-    .line 4610
+    .line 5030
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->recent_voters:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

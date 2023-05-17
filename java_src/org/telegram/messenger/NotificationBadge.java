@@ -210,7 +210,7 @@ public class NotificationBadge {
             try {
                 ApplicationLoader.applicationContext.getContentResolver().call(Uri.parse("content://com.huawei.android.launcher.settings/badge/"), "change_badge", (String) null, bundle);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
 
@@ -501,7 +501,7 @@ public class NotificationBadge {
             try {
                 ApplicationLoader.applicationContext.getContentResolver().call(this.CONTENT_URI, "setAppBadgeCount", (String) null, bundle);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
 

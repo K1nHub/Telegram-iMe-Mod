@@ -1987,9 +1987,9 @@
     :cond_2
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda42;
+    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda38;
 
-    invoke-direct {p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda42;-><init>(Landroid/view/View;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda38;-><init>(Landroid/view/View;)V
 
     sput-object p1, Lorg/telegram/ui/LaunchActivity;->onResumeStaticCallback:Ljava/lang/Runnable;
 
@@ -2990,9 +2990,9 @@
     :cond_4
     iget-object v7, v0, Lorg/telegram/ui/Components/PipVideoOverlay;->contentFrameLayout:Landroid/widget/FrameLayout;
 
-    const-string v8, "voipgroup_actionBar"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBar:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -3099,10 +3099,10 @@
 
     invoke-virtual {v12, v13}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const-string v13, "voipgroup_actionBarItems"
-
     .line 1030
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarItems:I
+
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v14
 
@@ -3110,10 +3110,10 @@
 
     invoke-virtual {v12, v14, v15}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    const-string v14, "listSelectorSDK21"
-
     .line 1031
-    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v15
 
@@ -3165,7 +3165,7 @@
     invoke-virtual {v7, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 1038
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
@@ -3174,7 +3174,7 @@
     invoke-virtual {v7, v12, v15}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
     .line 1039
-    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
@@ -3225,7 +3225,7 @@
     iput-object v7, v0, Lorg/telegram/ui/Components/PipVideoOverlay;->playPauseButton:Landroid/widget/ImageView;
 
     .line 1070
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -3236,7 +3236,7 @@
     .line 1071
     iget-object v7, v0, Lorg/telegram/ui/Components/PipVideoOverlay;->playPauseButton:Landroid/widget/ImageView;
 
-    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 

@@ -8,49 +8,49 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 2983
+    .line 3014
     invoke-static {p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme;->applyServiceShaderMatrix(IIFF)V
 
     return-void
 .end method
 
-.method public static $default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)I
+.method public static $default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 2960
-    invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
+    .line 2989
+    invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->contains(I)Z
 
-    move-result-object v0
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2961
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    .line 2990
+    invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1
 
-    goto :goto_0
+    return p1
 
+    .line 2992
     :cond_0
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
-    :goto_0
     return p1
 .end method
 
-.method public static $default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Ljava/lang/Integer;
+.method public static $default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 2965
-    invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
+    .line 2996
+    invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
-    move-result-object p1
+    move-result p1
 
-    return-object p1
+    return p1
 .end method
 
 .method public static $default$getDrawable(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
@@ -77,7 +77,7 @@
     return v0
 .end method
 
-.method public static $default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;I)V
+.method public static $default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
     .locals 0
 
     return-void

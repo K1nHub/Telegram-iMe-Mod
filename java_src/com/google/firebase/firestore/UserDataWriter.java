@@ -67,27 +67,27 @@ public class UserDataWriter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.UserDataWriter$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C09991 {
+    public static /* synthetic */ class C10041 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$DocumentSnapshot$ServerTimestampBehavior */
-        static final /* synthetic */ int[] f163x1f31a5ae;
+        static final /* synthetic */ int[] f166x1f31a5ae;
 
         static {
             int[] iArr = new int[DocumentSnapshot.ServerTimestampBehavior.values().length];
-            f163x1f31a5ae = iArr;
+            f166x1f31a5ae = iArr;
             try {
                 iArr[DocumentSnapshot.ServerTimestampBehavior.PREVIOUS.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f163x1f31a5ae[DocumentSnapshot.ServerTimestampBehavior.ESTIMATE.ordinal()] = 2;
+                f166x1f31a5ae[DocumentSnapshot.ServerTimestampBehavior.ESTIMATE.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
         }
     }
 
     private Object convertServerTimestamp(Value value) {
-        int i = C09991.f163x1f31a5ae[this.serverTimestampBehavior.ordinal()];
+        int i = C10041.f166x1f31a5ae[this.serverTimestampBehavior.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return null;

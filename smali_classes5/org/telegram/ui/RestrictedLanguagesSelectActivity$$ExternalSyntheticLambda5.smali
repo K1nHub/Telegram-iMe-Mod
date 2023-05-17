@@ -5,21 +5,27 @@
 .implements Lorg/telegram/messenger/Utilities$Callback;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/Utilities$Callback;
-
-.field public final synthetic f$1:Ljava/util/HashSet;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/Utilities$Callback;Ljava/util/HashSet;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;
+
+    invoke-direct {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;->INSTANCE:Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/messenger/Utilities$Callback;
-
-    iput-object p2, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;->f$1:Ljava/util/HashSet;
 
     return-void
 .end method
@@ -27,15 +33,11 @@
 
 # virtual methods
 .method public final run(Ljava/lang/Object;)V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/messenger/Utilities$Callback;
+    check-cast p1, Ljava/util/HashSet;
 
-    iget-object v1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda5;->f$1:Ljava/util/HashSet;
-
-    check-cast p1, Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->$r8$lambda$GMTlgz2w9HRQ6TbdydTr_-OgU2E(Lorg/telegram/messenger/Utilities$Callback;Ljava/util/HashSet;Ljava/lang/Runnable;)V
+    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->$r8$lambda$psspHfadqfwLznkZAjXzt-lcjMc(Ljava/util/HashSet;)V
 
     return-void
 .end method

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # static fields
@@ -32,10 +32,10 @@
 
 
 # virtual methods
-.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$lmYodH9hNmaCK4rfHW5fkYkAjuA(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$9pUwbR6sD7nu13ZocMNeoZhPids(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

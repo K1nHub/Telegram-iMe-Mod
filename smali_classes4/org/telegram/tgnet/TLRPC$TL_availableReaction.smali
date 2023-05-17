@@ -45,7 +45,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 41463
+    .line 42312
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -54,7 +54,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_availableReaction;
     .locals 1
 
-    .line 41481
+    .line 42330
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -65,7 +65,7 @@
 
     return-object p0
 
-    .line 41483
+    .line 42332
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -91,13 +91,13 @@
 
     throw p0
 
-    .line 41488
+    .line 42337
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;-><init>()V
 
-    .line 41489
+    .line 42338
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -108,7 +108,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 41494
+    .line 42343
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -130,7 +130,7 @@
     :cond_0
     move v1, v2
 
-    .line 41495
+    .line 42344
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->inactive:Z
 
@@ -140,25 +140,25 @@
 
     move v2, v3
 
-    .line 41496
+    .line 42345
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->premium:Z
 
-    .line 41497
+    .line 42346
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->reaction:Ljava/lang/String;
 
-    .line 41498
+    .line 42347
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->title:Ljava/lang/String;
 
-    .line 41499
+    .line 42348
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -169,7 +169,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 41500
+    .line 42349
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -180,7 +180,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->appear_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 41501
+    .line 42350
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -191,7 +191,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->select_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 41502
+    .line 42351
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -202,7 +202,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->activate_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 41503
+    .line 42352
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -213,14 +213,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->effect_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 41504
+    .line 42353
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_2
 
-    .line 41505
+    .line 42354
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -231,7 +231,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->around_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 41507
+    .line 42356
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->flags:I
 
@@ -239,7 +239,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 41508
+    .line 42357
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -257,12 +257,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 41513
+    .line 42362
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 41514
+    .line 42363
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->inactive:Z
 
     if-eqz v0, :cond_0
@@ -281,7 +281,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->flags:I
 
-    .line 41515
+    .line 42364
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->premium:Z
 
     if-eqz v1, :cond_1
@@ -296,57 +296,57 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->flags:I
 
-    .line 41516
+    .line 42365
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 41517
+    .line 42366
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->reaction:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 41518
+    .line 42367
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 41519
+    .line 42368
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 41520
+    .line 42369
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->appear_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 41521
+    .line 42370
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->select_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 41522
+    .line 42371
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->activate_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 41523
+    .line 42372
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->effect_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 41524
+    .line 42373
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_2
 
-    .line 41525
+    .line 42374
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->around_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 41527
+    .line 42376
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->flags:I
 
@@ -354,7 +354,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 41528
+    .line 42377
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->center_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

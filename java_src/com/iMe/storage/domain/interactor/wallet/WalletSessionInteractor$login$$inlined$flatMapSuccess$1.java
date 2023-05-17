@@ -4,9 +4,9 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.wallet.SessionTokens;
 import com.iMe.storage.domain.repository.wallet.WalletRepository;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
+import io.reactivex.schedulers.Schedulers;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
@@ -24,7 +24,6 @@ public final class WalletSessionInteractor$login$$inlined$flatMapSuccess$1 exten
     @Override // kotlin.jvm.functions.Function1
     public final ObservableSource<? extends Result<? extends SessionTokens>> invoke(Result<? extends SessionTokens> result) {
         WalletRepository walletRepository;
-        SchedulersProvider schedulersProvider;
         Intrinsics.checkNotNullParameter(result, "result");
         if (result instanceof Result.Success) {
             walletRepository = this.this$0.walletRepository;
@@ -32,10 +31,8 @@ public final class WalletSessionInteractor$login$$inlined$flatMapSuccess$1 exten
             Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
             Observable flatMap2 = flatMap.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionInteractor$login$lambda$4$$inlined$flatMapSuccess$2(this.this$0)));
             Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-            Observable map = flatMap2.map(new WalletSessionInteractor$sam$io_reactivex_functions_Function$0(new WalletSessionInteractor$login$1$3(result)));
-            schedulersProvider = this.this$0.schedulersProvider;
-            Observable subscribeOn = map.subscribeOn(schedulersProvider.mo694io());
-            Intrinsics.checkNotNullExpressionValue(subscribeOn, "result ->\n              …(schedulersProvider.io())");
+            Observable subscribeOn = flatMap2.map(new WalletSessionInteractor$sam$io_reactivex_functions_Function$0(new WalletSessionInteractor$login$1$3(result))).subscribeOn(Schedulers.m679io());
+            Intrinsics.checkNotNullExpressionValue(subscribeOn, "result ->\n              …scribeOn(Schedulers.io())");
             return subscribeOn;
         } else if (result instanceof Result.Error) {
             Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);

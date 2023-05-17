@@ -319,7 +319,7 @@
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "should never happen..."
+    const-string/jumbo v1, "should never happen..."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

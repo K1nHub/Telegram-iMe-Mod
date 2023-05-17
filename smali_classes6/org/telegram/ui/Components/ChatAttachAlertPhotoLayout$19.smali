@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
     .locals 0
 
-    .line 2174
+    .line 2188
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,7 +35,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 9
 
-    .line 2177
+    .line 2191
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -90,23 +90,23 @@
 
     float-to-int v0, v0
 
-    .line 2178
+    .line 2192
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$3600(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$3700(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 2179
+    .line 2193
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
     goto :goto_0
 
-    .line 2180
+    .line 2194
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -116,7 +116,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2181
+    .line 2195
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -131,7 +131,7 @@
 
     move-result v0
 
-    .line 2183
+    .line 2197
     :cond_1
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -142,7 +142,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 2184
+    .line 2198
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -195,7 +195,7 @@
 
     invoke-virtual {p1, v2, v3, v4, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2185
+    .line 2199
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
     float-to-int v1, v1
@@ -220,7 +220,7 @@
 
     goto :goto_1
 
-    .line 2186
+    .line 2200
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -232,7 +232,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$3600(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$3700(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)Z
 
     move-result v1
 
@@ -240,7 +240,7 @@
 
     const/high16 v1, 0x41000000    # 8.0f
 
-    .line 2187
+    .line 2201
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -253,7 +253,7 @@
 
     move-result v1
 
-    .line 2188
+    .line 2202
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$4700(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)F
@@ -294,7 +294,7 @@
 
     goto :goto_1
 
-    .line 2190
+    .line 2204
     :cond_3
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 

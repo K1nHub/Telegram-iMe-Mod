@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletAuthFragment.kt */
 /* renamed from: com.iMe.ui.base.WalletAuthFragment$listenGlobalRxEvents$1$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class WalletAuthFragment$listenGlobalRxEvents$1$1 extends Lambda implements Function0<Unit> {
     final /* synthetic */ WalletAuthFragment this$0;
 

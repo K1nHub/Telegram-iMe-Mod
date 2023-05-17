@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArchivedStickersActivity;Landroid/view/View;Lorg/telegram/tgnet/TLRPC$StickerSetCovered;)V
     .locals 0
 
-    .line 147
+    .line 149
     iput-object p1, p0, Lorg/telegram/ui/ArchivedStickersActivity$2;->this$0:Lorg/telegram/ui/ArchivedStickersActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ArchivedStickersActivity$2;->val$view:Landroid/view/View;
@@ -46,7 +46,7 @@
 .method public onStickerSetInstalled()V
     .locals 4
 
-    .line 150
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/ArchivedStickersActivity$2;->val$view:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/ArchivedStickerSetCell;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Cells/ArchivedStickerSetCell;->setDrawProgress(ZZ)V
 
-    .line 151
+    .line 153
     iget-object v0, p0, Lorg/telegram/ui/ArchivedStickersActivity$2;->this$0:Lorg/telegram/ui/ArchivedStickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ArchivedStickersActivity;->access$900(Lorg/telegram/ui/ArchivedStickersActivity;)Landroidx/collection/LongSparseArray;

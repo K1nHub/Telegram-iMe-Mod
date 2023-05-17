@@ -47,13 +47,13 @@ public class CellFlickerDrawable {
         this.frameInside = false;
         this.repeatProgress = 1.2f;
         this.animationSpeedScale = 1.0f;
-        this.size = AndroidUtilities.m50dp(160);
+        this.size = AndroidUtilities.m54dp(160);
         this.gradientShader = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, this.size, (float) BitmapDescriptorFactory.HUE_RED, new int[]{0, ColorUtils.setAlphaComponent(-1, i), 0}, (float[]) null, Shader.TileMode.CLAMP);
         this.gradientShader2 = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, this.size, (float) BitmapDescriptorFactory.HUE_RED, new int[]{0, ColorUtils.setAlphaComponent(-1, i2), 0}, (float[]) null, Shader.TileMode.CLAMP);
         this.paint.setShader(this.gradientShader);
         this.paintOutline.setShader(this.gradientShader2);
         this.paintOutline.setStyle(Paint.Style.STROKE);
-        this.paintOutline.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.paintOutline.setStrokeWidth(AndroidUtilities.m54dp(2));
     }
 
     public void setColors(int i, int i2, int i3) {
@@ -91,7 +91,7 @@ public class CellFlickerDrawable {
     }
 
     private void update(View view) {
-        if (this.progress <= 1.0f || this.repeatEnabled) {
+        if (this.repeatEnabled || this.progress < 1.0f) {
             if (view != null) {
                 view.invalidate();
             }
@@ -114,14 +114,14 @@ public class CellFlickerDrawable {
             } else {
                 this.lastUpdateTime = currentTimeMillis;
             }
-            int i = this.parentWidth;
-            int i2 = this.size;
-            float f2 = ((i + (i2 * 2)) * this.progress) - i2;
-            this.matrix.reset();
-            this.matrix.setTranslate(f2, BitmapDescriptorFactory.HUE_RED);
-            this.gradientShader.setLocalMatrix(this.matrix);
-            this.gradientShader2.setLocalMatrix(this.matrix);
         }
+        int i = this.parentWidth;
+        int i2 = this.size;
+        float f2 = ((i + (i2 * 2)) * this.progress) - i2;
+        this.matrix.reset();
+        this.matrix.setTranslate(f2, BitmapDescriptorFactory.HUE_RED);
+        this.gradientShader.setLocalMatrix(this.matrix);
+        this.gradientShader2.setLocalMatrix(this.matrix);
     }
 
     public void draw(Canvas canvas, GroupCallMiniTextureView groupCallMiniTextureView) {

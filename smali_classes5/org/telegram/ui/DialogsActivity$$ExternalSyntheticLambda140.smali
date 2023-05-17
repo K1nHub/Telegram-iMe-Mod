@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/FilteredSearchView$Delegate;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
+.field public final synthetic f$1:Ljava/lang/Long;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->f$0:Lorg/telegram/ui/DialogsActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->f$1:Ljava/lang/Long;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final updateFiltersView(ZLjava/util/ArrayList;Ljava/util/ArrayList;Z)V
-    .locals 1
+.method public final run(Ljava/lang/Object;)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$rylHG5XCPysrf3Q6hgFv874iup8(Lorg/telegram/ui/DialogsActivity;ZLjava/util/ArrayList;Ljava/util/ArrayList;Z)V
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->f$1:Ljava/lang/Long;
+
+    check-cast p1, Ljava/lang/Runnable;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$zjnpAEZBN6nS_x0NYU2x3Wk8lZQ(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;Ljava/lang/Runnable;)V
 
     return-void
 .end method

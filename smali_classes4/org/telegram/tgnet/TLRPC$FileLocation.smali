@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 46058
+    .line 46913
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 46072
+    .line 46927
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 46084
+    .line 46939
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_fileEncryptedLocation;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 46075
+    .line 46930
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_fileLocation_layer82;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 46078
+    .line 46933
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_fileLocation_layer97;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 46081
+    .line 46936
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;
 
@@ -83,7 +83,7 @@
 
     goto :goto_1
 
-    .line 46088
+    .line 46943
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -113,7 +113,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 46091
+    .line 46946
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

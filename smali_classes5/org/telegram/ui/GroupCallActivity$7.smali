@@ -3972,9 +3972,9 @@
     .line 2686
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    const-string v1, "voipgroup_actionBar"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBar:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

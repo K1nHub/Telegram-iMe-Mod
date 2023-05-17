@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.WindowManager;
 import android.widget.PopupMenu;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.ActionBar.FloatingActionMode */
@@ -116,7 +116,7 @@ public final class FloatingActionMode extends ActionMode {
         this.mScreenRect = new Rect();
         this.mOriginatingView = view;
         view.getLocationOnScreen(iArr);
-        this.mBottomAllowance = AndroidUtilities.m50dp(20);
+        this.mBottomAllowance = AndroidUtilities.m54dp(20);
         this.mDisplaySize = new Point();
         setFloatingToolbar(floatingToolbar);
     }
@@ -230,7 +230,7 @@ public final class FloatingActionMode extends ActionMode {
         if (j == -1) {
             j = ViewConfiguration.getDefaultActionModeHideDuration();
         }
-        long min = Math.min((long) C0470C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, j);
+        long min = Math.min((long) C0475C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, j);
         this.mOriginatingView.removeCallbacks(this.mHideOff);
         if (min <= 0) {
             this.mHideOff.run();

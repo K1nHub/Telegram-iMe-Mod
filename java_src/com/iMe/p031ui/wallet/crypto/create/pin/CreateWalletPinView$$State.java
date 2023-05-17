@@ -102,18 +102,18 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
         public final String pin;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1837wallet;
+        public final Wallet f1845wallet;
 
         GoToBackUpTutorialCommand(CreateWalletPinView$$State createWalletPinView$$State, String str, String str2, Wallet wallet2) {
             super("goToBackUpTutorial", OneExecutionStateStrategy.class);
             this.password = str;
             this.pin = str2;
-            this.f1837wallet = wallet2;
+            this.f1845wallet = wallet2;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletPinView createWalletPinView) {
-            createWalletPinView.goToBackUpTutorial(this.password, this.pin, this.f1837wallet);
+            createWalletPinView.goToBackUpTutorial(this.password, this.pin, this.f1845wallet);
         }
     }
 

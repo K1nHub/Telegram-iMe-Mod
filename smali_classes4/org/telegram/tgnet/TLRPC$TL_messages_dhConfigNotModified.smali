@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 9643
+    .line 10066
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$messages_DhConfig;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 9648
+    .line 10071
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object p1
@@ -41,12 +41,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 9652
+    .line 10075
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_dhConfigNotModified;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 9653
+    .line 10076
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_DhConfig;->random:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V

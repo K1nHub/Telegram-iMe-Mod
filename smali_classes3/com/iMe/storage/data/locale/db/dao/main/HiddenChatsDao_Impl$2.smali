@@ -36,7 +36,7 @@
         }
     .end annotation
 
-    .line 50
+    .line 53
     invoke-direct {p0, p2}, Landroidx/room/EntityDeletionOrUpdateAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
@@ -57,7 +57,7 @@
         }
     .end annotation
 
-    .line 58
+    .line 61
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/hidden_chats/HiddenChatsDb;->getUserId()J
 
     move-result-wide v0
@@ -66,7 +66,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 59
+    .line 62
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/hidden_chats/HiddenChatsDb;->getDialogId()J
 
     move-result-wide v0
@@ -91,7 +91,7 @@
         }
     .end annotation
 
-    .line 50
+    .line 53
     check-cast p2, Lcom/iMe/storage/data/locale/db/model/hidden_chats/HiddenChatsDb;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$2;->bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/iMe/storage/data/locale/db/model/hidden_chats/HiddenChatsDb;)V

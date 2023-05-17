@@ -75,9 +75,9 @@
     .line 59
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip$TooltipDrawableView;->paint:Landroid/graphics/Paint;
 
-    const-string p2, "chat_gifSaveHintText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintText:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -92,7 +92,7 @@
     .line 60
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip$TooltipDrawableView;->paint2:Landroid/graphics/Paint;
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda9;->f$1:I
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$gTCw61X4R4ovNl6yV9R2EuScxTM(Lorg/telegram/ui/ThemePreviewActivity;ILandroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$Yf_RNuHl1X-5x6oVZSRClmymT4E(Lorg/telegram/ui/ThemePreviewActivity;ILandroid/view/View;)V
 
     return-void
 .end method

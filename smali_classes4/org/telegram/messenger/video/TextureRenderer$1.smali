@@ -22,14 +22,14 @@
 .method constructor <init>(Lorg/telegram/messenger/video/TextureRenderer;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 726
+    .line 713
     iput-object p1, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->this$0:Lorg/telegram/messenger/video/TextureRenderer;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;-><init>(Landroid/content/Context;Z)V
 
     const/16 p2, 0x8
 
-    .line 728
+    .line 715
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -38,10 +38,10 @@
 
     const/4 p2, 0x1
 
-    .line 729
+    .line 716
     iput-boolean p2, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiRawDraw:Z
 
-    .line 730
+    .line 717
     invoke-static {p1}, Lorg/telegram/messenger/video/TextureRenderer;->access$000(Lorg/telegram/messenger/video/TextureRenderer;)F
 
     move-result p1

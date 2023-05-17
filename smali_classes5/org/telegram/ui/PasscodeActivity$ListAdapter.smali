@@ -244,7 +244,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 9
+    .locals 8
 
     .line 1643
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -386,8 +386,6 @@
 
     const/4 v1, 0x5
 
-    const-string v3, "windowBackgroundGrayShadow"
-
     if-ne p2, v0, :cond_5
 
     .line 1713
@@ -404,7 +402,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {p2, v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -450,7 +450,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {p2, v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -484,8 +486,6 @@
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2400(Lorg/telegram/ui/PasscodeActivity;)I
 
     move-result v0
-
-    const-string v4, "windowBackgroundWhiteBlackText"
 
     if-ne p2, v0, :cond_c
 
@@ -568,14 +568,18 @@
 
     if-nez p2, :cond_b
 
-    :cond_a
-    const-string p2, "windowBackgroundWhiteGrayText7"
-
     .line 1664
-    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    :cond_a
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText7:I
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     .line 1665
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -585,10 +589,16 @@
 
     .line 1667
     :cond_b
-    invoke-virtual {p1, v4}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     .line 1668
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -656,15 +666,57 @@
     .line 1676
     sget v0, Lorg/telegram/messenger/R$string;->AutoLockInTime:I
 
-    new-array v5, v3, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
     div-int/lit8 p2, p2, 0x3c
 
-    new-array v6, v2, [Ljava/lang/Object;
+    new-array v5, v2, [Ljava/lang/Object;
 
-    const-string v7, "Minutes"
+    const-string v6, "Minutes"
 
-    invoke-static {v7, p2, v6}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, p2, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    aput-object p2, v4, v2
+
+    invoke-static {v1, v0, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_2
+
+    :cond_f
+    const v0, 0x15180
+
+    const/high16 v4, 0x42700000    # 60.0f
+
+    if-ge p2, v0, :cond_10
+
+    .line 1678
+    sget v0, Lorg/telegram/messenger/R$string;->AutoLockInTime:I
+
+    new-array v5, v3, [Ljava/lang/Object;
+
+    int-to-float p2, p2
+
+    div-float/2addr p2, v4
+
+    div-float/2addr p2, v4
+
+    float-to-double v6, p2
+
+    invoke-static {v6, v7}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v6
+
+    double-to-int p2, v6
+
+    new-array v4, v2, [Ljava/lang/Object;
+
+    const-string v6, "Hours"
+
+    invoke-static {v6, p2, v4}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -676,83 +728,41 @@
 
     goto :goto_2
 
-    :cond_f
-    const v0, 0x15180
-
-    const/high16 v5, 0x42700000    # 60.0f
-
-    if-ge p2, v0, :cond_10
-
-    .line 1678
-    sget v0, Lorg/telegram/messenger/R$string;->AutoLockInTime:I
-
-    new-array v6, v3, [Ljava/lang/Object;
-
-    int-to-float p2, p2
-
-    div-float/2addr p2, v5
-
-    div-float/2addr p2, v5
-
-    float-to-double v7, p2
-
-    invoke-static {v7, v8}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v7
-
-    double-to-int p2, v7
-
-    new-array v5, v2, [Ljava/lang/Object;
-
-    const-string v7, "Hours"
-
-    invoke-static {v7, p2, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    aput-object p2, v6, v2
-
-    invoke-static {v1, v0, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    goto :goto_2
-
     .line 1680
     :cond_10
     sget v0, Lorg/telegram/messenger/R$string;->AutoLockInTime:I
 
-    new-array v6, v3, [Ljava/lang/Object;
+    new-array v5, v3, [Ljava/lang/Object;
 
     int-to-float p2, p2
 
-    div-float/2addr p2, v5
+    div-float/2addr p2, v4
 
-    div-float/2addr p2, v5
+    div-float/2addr p2, v4
 
-    const/high16 v5, 0x41c00000    # 24.0f
+    const/high16 v4, 0x41c00000    # 24.0f
 
-    div-float/2addr p2, v5
+    div-float/2addr p2, v4
 
-    float-to-double v7, p2
+    float-to-double v6, p2
 
-    invoke-static {v7, v8}, Ljava/lang/Math;->ceil(D)D
+    invoke-static {v6, v7}, Ljava/lang/Math;->ceil(D)D
 
-    move-result-wide v7
+    move-result-wide v6
 
-    double-to-int p2, v7
+    double-to-int p2, v6
 
-    new-array v5, v2, [Ljava/lang/Object;
+    new-array v4, v2, [Ljava/lang/Object;
 
-    const-string v7, "Days"
+    const-string v6, "Days"
 
-    invoke-static {v7, p2, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, p2, v4}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v6, v2
+    aput-object p2, v5, v2
 
-    invoke-static {v1, v0, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -769,10 +779,16 @@
     invoke-virtual {p1, v0, p2, v3}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     .line 1683
-    invoke-virtual {p1, v4}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     .line 1684
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -799,13 +815,17 @@
 
     invoke-virtual {p1, p2, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    const-string p2, "dialogTextRed"
-
     .line 1687
-    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     .line 1688
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -934,17 +954,15 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 1
 
-    const-string p1, "windowBackgroundWhite"
-
     if-eqz p2, :cond_3
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    if-eq p2, v0, :cond_2
+    if-eq p2, p1, :cond_2
 
-    const/4 v0, 0x3
+    const/4 p1, 0x3
 
-    if-eq p2, v0, :cond_1
+    if-eq p2, p1, :cond_1
 
     const/4 p1, 0x4
 
@@ -957,7 +975,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 1631
     :cond_0
@@ -969,62 +987,65 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/PasscodeActivity$RLottieImageHolderView;-><init>(Landroid/content/Context;Lorg/telegram/ui/PasscodeActivity$1;)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 1627
     :cond_1
-    new-instance p2, Lorg/telegram/ui/Cells/HeaderCell;
+    new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
     .line 1628
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_0
 
     .line 1623
     :cond_2
-    new-instance p2, Lorg/telegram/ui/Cells/TextSettingsCell;
+    new-instance p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 1624
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_0
 
     .line 1619
     :cond_3
-    new-instance p2, Lorg/telegram/ui/Cells/TextCheckCell;
+    new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
     .line 1620
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
 
-    :goto_0
-    move-object p1, p2
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 1638
-    :goto_1
+    :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

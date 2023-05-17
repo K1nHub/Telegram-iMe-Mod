@@ -97,16 +97,6 @@
     return v0
 .end method
 
-.method public synthetic isCustomForward()Z
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$isCustomForward(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public synthetic measureKeyboardHeight()I
     .locals 1
 

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 /* compiled from: WalletTokenDetailsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsFragment$openCreateWalletScreen$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletTokenDetailsFragment$openCreateWalletScreen$1 extends Lambda implements Function0<BaseFragment> {
     final /* synthetic */ String $password;
     final /* synthetic */ Wallet $wallet;

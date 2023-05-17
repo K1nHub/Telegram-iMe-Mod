@@ -20,7 +20,7 @@ public final class BotsDbModel {
     private final String hash;
 
     /* renamed from: id */
-    private final String f243id;
+    private final String f246id;
     private final int installLogged;
     private final long installs;
     private final BotLanguage lang;
@@ -41,7 +41,7 @@ public final class BotsDbModel {
     private final int useAssets;
 
     public final String component1() {
-        return this.f243id;
+        return this.f246id;
     }
 
     public final long component10() {
@@ -173,21 +173,21 @@ public final class BotsDbModel {
         }
         if (obj instanceof BotsDbModel) {
             BotsDbModel botsDbModel = (BotsDbModel) obj;
-            return Intrinsics.areEqual(this.f243id, botsDbModel.f243id) && Intrinsics.areEqual(this.sku, botsDbModel.sku) && this.lang == botsDbModel.lang && Intrinsics.areEqual(this.avatarOriginal, botsDbModel.avatarOriginal) && Intrinsics.areEqual(this.avatarRounded, botsDbModel.avatarRounded) && Intrinsics.areEqual(this.titleLocales, botsDbModel.titleLocales) && Intrinsics.areEqual(this.descriptionLocales, botsDbModel.descriptionLocales) && Intrinsics.areEqual(this.title, botsDbModel.title) && Intrinsics.areEqual(this.description, botsDbModel.description) && this.installs == botsDbModel.installs && this.priority == botsDbModel.priority && this.reviews == botsDbModel.reviews && Float.compare(this.rating, botsDbModel.rating) == 0 && this.ownRating == botsDbModel.ownRating && this.installLogged == botsDbModel.installLogged && this.useAssets == botsDbModel.useAssets && this.botUpdated == botsDbModel.botUpdated && Intrinsics.areEqual(this.tags, botsDbModel.tags) && Intrinsics.areEqual(this.file, botsDbModel.file) && Intrinsics.areEqual(this.hash, botsDbModel.hash) && this.phrases == botsDbModel.phrases && this.themes == botsDbModel.themes && Intrinsics.areEqual(this.created, botsDbModel.created) && Intrinsics.areEqual(this.updated, botsDbModel.updated) && Intrinsics.areEqual(this.price, botsDbModel.price) && this.type == botsDbModel.type && this.status == botsDbModel.status;
+            return Intrinsics.areEqual(this.f246id, botsDbModel.f246id) && Intrinsics.areEqual(this.sku, botsDbModel.sku) && this.lang == botsDbModel.lang && Intrinsics.areEqual(this.avatarOriginal, botsDbModel.avatarOriginal) && Intrinsics.areEqual(this.avatarRounded, botsDbModel.avatarRounded) && Intrinsics.areEqual(this.titleLocales, botsDbModel.titleLocales) && Intrinsics.areEqual(this.descriptionLocales, botsDbModel.descriptionLocales) && Intrinsics.areEqual(this.title, botsDbModel.title) && Intrinsics.areEqual(this.description, botsDbModel.description) && this.installs == botsDbModel.installs && this.priority == botsDbModel.priority && this.reviews == botsDbModel.reviews && Float.compare(this.rating, botsDbModel.rating) == 0 && this.ownRating == botsDbModel.ownRating && this.installLogged == botsDbModel.installLogged && this.useAssets == botsDbModel.useAssets && this.botUpdated == botsDbModel.botUpdated && Intrinsics.areEqual(this.tags, botsDbModel.tags) && Intrinsics.areEqual(this.file, botsDbModel.file) && Intrinsics.areEqual(this.hash, botsDbModel.hash) && this.phrases == botsDbModel.phrases && this.themes == botsDbModel.themes && Intrinsics.areEqual(this.created, botsDbModel.created) && Intrinsics.areEqual(this.updated, botsDbModel.updated) && Intrinsics.areEqual(this.price, botsDbModel.price) && this.type == botsDbModel.type && this.status == botsDbModel.status;
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = this.f243id.hashCode() * 31;
+        int hashCode = this.f246id.hashCode() * 31;
         String str = this.sku;
-        int hashCode2 = (((((((((((((((((((((((((((((((((((((((((((((hashCode + (str == null ? 0 : str.hashCode())) * 31) + this.lang.hashCode()) * 31) + this.avatarOriginal.hashCode()) * 31) + this.avatarRounded.hashCode()) * 31) + this.titleLocales.hashCode()) * 31) + this.descriptionLocales.hashCode()) * 31) + this.title.hashCode()) * 31) + this.description.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.installs)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.priority)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.reviews)) * 31) + Float.floatToIntBits(this.rating)) * 31) + this.ownRating) * 31) + this.installLogged) * 31) + this.useAssets) * 31) + this.botUpdated) * 31) + this.tags.hashCode()) * 31) + this.file.hashCode()) * 31) + this.hash.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.phrases)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.themes)) * 31) + this.created.hashCode()) * 31) + this.updated.hashCode()) * 31;
+        int hashCode2 = (((((((((((((((((((((((((((((((((((((((((((((hashCode + (str == null ? 0 : str.hashCode())) * 31) + this.lang.hashCode()) * 31) + this.avatarOriginal.hashCode()) * 31) + this.avatarRounded.hashCode()) * 31) + this.titleLocales.hashCode()) * 31) + this.descriptionLocales.hashCode()) * 31) + this.title.hashCode()) * 31) + this.description.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.installs)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.priority)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.reviews)) * 31) + Float.floatToIntBits(this.rating)) * 31) + this.ownRating) * 31) + this.installLogged) * 31) + this.useAssets) * 31) + this.botUpdated) * 31) + this.tags.hashCode()) * 31) + this.file.hashCode()) * 31) + this.hash.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.phrases)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.themes)) * 31) + this.created.hashCode()) * 31) + this.updated.hashCode()) * 31;
         String str2 = this.price;
         return ((((hashCode2 + (str2 != null ? str2.hashCode() : 0)) * 31) + this.type.hashCode()) * 31) + this.status.hashCode();
     }
 
     public String toString() {
-        return "BotsDbModel(id=" + this.f243id + ", sku=" + this.sku + ", lang=" + this.lang + ", avatarOriginal=" + this.avatarOriginal + ", avatarRounded=" + this.avatarRounded + ", titleLocales=" + this.titleLocales + ", descriptionLocales=" + this.descriptionLocales + ", title=" + this.title + ", description=" + this.description + ", installs=" + this.installs + ", priority=" + this.priority + ", reviews=" + this.reviews + ", rating=" + this.rating + ", ownRating=" + this.ownRating + ", installLogged=" + this.installLogged + ", useAssets=" + this.useAssets + ", botUpdated=" + this.botUpdated + ", tags=" + this.tags + ", file=" + this.file + ", hash=" + this.hash + ", phrases=" + this.phrases + ", themes=" + this.themes + ", created=" + this.created + ", updated=" + this.updated + ", price=" + this.price + ", type=" + this.type + ", status=" + this.status + ')';
+        return "BotsDbModel(id=" + this.f246id + ", sku=" + this.sku + ", lang=" + this.lang + ", avatarOriginal=" + this.avatarOriginal + ", avatarRounded=" + this.avatarRounded + ", titleLocales=" + this.titleLocales + ", descriptionLocales=" + this.descriptionLocales + ", title=" + this.title + ", description=" + this.description + ", installs=" + this.installs + ", priority=" + this.priority + ", reviews=" + this.reviews + ", rating=" + this.rating + ", ownRating=" + this.ownRating + ", installLogged=" + this.installLogged + ", useAssets=" + this.useAssets + ", botUpdated=" + this.botUpdated + ", tags=" + this.tags + ", file=" + this.file + ", hash=" + this.hash + ", phrases=" + this.phrases + ", themes=" + this.themes + ", created=" + this.created + ", updated=" + this.updated + ", price=" + this.price + ", type=" + this.type + ", status=" + this.status + ')';
     }
 
     public BotsDbModel(String id, String str, BotLanguage lang, String avatarOriginal, String avatarRounded, Map<String, String> titleLocales, Map<String, String> descriptionLocales, String title, String description, long j, long j2, long j3, float f, int i, int i2, int i3, int i4, List<String> tags, String file, String hash, long j4, long j5, Date created, Date updated, String str2, BotType type, BotStatus status) {
@@ -206,7 +206,7 @@ public final class BotsDbModel {
         Intrinsics.checkNotNullParameter(updated, "updated");
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(status, "status");
-        this.f243id = id;
+        this.f246id = id;
         this.sku = str;
         this.lang = lang;
         this.avatarOriginal = avatarOriginal;
@@ -236,7 +236,7 @@ public final class BotsDbModel {
     }
 
     public final String getId() {
-        return this.f243id;
+        return this.f246id;
     }
 
     public final String getSku() {

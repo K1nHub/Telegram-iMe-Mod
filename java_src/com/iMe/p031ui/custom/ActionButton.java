@@ -59,29 +59,29 @@ public class ActionButton extends AppCompatTextView {
     }
 
     public final void applyColors() {
-        setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), Theme.getColor("chats_actionBackground"), Theme.getColor("chats_actionPressedBackground")));
-        setTextColor(Theme.getColor("chats_actionIcon"));
+        setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
+        setTextColor(Theme.getColor(Theme.key_chats_actionIcon));
         ViewExtKt.withMediumTypeface(this);
     }
 
     public final void setForcedCustomHeight(int i) {
-        this.forcedButtonHeight = Integer.valueOf(AndroidUtilities.m50dp(i));
+        this.forcedButtonHeight = Integer.valueOf(AndroidUtilities.m54dp(i));
         invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateCornerRadius() {
-        return AndroidUtilities.m50dp(4);
+        return AndroidUtilities.m54dp(4);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateHorizontalPadding() {
-        return AndroidUtilities.m50dp(34);
+        return AndroidUtilities.m54dp(34);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateButtonHeight() {
-        return AndroidUtilities.m50dp(42);
+        return AndroidUtilities.m54dp(42);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

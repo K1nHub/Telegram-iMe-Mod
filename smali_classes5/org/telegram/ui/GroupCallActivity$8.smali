@@ -141,9 +141,9 @@
 
     const/4 v3, 0x0
 
-    const-string v9, "voipgroup_mutedByAdminGradient"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -151,9 +151,9 @@
 
     const/4 v3, 0x1
 
-    const-string v9, "voipgroup_mutedByAdminGradient3"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient3:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -161,9 +161,9 @@
 
     const/4 v3, 0x2
 
-    const-string v9, "voipgroup_mutedByAdminGradient2"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient2:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -171,7 +171,7 @@
 
     const/4 v3, 0x3
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 

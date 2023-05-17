@@ -743,7 +743,7 @@
     goto :goto_1
 
     :cond_3
-    const-string v1, "tg"
+    const-string/jumbo v1, "tg"
 
     .line 226
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

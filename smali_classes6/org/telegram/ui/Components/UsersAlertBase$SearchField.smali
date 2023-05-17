@@ -70,9 +70,9 @@
 
     move-result v1
 
-    iget-object v2, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:Ljava/lang/String;
+    iget v2, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -123,9 +123,9 @@
     .line 216
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    iget-object v2, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:Ljava/lang/String;
+    iget v2, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -244,9 +244,9 @@
     .line 251
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    iget-object v1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:Ljava/lang/String;
+    iget v1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -255,9 +255,9 @@
     .line 252
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    iget-object v1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:Ljava/lang/String;
+    iget v1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -315,9 +315,9 @@
     .line 260
     iget-object p2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    iget-object v0, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:Ljava/lang/String;
+    iget v0, p1, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

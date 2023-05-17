@@ -125,16 +125,16 @@
     goto :goto_0
 
     :cond_0
-    const-string v4, "windowBackgroundWhiteBlackText"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const-string v4, "dialogTextBlack"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     :goto_1
-    invoke-direct {v0, v4}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(I)I
 
     move-result v4
 
@@ -420,17 +420,21 @@
 
     goto :goto_b
 
+    .line 142
     :cond_e
-    const-string v5, "windowBackgroundWhiteValueText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteValueText:I
 
     goto :goto_c
 
     :cond_f
     :goto_b
-    const-string v5, "dialogTextBlue"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue:I
 
-    .line 142
     :goto_c
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 143
@@ -537,10 +541,10 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const-string v1, "actionBarDefaultSubmenuItemIcon"
-
     .line 155
-    invoke-direct {v0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
+
+    invoke-direct {v0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(I)I
 
     move-result v1
 
@@ -925,39 +929,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 460
     iget-object v0, p0, Lorg/telegram/ui/Cells/CheckBoxCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 461
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -1087,7 +1068,7 @@
 .method public hasIcon()Z
     .locals 1
 
-    .line 469
+    .line 468
     iget-object v0, p0, Lorg/telegram/ui/Cells/CheckBoxCell;->checkBoxRound:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBox2;->hasIcon()Z
@@ -1781,7 +1762,7 @@
     return-void
 .end method
 
-.method public setCheckBoxColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setCheckBoxColor(III)V
     .locals 0
 
     .line 428
@@ -1790,7 +1771,7 @@
     if-eqz p2, :cond_0
 
     .line 429
-    invoke-virtual {p2, p1, p1, p3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, p1, p1, p3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     :cond_0
     return-void
@@ -1878,9 +1859,9 @@
     .line 233
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(I)I
 
     move-result v2
 
@@ -2022,7 +2003,7 @@
 .method public setIcon(I)V
     .locals 1
 
-    .line 465
+    .line 464
     iget-object v0, p0, Lorg/telegram/ui/Cells/CheckBoxCell;->checkBoxRound:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CheckBox2;->setIcon(I)V
@@ -2234,10 +2215,10 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Cells/CheckBoxCell;->click1Container:Landroid/view/View;
 
-    const-string v3, "listSelectorSDK21"
-
     .line 203
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(I)I
 
     move-result v3
 
@@ -2395,7 +2376,7 @@
     return-void
 .end method
 
-.method public setSquareCheckBoxColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setSquareCheckBoxColor(III)V
     .locals 1
 
     .line 438
@@ -2404,7 +2385,7 @@
     if-eqz v0, :cond_0
 
     .line 439
-    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Components/CheckBoxSquare;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Components/CheckBoxSquare;->setColors(III)V
 
     :cond_0
     return-void
@@ -2542,16 +2523,16 @@
     goto :goto_0
 
     :cond_0
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const-string v1, "dialogTextBlack"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     :goto_1
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(I)I
 
     move-result v1
 
@@ -2569,16 +2550,16 @@
     goto :goto_2
 
     :cond_2
-    const-string v1, "windowBackgroundWhiteLinkText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const-string v1, "dialogTextLink"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
 
     :goto_3
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(I)I
 
     move-result v1
 
@@ -2594,9 +2575,9 @@
     .line 188
     iget-object v0, p0, Lorg/telegram/ui/Cells/CheckBoxCell;->valueTextView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteGrayText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(I)I
 
     move-result v1
 
@@ -2615,16 +2596,16 @@
     goto :goto_4
 
     :cond_5
-    const-string v0, "windowBackgroundWhiteValueText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteValueText:I
 
     goto :goto_5
 
     :cond_6
     :goto_4
-    const-string v0, "dialogTextBlue"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue:I
 
     :goto_5
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/CheckBoxCell;->getThemedColor(I)I
 
     move-result v0
 

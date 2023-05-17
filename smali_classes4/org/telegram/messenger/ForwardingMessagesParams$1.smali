@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/ForwardingMessagesParams;ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
     .locals 0
 
-    .line 145
+    .line 146
     iput-object p1, p0, Lorg/telegram/messenger/ForwardingMessagesParams$1;->this$0:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
@@ -43,7 +43,7 @@
 .method public needDrawForwarded()Z
     .locals 1
 
-    .line 162
+    .line 163
     iget-object v0, p0, Lorg/telegram/messenger/ForwardingMessagesParams$1;->this$0:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
@@ -54,7 +54,7 @@
 
     return v0
 
-    .line 165
+    .line 166
     :cond_0
     invoke-super {p0}, Lorg/telegram/messenger/MessageObject;->needDrawForwarded()Z
 

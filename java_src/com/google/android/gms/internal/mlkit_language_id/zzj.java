@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzj {
     public static String zza(@NullableDecl String str, @NullableDecl Object... objArr) {
         int indexOf;

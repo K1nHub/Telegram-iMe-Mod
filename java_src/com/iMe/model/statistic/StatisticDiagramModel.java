@@ -70,39 +70,38 @@ public final class StatisticDiagramModel {
     /* compiled from: StatisticDiagramModel.kt */
     /* loaded from: classes3.dex */
     public static final class DiagramItem {
-        private final String color;
+        private final int colorKey;
         private final String name;
         private final double value;
 
-        public static /* synthetic */ DiagramItem copy$default(DiagramItem diagramItem, String str, String str2, double d, int i, Object obj) {
-            if ((i & 1) != 0) {
+        public static /* synthetic */ DiagramItem copy$default(DiagramItem diagramItem, String str, int i, double d, int i2, Object obj) {
+            if ((i2 & 1) != 0) {
                 str = diagramItem.name;
             }
-            if ((i & 2) != 0) {
-                str2 = diagramItem.color;
+            if ((i2 & 2) != 0) {
+                i = diagramItem.colorKey;
             }
-            if ((i & 4) != 0) {
+            if ((i2 & 4) != 0) {
                 d = diagramItem.value;
             }
-            return diagramItem.copy(str, str2, d);
+            return diagramItem.copy(str, i, d);
         }
 
         public final String component1() {
             return this.name;
         }
 
-        public final String component2() {
-            return this.color;
+        public final int component2() {
+            return this.colorKey;
         }
 
         public final double component3() {
             return this.value;
         }
 
-        public final DiagramItem copy(String name, String color, double d) {
+        public final DiagramItem copy(String name, int i, double d) {
             Intrinsics.checkNotNullParameter(name, "name");
-            Intrinsics.checkNotNullParameter(color, "color");
-            return new DiagramItem(name, color, d);
+            return new DiagramItem(name, i, d);
         }
 
         public boolean equals(Object obj) {
@@ -111,24 +110,23 @@ public final class StatisticDiagramModel {
             }
             if (obj instanceof DiagramItem) {
                 DiagramItem diagramItem = (DiagramItem) obj;
-                return Intrinsics.areEqual(this.name, diagramItem.name) && Intrinsics.areEqual(this.color, diagramItem.color) && Double.compare(this.value, diagramItem.value) == 0;
+                return Intrinsics.areEqual(this.name, diagramItem.name) && this.colorKey == diagramItem.colorKey && Double.compare(this.value, diagramItem.value) == 0;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((this.name.hashCode() * 31) + this.color.hashCode()) * 31) + Double.doubleToLongBits(this.value);
+            return (((this.name.hashCode() * 31) + this.colorKey) * 31) + Double.doubleToLongBits(this.value);
         }
 
         public String toString() {
-            return "DiagramItem(name=" + this.name + ", color=" + this.color + ", value=" + this.value + ')';
+            return "DiagramItem(name=" + this.name + ", colorKey=" + this.colorKey + ", value=" + this.value + ')';
         }
 
-        public DiagramItem(String name, String color, double d) {
+        public DiagramItem(String name, int i, double d) {
             Intrinsics.checkNotNullParameter(name, "name");
-            Intrinsics.checkNotNullParameter(color, "color");
             this.name = name;
-            this.color = color;
+            this.colorKey = i;
             this.value = d;
         }
 
@@ -136,8 +134,8 @@ public final class StatisticDiagramModel {
             return this.name;
         }
 
-        public final String getColor() {
-            return this.color;
+        public final int getColorKey() {
+            return this.colorKey;
         }
 
         public final double getValue() {

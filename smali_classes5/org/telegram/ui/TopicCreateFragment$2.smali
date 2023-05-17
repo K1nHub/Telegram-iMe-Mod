@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicCreateFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 267
+    .line 268
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -33,10 +33,10 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 271
+    .line 272
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->measureKeyboardHeight()I
 
-    .line 272
+    .line 273
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->getKeyboardHeight()I
 
     move-result v0
@@ -49,14 +49,14 @@
 
     if-nez v0, :cond_0
 
-    .line 273
+    .line 274
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     const/16 v2, 0xc8
 
-    .line 274
+    .line 275
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -69,7 +69,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->keyboardHeight:I
 
-    .line 275
+    .line 276
     invoke-virtual {p0, v1, v1, v1, v0}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
     goto :goto_0
@@ -77,13 +77,13 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 277
+    .line 278
     iput-boolean v0, p0, Lorg/telegram/ui/TopicCreateFragment$2;->keyboardWasShown:Z
 
-    .line 278
+    .line 279
     invoke-virtual {p0, v1, v1, v1, v1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 280
+    .line 281
     :goto_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 

@@ -304,14 +304,16 @@
 
     aget-object p1, p1, v1
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v0, 0x0
+
+    invoke-static {p1, v2, v1, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     :cond_5
     return-void
 .end method
 
 .method public onPageSelected(IZ)V
-    .locals 2
+    .locals 3
 
     .line 143
     iget-object v0, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
@@ -340,9 +342,9 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    aget-object v0, v0, v1
+    aget-object v0, v0, v2
 
     invoke-virtual {v0, p1}, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;->setSelectedType(I)V
 
@@ -353,14 +355,16 @@
 
     move-result-object p1
 
-    aget-object p1, p1, v1
+    aget-object p1, p1, v2
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v0, 0x0
+
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 148
     iget-object p1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
 
-    invoke-static {p1, v1}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->access$switchToCurrentSelectedMode(Lcom/iMe/ui/pager/TelegramViewPagerFragment;Z)V
+    invoke-static {p1, v2}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->access$switchToCurrentSelectedMode(Lcom/iMe/ui/pager/TelegramViewPagerFragment;Z)V
 
     .line 149
     iget-object p1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/iMe/ui/pager/TelegramViewPagerFragment;

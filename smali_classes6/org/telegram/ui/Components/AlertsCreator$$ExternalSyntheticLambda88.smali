@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+.field public final synthetic f$0:[I
+
+.field public final synthetic f$1:Landroid/widget/LinearLayout;
 
 
 # direct methods
-.method public synthetic constructor <init>([Lorg/telegram/ui/Cells/CheckBoxCell;)V
+.method public synthetic constructor <init>([ILandroid/widget/LinearLayout;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;->f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;->f$0:[I
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;->f$1:Landroid/widget/LinearLayout;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;->f$0:[Lorg/telegram/ui/Cells/CheckBoxCell;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;->f$0:[I
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$_pDPMRo_Niy_28z5biHkmNP6eII([Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;->f$1:Landroid/widget/LinearLayout;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$s0RyX9UWldQR47YjgRp3wQHK064([ILandroid/widget/LinearLayout;Landroid/view/View;)V
 
     return-void
 .end method

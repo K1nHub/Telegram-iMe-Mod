@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$19;
-.super Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
+.super Landroid/widget/FrameLayout;
 .source "ThemePreviewActivity.java"
 
 
@@ -14,58 +14,128 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+.field final synthetic val$num:I
+
+.field final synthetic val$paddings:Landroid/graphics/Rect;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
+.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;ILandroid/graphics/Rect;)V
     .locals 0
 
-    .line 1728
-    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
+    .line 1994
+    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    iput p3, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->val$num:I
+
+    iput-object p4, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->val$paddings:Landroid/graphics/Rect;
+
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
-    .locals 1
+.method public onDraw(Landroid/graphics/Canvas;)V
+    .locals 5
 
-    .line 1731
-    invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
+    .line 1997
+    iget v0, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->val$num:I
 
-    move-result p2
+    const/4 v1, 0x0
 
-    const/16 p3, 0xc
+    if-nez v0, :cond_0
 
-    .line 1732
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 1998
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    move-result v0
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6500(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/graphics/drawable/Drawable;
 
-    iput v0, p1, Landroid/graphics/Rect;->left:I
+    move-result-object v0
 
-    const/4 v0, 0x0
+    iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    .line 1733
-    iput v0, p1, Landroid/graphics/Rect;->top:I
+    invoke-static {v2}, Lorg/telegram/ui/ThemePreviewActivity;->access$6400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/ColorPicker;
 
-    iput v0, p1, Landroid/graphics/Rect;->bottom:I
+    move-result-object v2
 
-    .line 1734
-    invoke-virtual {p4}, Landroidx/recyclerview/widget/RecyclerView$State;->getItemCount()I
+    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getLeft()I
 
-    move-result p4
+    move-result v2
 
-    add-int/lit8 p4, p4, -0x1
+    iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->val$paddings:Landroid/graphics/Rect;
 
-    if-ne p2, p4, :cond_0
+    iget v3, v3, Landroid/graphics/Rect;->left:I
 
-    .line 1735
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    sub-int/2addr v2, v3
 
-    move-result p2
+    iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    iput p2, p1, Landroid/graphics/Rect;->right:I
+    invoke-static {v3}, Lorg/telegram/ui/ThemePreviewActivity;->access$6400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/ColorPicker;
 
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getRight()I
+
+    move-result v3
+
+    iget-object v4, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->val$paddings:Landroid/graphics/Rect;
+
+    iget v4, v4, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr v3, v4
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v4
+
+    invoke-virtual {v0, v2, v1, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    goto :goto_0
+
+    .line 2000
     :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6500(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->val$paddings:Landroid/graphics/Rect;
+
+    iget v2, v2, Landroid/graphics/Rect;->left:I
+
+    neg-int v2, v2
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v3
+
+    iget-object v4, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->val$paddings:Landroid/graphics/Rect;
+
+    iget v4, v4, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr v3, v4
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v4
+
+    invoke-virtual {v0, v2, v1, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 2002
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$19;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6500(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
     return-void
 .end method

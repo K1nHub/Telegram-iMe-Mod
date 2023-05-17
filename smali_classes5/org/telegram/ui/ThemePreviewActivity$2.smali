@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$2;
-.super Landroid/widget/FrameLayout;
+.super Lorg/telegram/ui/ThemePreviewActivity;
 .source "ThemePreviewActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ThemePreviewActivity;->createView(Landroid/content/Context;)Landroid/view/View;
+    value = Lorg/telegram/ui/ThemePreviewActivity;->showFor(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,204 +15,59 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/ThemePreviewActivity;
+.field final synthetic val$chatActivity:Lorg/telegram/ui/ChatActivity;
+
+.field final synthetic val$initialIsDark:Z
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;)V
+.method constructor <init>(Ljava/lang/Object;Landroid/graphics/Bitmap;ZZLorg/telegram/ui/ChatActivity;Z)V
     .locals 0
 
-    .line 410
-    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    .line 390
+    iput-object p5, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    iput-boolean p6, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->val$initialIsDark:Z
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ThemePreviewActivity;-><init>(Ljava/lang/Object;Landroid/graphics/Bitmap;ZZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-    .locals 0
+.method public onFragmentClosed()V
+    .locals 5
 
-    .line 432
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    .line 394
+    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentClosed()V
 
-    move-result p3
+    .line 395
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    .line 433
-    iget-object p4, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
-    invoke-static {p4}, Lorg/telegram/ui/ThemePreviewActivity;->access$500(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCurrentTheme()Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    move-result-object p4
+    move-result-object v1
 
-    if-ne p2, p4, :cond_1
+    iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    iget-object v2, v2, Lorg/telegram/ui/ChatActivity;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
-    invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$600(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_1
-
-    .line 434
-    iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$900(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object p2
-
-    iget-object p4, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {p4}, Lorg/telegram/ui/ThemePreviewActivity;->access$700(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
-
-    move-result-object p4
-
-    invoke-virtual {p4}, Landroid/widget/FrameLayout;->getVisibility()I
-
-    move-result p4
-
-    if-nez p4, :cond_0
-
-    iget-object p4, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {p4}, Lorg/telegram/ui/ThemePreviewActivity;->access$800(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
-
-    move-result-object p4
-
-    invoke-virtual {p4}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result p4
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p4, 0x0
-
-    :goto_0
-    invoke-interface {p2, p1, p4}, Lorg/telegram/ui/ActionBar/INavigationLayout;->drawHeaderShadow(Landroid/graphics/Canvas;I)V
-
-    :cond_1
-    return p3
-.end method
-
-.method protected onMeasure(II)V
-    .locals 9
-
-    .line 413
-    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result v0
-
-    .line 414
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result v1
-
-    .line 416
-    invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
-
-    .line 418
-    iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ThemePreviewActivity;->access$000(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
-
-    move-result-object v4
-
-    const/4 v6, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v3, p0
-
-    move v5, p1
-
-    move v7, p2
-
-    invoke-virtual/range {v3 .. v8}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
-
-    .line 419
-    iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ThemePreviewActivity;->access$100(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCurrentWallpaper()Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    iget-boolean v3, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->val$initialIsDark:Z
 
-    move-result v2
-
-    .line 420
-    iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v3}, Lorg/telegram/ui/ThemePreviewActivity;->access$200(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
-
-    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getVisibility()I
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    .line 423
-    :cond_0
-    iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v3}, Lorg/telegram/ui/ThemePreviewActivity;->access$300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
-
-    .line 424
-    iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    .line 425
-    iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ThemePreviewActivity;->access$300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v2
-
-    const/high16 v3, 0x40000000    # 2.0f
-
-    invoke-static {v0, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v0
-
-    invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v1
-
-    invoke-virtual {v2, v0, v1}, Landroid/view/ViewGroup;->measure(II)V
-
-    .line 427
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$2;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/ImageView;
-
-    move-result-object v2
 
     const/4 v4, 0x0
 
-    const/4 v6, 0x0
-
-    move-object v1, p0
-
-    move v3, p1
-
-    move v5, p2
-
-    invoke-virtual/range {v1 .. v6}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
+    invoke-virtual {v0, v1, v2, v4, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setCurrentTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;Lorg/telegram/tgnet/TLRPC$WallPaper;ZLjava/lang/Boolean;)V
 
     return-void
 .end method

@@ -6,7 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;,
+        Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;,
         Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
     }
 .end annotation
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field private final delegate:Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+.field private final delegate:Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;
 
 .field private final listAdapter$delegate:Lkotlin/Lazy;
 
@@ -33,25 +33,15 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$02HFQD5Yjv7SG9RJ2qzaMfPWATc(Lcom/iMe/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$Ft_nBrncze_X3nR1B0ZsL1Jashg(Lcom/iMe/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->setupListeners$lambda$2(Lcom/iMe/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->setupListeners$lambda$1(Lcom/iMe/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$lWS4HIyBki_GMkZN9V9dL4g2XjA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->removeData$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public constructor <init>(Landroid/content/Context;ILcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;)V
+.method public constructor <init>(Landroid/content/Context;ILcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;)V
     .locals 1
 
     const-string v0, "context"
@@ -62,16 +52,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 21
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 20
+    .line 19
     iput p2, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->currentAccount:I
 
-    .line 21
-    iput-object p3, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->delegate:Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+    .line 20
+    iput-object p3, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->delegate:Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;
 
-    .line 25
+    .line 24
     new-instance p1, Lcom/iMe/ui/recent_chats/RecentChatsBar$listView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar$listView$2;-><init>(Lcom/iMe/ui/recent_chats/RecentChatsBar;)V
@@ -82,7 +72,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->listView$delegate:Lkotlin/Lazy;
 
-    .line 28
+    .line 27
     new-instance p1, Lcom/iMe/ui/recent_chats/RecentChatsBar$listAdapter$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar$listAdapter$2;-><init>(Lcom/iMe/ui/recent_chats/RecentChatsBar;)V
@@ -93,14 +83,14 @@
 
     iput-object p1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->listAdapter$delegate:Lkotlin/Lazy;
 
-    .line 29
+    .line 28
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->data:Ljava/util/List;
 
-    .line 32
+    .line 31
     invoke-virtual {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
@@ -113,10 +103,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 33
-    invoke-virtual {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->updateColors()V
-
-    .line 34
+    .line 32
     invoke-direct {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->setupListeners()V
 
     return-void
@@ -125,7 +112,7 @@
 .method public static final synthetic access$getData$p(Lcom/iMe/ui/recent_chats/RecentChatsBar;)Ljava/util/List;
     .locals 0
 
-    .line 18
+    .line 17
     iget-object p0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->data:Ljava/util/List;
 
     return-object p0
@@ -134,7 +121,7 @@
 .method public static final synthetic access$initHorizontalListView(Lcom/iMe/ui/recent_chats/RecentChatsBar;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 18
+    .line 17
     invoke-direct {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->initHorizontalListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -145,7 +132,7 @@
 .method private final getListAdapter()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
     .locals 1
 
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->listAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -160,7 +147,7 @@
 .method private final initHorizontalListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 72
+    .line 64
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -169,7 +156,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
-    .line 73
+    .line 65
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -182,17 +169,17 @@
 
     const/4 v1, 0x0
 
-    .line 76
+    .line 68
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 77
+    .line 69
     new-instance v1, Lcom/iMe/ui/recent_chats/RecentChatsBar$initHorizontalListView$1$2;
 
     invoke-direct {v1}, Lcom/iMe/ui/recent_chats/RecentChatsBar$initHorizontalListView$1$2;-><init>()V
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 83
+    .line 75
     invoke-direct {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListAdapter()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
 
     move-result-object v1
@@ -202,42 +189,21 @@
     return-object v0
 .end method
 
-.method private static final removeData$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
-    .locals 1
-
-    const-string v0, "$tmp0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 46
-    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    return p0
-.end method
-
 .method private final setupListeners()V
     .locals 2
 
-    .line 87
+    .line 79
     invoke-virtual {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
-    new-instance v1, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda1;
+    new-instance v1, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/recent_chats/RecentChatsBar;)V
+    invoke-direct {v1, p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/recent_chats/RecentChatsBar;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 91
+    .line 83
     invoke-virtual {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -251,7 +217,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda$2(Lcom/iMe/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$1(Lcom/iMe/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -262,8 +228,8 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
-    iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->delegate:Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+    .line 80
+    iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->delegate:Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;
 
     iget-object p0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->data:Ljava/util/List;
 
@@ -273,7 +239,7 @@
 
     check-cast p0, Lcom/iMe/storage/domain/model/HistoryDialogModel;
 
-    invoke-interface {v0, p0, p1}, Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;->onItemListener(Lcom/iMe/storage/domain/model/HistoryDialogModel;Landroid/view/View;)V
+    invoke-interface {v0, p0, p1}, Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;->onRecentChatClick(Lcom/iMe/storage/domain/model/HistoryDialogModel;Landroid/view/View;)V
 
     return-void
 .end method
@@ -283,17 +249,17 @@
 .method public final getCurrentAccount()I
     .locals 1
 
-    .line 20
+    .line 19
     iget v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->currentAccount:I
 
     return v0
 .end method
 
-.method public final getDelegate()Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+.method public final getDelegate()Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;
     .locals 1
 
-    .line 21
-    iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->delegate:Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+    .line 20
+    iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->delegate:Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;
 
     return-object v0
 .end method
@@ -301,7 +267,7 @@
 .method public final getListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 25
+    .line 24
     iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->listView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -313,41 +279,10 @@
     return-object v0
 .end method
 
-.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
+.method public final notifyDataSetChanged()V
+    .locals 1
 
-    .line 64
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
-
-    .line 65
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final removeData()V
-    .locals 3
-
-    .line 46
-    iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->data:Ljava/util/List;
-
-    sget-object v1, Lcom/iMe/ui/recent_chats/RecentChatsBar$removeData$1;->INSTANCE:Lcom/iMe/ui/recent_chats/RecentChatsBar$removeData$1;
-
-    new-instance v2, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;
-
-    invoke-direct {v2, v1}, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-static {v0, v2}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
-
-    .line 47
+    .line 48
     invoke-direct {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListAdapter()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
 
     move-result-object v0
@@ -357,10 +292,30 @@
     return-void
 .end method
 
+.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
+
+    .line 56
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 57
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public final scrollToStart()V
     .locals 2
 
-    .line 51
+    .line 44
     invoke-virtual {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -387,48 +342,22 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 38
     iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->data:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 41
+    .line 39
     iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar;->data:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 42
+    .line 40
     invoke-direct {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListAdapter()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
-
-    return-void
-.end method
-
-.method public final updateColors()V
-    .locals 2
-
-    .line 55
-    invoke-direct {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListAdapter()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
-
-    .line 56
-    invoke-virtual {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    const-string v1, "windowBackgroundGray"
-
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
     return-void
 .end method

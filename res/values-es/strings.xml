@@ -4872,9 +4872,6 @@ Configuración > Herramientas > Chats > Plantillas"</string>
     <string name="collection_tab_all">Todo</string>
     <string name="collection_tab_categories">Categorías</string>
     <string name="collection_tab_my">Mía</string>
-    <string name="combine_messages_alert_message">"Has enviado muchos mensajes seguidos, y eso puede molestar a los demás usuarios.
-
-¿Quieres habilitar la opción que hace que todos los mensajes seguidos que envíes en un lapso de 30 segundos se combinen en uno solo?"</string>
     <string name="combine_messages_disable">No combinar mensajes</string>
     <string name="combine_messages_enable">Combinar mensajes</string>
     <string name="combine_messages_send_without_combine">Enviar sin combinar</string>
@@ -4963,15 +4960,11 @@ Configuración > Herramientas > Chats > Plantillas"</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">¿Seguro?</string>
     <string name="deleting_messages">Eliminando mensajes… Procesado %1$d de %2$d</string>
     <string name="deleting_messages_success">Los mensajes de servicio han sido eliminados</string>
-    <string name="dialog_message_enable_archive_in_drawer">"Si deshabilitas la pestaña Todos los chats, no podrás ingresar al archivo.
-
-¿Colocar el botón de acceso al archivo en la Barra Lateral?"</string>
     <string name="dialog_promo_discussion_group_description">Grupo</string>
     <string name="dialog_promo_en_news_channel_description">Inglés</string>
     <string name="dialog_promo_ru_news_channel_description">Ruso</string>
     <string name="dialog_promo_subscribe_subtitle">Entonces únete a nuestro canal</string>
     <string name="dialog_promo_subscribe_title">¿Quieres seguir las noticias de iMe?</string>
-    <string name="dialog_title_enable_archive_in_drawer">Acceso al Archivo</string>
     <string name="dialogs_activity_move_to_folder">Mover a la carpeta</string>
     <string name="dialogs_albums_sort_alphabetically">Ordenar alfabéticamente</string>
     <string name="dialogs_albums_sort_date">Ordenar por fecha</string>
@@ -5241,6 +5234,8 @@ Para hacer esto, debes permitir que la aplicación acceda al dispositivo."</stri
 Añade música a la lista de reproducción"</string>
     <string name="music_playlists_tab">Listas de reproducción</string>
     <string name="music_tab_playlist">Lista de reproducción</string>
+    <string name="nav_app_bar_navigate_up_description">Desplazarse hacia arriba</string>
+    <string name="nav_app_bar_open_drawer_description">Abrir panel de navegación</string>
     <string name="neurobots_enable_dialog_description">Para activar y configurar los neurobots, ve a ajustes</string>
     <string name="neurobots_enable_dialog_positive_btn_text">IR A</string>
     <string name="neurobots_enable_dialog_title">Los neurobots están inactivados</string>
@@ -5458,7 +5453,6 @@ Debes estar en sus contactos de Telegram para volver a agregarlos, de lo contrar
     <string name="settings_neurobots_item_title">Ajustes neurobots</string>
     <string name="settings_proxy_button_in_toolbar">Botón proxy</string>
     <string name="settings_reactions_enable_hint">Activa esto para mostrar la función de reacciones en los chats</string>
-    <string name="settings_revoke_by_default">Eliminar desde otro lado</string>
     <string name="settings_tools">Herramientas</string>
     <string name="settings_tools_base_toolbar">Barra de herramientas básica</string>
     <string name="settings_tools_bot_help_translate">Traducir saludos de bots</string>
@@ -5476,8 +5470,6 @@ Si seleccionas la opción «API bot», se añadirá «-» al comienzo de la ID p
     <string name="settings_tools_combine_messages_hint">"Enviar muchos mensajes seguidos puede molestar a los demás usuarios.
 
 Habilita esta opción para que todos los mensajes seguidos que envíes en un lapso de 30 segundos se combinen en uno solo."</string>
-    <string name="settings_tools_custom_sharing">Compartimiento múltiple</string>
-    <string name="settings_tools_custom_sharing_hint">Visualización de las pestañas de clasificación de la lista de chat principal y de archivo cuando se comparte desde fuera. Por ejemplo, cuando compartes una foto de la galería del dispositivo en iMe.</string>
     <string name="settings_tools_customization">Customización</string>
     <string name="settings_tools_design_icon">Diseño de iconos</string>
     <string name="settings_tools_message_popup_reactions">En menú de contexto</string>

@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
     .locals 0
 
-    .line 293
+    .line 292
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$3;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-direct {p0}, Landroid/transition/Transition;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$createAnimator$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 305
+    .line 304
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$3;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-virtual {p1}, Landroid/widget/HorizontalScrollView;->invalidate()V
@@ -70,14 +70,14 @@
 
     new-array p1, p1, [F
 
-    .line 304
+    .line 303
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 305
+    .line 304
     new-instance p2, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$3$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$3$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip$3;)V

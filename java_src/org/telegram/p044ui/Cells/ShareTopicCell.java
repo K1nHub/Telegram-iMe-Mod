@@ -35,30 +35,30 @@ public class ShareTopicCell extends FrameLayout {
         setWillNotDraw(false);
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(28));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(28));
         addView(this.imageView, LayoutHelper.createFrame(56, 56, 49, 0, 7, 0, 0));
         TextView textView = new TextView(context);
         this.nameTextView = textView;
-        textView.setTextColor(getThemedColor("dialogTextBlack"));
+        textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         this.nameTextView.setTextSize(1, 12.0f);
         this.nameTextView.setMaxLines(2);
         this.nameTextView.setGravity(49);
         this.nameTextView.setLines(2);
         this.nameTextView.setEllipsize(TextUtils.TruncateAt.END);
         addView(this.nameTextView, LayoutHelper.createFrame(-1, -2, 51, 6, 66, 6, 0));
-        setBackground(Theme.createRadSelectorDrawable(Theme.getColor("listSelectorSDK21"), AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2)));
+        setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(103), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(103), 1073741824));
     }
 
     public void setTopic(TLRPC$Dialog tLRPC$Dialog, TLRPC$TL_forumTopic tLRPC$TL_forumTopic, boolean z, CharSequence charSequence) {
         if (tLRPC$Dialog == null) {
             return;
         }
-        TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1433id));
+        TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1439id));
         if (charSequence != null) {
             this.nameTextView.setText(charSequence);
         } else if (chat != null) {
@@ -80,9 +80,9 @@ public class ShareTopicCell extends FrameLayout {
             combinedDrawable.setFullsize(true);
             this.imageView.setImageDrawable(combinedDrawable);
         }
-        this.imageView.setRoundRadius(AndroidUtilities.m50dp((chat == null || !chat.forum || z) ? 28 : 16));
-        this.currentDialog = tLRPC$Dialog.f1433id;
-        this.currentTopic = tLRPC$TL_forumTopic.f1480id;
+        this.imageView.setRoundRadius(AndroidUtilities.m54dp((chat == null || !chat.forum || z) ? 28 : 16));
+        this.currentDialog = tLRPC$Dialog.f1439id;
+        this.currentTopic = tLRPC$TL_forumTopic.f1486id;
     }
 
     public long getCurrentDialog() {
@@ -93,9 +93,7 @@ public class ShareTopicCell extends FrameLayout {
         return this.currentTopic;
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

@@ -144,7 +144,7 @@
     iput-object v0, p0, Lcom/iMe/services/ServiceMessagesRemovingService;->messages:Ljava/util/List;
 
     .line 29
-    sget v0, Lcom/iMe/common/IdFabric$ServiceNotifications;->service_messages_removing:I
+    sget v0, Lcom/iMe/common/IdFabric$ServiceNotifications;->SERVICE_MESSAGES_REMOVING:I
 
     iput v0, p0, Lcom/iMe/services/ServiceMessagesRemovingService;->notificationChannelId:I
 

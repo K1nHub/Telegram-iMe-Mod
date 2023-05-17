@@ -12,17 +12,17 @@ import com.google.android.gms.wearable.Node;
 /* loaded from: classes3.dex */
 public final class zzgm extends AbstractSafeParcelable implements Node {
     public static final Parcelable.Creator<zzgm> CREATOR = new zzgn();
-    @SafeParcelable.Field(getter = "getId", m775id = 2)
+    @SafeParcelable.Field(getter = "getId", m779id = 2)
     private final String zza;
-    @SafeParcelable.Field(getter = "getDisplayName", m775id = 3)
+    @SafeParcelable.Field(getter = "getDisplayName", m779id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getHopCount", m775id = 4)
+    @SafeParcelable.Field(getter = "getHopCount", m779id = 4)
     private final int zzc;
-    @SafeParcelable.Field(getter = "isNearby", m775id = 5)
+    @SafeParcelable.Field(getter = "isNearby", m779id = 5)
     private final boolean zzd;
 
     @SafeParcelable.Constructor
-    public zzgm(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) int i, @SafeParcelable.Param(m774id = 5) boolean z) {
+    public zzgm(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2, @SafeParcelable.Param(m778id = 4) int i, @SafeParcelable.Param(m778id = 5) boolean z) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = i;

@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 52289
+    .line 53290
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 52298
+    .line 53299
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$Bool;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$Bool;
 
     move-result-object p1
@@ -49,34 +49,34 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 52302
+    .line 53303
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_setTyping;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52303
+    .line 53304
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_setTyping;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52304
+    .line 53305
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_setTyping;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 52305
+    .line 53306
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_setTyping;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 52306
+    .line 53307
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_setTyping;->top_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52308
+    .line 53309
     :cond_0
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_setTyping;->action:Lorg/telegram/tgnet/TLRPC$SendMessageAction;
 

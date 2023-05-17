@@ -66,20 +66,20 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView;Landroid/content/Context;)V
     .locals 0
 
-    .line 337
+    .line 349
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
-    .line 338
+    .line 350
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 322
+    .line 334
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
-    .line 323
+    .line 335
     new-instance p1, Landroid/graphics/CornerPathEffect;
 
     const/4 p2, 0x6
@@ -94,7 +94,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->pathEffect:Landroid/graphics/PathEffect;
 
-    .line 324
+    .line 336
     new-instance p1, Landroid/text/TextPaint;
 
     const/4 p2, 0x1
@@ -103,14 +103,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textPaint:Landroid/text/TextPaint;
 
-    .line 330
+    .line 342
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
-    .line 339
+    .line 351
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textPaint:Landroid/text/TextPaint;
 
     const-string p2, "fonts/rmedium.ttf"
@@ -121,7 +121,7 @@
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 340
+    .line 352
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textPaint:Landroid/text/TextPaint;
 
     const/16 p2, 0x16
@@ -134,7 +134,7 @@
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 341
+    .line 353
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textPaint:Landroid/text/TextPaint;
 
     const/4 p2, -0x1
@@ -147,7 +147,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;)V
     .locals 0
 
-    .line 320
+    .line 332
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->checkAnimationComplete()V
 
     return-void
@@ -160,7 +160,7 @@
 
     move v1, v0
 
-    .line 500
+    .line 512
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
@@ -170,7 +170,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 501
+    .line 513
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -190,16 +190,16 @@
 
     goto :goto_0
 
-    .line 505
+    .line 517
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 506
+    .line 518
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animationInProgress:Z
 
-    .line 507
+    .line 519
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -208,7 +208,7 @@
 .method private synthetic lambda$createAnimationLayouts$0(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 482
+    .line 494
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -221,7 +221,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->progress:F
 
-    .line 483
+    .line 495
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -230,7 +230,7 @@
 .method private updatePath()V
     .locals 12
 
-    .line 353
+    .line 365
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -243,7 +243,7 @@
 
     sub-int/2addr v0, v2
 
-    .line 354
+    .line 366
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -254,7 +254,7 @@
 
     mul-float/2addr v2, v3
 
-    .line 355
+    .line 367
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -277,7 +277,7 @@
 
     const/16 v4, 0xa
 
-    .line 356
+    .line 368
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -296,12 +296,12 @@
 
     move-result v4
 
-    .line 358
+    .line 370
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->rewind()V
 
-    .line 359
+    .line 371
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     const/16 v6, 0x18
@@ -334,7 +334,7 @@
 
     invoke-virtual {v5, v7, v11}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 360
+    .line 372
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -347,7 +347,7 @@
 
     invoke-virtual {v5, v6, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 361
+    .line 373
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -360,7 +360,7 @@
 
     invoke-virtual {v5, v6, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 362
+    .line 374
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -373,7 +373,7 @@
 
     invoke-virtual {v5, v2, v0}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 363
+    .line 375
     iget v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->arrowCenter:F
 
     const v1, 0x3f333333    # 0.7f
@@ -382,18 +382,18 @@
 
     if-gez v0, :cond_0
 
-    .line 364
+    .line 376
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0, v3, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 366
+    .line 378
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0, v4, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 367
+    .line 379
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -406,7 +406,7 @@
 
     invoke-virtual {v0, v4, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 368
+    .line 380
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->close()V
@@ -421,12 +421,12 @@
 
     move-object/from16 v0, p0
 
-    .line 443
+    .line 455
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 444
+    .line 456
     new-instance v3, Landroid/text/SpannableStringBuilder;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->text:Ljava/lang/CharSequence;
@@ -443,7 +443,7 @@
 
     move v4, v10
 
-    .line 448
+    .line 460
     :goto_0
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->text:Ljava/lang/CharSequence;
 
@@ -453,7 +453,7 @@
 
     if-ge v2, v6, :cond_5
 
-    .line 449
+    .line 461
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->text:Ljava/lang/CharSequence;
 
     invoke-interface {v6, v2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -466,19 +466,19 @@
 
     if-eqz v6, :cond_4
 
-    .line 450
+    .line 462
     new-instance v6, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;
 
     const/4 v7, 0x0
 
     invoke-direct {v6, v0, v7}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;-><init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;)V
 
-    .line 451
+    .line 463
     iget-object v7, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 452
+    .line 464
     iget-object v7, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v7, v2}, Landroid/text/StaticLayout;->getSecondaryHorizontal(I)F
@@ -487,7 +487,7 @@
 
     iput v7, v6, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->x:F
 
-    .line 453
+    .line 465
     iput-boolean v4, v6, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->direction:Z
 
     if-lt v5, v10, :cond_0
@@ -499,7 +499,7 @@
     :cond_0
     add-int/2addr v5, v10
 
-    .line 460
+    .line 472
     iget-object v7, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->text:Ljava/lang/CharSequence;
 
     invoke-interface {v7, v2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -529,7 +529,7 @@
     :cond_2
     move v11, v9
 
-    .line 469
+    .line 481
     :goto_2
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -545,7 +545,7 @@
 
     move-result-object v15
 
-    .line 470
+    .line 482
     new-instance v11, Landroid/text/StaticLayout;
 
     iget-object v12, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textPaint:Landroid/text/TextPaint;
@@ -570,7 +570,7 @@
 
     invoke-direct/range {v14 .. v21}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
-    .line 471
+    .line 483
     iget-object v12, v6, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->staticLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -579,7 +579,7 @@
 
     goto :goto_1
 
-    .line 473
+    .line 485
     :cond_3
     new-instance v6, Lorg/telegram/ui/Components/EmptyStubSpan;
 
@@ -594,7 +594,7 @@
 
     goto/16 :goto_0
 
-    .line 476
+    .line 488
     :cond_5
     new-instance v11, Landroid/text/StaticLayout;
 
@@ -626,7 +626,7 @@
 
     iput-object v11, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedStableLayout:Landroid/text/StaticLayout;
 
-    .line 477
+    .line 489
     :goto_3
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
@@ -636,10 +636,10 @@
 
     if-ge v1, v2, :cond_6
 
-    .line 478
+    .line 490
     iput-boolean v10, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animationInProgress:Z
 
-    .line 479
+    .line 491
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -652,7 +652,7 @@
 
     new-array v3, v3, [F
 
-    .line 480
+    .line 492
     fill-array-data v3, :array_0
 
     invoke-static {v3}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -661,14 +661,14 @@
 
     iput-object v3, v2, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->valueAnimator:Landroid/animation/ValueAnimator;
 
-    .line 481
+    .line 493
     new-instance v4, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$$ExternalSyntheticLambda0;
 
     invoke-direct {v4, v0, v2}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;)V
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 485
+    .line 497
     iget-object v3, v2, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->valueAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v4, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$1;
@@ -677,21 +677,21 @@
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 492
+    .line 504
     iget-object v3, v2, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->valueAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v4, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 493
+    .line 505
     iget-object v3, v2, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->valueAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v4, 0x2ee
 
     invoke-virtual {v3, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 494
+    .line 506
     iget-object v3, v2, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->valueAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
@@ -712,7 +712,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 495
+    .line 507
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
@@ -736,7 +736,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 13
 
-    .line 373
+    .line 385
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -749,7 +749,7 @@
 
     sub-int/2addr v0, v2
 
-    .line 374
+    .line 386
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->access$200(Lorg/telegram/ui/Components/Premium/LimitPreviewView;)Z
@@ -764,12 +764,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 375
+    .line 387
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 376
+    .line 388
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v6
@@ -812,7 +812,7 @@
 
     invoke-virtual/range {v6 .. v12}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->updateMainGradientMatrix(IIIIFF)V
 
-    .line 377
+    .line 389
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/4 v6, 0x3
@@ -843,7 +843,7 @@
 
     div-float/2addr v6, v3
 
-    .line 378
+    .line 390
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v7
@@ -856,19 +856,19 @@
 
     goto :goto_0
 
-    .line 380
+    .line 392
     :cond_0
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->invalidatePath:Z
 
     if-eqz v2, :cond_1
 
-    .line 381
+    .line 393
     iput-boolean v5, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->invalidatePath:Z
 
-    .line 382
+    .line 394
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->updatePath()V
 
-    .line 384
+    .line 396
     :cond_1
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
@@ -912,7 +912,7 @@
 
     invoke-virtual/range {v6 .. v12}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->updateMainGradientMatrix(IIIIFF)V
 
-    .line 385
+    .line 397
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -927,7 +927,7 @@
 
     div-float/2addr v7, v3
 
-    .line 386
+    .line 398
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v6
@@ -938,7 +938,7 @@
 
     invoke-virtual {p1, v2, v7, v7, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 387
+    .line 399
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v2
@@ -951,7 +951,7 @@
 
     invoke-virtual {v2, v6}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 388
+    .line 400
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->path:Landroid/graphics/Path;
 
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
@@ -964,7 +964,7 @@
 
     invoke-virtual {p1, v2, v6}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 389
+    .line 401
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v2
@@ -977,10 +977,10 @@
 
     invoke-virtual {v2, v6}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 390
+    .line 402
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 393
+    .line 405
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -998,7 +998,7 @@
 
     div-float/2addr v2, v3
 
-    .line 394
+    .line 406
     iget-object v6, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v6}, Landroid/text/StaticLayout;->getHeight()I
@@ -1011,37 +1011,37 @@
 
     div-float/2addr v6, v3
 
-    .line 395
+    .line 407
     iget-boolean v3, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animationInProgress:Z
 
     if-nez v3, :cond_2
 
-    .line 396
+    .line 408
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_7
 
-    .line 397
+    .line 409
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 398
+    .line 410
     invoke-virtual {p1, v2, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 399
+    .line 411
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 400
+    .line 412
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_4
 
-    .line 403
+    .line 415
     :cond_2
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 404
+    .line 416
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -1058,29 +1058,29 @@
 
     invoke-virtual {p1, v5, v5, v3, v7}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 405
+    .line 417
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedStableLayout:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_3
 
-    .line 406
+    .line 418
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 407
+    .line 419
     invoke-virtual {p1, v2, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 408
+    .line 420
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedStableLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 409
+    .line 421
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
     move v1, v5
 
-    .line 411
+    .line 423
     :goto_1
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
@@ -1090,7 +1090,7 @@
 
     if-ge v1, v3, :cond_6
 
-    .line 412
+    .line 424
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->animatedLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1099,15 +1099,15 @@
 
     check-cast v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;
 
-    .line 413
+    .line 425
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 414
+    .line 426
     iget-boolean v7, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->direction:Z
 
     if-eqz v7, :cond_4
 
-    .line 415
+    .line 427
     iget v7, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->x:F
 
     add-float/2addr v7, v2
@@ -1140,7 +1140,7 @@
 
     move v7, v5
 
-    .line 416
+    .line 428
     :goto_2
     iget-object v8, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->staticLayouts:Ljava/util/ArrayList;
 
@@ -1152,10 +1152,10 @@
 
     int-to-float v8, v0
 
-    .line 417
+    .line 429
     invoke-virtual {p1, v4, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 418
+    .line 430
     iget-object v8, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->staticLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1170,7 +1170,7 @@
 
     goto :goto_2
 
-    .line 421
+    .line 433
     :cond_4
     iget v7, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->x:F
 
@@ -1204,7 +1204,7 @@
 
     move v7, v5
 
-    .line 422
+    .line 434
     :goto_3
     iget-object v8, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->staticLayouts:Ljava/util/ArrayList;
 
@@ -1218,10 +1218,10 @@
 
     int-to-float v8, v8
 
-    .line 423
+    .line 435
     invoke-virtual {p1, v4, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 424
+    .line 436
     iget-object v8, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->staticLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1236,7 +1236,7 @@
 
     goto :goto_3
 
-    .line 427
+    .line 439
     :cond_5
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1244,7 +1244,7 @@
 
     goto/16 :goto_1
 
-    .line 430
+    .line 442
     :cond_6
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1256,7 +1256,7 @@
 .method protected onMeasure(II)V
     .locals 8
 
-    .line 346
+    .line 358
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textPaint:Landroid/text/TextPaint;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->text:Ljava/lang/CharSequence;
@@ -1273,7 +1273,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textWidth:F
 
-    .line 347
+    .line 359
     new-instance p1, Landroid/text/StaticLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->text:Ljava/lang/CharSequence;
@@ -1306,7 +1306,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textLayout:Landroid/text/StaticLayout;
 
-    .line 348
+    .line 360
     iget p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->textWidth:F
 
     invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
@@ -1343,7 +1343,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    .line 349
+    .line 361
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->updatePath()V
 
     return-void
@@ -1352,22 +1352,22 @@
 .method public setArrowCenter(F)V
     .locals 1
 
-    .line 515
+    .line 527
     iget v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->arrowCenter:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 516
+    .line 528
     iput p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->arrowCenter:F
 
     const/4 p1, 0x1
 
-    .line 517
+    .line 529
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->invalidatePath:Z
 
-    .line 518
+    .line 530
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -1377,7 +1377,7 @@
 .method public setText(Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 511
+    .line 523
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->text:Ljava/lang/CharSequence;
 
     return-void
@@ -1386,7 +1386,7 @@
 .method public setTranslationX(F)V
     .locals 1
 
-    .line 436
+    .line 448
     invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F
 
     move-result v0
@@ -1395,10 +1395,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 437
+    .line 449
     invoke-super {p0, p1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 438
+    .line 450
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0

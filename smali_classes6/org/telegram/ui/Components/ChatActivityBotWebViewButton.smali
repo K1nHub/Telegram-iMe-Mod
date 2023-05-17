@@ -87,10 +87,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->path:Landroid/graphics/Path;
 
-    const-string v0, "featuredStickers_addButton"
-
     .line 25
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -220,10 +220,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->rippleView:Landroid/view/View;
 
-    const-string p1, "featuredStickers_addButtonPressed"
-
     .line 55
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -285,10 +285,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 115
+    .line 116
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 116
+    .line 117
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v0
@@ -307,7 +307,7 @@
 
     div-float/2addr v0, v1
 
-    .line 117
+    .line 118
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -340,7 +340,7 @@
 
     const/16 v3, 0x10
 
-    .line 118
+    .line 119
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -349,7 +349,7 @@
 
     add-float/2addr v3, v1
 
-    .line 119
+    .line 120
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/16 v5, 0xe
@@ -404,29 +404,29 @@
 
     invoke-virtual {v4, v5, v2, v6, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 121
+    .line 122
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 122
+    .line 123
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->path:Landroid/graphics/Path;
 
     sget-object v2, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v1, v4, v3, v3, v2}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 123
+    .line 124
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 124
+    .line 125
     iget v1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->backgroundColor:I
 
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 126
+    .line 127
     iget v1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progress:F
 
     const/high16 v2, 0x3f000000    # 0.5f
@@ -453,7 +453,7 @@
 
     const/16 v1, 0xa
 
-    .line 127
+    .line 128
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -462,35 +462,35 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 128
+    .line 129
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->menuButton:Lorg/telegram/ui/Components/BotCommandsMenuView;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 129
+    .line 130
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BotCommandsMenuView;->setDrawBackgroundDrawable(Z)V
 
-    .line 130
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->menuButton:Lorg/telegram/ui/Components/BotCommandsMenuView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 131
+    .line 132
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->menuButton:Lorg/telegram/ui/Components/BotCommandsMenuView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BotCommandsMenuView;->setDrawBackgroundDrawable(Z)V
 
-    .line 133
+    .line 134
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     const/16 v0, 0x8
 
-    .line 135
+    .line 136
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -509,10 +509,10 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 136
+    .line 137
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 137
+    .line 138
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -533,10 +533,10 @@
 .method public setMeasuredButtonWidth(I)V
     .locals 0
 
-    .line 109
+    .line 110
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->menuButtonWidth:I
 
-    .line 110
+    .line 111
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -545,13 +545,13 @@
 .method public setProgress(F)V
     .locals 2
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progress:F
 
-    const-string v0, "chat_messagePanelVoiceBackground"
+    .line 102
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceBackground:I
 
-    .line 101
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -565,7 +565,7 @@
 
     const/4 v0, 0x0
 
-    .line 102
+    .line 103
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
@@ -573,7 +573,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 103
+    .line 104
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -584,7 +584,7 @@
 
     goto :goto_0
 
-    .line 105
+    .line 106
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -642,20 +642,23 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 75
+    .line 74
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 76
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p1, p4}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
-    .line 76
+    .line 77
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progressWasVisible:Z
 
     if-eq p1, p5, :cond_5
 
-    .line 77
+    .line 78
     iput-boolean p5, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progressWasVisible:Z
 
-    .line 78
+    .line 79
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -668,17 +671,17 @@
 
     if-eqz p5, :cond_1
 
-    .line 80
+    .line 81
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/RadialProgressView;->setAlpha(F)V
 
-    .line 81
+    .line 82
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 83
+    .line 84
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
@@ -708,7 +711,7 @@
     :cond_3
     move p4, p2
 
-    .line 84
+    .line 85
     :goto_1
     invoke-virtual {p1, p4}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
@@ -721,7 +724,7 @@
     :cond_4
     move p3, p2
 
-    .line 85
+    .line 86
     :goto_2
     invoke-virtual {p1, p3}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
@@ -729,7 +732,7 @@
 
     const-wide/16 p2, 0xfa
 
-    .line 86
+    .line 87
     invoke-virtual {p1, p2, p3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -738,15 +741,15 @@
 
     invoke-direct {p2, p0, p5}, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton$1;-><init>(Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;Z)V
 
-    .line 87
+    .line 88
     invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 94
+    .line 95
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 96
+    .line 97
     :cond_5
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 

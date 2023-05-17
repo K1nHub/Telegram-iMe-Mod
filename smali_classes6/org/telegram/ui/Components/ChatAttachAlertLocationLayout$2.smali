@@ -133,9 +133,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    const-string v2, "dialogBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result v1
 

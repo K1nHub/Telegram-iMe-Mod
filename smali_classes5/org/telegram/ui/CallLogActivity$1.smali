@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CallLogActivity;)V
     .locals 0
 
-    .line 429
+    .line 428
     iput-object p1, p0, Lorg/telegram/ui/CallLogActivity$1;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -41,7 +41,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 433
+    .line 432
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$1;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CallLogActivity;->access$400(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -54,14 +54,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 434
+    .line 433
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$1;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/CallLogActivity;->access$500(Lorg/telegram/ui/CallLogActivity;Z)V
 
     goto :goto_0
 
-    .line 436
+    .line 435
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$1;->this$0:Lorg/telegram/ui/CallLogActivity;
 
@@ -72,7 +72,7 @@
     :cond_1
     if-ne p1, v0, :cond_2
 
-    .line 439
+    .line 438
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$1;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/CallLogActivity;->access$600(Lorg/telegram/ui/CallLogActivity;Z)V
@@ -84,7 +84,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 441
+    .line 440
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$1;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     const/4 v0, 0x0

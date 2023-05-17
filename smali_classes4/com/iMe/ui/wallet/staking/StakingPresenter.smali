@@ -66,7 +66,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "stakingInteractor"
+    const-string/jumbo v0, "stakingInteractor"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -231,7 +231,7 @@
 
     move-result-object v0
 
-    const-string v1, "stakingInteractor\n      \u2026(schedulersProvider.ui())"
+    const-string/jumbo v1, "stakingInteractor\n      \u2026(schedulersProvider.ui())"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

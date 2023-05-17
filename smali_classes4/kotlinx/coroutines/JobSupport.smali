@@ -2471,6 +2471,17 @@
     return-void
 .end method
 
+.method public final cancelCoroutine(Ljava/lang/Throwable;)Z
+    .locals 0
+
+    .line 658
+    invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public final cancelImpl$kotlinx_coroutines_core(Ljava/lang/Object;)Z
     .locals 3
 
@@ -3065,6 +3076,32 @@
     return-void
 .end method
 
+.method public final invokeOnCompletion(Lkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Ljava/lang/Throwable;",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Lkotlinx/coroutines/DisposableHandle;"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    .line 449
+    invoke-virtual {p0, v0, v1, p1}, Lkotlinx/coroutines/JobSupport;->invokeOnCompletion(ZZLkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public final invokeOnCompletion(ZZLkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
@@ -3321,6 +3358,46 @@
     const/4 v0, 0x0
 
     :goto_0
+    return v0
+.end method
+
+.method public final isCancelled()Z
+    .locals 2
+
+    .line 189
+    invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 190
+    instance-of v1, v0, Lkotlinx/coroutines/CompletedExceptionally;
+
+    if-nez v1, :cond_1
+
+    instance-of v1, v0, Lkotlinx/coroutines/JobSupport$Finishing;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lkotlinx/coroutines/JobSupport$Finishing;
+
+    invoke-virtual {v0}, Lkotlinx/coroutines/JobSupport$Finishing;->isCancelling()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
     return v0
 .end method
 

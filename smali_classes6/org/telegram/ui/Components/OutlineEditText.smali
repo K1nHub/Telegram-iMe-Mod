@@ -31,9 +31,9 @@
     .line 28
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -42,9 +42,9 @@
     .line 29
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v1, "windowBackgroundWhiteHintText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -77,9 +77,9 @@
     .line 34
     iget-object p1, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v0, "windowBackgroundWhiteInputFieldActivated"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

@@ -53,7 +53,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 912
+    .line 927
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,12 +64,12 @@
 
     const/4 p2, 0x0
 
-    .line 928
+    .line 943
     invoke-static {p0, p2}, Lorg/telegram/ui/Components/Bulletin$Layout;->access$1800(Lorg/telegram/ui/Components/Bulletin$Layout;F)V
 
     if-nez p3, :cond_0
 
-    .line 930
+    .line 945
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -79,7 +79,7 @@
 .method private static synthetic lambda$animateEnter$1(Landroidx/core/util/Consumer;Lorg/telegram/ui/Components/Bulletin$Layout;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    .line 935
+    .line 950
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result p1
@@ -98,7 +98,7 @@
 
     if-nez p2, :cond_0
 
-    .line 951
+    .line 966
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -108,7 +108,7 @@
 .method private static synthetic lambda$animateExit$3(Landroidx/core/util/Consumer;Lorg/telegram/ui/Components/Bulletin$Layout;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    .line 956
+    .line 971
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result p1
@@ -138,7 +138,7 @@
         }
     .end annotation
 
-    .line 919
+    .line 934
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p5
@@ -149,7 +149,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 921
+    .line 936
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result p5
@@ -160,7 +160,7 @@
 
     invoke-interface {p4, p5}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 923
+    .line 938
     :cond_0
     new-instance p5, Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -170,7 +170,7 @@
 
     invoke-direct {p5, p1, v0, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;-><init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;F)V
 
-    .line 924
+    .line 939
     invoke-virtual {p5}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v0
@@ -179,7 +179,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 925
+    .line 940
     invoke-virtual {p5}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v0
@@ -190,7 +190,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 927
+    .line 942
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p1, p3}, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/Bulletin$Layout;Ljava/lang/Runnable;)V
@@ -200,20 +200,20 @@
     :cond_1
     if-eqz p4, :cond_2
 
-    .line 935
+    .line 950
     new-instance p3, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda3;
 
     invoke-direct {p3, p4, p1}, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda3;-><init>(Landroidx/core/util/Consumer;Lorg/telegram/ui/Components/Bulletin$Layout;)V
 
     invoke-virtual {p5, p3}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 937
+    .line 952
     :cond_2
     invoke-virtual {p5}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     if-eqz p2, :cond_3
 
-    .line 939
+    .line 954
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     :cond_3
@@ -234,7 +234,7 @@
         }
     .end annotation
 
-    .line 945
+    .line 960
     new-instance p5, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     sget-object v0, Lorg/telegram/ui/Components/Bulletin$Layout;->IN_OUT_OFFSET_Y:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
@@ -247,7 +247,7 @@
 
     invoke-direct {p5, p1, v0, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;-><init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;F)V
 
-    .line 946
+    .line 961
     invoke-virtual {p5}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v0
@@ -256,7 +256,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 947
+    .line 962
     invoke-virtual {p5}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v0
@@ -267,7 +267,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 949
+    .line 964
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p3}, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Runnable;)V
@@ -277,20 +277,20 @@
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 956
+    .line 971
     new-instance p3, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda2;
 
     invoke-direct {p3, p4, p1}, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda2;-><init>(Landroidx/core/util/Consumer;Lorg/telegram/ui/Components/Bulletin$Layout;)V
 
     invoke-virtual {p5, p3}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 958
+    .line 973
     :cond_1
     invoke-virtual {p5}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     if-eqz p2, :cond_2
 
-    .line 960
+    .line 975
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     :cond_2

@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$21;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/SenderSelectPopup;
 .source "ChatActivityEnterView.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/VideoTimelineView$VideoTimelineViewDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createRecordAudioPanel()V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$28(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,159 +17,133 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
+.field final synthetic val$fl:Landroid/view/ViewGroup;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
-    .locals 0
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;Lorg/telegram/ui/Components/SenderSelectPopup$OnSelectCallback;Landroid/view/ViewGroup;)V
+    .locals 7
 
-    .line 3384
+    .line 3629
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p8, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->val$fl:Landroid/view/ViewGroup;
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    move-object v6, p7
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/SenderSelectPopup;-><init>(Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;Lorg/telegram/ui/Components/SenderSelectPopup$OnSelectCallback;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public didStartDragging()V
+.method public dismiss()V
     .locals 3
 
-    .line 3405
+    .line 3632
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$17300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/SenderSelectPopup;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    if-eq v0, p0, :cond_0
 
-    const/4 v2, 0x0
+    .line 3633
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->val$fl:Landroid/view/ViewGroup;
 
-    invoke-interface {v0, v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needChangeVideoPreviewState(IF)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->dimView:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 3634
+    invoke-super {p0}, Lorg/telegram/ui/Components/SenderSelectPopup;->dismiss()V
 
     return-void
-.end method
 
-.method public didStopDragging()V
-    .locals 3
-
-    .line 3410
+    .line 3638
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$17302(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SenderSelectPopup;)Lorg/telegram/ui/Components/SenderSelectPopup;
+
+    .line 3640
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->runningCustomSprings:Z
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Landroidx/dynamicanimation/animation/SpringAnimation;
+
+    .line 3641
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/SenderSelectPopup;->startDismissAnimation([Landroidx/dynamicanimation/animation/SpringAnimation;)V
+
+    .line 3642
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$15500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/SenderSelectView;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    invoke-interface {v0, v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needChangeVideoPreviewState(IF)V
+    invoke-virtual {v0, v1, v2, v2}, Lorg/telegram/ui/Components/SenderSelectView;->setProgress(FZZ)V
 
-    return-void
-.end method
+    goto :goto_1
 
-.method public onLeftProgressChanged(F)V
-    .locals 3
+    .line 3644
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->springAnimations:Ljava/util/List;
 
-    .line 3387
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/VideoEditedInfo;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    return-void
+    move-result v1
 
-    .line 3390
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    if-eqz v1, :cond_2
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/VideoEditedInfo;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/VideoEditedInfo;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-wide v1, v1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
+    check-cast v1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    long-to-float v1, v1
+    .line 3645
+    invoke-virtual {v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    mul-float/2addr v1, p1
+    goto :goto_0
 
-    float-to-long v1, v1
+    .line 3647
+    :cond_2
+    iget-object v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->springAnimations:Ljava/util/List;
 
-    iput-wide v1, v0, Lorg/telegram/messenger/VideoEditedInfo;->startTime:J
+    invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 3391
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 3648
+    invoke-super {p0}, Lorg/telegram/ui/Components/SenderSelectPopup;->dismiss()V
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-interface {v0, v1, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needChangeVideoPreviewState(IF)V
-
-    return-void
-.end method
-
-.method public onRightProgressChanged(F)V
-    .locals 3
-
-    .line 3396
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/VideoEditedInfo;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 3399
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/VideoEditedInfo;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/VideoEditedInfo;
-
-    move-result-object v1
-
-    iget-wide v1, v1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
-
-    long-to-float v1, v1
-
-    mul-float/2addr v1, p1
-
-    float-to-long v1, v1
-
-    iput-wide v1, v0, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
-
-    .line 3400
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-interface {v0, v1, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needChangeVideoPreviewState(IF)V
-
+    :goto_1
     return-void
 .end method

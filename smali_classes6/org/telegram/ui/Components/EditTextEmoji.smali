@@ -227,9 +227,9 @@
     .line 158
     iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string p3, "windowBackgroundWhiteBlackText"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result p5
 
@@ -274,21 +274,21 @@
     .line 162
     iget-object p6, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string v2, "windowBackgroundWhiteInputField"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v2
 
-    const-string v3, "windowBackgroundWhiteInputFieldActivated"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v3
 
-    const-string v4, "windowBackgroundWhiteRedText3"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v4
 
@@ -297,9 +297,9 @@
     .line 163
     iget-object p6, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string v2, "windowBackgroundWhiteHintText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v2
 
@@ -308,7 +308,7 @@
     .line 164
     iget-object p6, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result p3
 
@@ -409,9 +409,9 @@
     .line 169
     iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string v2, "dialogTextHint"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextHint:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v2
 
@@ -420,9 +420,9 @@
     .line 170
     iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string v2, "dialogTextBlack"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v2
 
@@ -500,9 +500,9 @@
 
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string p6, "chat_messagePanelIcons"
+    sget p6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
-    invoke-direct {p0, p6}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p6}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result p6
 
@@ -595,9 +595,9 @@
     .line 188
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
 
-    const-string p2, "listSelectorSDK21"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result p2
 
@@ -723,39 +723,16 @@
     return-object p0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 685
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 686
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -2354,9 +2331,9 @@
     .line 291
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string v1, "windowBackgroundWhiteHintText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v1
 
@@ -2365,9 +2342,9 @@
     .line 292
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v2
 
@@ -2376,7 +2353,7 @@
     .line 293
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v1
 
@@ -2388,9 +2365,9 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string v1, "dialogTextHint"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextHint:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v1
 
@@ -2399,9 +2376,9 @@
     .line 296
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const-string v1, "dialogTextBlack"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v1
 
@@ -2413,9 +2390,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chat_messagePanelIcons"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v2
 

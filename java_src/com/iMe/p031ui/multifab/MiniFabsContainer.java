@@ -44,7 +44,7 @@ public final class MiniFabsContainer extends LinearLayout {
         Intrinsics.checkNotNullParameter(listener, "listener");
         this.listener = listener;
         setOrientation(1);
-        ViewExtKt.gone(this);
+        ViewExtKt.gone$default(this, false, 1, null);
     }
 
     public final void setFabs(List<? extends FilterFab> fabs) {
@@ -59,7 +59,7 @@ public final class MiniFabsContainer extends LinearLayout {
     public static final void show$lambda$4$lambda$2(boolean z, MiniFabsContainer this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (z) {
-            ViewExtKt.visible(this$0);
+            ViewExtKt.visible$default(this$0, false, 1, null);
         }
     }
 
@@ -69,28 +69,28 @@ public final class MiniFabsContainer extends LinearLayout {
         if (z) {
             return;
         }
-        ViewExtKt.gone(this$0);
+        ViewExtKt.gone$default(this$0, false, 1, null);
     }
 
     private final ImageView createFab(final FilterFab filterFab) {
         ImageView imageView = new ImageView(getContext());
         ViewExtKt.setScale(imageView, BitmapDescriptorFactory.HUE_RED);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setBackground(Theme.createSimpleSelectorCircleDrawable(43, "chats_actionBackground", "chats_actionPressedBackground"));
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionIcon"), PorterDuff.Mode.SRC_IN));
-        float m50dp = AndroidUtilities.m50dp(2);
+        imageView.setBackground(Theme.createSimpleSelectorCircleDrawable(43, Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.SRC_IN));
+        float m54dp = AndroidUtilities.m54dp(2);
         StateListAnimator stateListAnimator = new StateListAnimator();
         Property property = LinearLayout.TRANSLATION_Z;
-        float f = 2 * m50dp;
-        stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(imageView, property, m50dp, f).setDuration(200L));
-        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(imageView, property, f, m50dp).setDuration(200L));
+        float f = 2 * m54dp;
+        stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(imageView, property, m54dp, f).setDuration(200L));
+        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(imageView, property, f, m54dp).setDuration(200L));
         imageView.setStateListAnimator(stateListAnimator);
         imageView.setOutlineProvider(new ViewOutlineProvider() { // from class: com.iMe.ui.multifab.MiniFabsContainer$createFab$1$2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view, Outline outline) {
                 Intrinsics.checkNotNullParameter(view, "view");
                 Intrinsics.checkNotNullParameter(outline, "outline");
-                outline.setOval(0, 0, AndroidUtilities.m50dp(43), AndroidUtilities.m50dp(43));
+                outline.setOval(0, 0, AndroidUtilities.m54dp(43), AndroidUtilities.m54dp(43));
             }
         });
         imageView.setImageResource(FilterFabExtKt.iconResId(filterFab, false));

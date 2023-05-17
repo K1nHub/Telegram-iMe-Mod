@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$KIlr9ZkMfrLhsN595TmUJCRyogA(Lorg/telegram/ui/FilterCreateActivity;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$WR7AjC0YFZ0-B-gUwlxAQWiZaF4(Lorg/telegram/ui/FilterCreateActivity;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

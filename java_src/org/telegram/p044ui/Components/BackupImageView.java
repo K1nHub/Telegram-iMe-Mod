@@ -26,6 +26,7 @@ public class BackupImageView extends View {
     private AvatarDrawable avatarDrawable;
     protected boolean blurAllowed;
     protected ImageReceiver blurImageReceiver;
+    public boolean drawFromStart;
     protected boolean hasBlur;
     protected int height;
     protected ImageReceiver imageReceiver;
@@ -45,7 +46,8 @@ public class BackupImageView extends View {
         this.height = -1;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.imageReceiver = imageReceiver;
-        imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.BackupImageView$$ExternalSyntheticLambda0
+        imageReceiver.setAllowLoadingOnAttachedOnly(true);
+        this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.BackupImageView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
             public final void didSetImage(ImageReceiver imageReceiver2, boolean z, boolean z2, boolean z3) {
                 BackupImageView.this.lambda$new$0(imageReceiver2, z, z2, z3);
@@ -90,7 +92,7 @@ public class BackupImageView extends View {
         checkCreateBlurredImage();
     }
 
-    private void onNewImageSet() {
+    public void onNewImageSet() {
         if (this.hasBlur) {
             if (this.blurImageReceiver.getBitmap() != null && !this.blurImageReceiver.getBitmap().isRecycled()) {
                 this.blurImageReceiver.getBitmap().recycle();
@@ -111,6 +113,10 @@ public class BackupImageView extends View {
 
     public void setOrientation(int i, boolean z) {
         this.imageReceiver.setOrientation(i, z);
+    }
+
+    public void setOrientation(int i, int i2, boolean z) {
+        this.imageReceiver.setOrientation(i, i2, z);
     }
 
     public void setImage(SecureDocument secureDocument, String str) {
@@ -302,19 +308,28 @@ public class BackupImageView extends View {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
+        int i;
         AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
         ImageReceiver imageReceiver = animatedEmojiDrawable != null ? animatedEmojiDrawable.getImageReceiver() : this.imageReceiver;
         if (imageReceiver == null) {
             return;
         }
-        if (this.width != -1 && this.height != -1) {
-            int height = getHeight();
-            int i = this.height;
-            imageReceiver.setImageCoords((getWidth() - this.width) / 2, (height - i) / 2, this.width, i);
-            if (this.blurAllowed) {
-                int height2 = getHeight();
-                int i2 = this.height;
-                this.blurImageReceiver.setImageCoords((getWidth() - this.width) / 2, (height2 - i2) / 2, this.width, i2);
+        int i2 = this.width;
+        if (i2 != -1 && (i = this.height) != -1) {
+            if (this.drawFromStart) {
+                imageReceiver.setImageCoords(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, i2, i);
+                if (this.blurAllowed) {
+                    this.blurImageReceiver.setImageCoords(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.width, this.height);
+                }
+            } else {
+                int height = getHeight();
+                int i3 = this.height;
+                imageReceiver.setImageCoords((getWidth() - this.width) / 2, (height - i3) / 2, this.width, i3);
+                if (this.blurAllowed) {
+                    int height2 = getHeight();
+                    int i4 = this.height;
+                    this.blurImageReceiver.setImageCoords((getWidth() - this.width) / 2, (height2 - i4) / 2, this.width, i4);
+                }
             }
         } else {
             imageReceiver.setImageCoords(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight());

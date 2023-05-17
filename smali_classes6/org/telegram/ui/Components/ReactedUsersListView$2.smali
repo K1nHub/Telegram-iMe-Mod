@@ -210,11 +210,11 @@
     invoke-direct {p2, v0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     .line 130
-    iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuSeparator:I
 
-    const-string v1, "actionBarDefaultSubmenuSeparator"
+    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 

@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;)V
     .locals 0
 
-    .line 1088
+    .line 1106
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
     if-nez p3, :cond_0
 
-    .line 1107
+    .line 1125
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -62,7 +62,7 @@
 
     const-string p2, "mailto:"
 
-    .line 1110
+    .line 1128
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p2
@@ -71,7 +71,7 @@
 
     const/4 p2, 0x7
 
-    .line 1111
+    .line 1129
     invoke-virtual {p1, p2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
@@ -81,7 +81,7 @@
     :cond_1
     const-string p2, "tel:"
 
-    .line 1112
+    .line 1130
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p2
@@ -90,12 +90,12 @@
 
     const/4 p2, 0x4
 
-    .line 1113
+    .line 1131
     invoke-virtual {p1, p2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1115
+    .line 1133
     :cond_2
     :goto_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
@@ -110,7 +110,7 @@
 .method public canPerformActions()Z
     .locals 1
 
-    .line 1097
+    .line 1115
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -131,7 +131,7 @@
 .method public needOpenWebView(Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;)V
     .locals 1
 
-    .line 1092
+    .line 1110
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -146,7 +146,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1103
+    .line 1121
     new-instance p2, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
@@ -157,7 +157,7 @@
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1104
+    .line 1122
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v0, 0x2
@@ -166,7 +166,7 @@
 
     const/4 v1, 0x0
 
-    .line 1105
+    .line 1123
     sget v2, Lorg/telegram/messenger/R$string;->Open:I
 
     const-string v3, "Open"
@@ -195,7 +195,7 @@
 
     invoke-virtual {p2, v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 1118
+    .line 1136
     iget-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -210,7 +210,7 @@
 
     goto :goto_0
 
-    .line 1120
+    .line 1138
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 

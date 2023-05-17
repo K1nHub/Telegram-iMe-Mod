@@ -24,17 +24,17 @@ import java.util.TreeSet;
 public class ApiFeatureRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ApiFeatureRequest> CREATOR = new zac();
     private static final Comparator zaa = zab.zaa;
-    @SafeParcelable.Field(getter = "getApiFeatures", m775id = 1)
+    @SafeParcelable.Field(getter = "getApiFeatures", m779id = 1)
     private final List zab;
-    @SafeParcelable.Field(getter = "getIsUrgent", m775id = 2)
+    @SafeParcelable.Field(getter = "getIsUrgent", m779id = 2)
     private final boolean zac;
-    @SafeParcelable.Field(getter = "getFeatureRequestSessionId", m775id = 3)
+    @SafeParcelable.Field(getter = "getFeatureRequestSessionId", m779id = 3)
     private final String zad;
-    @SafeParcelable.Field(getter = "getCallingPackage", m775id = 4)
+    @SafeParcelable.Field(getter = "getCallingPackage", m779id = 4)
     private final String zae;
 
     @SafeParcelable.Constructor
-    public ApiFeatureRequest(@SafeParcelable.Param(m774id = 1) List list, @SafeParcelable.Param(m774id = 2) boolean z, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) String str2) {
+    public ApiFeatureRequest(@SafeParcelable.Param(m778id = 1) List list, @SafeParcelable.Param(m778id = 2) boolean z, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) String str2) {
         Preconditions.checkNotNull(list);
         this.zab = list;
         this.zac = z;

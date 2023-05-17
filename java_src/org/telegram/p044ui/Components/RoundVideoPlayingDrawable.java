@@ -100,7 +100,7 @@ public class RoundVideoPlayingDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        this.paint.setColor(ColorUtils.blendARGB(getThemedColor("chat_serviceText"), this.timeColor, this.colorProgress));
+        this.paint.setColor(ColorUtils.blendARGB(getThemedColor(Theme.key_chat_serviceText), this.timeColor, this.colorProgress));
         int i = this.alpha;
         if (i != 255) {
             Paint paint = this.paint;
@@ -109,9 +109,9 @@ public class RoundVideoPlayingDrawable extends Drawable {
         int i2 = getBounds().left;
         int i3 = getBounds().top;
         for (int i4 = 0; i4 < 3; i4++) {
-            canvas.drawRect(AndroidUtilities.m50dp(2) + i2, AndroidUtilities.m51dp((this.progress1 * 7.0f) + 2.0f) + i3, AndroidUtilities.m50dp(4) + i2, AndroidUtilities.m50dp(10) + i3, this.paint);
-            canvas.drawRect(AndroidUtilities.m50dp(5) + i2, AndroidUtilities.m51dp((this.progress2 * 7.0f) + 2.0f) + i3, AndroidUtilities.m50dp(7) + i2, AndroidUtilities.m50dp(10) + i3, this.paint);
-            canvas.drawRect(AndroidUtilities.m50dp(8) + i2, AndroidUtilities.m51dp((this.progress3 * 7.0f) + 2.0f) + i3, AndroidUtilities.m50dp(10) + i2, AndroidUtilities.m50dp(10) + i3, this.paint);
+            canvas.drawRect(AndroidUtilities.m54dp(2) + i2, AndroidUtilities.m55dp((this.progress1 * 7.0f) + 2.0f) + i3, AndroidUtilities.m54dp(4) + i2, AndroidUtilities.m54dp(10) + i3, this.paint);
+            canvas.drawRect(AndroidUtilities.m54dp(5) + i2, AndroidUtilities.m55dp((this.progress2 * 7.0f) + 2.0f) + i3, AndroidUtilities.m54dp(7) + i2, AndroidUtilities.m54dp(10) + i3, this.paint);
+            canvas.drawRect(AndroidUtilities.m54dp(8) + i2, AndroidUtilities.m55dp((this.progress3 * 7.0f) + 2.0f) + i3, AndroidUtilities.m54dp(10) + i2, AndroidUtilities.m54dp(10) + i3, this.paint);
         }
         if (this.started) {
             update();
@@ -125,17 +125,15 @@ public class RoundVideoPlayingDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(12);
+        return AndroidUtilities.m54dp(12);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(12);
+        return AndroidUtilities.m54dp(12);
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

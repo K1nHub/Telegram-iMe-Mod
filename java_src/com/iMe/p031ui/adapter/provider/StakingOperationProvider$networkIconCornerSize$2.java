@@ -3,11 +3,11 @@ package com.iMe.p031ui.adapter.provider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StakingOperationProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingOperationProvider$networkIconCornerSize$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class StakingOperationProvider$networkIconCornerSize$2 extends Lambda implements Function0<Float> {
     final /* synthetic */ StakingOperationProvider this$0;
 
@@ -23,6 +23,6 @@ public final class StakingOperationProvider$networkIconCornerSize$2 extends Lamb
     public final Float invoke() {
         ResourceManager resourceManager;
         resourceManager = this.this$0.resourceManager;
-        return Float.valueOf(resourceManager.getDimens(C3242R.dimen.icon_size_default) / 2);
+        return Float.valueOf(resourceManager.getDimens(C3290R.dimen.icon_size_default) / 2);
     }
 }

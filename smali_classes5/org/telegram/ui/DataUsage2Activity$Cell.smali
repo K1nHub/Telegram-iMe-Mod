@@ -43,10 +43,10 @@
     .line 956
     invoke-direct {v0, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v3, "windowBackgroundWhite"
-
     .line 958
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 
@@ -202,9 +202,9 @@
     .line 979
     iget-object v3, v0, Lorg/telegram/ui/DataUsage2Activity$Cell;->textView:Landroid/widget/TextView;
 
-    const-string v11, "windowBackgroundWhiteBlackText"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-virtual {v1, v11}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v11}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v12
 
@@ -251,7 +251,7 @@
 
     new-instance v12, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-virtual {v1, v11}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v11}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v11
 
@@ -377,9 +377,9 @@
     .line 1001
     iget-object v2, v0, Lorg/telegram/ui/DataUsage2Activity$Cell;->valueTextView:Landroid/widget/TextView;
 
-    const-string v3, "windowBackgroundWhiteBlueText2"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText2:I
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 

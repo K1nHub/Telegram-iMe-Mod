@@ -128,7 +128,7 @@ public class CameraSession {
             this.currentFlashMode = z ? "torch" : "off";
             configurePhotoCamera();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -188,17 +188,17 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
                 updateCameraInfo();
                 updateRotation();
                 if (parameters != null) {
                     if (z && BuildVars.LOGS_ENABLED) {
-                        FileLog.m48d("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
+                        FileLog.m52d("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
                     }
                     parameters.setPreviewSize(this.previewSize.getWidth(), this.previewSize.getHeight());
                     if (z && BuildVars.LOGS_ENABLED) {
-                        FileLog.m48d("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
+                        FileLog.m52d("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
                     }
                     parameters.setPictureSize(this.pictureSize.getWidth(), this.pictureSize.getHeight());
                     parameters.setPictureFormat(this.pictureFormat);
@@ -243,14 +243,14 @@ public class CameraSession {
             }
             return true;
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
             return false;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0061  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -262,7 +262,7 @@ public class CameraSession {
             if (r0 != 0) goto L5
             return
         L5:
-            r7.updateCameraInfo()     // Catch: java.lang.Throwable -> L7d
+            r7.updateCameraInfo()     // Catch: java.lang.Throwable -> L7e
             boolean r0 = r7.destroyed
             if (r0 == 0) goto Le
             r0 = 0
@@ -279,71 +279,71 @@ public class CameraSession {
             java.lang.String r3 = "samsung"
             boolean r1 = r3.equals(r1)
             r3 = 0
-            if (r1 == 0) goto L31
+            if (r1 == 0) goto L32
             java.lang.String r1 = android.os.Build.PRODUCT
             java.lang.String r4 = "sf2wifixx"
             boolean r1 = r4.equals(r1)
-            if (r1 == 0) goto L31
-            goto L68
-        L31:
+            if (r1 == 0) goto L32
+            goto L69
+        L32:
             int r1 = r7.displayOrientation
             r4 = 90
-            if (r1 == 0) goto L3f
-            if (r1 == r2) goto L47
+            if (r1 == 0) goto L40
+            if (r1 == r2) goto L48
             r5 = 2
-            if (r1 == r5) goto L44
+            if (r1 == r5) goto L45
             r5 = 3
-            if (r1 == r5) goto L41
-        L3f:
+            if (r1 == r5) goto L42
+        L40:
             r1 = r3
-            goto L48
-        L41:
+            goto L49
+        L42:
             r1 = 270(0x10e, float:3.78E-43)
-            goto L48
-        L44:
+            goto L49
+        L45:
             r1 = 180(0xb4, float:2.52E-43)
-            goto L48
-        L47:
-            r1 = r4
+            goto L49
         L48:
+            r1 = r4
+        L49:
             android.hardware.Camera$CameraInfo r5 = r7.info
             int r6 = r5.orientation
             int r6 = r6 % r4
-            if (r6 == 0) goto L51
+            if (r6 == 0) goto L52
             r5.orientation = r3
-        L51:
+        L52:
             int r3 = r5.facing
-            if (r3 != r2) goto L60
+            if (r3 != r2) goto L61
             int r2 = r5.orientation
             int r2 = r2 + r1
             int r2 = r2 % 360
             int r1 = 360 - r2
             int r1 = r1 % 360
             r3 = r1
-            goto L68
-        L60:
+            goto L69
+        L61:
             int r2 = r5.orientation
             int r2 = r2 - r1
             int r2 = r2 + 360
             int r2 = r2 % 360
             r3 = r2
-        L68:
+        L69:
             r7.currentOrientation = r3
-            if (r0 == 0) goto L6f
-            r0.setDisplayOrientation(r3)     // Catch: java.lang.Throwable -> L6f
-        L6f:
+            if (r0 == 0) goto L70
+            r0.setDisplayOrientation(r3)     // Catch: java.lang.Throwable -> L70
+        L70:
             int r0 = r7.currentOrientation
             int r1 = r7.displayOrientation
             int r0 = r0 - r1
             r7.diffOrientation = r0
-            if (r0 >= 0) goto L7c
+            if (r0 >= 0) goto L7d
             int r0 = r0 + 360
             r7.diffOrientation = r0
-        L7c:
-            return
         L7d:
+            return
+        L7e:
             r0 = move-exception
-            org.telegram.messenger.FileLog.m45e(r0)
+            org.telegram.messenger.FileLog.m49e(r0)
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraSession.updateRotation():void");
@@ -359,7 +359,7 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
                 updateCameraInfo();
                 updateRotation();
@@ -416,7 +416,7 @@ public class CameraSession {
                 }
             }
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
         }
     }
 
@@ -430,7 +430,7 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
                 if (parameters != null) {
                     parameters.setFocusMode(TtmlNode.TEXT_EMPHASIS_AUTO);
@@ -446,12 +446,12 @@ public class CameraSession {
                         camera.setParameters(parameters);
                         camera.autoFocus(this.autoFocusCallback);
                     } catch (Exception e2) {
-                        FileLog.m45e(e2);
+                        FileLog.m49e(e2);
                     }
                 }
             }
         } catch (Exception e3) {
-            FileLog.m45e(e3);
+            FileLog.m49e(e3);
         }
     }
 
@@ -545,7 +545,7 @@ public class CameraSession {
             updateCameraInfo();
             return getDisplayOrientation(this.info, true);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return 0;
         }
     }

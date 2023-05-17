@@ -34,14 +34,14 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 881
+    .line 889
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/ChatListItemAnimator;-><init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/4 p1, -0x1
 
-    .line 883
+    .line 891
     iput p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->scrollAnimationIndex:I
 
     return-void
@@ -50,14 +50,14 @@
 .method private synthetic lambda$onAllAnimationsDone$0()V
     .locals 3
 
-    .line 906
+    .line 914
     iget v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->scrollAnimationIndex:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 907
+    .line 915
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -68,10 +68,10 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 908
+    .line 916
     iput v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->scrollAnimationIndex:I
 
-    .line 910
+    .line 918
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -79,7 +79,7 @@
 
     const-string v0, "admin logs chatItemAnimator enable notifications"
 
-    .line 911
+    .line 919
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_1
@@ -91,18 +91,18 @@
 .method protected onAllAnimationsDone()V
     .locals 1
 
-    .line 901
+    .line 909
     invoke-super {p0}, Landroidx/recyclerview/widget/ChatListItemAnimator;->onAllAnimationsDone()V
 
-    .line 902
+    .line 910
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 903
+    .line 911
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 905
+    .line 913
     :cond_0
     new-instance v0, Lorg/telegram/ui/ChannelAdminLogActivity$8$$ExternalSyntheticLambda0;
 
@@ -118,7 +118,7 @@
 .method public onAnimationStart()V
     .locals 4
 
-    .line 887
+    .line 895
     iget v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->scrollAnimationIndex:I
 
     const/4 v1, 0x0
@@ -127,7 +127,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 888
+    .line 896
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -144,19 +144,19 @@
 
     iput v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->scrollAnimationIndex:I
 
-    .line 890
+    .line 898
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 891
+    .line 899
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 892
+    .line 900
     iput-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$8;->finishRunnable:Ljava/lang/Runnable;
 
-    .line 894
+    .line 902
     :cond_1
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -164,7 +164,7 @@
 
     const-string v0, "admin logs chatItemAnimator disable notifications"
 
-    .line 895
+    .line 903
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_2

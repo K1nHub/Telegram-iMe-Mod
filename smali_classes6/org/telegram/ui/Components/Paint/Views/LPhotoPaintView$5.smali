@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$5;
-.super Ljava/lang/Object;
+.super Landroid/view/View;
 .source "LPhotoPaintView.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;
 
 
 # annotations
@@ -22,49 +19,43 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;)V
     .locals 0
 
-    .line 343
+    .line 352
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$5;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onEntityDeselect()V
-    .locals 2
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 1
+
+    .line 355
+    invoke-super {p0, p1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     .line 356
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$5;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
-
-    return-void
-.end method
-
-.method public onSelectedEntityRequest()Lorg/telegram/ui/Components/Paint/Views/EntityView;
-    .locals 1
-
-    .line 351
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$5;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/RenderView;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    if-eqz v0, :cond_0
 
-.method public shouldReceiveTouches()Z
-    .locals 1
+    .line 357
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$5;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    const/4 v0, 0x1
+    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/RenderView;
 
-    return v0
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/RenderView;->onDrawForInput(Landroid/graphics/Canvas;)V
+
+    :cond_0
+    return-void
 .end method

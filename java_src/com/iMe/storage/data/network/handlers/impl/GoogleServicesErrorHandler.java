@@ -51,7 +51,7 @@ public final class GoogleServicesErrorHandler extends ApiErrorHandler {
             errorModel = cause instanceof SocketTimeoutException ? true : cause instanceof IOException ? new ErrorModel(firebaseException.getMessage(), ApiErrorHandler.ErrorStatus.NO_CONNECTION, th) : new ErrorModel(null, ApiErrorHandler.ErrorStatus.BAD_RESPONSE, th);
         }
         if (errorModel != null) {
-            Timber.tag("ErrorHandler").mo0e(th);
+            Timber.tag("ErrorHandler").mo1e(th);
             return errorModel;
         }
         return super.handleError(th);

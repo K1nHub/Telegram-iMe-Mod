@@ -834,39 +834,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 679
     iget-object v0, p0, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 680
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -1098,7 +1075,7 @@
 .end method
 
 .method public getThemeDescriptions(Ljava/util/List;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;)V
-    .locals 19
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1111,61 +1088,55 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
     .line 672
-    invoke-static/range {p1 .. p3}, Lorg/telegram/ui/Cells/FeaturedStickerSetInfoCell;->createThemeDescriptions(Ljava/util/List;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;)V
+    invoke-static {p1, p2, p3}, Lorg/telegram/ui/Cells/FeaturedStickerSetInfoCell;->createThemeDescriptions(Ljava/util/List;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;)V
 
     .line 673
-    invoke-static/range {p1 .. p3}, Lorg/telegram/ui/Cells/StickerSetNameCell;->createThemeDescriptions(Ljava/util/List;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;)V
+    invoke-static {p1, p2, p3}, Lorg/telegram/ui/Cells/StickerSetNameCell;->createThemeDescriptions(Ljava/util/List;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;)V
 
     .line 674
-    new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
+    new-instance p2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v3, v0, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->emptyImageView:Landroid/widget/ImageView;
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->emptyImageView:Landroid/widget/ImageView;
 
-    sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
+    sget v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
+
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelEmptyText:I
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
+    move-object v0, p2
+
+    move v7, v10
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 675
+    new-instance p2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    iget-object v4, p0, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->emptyTextView:Landroid/widget/TextView;
+
+    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+
     const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    const-string v9, "chat_emojiPanelEmptyText"
+    const/4 v9, 0x0
 
-    move-object v2, v10
+    move-object v3, p2
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    invoke-interface {v1, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 675
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
-
-    iget-object v12, v0, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->emptyTextView:Landroid/widget/TextView;
-
-    sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const-string v18, "chat_emojiPanelEmptyText"
-
-    move-object v11, v2
-
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -2287,9 +2258,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chat_emojiPanelEmptyText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelEmptyText:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->getThemedColor(I)I
 
     move-result v3
 
@@ -2357,7 +2328,7 @@
     .line 390
     iget-object p2, p0, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->emptyTextView:Landroid/widget/TextView;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->getThemedColor(I)I
 
     move-result v1
 

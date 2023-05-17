@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda8;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$K3GQlg1SNKog5ez5QiJSR9Tisjw(ZLjava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$B2cS2NVnvrau-BVEESH41tSjCFQ(ZLjava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -22,9 +22,13 @@
 
 .field public static final enum FILTERS:Lcom/iMe/fork/enums/BackupComponent;
 
+.field public static final enum HIDDEN_CHATS:Lcom/iMe/fork/enums/BackupComponent;
+
 .field public static final enum MULTI_PANEL:Lcom/iMe/fork/enums/BackupComponent;
 
 .field public static final enum MUSIC:Lcom/iMe/fork/enums/BackupComponent;
+
+.field public static final enum RECENT_CHATS:Lcom/iMe/fork/enums/BackupComponent;
 
 .field public static final enum SORTING:Lcom/iMe/fork/enums/BackupComponent;
 
@@ -45,7 +49,7 @@
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/BackupComponent;
     .locals 3
 
-    const/16 v0, 0xa
+    const/16 v0, 0xc
 
     new-array v0, v0, [Lcom/iMe/fork/enums/BackupComponent;
 
@@ -106,6 +110,18 @@
     sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOPICS:Lcom/iMe/fork/enums/BackupComponent;
 
     const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->HIDDEN_CHATS:Lcom/iMe/fork/enums/BackupComponent;
+
+    const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->RECENT_CHATS:Lcom/iMe/fork/enums/BackupComponent;
+
+    const/16 v2, 0xb
 
     aput-object v1, v0, v2
 
@@ -244,6 +260,32 @@
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->TOPICS:Lcom/iMe/fork/enums/BackupComponent;
+
+    .line 17
+    new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
+
+    sget v1, Lorg/telegram/messenger/R$string;->hidden_chats_title:I
+
+    const-string v2, "HIDDEN_CHATS"
+
+    const/16 v3, 0xa
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->HIDDEN_CHATS:Lcom/iMe/fork/enums/BackupComponent;
+
+    .line 18
+    new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
+
+    sget v1, Lorg/telegram/messenger/R$string;->settings_interface_recent_chats:I
+
+    const-string v2, "RECENT_CHATS"
+
+    const/16 v3, 0xb
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->RECENT_CHATS:Lcom/iMe/fork/enums/BackupComponent;
 
     invoke-static {}, Lcom/iMe/fork/enums/BackupComponent;->$values()[Lcom/iMe/fork/enums/BackupComponent;
 

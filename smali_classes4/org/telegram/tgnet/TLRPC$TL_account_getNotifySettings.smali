@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 51173
+    .line 52174
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 51179
+    .line 52180
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     move-result-object p1
@@ -43,12 +43,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 51183
+    .line 52184
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_getNotifySettings;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 51184
+    .line 52185
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_getNotifySettings;->peer:Lorg/telegram/tgnet/TLRPC$InputNotifyPeer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda12;->f$0:Ljava/lang/Runnable;
 
-    check-cast p1, Ljava/util/HashMap;
+    check-cast p1, Landroid/util/SparseIntArray;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$QiPCVRK6XUYq-IhQaRyJ3XXfu3E(Ljava/lang/Runnable;Ljava/util/HashMap;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$SmZjg5hAH7AY2LYpkvqyS9INSRM(Ljava/lang/Runnable;Landroid/util/SparseIntArray;)V
 
     return-void
 .end method

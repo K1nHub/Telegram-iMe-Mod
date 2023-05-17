@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
     .locals 0
 
-    .line 1686
+    .line 1687
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$6;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->val$showVideosItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -46,7 +46,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 1689
+    .line 1690
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -59,7 +59,7 @@
 
     return-void
 
-    .line 1692
+    .line 1693
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->val$showVideosItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -87,7 +87,7 @@
 
     return-void
 
-    .line 1695
+    .line 1696
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->val$showPhotosItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -103,7 +103,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 1696
+    .line 1697
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->val$showPhotosItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -130,7 +130,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 1697
+    .line 1698
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -145,7 +145,7 @@
 
     goto :goto_0
 
-    .line 1699
+    .line 1700
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$6;
 
@@ -161,7 +161,7 @@
 
     iput v0, p1, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;->filterType:I
 
-    .line 1701
+    .line 1702
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$6;
 

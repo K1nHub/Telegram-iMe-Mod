@@ -156,7 +156,7 @@
 
     const/4 v0, 0x2
 
-    .line 800
+    .line 806
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -167,7 +167,7 @@
 
     const/16 v0, 0x14
 
-    .line 801
+    .line 807
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -182,17 +182,17 @@
 .method constructor <init>(Landroid/content/Context;)V
     .locals 12
 
-    .line 829
+    .line 835
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 803
+    .line 809
     new-instance p1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 804
+    .line 810
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -201,7 +201,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->bitmapGradientPaint:Landroid/graphics/Paint;
 
-    .line 814
+    .line 820
     new-instance v10, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v11, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -222,14 +222,14 @@
 
     iput-object v10, p0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmapAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 815
+    .line 821
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v2, p0, Lorg/telegram/ui/QrActivity$QrView;->crossfadeFromPaint:Landroid/graphics/Paint;
 
-    .line 816
+    .line 822
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
@@ -240,26 +240,26 @@
 
     new-array v2, v2, [F
 
-    .line 825
+    .line 831
     iput-object v2, p0, Lorg/telegram/ui/QrActivity$QrView;->radii:[F
 
-    .line 1028
+    .line 1034
     new-instance v2, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/QrActivity$QrView;)V
 
     iput-object v2, p0, Lorg/telegram/ui/QrActivity$QrView;->checkTimerToken:Ljava/lang/Runnable;
 
-    .line 1094
+    .line 1100
     iput-boolean v1, p0, Lorg/telegram/ui/QrActivity$QrView;->firstPrepare:Z
 
-    .line 830
+    .line 836
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setIndeterminateAnimation(Z)V
 
-    .line 831
+    .line 837
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setParentView(Landroid/view/View;)V
 
-    .line 832
+    .line 838
     new-instance v2, Landroid/graphics/BitmapShader;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getBitmap()Landroid/graphics/Bitmap;
@@ -272,7 +272,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientShader:Landroid/graphics/BitmapShader;
 
-    .line 833
+    .line 839
     new-instance v9, Landroid/graphics/BitmapShader;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getBitmap()Landroid/graphics/Bitmap;
@@ -285,10 +285,10 @@
 
     iput-object v9, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientTextShader:Landroid/graphics/BitmapShader;
 
-    .line 834
+    .line 840
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 835
+    .line 841
     new-instance v2, Lorg/telegram/ui/QrActivity$QrView$1;
 
     const/4 p1, 0x0
@@ -305,15 +305,15 @@
 
     move-object v8, v11
 
-    .line 841
+    .line 847
     invoke-virtual/range {v2 .. v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 842
+    .line 848
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 843
+    .line 849
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string v0, "fonts/rcondensedbold.ttf"
@@ -324,7 +324,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 844
+    .line 850
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getPaint()Landroid/text/TextPaint;
@@ -333,14 +333,14 @@
 
     invoke-virtual {p1, v9}, Landroid/text/TextPaint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 845
+    .line 851
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v0, 0x11
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    .line 846
+    .line 852
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v0, 0x23
@@ -353,14 +353,14 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 847
+    .line 853
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string v0, ""
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
-    .line 848
+    .line 854
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->crossfadeFromPaint:Landroid/graphics/Paint;
 
     new-instance v8, Landroid/graphics/LinearGradient;
@@ -397,7 +397,7 @@
 
     invoke-virtual {p1, v8}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 849
+    .line 855
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->crossfadeFromPaint:Landroid/graphics/Paint;
 
     new-instance v0, Landroid/graphics/PorterDuffXfermode;
@@ -408,7 +408,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 850
+    .line 856
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->crossfadeToPaint:Landroid/graphics/Paint;
 
     new-instance v8, Landroid/graphics/LinearGradient;
@@ -437,7 +437,7 @@
 
     invoke-virtual {p1, v8}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 851
+    .line 857
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->crossfadeToPaint:Landroid/graphics/Paint;
 
     new-instance v0, Landroid/graphics/PorterDuffXfermode;
@@ -482,12 +482,12 @@
 
     move-object/from16 v7, p1
 
-    .line 907
+    .line 913
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v1, :cond_1
 
-    .line 909
+    .line 915
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -506,7 +506,7 @@
 
     add-int/lit8 v9, v1, 0x20
 
-    .line 911
+    .line 917
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -527,7 +527,7 @@
 
     float-to-int v1, v1
 
-    .line 912
+    .line 918
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v2, Landroid/graphics/Point;->x:I
@@ -536,7 +536,7 @@
 
     if-le v3, v2, :cond_0
 
-    .line 913
+    .line 919
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getHeight()I
 
     move-result v1
@@ -552,7 +552,7 @@
     :cond_0
     move v11, v1
 
-    .line 915
+    .line 921
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
@@ -575,7 +575,7 @@
 
     const/16 v3, 0x1f
 
-    .line 916
+    .line 922
     invoke-virtual {v7, v1, v2, v3}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
     add-int/lit8 v12, v10, 0x10
@@ -586,7 +586,7 @@
 
     int-to-float v3, v13
 
-    .line 917
+    .line 923
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -617,10 +617,10 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 918
+    .line 924
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 919
+    .line 925
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
@@ -645,18 +645,18 @@
 
     invoke-virtual {v1, v12, v13, v2, v3}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
 
-    .line 920
+    .line 926
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 921
+    .line 927
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 922
+    .line 928
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 923
+    .line 929
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -695,7 +695,7 @@
 
     div-float/2addr v1, v6
 
-    .line 924
+    .line 930
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
     move-result v1
@@ -710,12 +710,12 @@
 
     mul-float v14, v1, v4
 
-    .line 925
+    .line 931
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->bitmapGradientPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v12, v13, v14, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 926
+    .line 932
     iget-object v4, v0, Lorg/telegram/ui/QrActivity$QrView;->bitmapGradientPaint:Landroid/graphics/Paint;
 
     const/high16 v5, 0x40e00000    # 7.0f
@@ -744,7 +744,7 @@
 
     invoke-static/range {v1 .. v11}, Lcom/google/zxing/qrcode/QRCodeWriter;->drawSideQuads(Landroid/graphics/Canvas;FFLandroid/graphics/Paint;FFIFF[FZ)V
 
-    .line 927
+    .line 933
     iget-boolean v1, v0, Lorg/telegram/ui/QrActivity$QrView;->logoCenterSet:Z
 
     if-nez v1, :cond_1
@@ -769,12 +769,12 @@
 
     float-to-int v5, v13
 
-    .line 928
+    .line 934
     invoke-interface {v1, v2, v3, v4, v5}, Lorg/telegram/ui/QrActivity$QrView$QrCenterChangedListener;->onCenterChanged(IIII)V
 
     const/4 v1, 0x1
 
-    .line 929
+    .line 935
     iput-boolean v1, v0, Lorg/telegram/ui/QrActivity$QrView;->logoCenterSet:Z
 
     :cond_1
@@ -784,7 +784,7 @@
 .method private synthetic lambda$new$2(II)V
     .locals 0
 
-    .line 1044
+    .line 1050
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/QrActivity$QrView;->prepareContent(II)V
 
     return-void
@@ -797,7 +797,7 @@
 
     return-void
 
-    .line 1052
+    .line 1058
     :cond_0
     iget v0, p0, Lorg/telegram/ui/QrActivity$QrView;->linkExpires:I
 
@@ -809,7 +809,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 1054
+    .line 1060
     :try_start_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -827,7 +827,7 @@
 
     const-wide/16 v2, 0x64
 
-    .line 1056
+    .line 1062
     invoke-virtual {v0, v2, v3}, Landroid/os/Vibrator;->vibrate(J)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -837,13 +837,13 @@
     :catch_0
     const/4 v0, 0x2
 
-    .line 1060
+    .line 1066
     :try_start_1
     invoke-virtual {p0, v1, v0}, Landroid/view/View;->performHapticFeedback(II)Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1064
+    .line 1070
     :catch_1
     :cond_1
     :goto_0
@@ -851,7 +851,7 @@
 
     iput v0, p0, Lorg/telegram/ui/QrActivity$QrView;->linkExpires:I
 
-    .line 1065
+    .line 1071
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_exportedContactToken;->url:Ljava/lang/String;
 
     const/4 v0, 0x0
@@ -866,7 +866,7 @@
 .method private synthetic lambda$new$4(Lorg/telegram/tgnet/TLRPC$TL_exportedContactToken;)V
     .locals 1
 
-    .line 1048
+    .line 1054
     new-instance v0, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda6;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/QrActivity$QrView;Lorg/telegram/tgnet/TLRPC$TL_exportedContactToken;)V
@@ -879,12 +879,12 @@
 .method private synthetic lambda$new$5()V
     .locals 11
 
-    .line 1029
+    .line 1035
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->checkTimerToken:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1030
+    .line 1036
     iget-boolean v0, p0, Lorg/telegram/ui/QrActivity$QrView;->hasTimer:Z
 
     if-nez v0, :cond_0
@@ -896,12 +896,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 1033
+    .line 1039
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-nez v0, :cond_1
 
-    .line 1034
+    .line 1040
     new-instance v0, Lorg/telegram/ui/Components/RLottieDrawable;
 
     sget v2, Lorg/telegram/messenger/R$raw;->qr_matrix:I
@@ -922,10 +922,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 1035
+    .line 1041
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/RLottieDrawable;->setMasterParent(Landroid/view/View;)V
 
-    .line 1036
+    .line 1042
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getPaint()Landroid/graphics/Paint;
@@ -940,17 +940,17 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 1037
+    .line 1043
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setAutoRepeat(I)V
 
-    .line 1038
+    .line 1044
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
-    .line 1040
+    .line 1046
     :cond_1
     iget v0, p0, Lorg/telegram/ui/QrActivity$QrView;->linkExpires:I
 
@@ -974,7 +974,7 @@
 
     if-ltz v0, :cond_5
 
-    .line 1041
+    .line 1047
     :cond_2
     iget v0, p0, Lorg/telegram/ui/QrActivity$QrView;->linkExpires:I
 
@@ -982,10 +982,10 @@
 
     const/4 v0, 0x0
 
-    .line 1042
+    .line 1048
     iput-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->link:Ljava/lang/String;
 
-    .line 1043
+    .line 1049
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -994,7 +994,7 @@
 
     move-result v5
 
-    .line 1044
+    .line 1050
     sget-object v6, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v7, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda2;
@@ -1003,12 +1003,12 @@
 
     invoke-virtual {v6, v7}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 1045
+    .line 1051
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1047
+    .line 1053
     :cond_3
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -1034,7 +1034,7 @@
 
     invoke-virtual {v0, v5, v6, v7}, Lorg/telegram/messenger/MessagesController;->requestContactToken(JLorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 1069
+    .line 1075
     :cond_5
     iget v0, p0, Lorg/telegram/ui/QrActivity$QrView;->linkExpires:I
 
@@ -1048,7 +1048,7 @@
 
     int-to-long v7, v0
 
-    .line 1070
+    .line 1076
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v9
@@ -1067,7 +1067,7 @@
 
     const-wide/16 v7, 0x3c
 
-    .line 1071
+    .line 1077
     rem-long v9, v5, v7
 
     long-to-int v0, v9
@@ -1082,7 +1082,7 @@
 
     move-result v5
 
-    .line 1072
+    .line 1078
     iget-object v6, p0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1102,7 +1102,7 @@
     :cond_6
     move-object v10, v2
 
-    .line 1073
+    .line 1079
     :goto_1
     invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1127,10 +1127,10 @@
 
     const/4 v2, 0x0
 
-    .line 1072
+    .line 1078
     invoke-virtual {v6, v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;ZZ)V
 
-    .line 1078
+    .line 1084
     :cond_8
     invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
 
@@ -1138,7 +1138,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 1079
+    .line 1085
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->checkTimerToken:Ljava/lang/Runnable;
 
     invoke-static {v0, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
@@ -1150,7 +1150,7 @@
 .method private synthetic lambda$onSizeChanged$0(II)V
     .locals 0
 
-    .line 889
+    .line 895
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/QrActivity$QrView;->prepareContent(II)V
 
     return-void
@@ -1161,20 +1161,20 @@
 
     const/4 v0, 0x0
 
-    .line 1102
+    .line 1108
     iput-boolean v0, p0, Lorg/telegram/ui/QrActivity$QrView;->firstPrepare:Z
 
-    .line 1103
+    .line 1109
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_1
 
     const/4 v1, 0x0
 
-    .line 1105
+    .line 1111
     iput-object v1, p0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmap:Landroid/graphics/Bitmap;
 
-    .line 1106
+    .line 1112
     iget-object v1, p0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmapAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v2, 0x0
@@ -1183,19 +1183,19 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 1107
+    .line 1113
     iget-object v1, p0, Lorg/telegram/ui/QrActivity$QrView;->oldContentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_0
 
-    .line 1108
+    .line 1114
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1110
+    .line 1116
     :cond_0
     iput-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->oldContentBitmap:Landroid/graphics/Bitmap;
 
-    .line 1111
+    .line 1117
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -1205,24 +1205,24 @@
 .method private synthetic lambda$prepareContent$7(Landroid/graphics/Bitmap;FIF)V
     .locals 3
 
-    .line 1236
+    .line 1242
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmap:Landroid/graphics/Bitmap;
 
-    .line 1237
+    .line 1243
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->extractAlpha()Landroid/graphics/Bitmap;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmap:Landroid/graphics/Bitmap;
 
-    .line 1238
+    .line 1244
     iget-boolean p1, p0, Lorg/telegram/ui/QrActivity$QrView;->firstPrepare:Z
 
     const/4 v1, 0x1
 
     if-nez p1, :cond_0
 
-    .line 1239
+    .line 1245
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmapAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v2, 0x0
@@ -1232,22 +1232,22 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1241
+    .line 1247
     iput-boolean p1, p0, Lorg/telegram/ui/QrActivity$QrView;->firstPrepare:Z
 
-    .line 1242
+    .line 1248
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->oldContentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz p1, :cond_1
 
-    .line 1243
+    .line 1249
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1245
+    .line 1251
     :cond_1
     iput-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->oldContentBitmap:Landroid/graphics/Bitmap;
 
-    .line 1247
+    .line 1253
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->centerChangedListener:Lorg/telegram/ui/QrActivity$QrView$QrCenterChangedListener;
 
     if-eqz p1, :cond_2
@@ -1274,13 +1274,13 @@
 
     float-to-int p3, p4
 
-    .line 1248
+    .line 1254
     invoke-interface {p1, v0, v2, p2, p3}, Lorg/telegram/ui/QrActivity$QrView$QrCenterChangedListener;->onCenterChanged(IIII)V
 
-    .line 1249
+    .line 1255
     iput-boolean v1, p0, Lorg/telegram/ui/QrActivity$QrView;->logoCenterSet:Z
 
-    .line 1251
+    .line 1257
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -1290,7 +1290,7 @@
 .method private synthetic lambda$setData$1(II)V
     .locals 0
 
-    .line 1022
+    .line 1028
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/QrActivity$QrView;->prepareContent(II)V
 
     return-void
@@ -1311,7 +1311,7 @@
 
     goto/16 :goto_b
 
-    .line 1100
+    .line 1106
     :cond_0
     iget-object v2, v6, Lorg/telegram/ui/QrActivity$QrView;->username:Ljava/lang/String;
 
@@ -1334,7 +1334,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 1101
+    .line 1107
     :cond_2
     new-instance v0, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda0;
 
@@ -1344,7 +1344,7 @@
 
     return-void
 
-    .line 1117
+    .line 1123
     :cond_3
     iget-boolean v2, v6, Lorg/telegram/ui/QrActivity$QrView;->hasTimer:Z
 
@@ -1370,7 +1370,7 @@
 
     move-result-object v2
 
-    .line 1118
+    .line 1124
     :goto_0
     iget-object v4, v6, Lorg/telegram/ui/QrActivity$QrView;->hadUserText:Ljava/lang/String;
 
@@ -1414,7 +1414,7 @@
 
     return-void
 
-    .line 1122
+    .line 1128
     :cond_6
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -1424,26 +1424,26 @@
 
     const/high16 v5, -0x1000000
 
-    .line 1126
+    .line 1132
     new-instance v15, Landroid/text/TextPaint;
 
     const/16 v8, 0x41
 
     invoke-direct {v15, v8}, Landroid/text/TextPaint;-><init>(I)V
 
-    .line 1127
+    .line 1133
     invoke-virtual {v15, v5}, Landroid/text/TextPaint;->setColor(I)V
 
     const-string v8, "fonts/rcondensedbold.ttf"
 
-    .line 1128
+    .line 1134
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v8
 
     invoke-virtual {v15, v8}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 1132
+    .line 1138
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v8
@@ -1460,7 +1460,7 @@
 
     sub-int/2addr v8, v9
 
-    .line 1133
+    .line 1139
     iget-boolean v9, v6, Lorg/telegram/ui/QrActivity$QrView;->hasTimer:Z
 
     const/16 v18, 0x4
@@ -1482,7 +1482,7 @@
 
     if-nez v9, :cond_7
 
-    .line 1136
+    .line 1142
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v10
@@ -1493,7 +1493,7 @@
 
     move-result-object v3
 
-    .line 1137
+    .line 1143
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -1507,7 +1507,7 @@
     :cond_7
     if-ne v9, v11, :cond_8
 
-    .line 1139
+    .line 1145
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -1520,7 +1520,7 @@
 
     const/16 v10, 0x19
 
-    .line 1140
+    .line 1146
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -1531,7 +1531,7 @@
 
     goto :goto_2
 
-    .line 1142
+    .line 1148
     :cond_8
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -1545,7 +1545,7 @@
 
     const/16 v10, 0x13
 
-    .line 1143
+    .line 1149
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -1557,7 +1557,7 @@
     :goto_2
     if-eqz v3, :cond_9
 
-    .line 1146
+    .line 1152
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v10
@@ -1568,7 +1568,7 @@
 
     invoke-virtual {v3, v12, v12, v10, v7}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1147
+    .line 1153
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v10, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -1577,7 +1577,7 @@
 
     invoke-virtual {v3, v7}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1150
+    .line 1156
     :cond_9
     new-instance v7, Landroid/text/SpannableStringBuilder;
 
@@ -1597,12 +1597,12 @@
 
     invoke-direct {v7, v5}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 1151
+    .line 1157
     iget-boolean v5, v6, Lorg/telegram/ui/QrActivity$QrView;->isPhone:Z
 
     if-nez v5, :cond_a
 
-    .line 1152
+    .line 1158
     new-instance v5, Lorg/telegram/ui/Cells/SettingsSearchCell$VerticalImageSpan;
 
     invoke-direct {v5, v3}, Lorg/telegram/ui/Cells/SettingsSearchCell$VerticalImageSpan;-><init>(Landroid/graphics/drawable/Drawable;)V
@@ -1611,7 +1611,7 @@
 
     invoke-virtual {v7, v5, v12, v11, v10}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1154
+    .line 1160
     :cond_a
     invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
 
@@ -1664,7 +1664,7 @@
     :goto_3
     if-le v9, v11, :cond_d
 
-    .line 1161
+    .line 1167
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v10
@@ -1695,7 +1695,7 @@
     :goto_4
     if-le v10, v8, :cond_e
 
-    .line 1165
+    .line 1171
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v3
@@ -1727,7 +1727,7 @@
     :cond_e
     move/from16 v17, v9
 
-    .line 1167
+    .line 1173
     :goto_5
     sget-object v3, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
@@ -1800,7 +1800,7 @@
 
     const/4 v8, 0x0
 
-    .line 1172
+    .line 1178
     :goto_6
     invoke-virtual/range {v21 .. v21}, Landroid/text/TextPaint;->descent()F
 
@@ -1818,7 +1818,7 @@
 
     goto :goto_7
 
-    .line 1173
+    .line 1179
     :cond_10
     invoke-virtual {v8}, Landroid/text/StaticLayout;->getLineCount()I
 
@@ -1829,7 +1829,7 @@
 
     mul-float/2addr v9, v10
 
-    .line 1177
+    .line 1183
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -1838,19 +1838,19 @@
 
     sub-int v10, v0, v10
 
-    .line 1178
+    .line 1184
     new-instance v11, Ljava/util/HashMap;
 
     invoke-direct {v11}, Ljava/util/HashMap;-><init>()V
 
-    .line 1179
+    .line 1185
     sget-object v12, Lcom/google/zxing/EncodeHintType;->ERROR_CORRECTION:Lcom/google/zxing/EncodeHintType;
 
     sget-object v13, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->M:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
     invoke-virtual {v11, v12, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1180
+    .line 1186
     sget-object v12, Lcom/google/zxing/EncodeHintType;->MARGIN:Lcom/google/zxing/EncodeHintType;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1859,7 +1859,7 @@
 
     invoke-virtual {v11, v12, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1181
+    .line 1187
     new-instance v12, Lcom/google/zxing/qrcode/QRCodeWriter;
 
     invoke-direct {v12}, Lcom/google/zxing/qrcode/QRCodeWriter;-><init>()V
@@ -1875,7 +1875,7 @@
 
     if-ge v14, v15, :cond_12
 
-    .line 1185
+    .line 1191
     :try_start_0
     sget-object v15, Lcom/google/zxing/EncodeHintType;->QR_VERSION:Lcom/google/zxing/EncodeHintType;
 
@@ -1885,7 +1885,7 @@
 
     invoke-virtual {v11, v15, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1186
+    .line 1192
     iget-object v3, v6, Lorg/telegram/ui/QrActivity$QrView;->link:Ljava/lang/String;
 
     const/16 v26, 0x0
@@ -1910,7 +1910,7 @@
 
     move-result-object v20
 
-    .line 1187
+    .line 1193
     invoke-virtual {v12}, Lcom/google/zxing/qrcode/QRCodeWriter;->getImageSize()I
 
     move-result v3
@@ -1939,7 +1939,7 @@
 
     return-void
 
-    .line 1199
+    .line 1205
     :cond_13
     new-instance v10, Landroid/graphics/Canvas;
 
@@ -1947,10 +1947,10 @@
 
     const v11, 0xffffff
 
-    .line 1200
+    .line 1206
     invoke-virtual {v10, v11}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 1202
+    .line 1208
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v11
@@ -1971,7 +1971,7 @@
 
     if-eqz v8, :cond_14
 
-    .line 1204
+    .line 1210
     invoke-virtual {v8}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v15
@@ -1982,7 +1982,7 @@
 
     mul-float/2addr v14, v12
 
-    .line 1207
+    .line 1213
     :cond_14
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -2020,7 +2020,7 @@
 
     mul-float v14, v12, v7
 
-    .line 1211
+    .line 1217
     :cond_16
     new-instance v7, Landroid/graphics/Paint;
 
@@ -2028,7 +2028,7 @@
 
     invoke-virtual {v10, v3, v11, v14, v7}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 1213
+    .line 1219
     new-instance v5, Landroid/graphics/Paint;
 
     const/4 v7, 0x1
@@ -2037,10 +2037,10 @@
 
     const/high16 v7, -0x1000000
 
-    .line 1214
+    .line 1220
     invoke-virtual {v5, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1215
+    .line 1221
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v7
@@ -2053,7 +2053,7 @@
 
     add-float/2addr v7, v11
 
-    .line 1216
+    .line 1222
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v11
@@ -2068,12 +2068,12 @@
 
     mul-float/2addr v15, v12
 
-    .line 1217
+    .line 1223
     invoke-virtual {v10, v7, v11, v15, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     if-eqz v8, :cond_17
 
-    .line 1221
+    .line 1227
     invoke-virtual {v10}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v5
@@ -2088,7 +2088,7 @@
 
     mul-float/2addr v5, v12
 
-    .line 1222
+    .line 1228
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v15
@@ -2129,22 +2129,22 @@
 
     sub-float/2addr v15, v0
 
-    .line 1223
+    .line 1229
     invoke-virtual {v10}, Landroid/graphics/Canvas;->save()I
 
-    .line 1224
+    .line 1230
     invoke-virtual {v10, v5, v15}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1225
+    .line 1231
     invoke-virtual {v8, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1226
+    .line 1232
     invoke-virtual {v10}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1227
+    .line 1233
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1230
+    .line 1236
     :cond_17
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2152,22 +2152,22 @@
 
     iput-object v0, v6, Lorg/telegram/ui/QrActivity$QrView;->hadWidth:Ljava/lang/Integer;
 
-    .line 1231
+    .line 1237
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     iput-object v0, v6, Lorg/telegram/ui/QrActivity$QrView;->hadHeight:Ljava/lang/Integer;
 
-    .line 1232
+    .line 1238
     iput-object v2, v6, Lorg/telegram/ui/QrActivity$QrView;->hadUserText:Ljava/lang/String;
 
-    .line 1233
+    .line 1239
     iget-object v0, v6, Lorg/telegram/ui/QrActivity$QrView;->link:Ljava/lang/String;
 
     iput-object v0, v6, Lorg/telegram/ui/QrActivity$QrView;->hadLink:Ljava/lang/String;
 
-    .line 1235
+    .line 1241
     new-instance v8, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda5;
 
     move-object v0, v8
@@ -2196,10 +2196,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 1261
+    .line 1267
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 1262
+    .line 1268
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->checkTimerToken:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
@@ -2210,18 +2210,18 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 1267
+    .line 1273
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 1268
+    .line 1274
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 1269
+    .line 1275
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
-    .line 1270
+    .line 1276
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v1, 0x0
@@ -2230,7 +2230,7 @@
 
     const/4 v0, 0x0
 
-    .line 1271
+    .line 1277
     iput-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->loadingMatrix:Lorg/telegram/ui/Components/RLottieDrawable;
 
     :cond_0
@@ -2244,10 +2244,10 @@
 
     move-object/from16 v7, p1
 
-    .line 936
+    .line 942
     invoke-super/range {p0 .. p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 937
+    .line 943
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->backgroundBitmap:Landroid/graphics/Bitmap;
 
     const/4 v8, 0x0
@@ -2256,10 +2256,10 @@
 
     const/4 v2, 0x0
 
-    .line 938
+    .line 944
     invoke-virtual {v7, v1, v8, v8, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 941
+    .line 947
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmapAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -2299,7 +2299,7 @@
 
     if-eqz v14, :cond_2
 
-    .line 946
+    .line 952
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
@@ -2316,42 +2316,42 @@
 
     invoke-virtual {v1, v8, v8, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 947
+    .line 953
     invoke-virtual {v7, v1, v5, v6}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
-    .line 949
+    .line 955
     :cond_2
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->oldContentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_3
 
-    .line 950
+    .line 956
     iget-object v2, v0, Lorg/telegram/ui/QrActivity$QrView;->bitmapGradientPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v1, v8, v8, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     goto :goto_1
 
-    .line 952
+    .line 958
     :cond_3
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/QrActivity$QrView;->drawLoading(Landroid/graphics/Canvas;)V
 
     :goto_1
     if-eqz v14, :cond_4
 
-    .line 955
+    .line 961
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    .line 956
+    .line 962
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     neg-float v2, v1
 
-    .line 957
+    .line 963
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getHeight()I
 
     move-result v3
@@ -2372,7 +2372,7 @@
 
     const/4 v3, 0x0
 
-    .line 958
+    .line 964
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v4
@@ -2401,10 +2401,10 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 959
+    .line 965
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 960
+    .line 966
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_2
@@ -2419,7 +2419,7 @@
 
     if-eqz v14, :cond_5
 
-    .line 965
+    .line 971
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
@@ -2436,47 +2436,47 @@
 
     invoke-virtual {v1, v8, v8, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 966
+    .line 972
     invoke-virtual {v7, v1, v12, v9}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
-    .line 968
+    .line 974
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->contentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_6
 
-    .line 969
+    .line 975
     iget-object v2, v0, Lorg/telegram/ui/QrActivity$QrView;->bitmapGradientPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v1, v8, v8, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 970
+    .line 976
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->gradientDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v1, v13}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->updateAnimation(Z)V
 
     goto :goto_3
 
-    .line 972
+    .line 978
     :cond_6
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/QrActivity$QrView;->drawLoading(Landroid/graphics/Canvas;)V
 
     :goto_3
     if-eqz v14, :cond_7
 
-    .line 975
+    .line 981
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    .line 976
+    .line 982
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     neg-float v2, v1
 
-    .line 977
+    .line 983
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getHeight()I
 
     move-result v3
@@ -2497,7 +2497,7 @@
 
     const/4 v3, 0x0
 
-    .line 978
+    .line 984
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getHeight()I
 
     move-result v4
@@ -2536,19 +2536,19 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 979
+    .line 985
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 980
+    .line 986
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 984
+    .line 990
     :cond_7
     iget-boolean v1, v0, Lorg/telegram/ui/QrActivity$QrView;->hasTimer:Z
 
     if-eqz v1, :cond_a
 
-    .line 985
+    .line 991
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -2563,18 +2563,18 @@
 
     int-to-float v1, v1
 
-    .line 986
+    .line 992
     iget-object v2, v0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayout:Landroid/text/StaticLayout;
 
     if-eqz v2, :cond_9
 
-    .line 987
+    .line 993
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 988
+    .line 994
     invoke-virtual {v7, v8, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 989
+    .line 995
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getWidth()I
@@ -2587,21 +2587,21 @@
 
     if-eq v1, v2, :cond_8
 
-    .line 990
+    .line 996
     invoke-virtual {v0, v13}, Lorg/telegram/ui/QrActivity$QrView;->setForShare(Z)V
 
-    .line 992
+    .line 998
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 993
+    .line 999
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_4
 
-    .line 995
+    .line 1001
     :cond_9
     iget-object v2, v0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -2623,7 +2623,7 @@
 
     invoke-virtual {v2, v5, v1, v3, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 996
+    .line 1002
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->timerTextDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -2636,28 +2636,28 @@
 .method protected onSizeChanged(IIII)V
     .locals 5
 
-    .line 875
+    .line 881
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
     if-ne p1, p3, :cond_0
 
     if-eq p2, p4, :cond_3
 
-    .line 877
+    .line 883
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/QrActivity$QrView;->backgroundBitmap:Landroid/graphics/Bitmap;
 
     if-eqz p3, :cond_1
 
-    .line 878
+    .line 884
     invoke-virtual {p3}, Landroid/graphics/Bitmap;->recycle()V
 
     const/4 p3, 0x0
 
-    .line 879
+    .line 885
     iput-object p3, p0, Lorg/telegram/ui/QrActivity$QrView;->backgroundBitmap:Landroid/graphics/Bitmap;
 
-    .line 881
+    .line 887
     :cond_1
     new-instance p3, Landroid/graphics/Paint;
 
@@ -2667,12 +2667,12 @@
 
     const/4 p4, -0x1
 
-    .line 882
+    .line 888
     invoke-virtual {p3, p4}, Landroid/graphics/Paint;->setColor(I)V
 
     const/4 p4, 0x4
 
-    .line 883
+    .line 889
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
@@ -2687,7 +2687,7 @@
 
     invoke-virtual {p3, p4, v0, v1, v2}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 884
+    .line 890
     sget-object p4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {p1, p2, p4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -2696,14 +2696,14 @@
 
     iput-object p4, p0, Lorg/telegram/ui/QrActivity$QrView;->backgroundBitmap:Landroid/graphics/Bitmap;
 
-    .line 885
+    .line 891
     new-instance p4, Landroid/graphics/Canvas;
 
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->backgroundBitmap:Landroid/graphics/Bitmap;
 
     invoke-direct {p4, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 886
+    .line 892
     new-instance v0, Landroid/graphics/RectF;
 
     int-to-float v2, p1
@@ -2720,17 +2720,17 @@
 
     invoke-direct {v0, v1, v1, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 887
+    .line 893
     sget v1, Lorg/telegram/ui/QrActivity$QrView;->RADIUS:F
 
     invoke-virtual {p4, v0, v1, v1, p3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 888
+    .line 894
     iget-boolean p3, p0, Lorg/telegram/ui/QrActivity$QrView;->setData:Z
 
     if-eqz p3, :cond_2
 
-    .line 889
+    .line 895
     sget-object p3, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p4, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda3;
@@ -2739,7 +2739,7 @@
 
     invoke-virtual {p3, p4}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 892
+    .line 898
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
@@ -2765,7 +2765,7 @@
 
     div-float/2addr p1, p3
 
-    .line 893
+    .line 899
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result p3
@@ -2788,37 +2788,37 @@
 
     div-float/2addr p3, p2
 
-    .line 894
+    .line 900
     invoke-static {p1, p3}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
 
-    .line 895
+    .line 901
     new-instance p2, Landroid/graphics/Matrix;
 
     invoke-direct {p2}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 896
+    .line 902
     invoke-virtual {p2, p1, p1}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 897
+    .line 903
     iget-object p3, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientShader:Landroid/graphics/BitmapShader;
 
     invoke-virtual {p3, p2}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 899
+    .line 905
     new-instance p2, Landroid/graphics/Matrix;
 
     invoke-direct {p2}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 900
+    .line 906
     invoke-virtual {p2, p1, p1}, Landroid/graphics/Matrix;->setScale(FF)V
 
     const/high16 p1, 0x40000000    # 2.0f
 
     div-float/2addr v2, p1
 
-    .line 901
+    .line 907
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result p1
@@ -2835,7 +2835,7 @@
 
     invoke-virtual {p2, v2, p1}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 902
+    .line 908
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientTextShader:Landroid/graphics/BitmapShader;
 
     invoke-virtual {p1, p2}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
@@ -2847,7 +2847,7 @@
 .method setCenterChangedListener(Lorg/telegram/ui/QrActivity$QrView$QrCenterChangedListener;)V
     .locals 0
 
-    .line 1002
+    .line 1008
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->centerChangedListener:Lorg/telegram/ui/QrActivity$QrView$QrCenterChangedListener;
 
     return-void
@@ -2856,12 +2856,12 @@
 .method setColors(IIII)V
     .locals 1
 
-    .line 1084
+    .line 1090
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setColors(IIII)V
 
-    .line 1085
+    .line 1091
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -2872,18 +2872,18 @@
 
     const/4 v0, 0x1
 
-    .line 1006
+    .line 1012
     iput-boolean v0, p0, Lorg/telegram/ui/QrActivity$QrView;->setData:Z
 
-    .line 1007
+    .line 1013
     iput-object p2, p0, Lorg/telegram/ui/QrActivity$QrView;->username:Ljava/lang/String;
 
-    .line 1008
+    .line 1014
     iput-boolean p3, p0, Lorg/telegram/ui/QrActivity$QrView;->isPhone:Z
 
     if-eqz p4, :cond_1
 
-    .line 1010
+    .line 1016
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2896,12 +2896,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 1012
+    .line 1018
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_exportedContactToken;->url:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/ui/QrActivity$QrView;->link:Ljava/lang/String;
 
-    .line 1013
+    .line 1019
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$TL_exportedContactToken;->expires:I
 
     iput p1, p0, Lorg/telegram/ui/QrActivity$QrView;->linkExpires:I
@@ -2911,20 +2911,20 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1015
+    .line 1021
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->link:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 1018
+    .line 1024
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->link:Ljava/lang/String;
 
-    .line 1020
+    .line 1026
     :goto_0
     iput-boolean p4, p0, Lorg/telegram/ui/QrActivity$QrView;->hasTimer:Z
 
-    .line 1021
+    .line 1027
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result p1
@@ -2933,7 +2933,7 @@
 
     move-result p2
 
-    .line 1022
+    .line 1028
     sget-object p3, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p4, Lorg/telegram/ui/QrActivity$QrView$$ExternalSyntheticLambda4;
@@ -2942,10 +2942,10 @@
 
     invoke-virtual {p3, p4}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 1023
+    .line 1029
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 1025
+    .line 1031
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->checkTimerToken:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
@@ -2956,7 +2956,7 @@
 .method public setForShare(Z)V
     .locals 13
 
-    .line 855
+    .line 861
     iget-boolean v0, p0, Lorg/telegram/ui/QrActivity$QrView;->hasTimer:Z
 
     if-nez v0, :cond_0
@@ -2966,12 +2966,12 @@
     :cond_0
     if-eqz p1, :cond_3
 
-    .line 859
+    .line 865
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayoutPaint:Landroid/text/TextPaint;
 
     if-nez p1, :cond_1
 
-    .line 860
+    .line 866
     new-instance p1, Landroid/text/TextPaint;
 
     const/4 v0, 0x1
@@ -2980,7 +2980,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayoutPaint:Landroid/text/TextPaint;
 
-    .line 862
+    .line 868
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayoutPaint:Landroid/text/TextPaint;
 
@@ -2988,7 +2988,7 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 863
+    .line 869
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayoutPaint:Landroid/text/TextPaint;
 
     const-string v0, "fonts/rcondensedbold.ttf"
@@ -2999,7 +2999,7 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 864
+    .line 870
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayoutPaint:Landroid/text/TextPaint;
 
     const/16 v0, 0x19
@@ -3012,14 +3012,14 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 865
+    .line 871
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->username:Ljava/lang/String;
 
     if-nez p1, :cond_2
 
     const-string p1, ""
 
-    .line 866
+    .line 872
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayoutPaint:Landroid/text/TextPaint;
 
@@ -3039,7 +3039,7 @@
 
     move-result-object v3
 
-    .line 867
+    .line 873
     iget-object v4, p0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayoutPaint:Landroid/text/TextPaint;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -3081,7 +3081,7 @@
     :cond_3
     const/4 p1, 0x0
 
-    .line 869
+    .line 875
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$QrView;->shareUsernameLayout:Landroid/text/StaticLayout;
 
     :goto_0
@@ -3091,7 +3091,7 @@
 .method setPosAnimationProgress(F)V
     .locals 1
 
-    .line 1089
+    .line 1095
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     iput p1, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F

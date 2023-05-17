@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$12;)V
     .locals 0
 
-    .line 4291
+    .line 4735
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$12$1;->this$1:Lorg/telegram/ui/PhotoViewer$12;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,12 +48,12 @@
 .method public getBottomOffset(I)I
     .locals 1
 
-    .line 4294
+    .line 4738
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$12$1;->this$1:Lorg/telegram/ui/PhotoViewer$12;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$12;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$8300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$8500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     move-result-object p1
 
@@ -69,7 +69,7 @@
 
     return p1
 
-    .line 4297
+    .line 4741
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$12$1;->this$1:Lorg/telegram/ui/PhotoViewer$12;
 
@@ -81,7 +81,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$12;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     move-result-object v0
 

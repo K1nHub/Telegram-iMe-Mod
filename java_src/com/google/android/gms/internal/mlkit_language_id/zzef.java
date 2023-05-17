@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class zzef {
     private static volatile boolean zza = false;
     private static boolean zzb = true;

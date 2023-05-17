@@ -13,7 +13,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinancePayHistoryView> implements WalletBinancePayHistoryView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -217,7 +217,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$OnLoadedTransactionsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadedTransactionsCommand extends ViewCommand<WalletBinancePayHistoryView> {
         public final List<BaseNode> transactions;
 
@@ -234,7 +234,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<WalletBinancePayHistoryView> {
         public final String text;
 
@@ -251,7 +251,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletBinancePayHistoryView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -272,7 +272,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletBinancePayHistoryView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -291,7 +291,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$OnNoInternetErrorStateCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnNoInternetErrorStateCommand extends ViewCommand<WalletBinancePayHistoryView> {
         OnNoInternetErrorStateCommand(WalletBinancePayHistoryView$$State walletBinancePayHistoryView$$State) {
             super("onNoInternetErrorState", AddToEndSingleStrategy.class);
@@ -305,7 +305,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$OnUnexpectedErrorStateCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnUnexpectedErrorStateCommand extends ViewCommand<WalletBinancePayHistoryView> {
         OnUnexpectedErrorStateCommand(WalletBinancePayHistoryView$$State walletBinancePayHistoryView$$State) {
             super("onUnexpectedErrorState", AddToEndSingleStrategy.class);
@@ -319,7 +319,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$OnLoadingStateCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadingStateCommand extends ViewCommand<WalletBinancePayHistoryView> {
         OnLoadingStateCommand(WalletBinancePayHistoryView$$State walletBinancePayHistoryView$$State) {
             super("onLoadingState", AddToEndSingleStrategy.class);
@@ -333,7 +333,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$OnEmptyStateCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnEmptyStateCommand extends ViewCommand<WalletBinancePayHistoryView> {
         OnEmptyStateCommand(WalletBinancePayHistoryView$$State walletBinancePayHistoryView$$State) {
             super("onEmptyState", AddToEndSingleStrategy.class);
@@ -347,7 +347,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$OnLoadMoreItemsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<WalletBinancePayHistoryView> {
         public final List<BaseNode> items;
 
@@ -364,7 +364,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<WalletBinancePayHistoryView> {
         OnLoadMoreCompleteCommand(WalletBinancePayHistoryView$$State walletBinancePayHistoryView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -378,7 +378,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<WalletBinancePayHistoryView> {
         OnLoadMoreErrorCommand(WalletBinancePayHistoryView$$State walletBinancePayHistoryView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);
@@ -392,7 +392,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$ResetLoadMoreCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ResetLoadMoreCommand extends ViewCommand<WalletBinancePayHistoryView> {
         ResetLoadMoreCommand(WalletBinancePayHistoryView$$State walletBinancePayHistoryView$$State) {
             super("resetLoadMore", AddToEndSingleStrategy.class);
@@ -406,7 +406,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$ShowRefreshingCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRefreshingCommand extends ViewCommand<WalletBinancePayHistoryView> {
         public final boolean show;
 
@@ -423,7 +423,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$ShowConfirmPaymentDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowConfirmPaymentDialogCommand extends ViewCommand<WalletBinancePayHistoryView> {
         public final Callbacks$Callback action;
         public final DialogModel model;
@@ -442,7 +442,7 @@ public class WalletBinancePayHistoryView$$State extends MvpViewState<WalletBinan
 
     /* compiled from: WalletBinancePayHistoryView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryView$$State$ShowSuccessPaymentProcessedDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowSuccessPaymentProcessedDialogCommand extends ViewCommand<WalletBinancePayHistoryView> {
         public final String btnText;
         public final String message;

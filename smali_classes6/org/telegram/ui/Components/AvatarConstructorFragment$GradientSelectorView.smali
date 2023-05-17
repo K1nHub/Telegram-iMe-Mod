@@ -178,10 +178,10 @@
 
     iput-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->defaultPaint:Landroid/graphics/Paint;
 
-    const-string v7, "chat_emojiPanelBackground"
-
     .line 1229
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -310,9 +310,9 @@
     .line 1247
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v5, "chat_emojiSearchIcon"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchIcon:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 

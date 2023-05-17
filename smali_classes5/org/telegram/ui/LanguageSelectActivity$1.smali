@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LanguageSelectActivity;)V
     .locals 0
 
-    .line 160
+    .line 159
     iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$1;->this$0:Lorg/telegram/ui/LanguageSelectActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 164
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$1;->this$0:Lorg/telegram/ui/LanguageSelectActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

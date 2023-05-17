@@ -20,9 +20,9 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.TextCell;
@@ -70,14 +70,17 @@ public final class SettingsToolsActivity extends MvpFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
         return arrayListOf;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initRootView() {
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         return frameLayout;
     }
 
@@ -103,12 +106,12 @@ public final class SettingsToolsActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setTitle(LocaleController.getInternalString(C3242R.string.settings_tools));
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsActivity$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setTitle(LocaleController.getInternalString(C3290R.string.settings_tools));
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsActivity$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsActivity.this.finishFragment();
@@ -132,14 +135,14 @@ public final class SettingsToolsActivity extends MvpFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return IdFabric$ViewTypes.TEXT_SETTINGS;
+            return IdFabric$ViewTypes.TEXT_SETTINGS_CELL;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
             TextCell textCell = new TextCell(SettingsToolsActivity.this.getContext());
-            textCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+            textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             textCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
             return new RecyclerListView.Holder(textCell);
         }

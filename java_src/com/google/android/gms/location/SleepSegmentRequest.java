@@ -19,9 +19,9 @@ public class SleepSegmentRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SleepSegmentRequest> CREATOR = new zzah();
     public static final int SEGMENT_AND_CLASSIFY_EVENTS = 0;
     public static final int SEGMENT_EVENTS_ONLY = 1;
-    @SafeParcelable.Field(getter = "getUserPreferredSleepWindow", m775id = 1)
+    @SafeParcelable.Field(getter = "getUserPreferredSleepWindow", m779id = 1)
     private final List zza;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getRequestedDataType", m775id = 2)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getRequestedDataType", m779id = 2)
     private final int zzb;
 
     public SleepSegmentRequest(int i) {
@@ -62,7 +62,7 @@ public class SleepSegmentRequest extends AbstractSafeParcelable {
 
     @ShowFirstParty
     @SafeParcelable.Constructor
-    public SleepSegmentRequest(@SafeParcelable.Param(m774id = 1) List list, @SafeParcelable.Param(m774id = 2) int i) {
+    public SleepSegmentRequest(@SafeParcelable.Param(m778id = 1) List list, @SafeParcelable.Param(m778id = 2) int i) {
         this.zza = list;
         this.zzb = i;
     }

@@ -198,7 +198,7 @@ public final class Cea708Decoder extends CeaDecoder {
                         int i3 = this.previousSequenceNumber;
                         if (i3 != -1 && i2 != (i3 + 1) % 4) {
                             resetCueBuilders();
-                            Log.m792w(TAG, "Sequence number discontinuity. previous=" + this.previousSequenceNumber + " current=" + i2);
+                            Log.m796w(TAG, "Sequence number discontinuity. previous=" + this.previousSequenceNumber + " current=" + i2);
                         }
                         this.previousSequenceNumber = i2;
                         int i4 = readUnsignedByte2 & 63;
@@ -215,7 +215,7 @@ public final class Cea708Decoder extends CeaDecoder {
                         Assertions.checkArgument(i == 2);
                         DtvCcPacket dtvCcPacket2 = this.currentDtvCcPacket;
                         if (dtvCcPacket2 == null) {
-                            Log.m796e(TAG, "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START");
+                            Log.m800e(TAG, "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START");
                         } else {
                             byte[] bArr2 = dtvCcPacket2.packetData;
                             int i6 = dtvCcPacket2.currentIndex;
@@ -246,7 +246,7 @@ public final class Cea708Decoder extends CeaDecoder {
     private void processCurrentPacket() {
         DtvCcPacket dtvCcPacket = this.currentDtvCcPacket;
         if (dtvCcPacket.currentIndex != (dtvCcPacket.packetSize * 2) - 1) {
-            Log.m798d(TAG, "DtvCcPacket ended prematurely; size is " + ((this.currentDtvCcPacket.packetSize * 2) - 1) + ", but current index is " + this.currentDtvCcPacket.currentIndex + " (sequence number " + this.currentDtvCcPacket.sequenceNumber + ");");
+            Log.m802d(TAG, "DtvCcPacket ended prematurely; size is " + ((this.currentDtvCcPacket.packetSize * 2) - 1) + ", but current index is " + this.currentDtvCcPacket.currentIndex + " (sequence number " + this.currentDtvCcPacket.sequenceNumber + ");");
         }
         boolean z = false;
         ParsableBitArray parsableBitArray = this.captionChannelPacketData;
@@ -262,12 +262,12 @@ public final class Cea708Decoder extends CeaDecoder {
                 this.captionChannelPacketData.skipBits(2);
                 readBits = this.captionChannelPacketData.readBits(6);
                 if (readBits < 7) {
-                    Log.m792w(TAG, "Invalid extended service number: " + readBits);
+                    Log.m796w(TAG, "Invalid extended service number: " + readBits);
                 }
             }
             if (readBits2 == 0) {
                 if (readBits != 0) {
-                    Log.m792w(TAG, "serviceNumber is non-zero (" + readBits + ") when blockSize is 0");
+                    Log.m796w(TAG, "serviceNumber is non-zero (" + readBits + ") when blockSize is 0");
                 }
             } else if (readBits != this.selectedServiceNumber) {
                 this.captionChannelPacketData.skipBytes(readBits2);
@@ -287,7 +287,7 @@ public final class Cea708Decoder extends CeaDecoder {
                             } else if (readBits4 <= 255) {
                                 handleG3Character(readBits4);
                             } else {
-                                Log.m792w(TAG, "Invalid extended command: " + readBits4);
+                                Log.m796w(TAG, "Invalid extended command: " + readBits4);
                             }
                             z = true;
                         }
@@ -301,7 +301,7 @@ public final class Cea708Decoder extends CeaDecoder {
                         } else if (readBits3 <= 255) {
                             handleG1Character(readBits3);
                         } else {
-                            Log.m792w(TAG, "Invalid base command: " + readBits3);
+                            Log.m796w(TAG, "Invalid base command: " + readBits3);
                         }
                         z = true;
                     }
@@ -331,15 +331,15 @@ public final class Cea708Decoder extends CeaDecoder {
                         return;
                     default:
                         if (i >= 17 && i <= 23) {
-                            Log.m792w(TAG, "Currently unsupported COMMAND_EXT1 Command: " + i);
+                            Log.m796w(TAG, "Currently unsupported COMMAND_EXT1 Command: " + i);
                             this.captionChannelPacketData.skipBits(8);
                             return;
                         } else if (i >= 24 && i <= 31) {
-                            Log.m792w(TAG, "Currently unsupported COMMAND_P16 Command: " + i);
+                            Log.m796w(TAG, "Currently unsupported COMMAND_P16 Command: " + i);
                             this.captionChannelPacketData.skipBits(16);
                             return;
                         } else {
-                            Log.m792w(TAG, "Invalid C0 command: " + i);
+                            Log.m796w(TAG, "Invalid C0 command: " + i);
                             return;
                         }
                 }
@@ -441,7 +441,7 @@ public final class Cea708Decoder extends CeaDecoder {
             case 149:
             case ImageReceiver.DEFAULT_CROSSFADE_DURATION /* 150 */:
             default:
-                Log.m792w(TAG, "Invalid C1 command: " + i);
+                Log.m796w(TAG, "Invalid C1 command: " + i);
                 return;
             case COMMAND_SWA /* 151 */:
                 if (!this.currentCueInfoBuilder.isDefined()) {
@@ -578,7 +578,7 @@ public final class Cea708Decoder extends CeaDecoder {
                             this.currentCueInfoBuilder.append((char) 9484);
                             return;
                         default:
-                            Log.m792w(TAG, "Invalid G2 character: " + i);
+                            Log.m796w(TAG, "Invalid G2 character: " + i);
                             return;
                     }
             }
@@ -592,7 +592,7 @@ public final class Cea708Decoder extends CeaDecoder {
             this.currentCueInfoBuilder.append((char) 13252);
             return;
         }
-        Log.m792w(TAG, "Invalid G3 character: " + i);
+        Log.m796w(TAG, "Invalid G3 character: " + i);
         this.currentCueInfoBuilder.append('_');
     }
 

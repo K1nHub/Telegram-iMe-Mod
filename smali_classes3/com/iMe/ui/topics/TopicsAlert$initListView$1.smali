@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/topics/TopicsAlert$initListView$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
-    .line 99
+    .line 106
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 101
+    .line 108
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsAlert$initListView$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsAlert;->access$getIgnoreLayout$p(Lcom/iMe/ui/topics/TopicsAlert;)Z
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 104
+    .line 111
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 

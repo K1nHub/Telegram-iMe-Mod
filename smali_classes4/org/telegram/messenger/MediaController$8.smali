@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;I)V
     .locals 0
 
-    .line 2881
+    .line 2925
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$8;->this$0:Lorg/telegram/messenger/MediaController;
 
     iput p2, p0, Lorg/telegram/messenger/MediaController$8;->val$tag:I
@@ -48,7 +48,7 @@
 .method private synthetic lambda$onStateChanged$0(II)V
     .locals 1
 
-    .line 2885
+    .line 2929
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$8;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$5100(Lorg/telegram/messenger/MediaController;)I
@@ -64,7 +64,7 @@
 
     if-ne p2, p1, :cond_1
 
-    .line 2889
+    .line 2933
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$8;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaController;->access$5200(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -73,7 +73,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 2891
+    .line 2935
     :try_start_0
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$8;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -85,7 +85,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
-    .line 2892
+    .line 2936
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$8;->this$0:Lorg/telegram/messenger/MediaController;
 
     const/4 p2, 0x0
@@ -99,7 +99,7 @@
     :catch_0
     move-exception p1
 
-    .line 2894
+    .line 2938
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -148,7 +148,7 @@
 .method public onStateChanged(ZI)V
     .locals 1
 
-    .line 2884
+    .line 2928
     iget p1, p0, Lorg/telegram/messenger/MediaController$8;->val$tag:I
 
     new-instance v0, Lorg/telegram/messenger/MediaController$8$$ExternalSyntheticLambda0;

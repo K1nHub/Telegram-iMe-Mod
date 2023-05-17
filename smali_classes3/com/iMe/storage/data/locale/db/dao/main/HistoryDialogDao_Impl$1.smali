@@ -36,7 +36,7 @@
         }
     .end annotation
 
-    .line 48
+    .line 50
     invoke-direct {p0, p2}, Landroidx/room/EntityInsertionAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
@@ -57,7 +57,7 @@
         }
     .end annotation
 
-    .line 56
+    .line 58
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getUserId()J
 
     move-result-wide v0
@@ -66,7 +66,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 57
+    .line 59
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getDialogId()J
 
     move-result-wide v0
@@ -75,7 +75,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 58
+    .line 60
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getCreationDate()J
 
     move-result-wide v0
@@ -84,7 +84,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 59
+    .line 61
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->isPinned()Z
 
     move-result p2
@@ -93,7 +93,7 @@
 
     int-to-long v1, p2
 
-    .line 60
+    .line 62
     invoke-interface {p1, v0, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     return-void
@@ -112,7 +112,7 @@
         }
     .end annotation
 
-    .line 48
+    .line 50
     check-cast p2, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$1;->bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;)V

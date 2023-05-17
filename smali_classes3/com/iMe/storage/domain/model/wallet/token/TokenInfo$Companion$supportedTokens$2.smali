@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 1114
+    .line 1127
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion$supportedTokens$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -79,11 +79,11 @@
         }
     .end annotation
 
-    const/16 v0, 0x4d
+    const/16 v0, 0x4e
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
 
-    .line 1116
+    .line 1129
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ETH;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ETH;
 
     const/4 v2, 0x0
@@ -102,7 +102,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1117
+    .line 1130
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
 
     const/4 v2, 0x3
@@ -115,7 +115,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1118
+    .line 1131
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;
 
     const/4 v2, 0x5
@@ -134,7 +134,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1119
+    .line 1132
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$DHV;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$DHV;
 
     const/16 v2, 0x8
@@ -153,7 +153,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1120
+    .line 1133
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BCUG;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BCUG;
 
     const/16 v2, 0xb
@@ -172,7 +172,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1121
+    .line 1134
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$TRU;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$TRU;
 
     const/16 v2, 0xe
@@ -191,7 +191,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1122
+    .line 1135
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$LIT;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$LIT;
 
     const/16 v2, 0x11
@@ -210,7 +210,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1123
+    .line 1136
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$OKB;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$OKB;
 
     const/16 v2, 0x14
@@ -229,7 +229,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1124
+    .line 1137
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$WBTC;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$WBTC;
 
     const/16 v2, 0x17
@@ -248,7 +248,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1125
+    .line 1138
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$DEGO;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$DEGO;
 
     const/16 v2, 0x1a
@@ -267,7 +267,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1126
+    .line 1139
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$LSS;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$LSS;
 
     const/16 v2, 0x1d
@@ -286,7 +286,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1127
+    .line 1140
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$DEXT;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$DEXT;
 
     const/16 v2, 0x20
@@ -305,7 +305,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1128
+    .line 1141
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$FRM;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$FRM;
 
     const/16 v2, 0x23
@@ -324,7 +324,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1129
+    .line 1142
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$D11;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$D11;
 
     const/16 v2, 0x26
@@ -337,7 +337,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1130
+    .line 1143
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$METIS;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$METIS;
 
     const/16 v2, 0x28
@@ -356,7 +356,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1131
+    .line 1144
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ZCX;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ZCX;
 
     const/16 v2, 0x2b
@@ -375,7 +375,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1132
+    .line 1145
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$SHR;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$SHR;
 
     const/16 v2, 0x2e
@@ -394,7 +394,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1133
+    .line 1146
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$KFT;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$KFT;
 
     const/16 v2, 0x31
@@ -413,7 +413,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1134
+    .line 1147
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$CVR;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$CVR;
 
     const/16 v2, 0x34
@@ -432,7 +432,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1135
+    .line 1148
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$KABY;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$KABY;
 
     const/16 v2, 0x37
@@ -451,7 +451,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1136
+    .line 1149
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$USDC;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$USDC;
 
     const/16 v2, 0x3a
@@ -470,7 +470,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1137
+    .line 1150
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$QUICK;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$QUICK;
 
     const/16 v2, 0x3d
@@ -489,7 +489,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1138
+    .line 1151
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$MANA;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$MANA;
 
     const/16 v2, 0x40
@@ -508,7 +508,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1139
+    .line 1152
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$TON;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$TON;
 
     const/16 v2, 0x43
@@ -527,7 +527,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1140
+    .line 1153
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$KOM;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$KOM;
 
     const/16 v2, 0x46
@@ -546,7 +546,7 @@
 
     aput-object v1, v0, v2
 
-    .line 1141
+    .line 1154
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$SIN;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$SIN;
 
     const/16 v2, 0x49
@@ -565,14 +565,20 @@
 
     aput-object v1, v0, v2
 
-    .line 1142
+    .line 1155
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$HT;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$HT;
 
     const/16 v2, 0x4c
 
     aput-object v1, v0, v2
 
-    .line 1115
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BTCMT;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BTCMT;
+
+    const/16 v2, 0x4d
+
+    aput-object v1, v0, v2
+
+    .line 1128
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0

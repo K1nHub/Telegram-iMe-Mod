@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/DialogsActivity$14;
-.super Lorg/telegram/ui/Components/EditTextBoldCursor;
+.super Lorg/telegram/ui/Components/DialogsItemAnimator;
 .source "DialogsActivity.java"
 
 
@@ -15,77 +15,98 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
+.field final synthetic val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
     .locals 0
 
-    .line 5244
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
+    .line 5146
+    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$14;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/DialogsItemAnimator;-><init>(Lorg/telegram/ui/Components/RecyclerListView;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
+.method public onRemoveStarting(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+    .locals 1
 
-    .line 5247
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
+    .line 5149
+    invoke-super {p0, p1}, Landroidx/recyclerview/widget/SimpleItemAnimator;->onRemoveStarting(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$27900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/GroupCreateSpan;
+    .line 5150
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
-    move-result-object v0
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16600(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    if-eqz v0, :cond_0
+    move-result-object p1
 
-    .line 5248
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$27900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/GroupCreateSpan;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/GroupCreateSpan;->cancelDeleteAnimation()V
-
-    .line 5249
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$27902(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/GroupCreateSpan;)Lorg/telegram/ui/Components/GroupCreateSpan;
-
-    .line 5251
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 5252
-    invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 5253
-    invoke-virtual {p0}, Landroid/widget/EditText;->clearFocus()V
-
-    .line 5254
-    invoke-virtual {p0}, Landroid/widget/EditText;->requestFocus()Z
-
-    .line 5257
-    :cond_1
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
 
     move-result p1
 
-    return p1
+    if-nez p1, :cond_2
+
+    .line 5151
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16600(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->findViewByPosition(I)Landroid/view/View;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 5153
+    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+
+    .line 5155
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16900(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
+
+    move-result p1
+
+    const/4 v0, 0x2
+
+    if-ne p1, v0, :cond_1
+
+    .line 5156
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    const/4 v0, 0x1
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16902(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
+
+    .line 5158
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16100(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/PullForegroundDrawable;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    .line 5159
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16100(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/PullForegroundDrawable;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->doNotShow()V
+
+    :cond_2
+    return-void
 .end method

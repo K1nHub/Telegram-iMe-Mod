@@ -324,9 +324,9 @@
 
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    const-string v11, "chat_outTextSelectionCursor"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outTextSelectionCursor:I
 
-    invoke-virtual {v10, v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v10, v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(I)I
 
     move-result v10
 
@@ -340,9 +340,9 @@
 
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    const-string v11, "chat_TextSelectionCursor"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chat_TextSelectionCursor:I
 
-    invoke-virtual {v10, v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v10, v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(I)I
 
     move-result v10
 

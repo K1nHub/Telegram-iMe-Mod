@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MvpBottomSheet.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpBottomSheet$mvpBaseDelegate$1$context$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class MvpBottomSheet$mvpBaseDelegate$1$context$2 extends Lambda implements Function0<Context> {
     final /* synthetic */ MvpBottomSheet this$0;
 

@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkFragmentWalletBinancePayHistoryBinding;
 /* compiled from: WalletBinancePayHistoryFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletBinancePayHistoryFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletBinancePayHistoryBinding> {
     final /* synthetic */ WalletBinancePayHistoryFragment this$0;
 

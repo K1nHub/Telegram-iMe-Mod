@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.ArchivedStickersActivity;
@@ -83,17 +83,20 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        if (this.currentType == 0) {
-            this.actionBar.setTitle(LocaleController.getString("ArchivedStickers", C3242R.string.ArchivedStickers));
+        int i = this.currentType;
+        if (i == 0) {
+            this.actionBar.setTitle(LocaleController.getString("ArchivedStickers", C3290R.string.ArchivedStickers));
+        } else if (i == 5) {
+            this.actionBar.setTitle(LocaleController.getString("ArchivedEmojiPacks", C3290R.string.ArchivedEmojiPacks));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("ArchivedMasks", C3242R.string.ArchivedMasks));
+            this.actionBar.setTitle(LocaleController.getString("ArchivedMasks", C3290R.string.ArchivedMasks));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ArchivedStickersActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i) {
-                if (i == -1) {
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ArchivedStickersActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+            public void onItemClick(int i2) {
+                if (i2 == -1) {
                     ArchivedStickersActivity.this.finishFragment();
                 }
             }
@@ -102,13 +105,13 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         FrameLayout frameLayout2 = frameLayout;
-        frameLayout2.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView;
         if (this.currentType == 0) {
-            emptyTextProgressView.setText(LocaleController.getString("ArchivedStickersEmpty", C3242R.string.ArchivedStickersEmpty));
+            emptyTextProgressView.setText(LocaleController.getString("ArchivedStickersEmpty", C3290R.string.ArchivedStickersEmpty));
         } else {
-            emptyTextProgressView.setText(LocaleController.getString("ArchivedMasksEmpty", C3242R.string.ArchivedMasksEmpty));
+            emptyTextProgressView.setText(LocaleController.getString("ArchivedMasksEmpty", C3290R.string.ArchivedMasksEmpty));
         }
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
         if (this.loadingStickers) {
@@ -128,13 +131,13 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
         this.listView.setAdapter(this.listAdapter);
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ArchivedStickersActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i) {
-                ArchivedStickersActivity.this.lambda$createView$0(view, i);
+            public final void onItemClick(View view, int i2) {
+                ArchivedStickersActivity.this.lambda$createView$0(view, i2);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ArchivedStickersActivity.3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
+            public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 if (ArchivedStickersActivity.this.loadingStickers || ArchivedStickersActivity.this.endReached || ArchivedStickersActivity.this.layoutManager.findLastVisibleItemPosition() <= ArchivedStickersActivity.this.stickersLoadingRow - 2) {
                     return;
                 }
@@ -151,9 +154,9 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
             return;
         }
         final TLRPC$StickerSetCovered tLRPC$StickerSetCovered = this.sets.get(i - this.stickersStartRow);
-        if (tLRPC$StickerSetCovered.set.f1460id != 0) {
+        if (tLRPC$StickerSetCovered.set.f1466id != 0) {
             tLRPC$TL_inputStickerSetShortName = new TLRPC$TL_inputStickerSetID();
-            tLRPC$TL_inputStickerSetShortName.f1450id = tLRPC$StickerSetCovered.set.f1460id;
+            tLRPC$TL_inputStickerSetShortName.f1456id = tLRPC$StickerSetCovered.set.f1466id;
         } else {
             tLRPC$TL_inputStickerSetShortName = new TLRPC$TL_inputStickerSetShortName();
             tLRPC$TL_inputStickerSetShortName.short_name = tLRPC$StickerSetCovered.set.short_name;
@@ -171,7 +174,7 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
                 ((ArchivedStickerSetCell) view).setDrawProgress(true, true);
                 LongSparseArray longSparseArray = ArchivedStickersActivity.this.installingStickerSets;
                 TLRPC$StickerSetCovered tLRPC$StickerSetCovered2 = tLRPC$StickerSetCovered;
-                longSparseArray.put(tLRPC$StickerSetCovered2.set.f1460id, tLRPC$StickerSetCovered2);
+                longSparseArray.put(tLRPC$StickerSetCovered2.set.f1466id, tLRPC$StickerSetCovered2);
             }
         });
         showDialog(stickersAlert);
@@ -181,16 +184,17 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
         int i;
         this.rowCount = 0;
         if (!this.sets.isEmpty()) {
-            if (this.currentType == 0) {
+            int i2 = this.currentType;
+            if (i2 == 0 || i2 == 5) {
                 i = this.rowCount;
                 this.rowCount = i + 1;
             } else {
                 i = -1;
             }
             this.archiveInfoRow = i;
-            int i2 = this.rowCount;
-            this.stickersStartRow = i2;
-            this.stickersEndRow = i2 + this.sets.size();
+            int i3 = this.rowCount;
+            this.stickersStartRow = i3;
+            this.stickersEndRow = i3 + this.sets.size();
             int size = this.rowCount + this.sets.size();
             this.rowCount = size;
             if (!this.endReached) {
@@ -231,7 +235,7 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
             j = 0;
         } else {
             ArrayList<TLRPC$StickerSetCovered> arrayList = this.sets;
-            j = arrayList.get(arrayList.size() - 1).set.f1460id;
+            j = arrayList.get(arrayList.size() - 1).set.f1466id;
         }
         tLRPC$TL_messages_getArchivedStickers.offset_id = j;
         tLRPC$TL_messages_getArchivedStickers.limit = 15;
@@ -328,7 +332,7 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
                 while (true) {
                     if (i3 >= size2) {
                         break;
-                    } else if (this.sets.get(i3).set.f1460id == ((TLRPC$StickerSetCovered) arrayList.get(size)).set.f1460id) {
+                    } else if (this.sets.get(i3).set.f1466id == ((TLRPC$StickerSetCovered) arrayList.get(size)).set.f1466id) {
                         arrayList.remove(size);
                         break;
                     } else {
@@ -350,9 +354,9 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
             for (int i4 = 0; i4 < childCount; i4++) {
                 View childAt = this.listView.getChildAt(i4);
                 if ((childAt instanceof ArchivedStickerSetCell) && (stickersSet = (archivedStickerSetCell = (ArchivedStickerSetCell) childAt).getStickersSet()) != null) {
-                    boolean isStickerPackInstalled = MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(stickersSet.set.f1460id);
+                    boolean isStickerPackInstalled = MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(stickersSet.set.f1466id);
                     if (isStickerPackInstalled) {
-                        this.installingStickerSets.remove(stickersSet.set.f1460id);
+                        this.installingStickerSets.remove(stickersSet.set.f1466id);
                         archivedStickerSetCell.setDrawProgress(false, true);
                     }
                     archivedStickerSetCell.setChecked(isStickerPackInstalled, true, false);
@@ -378,18 +382,20 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+            int i2;
+            String str;
             if (getItemViewType(i) == 0) {
-                int i2 = i - ArchivedStickersActivity.this.stickersStartRow;
+                int i3 = i - ArchivedStickersActivity.this.stickersStartRow;
                 ArchivedStickerSetCell archivedStickerSetCell = (ArchivedStickerSetCell) viewHolder.itemView;
-                final TLRPC$StickerSetCovered tLRPC$StickerSetCovered = (TLRPC$StickerSetCovered) ArchivedStickersActivity.this.sets.get(i2);
-                archivedStickerSetCell.setStickersSet(tLRPC$StickerSetCovered, i2 != ArchivedStickersActivity.this.sets.size() - 1);
-                boolean isStickerPackInstalled = MediaDataController.getInstance(((BaseFragment) ArchivedStickersActivity.this).currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1460id);
+                final TLRPC$StickerSetCovered tLRPC$StickerSetCovered = (TLRPC$StickerSetCovered) ArchivedStickersActivity.this.sets.get(i3);
+                archivedStickerSetCell.setStickersSet(tLRPC$StickerSetCovered, i3 != ArchivedStickersActivity.this.sets.size() - 1);
+                boolean isStickerPackInstalled = MediaDataController.getInstance(((BaseFragment) ArchivedStickersActivity.this).currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1466id);
                 archivedStickerSetCell.setChecked(isStickerPackInstalled, false, false);
                 if (isStickerPackInstalled) {
-                    ArchivedStickersActivity.this.installingStickerSets.remove(tLRPC$StickerSetCovered.set.f1460id);
+                    ArchivedStickersActivity.this.installingStickerSets.remove(tLRPC$StickerSetCovered.set.f1466id);
                     archivedStickerSetCell.setDrawProgress(false, false);
                 } else {
-                    archivedStickerSetCell.setDrawProgress(ArchivedStickersActivity.this.installingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1460id) >= 0, false);
+                    archivedStickerSetCell.setDrawProgress(ArchivedStickersActivity.this.installingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1466id) >= 0, false);
                 }
                 archivedStickerSetCell.setOnCheckedChangeListener(new ArchivedStickerSetCell.OnCheckedChangeListener() { // from class: org.telegram.ui.ArchivedStickersActivity$ListAdapter$$ExternalSyntheticLambda0
                     @Override // org.telegram.p044ui.Cells.ArchivedStickerSetCell.OnCheckedChangeListener
@@ -402,7 +408,14 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
                 if (i == ArchivedStickersActivity.this.archiveInfoRow) {
                     textInfoPrivacyCell.setTopPadding(17);
                     textInfoPrivacyCell.setBottomPadding(10);
-                    textInfoPrivacyCell.setText(LocaleController.getString("ArchivedStickersInfo", C3242R.string.ArchivedStickersInfo));
+                    if (ArchivedStickersActivity.this.currentType == 5) {
+                        i2 = C3290R.string.ArchivedEmojiInfo;
+                        str = "ArchivedEmojiInfo";
+                    } else {
+                        i2 = C3290R.string.ArchivedStickersInfo;
+                        str = "ArchivedStickersInfo";
+                    }
+                    textInfoPrivacyCell.setText(LocaleController.getString(str, i2));
                     return;
                 }
                 textInfoPrivacyCell.setTopPadding(10);
@@ -415,11 +428,11 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
         public /* synthetic */ void lambda$onBindViewHolder$0(TLRPC$StickerSetCovered tLRPC$StickerSetCovered, ArchivedStickerSetCell archivedStickerSetCell, boolean z) {
             if (z) {
                 archivedStickerSetCell.setChecked(false, false, false);
-                if (ArchivedStickersActivity.this.installingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1460id) >= 0) {
+                if (ArchivedStickersActivity.this.installingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1466id) >= 0) {
                     return;
                 }
                 archivedStickerSetCell.setDrawProgress(true, true);
-                ArchivedStickersActivity.this.installingStickerSets.put(tLRPC$StickerSetCovered.set.f1460id, tLRPC$StickerSetCovered);
+                ArchivedStickersActivity.this.installingStickerSets.put(tLRPC$StickerSetCovered.set.f1466id, tLRPC$StickerSetCovered);
             }
             MediaDataController.getInstance(((BaseFragment) ArchivedStickersActivity.this).currentAccount).toggleStickerSet(ArchivedStickersActivity.this.getParentActivity(), tLRPC$StickerSetCovered, z ? 2 : 1, ArchivedStickersActivity.this, false, false);
         }
@@ -434,16 +447,16 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
             View view;
             if (i == 0) {
                 ArchivedStickerSetCell archivedStickerSetCell = new ArchivedStickerSetCell(this.mContext, true);
-                archivedStickerSetCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                archivedStickerSetCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 view = archivedStickerSetCell;
             } else if (i == 1) {
                 view = new LoadingCell(this.mContext);
-                view.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                view.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             } else if (i != 2) {
                 view = null;
             } else {
                 view = new TextInfoPrivacyCell(this.mContext);
-                view.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                view.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             }
             view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
             return new RecyclerListView.Holder(view);
@@ -464,28 +477,36 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{ArchivedStickerSetCell.class}, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{LoadingCell.class, TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "emptyListPlaceholder"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_PROGRESSBAR, null, null, null, null, "progressCircle"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LoadingCell.class}, new String[]{"progressBar"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "progressCircle"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{ArchivedStickerSetCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{ArchivedStickerSetCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{ArchivedStickerSetCell.class}, new String[]{"deleteButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_removeButtonText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{ArchivedStickerSetCell.class}, new String[]{"deleteButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_removeButtonText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{ArchivedStickerSetCell.class}, new String[]{"addButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_buttonText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, new Class[]{ArchivedStickerSetCell.class}, new String[]{"addButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_addButton"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{ArchivedStickerSetCell.class}, new String[]{"addButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_addButtonPressed"));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{ArchivedStickerSetCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
+        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
+        int i = Theme.key_windowBackgroundGrayShadow;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{LoadingCell.class, TextInfoPrivacyCell.class}, null, null, null, i));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i2 = ThemeDescription.FLAG_BACKGROUND;
+        int i3 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i2, null, null, null, null, i3));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i3));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_emptyListPlaceholder));
+        EmptyTextProgressView emptyTextProgressView = this.emptyView;
+        int i4 = ThemeDescription.FLAG_PROGRESSBAR;
+        int i5 = Theme.key_progressCircle;
+        arrayList.add(new ThemeDescription(emptyTextProgressView, i4, null, null, null, null, i5));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LoadingCell.class}, new String[]{"progressBar"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{ArchivedStickerSetCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{ArchivedStickerSetCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
+        int i6 = Theme.key_featuredStickers_removeButtonText;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{ArchivedStickerSetCell.class}, new String[]{"deleteButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{ArchivedStickerSetCell.class}, new String[]{"deleteButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{ArchivedStickerSetCell.class}, new String[]{"addButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_featuredStickers_buttonText));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, new Class[]{ArchivedStickerSetCell.class}, new String[]{"addButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_featuredStickers_addButton));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{ArchivedStickerSetCell.class}, new String[]{"addButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_featuredStickers_addButtonPressed));
         return arrayList;
     }
 }

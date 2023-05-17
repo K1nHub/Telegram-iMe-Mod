@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet$2;Z)V
     .locals 0
 
-    .line 382
+    .line 388
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$1;->this$1:Lorg/telegram/ui/Components/BotWebViewSheet$2;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$1;->val$isVisible:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 385
+    .line 391
     iget-boolean p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$1;->val$isVisible:Z
 
     if-nez p1, :cond_0
 
-    .line 386
+    .line 392
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$1;->this$1:Lorg/telegram/ui/Components/BotWebViewSheet$2;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
@@ -57,7 +57,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 388
+    .line 394
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$1;->this$1:Lorg/telegram/ui/Components/BotWebViewSheet$2;
 

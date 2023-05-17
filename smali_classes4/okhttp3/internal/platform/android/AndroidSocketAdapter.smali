@@ -77,7 +77,7 @@
         }
     .end annotation
 
-    const-string v0, "sslSocketClass"
+    const-string/jumbo v0, "sslSocketClass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -97,13 +97,13 @@
 
     aput-object v2, v1, v3
 
-    const-string v2, "setUseSessionTickets"
+    const-string/jumbo v2, "setUseSessionTickets"
 
     invoke-virtual {p1, v2, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    const-string v2, "sslSocketClass.getDeclar\u2026:class.javaPrimitiveType)"
+    const-string/jumbo v2, "sslSocketClass.getDeclar\u2026:class.javaPrimitiveType)"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -178,7 +178,7 @@
         }
     .end annotation
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -271,7 +271,7 @@
 .method public getSelectedProtocol(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
     .locals 3
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -350,7 +350,7 @@
 
     move-result-object v0
 
-    const-string v2, "ssl == null"
+    const-string/jumbo v2, "ssl == null"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -383,7 +383,7 @@
 .method public matchesSocket(Ljavax/net/ssl/SSLSocket;)Z
     .locals 1
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

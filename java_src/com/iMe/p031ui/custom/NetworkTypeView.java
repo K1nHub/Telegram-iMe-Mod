@@ -14,7 +14,7 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: NetworkTypeView.kt */
 /* renamed from: com.iMe.ui.custom.NetworkTypeView */
@@ -70,11 +70,11 @@ public final class NetworkTypeView extends TextView implements KoinComponent {
     public final void setNetworkType(NetworkType value) {
         Intrinsics.checkNotNullParameter(value, "value");
         this.networkType = value;
-        setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m51dp(15.0f), getResourceManager().getColor(value.getBackgroundColor())));
+        setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m55dp(15.0f), getResourceManager().getColor(value.getBackgroundColor())));
         setText(getResourceManager().getString(value.getTitleResId()));
         setTextColor(getResourceManager().getColor(value.getTextColor()));
-        setCompoundDrawablesWithIntrinsicBounds(value.getSmallIcon(), 0, C3242R.C3244drawable.fork_ic_arrow_down_16, 0);
-        setCompoundDrawablePadding(AndroidUtilities.m50dp(4));
+        setCompoundDrawablesWithIntrinsicBounds(value.getSmallIcon(), 0, C3290R.C3292drawable.fork_ic_arrow_down_16, 0);
+        setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
         ViewExtKt.setCompoundDrawablesColor(this, getResourceManager().getColor(value.getTextColor()));
     }
 

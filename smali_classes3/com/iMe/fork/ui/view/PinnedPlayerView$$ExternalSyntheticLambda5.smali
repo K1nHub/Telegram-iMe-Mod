@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda5;->f$0:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
-    invoke-static {v0}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->$r8$lambda$MRReyvzJi8BJyKIohkwy0jTWCAc(Lcom/iMe/fork/ui/view/PinnedPlayerView;)V
+    invoke-static {v0}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->$r8$lambda$S67BoD8zWUb-QVfMGPL525TLCzw(Lcom/iMe/fork/ui/view/PinnedPlayerView;)V
 
     return-void
 .end method

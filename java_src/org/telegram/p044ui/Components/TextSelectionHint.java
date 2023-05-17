@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TextSelectionHint */
@@ -28,7 +28,7 @@ import org.telegram.p044ui.ActionBar.Theme;
 public class TextSelectionHint extends View {
 
     /* renamed from: a */
-    Animator f1744a;
+    Animator f1751a;
     int animateToEnd;
     int animateToStart;
     int currentEnd;
@@ -55,7 +55,7 @@ public class TextSelectionHint extends View {
         super(context);
         this.textPaint = new TextPaint(1);
         this.selectionPaint = new Paint(1);
-        this.padding = AndroidUtilities.m50dp(24);
+        this.padding = AndroidUtilities.m54dp(24);
         this.interpolator = new OvershootInterpolator();
         this.dismissTunnable = new Runnable() { // from class: org.telegram.ui.Components.TextSelectionHint$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
@@ -65,13 +65,13 @@ public class TextSelectionHint extends View {
         };
         this.path = new Path();
         this.resourcesProvider = resourcesProvider;
-        int themedColor = getThemedColor("undo_infoColor");
+        int themedColor = getThemedColor(Theme.key_undo_infoColor);
         int alpha = Color.alpha(themedColor);
-        this.textPaint.setTextSize(AndroidUtilities.m50dp(15));
+        this.textPaint.setTextSize(AndroidUtilities.m54dp(15));
         this.textPaint.setColor(themedColor);
         this.selectionPaint.setColor(themedColor);
         this.selectionPaint.setAlpha((int) (alpha * 0.14d));
-        setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m50dp(6), getThemedColor("undo_background")));
+        setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(6), getThemedColor(Theme.key_undo_background)));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -79,12 +79,12 @@ public class TextSelectionHint extends View {
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (getMeasuredWidth() != this.lastW || this.textLayout == null) {
-            Animator animator = this.f1744a;
+            Animator animator = this.f1751a;
             if (animator != null) {
                 animator.removeAllListeners();
-                this.f1744a.cancel();
+                this.f1751a.cancel();
             }
-            String string = LocaleController.getString("TextSelectionHit", C3242R.string.TextSelectionHit);
+            String string = LocaleController.getString("TextSelectionHit", C3290R.string.TextSelectionHit);
             Matcher matcher = Pattern.compile("\\*\\*.*\\*\\*").matcher(string);
             String group = matcher.matches() ? matcher.group() : null;
             String replace = string.replace("**", "");
@@ -133,9 +133,9 @@ public class TextSelectionHint extends View {
             this.showOnMeasure = false;
             this.lastW = getMeasuredWidth();
         }
-        int height = this.textLayout.getHeight() + (AndroidUtilities.m50dp(8) * 2);
-        if (height < AndroidUtilities.m50dp(56)) {
-            height = AndroidUtilities.m50dp(56);
+        int height = this.textLayout.getHeight() + (AndroidUtilities.m54dp(8) * 2);
+        if (height < AndroidUtilities.m54dp(56)) {
+            height = AndroidUtilities.m54dp(56);
         }
         setMeasuredDimension(getMeasuredWidth(), height);
     }
@@ -155,7 +155,7 @@ public class TextSelectionHint extends View {
             drawSelection(canvas, this.textLayout, this.currentStart, this.currentEnd);
         }
         this.textLayout.draw(canvas);
-        int m50dp = AndroidUtilities.m50dp(14);
+        int m54dp = AndroidUtilities.m54dp(14);
         int lineForOffset = this.textLayout.getLineForOffset(this.currentEnd);
         this.textLayout.getPrimaryHorizontal(this.currentEnd);
         int lineBottom = this.textLayout.getLineBottom(lineForOffset);
@@ -168,7 +168,7 @@ public class TextSelectionHint extends View {
         float interpolation = this.interpolator.getInterpolation(this.enterValue);
         canvas.save();
         canvas.translate((int) (this.textLayout.getPrimaryHorizontal(this.animateToEnd) + (AndroidUtilities.dpf2(4.0f) * (1.0f - this.endOffsetValue)) + ((this.textLayout.getPrimaryHorizontal(this.end) - this.textLayout.getPrimaryHorizontal(this.animateToEnd)) * this.endOffsetValue)), lineBottom);
-        float f2 = m50dp;
+        float f2 = m54dp;
         float f3 = f2 / 2.0f;
         canvas.scale(interpolation, interpolation, f3, f3);
         this.path.reset();
@@ -182,14 +182,14 @@ public class TextSelectionHint extends View {
         if (this.currentStart == this.animateToStart) {
             i = lineBottom2;
             f = f3;
-            roundedRect(this.path, -AndroidUtilities.m50dp(4), this.textLayout.getLineTop(lineForOffset2), BitmapDescriptorFactory.HUE_RED, this.textLayout.getLineBottom(lineForOffset2), AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), true, false);
+            roundedRect(this.path, -AndroidUtilities.m54dp(4), this.textLayout.getLineTop(lineForOffset2), BitmapDescriptorFactory.HUE_RED, this.textLayout.getLineBottom(lineForOffset2), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), true, false);
             canvas.drawPath(this.path, this.selectionPaint);
         } else {
             i = lineBottom2;
             f = f3;
         }
         canvas.save();
-        canvas.translate(((int) ((this.textLayout.getPrimaryHorizontal(this.animateToStart) - (AndroidUtilities.m50dp(4) * (1.0f - this.startOffsetValue))) + ((this.textLayout.getPrimaryHorizontal(this.start) - this.textLayout.getPrimaryHorizontal(this.animateToStart)) * this.startOffsetValue))) - m50dp, i);
+        canvas.translate(((int) ((this.textLayout.getPrimaryHorizontal(this.animateToStart) - (AndroidUtilities.m54dp(4) * (1.0f - this.startOffsetValue))) + ((this.textLayout.getPrimaryHorizontal(this.start) - this.textLayout.getPrimaryHorizontal(this.animateToStart)) * this.startOffsetValue))) - m54dp, i);
         float f4 = f;
         canvas.scale(interpolation, interpolation, f4, f4);
         this.path.reset();
@@ -268,10 +268,10 @@ public class TextSelectionHint extends View {
 
     public void show() {
         AndroidUtilities.cancelRunOnUIThread(this.dismissTunnable);
-        Animator animator = this.f1744a;
+        Animator animator = this.f1751a;
         if (animator != null) {
             animator.removeAllListeners();
-            this.f1744a.cancel();
+            this.f1751a.cancel();
         }
         if (getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
             this.showOnMeasure = true;
@@ -327,7 +327,7 @@ public class TextSelectionHint extends View {
         ofFloat4.setDuration(900L);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-        this.f1744a = animatorSet;
+        this.f1751a = animatorSet;
         animatorSet.start();
         AndroidUtilities.runOnUIThread(this.dismissTunnable, 5000L);
     }
@@ -369,10 +369,10 @@ public class TextSelectionHint extends View {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void hideInternal() {
-        Animator animator = this.f1744a;
+        Animator animator = this.f1751a;
         if (animator != null) {
             animator.removeAllListeners();
-            this.f1744a.cancel();
+            this.f1751a.cancel();
         }
         this.showing = false;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.prepareProgress, BitmapDescriptorFactory.HUE_RED);
@@ -388,7 +388,7 @@ public class TextSelectionHint extends View {
                 TextSelectionHint.this.setVisibility(4);
             }
         });
-        this.f1744a = ofFloat;
+        this.f1751a = ofFloat;
         ofFloat.start();
     }
 
@@ -402,9 +402,7 @@ public class TextSelectionHint extends View {
         return this.prepareProgress;
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

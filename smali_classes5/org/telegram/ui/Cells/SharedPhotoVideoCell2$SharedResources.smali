@@ -38,10 +38,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 3
 
-    .line 586
+    .line 585
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 580
+    .line 579
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -50,28 +50,28 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->textPaint:Landroid/text/TextPaint;
 
-    .line 581
+    .line 580
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 583
+    .line 582
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->highlightPaint:Landroid/graphics/Paint;
 
-    .line 584
+    .line 583
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->imageFilters:Landroid/util/SparseArray;
 
-    .line 587
+    .line 586
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->textPaint:Landroid/text/TextPaint;
 
     const/16 v1, 0xc
@@ -84,14 +84,14 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 588
+    .line 587
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->textPaint:Landroid/text/TextPaint;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 589
+    .line 588
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->textPaint:Landroid/text/TextPaint;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -102,7 +102,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 590
+    .line 589
     sget v0, Lorg/telegram/messenger/R$drawable;->play_mini_video:I
 
     invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -111,7 +111,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->playDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 591
+    .line 590
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -126,12 +126,12 @@
 
     invoke-virtual {p1, v2, v2, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 592
+    .line 591
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->backgroundPaint:Landroid/graphics/Paint;
 
-    const-string v0, "sharedMedia_photoPlaceholder"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_sharedMedia_photoPlaceholder:I
 
-    invoke-static {v0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p2
 
@@ -143,7 +143,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 579
+    .line 578
     iget-object p0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->backgroundPaint:Landroid/graphics/Paint;
 
     return-object p0
@@ -154,7 +154,7 @@
 .method public getFilterString(I)Ljava/lang/String;
     .locals 2
 
-    .line 596
+    .line 595
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->imageFilters:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -165,7 +165,7 @@
 
     if-nez v0, :cond_0
 
-    .line 598
+    .line 597
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -186,7 +186,7 @@
 
     move-result-object v0
 
-    .line 599
+    .line 598
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;->imageFilters:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V

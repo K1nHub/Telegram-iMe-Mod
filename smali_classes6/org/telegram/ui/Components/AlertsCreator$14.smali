@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$14;
-.super Lorg/telegram/ui/Components/NumberPicker;
+.super Ljava/lang/Object;
 .source "AlertsCreator.java"
+
+# interfaces
+.implements Landroid/text/TextWatcher;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JJLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/Runnable;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createChangeBioAlert(Ljava/lang/String;JLandroid/content/Context;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,31 +17,91 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
+
+.field final synthetic val$maxSymbolsCount:I
+
+
 # direct methods
-.method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(ILorg/telegram/ui/Components/NumberTextView;)V
     .locals 0
 
-    .line 3128
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .line 2611
+    iput p1, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$maxSymbolsCount:I
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getContentDescription(I)Ljava/lang/CharSequence;
-    .locals 2
+.method public afterTextChanged(Landroid/text/Editable;)V
+    .locals 4
 
-    const/4 v0, 0x0
+    .line 2624
+    iget v0, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$maxSymbolsCount:I
 
-    new-array v0, v0, [Ljava/lang/Object;
+    invoke-interface {p1}, Landroid/text/Editable;->length()I
 
-    const-string v1, "Minutes"
+    move-result v1
 
-    .line 3131
-    invoke-static {v1, p1, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v2, 0x0
 
-    move-result-object p1
+    invoke-static {p1, v2, v1}, Ljava/lang/Character;->codePointCount(Ljava/lang/CharSequence;II)I
 
-    return-object p1
+    move-result p1
+
+    sub-int/2addr v0, p1
+
+    const/16 p1, 0x1e
+
+    if-ge v0, p1, :cond_1
+
+    .line 2626
+    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
+
+    invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
+
+    move-result v1
+
+    const/4 v3, 0x1
+
+    if-nez v1, :cond_0
+
+    move v2, v3
+
+    :cond_0
+    invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
+
+    .line 2627
+    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
+
+    invoke-static {p1, v3}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
+
+    goto :goto_0
+
+    .line 2629
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
+
+    invoke-static {p1, v2}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
+
+    :goto_0
+    return-void
+.end method
+
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+
+    return-void
 .end method

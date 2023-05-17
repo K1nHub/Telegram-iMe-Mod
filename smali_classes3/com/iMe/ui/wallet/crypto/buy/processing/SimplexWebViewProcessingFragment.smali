@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSimplexWebViewProcessingFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimplexWebViewProcessingFragment.kt\ncom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 BundleExtractorDelegate.kt\ncom/iMe/utils/extentions/delegate/BundleExtractorDelegateKt\n*L\n1#1,275:1\n13#2,4:276\n12#3,7:280\n*S KotlinDebug\n*F\n+ 1 SimplexWebViewProcessingFragment.kt\ncom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment\n*L\n43#1:276,4\n47#1:280,7\n*E\n"
+    value = "SMAP\nSimplexWebViewProcessingFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimplexWebViewProcessingFragment.kt\ncom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 BundleExtractorDelegate.kt\ncom/iMe/utils/extentions/delegate/BundleExtractorDelegateKt\n*L\n1#1,276:1\n13#2,4:277\n12#3,7:281\n*S KotlinDebug\n*F\n+ 1 SimplexWebViewProcessingFragment.kt\ncom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment\n*L\n43#1:277,4\n47#1:281,7\n*E\n"
 .end annotation
 
 
@@ -105,7 +105,7 @@
 
     const-string v3, "binding"
 
-    const-string v4, "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;"
+    const-string v4, "getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;"
 
     invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
@@ -260,11 +260,11 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$getBinding(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+.method public static final synthetic access$getBinding(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
     .locals 0
 
     .line 38
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object p0
 
@@ -332,29 +332,29 @@
 .method private final clearWebView()V
     .locals 3
 
-    .line 245
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    .line 246
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->webView:Landroid/webkit/WebView;
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->webView:Landroid/webkit/WebView;
 
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    .line 246
+    .line 247
     invoke-virtual {v0, v1, v2}, Landroid/webkit/WebView;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 247
+    .line 248
     invoke-virtual {v0}, Landroid/webkit/WebView;->stopLoading()V
 
     const-string v1, "about:blank"
 
-    .line 248
+    .line 249
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 249
+    .line 250
     invoke-virtual {v0}, Landroid/webkit/WebView;->destroy()V
 
     return-void
@@ -363,7 +363,7 @@
 .method private final createImageFile()Ljava/io/File;
     .locals 4
 
-    .line 214
+    .line 215
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -374,7 +374,7 @@
 
     move-result-object v0
 
-    .line 216
+    .line 217
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -399,7 +399,7 @@
 
     const-string v2, ".jpg"
 
-    .line 215
+    .line 216
     invoke-static {v1, v2, v0}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
 
     move-result-object v0
@@ -407,7 +407,7 @@
     return-object v0
 .end method
 
-.method private final getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+.method private final getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
     .locals 3
 
     .line 46
@@ -423,7 +423,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    check-cast v0, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     return-object v0
 .end method
@@ -456,7 +456,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 109
+    .line 110
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->setupColors()V
 
     return-void
@@ -486,12 +486,12 @@
 .method private final handleBackPress()Z
     .locals 1
 
-    .line 223
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    .line 224
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->webView:Landroid/webkit/WebView;
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->canGoBack()Z
 
@@ -499,17 +499,17 @@
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->webView:Landroid/webkit/WebView;
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->goBack()V
 
     goto :goto_0
 
-    .line 224
+    .line 225
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
@@ -522,20 +522,20 @@
 .method private final setupActionBar()V
     .locals 3
 
-    .line 230
+    .line 231
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 231
+    .line 232
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 232
+    .line 233
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 233
+    .line 234
     invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -548,7 +548,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 234
+    .line 235
     new-instance v1, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupActionBar$1$1;-><init>(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
@@ -561,32 +561,32 @@
 .method private final setupColors()V
     .locals 3
 
-    .line 254
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    .line 255
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object v0
 
-    .line 255
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->progressBar:Landroid/widget/ProgressBar;
+    .line 256
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->progressBar:Landroid/widget/ProgressBar;
 
     const-string v2, "progressBar"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "chats_actionBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->tintIndeterminateProgress(Landroid/widget/ProgressBar;I)V
 
-    .line 256
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->progressBar:Landroid/widget/ProgressBar;
+    .line 257
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->progressBar:Landroid/widget/ProgressBar;
 
-    const-string v1, "actionBarDefault"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -598,56 +598,56 @@
 .method private final setupWebView()V
     .locals 4
 
-    .line 121
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    .line 122
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->webView:Landroid/webkit/WebView;
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->webView:Landroid/webkit/WebView;
 
-    .line 122
+    .line 123
     invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    .line 123
+    .line 124
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V
 
     const/4 v2, 0x1
 
-    .line 124
+    .line 125
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
 
-    .line 125
+    .line 126
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
     const/4 v3, 0x2
 
-    .line 126
+    .line 127
     invoke-virtual {v1, v3}, Landroid/webkit/WebSettings;->setCacheMode(I)V
 
     const/4 v1, 0x0
 
-    .line 128
+    .line 129
     invoke-virtual {v0, v3, v1}, Landroid/webkit/WebView;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 129
+    .line 130
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object v1
 
     invoke-virtual {v1, v0, v2}, Landroid/webkit/CookieManager;->setAcceptThirdPartyCookies(Landroid/webkit/WebView;Z)V
 
-    .line 130
+    .line 131
     new-instance v1, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;-><init>(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
 
-    .line 178
+    .line 179
     new-instance v1, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$3;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$3;-><init>(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
@@ -676,17 +676,20 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 109
+    .line 110
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 108
+    .line 109
     new-instance v8, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$$ExternalSyntheticLambda0;
 
     invoke-direct {v8, v0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)V
+
+    .line 110
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
     const/4 v5, 0x0
 
@@ -694,23 +697,22 @@
 
     const/4 v7, 0x0
 
-    const-string v9, "actionBarDefault"
-
     move-object v2, v10
 
-    .line 109
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v2, 0x0
 
     aput-object v10, v1, v2
 
-    .line 110
+    .line 111
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
+
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
     const/4 v14, 0x0
 
@@ -720,36 +722,11 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "actionBarDefaultIcon"
-
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x1
-
-    aput-object v2, v1, v3
-
-    .line 111
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
-
-    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const-string v11, "actionBarDefaultTitle"
-
-    move-object v4, v2
-
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    const/4 v3, 0x2
 
     aput-object v2, v1, v3
 
@@ -758,19 +735,42 @@
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    const-string v11, "actionBarDefaultSelector"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    const/4 v3, 0x2
+
+    aput-object v2, v1, v3
+
+    .line 113
+    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
+
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
+
+    move-object v4, v2
+
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x3
 
     aput-object v2, v1, v3
 
-    .line 108
+    .line 109
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -797,7 +797,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 82
+    .line 83
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->mFilePathCallback:Landroid/webkit/ValueCallback;
 
     if-nez v1, :cond_0
@@ -815,14 +815,14 @@
 
     if-nez p3, :cond_1
 
-    .line 93
+    .line 94
     iget-object p2, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->mCameraPhotoPath:Ljava/lang/String;
 
     if-eqz p2, :cond_2
 
     new-array p3, v0, [Landroid/net/Uri;
 
-    .line 94
+    .line 95
     invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p2
@@ -835,7 +835,7 @@
 
     goto :goto_0
 
-    .line 97
+    .line 98
     :cond_1
     invoke-virtual {p3}, Landroid/content/Intent;->getDataString()Ljava/lang/String;
 
@@ -845,7 +845,7 @@
 
     new-array p3, v0, [Landroid/net/Uri;
 
-    .line 99
+    .line 100
     invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p2
@@ -861,7 +861,7 @@
     :cond_2
     move-object p3, v1
 
-    .line 104
+    .line 105
     :goto_0
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->mFilePathCallback:Landroid/webkit/ValueCallback;
 
@@ -869,13 +869,13 @@
 
     invoke-interface {p1, p3}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
-    .line 105
+    .line 106
     :cond_3
     iput-object v1, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->mFilePathCallback:Landroid/webkit/ValueCallback;
 
     return-void
 
-    .line 83
+    .line 84
     :cond_4
     :goto_1
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->onActivityResultFragment(IILandroid/content/Intent;)V
@@ -886,7 +886,7 @@
 .method public onBackPressed()Z
     .locals 1
 
-    .line 68
+    .line 69
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->handleBackPress()Z
 
     move-result v0
@@ -895,27 +895,46 @@
 .end method
 
 .method public onCreateView(Landroid/content/Context;)Landroid/view/View;
-    .locals 1
+    .locals 3
 
     const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 56
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->setupActionBar()V
-
-    .line 57
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->setupWebView()V
-
-    .line 58
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->setupColors()V
-
-    .line 60
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->getRoot()Landroid/widget/LinearLayout;
+    iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->webView:Landroid/webkit/WebView;
+
+    const-string v0, "binding.webView"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v0, v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 57
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->setupActionBar()V
+
+    .line 58
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->setupWebView()V
+
+    .line 59
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->setupColors()V
+
+    .line 61
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->getRoot()Landroidx/constraintlayout/widget/ConstraintLayout;
 
     move-result-object p1
 
@@ -929,10 +948,10 @@
 .method public onFragmentDestroy()V
     .locals 0
 
-    .line 64
+    .line 65
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
-    .line 65
+    .line 66
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->clearWebView()V
 
     return-void
@@ -945,12 +964,12 @@
 
     if-nez p2, :cond_0
 
-    .line 72
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    .line 73
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object p1
 
-    iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->webView:Landroid/webkit/WebView;
+    iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->webView:Landroid/webkit/WebView;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->getUrl()Ljava/lang/String;
 
@@ -977,12 +996,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 77
+    .line 78
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->resultDelegate:Lkotlin/jvm/functions/Function1;
 
     invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 78
+    .line 79
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void

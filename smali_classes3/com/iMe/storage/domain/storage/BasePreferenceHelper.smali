@@ -4,9 +4,6 @@
 
 
 # virtual methods
-.method public abstract clear()V
-.end method
-
 .method public abstract isKeyContains(Ljava/lang/String;)Z
 .end method
 

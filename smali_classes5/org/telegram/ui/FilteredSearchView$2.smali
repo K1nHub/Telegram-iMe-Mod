@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView;)V
     .locals 0
 
-    .line 149
+    .line 151
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
@@ -41,13 +41,13 @@
 
     return-object p2
 
-    .line 169
+    .line 171
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object p3, p3, Lorg/telegram/ui/FilteredSearchView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 170
+    .line 172
     invoke-virtual {p3}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p4
@@ -59,7 +59,7 @@
     :goto_0
     if-ge v1, p4, :cond_d
 
-    .line 171
+    .line 173
     invoke-virtual {p3, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -68,12 +68,12 @@
 
     new-array v3, v3, [I
 
-    .line 174
+    .line 176
     instance-of v4, v2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;
 
     if-eqz v4, :cond_3
 
-    .line 175
+    .line 177
     move-object v4, v2
 
     check-cast v4, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;
@@ -87,7 +87,7 @@
 
     if-ge v5, v7, :cond_6
 
-    .line 177
+    .line 179
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->getMessageObject(I)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v7
@@ -96,7 +96,7 @@
 
     goto :goto_2
 
-    .line 181
+    .line 183
     :cond_1
     invoke-virtual {v7}, Lorg/telegram/messenger/MessageObject;->getId()I
 
@@ -108,17 +108,17 @@
 
     if-ne v7, v8, :cond_2
 
-    .line 182
+    .line 184
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->getImageView(I)Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v6
 
-    .line 183
+    .line 185
     invoke-virtual {v6}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v7
 
-    .line 184
+    .line 186
     invoke-virtual {v6, v3}, Landroid/view/View;->getLocationInWindow([I)V
 
     move-object v6, v7
@@ -128,23 +128,23 @@
 
     goto :goto_1
 
-    .line 187
+    .line 189
     :cond_3
     instance-of v4, v2, Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     if-eqz v4, :cond_4
 
-    .line 188
+    .line 190
     move-object v4, v2
 
     check-cast v4, Lorg/telegram/ui/Cells/SharedDocumentCell;
 
-    .line 189
+    .line 191
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/SharedDocumentCell;->getMessage()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v5
 
-    .line 190
+    .line 192
     invoke-virtual {v5}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v5
@@ -155,35 +155,35 @@
 
     if-ne v5, v6, :cond_5
 
-    .line 191
+    .line 193
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/SharedDocumentCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v4
 
-    .line 192
+    .line 194
     invoke-virtual {v4}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v5
 
-    .line 193
+    .line 195
     invoke-virtual {v4, v3}, Landroid/view/View;->getLocationInWindow([I)V
 
     move-object v6, v5
 
     goto :goto_2
 
-    .line 195
+    .line 197
     :cond_4
     instance-of v4, v2, Lorg/telegram/ui/Cells/ContextLinkCell;
 
     if-eqz v4, :cond_5
 
-    .line 196
+    .line 198
     move-object v4, v2
 
     check-cast v4, Lorg/telegram/ui/Cells/ContextLinkCell;
 
-    .line 197
+    .line 199
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/ContextLinkCell;->getParentObject()Ljava/lang/Object;
 
     move-result-object v5
@@ -192,7 +192,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 198
+    .line 200
     invoke-virtual {v5}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v5
@@ -203,12 +203,12 @@
 
     if-ne v5, v6, :cond_5
 
-    .line 199
+    .line 201
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/ContextLinkCell;->getPhotoImage()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v6
 
-    .line 200
+    .line 202
     invoke-virtual {v4, v3}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
 
     goto :goto_2
@@ -220,19 +220,19 @@
     :goto_2
     if-eqz v6, :cond_c
 
-    .line 204
+    .line 206
     new-instance p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     invoke-direct {p2}, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;-><init>()V
 
-    .line 205
+    .line 207
     aget p4, v3, v0
 
     iput p4, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewX:I
 
     const/4 p4, 0x1
 
-    .line 206
+    .line 208
     aget v1, v3, p4
 
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -253,33 +253,33 @@
 
     iput v1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
-    .line 207
+    .line 209
     iput-object p3, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->parentView:Landroid/view/View;
 
-    .line 208
+    .line 210
     invoke-virtual {p3, v3}, Landroid/view/ViewGroup;->getLocationInWindow([I)V
 
-    .line 209
+    .line 211
     aget p4, v3, p4
 
     neg-int p4, p4
 
     iput p4, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->animatingImageViewYOffset:I
 
-    .line 210
+    .line 212
     iput-object v6, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 211
+    .line 213
     iput-boolean v0, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->allowTakeAnimation:Z
 
-    .line 212
+    .line 214
     invoke-virtual {v6}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
     move-result-object p4
 
     iput-object p4, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->radius:[I
 
-    .line 213
+    .line 215
     iget-object p4, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p4}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
@@ -288,36 +288,36 @@
 
     iput-object p4, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->thumb:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    .line 214
+    .line 216
     iget-object p4, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->parentView:Landroid/view/View;
 
     invoke-virtual {p4, v3}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 215
+    .line 217
     iput v0, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->clipTopAddition:I
 
-    .line 217
+    .line 219
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->isShowingImage(Lorg/telegram/messenger/MessageObject;)Z
 
     move-result p1
 
     if-eqz p1, :cond_b
 
-    .line 218
+    .line 220
     invoke-virtual {p3}, Lorg/telegram/ui/Components/RecyclerListView;->getPinnedHeader()Landroid/view/View;
 
     move-result-object p1
 
     if-eqz p1, :cond_b
 
-    .line 221
+    .line 223
     instance-of p4, v2, Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     const/high16 v1, 0x41000000    # 8.0f
 
     if-eqz p4, :cond_8
 
-    .line 222
+    .line 224
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p4
@@ -329,20 +329,20 @@
     :cond_8
     move p4, v0
 
-    .line 224
+    .line 226
     :goto_4
     iget v3, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
     sub-int/2addr p4, v3
 
-    .line 225
+    .line 227
     invoke-virtual {v2}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
     if-le p4, v3, :cond_9
 
-    .line 226
+    .line 228
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result p1
@@ -355,7 +355,7 @@
 
     goto :goto_5
 
-    .line 228
+    .line 230
     :cond_9
     iget p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
@@ -365,12 +365,12 @@
 
     sub-int/2addr p1, p4
 
-    .line 229
+    .line 231
     instance-of p4, v2, Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     if-eqz p4, :cond_a
 
-    .line 230
+    .line 232
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p4
@@ -380,7 +380,7 @@
     :cond_a
     if-ltz p1, :cond_b
 
-    .line 233
+    .line 235
     invoke-virtual {v2}, Landroid/view/View;->getHeight()I
 
     move-result p4
@@ -402,104 +402,10 @@
     return-object p2
 .end method
 
-.method public getSubtitleFor(I)Ljava/lang/CharSequence;
-    .locals 2
-
-    if-ltz p1, :cond_1
-
-    .line 258
-    iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
-
-    iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-lt p1, v0, :cond_0
-
-    goto :goto_0
-
-    .line 262
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
-
-    iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/telegram/messenger/MessageObject;
-
-    iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->date:I
-
-    int-to-long v0, p1
-
-    const/4 p1, 0x0
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/messenger/LocaleController;->formatDateAudio(JZ)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public getTitleFor(I)Ljava/lang/CharSequence;
-    .locals 1
-
-    if-ltz p1, :cond_1
-
-    .line 248
-    iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
-
-    iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-lt p1, v0, :cond_0
-
-    goto :goto_0
-
-    .line 252
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
-
-    iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/telegram/messenger/MessageObject;
-
-    invoke-static {p1}, Lorg/telegram/ui/FilteredSearchView;->createFromInfoString(Lorg/telegram/messenger/MessageObject;)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
 .method public getTotalImageCount()I
     .locals 1
 
-    .line 153
+    .line 155
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {v0}, Lorg/telegram/ui/FilteredSearchView;->access$100(Lorg/telegram/ui/FilteredSearchView;)I
@@ -512,7 +418,7 @@
 .method public loadMore()Z
     .locals 12
 
-    .line 158
+    .line 160
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {v0}, Lorg/telegram/ui/FilteredSearchView;->access$200(Lorg/telegram/ui/FilteredSearchView;)Z
@@ -521,7 +427,7 @@
 
     if-nez v0, :cond_0
 
-    .line 159
+    .line 161
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-wide v2, v1, Lorg/telegram/ui/FilteredSearchView;->currentSearchDialogId:J

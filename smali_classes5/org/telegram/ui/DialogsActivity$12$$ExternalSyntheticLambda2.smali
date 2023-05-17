@@ -5,27 +5,17 @@
 .implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$12$$ExternalSyntheticLambda2;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity$12;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/DialogsActivity$12$$ExternalSyntheticLambda2;
-
-    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$12$$ExternalSyntheticLambda2;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/DialogsActivity$12$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/ui/DialogsActivity$12$$ExternalSyntheticLambda2;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity$12;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$12$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/DialogsActivity$12;
 
     return-void
 .end method
@@ -33,9 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 0
+    .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/DialogsActivity$12;->$r8$lambda$lVRcvIXr07kQ9mHFLPszEfHxOpw()V
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$12$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/DialogsActivity$12;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$12;->$r8$lambda$dJBWmVpTSKh3Mgd0vLU_YbhprUU(Lorg/telegram/ui/DialogsActivity$12;)V
 
     return-void
 .end method

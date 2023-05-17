@@ -6,7 +6,7 @@
 # instance fields
 .field private divider:Z
 
-.field private dividerColor:Ljava/lang/String;
+.field private dividerColor:I
 
 .field private imageView:Landroid/widget/ImageView;
 
@@ -22,6 +22,11 @@
     .line 33
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
+    const/4 v0, 0x0
+
+    .line 30
+    iput v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->dividerColor:I
+
     .line 35
     new-instance v0, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -29,10 +34,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 36
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -78,10 +83,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->valueTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v2, "windowBackgroundWhiteValueText"
-
     .line 42
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteValueText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -126,9 +131,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "windowBackgroundWhiteGrayIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -175,14 +180,14 @@
     if-eqz v0, :cond_2
 
     .line 127
-    iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->dividerColor:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->dividerColor:I
 
     if-eqz v0, :cond_0
 
     .line 128
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dividerExtraPaint:Landroid/graphics/Paint;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -220,7 +225,7 @@
 
     int-to-float v5, v0
 
-    iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->dividerColor:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->dividerColor:I
 
     if-eqz v0, :cond_1
 
@@ -503,13 +508,13 @@
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(II)V
     .locals 3
 
     .line 100
     iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -518,6 +523,10 @@
     .line 101
     iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
     invoke-virtual {v0, p2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     .line 102
@@ -525,7 +534,7 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -538,16 +547,20 @@
     .line 103
     iget-object p2, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->imageView:Landroid/widget/ImageView;
 
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public setDividerColor(Ljava/lang/String;)V
+.method public setDividerColor(I)V
     .locals 0
 
     .line 62
-    iput-object p1, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->dividerColor:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->dividerColor:I
 
     return-void
 .end method

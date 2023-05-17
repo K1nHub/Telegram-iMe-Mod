@@ -42,7 +42,7 @@
     .line 41
     invoke-direct {p0}, Lio/reactivex/Flowable;-><init>()V
 
-    const-string v0, "source is null"
+    const-string/jumbo v0, "source is null"
 
     .line 42
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

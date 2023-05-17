@@ -7,6 +7,7 @@ import com.google.android.exoplayer2.upstream.DataSpec;
 import com.google.android.exoplayer2.upstream.TransferListener;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.io.EOFException;
+import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.concurrent.CountDownLatch;
@@ -20,6 +21,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
     private long bytesRemaining;
     private CountDownLatch countDownLatch;
     private int currentAccount;
+    File currentFile;
     private long currentOffset;
     private TLRPC$Document document;
     private RandomAccessFile file;
@@ -50,7 +52,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         TLRPC$TL_document tLRPC$TL_document = new TLRPC$TL_document();
         this.document = tLRPC$TL_document;
         tLRPC$TL_document.access_hash = Utilities.parseLong(this.uri.getQueryParameter("hash")).longValue();
-        this.document.f1435id = Utilities.parseLong(this.uri.getQueryParameter(TtmlNode.ATTR_ID)).longValue();
+        this.document.f1441id = Utilities.parseLong(this.uri.getQueryParameter(TtmlNode.ATTR_ID)).longValue();
         this.document.size = Utilities.parseLong(this.uri.getQueryParameter("size")).longValue();
         this.document.dc_id = Utilities.parseInt((CharSequence) this.uri.getQueryParameter("dc")).intValue();
         this.document.mime_type = this.uri.getQueryParameter("mime");
@@ -80,7 +82,9 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         this.opened = true;
         transferStarted(dataSpec);
         if (this.loadOperation != null) {
-            RandomAccessFile randomAccessFile = new RandomAccessFile(this.loadOperation.getCurrentFile(), "r");
+            File currentFile = this.loadOperation.getCurrentFile();
+            this.currentFile = currentFile;
+            RandomAccessFile randomAccessFile = new RandomAccessFile(currentFile, "r");
             this.file = randomAccessFile;
             randomAccessFile.seek(this.currentOffset);
         }
@@ -107,10 +111,18 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
                 }
                 i3 = (int) this.loadOperation.getDownloadedLengthFromOffset(this.currentOffset, i2)[0];
                 if (i3 == 0) {
-                    FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, null, this.parentObject, this.currentOffset, false, 3);
-                    CountDownLatch countDownLatch = new CountDownLatch(1);
-                    this.countDownLatch = countDownLatch;
-                    countDownLatch.await();
+                    this.countDownLatch = new CountDownLatch(1);
+                    FileLoadOperation loadStreamFile = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, null, this.parentObject, this.currentOffset, false, 3);
+                    FileLoadOperation fileLoadOperation = this.loadOperation;
+                    if (fileLoadOperation != loadStreamFile) {
+                        fileLoadOperation.removeStreamListener(this);
+                        this.loadOperation = loadStreamFile;
+                    }
+                    CountDownLatch countDownLatch = this.countDownLatch;
+                    if (countDownLatch != null) {
+                        countDownLatch.await();
+                        this.countDownLatch = null;
+                    }
                 }
             } catch (Exception e) {
                 throw new IOException(e);
@@ -143,7 +155,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
             try {
                 randomAccessFile.close();
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
             this.file = null;
         }
@@ -155,6 +167,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         CountDownLatch countDownLatch = this.countDownLatch;
         if (countDownLatch != null) {
             countDownLatch.countDown();
+            this.countDownLatch = null;
         }
     }
 
@@ -163,6 +176,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         CountDownLatch countDownLatch = this.countDownLatch;
         if (countDownLatch != null) {
             countDownLatch.countDown();
+            this.countDownLatch = null;
         }
     }
 }

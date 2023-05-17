@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.ads;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.source.ForwardingTimeline;
 import com.google.android.exoplayer2.util.Assertions;
@@ -19,10 +19,10 @@ public final class SinglePeriodAdTimeline extends ForwardingTimeline {
     public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
         this.timeline.getPeriod(i, period, z);
         long j = period.durationUs;
-        if (j == C0470C.TIME_UNSET) {
+        if (j == C0475C.TIME_UNSET) {
             j = this.adPlaybackState.contentDurationUs;
         }
-        period.set(period.f103id, period.uid, period.windowIndex, j, period.getPositionInWindowUs(), this.adPlaybackState, period.isPlaceholder);
+        period.set(period.f106id, period.uid, period.windowIndex, j, period.getPositionInWindowUs(), this.adPlaybackState, period.isPlaceholder);
         return period;
     }
 }

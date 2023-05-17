@@ -74,13 +74,13 @@
     if-nez p1, :cond_0
 
     .line 442
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     goto :goto_0
 
     .line 443
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX_CELL:I
 
     :goto_0
     return p1
@@ -118,7 +118,7 @@
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 469
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     const/4 v2, 0x1
 
@@ -172,7 +172,7 @@
 
     .line 476
     :cond_0
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX_CELL:I
 
     if-ne v0, v1, :cond_4
 
@@ -306,7 +306,7 @@
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     .line 447
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p2, v0, :cond_0
 

@@ -22,7 +22,7 @@
 .method public constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity;)V
     .locals 0
 
-    .line 1033
+    .line 1109
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$TouchHelperCallback;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;-><init>()V
@@ -35,10 +35,10 @@
 .method public clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
 
-    .line 1080
+    .line 1156
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 1081
+    .line 1157
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 p2, 0x0
@@ -51,7 +51,7 @@
 .method public getMovementFlags(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
     .locals 2
 
-    .line 1042
+    .line 1118
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -75,14 +75,14 @@
     :cond_0
     const/4 p1, 0x3
 
-    .line 1045
+    .line 1121
     invoke-static {p1, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
     move-result p1
 
     return p1
 
-    .line 1043
+    .line 1119
     :cond_1
     :goto_0
     invoke-static {v0, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
@@ -103,7 +103,7 @@
 .method public onChildDraw(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;FFIZ)V
     .locals 0
 
-    .line 1060
+    .line 1136
     invoke-super/range {p0 .. p7}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onChildDraw(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;FFIZ)V
 
     return-void
@@ -112,7 +112,7 @@
 .method public onMove(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 1050
+    .line 1126
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -137,11 +137,11 @@
 
     goto :goto_0
 
-    .line 1054
+    .line 1130
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$TouchHelperCallback;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$2300(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/ChangeUsernameActivity$Adapter;
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$2500(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/ChangeUsernameActivity$Adapter;
 
     move-result-object p1
 
@@ -171,18 +171,18 @@
 
     if-nez p2, :cond_0
 
-    .line 1066
+    .line 1142
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$TouchHelperCallback;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$000(Lorg/telegram/ui/ChangeUsernameActivity;)V
 
     goto :goto_0
 
-    .line 1068
+    .line 1144
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$TouchHelperCallback;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$400(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$500(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
@@ -190,14 +190,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
 
-    .line 1069
+    .line 1145
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 1071
+    .line 1147
     :goto_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onSelectedChanged(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 

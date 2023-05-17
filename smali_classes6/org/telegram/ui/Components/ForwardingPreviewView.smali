@@ -429,10 +429,10 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v1, "actionBarDefault"
-
     .line 223
-    invoke-direct {v7, v1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
+    invoke-direct {v7, v1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
 
     move-result v1
 
@@ -676,9 +676,9 @@
     .line 618
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v5, "dialogBackground"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-direct {v7, v5}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v7, v5}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
 
     move-result v2
 
@@ -723,7 +723,7 @@
 
     move/from16 v4, v16
 
-    move-object/from16 v23, v5
+    move/from16 v23, v5
 
     move-object/from16 v5, p6
 
@@ -808,13 +808,13 @@
 
     move-result-object v0
 
-    const-string v6, "chat_messagePanelSend"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelSend:I
 
-    const-string v5, "chat_messagePanelHint"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelHint:I
 
-    const-string v4, "checkboxCheck"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-virtual {v0, v6, v5, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v6, v5, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 631
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -877,11 +877,11 @@
 
     move/from16 v3, v16
 
-    move-object/from16 v25, v4
+    move/from16 v25, v4
 
     move/from16 v4, v17
 
-    move-object/from16 v26, v5
+    move/from16 v26, v5
 
     move-object/from16 v5, p6
 
@@ -924,8 +924,6 @@
 
     iget-boolean v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->hasCaption:Z
 
-    const-string v14, "divider"
-
     if-eqz v0, :cond_7
 
     .line 645
@@ -934,7 +932,9 @@
     invoke-direct {v0, v7, v8}, Lorg/telegram/ui/Components/ForwardingPreviewView$11;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;)V
 
     .line 651
-    invoke-direct {v7, v14}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(Ljava/lang/String;)I
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-direct {v7, v14}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
 
     move-result v1
 
@@ -970,7 +970,7 @@
 
     move-object/from16 v5, p6
 
-    move-object/from16 v27, v6
+    move/from16 v27, v6
 
     move/from16 v6, v16
 
@@ -1027,13 +1027,13 @@
 
     move-result-object v0
 
-    move-object/from16 v15, v25
+    move/from16 v5, v25
 
-    move-object/from16 v6, v26
+    move/from16 v6, v26
 
-    move-object/from16 v5, v27
+    move/from16 v15, v27
 
-    invoke-virtual {v0, v5, v6, v15}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v15, v6, v5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 662
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -1072,7 +1072,7 @@
 
     move/from16 v4, v16
 
-    move-object/from16 v28, v5
+    move/from16 v28, v5
 
     move-object/from16 v5, p6
 
@@ -1104,7 +1104,7 @@
     invoke-direct {v0, v7, v8}, Lorg/telegram/ui/Components/ForwardingPreviewView$12;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;)V
 
     .line 677
-    invoke-direct {v7, v14}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v7, v14}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
 
     move-result v1
 
@@ -1132,15 +1132,15 @@
 
     const/4 v4, 0x0
 
-    const/16 v16, 0x15
+    const/16 v14, 0x15
 
     move-object v0, v13
 
     move-object/from16 v1, p1
 
-    move-object v9, v6
+    move v9, v6
 
-    move/from16 v6, v16
+    move v6, v14
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 
@@ -1195,9 +1195,9 @@
 
     move-result-object v0
 
-    move-object/from16 v13, v28
+    move/from16 v13, v28
 
-    invoke-virtual {v0, v13, v9, v15}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v15, v9, v13}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 686
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -1213,11 +1213,11 @@
     goto :goto_4
 
     :cond_7
-    move-object v13, v6
+    move v15, v6
 
-    move-object/from16 v15, v25
+    move/from16 v13, v25
 
-    move-object/from16 v9, v26
+    move/from16 v9, v26
 
     .line 690
     :goto_4
@@ -1233,7 +1233,9 @@
     invoke-direct {v0, v7, v8}, Lorg/telegram/ui/Components/ForwardingPreviewView$13;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;)V
 
     .line 697
-    invoke-direct {v7, v14}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-direct {v7, v1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
 
     move-result v1
 
@@ -1322,7 +1324,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v13, v9, v15}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v15, v9, v13}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 706
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -1517,9 +1519,9 @@
     .line 750
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    move-object/from16 v2, v23
+    move/from16 v2, v23
 
-    invoke-direct {v7, v2}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v7, v2}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
 
     move-result v2
 
@@ -2179,39 +2181,16 @@
     return-object p0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 1360
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->resourcesProvider:Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 1361
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -3637,7 +3616,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_2
+    if-nez v3, :cond_3
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -3659,12 +3638,19 @@
 
     move-result v3
 
-    if-nez v3, :cond_0
+    if-eqz v3, :cond_3
+
+    :cond_0
+    iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
+
+    iget-boolean v3, v3, Lorg/telegram/messenger/ForwardingMessagesParams;->isFromShareAlert:Z
+
+    if-eqz v3, :cond_1
 
     goto :goto_0
 
     .line 100
-    :cond_0
+    :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -3674,7 +3660,7 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v2, :cond_2
 
     .line 102
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -3694,7 +3680,7 @@
     goto :goto_1
 
     .line 104
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v2, Lorg/telegram/messenger/R$string;->EventLogPromotedEditMessages:I
@@ -3712,7 +3698,7 @@
     goto :goto_1
 
     .line 98
-    :cond_2
+    :cond_3
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -3728,7 +3714,7 @@
 
     move-result v0
 
-    if-eq v1, v0, :cond_3
+    if-eq v1, v0, :cond_4
 
     .line 108
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
@@ -3736,7 +3722,7 @@
     .line 109
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updatePositions()V
 
-    :cond_3
+    :cond_4
     return-void
 .end method
 

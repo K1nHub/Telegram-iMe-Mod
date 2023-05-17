@@ -3,6 +3,7 @@ package com.iMe.p031ui.wallet.crypto.buy.customPrice;
 import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,7 +32,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkContentWalletCryptoBuyCustomPriceLayoutBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -226,58 +227,63 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
     public void showInputError(String errorText) {
         Intrinsics.checkNotNullParameter(errorText, "errorText");
         AppCompatTextView appCompatTextView = getBinding().textAction;
-        appCompatTextView.setTextColor(Theme.getColor("dialogTextRed"));
+        appCompatTextView.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
         appCompatTextView.setText(errorText);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView
     public void resetInputError() {
         AppCompatTextView appCompatTextView = getBinding().textAction;
-        appCompatTextView.setTextColor(Theme.getColor("chats_actionBackground"));
-        appCompatTextView.setText(getResourceManager().getString(C3242R.string.wallet_crypto_buy_custom_price_dialog_action));
+        appCompatTextView.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
+        appCompatTextView.setText(getResourceManager().getString(C3290R.string.wallet_crypto_buy_custom_price_dialog_action));
     }
 
     private final void setupStyles() {
-        this.shadowDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefault"), PorterDuff.Mode.SRC_IN));
+        Drawable drawable = this.shadowDrawable;
+        int i = Theme.key_actionBarDefault;
+        drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
         ForkContentWalletCryptoBuyCustomPriceLayoutBinding binding = getBinding();
         AppCompatImageView setupStyles$lambda$11$lambda$5 = binding.imageBack;
         Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$5, "setupStyles$lambda$11$lambda$5");
         ViewExtKt.setCircleRippleBackground(setupStyles$lambda$11$lambda$5);
-        ViewExtKt.setImageColor(setupStyles$lambda$11$lambda$5, Theme.getColor("actionBarDefaultTitle"));
+        int i2 = Theme.key_actionBarDefaultTitle;
+        ViewExtKt.setImageColor(setupStyles$lambda$11$lambda$5, Theme.getColor(i2));
         AppCompatTextView setupStyles$lambda$11$lambda$6 = binding.textAction;
         Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$6, "setupStyles$lambda$11$lambda$6");
         ViewExtKt.setRippleBackground$default(setupStyles$lambda$11$lambda$6, false, 1, null);
         ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$6);
-        setupStyles$lambda$11$lambda$6.setTextColor(Theme.getColor("chats_actionBackground"));
+        int i3 = Theme.key_chats_actionBackground;
+        setupStyles$lambda$11$lambda$6.setTextColor(Theme.getColor(i3));
         AppCompatEditText setupStyles$lambda$11$lambda$7 = binding.editFromAmount;
         Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$7, "setupStyles$lambda$11$lambda$7");
         ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$7);
-        setupStyles$lambda$11$lambda$7.setTextColor(Theme.getColor("chats_actionBackground"));
-        setupStyles$lambda$11$lambda$7.setHintTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        setupStyles$lambda$11$lambda$7.setTextColor(Theme.getColor(i3));
+        int i4 = Theme.key_windowBackgroundWhiteGrayText2;
+        setupStyles$lambda$11$lambda$7.setHintTextColor(Theme.getColor(i4));
         AppCompatTextView setupStyles$lambda$11$lambda$8 = binding.textToAmount;
         Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$8, "setupStyles$lambda$11$lambda$8");
         ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$8);
-        ViewExtKt.setCompoundDrawablesColor(setupStyles$lambda$11$lambda$8, Theme.getColor("chats_actionBackground"));
-        setupStyles$lambda$11$lambda$8.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        ViewExtKt.setCompoundDrawablesColor(setupStyles$lambda$11$lambda$8, Theme.getColor(i3));
+        setupStyles$lambda$11$lambda$8.setTextColor(Theme.getColor(i4));
         AppCompatTextView setupStyles$lambda$11$lambda$9 = binding.textFromCurrency;
         Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$9, "setupStyles$lambda$11$lambda$9");
         ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$9);
-        setupStyles$lambda$11$lambda$9.setTextColor(Theme.getColor("chats_actionBackground"));
+        setupStyles$lambda$11$lambda$9.setTextColor(Theme.getColor(i3));
         AppCompatTextView setupStyles$lambda$11$lambda$10 = binding.textToCurrency;
         Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$10, "setupStyles$lambda$11$lambda$10");
         ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$10);
-        setupStyles$lambda$11$lambda$10.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
-        binding.linearRoot.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        binding.linearHeader.setBackgroundColor(Theme.getColor("actionBarDefault"));
-        binding.textTax.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
-        binding.textTitle.setTextColor(Theme.getColor("actionBarDefaultTitle"));
-        binding.viewDivider.setBackgroundColor(Theme.getColor("divider"));
+        setupStyles$lambda$11$lambda$10.setTextColor(Theme.getColor(i4));
+        binding.linearRoot.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        binding.linearHeader.setBackgroundColor(Theme.getColor(i));
+        binding.textTax.setTextColor(Theme.getColor(i4));
+        binding.textTitle.setTextColor(Theme.getColor(i2));
+        binding.viewDivider.setBackgroundColor(Theme.getColor(Theme.key_divider));
     }
 
     private final void setupActionBar() {
         ForkContentWalletCryptoBuyCustomPriceLayoutBinding binding = getBinding();
-        binding.imageBack.setImageResource(C3242R.C3244drawable.ic_ab_back);
-        binding.textTitle.setText(getResourceManager().getString(C3242R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title));
+        binding.imageBack.setImageResource(C3290R.C3292drawable.ic_ab_back);
+        binding.textTitle.setText(getResourceManager().getString(C3290R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title));
     }
 
     private final void setupListeners() {

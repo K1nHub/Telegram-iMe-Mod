@@ -10,9 +10,11 @@
 
 .field public final synthetic f$1:I
 
+.field public final synthetic f$2:Ljava/util/ArrayList;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;ILjava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,19 +23,23 @@
 
     iput p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda102;->f$1:I
 
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda102;->f$2:Ljava/util/ArrayList;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda102;->f$0:Lorg/telegram/ui/ChatActivity;
 
     iget v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda102;->f$1:I
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$2rOIXHkhjF3HujNewclcA8Up55o(Lorg/telegram/ui/ChatActivity;ILandroid/view/View;)V
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda102;->f$2:Ljava/util/ArrayList;
+
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$jwL8ujnH7JnA2Vf0TPHY1p3RwQA(Lorg/telegram/ui/ChatActivity;ILjava/util/ArrayList;Landroid/view/View;)V
 
     return-void
 .end method

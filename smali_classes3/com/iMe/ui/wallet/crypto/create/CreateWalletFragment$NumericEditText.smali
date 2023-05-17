@@ -153,17 +153,17 @@
     .line 1181
     invoke-virtual {v0, v3, v4, v6, v2}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    const-string v3, "windowBackgroundWhiteBlackText"
-
     .line 1187
-    invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v4
 
     invoke-virtual {v0, v4}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 1188
-    invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 
@@ -356,9 +356,9 @@
     .line 1265
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string p4, "windowBackgroundWhiteGrayText7"
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText7:I
 
-    invoke-virtual {p1, p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p1, p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result p1
 
@@ -767,9 +767,9 @@
     .line 1294
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->numericPaint:Landroid/text/TextPaint;
 
-    const-string v3, "windowBackgroundWhiteHintText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 

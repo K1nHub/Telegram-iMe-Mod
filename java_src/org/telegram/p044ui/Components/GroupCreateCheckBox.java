@@ -19,15 +19,15 @@ public class GroupCreateCheckBox extends View {
     private static Paint eraser2;
     private boolean attachedToWindow;
     private Paint backgroundInnerPaint;
-    private String backgroundKey;
+    private int backgroundKey;
     private Paint backgroundPaint;
     private Canvas bitmapCanvas;
     private ObjectAnimator checkAnimator;
-    private String checkKey;
+    private int checkKey;
     private Paint checkPaint;
     private float checkScale;
     private Bitmap drawBitmap;
-    private String innerKey;
+    private int innerKey;
     private int innerRadDiff;
     private boolean isCheckAnimation;
     private boolean isChecked;
@@ -37,9 +37,10 @@ public class GroupCreateCheckBox extends View {
         super(context);
         this.isCheckAnimation = true;
         this.checkScale = 1.0f;
-        this.backgroundKey = "checkboxCheck";
-        this.checkKey = "checkboxCheck";
-        this.innerKey = "checkbox";
+        int i = Theme.key_checkboxCheck;
+        this.backgroundKey = i;
+        this.checkKey = i;
+        this.innerKey = Theme.key_checkbox;
         if (eraser == null) {
             Paint paint = new Paint(1);
             eraser = paint;
@@ -56,18 +57,18 @@ public class GroupCreateCheckBox extends View {
         Paint paint3 = new Paint(1);
         this.checkPaint = paint3;
         paint3.setStyle(Paint.Style.STROKE);
-        this.innerRadDiff = AndroidUtilities.m50dp(2);
-        this.checkPaint.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
-        eraser2.setStrokeWidth(AndroidUtilities.m50dp(28));
-        this.drawBitmap = Bitmap.createBitmap(AndroidUtilities.m50dp(24), AndroidUtilities.m50dp(24), Bitmap.Config.ARGB_4444);
+        this.innerRadDiff = AndroidUtilities.m54dp(2);
+        this.checkPaint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
+        eraser2.setStrokeWidth(AndroidUtilities.m54dp(28));
+        this.drawBitmap = Bitmap.createBitmap(AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(24), Bitmap.Config.ARGB_4444);
         this.bitmapCanvas = new Canvas(this.drawBitmap);
         updateColors();
     }
 
-    public void setColorKeysOverrides(String str, String str2, String str3) {
-        this.checkKey = str;
-        this.innerKey = str2;
-        this.backgroundKey = str3;
+    public void setColorKeysOverrides(int i, int i2, int i3) {
+        this.checkKey = i;
+        this.innerKey = i2;
+        this.backgroundKey = i3;
         updateColors();
     }
 
@@ -145,11 +146,11 @@ public class GroupCreateCheckBox extends View {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        float m50dp;
+        float m54dp;
         if (getVisibility() == 0 && this.progress != BitmapDescriptorFactory.HUE_RED) {
             int measuredWidth = getMeasuredWidth() / 2;
             int measuredHeight = getMeasuredHeight() / 2;
-            eraser2.setStrokeWidth(AndroidUtilities.m50dp(30));
+            eraser2.setStrokeWidth(AndroidUtilities.m54dp(30));
             this.drawBitmap.eraseColor(0);
             float f = this.progress;
             float f2 = f >= 0.5f ? 1.0f : f / 0.5f;
@@ -158,29 +159,29 @@ public class GroupCreateCheckBox extends View {
                 f = 1.0f - f;
             }
             if (f < 0.2f) {
-                m50dp = (AndroidUtilities.m50dp(2) * f) / 0.2f;
+                m54dp = (AndroidUtilities.m54dp(2) * f) / 0.2f;
             } else {
-                m50dp = f < 0.4f ? AndroidUtilities.m50dp(2) - ((AndroidUtilities.m50dp(2) * (f - 0.2f)) / 0.2f) : 0.0f;
+                m54dp = f < 0.4f ? AndroidUtilities.m54dp(2) - ((AndroidUtilities.m54dp(2) * (f - 0.2f)) / 0.2f) : 0.0f;
             }
             if (f3 != BitmapDescriptorFactory.HUE_RED) {
-                canvas.drawCircle(measuredWidth, measuredHeight, ((measuredWidth - AndroidUtilities.m50dp(2)) + (AndroidUtilities.m50dp(2) * f3)) - m50dp, this.backgroundPaint);
+                canvas.drawCircle(measuredWidth, measuredHeight, ((measuredWidth - AndroidUtilities.m54dp(2)) + (AndroidUtilities.m54dp(2) * f3)) - m54dp, this.backgroundPaint);
             }
-            float f4 = (measuredWidth - this.innerRadDiff) - m50dp;
+            float f4 = (measuredWidth - this.innerRadDiff) - m54dp;
             float f5 = measuredWidth;
             float f6 = measuredHeight;
             this.bitmapCanvas.drawCircle(f5, f6, f4, this.backgroundInnerPaint);
             this.bitmapCanvas.drawCircle(f5, f6, f4 * (1.0f - f2), eraser);
             canvas.drawBitmap(this.drawBitmap, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (Paint) null);
-            float m50dp2 = AndroidUtilities.m50dp(10) * f3 * this.checkScale;
-            float m50dp3 = AndroidUtilities.m50dp(5) * f3 * this.checkScale;
-            int m50dp4 = measuredWidth - AndroidUtilities.m50dp(1);
-            float sqrt = (float) Math.sqrt((m50dp3 * m50dp3) / 2.0f);
-            float f7 = m50dp4;
-            float m50dp5 = measuredHeight + AndroidUtilities.m50dp(4);
-            canvas.drawLine(f7, m50dp5, f7 - sqrt, m50dp5 - sqrt, this.checkPaint);
-            float sqrt2 = (float) Math.sqrt((m50dp2 * m50dp2) / 2.0f);
-            float m51dp = m50dp4 - AndroidUtilities.m51dp(1.2f);
-            canvas.drawLine(m51dp, m50dp5, m51dp + sqrt2, m50dp5 - sqrt2, this.checkPaint);
+            float m54dp2 = AndroidUtilities.m54dp(10) * f3 * this.checkScale;
+            float m54dp3 = AndroidUtilities.m54dp(5) * f3 * this.checkScale;
+            int m54dp4 = measuredWidth - AndroidUtilities.m54dp(1);
+            float sqrt = (float) Math.sqrt((m54dp3 * m54dp3) / 2.0f);
+            float f7 = m54dp4;
+            float m54dp5 = measuredHeight + AndroidUtilities.m54dp(4);
+            canvas.drawLine(f7, m54dp5, f7 - sqrt, m54dp5 - sqrt, this.checkPaint);
+            float sqrt2 = (float) Math.sqrt((m54dp2 * m54dp2) / 2.0f);
+            float m55dp = m54dp4 - AndroidUtilities.m55dp(1.2f);
+            canvas.drawLine(m55dp, m54dp5, m55dp + sqrt2, m54dp5 - sqrt2, this.checkPaint);
         }
     }
 }

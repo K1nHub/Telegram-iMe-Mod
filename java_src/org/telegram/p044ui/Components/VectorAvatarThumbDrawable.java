@@ -99,7 +99,7 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
             java.util.ArrayList<org.telegram.tgnet.TLRPC$Document> r3 = r0.documents
             java.lang.Object r3 = r3.get(r2)
             org.telegram.tgnet.TLRPC$Document r3 = (org.telegram.tgnet.TLRPC$Document) r3
-            long r3 = r3.f1435id
+            long r3 = r3.f1441id
             org.telegram.tgnet.TLRPC$TL_videoSizeStickerMarkup r5 = r15.sizeStickerMarkup
             long r5 = r5.sticker_id
             int r3 = (r3 > r5 ? 1 : (r3 == r5 ? 0 : -1))
@@ -128,9 +128,9 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
         L4f:
             r6 = r3
         L50:
-            r1 = 1045220557(0x3e4ccccd, float:0.2)
-            java.lang.String r2 = "windowBackgroundWhiteGrayIcon"
-            org.telegram.messenger.SvgHelper$SvgDrawable r9 = org.telegram.messenger.DocumentObject.getSvgThumb(r0, r2, r1)
+            int r1 = org.telegram.p044ui.ActionBar.Theme.key_windowBackgroundWhiteGrayIcon
+            r2 = 1045220557(0x3e4ccccd, float:0.2)
+            org.telegram.messenger.SvgHelper$SvgDrawable r9 = org.telegram.messenger.DocumentObject.getSvgThumb(r0, r1, r2)
             org.telegram.messenger.ImageReceiver r2 = r15.imageReceiver
             org.telegram.messenger.ImageLocation r1 = org.telegram.messenger.ImageLocation.getForDocument(r0)
             org.telegram.messenger.ImageLocation r5 = org.telegram.messenger.ImageLocation.getForDocument(r3)
@@ -283,7 +283,7 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
                     }
                     TLRPC$TL_videoSizeStickerMarkup tLRPC$TL_videoSizeStickerMarkup2 = this.sizeStickerMarkup;
                     if (tLRPC$TL_videoSizeStickerMarkup2 != null && (tLRPC$TL_videoSizeStickerMarkup = vectorAvatarThumbDrawable.sizeStickerMarkup) != null) {
-                        return tLRPC$TL_videoSizeStickerMarkup2.stickerset.f1450id == tLRPC$TL_videoSizeStickerMarkup.stickerset.f1450id && tLRPC$TL_videoSizeStickerMarkup2.sticker_id == tLRPC$TL_videoSizeStickerMarkup.sticker_id;
+                        return tLRPC$TL_videoSizeStickerMarkup2.stickerset.f1456id == tLRPC$TL_videoSizeStickerMarkup.stickerset.f1456id && tLRPC$TL_videoSizeStickerMarkup2.sticker_id == tLRPC$TL_videoSizeStickerMarkup.sticker_id;
                     }
                 }
             }

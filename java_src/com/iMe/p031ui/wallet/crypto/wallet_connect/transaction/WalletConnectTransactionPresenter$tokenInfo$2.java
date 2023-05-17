@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectTransactionPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter$tokenInfo$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectTransactionPresenter$tokenInfo$2 extends Lambda implements Function0<TokenInfo> {
     final /* synthetic */ WalletConnectTransactionPresenter this$0;
 

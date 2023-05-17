@@ -282,10 +282,10 @@
 
     iput-object v5, p0, Lorg/telegram/ui/Components/StorageUsageView;->calculatingTextView:Landroid/widget/TextView;
 
-    const-string v6, "windowBackgroundWhiteGrayText"
-
     .line 129
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -357,7 +357,7 @@
     .line 145
     iget-object v5, p0, Lorg/telegram/ui/Components/StorageUsageView;->telegramCacheTextView:Landroid/widget/TextView;
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -380,7 +380,7 @@
     .line 149
     iget-object v5, p0, Lorg/telegram/ui/Components/StorageUsageView;->telegramDatabaseTextView:Landroid/widget/TextView;
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -403,7 +403,7 @@
     .line 153
     iget-object v5, p0, Lorg/telegram/ui/Components/StorageUsageView;->freeSizeTextView:Landroid/widget/TextView;
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -426,16 +426,16 @@
     .line 157
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageUsageView;->totlaSizeTextView:Landroid/widget/TextView;
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
     invoke-virtual {p1, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string p1, "player_progress"
-
     .line 160
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_player_progress:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -652,9 +652,9 @@
     .line 181
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageUsageView;->divider:Landroid/view/View;
 
-    const-string v1, "divider"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -786,16 +786,16 @@
     .line 269
     iget v0, p0, Lorg/telegram/ui/Components/StorageUsageView;->lastProgressColor:I
 
-    const-string v1, "player_progress"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_player_progress:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     if-eq v0, v2, :cond_0
 
     .line 270
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -919,9 +919,9 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageUsageView;->textSettingsCell:Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -930,9 +930,9 @@
     .line 286
     iget-object v0, p0, Lorg/telegram/ui/Components/StorageUsageView;->divider:Landroid/view/View;
 
-    const-string v1, "divider"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1334,9 +1334,9 @@
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/StorageUsageView;->textSettingsCell:Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    const-string p2, "windowBackgroundWhiteBlackText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

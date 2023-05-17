@@ -426,22 +426,23 @@
 .method private final setCheckBoxDone(Lorg/telegram/ui/Cells/CheckBoxCell;Z)V
     .locals 2
 
-    const-string v0, "windowBackgroundWhiteGrayText2"
-
     if-eqz p2, :cond_0
 
-    const-string p2, "chats_actionBackground"
+    .line 141
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     goto :goto_0
 
     :cond_0
-    move-object p2, v0
-
-    :goto_0
-    const-string v1, "checkboxSquareCheck"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
     .line 142
-    invoke-virtual {p1, p2, v0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCheckBoxColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :goto_0
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareCheck:I
+
+    invoke-virtual {p1, p2, v0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCheckBoxColor(III)V
 
     return-void
 .end method
@@ -463,10 +464,10 @@
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    const-string v1, "chats_actionBackground"
-
     .line 147
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -604,15 +605,15 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Cells/CheckBoxCell;->setMultiline(Z)V
 
-    const-string v5, "windowBackgroundWhiteGrayText2"
-
-    const-string v6, "checkboxSquareCheck"
-
     .line 158
-    invoke-virtual {v3, v5, v5, v6}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCheckBoxColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareCheck:I
+
+    invoke-virtual {v3, v5, v5, v6}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCheckBoxColor(III)V
 
     .line 159
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -659,10 +660,10 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string p1, "windowBackgroundWhiteGrayText2"
-
     .line 181
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -749,10 +750,10 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
-    const-string v1, "player_actionBarSelector"
-
     .line 187
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSelector:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -906,10 +907,10 @@
 
     move-result-object v0
 
-    const-string v1, "dialogBackground"
-
     .line 170
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -941,10 +942,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "chat_messagePanelText"
-
     .line 175
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -963,9 +964,9 @@
 
 # virtual methods
 .method public configureDialogState(ZZLcom/iMe/storage/domain/model/crypto/airdrop/AirdropStep;I)V
-    .locals 15
+    .locals 17
 
-    move-object v0, p0
+    move-object/from16 v0, p0
 
     move-object/from16 v1, p3
 
@@ -974,17 +975,17 @@
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 74
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;
 
     move-result-object v2
 
     .line 75
-    invoke-direct {p0, v1}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->setupMenuItem(Lcom/iMe/storage/domain/model/crypto/airdrop/AirdropStep;)V
+    invoke-direct {v0, v1}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->setupMenuItem(Lcom/iMe/storage/domain/model/crypto/airdrop/AirdropStep;)V
 
     move/from16 v3, p4
 
     .line 76
-    invoke-direct {p0, v3}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->setupDescriptionView(I)V
+    invoke-direct {v0, v3}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->setupDescriptionView(I)V
 
     .line 78
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->checkboxAuth:Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -995,7 +996,7 @@
 
     move/from16 v4, p1
 
-    invoke-direct {p0, v3, v4}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->setCheckBoxDone(Lorg/telegram/ui/Cells/CheckBoxCell;Z)V
+    invoke-direct {v0, v3, v4}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->setCheckBoxDone(Lorg/telegram/ui/Cells/CheckBoxCell;Z)V
 
     .line 79
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->checkboxCreateWallet:Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -1006,7 +1007,7 @@
 
     move/from16 v4, p2
 
-    invoke-direct {p0, v3, v4}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->setCheckBoxDone(Lorg/telegram/ui/Cells/CheckBoxCell;Z)V
+    invoke-direct {v0, v3, v4}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->setCheckBoxDone(Lorg/telegram/ui/Cells/CheckBoxCell;Z)V
 
     .line 81
     sget-object v3, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -1021,49 +1022,49 @@
 
     if-eq v1, v3, :cond_2
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    if-eq v1, v3, :cond_1
+    if-eq v1, v4, :cond_1
 
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
-    if-eq v1, v3, :cond_0
+    if-eq v1, v4, :cond_0
 
     goto/16 :goto_0
 
     .line 109
     :cond_0
-    iget-object v4, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
+    iget-object v5, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
     .line 110
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
-    sget v3, Lorg/telegram/messenger/R$string;->airdrop_dialog_action_take:I
+    sget v4, Lorg/telegram/messenger/R$string;->airdrop_dialog_action_take:I
 
-    invoke-interface {v1, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const-string v1, "configureDialogState$lambda$5$lambda$4"
 
     .line 111
-    invoke-static {v4, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    new-instance v7, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$5$1;
+    new-instance v8, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$5$1;
 
-    invoke-direct {v7, p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$5$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
+    invoke-direct {v8, v0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$5$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
 
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    invoke-static/range {v4 .. v9}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static/range {v5 .. v10}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
     .line 113
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->textAdditionalAction:Landroidx/appcompat/widget/AppCompatTextView;
@@ -1072,49 +1073,53 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v2, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-static {v1, v2, v3, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     goto/16 :goto_0
 
     .line 93
     :cond_1
-    iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
+    iget-object v5, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
     .line 94
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_dashboard_create_eth_wallet:I
+    sget v3, Lorg/telegram/messenger/R$string;->wallet_dashboard_create_eth_wallet:I
 
-    invoke-interface {v1, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const-string v1, "configureDialogState$lambda$5$lambda$2"
 
     .line 95
-    invoke-static {v3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v6, 0x0
 
-    new-instance v6, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$3$1;
+    new-instance v8, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$3$1;
 
-    invoke-direct {v6, p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$3$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
+    invoke-direct {v8, v0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$3$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
 
-    const/4 v7, 0x1
+    const/4 v9, 0x1
 
-    const/4 v8, 0x0
+    const/4 v10, 0x0
 
-    invoke-static/range {v3 .. v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static/range {v5 .. v10}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
     .line 100
-    iget-object v9, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->textAdditionalAction:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v11, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->textAdditionalAction:Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 101
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -1124,24 +1129,24 @@
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v11, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const-string v1, "configureDialogState$lambda$5$lambda$3"
 
     .line 102
-    invoke-static {v9, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v11, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v10, 0x0
+    const-wide/16 v12, 0x0
 
-    new-instance v12, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;
+    new-instance v14, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;
 
-    invoke-direct {v12, p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
+    invoke-direct {v14, v0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
 
-    const/4 v13, 0x1
+    const/4 v15, 0x1
 
-    const/4 v14, 0x0
+    const/16 v16, 0x0
 
-    invoke-static/range {v9 .. v14}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static/range {v11 .. v16}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -1150,7 +1155,7 @@
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
     .line 84
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -1171,7 +1176,7 @@
 
     new-instance v6, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$1$1;
 
-    invoke-direct {v6, p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$1$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
+    invoke-direct {v6, v0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$1$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
 
     const/4 v7, 0x1
 
@@ -1183,7 +1188,7 @@
     iget-object v9, v2, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->textAdditionalAction:Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 88
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -1204,7 +1209,7 @@
 
     new-instance v12, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$2$1;
 
-    invoke-direct {v12, p0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$2$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
+    invoke-direct {v12, v0}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$2$1;-><init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
 
     const/4 v13, 0x1
 

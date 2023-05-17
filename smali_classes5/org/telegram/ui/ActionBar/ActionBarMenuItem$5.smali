@@ -20,17 +20,13 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-.field final synthetic val$selectedAccount:I
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
+.method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
     .locals 0
 
     .line 1062
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
-
-    iput p2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->val$selectedAccount:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,43 +36,31 @@
 
 # virtual methods
 .method public onTransitionCancel(Landroid/transition/Transition;)V
-    .locals 1
+    .locals 0
 
     .line 1075
-    iget p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->val$selectedAccount:I
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$200(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
-
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$200(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
+    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
     return-void
 .end method
 
 .method public onTransitionEnd(Landroid/transition/Transition;)V
-    .locals 1
+    .locals 0
 
     .line 1070
-    iget p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->val$selectedAccount:I
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$200(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
-
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$200(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
+    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
     return-void
 .end method
@@ -94,30 +78,16 @@
 .end method
 
 .method public onTransitionStart(Landroid/transition/Transition;)V
-    .locals 3
+    .locals 0
 
     .line 1065
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    iget v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->val$selectedAccount:I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$200(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+    move-result-object p1
 
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
-
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$200(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->setAnimationInProgress(I[I)I
-
-    move-result v0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$202(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)I
+    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
     return-void
 .end method

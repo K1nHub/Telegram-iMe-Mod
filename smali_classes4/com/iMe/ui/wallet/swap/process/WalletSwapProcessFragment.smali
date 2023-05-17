@@ -426,7 +426,7 @@
 .method private static final getThemeDescriptions$lambda$0(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -554,7 +554,7 @@
 .method private static final renderState$lambda$22$lambda$11$lambda$10(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    const-string p1, "this$0"
+    const-string/jumbo p1, "this$0"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -585,7 +585,7 @@
 .method private static final renderState$lambda$22$lambda$14$lambda$13(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    const-string p1, "this$0"
+    const-string/jumbo p1, "this$0"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -602,7 +602,7 @@
 .method private static final renderState$lambda$22$lambda$16$lambda$15(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    const-string p1, "this$0"
+    const-string/jumbo p1, "this$0"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -625,7 +625,7 @@
 .method private static final renderState$lambda$22$lambda$21$lambda$20(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    const-string p1, "this$0"
+    const-string/jumbo p1, "this$0"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -656,7 +656,7 @@
 .method private static final renderState$lambda$22$lambda$8$lambda$7(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
     .locals 0
 
-    const-string p1, "this$0"
+    const-string/jumbo p1, "this$0"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -708,7 +708,7 @@
 
     move-result-object v0
 
-    const-string v1, "setupActionBar$lambda$28$lambda$27$lambda$26"
+    const-string/jumbo v1, "setupActionBar$lambda$28$lambda$27$lambda$26"
 
     .line 371
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -738,7 +738,7 @@
 .end method
 
 .method private final setupColors()V
-    .locals 11
+    .locals 10
 
     .line 379
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;
@@ -762,9 +762,9 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v2, "windowBackgroundWhiteGrayText5"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText5:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -798,10 +798,10 @@
     .line 5
     check-cast v2, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const-string/jumbo v3, "windowBackgroundGray"
-
     .line 384
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -868,10 +868,10 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string/jumbo v8, "windowBackgroundWhiteGrayText4"
-
     .line 386
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -916,7 +916,7 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v9, "setupColors$lambda$38$lambda$31"
+    const-string/jumbo v9, "setupColors$lambda$38$lambda$31"
 
     .line 388
     invoke-static {v2, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -960,10 +960,10 @@
     .line 5
     check-cast v2, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const-string/jumbo v9, "windowBackgroundWhite"
-
     .line 389
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -997,8 +997,6 @@
 
     move-result v2
 
-    const-string/jumbo v9, "windowBackgroundWhiteBlueHeader"
-
     if-eqz v2, :cond_4
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -1008,12 +1006,14 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string v10, "setupColors$lambda$38$lambda$33"
+    const-string/jumbo v9, "setupColors$lambda$38$lambda$33"
 
     .line 390
-    invoke-static {v2, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -1065,7 +1065,9 @@
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 392
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -1108,7 +1110,7 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v6, "setupColors$lambda$38$lambda$35"
+    const-string/jumbo v6, "setupColors$lambda$38$lambda$35"
 
     .line 394
     invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1152,19 +1154,19 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatEditText;
 
-    const-string/jumbo v6, "windowBackgroundWhiteGrayText2"
-
     .line 396
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
     invoke-virtual {v2, v6}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    const-string v6, "chat_messagePanelText"
-
     .line 397
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -1207,7 +1209,7 @@
     .line 5
     check-cast v1, Landroid/widget/LinearLayout;
 
-    const-string v2, "setupColors$lambda$38$lambda$37"
+    const-string/jumbo v2, "setupColors$lambda$38$lambda$37"
 
     .line 399
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1410,7 +1412,7 @@
     .line 427
     iget-object v7, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textWhatIsApprove:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v0, "textWhatIsApprove"
+    const-string/jumbo v0, "textWhatIsApprove"
 
     invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1602,7 +1604,7 @@
 .method private static final showApproveConfirmationDialog$lambda$44(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1636,7 +1638,7 @@
 .method private static final showSuccessSwapAlert$lambda$23(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1681,6 +1683,8 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -1689,11 +1693,9 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "actionBarDefault"
-
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v2, 0x0
 
@@ -1706,6 +1708,8 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
@@ -1714,11 +1718,9 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "actionBarDefaultIcon"
-
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x1
 
@@ -1731,15 +1733,15 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const-string v11, "actionBarDefaultTitle"
-
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x2
 
@@ -1752,11 +1754,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const-string v11, "actionBarDefaultSelector"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x3
 
@@ -1780,12 +1782,13 @@
 
     invoke-direct {v10, v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda10;-><init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
-    const-string/jumbo v11, "windowBackgroundGray"
+    .line 84
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     move-object v4, v2
 
     .line 82
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x4
 
@@ -1874,9 +1877,9 @@
 .end method
 
 .method public onTokenSelected(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/model/wallet/select/SelectableToken;IILcom/iMe/storage/domain/model/crypto/NetworkType;)V
-    .locals 3
+    .locals 5
 
-    const-string v0, "side"
+    const-string/jumbo v0, "side"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1902,13 +1905,17 @@
 
     aget p1, v0, p1
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    if-eq p1, v0, :cond_1
+    const/4 v1, 0x0
 
-    const/4 v1, 0x2
+    const/4 v2, 0x1
 
-    if-eq p1, v1, :cond_0
+    if-eq p1, v2, :cond_1
+
+    const/4 v3, 0x2
+
+    if-eq p1, v3, :cond_0
 
     goto :goto_0
 
@@ -1916,24 +1923,24 @@
     :cond_0
     iget-object p1, p5, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->linearChooseTo:Landroid/widget/LinearLayout;
 
-    const-string v1, "linearChooseTo"
+    const-string v3, "linearChooseTo"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 155
     iget-object p1, p5, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
-    const-string v1, "onTokenSelected$lambda$5$lambda$4"
+    const-string v3, "onTokenSelected$lambda$5$lambda$4"
 
     .line 156
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, p3, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->limitInputLength(Landroid/widget/EditText;II)V
 
     .line 157
-    invoke-static {p1, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setAllowDecimals(Landroid/widget/EditText;Z)V
+    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setAllowDecimals(Landroid/widget/EditText;Z)V
 
     .line 158
     invoke-virtual {p2}, Lcom/iMe/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
@@ -1958,7 +1965,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -1966,24 +1973,24 @@
     :cond_1
     iget-object p1, p5, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->linearChooseFrom:Landroid/widget/LinearLayout;
 
-    const-string v1, "linearChooseFrom"
+    const-string v3, "linearChooseFrom"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 145
     iget-object p1, p5, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editFromAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
-    const-string v1, "onTokenSelected$lambda$5$lambda$3"
+    const-string v3, "onTokenSelected$lambda$5$lambda$3"
 
     .line 146
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, p3, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->limitInputLength(Landroid/widget/EditText;II)V
 
     .line 147
-    invoke-static {p1, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setAllowDecimals(Landroid/widget/EditText;Z)V
+    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setAllowDecimals(Landroid/widget/EditText;Z)V
 
     .line 148
     invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -1992,17 +1999,15 @@
 
     sget p4, Lorg/telegram/messenger/R$string;->wallet_amount_input_hint:I
 
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
+    new-array v3, v2, [Ljava/lang/Object;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v0, v1
+    aput-object v4, v3, v1
 
-    invoke-interface {p3, p4, v0}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {p3, p4, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p3
 
@@ -2024,7 +2029,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     :goto_0
     return-void
@@ -2073,7 +2078,7 @@
         }
     .end annotation
 
-    const-string v0, "side"
+    const-string/jumbo v0, "side"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2149,7 +2154,7 @@
 
     move-object/from16 v1, p1
 
-    const-string v2, "state"
+    const-string/jumbo v2, "state"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2161,11 +2166,15 @@
     .line 176
     instance-of v3, v1, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$NeedApprove;
 
-    const/4 v4, 0x0
+    const-string v4, "feeView"
 
-    const-string v5, "feeView"
+    const-string/jumbo v5, "textWhatIsApprove"
 
-    const-string v6, "textWhatIsApprove"
+    const/4 v6, 0x1
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
 
     if-eqz v3, :cond_1
 
@@ -2175,22 +2184,22 @@
     .line 178
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v7
+    move-result-object v9
 
-    sget v8, Lorg/telegram/messenger/R$string;->wallet_swap_process_button_approve:I
+    sget v10, Lorg/telegram/messenger/R$string;->wallet_swap_process_button_approve:I
 
-    invoke-interface {v7, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v9, v10}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v9
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 179
-    new-instance v7, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda1;
+    new-instance v9, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda1;
 
-    invoke-direct {v7, v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-direct {v9, v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 181
     check-cast v1, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$NeedApprove;
@@ -2203,27 +2212,32 @@
 
     invoke-virtual {v3}, Lcom/iMe/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
+
+    goto :goto_0
 
     :cond_0
-    iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
+    move-object v3, v8
 
-    invoke-virtual {v3, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    :goto_0
+    iget-object v9, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
+
+    invoke-virtual {v9, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 182
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textToDescription:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v4
+    move-result-object v9
 
-    sget v7, Lorg/telegram/messenger/R$string;->wallet_swap_process_to_description:I
+    sget v10, Lorg/telegram/messenger/R$string;->wallet_swap_process_to_description:I
 
-    invoke-interface {v4, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v9, v10}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v9
 
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 183
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->feeView:Lcom/iMe/ui/custom/FeeView;
@@ -2237,18 +2251,18 @@
     .line 184
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->feeView:Lcom/iMe/ui/custom/FeeView;
 
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 185
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textWhatIsApprove:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_3
 
     .line 187
     :cond_1
@@ -2260,51 +2274,51 @@
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
     .line 189
-    iget-object v7, v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->screenType:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;
+    iget-object v9, v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->screenType:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;
 
     .line 190
-    instance-of v8, v7, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Binance;
+    instance-of v10, v9, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Binance;
 
-    if-eqz v8, :cond_2
+    if-eqz v10, :cond_2
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v7
+    move-result-object v9
 
-    sget v8, Lorg/telegram/messenger/R$string;->binance_convert_button_calculate:I
+    sget v10, Lorg/telegram/messenger/R$string;->binance_convert_button_calculate:I
 
-    invoke-interface {v7, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v9, v10}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v9
 
-    goto :goto_0
+    goto :goto_1
 
     .line 191
     :cond_2
-    instance-of v7, v7, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;
+    instance-of v9, v9, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;
 
-    if-eqz v7, :cond_4
+    if-eqz v9, :cond_4
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v7
+    move-result-object v9
 
-    sget v8, Lorg/telegram/messenger/R$string;->wallet_swap_process_button_calculate:I
+    sget v10, Lorg/telegram/messenger/R$string;->wallet_swap_process_button_calculate:I
 
-    invoke-interface {v7, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v9, v10}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v9
 
     .line 189
-    :goto_0
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    :goto_1
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 193
-    new-instance v7, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda2;
+    new-instance v9, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {v7, v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;)V
+    invoke-direct {v9, v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;)V
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 195
     check-cast v1, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$PrepareSwap;
@@ -2317,12 +2331,17 @@
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
+
+    goto :goto_2
 
     :cond_3
-    iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
+    move-object v1, v8
 
-    invoke-virtual {v1, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    :goto_2
+    iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
+
+    invoke-virtual {v3, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 196
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textToDescription:Landroidx/appcompat/widget/AppCompatTextView;
@@ -2331,9 +2350,9 @@
 
     move-result-object v3
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_swap_process_to_description:I
+    sget v9, Lorg/telegram/messenger/R$string;->wallet_swap_process_to_description:I
 
-    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2342,18 +2361,18 @@
     .line 197
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->feeView:Lcom/iMe/ui/custom/FeeView;
 
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 198
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textWhatIsApprove:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_3
 
     .line 191
     :cond_4
@@ -2372,9 +2391,9 @@
     .line 201
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textWhatIsApprove:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v3, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 202
     move-object v3, v1
@@ -2384,17 +2403,13 @@
     .line 203
     instance-of v4, v3, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Binance;
 
-    const/4 v6, 0x3
+    const/4 v9, 0x3
 
-    const/4 v7, 0x2
+    const/4 v10, 0x2
 
-    const/4 v8, 0x1
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    const/high16 v9, 0x3f800000    # 1.0f
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x4
+    const/4 v12, 0x4
 
     if-eqz v4, :cond_6
 
@@ -2411,16 +2426,16 @@
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Binance;->getQuote()Lcom/iMe/storage/domain/model/binancepay/BinanceConvertQuote;
 
-    move-result-object v12
+    move-result-object v8
 
-    invoke-virtual {v12}, Lcom/iMe/storage/domain/model/binancepay/BinanceConvertQuote;->getInputAmount()D
+    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/binancepay/BinanceConvertQuote;->getInputAmount()D
 
-    move-result-wide v12
+    move-result-wide v13
 
-    div-double/2addr v3, v12
+    div-double/2addr v3, v13
 
     .line 205
-    iget-object v12, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textToDescription:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v8, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textToDescription:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
@@ -2429,12 +2444,12 @@
     .line 206
     sget v14, Lorg/telegram/messenger/R$string;->wallet_swap_process_fee_price_value:I
 
-    new-array v11, v11, [Ljava/lang/Object;
+    new-array v12, v12, [Ljava/lang/Object;
 
     .line 207
-    invoke-static {v9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v11}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v9
+    move-result-object v11
 
     sget-object v15, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;
 
@@ -2442,11 +2457,11 @@
 
     move-result v5
 
-    invoke-static {v9, v5}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v11, v5}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
     move-result-object v5
 
-    aput-object v5, v11, v10
+    aput-object v5, v12, v7
 
     .line 208
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Binance;->getQuote()Lcom/iMe/storage/domain/model/binancepay/BinanceConvertQuote;
@@ -2457,7 +2472,7 @@
 
     move-result-object v5
 
-    aput-object v5, v11, v8
+    aput-object v5, v12, v6
 
     .line 209
     invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
@@ -2472,7 +2487,7 @@
 
     move-result-object v3
 
-    aput-object v3, v11, v7
+    aput-object v3, v12, v10
 
     .line 210
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Binance;->getQuote()Lcom/iMe/storage/domain/model/binancepay/BinanceConvertQuote;
@@ -2483,14 +2498,14 @@
 
     move-result-object v3
 
-    aput-object v3, v11, v6
+    aput-object v3, v12, v9
 
     .line 205
-    invoke-interface {v13, v14, v11}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v13, v14, v12}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v12, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 212
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
@@ -2574,7 +2589,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_3
 
     .line 229
     :cond_6
@@ -2622,7 +2637,7 @@
     .line 236
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v3, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 238
     iget-object v3, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textToDescription:Landroidx/appcompat/widget/AppCompatTextView;
@@ -2634,12 +2649,12 @@
     .line 239
     sget v5, Lorg/telegram/messenger/R$string;->wallet_swap_process_fee_price_value:I
 
-    new-array v11, v11, [Ljava/lang/Object;
+    new-array v8, v12, [Ljava/lang/Object;
 
     .line 240
-    invoke-static {v9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v11}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v9
+    move-result-object v11
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
@@ -2653,87 +2668,87 @@
 
     move-result v12
 
-    invoke-static {v9, v12}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v11, v12}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    aput-object v9, v11, v10
+    aput-object v11, v8, v7
 
     .line 241
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v9
+    move-result-object v7
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v10}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getInputTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v11}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getInputTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v10}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
+    invoke-virtual {v11}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
 
-    move-result v10
+    move-result v11
 
-    invoke-interface {v9, v10}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v7, v11}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    aput-object v9, v11, v8
+    aput-object v7, v8, v6
 
     .line 242
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    move-result-object v8
+    move-result-object v6
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getExecutionPrice()Ljava/math/BigDecimal;
+    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getExecutionPrice()Ljava/math/BigDecimal;
 
-    move-result-object v8
+    move-result-object v6
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getOutputTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getOutputTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
 
-    move-result v9
+    move-result v7
 
-    invoke-static {v8, v9}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v6, v7}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v6
 
-    aput-object v8, v11, v7
+    aput-object v6, v8, v10
 
     .line 243
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v7
+    move-result-object v6
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getOutputTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result v8
-
-    invoke-interface {v7, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getOutputTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
 
     move-result-object v7
 
-    aput-object v7, v11, v6
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
+
+    move-result v7
+
+    invoke-interface {v6, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v8, v9
 
     .line 238
-    invoke-interface {v4, v5, v11}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v4, v5, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -2804,7 +2819,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_3
 
     .line 249
     :cond_7
@@ -2820,9 +2835,9 @@
 
     move-result-object v3
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_swap_process_button_approving:I
+    sget v9, Lorg/telegram/messenger/R$string;->wallet_swap_process_button_approving:I
 
-    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2836,18 +2851,18 @@
     .line 254
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->feeView:Lcom/iMe/ui/custom/FeeView;
 
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 255
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textWhatIsApprove:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_3
 
     .line 257
     :cond_8
@@ -2863,9 +2878,9 @@
 
     move-result-object v3
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_swap_process_button_calculate:I
+    sget v9, Lorg/telegram/messenger/R$string;->wallet_swap_process_button_calculate:I
 
-    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2903,9 +2918,9 @@
 
     move-result-object v3
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_swap_process_from_description:I
+    sget v9, Lorg/telegram/messenger/R$string;->wallet_swap_process_from_description:I
 
-    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2918,9 +2933,9 @@
 
     move-result-object v3
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_swap_process_to_description:I
+    sget v9, Lorg/telegram/messenger/R$string;->wallet_swap_process_to_description:I
 
-    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2929,9 +2944,9 @@
     .line 266
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->feeView:Lcom/iMe/ui/custom/FeeView;
 
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 267
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->linearChooseTo:Landroid/widget/LinearLayout;
@@ -2940,14 +2955,14 @@
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 268
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textWhatIsApprove:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 269
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->linearChooseFrom:Landroid/widget/LinearLayout;
@@ -2956,7 +2971,7 @@
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 270
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->groupFromSelectedToken:Landroidx/constraintlayout/widget/Group;
@@ -2965,7 +2980,7 @@
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 271
     iget-object v1, v2, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->groupToSelectedToken:Landroidx/constraintlayout/widget/Group;
@@ -2974,10 +2989,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v1, v7, v6, v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     :cond_9
-    :goto_1
+    :goto_3
     return-void
 .end method
 
@@ -2988,7 +3003,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "side"
+    const-string/jumbo v0, "side"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3047,7 +3062,7 @@
 .method public setupScreenForSwap(Ljava/lang/String;Ljava/lang/String;IZLcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$NetworkSwitchType;)V
     .locals 1
 
-    const-string v0, "title"
+    const-string/jumbo v0, "title"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3270,7 +3285,7 @@
 .end method
 
 .method public showMinMaxInputValues(Lcom/iMe/model/wallet/select/SelectableToken;Lcom/iMe/storage/domain/model/binancepay/OutputConvertToken;)V
-    .locals 8
+    .locals 9
 
     const-string/jumbo v0, "token"
 
@@ -3288,11 +3303,17 @@
     .line 312
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textFromAdditionalDescription:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "textFromAdditionalDescription"
+    const-string/jumbo v2, "textFromAdditionalDescription"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    invoke-static {v1, v2, v3, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 313
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->textFromAdditionalDescription:Landroidx/appcompat/widget/AppCompatTextView;
@@ -3302,64 +3323,60 @@
     move-result-object v1
 
     .line 314
-    sget v2, Lorg/telegram/messenger/R$string;->binance_convert_min_max_convert_value:I
+    sget v4, Lorg/telegram/messenger/R$string;->binance_convert_min_max_convert_value:I
 
-    const/4 v3, 0x4
+    const/4 v5, 0x4
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
     .line 315
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/binancepay/OutputConvertToken;->getMinLimit()D
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;
-
-    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getDecimals()I
-
-    move-result v6
-
-    invoke-static {v4, v6}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v6, 0x0
-
-    aput-object v4, v3, v6
-
-    .line 316
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v6, 0x1
-
-    aput-object v4, v3, v6
-
-    .line 317
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/binancepay/OutputConvertToken;->getMaxLimit()D
 
     move-result-wide v6
 
     invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
+    move-result-object v6
+
+    sget-object v7, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;
+
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getDecimals()I
+
+    move-result v8
+
+    invoke-static {v6, v8}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v5, v2
+
+    .line 316
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v5, v3
+
+    .line 317
+    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/binancepay/OutputConvertToken;->getMaxLimit()D
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
     move-result-object p2
 
-    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getDecimals()I
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getDecimals()I
 
-    move-result v4
+    move-result v2
 
-    invoke-static {p2, v4}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {p2, v2}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
     move-result-object p2
 
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
-    aput-object p2, v3, v4
+    aput-object p2, v5, v2
 
     .line 318
     invoke-virtual {p1}, Lcom/iMe/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
@@ -3368,10 +3385,10 @@
 
     const/4 p2, 0x3
 
-    aput-object p1, v3, p2
+    aput-object p1, v5, p2
 
     .line 313
-    invoke-interface {v1, v2, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v1, v4, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

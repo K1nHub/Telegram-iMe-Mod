@@ -105,7 +105,7 @@ public final class MultiReplyInteractor {
 
     private final SpannableString buildSpannableStringUser(TLRPC$User tLRPC$User) {
         SpannableString spannableString = new SpannableString(UserExtKt.getPrivacySafeName(tLRPC$User) + ':');
-        addUserNameSpan(spannableString, String.valueOf(tLRPC$User.f1567id));
+        addUserNameSpan(spannableString, String.valueOf(tLRPC$User.f1574id));
         return spannableString;
     }
 
@@ -138,7 +138,7 @@ public final class MultiReplyInteractor {
         try {
             spannableString.setSpan(new URLSpanReplacement(str), i, i2, 33);
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -146,7 +146,7 @@ public final class MultiReplyInteractor {
         try {
             spannableString.setSpan(new URLSpanUserMention(str, 1), 0, spannableString.length(), 33);
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 }

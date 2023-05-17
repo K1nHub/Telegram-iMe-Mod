@@ -6,24 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$1:[Z
-
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
 
 
 # direct methods
-.method public synthetic constructor <init>([Lorg/telegram/ui/ActionBar/AlertDialog;[ZLorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage$BooleanCallback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$1:[Z
-
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$0:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
 
     return-void
 .end method
@@ -31,15 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$0:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$1:[Z
-
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$in6BU3Y0G043wRGi9fgmKj2ZiF8([Lorg/telegram/ui/ActionBar/AlertDialog;[ZLorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$NZ9_MN6vWwbsdnp7Rlc1eL8_3nA(Lorg/telegram/messenger/MessagesStorage$BooleanCallback;)V
 
     return-void
 .end method

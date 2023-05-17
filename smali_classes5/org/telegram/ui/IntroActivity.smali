@@ -1014,9 +1014,9 @@
 
     sget v1, Lorg/telegram/messenger/R$drawable;->intro_powerful_mask:I
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1052,7 +1052,7 @@
 
     .line 967
     :cond_0
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -1067,9 +1067,9 @@
     .line 950
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    const-string v1, "windowBackgroundWhite"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1078,9 +1078,9 @@
     .line 951
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->switchLanguageTextView:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteBlueText4"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1089,9 +1089,9 @@
     .line 952
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->startMessagingButton:Landroid/widget/TextView;
 
-    const-string v2, "featuredStickers_buttonText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1106,15 +1106,15 @@
 
     move-result v2
 
-    const-string v3, "changephoneinfo_image2"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_changephoneinfo_image2:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
-    const-string v5, "chats_actionPressedBackground"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionPressedBackground:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -1129,7 +1129,7 @@
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1187,10 +1187,10 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     .line 973
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1205,10 +1205,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteGrayText3"
-
     .line 975
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText3:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1220,7 +1220,7 @@
 
     .line 977
     :cond_1
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -1798,7 +1798,7 @@
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1813,25 +1813,53 @@
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/IntroActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/IntroActivity;)V
 
-    const-string v1, "windowBackgroundWhite"
+    const/4 v1, 0x7
 
-    const-string v2, "windowBackgroundWhiteBlueText4"
+    new-array v1, v1, [I
 
-    const-string v3, "chats_actionBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    const-string v4, "chats_actionPressedBackground"
+    const/4 v3, 0x0
 
-    const-string v5, "featuredStickers_buttonText"
+    aput v2, v1, v3
 
-    const-string v6, "windowBackgroundWhiteBlackText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
-    const-string v7, "windowBackgroundWhiteGrayText3"
+    const/4 v3, 0x1
 
-    filled-new-array/range {v1 .. v7}, [Ljava/lang/String;
+    aput v2, v1, v3
 
-    move-result-object v1
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[Ljava/lang/String;)Ljava/util/ArrayList;
+    const/4 v3, 0x2
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionPressedBackground:I
+
+    const/4 v3, 0x3
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    const/4 v3, 0x4
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    const/4 v3, 0x5
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText3:I
+
+    const/4 v3, 0x6
+
+    aput v2, v1, v3
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[I)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -1849,14 +1877,14 @@
 .method public isLightStatusBar()Z
     .locals 5
 
-    const-string v0, "windowBackgroundWhite"
+    .line 982
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    .line 982
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;[ZZ)I
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I[ZZ)I
 
     move-result v0
 

@@ -28,17 +28,17 @@ public abstract class BasePlayer implements Player {
 
     @Override // com.google.android.exoplayer2.Player
     public final void setMediaItem(MediaItem mediaItem) {
-        setMediaItems(ImmutableList.m739of(mediaItem));
+        setMediaItems(ImmutableList.m743of(mediaItem));
     }
 
     @Override // com.google.android.exoplayer2.Player
     public final void setMediaItem(MediaItem mediaItem, long j) {
-        setMediaItems(ImmutableList.m739of(mediaItem), 0, j);
+        setMediaItems(ImmutableList.m743of(mediaItem), 0, j);
     }
 
     @Override // com.google.android.exoplayer2.Player
     public final void setMediaItem(MediaItem mediaItem, boolean z) {
-        setMediaItems(ImmutableList.m739of(mediaItem), z);
+        setMediaItems(ImmutableList.m743of(mediaItem), z);
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -48,12 +48,12 @@ public abstract class BasePlayer implements Player {
 
     @Override // com.google.android.exoplayer2.Player
     public final void addMediaItem(int i, MediaItem mediaItem) {
-        addMediaItems(i, ImmutableList.m739of(mediaItem));
+        addMediaItems(i, ImmutableList.m743of(mediaItem));
     }
 
     @Override // com.google.android.exoplayer2.Player
     public final void addMediaItem(MediaItem mediaItem) {
-        addMediaItems(ImmutableList.m739of(mediaItem));
+        addMediaItems(ImmutableList.m743of(mediaItem));
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -298,7 +298,7 @@ public abstract class BasePlayer implements Player {
     public final int getBufferedPercentage() {
         long bufferedPosition = getBufferedPosition();
         long duration = getDuration();
-        if (bufferedPosition == C0470C.TIME_UNSET || duration == C0470C.TIME_UNSET) {
+        if (bufferedPosition == C0475C.TIME_UNSET || duration == C0475C.TIME_UNSET) {
             return 0;
         }
         if (duration == 0) {
@@ -334,7 +334,7 @@ public abstract class BasePlayer implements Player {
     @Override // com.google.android.exoplayer2.Player
     public final long getCurrentLiveOffset() {
         Timeline currentTimeline = getCurrentTimeline();
-        return (currentTimeline.isEmpty() || currentTimeline.getWindow(getCurrentMediaItemIndex(), this.window).windowStartTimeMs == C0470C.TIME_UNSET) ? C0470C.TIME_UNSET : (this.window.getCurrentUnixTimeMs() - this.window.windowStartTimeMs) - getContentPosition();
+        return (currentTimeline.isEmpty() || currentTimeline.getWindow(getCurrentMediaItemIndex(), this.window).windowStartTimeMs == C0475C.TIME_UNSET) ? C0475C.TIME_UNSET : (this.window.getCurrentUnixTimeMs() - this.window.windowStartTimeMs) - getContentPosition();
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -352,7 +352,7 @@ public abstract class BasePlayer implements Player {
     @Override // com.google.android.exoplayer2.Player
     public final long getContentDuration() {
         Timeline currentTimeline = getCurrentTimeline();
-        return currentTimeline.isEmpty() ? C0470C.TIME_UNSET : currentTimeline.getWindow(getCurrentMediaItemIndex(), this.window).getDurationMs();
+        return currentTimeline.isEmpty() ? C0475C.TIME_UNSET : currentTimeline.getWindow(getCurrentMediaItemIndex(), this.window).getDurationMs();
     }
 
     private int getRepeatModeForNavigation() {
@@ -370,14 +370,14 @@ public abstract class BasePlayer implements Player {
     private void seekToOffset(long j, int i) {
         long currentPosition = getCurrentPosition() + j;
         long duration = getDuration();
-        if (duration != C0470C.TIME_UNSET) {
+        if (duration != C0475C.TIME_UNSET) {
             currentPosition = Math.min(currentPosition, duration);
         }
         seekToCurrentItem(Math.max(currentPosition, 0L), i);
     }
 
     private void seekToDefaultPositionInternal(int i, int i2) {
-        seekTo(i, C0470C.TIME_UNSET, i2, false);
+        seekTo(i, C0475C.TIME_UNSET, i2, false);
     }
 
     private void seekToNextMediaItemInternal(int i) {
@@ -405,6 +405,6 @@ public abstract class BasePlayer implements Player {
     }
 
     private void repeatCurrentMediaItem(int i) {
-        seekTo(getCurrentMediaItemIndex(), C0470C.TIME_UNSET, i, true);
+        seekTo(getCurrentMediaItemIndex(), C0475C.TIME_UNSET, i, true);
     }
 }

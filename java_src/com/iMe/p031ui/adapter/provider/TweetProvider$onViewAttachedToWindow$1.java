@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: TweetProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TweetProvider$onViewAttachedToWindow$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class TweetProvider$onViewAttachedToWindow$1 extends Lambda implements Function1<TextView, Unit> {
     public static final TweetProvider$onViewAttachedToWindow$1 INSTANCE = new TweetProvider$onViewAttachedToWindow$1();
 

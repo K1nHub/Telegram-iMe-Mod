@@ -81,7 +81,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda225;->f$9:Lorg/telegram/messenger/MessageObject;
 
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$ZP14IYCMXEbgmbAjWQ5JIfV8REQ(Lorg/telegram/ui/ChatActivity;ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;ILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/messenger/MessageObject;)V
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$j54BwXnHR9KZzBovAf7zalpj9hQ(Lorg/telegram/ui/ChatActivity;ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;ILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/messenger/MessageObject;)V
 
     return-void
 .end method

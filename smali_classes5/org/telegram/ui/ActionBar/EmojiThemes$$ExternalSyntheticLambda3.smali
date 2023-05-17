@@ -41,7 +41,7 @@
 
     check-cast p1, Landroid/graphics/Bitmap;
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->$r8$lambda$Mu7XEmxuFZb017Rb747qZxlpNDs(Lorg/telegram/tgnet/ResultCallback;JLorg/telegram/tgnet/TLRPC$WallPaper;Landroid/graphics/Bitmap;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->$r8$lambda$bzfNy4ixZNMhTQ1AUKKnc-5MapE(Lorg/telegram/tgnet/ResultCallback;JLorg/telegram/tgnet/TLRPC$WallPaper;Landroid/graphics/Bitmap;)V
 
     return-void
 .end method

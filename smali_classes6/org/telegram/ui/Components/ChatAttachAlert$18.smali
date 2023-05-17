@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert;)V
     .locals 0
 
-    .line 3339
+    .line 3386
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
     move-object v0, p0
 
-    .line 3342
+    .line 3389
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -63,7 +63,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 3343
+    .line 3390
     move-object v3, v1
 
     check-cast v3, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
@@ -88,13 +88,13 @@
 
     goto :goto_0
 
-    .line 3344
+    .line 3391
     :cond_0
     instance-of v2, v1, Lorg/telegram/ui/PassportActivity;
 
     if-eqz v2, :cond_1
 
-    .line 3345
+    .line 3392
     check-cast v1, Lorg/telegram/ui/PassportActivity;
 
     move-object v2, p1
@@ -125,7 +125,7 @@
         }
     .end annotation
 
-    .line 3351
+    .line 3398
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -134,7 +134,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3352
+    .line 3399
     move-object v2, v0
 
     check-cast v2, Lorg/telegram/ui/ChatActivity;
@@ -153,13 +153,13 @@
 
     goto :goto_0
 
-    .line 3353
+    .line 3400
     :cond_0
     instance-of p4, v0, Lorg/telegram/ui/PassportActivity;
 
     if-eqz p4, :cond_1
 
-    .line 3354
+    .line 3401
     check-cast v0, Lorg/telegram/ui/PassportActivity;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/PassportActivity;->didSelectPhotos(Ljava/util/ArrayList;ZI)V
@@ -172,7 +172,7 @@
 .method public startDocumentSelectActivity()V
     .locals 2
 
-    .line 3360
+    .line 3407
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -181,20 +181,20 @@
 
     if-eqz v1, :cond_0
 
-    .line 3361
+    .line 3408
     check-cast v0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
 
     invoke-interface {v0}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;->startDocumentSelectActivity()V
 
     goto :goto_0
 
-    .line 3362
+    .line 3409
     :cond_0
     instance-of v1, v0, Lorg/telegram/ui/PassportActivity;
 
     if-eqz v1, :cond_1
 
-    .line 3363
+    .line 3410
     check-cast v0, Lorg/telegram/ui/PassportActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/PassportActivity;->startDocumentSelectActivity()V
@@ -207,7 +207,7 @@
 .method public startMusicSelectActivity()V
     .locals 2
 
-    .line 3369
+    .line 3416
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     const/4 v1, 0x1

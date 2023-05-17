@@ -29,7 +29,7 @@ public class ApiErrorHandler implements ErrorHandler<Throwable> {
     @Override // com.iMe.storage.data.network.handlers.ErrorHandler
     public ErrorModel handleError(Throwable th) {
         ErrorModel errorModel;
-        Timber.tag("ErrorHandler").mo0e(th);
+        Timber.tag("ErrorHandler").mo1e(th);
         if (th instanceof HttpException) {
             HttpException httpException = (HttpException) th;
             if (httpException.code() == 401) {

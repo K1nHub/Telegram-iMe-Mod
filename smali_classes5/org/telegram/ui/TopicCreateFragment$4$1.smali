@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicCreateFragment$4;)V
     .locals 0
 
-    .line 371
+    .line 372
     iput-object p1, p0, Lorg/telegram/ui/TopicCreateFragment$4$1;->this$1:Lorg/telegram/ui/TopicCreateFragment$4;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 374
+    .line 375
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 375
+    .line 376
     iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment$4$1;->this$1:Lorg/telegram/ui/TopicCreateFragment$4;
 
     const/4 v0, 0x0

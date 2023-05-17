@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2139
+    .line 2562
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,6 +49,16 @@
     .locals 1
 
     const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public synthetic canLoadMoreAvatars()Z
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider$-CC;->$default$canLoadMoreAvatars(Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;)Z
+
+    move-result v0
 
     return v0
 .end method
@@ -164,23 +174,7 @@
     return-object v0
 .end method
 
-.method public getSubtitleFor(I)Ljava/lang/CharSequence;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
 .method public getThumbForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;I)Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public getTitleFor(I)Ljava/lang/CharSequence;
     .locals 0
 
     const/4 p1, 0x0
@@ -234,6 +228,16 @@
     .locals 0
 
     return-void
+.end method
+
+.method public synthetic onDeletePhoto(I)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider$-CC;->$default$onDeletePhoto(Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;I)Z
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public onOpen()V

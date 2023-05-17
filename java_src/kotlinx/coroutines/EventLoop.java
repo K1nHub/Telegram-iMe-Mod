@@ -12,7 +12,15 @@ public abstract class EventLoop extends CoroutineDispatcher {
         return z ? 4294967296L : 1L;
     }
 
+    public boolean shouldBeProcessedFromContext() {
+        return false;
+    }
+
     public void shutdown() {
+    }
+
+    public long processNextEvent() {
+        return !processUnconfinedEvent() ? Long.MAX_VALUE : 0L;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -68,6 +76,16 @@ public abstract class EventLoop extends CoroutineDispatcher {
             return;
         }
         this.shared = true;
+    }
+
+    public static /* synthetic */ void decrementUseCount$default(EventLoop eventLoop, boolean z, int i, Object obj) {
+        if (obj != null) {
+            throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: decrementUseCount");
+        }
+        if ((i & 1) != 0) {
+            z = false;
+        }
+        eventLoop.decrementUseCount(z);
     }
 
     public final void decrementUseCount(boolean z) {

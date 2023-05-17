@@ -30,8 +30,8 @@
 
     :array_0
     .array-data 4
-        0x7f040354
-        0x7f040355
-        0x7f040356
+        0x7f04036f
+        0x7f040370
+        0x7f040371
     .end array-data
 .end method

@@ -52,10 +52,10 @@
     .line 29
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string p1, "featuredStickers_buttonText"
-
     .line 30
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -86,17 +86,17 @@
 
     move-result p1
 
-    const-string p2, "featuredStickers_addButton"
-
     .line 37
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
-    const-string p3, "featuredStickers_addButtonPressed"
-
     .line 38
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
+
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 

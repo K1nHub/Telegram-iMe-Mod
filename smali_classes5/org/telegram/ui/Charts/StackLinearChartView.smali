@@ -2077,10 +2077,10 @@
 
     if-eqz v18, :cond_34
 
-    const-string v1, "statisticChartLineEmpty"
-
     .line 364
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLineEmpty:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -2637,10 +2637,10 @@
     :cond_11
     if-eqz v5, :cond_12
 
-    const-string v2, "statisticChartLineEmpty"
-
     .line 483
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLineEmpty:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

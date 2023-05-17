@@ -4670,6 +4670,8 @@ Als je je wachtwoord vergeet verlies je toegang tot je Telegram-account. Er is g
     <string name="mtrl_picker_toggle_to_day_selection">Tik om naar dagselectie te schakelen</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Overschakelen naar tekstinvoermodus</string>
     <string name="mtrl_picker_toggle_to_year_selection">Tik om naar jaarselectie te schakelen</string>
+    <string name="nav_app_bar_navigate_up_description">Omhoog navigeren</string>
+    <string name="nav_app_bar_open_drawer_description">Zijmenu openen</string>
     <string name="password_toggle_content_description">Wachtwoord weergeven</string>
     <string name="search_menu_title">Zoeken</string>
     <string name="status_bar_notification_info_overflow">999+</string>

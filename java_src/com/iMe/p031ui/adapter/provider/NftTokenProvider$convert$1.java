@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: NftTokenProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.NftTokenProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class NftTokenProvider$convert$1 extends Lambda implements Function1<NftRootView, Unit> {
     final /* synthetic */ NftTokenItem $item;
     final /* synthetic */ int $leftPadding;

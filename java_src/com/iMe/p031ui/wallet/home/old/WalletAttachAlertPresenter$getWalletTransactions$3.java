@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletAttachAlertPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertPresenter$getWalletTransactions$3 */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 final class WalletAttachAlertPresenter$getWalletTransactions$3 extends Lambda implements Function1<Throwable, Unit> {
     final /* synthetic */ WalletAttachAlertPresenter this$0;
 

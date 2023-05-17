@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$7HtG-3BZGC4pe33lDvZDguoTSLM(Lorg/telegram/ui/ChatEditActivity;Landroid/view/View;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$sSquOsT8VneYNzu-yY6B8Rm1h-I(Lorg/telegram/ui/ChatEditActivity;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

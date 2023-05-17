@@ -11,7 +11,7 @@ import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingSafeWithdrawalBinding;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -58,17 +58,17 @@ public final class StakingSafeWithdrawalView extends FrameLayout {
 
     public final void setupColors() {
         ForkContentStakingSafeWithdrawalBinding forkContentStakingSafeWithdrawalBinding = this.binding;
-        forkContentStakingSafeWithdrawalBinding.checkboxSafeWithdrawal.setColors("checkboxSquareUnchecked", "checkboxSquareBackground", "checkboxSquareCheck");
-        forkContentStakingSafeWithdrawalBinding.textSafeWithdrawal.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        forkContentStakingSafeWithdrawalBinding.checkboxSafeWithdrawal.setColors(Theme.key_checkboxSquareUnchecked, Theme.key_checkboxSquareBackground, Theme.key_checkboxSquareCheck);
+        forkContentStakingSafeWithdrawalBinding.textSafeWithdrawal.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         AppCompatImageView setupColors$lambda$3$lambda$2 = forkContentStakingSafeWithdrawalBinding.imageHelp;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$3$lambda$2, "setupColors$lambda$3$lambda$2");
-        ViewExtKt.setImageColor(setupColors$lambda$3$lambda$2, Theme.getColor("windowBackgroundWhiteGrayIcon"));
+        ViewExtKt.setImageColor(setupColors$lambda$3$lambda$2, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
         ViewExtKt.setBoundedCircleRippleBackground(setupColors$lambda$3$lambda$2);
     }
 
     private final void setupView() {
         setupColors();
-        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3242R.string.staking_withdraw_safe_withdrawal));
+        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3290R.string.staking_withdraw_safe_withdrawal));
         addView(this.binding.getRoot());
     }
 }

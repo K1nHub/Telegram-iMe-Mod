@@ -23,10 +23,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/InviteTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 32
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -78,9 +78,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "windowBackgroundWhiteGrayIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

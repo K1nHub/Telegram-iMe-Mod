@@ -52,7 +52,7 @@
 
     move-result-object v1
 
-    const-string v2, "threadlocalecimplicitlyca"
+    const-string/jumbo v2, "threadlocalecimplicitlyca"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -78,7 +78,7 @@
     goto :goto_0
 
     :cond_2
-    const-string v2, "threadlocaldhdefaultparams"
+    const-string/jumbo v2, "threadlocaldhdefaultparams"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

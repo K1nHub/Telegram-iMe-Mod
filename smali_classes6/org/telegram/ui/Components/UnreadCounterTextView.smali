@@ -42,7 +42,7 @@
 
 .field textColor:I
 
-.field textColorKey:Ljava/lang/String;
+.field textColorKey:I
 
 .field private textLayout:Landroid/text/StaticLayout;
 
@@ -103,10 +103,10 @@
     .line 49
     iput p1, p0, Lorg/telegram/ui/Components/UnreadCounterTextView;->replaceProgress:F
 
-    const-string p1, "chat_fieldOverlayText"
-
     .line 56
-    iput-object p1, p0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_fieldOverlayText:I
+
+    iput p1, p0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:I
 
     .line 60
     iget-object p1, p0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textPaint:Landroid/text/TextPaint;
@@ -262,19 +262,19 @@
 
     if-eqz v3, :cond_0
 
-    iget-object v3, v0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:I
 
     goto :goto_0
 
     :cond_0
-    const-string v3, "windowBackgroundWhiteGrayText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/UnreadCounterTextView;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -292,13 +292,13 @@
 
     .line 222
     :cond_1
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelBackground:I
+
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/UnreadCounterTextView;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "chat_messagePanelBackground"
-
-    invoke-static {v4, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -316,13 +316,13 @@
 
     .line 226
     :cond_2
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_goDownButtonCounterBackground:I
+
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/UnreadCounterTextView;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "chat_goDownButtonCounterBackground"
-
-    invoke-static {v4, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -365,13 +365,13 @@
     .line 234
     iget v6, v0, Lorg/telegram/ui/Components/UnreadCounterTextView;->rippleColor:I
 
-    iget-object v7, v0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:Ljava/lang/String;
+    iget v7, v0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:I
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/UnreadCounterTextView;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v8
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v7
 
@@ -389,13 +389,13 @@
 
     move-result v6
 
-    iget-object v7, v0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:Ljava/lang/String;
+    iget v7, v0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:I
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/UnreadCounterTextView;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v8
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v7
 
@@ -1796,11 +1796,11 @@
     .end array-data
 .end method
 
-.method public setTextColorKey(Ljava/lang/String;)V
+.method public setTextColorKey(I)V
     .locals 0
 
     .line 316
-    iput-object p1, p0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/UnreadCounterTextView;->textColorKey:I
 
     .line 317
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V

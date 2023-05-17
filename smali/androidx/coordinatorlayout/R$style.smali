@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static final Widget_Support_CoordinatorLayout:I = 0x7f110309
+.field public static final Widget_Support_CoordinatorLayout:I = 0x7f12030a

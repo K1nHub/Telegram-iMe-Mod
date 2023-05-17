@@ -5,17 +5,27 @@
 .implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;->INSTANCE:Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
     return-void
 .end method
@@ -23,11 +33,9 @@
 
 # virtual methods
 .method public final invoke()V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/ManageLinksActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
+    invoke-static {}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$Z1fhm2VmbNyH_2lxlGEB-BHOMgc()V
 
     return-void
 .end method

@@ -3,7 +3,7 @@ package com.google.android.gms.internal.mlkit_language_id;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzf {
     private final String zza;
     private final zze zzb;

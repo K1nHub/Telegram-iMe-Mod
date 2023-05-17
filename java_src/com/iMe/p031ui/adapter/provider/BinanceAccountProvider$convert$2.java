@@ -4,11 +4,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.Components.BackupImageView;
 /* compiled from: BinanceAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BinanceAccountProvider$convert$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class BinanceAccountProvider$convert$2 extends Lambda implements Function1<BackupImageView, Unit> {
     public static final BinanceAccountProvider$convert$2 INSTANCE = new BinanceAccountProvider$convert$2();
 
@@ -25,6 +25,6 @@ final class BinanceAccountProvider$convert$2 extends Lambda implements Function1
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(BackupImageView applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-        applyForView.setImageResource(C3242R.C3244drawable.fork_ic_binance_40);
+        applyForView.setImageResource(C3290R.C3292drawable.fork_ic_binance_40);
     }
 }

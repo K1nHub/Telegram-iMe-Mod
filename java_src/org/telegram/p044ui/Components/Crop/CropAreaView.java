@@ -80,10 +80,10 @@ public class CropAreaView extends ViewGroup {
     private RectF topRightCorner;
 
     /* renamed from: tx */
-    public float f1629tx;
+    public float f1636tx;
 
     /* renamed from: ty */
-    public float f1630ty;
+    public float f1637ty;
 
     /* renamed from: org.telegram.ui.Components.Crop.CropAreaView$AreaViewListener */
     /* loaded from: classes6.dex */
@@ -140,13 +140,13 @@ public class CropAreaView extends ViewGroup {
         this.targetRect = new RectF();
         this.rotate = BitmapDescriptorFactory.HUE_RED;
         this.scale = 1.0f;
-        this.f1629tx = BitmapDescriptorFactory.HUE_RED;
-        this.f1630ty = BitmapDescriptorFactory.HUE_RED;
+        this.f1636tx = BitmapDescriptorFactory.HUE_RED;
+        this.f1637ty = BitmapDescriptorFactory.HUE_RED;
         this.inBubbleMode = context instanceof BubbleActivity;
         this.frameVisible = true;
         this.dimVisibile = true;
-        this.sidePadding = AndroidUtilities.m50dp(16);
-        this.minWidth = AndroidUtilities.m50dp(32);
+        this.sidePadding = AndroidUtilities.m54dp(16);
+        this.minWidth = AndroidUtilities.m54dp(32);
         this.gridType = GridType.NONE;
         Paint paint = new Paint();
         this.dimPaint = paint;
@@ -155,12 +155,12 @@ public class CropAreaView extends ViewGroup {
         this.shadowPaint = paint2;
         paint2.setStyle(Paint.Style.FILL);
         this.shadowPaint.setColor(436207616);
-        this.shadowPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.shadowPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         Paint paint3 = new Paint();
         this.linePaint = paint3;
         paint3.setStyle(Paint.Style.FILL);
         this.linePaint.setColor(-1);
-        this.linePaint.setStrokeWidth(AndroidUtilities.m50dp(1));
+        this.linePaint.setStrokeWidth(AndroidUtilities.m54dp(1));
         Paint paint4 = new Paint();
         this.handlePaint = paint4;
         paint4.setStyle(Paint.Style.FILL);
@@ -192,17 +192,17 @@ public class CropAreaView extends ViewGroup {
                 TextPaint textPaint = new TextPaint();
                 this.subtitlePaint = textPaint;
                 textPaint.setColor(ColorUtils.setAlphaComponent(-1, 120));
-                this.subtitlePaint.setTextSize(AndroidUtilities.m50dp(13));
+                this.subtitlePaint.setTextSize(AndroidUtilities.m54dp(13));
                 this.subtitlePaint.setTextAlign(Paint.Align.CENTER);
             }
-            this.subtitleLayout = new StaticLayout(this.subtitle, this.subtitlePaint, getMeasuredWidth() - AndroidUtilities.m50dp(120), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+            this.subtitleLayout = new StaticLayout(this.subtitle, this.subtitlePaint, getMeasuredWidth() - AndroidUtilities.m54dp(120), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             return;
         }
         this.subtitleLayout = null;
     }
 
     public void setIsVideo(boolean z) {
-        this.minWidth = AndroidUtilities.m50dp(z ? 64 : 32);
+        this.minWidth = AndroidUtilities.m54dp(z ? 64 : 32);
     }
 
     public boolean isDragging() {
@@ -265,8 +265,8 @@ public class CropAreaView extends ViewGroup {
     public void setRotationScaleTranslation(float f, float f2, float f3, float f4) {
         this.rotate = f;
         this.scale = f2;
-        this.f1629tx = f3;
-        this.f1630ty = f4;
+        this.f1636tx = f3;
+        this.f1637ty = f4;
         invalidate();
     }
 
@@ -280,19 +280,19 @@ public class CropAreaView extends ViewGroup {
         int i5;
         int i6;
         if (this.freeform) {
-            int m51dp = AndroidUtilities.m51dp(2.0f / this.scale);
-            int m51dp2 = AndroidUtilities.m51dp(16.0f / this.scale);
-            int m51dp3 = AndroidUtilities.m51dp(3.0f / this.scale);
+            int m55dp = AndroidUtilities.m55dp(2.0f / this.scale);
+            int m55dp2 = AndroidUtilities.m55dp(16.0f / this.scale);
+            int m55dp3 = AndroidUtilities.m55dp(3.0f / this.scale);
             RectF rectF = this.actualRect;
             float f2 = rectF.left;
-            int i7 = ((int) f2) - m51dp;
+            int i7 = ((int) f2) - m55dp;
             float f3 = rectF.top;
-            int i8 = ((int) f3) - m51dp;
-            int i9 = m51dp * 2;
+            int i8 = ((int) f3) - m55dp;
+            int i9 = m55dp * 2;
             int i10 = ((int) (rectF.right - f2)) + i9;
             int i11 = i9 + ((int) (rectF.bottom - f3));
             canvas.save();
-            canvas.translate(this.f1629tx, this.f1630ty);
+            canvas.translate(this.f1636tx, this.f1637ty);
             float f4 = this.scale;
             float f5 = (i10 / 2) + i7;
             float f6 = (i11 / 2) + i8;
@@ -309,11 +309,11 @@ public class CropAreaView extends ViewGroup {
                 canvas.drawRect(f7, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getHeight(), this.dimPaint);
                 canvas.drawRect(getWidth(), BitmapDescriptorFactory.HUE_RED, f8, getHeight(), this.dimPaint);
                 canvas.drawRect(f7, getHeight(), f8, getHeight() * 4, this.dimPaint);
-                float f9 = i + m51dp;
+                float f9 = i + m55dp;
                 canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), f9, this.dimPaint);
-                float f10 = (i + i11) - m51dp;
-                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, f9, i2 + m51dp, f10, this.dimPaint);
-                canvas.drawRect((i2 + i10) - m51dp, f9, getWidth(), f10, this.dimPaint);
+                float f10 = (i + i11) - m55dp;
+                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, f9, i2 + m55dp, f10, this.dimPaint);
+                canvas.drawRect((i2 + i10) - m55dp, f9, getWidth(), f10, this.dimPaint);
                 canvas.drawRect(BitmapDescriptorFactory.HUE_RED, f10, getWidth(), getHeight(), this.dimPaint);
             } else {
                 i = i8;
@@ -322,8 +322,8 @@ public class CropAreaView extends ViewGroup {
             if (!this.frameVisible) {
                 return;
             }
-            int i12 = m51dp3 - m51dp;
-            int i13 = m51dp3 * 2;
+            int i12 = m55dp3 - m55dp;
+            int i13 = m55dp3 * 2;
             int i14 = i10 - i13;
             int i15 = i11 - i13;
             GridType gridType = this.gridType;
@@ -339,12 +339,12 @@ public class CropAreaView extends ViewGroup {
             float f12 = i + i12;
             int i16 = i2 + i10;
             float f13 = i16 - i12;
-            canvas.drawRect(f11, f12, f13, i4 + m51dp, this.framePaint);
+            canvas.drawRect(f11, f12, f13, i4 + m55dp, this.framePaint);
             int i17 = i11 + i;
             float f14 = i17 - i12;
-            canvas.drawRect(f11, f12, i3 + m51dp, f14, this.framePaint);
-            canvas.drawRect(f11, i6 - m51dp, f13, f14, this.framePaint);
-            canvas.drawRect(i5 - m51dp, f12, f13, f14, this.framePaint);
+            canvas.drawRect(f11, f12, i3 + m55dp, f14, this.framePaint);
+            canvas.drawRect(f11, i6 - m55dp, f13, f14, this.framePaint);
+            canvas.drawRect(i5 - m55dp, f12, f13, f14, this.framePaint);
             int i18 = 0;
             while (true) {
                 int i19 = 3;
@@ -355,10 +355,10 @@ public class CropAreaView extends ViewGroup {
                     int i20 = 1;
                     while (i20 < 4) {
                         if (i18 != 2 || i20 != i19) {
-                            int i21 = i2 + m51dp3;
+                            int i21 = i2 + m55dp3;
                             int i22 = i14 / 3;
                             float f15 = ((i22 / 3) * i20) + i21 + (i22 * i18);
-                            int i23 = i + m51dp3;
+                            int i23 = i + m55dp3;
                             float f16 = i23;
                             float f17 = i23 + i15;
                             canvas.drawLine(f15, f16, f15, f17, this.shadowPaint);
@@ -374,9 +374,9 @@ public class CropAreaView extends ViewGroup {
                         i19 = 3;
                     }
                 } else if (gridType2 == GridType.MAJOR && i18 > 0) {
-                    int i25 = i2 + m51dp3;
+                    int i25 = i2 + m55dp3;
                     float f21 = ((i14 / 3) * i18) + i25;
-                    int i26 = i + m51dp3;
+                    int i26 = i + m55dp3;
                     float f22 = i26;
                     float f23 = i26 + i15;
                     canvas.drawLine(f21, f22, f21, f23, this.shadowPaint);
@@ -392,21 +392,21 @@ public class CropAreaView extends ViewGroup {
             }
             float f27 = i2;
             float f28 = i;
-            float f29 = i2 + m51dp2;
-            float f30 = i + m51dp3;
+            float f29 = i2 + m55dp2;
+            float f30 = i + m55dp3;
             canvas.drawRect(f27, f28, f29, f30, this.handlePaint);
-            float f31 = i2 + m51dp3;
-            float f32 = i + m51dp2;
+            float f31 = i2 + m55dp3;
+            float f32 = i + m55dp2;
             canvas.drawRect(f27, f28, f31, f32, this.handlePaint);
-            float f33 = i16 - m51dp2;
+            float f33 = i16 - m55dp2;
             float f34 = i16;
             canvas.drawRect(f33, f28, f34, f30, this.handlePaint);
-            float f35 = i16 - m51dp3;
+            float f35 = i16 - m55dp3;
             canvas.drawRect(f35, f28, f34, f32, this.handlePaint);
-            float f36 = i17 - m51dp3;
+            float f36 = i17 - m55dp3;
             float f37 = i17;
             canvas.drawRect(f27, f36, f29, f37, this.handlePaint);
-            float f38 = i17 - m51dp2;
+            float f38 = i17 - m55dp2;
             canvas.drawRect(f27, f38, f31, f37, this.handlePaint);
             canvas.drawRect(f33, f36, f34, f37, this.handlePaint);
             canvas.drawRect(f35, f38, f34, f37, this.handlePaint);
@@ -456,7 +456,7 @@ public class CropAreaView extends ViewGroup {
                 canvas.drawBitmap(this.circleBitmap, (int) this.left, (int) this.top, this.bitmapPaint);
                 if (getMeasuredHeight() > getMeasuredWidth() && this.subtitleLayout != null) {
                     canvas.save();
-                    canvas.translate(getMeasuredWidth() / 2.0f, f41 + AndroidUtilities.m50dp(16));
+                    canvas.translate(getMeasuredWidth() / 2.0f, f41 + AndroidUtilities.m54dp(16));
                     this.subtitleLayout.draw(canvas);
                     canvas.restore();
                 }
@@ -479,11 +479,11 @@ public class CropAreaView extends ViewGroup {
     }
 
     public void updateTouchAreas() {
-        int m50dp = AndroidUtilities.m50dp(16);
+        int m54dp = AndroidUtilities.m54dp(16);
         RectF rectF = this.topLeftCorner;
         RectF rectF2 = this.actualRect;
         float f = rectF2.left;
-        float f2 = m50dp;
+        float f2 = m54dp;
         float f3 = rectF2.top;
         rectF.set(f - f2, f3 - f2, f + f2, f3 + f2);
         RectF rectF3 = this.topRightCorner;
@@ -820,7 +820,7 @@ public class CropAreaView extends ViewGroup {
             this.previousX = x;
             this.previousY = y;
             boolean z = Math.abs(f4) > Math.abs(f5);
-            switch (C44053.$SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control[this.activeControl.ordinal()]) {
+            switch (C44713.$SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control[this.activeControl.ordinal()]) {
                 case 1:
                     RectF rectF = this.tempRect;
                     rectF.left += f4;
@@ -1000,7 +1000,7 @@ public class CropAreaView extends ViewGroup {
 
     /* renamed from: org.telegram.ui.Components.Crop.CropAreaView$3 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C44053 {
+    static /* synthetic */ class C44713 {
         static final /* synthetic */ int[] $SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control;
 
         static {

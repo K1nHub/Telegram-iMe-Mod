@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,20 +22,12 @@
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$rK8fuSe7sipckisMP__uix3enGo(Lorg/telegram/ui/ChatEditActivity;)V
-
-    return-void
-.end method
-
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$0nFQURAWtCmx86pM1I5aV9oh_Ww(Lorg/telegram/ui/ChatEditActivity;)V
 
     return-void
 .end method

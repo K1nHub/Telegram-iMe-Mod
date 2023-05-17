@@ -28,11 +28,11 @@ public class JoinSheetUserCell extends FrameLayout {
         this.result = new int[1];
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(27));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(27));
         addView(this.imageView, LayoutHelper.createFrame(54, 54, 49, 0, 7, 0, 0));
         TextView textView = new TextView(context);
         this.nameTextView = textView;
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         this.nameTextView.setTextSize(1, 12.0f);
         this.nameTextView.setMaxLines(1);
         this.nameTextView.setGravity(49);
@@ -44,7 +44,7 @@ public class JoinSheetUserCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(100), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(90), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(100), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(90), 1073741824));
     }
 
     public void setUser(TLRPC$User tLRPC$User) {

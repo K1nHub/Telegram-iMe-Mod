@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Lj$/util/function/ToIntFunction;
 
 
 # instance fields
@@ -22,14 +22,16 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final applyAsInt(Ljava/lang/Object;)I
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda277;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$1mzIH0CaGqhspXqZDzl5vHnMpLg(Lorg/telegram/ui/ChatActivity;)Lorg/koin/core/parameter/ParametersHolder;
+    check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    move-result-object v0
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$L2hIOnEye_yaYzcILLi4XwfnW30(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)I
 
-    return-object v0
+    move-result p1
+
+    return p1
 .end method

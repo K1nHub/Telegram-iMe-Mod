@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletBinancePayHistoryFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupListeners$1$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletBinancePayHistoryFragment$setupListeners$1$1 extends Lambda implements Function0<Unit> {
     final /* synthetic */ WalletBinancePayHistoryFragment this$0;
 

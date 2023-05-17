@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1117
+    .line 1090
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Updates;-><init>()V
 
     return-void
@@ -27,7 +27,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/MessagesController$1;)V
     .locals 0
 
-    .line 1117
+    .line 1090
     invoke-direct {p0}, Lorg/telegram/messenger/MessagesController$UserActionUpdatesPts;-><init>()V
 
     return-void

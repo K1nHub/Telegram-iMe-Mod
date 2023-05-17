@@ -22,7 +22,8 @@ public class GLIconSettingsView extends LinearLayout {
         setOrientation(1);
         TextView textView = new TextView(context);
         textView.setText("Spectral top ");
-        textView.setTextColor(Theme.getColor("dialogTextBlue2"));
+        int i = Theme.key_dialogTextBlue2;
+        textView.setTextColor(Theme.getColor(i));
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
@@ -55,7 +56,7 @@ public class GLIconSettingsView extends LinearLayout {
         addView(seekBarView, LayoutHelper.createFrame(-1, 38, 0, 5, 4, 5, 0));
         TextView textView2 = new TextView(context);
         textView2.setText("Spectral bottom ");
-        textView2.setTextColor(Theme.getColor("dialogTextBlue2"));
+        textView2.setTextColor(Theme.getColor(i));
         textView2.setTextSize(1, 16.0f);
         textView2.setLines(1);
         textView2.setMaxLines(1);
@@ -93,8 +94,10 @@ public class GLIconSettingsView extends LinearLayout {
         textView3.setGravity(17);
         textView3.setMaxLines(1);
         textView3.setSingleLine(true);
-        textView3.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-        textView3.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor("featuredStickers_addButton"), 4.0f));
+        int i2 = Theme.key_featuredStickers_buttonText;
+        textView3.setTextColor(Theme.getColor(i2));
+        int i3 = Theme.key_featuredStickers_addButton;
+        textView3.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor(i3), 4.0f));
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.GLIconSettingsView.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -105,8 +108,8 @@ public class GLIconSettingsView extends LinearLayout {
                     }
 
                     @Override // org.telegram.p044ui.Components.ColorPicker.ColorPickerDelegate
-                    public /* synthetic */ int getDefaultColor(int i) {
-                        return ColorPicker.ColorPickerDelegate.CC.$default$getDefaultColor(this, i);
+                    public /* synthetic */ int getDefaultColor(int i4) {
+                        return ColorPicker.ColorPickerDelegate.CC.$default$getDefaultColor(this, i4);
                     }
 
                     @Override // org.telegram.p044ui.Components.ColorPicker.ColorPickerDelegate
@@ -115,13 +118,13 @@ public class GLIconSettingsView extends LinearLayout {
                     }
 
                     @Override // org.telegram.p044ui.Components.ColorPicker.ColorPickerDelegate
-                    public void setColor(int i, int i2, boolean z) {
-                        gLIconRenderer.star.specColor = i;
+                    public void setColor(int i4, int i5, boolean z) {
+                        gLIconRenderer.star.specColor = i4;
                     }
                 }) { // from class: org.telegram.ui.GLIconSettingsView.3.2
                     @Override // android.widget.FrameLayout, android.view.View
-                    protected void onMeasure(int i, int i2) {
-                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(300), 1073741824));
+                    protected void onMeasure(int i4, int i5) {
+                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(300), 1073741824));
                     }
                 };
                 colorPicker.setColor(gLIconRenderer.star.specColor, 0);
@@ -135,7 +138,7 @@ public class GLIconSettingsView extends LinearLayout {
         addView(textView3, LayoutHelper.createFrame(-1, 48, 16, 16, 0, 16, 0));
         TextView textView4 = new TextView(context);
         textView4.setText("Diffuse ");
-        textView4.setTextColor(Theme.getColor("dialogTextBlue2"));
+        textView4.setTextColor(Theme.getColor(i));
         textView4.setTextSize(1, 16.0f);
         textView4.setLines(1);
         textView4.setMaxLines(1);
@@ -168,7 +171,7 @@ public class GLIconSettingsView extends LinearLayout {
         addView(seekBarView3, LayoutHelper.createFrame(-1, 38, 0, 5, 4, 5, 0));
         TextView textView5 = new TextView(context);
         textView5.setText("Normal map spectral");
-        textView5.setTextColor(Theme.getColor("dialogTextBlue2"));
+        textView5.setTextColor(Theme.getColor(i));
         textView5.setTextSize(1, 16.0f);
         textView5.setLines(1);
         textView5.setMaxLines(1);
@@ -206,8 +209,8 @@ public class GLIconSettingsView extends LinearLayout {
         textView6.setGravity(17);
         textView6.setMaxLines(1);
         textView6.setSingleLine(true);
-        textView6.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-        textView6.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor("featuredStickers_addButton"), 4.0f));
+        textView6.setTextColor(Theme.getColor(i2));
+        textView6.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor(i3), 4.0f));
         textView6.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.GLIconSettingsView.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -218,8 +221,8 @@ public class GLIconSettingsView extends LinearLayout {
                     }
 
                     @Override // org.telegram.p044ui.Components.ColorPicker.ColorPickerDelegate
-                    public /* synthetic */ int getDefaultColor(int i) {
-                        return ColorPicker.ColorPickerDelegate.CC.$default$getDefaultColor(this, i);
+                    public /* synthetic */ int getDefaultColor(int i4) {
+                        return ColorPicker.ColorPickerDelegate.CC.$default$getDefaultColor(this, i4);
                     }
 
                     @Override // org.telegram.p044ui.Components.ColorPicker.ColorPickerDelegate
@@ -228,15 +231,15 @@ public class GLIconSettingsView extends LinearLayout {
                     }
 
                     @Override // org.telegram.p044ui.Components.ColorPicker.ColorPickerDelegate
-                    public void setColor(int i, int i2, boolean z) {
-                        if (i2 == 0) {
-                            gLIconRenderer.star.normalSpecColor = i;
+                    public void setColor(int i4, int i5, boolean z) {
+                        if (i5 == 0) {
+                            gLIconRenderer.star.normalSpecColor = i4;
                         }
                     }
                 }) { // from class: org.telegram.ui.GLIconSettingsView.6.2
                     @Override // android.widget.FrameLayout, android.view.View
-                    protected void onMeasure(int i, int i2) {
-                        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(300), 1073741824));
+                    protected void onMeasure(int i4, int i5) {
+                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(300), 1073741824));
                     }
                 };
                 colorPicker.setColor(gLIconRenderer.star.normalSpecColor, 0);
@@ -250,7 +253,7 @@ public class GLIconSettingsView extends LinearLayout {
         addView(textView6, LayoutHelper.createFrame(-1, 48, 16, 16, 0, 16, 0));
         TextView textView7 = new TextView(context);
         textView7.setText("Small starts size");
-        textView7.setTextColor(Theme.getColor("dialogTextBlue2"));
+        textView7.setTextColor(Theme.getColor(i));
         textView7.setTextSize(1, 16.0f);
         textView7.setLines(1);
         textView7.setMaxLines(1);

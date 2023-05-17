@@ -3889,9 +3889,9 @@
 
     move-result-object v2
 
-    const-string v3, "windowBackgroundWhiteRedText3"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -5992,9 +5992,7 @@
 
     iget-boolean v2, v2, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
 
-    const-string v3, "windowBackgroundGrayShadow"
-
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     if-eqz v2, :cond_f
 
@@ -6024,47 +6022,47 @@
 
     move-result v2
 
-    const/4 v5, 0x2
+    const/4 v4, 0x2
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
     if-eqz v2, :cond_5
 
     .line 5311
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->nativeInfoCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 5312
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 5313
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->extraBackgroundView2:Landroid/view/View;
 
-    invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    move v2, v4
+    move v2, v3
 
     .line 5314
     :goto_0
-    iget-object v7, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    array-length v8, v7
+    array-length v7, v6
 
-    if-ge v2, v8, :cond_2
+    if-ge v2, v7, :cond_2
 
     .line 5315
-    aget-object v7, v7, v2
+    aget-object v6, v6, v2
 
-    invoke-virtual {v7}, Landroid/widget/EditText;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v6}, Landroid/widget/EditText;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Landroid/view/View;
+    check-cast v6, Landroid/view/View;
 
-    invoke-virtual {v7, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v6, v3}, Landroid/view/View;->setVisibility(I)V
 
     add-int/lit8 v2, v2, 0x1
 
@@ -6072,17 +6070,7 @@
 
     .line 5317
     :cond_2
-    aget-object v2, v7, v4
-
-    invoke-virtual {v2}, Landroid/widget/EditText;->length()I
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v2, v2, v6
+    aget-object v2, v6, v3
 
     invoke-virtual {v2}, Landroid/widget/EditText;->length()I
 
@@ -6100,65 +6088,75 @@
 
     if-nez v2, :cond_4
 
-    move v2, v4
-
-    .line 5318
-    :goto_1
-    iget-object v7, p0, Lorg/telegram/ui/PassportActivity;->nonLatinNames:[Z
-
-    array-length v8, v7
-
-    if-ge v2, v8, :cond_4
-
-    .line 5319
-    aget-boolean v7, v7, v2
-
-    if-eqz v7, :cond_3
-
-    .line 5320
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v4
 
-    iget-object v7, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    invoke-virtual {v2}, Landroid/widget/EditText;->length()I
 
-    aget-object v7, v7, v4
+    move-result v2
 
-    invoke-virtual {v7}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    if-nez v2, :cond_4
 
-    move-result-object v7
+    move v2, v3
 
-    invoke-virtual {v2, v7}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    .line 5318
+    :goto_1
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->nonLatinNames:[Z
+
+    array-length v7, v6
+
+    if-ge v2, v7, :cond_4
+
+    .line 5319
+    aget-boolean v6, v6, v2
+
+    if-eqz v6, :cond_3
+
+    .line 5320
+    iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v2, v2, v3
+
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v3
+
+    invoke-virtual {v6}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 5321
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v2, v2, v6
+    aget-object v2, v2, v5
 
-    iget-object v7, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v7, v7, v6
+    aget-object v6, v6, v5
 
-    invoke-virtual {v7}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v6}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v2, v7}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 5322
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v2, v2, v5
+    aget-object v2, v2, v4
 
-    iget-object v7, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v7, v7, v5
+    aget-object v6, v6, v4
 
-    invoke-virtual {v7}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v6}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v2, v7}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
@@ -6174,33 +6172,35 @@
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
-    move-result-object v7
+    move-result-object v6
 
-    sget v8, Lorg/telegram/messenger/R$drawable;->greydivider:I
+    sget v7, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v7, v8, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    move-result-object v3
+    invoke-static {v6, v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 5330
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->nativeInfoCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    sget v3, Lorg/telegram/messenger/R$string;->PassportNativeInfo:I
+    sget v6, Lorg/telegram/messenger/R$string;->PassportNativeInfo:I
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v7, v5, [Ljava/lang/Object;
 
-    aput-object v0, v7, v4
+    aput-object v0, v7, v3
 
     const-string v8, "PassportNativeInfo"
 
-    invoke-static {v8, v3, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v8, v6, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v6}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     if-eqz v1, :cond_6
 
@@ -6209,9 +6209,9 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "PassportLanguage_"
+    const-string v6, "PassportLanguage_"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6234,19 +6234,19 @@
     .line 5335
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    sget v3, Lorg/telegram/messenger/R$string;->PassportNativeHeaderLang:I
+    sget v6, Lorg/telegram/messenger/R$string;->PassportNativeHeaderLang:I
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v7, v5, [Ljava/lang/Object;
 
-    aput-object v1, v7, v4
+    aput-object v1, v7, v3
 
     const-string v8, "PassportNativeHeaderLang"
 
-    invoke-static {v8, v3, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v8, v6, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v6}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_4
 
@@ -6254,29 +6254,29 @@
     :cond_7
     iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    sget v3, Lorg/telegram/messenger/R$string;->PassportNativeHeader:I
+    sget v6, Lorg/telegram/messenger/R$string;->PassportNativeHeader:I
 
     const-string v7, "PassportNativeHeader"
 
-    invoke-static {v7, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v6}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     :goto_4
-    move v2, v4
+    move v2, v3
 
     :goto_5
-    const/4 v3, 0x3
+    const/4 v6, 0x3
 
-    if-ge v2, v3, :cond_e
+    if-ge v2, v6, :cond_e
 
     if-eqz v2, :cond_c
 
-    if-eq v2, v6, :cond_a
+    if-eq v2, v5, :cond_a
 
-    if-eq v2, v5, :cond_8
+    if-eq v2, v4, :cond_8
 
     goto/16 :goto_6
 
@@ -6284,9 +6284,9 @@
     if-eqz v1, :cond_9
 
     .line 5357
-    iget-object v3, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v3, v3, v2
+    aget-object v6, v6, v2
 
     sget v7, Lorg/telegram/messenger/R$string;->PassportSurname:I
 
@@ -6296,21 +6296,21 @@
 
     move-result-object v7
 
-    invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     goto :goto_6
 
     .line 5359
     :cond_9
-    iget-object v3, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v3, v3, v2
+    aget-object v6, v6, v2
 
     sget v7, Lorg/telegram/messenger/R$string;->PassportSurnameCountry:I
 
-    new-array v8, v6, [Ljava/lang/Object;
+    new-array v8, v5, [Ljava/lang/Object;
 
-    aput-object v0, v8, v4
+    aput-object v0, v8, v3
 
     const-string v9, "PassportSurnameCountry"
 
@@ -6318,7 +6318,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     goto :goto_6
 
@@ -6326,9 +6326,9 @@
     if-eqz v1, :cond_b
 
     .line 5350
-    iget-object v3, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v3, v3, v2
+    aget-object v6, v6, v2
 
     sget v7, Lorg/telegram/messenger/R$string;->PassportMidname:I
 
@@ -6338,21 +6338,21 @@
 
     move-result-object v7
 
-    invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     goto :goto_6
 
     .line 5352
     :cond_b
-    iget-object v3, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v3, v3, v2
+    aget-object v6, v6, v2
 
     sget v7, Lorg/telegram/messenger/R$string;->PassportMidnameCountry:I
 
-    new-array v8, v6, [Ljava/lang/Object;
+    new-array v8, v5, [Ljava/lang/Object;
 
-    aput-object v0, v8, v4
+    aput-object v0, v8, v3
 
     const-string v9, "PassportMidnameCountry"
 
@@ -6360,7 +6360,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     goto :goto_6
 
@@ -6368,9 +6368,9 @@
     if-eqz v1, :cond_d
 
     .line 5343
-    iget-object v3, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v3, v3, v2
+    aget-object v6, v6, v2
 
     sget v7, Lorg/telegram/messenger/R$string;->PassportName:I
 
@@ -6380,21 +6380,21 @@
 
     move-result-object v7
 
-    invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     goto :goto_6
 
     .line 5345
     :cond_d
-    iget-object v3, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v3, v3, v2
+    aget-object v6, v6, v2
 
     sget v7, Lorg/telegram/messenger/R$string;->PassportNameCountry:I
 
-    new-array v8, v6, [Ljava/lang/Object;
+    new-array v8, v5, [Ljava/lang/Object;
 
-    aput-object v0, v8, v4
+    aput-object v0, v8, v3
 
     const-string v9, "PassportNameCountry"
 
@@ -6402,7 +6402,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     :goto_6
     add-int/lit8 v2, v2, 0x1
@@ -6455,10 +6455,10 @@
 
     array-length v1, p1
 
-    if-ge v4, v1, :cond_10
+    if-ge v3, v1, :cond_10
 
     .line 5300
-    aget-object p1, p1, v4
+    aget-object p1, p1, v3
 
     invoke-virtual {p1}, Landroid/widget/EditText;->getParent()Landroid/view/ViewParent;
 
@@ -6468,7 +6468,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_8
 
@@ -6476,9 +6476,9 @@
     :cond_10
     iget-wide v0, p0, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long p1, v0, v4
+    cmp-long p1, v0, v2
 
     if-nez p1, :cond_11
 
@@ -6510,7 +6510,9 @@
 
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v0, v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -6528,7 +6530,9 @@
 
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v0, v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -6738,9 +6742,9 @@
     .line 4698
     new-instance p1, Landroid/text/style/ForegroundColorSpan;
 
-    const-string v1, "windowBackgroundWhiteRedText3"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -6791,7 +6795,7 @@
 .end method
 
 .method private createAddressInterface(Landroid/content/Context;)V
-    .locals 25
+    .locals 24
 
     move-object/from16 v1, p0
 
@@ -6883,9 +6887,9 @@
     .line 3146
     sget v5, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
 
-    const-string v6, "windowBackgroundGrayShadow"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {v2, v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
@@ -6927,94 +6931,90 @@
 
     const-wide/16 v10, 0x0
 
-    const-string v5, "windowBackgroundWhiteRedText3"
-
-    const-string v12, "windowBackgroundWhite"
-
     if-eqz v0, :cond_14
 
     .line 3152
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    instance-of v13, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
+    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
 
-    if-eqz v13, :cond_1
+    if-eqz v5, :cond_1
 
     .line 3153
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v13, Lorg/telegram/messenger/R$string;->ActionBotDocumentRentalAgreement:I
+    sget v5, Lorg/telegram/messenger/R$string;->ActionBotDocumentRentalAgreement:I
 
-    const-string v14, "ActionBotDocumentRentalAgreement"
+    const-string v12, "ActionBotDocumentRentalAgreement"
 
-    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v5
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
     .line 3154
     :cond_1
-    instance-of v13, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
+    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
 
-    if-eqz v13, :cond_2
+    if-eqz v5, :cond_2
 
     .line 3155
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v13, Lorg/telegram/messenger/R$string;->ActionBotDocumentBankStatement:I
+    sget v5, Lorg/telegram/messenger/R$string;->ActionBotDocumentBankStatement:I
 
-    const-string v14, "ActionBotDocumentBankStatement"
+    const-string v12, "ActionBotDocumentBankStatement"
 
-    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v5
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
     .line 3156
     :cond_2
-    instance-of v13, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
+    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
 
-    if-eqz v13, :cond_3
+    if-eqz v5, :cond_3
 
     .line 3157
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v13, Lorg/telegram/messenger/R$string;->ActionBotDocumentUtilityBill:I
+    sget v5, Lorg/telegram/messenger/R$string;->ActionBotDocumentUtilityBill:I
 
-    const-string v14, "ActionBotDocumentUtilityBill"
+    const-string v12, "ActionBotDocumentUtilityBill"
 
-    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v5
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
     .line 3158
     :cond_3
-    instance-of v13, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
+    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
 
-    if-eqz v13, :cond_4
+    if-eqz v5, :cond_4
 
     .line 3159
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v13, Lorg/telegram/messenger/R$string;->ActionBotDocumentPassportRegistration:I
+    sget v5, Lorg/telegram/messenger/R$string;->ActionBotDocumentPassportRegistration:I
 
-    const-string v14, "ActionBotDocumentPassportRegistration"
+    const-string v12, "ActionBotDocumentPassportRegistration"
 
-    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v5
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
@@ -7027,15 +7027,15 @@
     .line 3161
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v13, Lorg/telegram/messenger/R$string;->ActionBotDocumentTemporaryRegistration:I
+    sget v5, Lorg/telegram/messenger/R$string;->ActionBotDocumentTemporaryRegistration:I
 
-    const-string v14, "ActionBotDocumentTemporaryRegistration"
+    const-string v12, "ActionBotDocumentTemporaryRegistration"
 
-    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v5
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 3164
     :cond_5
@@ -7047,35 +7047,37 @@
     iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     .line 3165
-    sget v13, Lorg/telegram/messenger/R$string;->PassportDocuments:I
+    sget v5, Lorg/telegram/messenger/R$string;->PassportDocuments:I
 
-    const-string v14, "PassportDocuments"
+    const-string v12, "PassportDocuments"
 
-    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v5
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 3166
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result v13
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+    move-result v12
+
+    invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     .line 3167
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
+    iget-object v12, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v0, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v12, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3169
     new-instance v0, Landroid/widget/LinearLayout;
@@ -7090,13 +7092,13 @@
     .line 3171
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->documentsLayout:Landroid/widget/LinearLayout;
+    iget-object v12, v1, Lorg/telegram/ui/PassportActivity;->documentsLayout:Landroid/widget/LinearLayout;
 
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v0, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v12, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3173
     new-instance v0, Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -7108,29 +7110,29 @@
     .line 3174
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3175
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->uploadDocumentCell:Lorg/telegram/ui/Cells/TextSettingsCell;
+    iget-object v12, v1, Lorg/telegram/ui/PassportActivity;->uploadDocumentCell:Lorg/telegram/ui/Cells/TextSettingsCell;
 
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v0, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v12, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3176
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->uploadDocumentCell:Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    new-instance v13, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda23;
+    new-instance v12, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda23;
 
-    invoke-direct {v13, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v12, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 3181
     new-instance v0, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -7140,29 +7142,29 @@
     iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     .line 3182
-    sget v13, Lorg/telegram/messenger/R$drawable;->greydivider:I
+    sget v12, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v2, v13, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v12, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3184
-    iget-wide v14, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
+    iget-wide v13, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    cmp-long v0, v14, v10
+    cmp-long v0, v13, v10
 
-    const-string v14, ""
+    const-string v13, ""
 
     if-eqz v0, :cond_6
 
     .line 3185
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddAddressUploadInfo:I
 
-    const-string v15, "PassportAddAddressUploadInfo"
+    const-string v14, "PassportAddAddressUploadInfo"
 
-    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -7176,16 +7178,16 @@
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    instance-of v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
+    instance-of v14, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
 
-    if-eqz v15, :cond_7
+    if-eqz v14, :cond_7
 
     .line 3188
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddAgreementInfo:I
 
-    const-string v15, "PassportAddAgreementInfo"
+    const-string v14, "PassportAddAgreementInfo"
 
-    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -7195,16 +7197,16 @@
 
     .line 3189
     :cond_7
-    instance-of v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
+    instance-of v14, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
 
-    if-eqz v15, :cond_8
+    if-eqz v14, :cond_8
 
     .line 3190
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddBillInfo:I
 
-    const-string v15, "PassportAddBillInfo"
+    const-string v14, "PassportAddBillInfo"
 
-    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -7214,16 +7216,16 @@
 
     .line 3191
     :cond_8
-    instance-of v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
+    instance-of v14, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
 
-    if-eqz v15, :cond_9
+    if-eqz v14, :cond_9
 
     .line 3192
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddPassportRegistrationInfo:I
 
-    const-string v15, "PassportAddPassportRegistrationInfo"
+    const-string v14, "PassportAddPassportRegistrationInfo"
 
-    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -7233,16 +7235,16 @@
 
     .line 3193
     :cond_9
-    instance-of v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
+    instance-of v14, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
 
-    if-eqz v15, :cond_a
+    if-eqz v14, :cond_a
 
     .line 3194
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddTemporaryRegistrationInfo:I
 
-    const-string v15, "PassportAddTemporaryRegistrationInfo"
+    const-string v14, "PassportAddTemporaryRegistrationInfo"
 
-    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -7259,9 +7261,9 @@
     .line 3196
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddBankInfo:I
 
-    const-string v15, "PassportAddBankInfo"
+    const-string v14, "PassportAddBankInfo"
 
-    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -7271,64 +7273,66 @@
 
     .line 3198
     :cond_b
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iput-object v13, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     .line 3202
     :goto_3
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     .line 3203
-    iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
+    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
 
-    const/16 v3, 0x21
+    const/16 v15, 0x21
 
-    const-string v10, "\n\n"
+    const-string v3, "\n\n"
 
-    if-eqz v15, :cond_c
+    if-eqz v14, :cond_c
 
-    const-string v11, "files_all"
+    const-string v10, "files_all"
 
     .line 3205
-    invoke-virtual {v15, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v14, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v11
 
-    check-cast v15, Ljava/lang/String;
+    check-cast v11, Ljava/lang/String;
 
-    if-eqz v15, :cond_c
+    if-eqz v11, :cond_c
 
     .line 3206
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
-    invoke-direct {v0, v15}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v0, v11}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     .line 3207
-    invoke-virtual {v0, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3208
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v14}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3210
-    new-instance v4, Landroid/text/style/ForegroundColorSpan;
+    new-instance v14, Landroid/text/style/ForegroundColorSpan;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v16, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    move-result v8
+    invoke-static/range {v16 .. v16}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-direct {v4, v8}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+    move-result v4
 
-    invoke-virtual {v15}, Ljava/lang/String;->length()I
+    invoke-direct {v14, v4}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
 
-    move-result v8
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0, v4, v7, v8, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    move-result v4
+
+    invoke-virtual {v0, v14, v7, v4, v15}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 3211
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
 
-    invoke-virtual {v4, v11, v14}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v10, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3214
     :cond_c
@@ -7341,13 +7345,11 @@
 
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    const/4 v8, -0x1
-
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v10
 
-    invoke-virtual {v0, v4, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3217
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
@@ -7366,9 +7368,9 @@
     .line 3219
     sget v4, Lorg/telegram/messenger/R$string;->PassportTranslation:I
 
-    const-string v8, "PassportTranslation"
+    const-string v10, "PassportTranslation"
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v10, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -7377,7 +7379,7 @@
     .line 3220
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -7388,13 +7390,11 @@
 
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    const/4 v8, -0x1
-
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v5
 
-    invoke-virtual {v0, v4, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3223
     new-instance v0, Landroid/widget/LinearLayout;
@@ -7411,13 +7411,13 @@
     .line 3225
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->translationLayout:Landroid/widget/LinearLayout;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->translationLayout:Landroid/widget/LinearLayout;
 
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v15
+    move-result-object v10
 
-    invoke-virtual {v0, v11, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v5, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3227
     new-instance v0, Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -7429,9 +7429,9 @@
     .line 3228
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v11
+    move-result-object v5
 
-    invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3229
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -7440,9 +7440,9 @@
 
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v5
 
-    invoke-virtual {v0, v4, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3230
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -7461,150 +7461,150 @@
     iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     .line 3236
-    invoke-static {v2, v13, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v12, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3238
-    iget-wide v3, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
+    iget-wide v4, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    const-wide/16 v16, 0x0
+    const-wide/16 v10, 0x0
 
-    cmp-long v3, v3, v16
+    cmp-long v0, v4, v10
 
-    if-eqz v3, :cond_d
+    if-eqz v0, :cond_d
 
     .line 3239
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationUploadInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddTranslationUploadInfo:I
 
     const-string v4, "PassportAddTranslationUploadInfo"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3241
     :cond_d
-    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
+    instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
 
     if-eqz v4, :cond_e
 
     .line 3242
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationAgreementInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddTranslationAgreementInfo:I
 
     const-string v4, "PassportAddTranslationAgreementInfo"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3243
     :cond_e
-    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
+    instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
 
     if-eqz v4, :cond_f
 
     .line 3244
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationBillInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddTranslationBillInfo:I
 
     const-string v4, "PassportAddTranslationBillInfo"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3245
     :cond_f
-    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
+    instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
 
     if-eqz v4, :cond_10
 
     .line 3246
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationPassportRegistrationInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddTranslationPassportRegistrationInfo:I
 
     const-string v4, "PassportAddTranslationPassportRegistrationInfo"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3247
     :cond_10
-    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
+    instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
 
     if-eqz v4, :cond_11
 
     .line 3248
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationTemporaryRegistrationInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddTranslationTemporaryRegistrationInfo:I
 
     const-string v4, "PassportAddTranslationTemporaryRegistrationInfo"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3249
     :cond_11
-    instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
+    instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
 
-    if-eqz v3, :cond_12
+    if-eqz v0, :cond_12
 
     .line 3250
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationBankInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddTranslationBankInfo:I
 
     const-string v4, "PassportAddTranslationBankInfo"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3252
     :cond_12
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v13, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     .line 3256
     :goto_4
-    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     .line 3257
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
 
     if-eqz v4, :cond_13
 
-    const-string v8, "translation_all"
+    const-string v5, "translation_all"
 
     .line 3259
-    invoke-virtual {v4, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -7613,58 +7613,56 @@
     if-eqz v4, :cond_13
 
     .line 3260
-    new-instance v3, Landroid/text/SpannableStringBuilder;
+    new-instance v0, Landroid/text/SpannableStringBuilder;
 
-    invoke-direct {v3, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v0, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     .line 3261
-    invoke-virtual {v3, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3262
-    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v3, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3264
-    new-instance v10, Landroid/text/style/ForegroundColorSpan;
+    new-instance v3, Landroid/text/style/ForegroundColorSpan;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    move-result v11
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-direct {v10, v11}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+    move-result v6
+
+    invoke-direct {v3, v6}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
 
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    const/16 v0, 0x21
-
-    invoke-virtual {v3, v10, v7, v4, v0}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v0, v3, v7, v4, v15}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 3265
-    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
+    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
 
-    invoke-virtual {v0, v8, v14}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3268
     :cond_13
-    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 3269
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    const/4 v4, -0x1
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v4, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v4
 
-    move-result-object v8
-
-    invoke-virtual {v0, v3, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_5
 
@@ -7705,7 +7703,9 @@
     .line 3277
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -7716,13 +7716,11 @@
 
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    const/4 v4, -0x1
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v4, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v4
 
-    move-result-object v8
-
-    invoke-virtual {v0, v3, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     const/4 v0, 0x6
 
@@ -7734,571 +7732,569 @@
     move v3, v7
 
     :goto_6
-    const/16 v8, 0x8
+    const/4 v4, 0x4
+
+    const/16 v5, 0x8
 
     if-ge v3, v0, :cond_21
 
     .line 3282
-    new-instance v10, Lorg/telegram/ui/Components/EditTextBoldCursor;
+    new-instance v6, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-direct {v10, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
+    invoke-direct {v6, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
     .line 3283
-    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aput-object v10, v11, v3
+    aput-object v6, v10, v3
 
     .line 3285
-    new-instance v11, Lorg/telegram/ui/PassportActivity$11;
+    new-instance v10, Lorg/telegram/ui/PassportActivity$11;
 
-    invoke-direct {v11, v1, v2, v10}, Lorg/telegram/ui/PassportActivity$11;-><init>(Lorg/telegram/ui/PassportActivity;Landroid/content/Context;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+    invoke-direct {v10, v1, v2, v6}, Lorg/telegram/ui/PassportActivity$11;-><init>(Lorg/telegram/ui/PassportActivity;Landroid/content/Context;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     .line 3328
-    invoke-virtual {v11, v7}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
+    invoke-virtual {v10, v7}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
     .line 3329
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    const/4 v14, -0x1
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v14, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v12
 
-    move-result-object v15
-
-    invoke-virtual {v13, v11, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v10, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3330
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result v13
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v11, v13}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+    move-result v12
 
-    const/4 v13, 0x5
+    invoke-virtual {v10, v12}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    if-ne v3, v13, :cond_16
+    const/4 v12, 0x5
+
+    if-ne v3, v12, :cond_16
 
     .line 3333
-    new-instance v14, Landroid/view/View;
+    new-instance v13, Landroid/view/View;
 
-    invoke-direct {v14, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {v13, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
+    iput-object v13, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
 
     .line 3334
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v15
+    move-result v11
 
-    invoke-virtual {v14, v15}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v13, v11}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 3335
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
 
-    const/4 v9, -0x1
+    invoke-static {v8, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v9, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v14
 
-    move-result-object v4
-
-    invoke-virtual {v14, v15, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3338
     :cond_16
-    iget-boolean v4, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
+    iget-boolean v11, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
 
-    if-eqz v4, :cond_17
+    if-eqz v11, :cond_17
 
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    if-eqz v4, :cond_17
+    if-eqz v11, :cond_17
 
     .line 3339
-    invoke-virtual {v11, v8}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v10, v5}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     .line 3340
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
+    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
 
-    if-eqz v4, :cond_17
+    if-eqz v11, :cond_17
 
     .line 3341
-    invoke-virtual {v4, v8}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v11, v5}, Landroid/view/View;->setVisibility(I)V
 
     .line 3345
     :cond_17
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v11
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v5, v11}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
     .line 3346
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const/4 v8, 0x1
+    const/4 v11, 0x1
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSupportRtlHint(Z)V
+    invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSupportRtlHint(Z)V
 
     .line 3347
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const/high16 v9, 0x41800000    # 16.0f
+    const/high16 v13, 0x41800000    # 16.0f
 
-    invoke-virtual {v4, v8, v9}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v11, v13}, Landroid/widget/EditText;->setTextSize(IF)V
 
     .line 3348
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const-string v8, "windowBackgroundWhiteHintText"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v8
+    move-result v11
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
+    invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
     .line 3349
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const-string v8, "windowBackgroundWhiteBlueHeader"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v8
+    move-result v11
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHeaderHintColor(I)V
+    invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHeaderHintColor(I)V
 
     .line 3350
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const/4 v8, 0x1
+    const/4 v11, 0x1
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTransformHintToHeader(Z)V
+    invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTransformHintToHeader(Z)V
 
     .line 3351
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const-string v8, "windowBackgroundWhiteBlackText"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v9
+    move-result v13
 
-    invoke-virtual {v4, v9}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v5, v13}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 3352
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const/4 v9, 0x0
+    const/4 v13, 0x0
 
-    invoke-virtual {v4, v9}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v5, v13}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3353
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v8
+    move-result v11
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+    invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
     .line 3354
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const/16 v8, 0x14
+    const/16 v11, 0x14
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v8
+    move-result v11
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+    invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
     .line 3355
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const/high16 v8, 0x3fc00000    # 1.5f
+    const/high16 v11, 0x3fc00000    # 1.5f
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+    invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
     .line 3356
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const-string v8, "windowBackgroundWhiteInputField"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v8
+    move-result v11
 
-    const-string v9, "windowBackgroundWhiteInputFieldActivated"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v9
+    move-result v13
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v14
 
-    invoke-virtual {v4, v8, v9, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
+    invoke-virtual {v5, v11, v13, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
 
-    if-ne v3, v13, :cond_18
+    if-ne v3, v12, :cond_18
 
     .line 3358
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    new-instance v8, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda34;
+    new-instance v11, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda34;
 
-    invoke-direct {v8, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v11, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v5, v11}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 3372
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    invoke-virtual {v4, v7}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v5, v7}, Landroid/widget/EditText;->setInputType(I)V
 
     .line 3373
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    invoke-virtual {v4, v7}, Landroid/widget/EditText;->setFocusable(Z)V
+    invoke-virtual {v5, v7}, Landroid/widget/EditText;->setFocusable(Z)V
 
     goto :goto_7
 
     .line 3375
     :cond_18
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const/16 v8, 0x4001
+    const/16 v11, 0x4001
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v5, v11}, Landroid/widget/EditText;->setInputType(I)V
 
     .line 3376
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v5, v5, v3
 
-    const v8, 0x10000005
+    const v11, 0x10000005
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setImeOptions(I)V
+    invoke-virtual {v5, v11}, Landroid/widget/EditText;->setImeOptions(I)V
 
     :goto_7
-    const/4 v4, 0x3
+    const/4 v5, 0x3
 
     if-eqz v3, :cond_1e
 
-    const/4 v8, 0x1
+    const/4 v11, 0x1
 
-    if-eq v3, v8, :cond_1d
+    if-eq v3, v11, :cond_1d
 
-    const/4 v8, 0x2
+    const/4 v11, 0x2
 
-    if-eq v3, v8, :cond_1c
+    if-eq v3, v11, :cond_1c
 
-    if-eq v3, v4, :cond_1b
+    if-eq v3, v5, :cond_1b
 
-    const/4 v8, 0x4
+    if-eq v3, v4, :cond_1a
 
-    if-eq v3, v8, :cond_1a
+    if-eq v3, v12, :cond_19
 
-    if-eq v3, v13, :cond_19
-
-    const/4 v9, 0x2
+    const/4 v11, 0x2
 
     goto/16 :goto_b
 
     .line 3398
     :cond_19
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportCountry:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportCountry:I
 
-    const-string v14, "PassportCountry"
+    const-string v13, "PassportCountry"
 
-    invoke-static {v14, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    const-string v8, "country_code"
+    const-string v4, "country_code"
 
     goto :goto_8
 
     .line 3394
     :cond_1a
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportState:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportState:I
 
-    const-string v14, "PassportState"
+    const-string v13, "PassportState"
 
-    invoke-static {v14, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    const-string v8, "state"
+    const-string v4, "state"
 
     goto :goto_8
 
     .line 3390
     :cond_1b
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportCity:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportCity:I
 
-    const-string v14, "PassportCity"
+    const-string v13, "PassportCity"
 
-    invoke-static {v14, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    const-string v8, "city"
+    const-string v4, "city"
 
     goto :goto_8
 
     .line 3402
     :cond_1c
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportPostcode:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportPostcode:I
 
-    const-string v14, "PassportPostcode"
+    const-string v13, "PassportPostcode"
 
-    invoke-static {v14, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    const-string v8, "post_code"
+    const-string v4, "post_code"
 
     goto :goto_8
 
     .line 3386
     :cond_1d
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportStreet2:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportStreet2:I
 
-    const-string v14, "PassportStreet2"
+    const-string v13, "PassportStreet2"
 
-    invoke-static {v14, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    const-string v8, "street_line2"
+    const-string v4, "street_line2"
 
     goto :goto_8
 
     .line 3382
     :cond_1e
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportStreet1:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportStreet1:I
 
-    const-string v14, "PassportStreet1"
+    const-string v13, "PassportStreet1"
 
-    invoke-static {v14, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    const-string v8, "street_line1"
+    const-string v4, "street_line1"
 
     .line 3408
     :goto_8
-    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v14, v14, v3
+    aget-object v13, v13, v3
 
-    invoke-direct {v1, v9, v14, v8}, Lorg/telegram/ui/PassportActivity;->setFieldValues(Ljava/util/HashMap;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
+    invoke-direct {v1, v11, v13, v4}, Lorg/telegram/ui/PassportActivity;->setFieldValues(Ljava/util/HashMap;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
 
-    const/4 v9, 0x2
+    const/4 v11, 0x2
 
-    if-ne v3, v9, :cond_1f
+    if-ne v3, v11, :cond_1f
 
     .line 3410
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v14, v14, v3
+    aget-object v13, v13, v3
 
-    new-instance v15, Lorg/telegram/ui/PassportActivity$12;
+    new-instance v14, Lorg/telegram/ui/PassportActivity$12;
 
-    invoke-direct {v15, v1, v10, v8}, Lorg/telegram/ui/PassportActivity$12;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
+    invoke-direct {v14, v1, v6, v4}, Lorg/telegram/ui/PassportActivity$12;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
 
-    invoke-virtual {v14, v15}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v13, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    const/4 v8, 0x1
+    const/4 v4, 0x1
 
-    new-array v10, v8, [Landroid/text/InputFilter;
+    new-array v6, v4, [Landroid/text/InputFilter;
 
     .line 3447
-    new-instance v8, Landroid/text/InputFilter$LengthFilter;
+    new-instance v4, Landroid/text/InputFilter$LengthFilter;
 
-    const/16 v14, 0xa
+    const/16 v13, 0xa
 
-    invoke-direct {v8, v14}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
+    invoke-direct {v4, v13}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
 
-    aput-object v8, v10, v7
+    aput-object v4, v6, v7
 
     .line 3448
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    invoke-virtual {v8, v10}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
+    invoke-virtual {v4, v6}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
     goto :goto_9
 
     .line 3450
     :cond_1f
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v14, v14, v3
+    aget-object v13, v13, v3
 
-    new-instance v15, Lorg/telegram/ui/PassportActivity$13;
+    new-instance v14, Lorg/telegram/ui/PassportActivity$13;
 
-    invoke-direct {v15, v1, v10, v8}, Lorg/telegram/ui/PassportActivity$13;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
+    invoke-direct {v14, v1, v6, v4}, Lorg/telegram/ui/PassportActivity$13;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
 
-    invoke-virtual {v14, v15}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v13, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 3468
     :goto_9
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v10, v8, v3
+    aget-object v6, v4, v3
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    invoke-virtual {v8}, Landroid/widget/EditText;->length()I
+    invoke-virtual {v4}, Landroid/widget/EditText;->length()I
 
-    move-result v8
+    move-result v4
 
-    invoke-virtual {v10, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
+    invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
     .line 3469
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    invoke-virtual {v8, v7, v7, v7, v7}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-virtual {v4, v7, v7, v7, v7}, Landroid/widget/EditText;->setPadding(IIII)V
 
     .line 3470
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v4, v4, v3
 
-    sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v10, :cond_20
+    if-eqz v6, :cond_20
 
     goto :goto_a
 
     :cond_20
-    move v13, v4
+    move v12, v5
 
     :goto_a
-    or-int/lit8 v4, v13, 0x10
+    or-int/lit8 v5, v12, 0x10
 
-    invoke-virtual {v8, v4}, Landroid/widget/EditText;->setGravity(I)V
+    invoke-virtual {v4, v5}, Landroid/widget/EditText;->setGravity(I)V
 
     .line 3471
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v3
 
-    const/16 v18, -0x1
+    const/16 v17, -0x1
 
-    const/16 v19, 0x40
+    const/16 v18, 0x40
 
-    const/16 v20, 0x33
+    const/16 v19, 0x33
 
-    const/16 v21, 0x15
+    const/16 v20, 0x15
 
-    const/16 v22, 0x0
+    const/16 v21, 0x0
 
-    const/16 v23, 0x15
+    const/16 v22, 0x15
 
-    const/16 v24, 0x0
+    const/16 v23, 0x0
 
-    invoke-static/range {v18 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v8
+    move-result-object v5
 
-    invoke-virtual {v11, v4, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v10, v4, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3473
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v3
 
-    new-instance v8, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda42;
+    new-instance v5, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda42;
 
-    invoke-direct {v8, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v5, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v4, v5}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
     :goto_b
     add-int/lit8 v3, v3, 0x1
-
-    const/4 v9, -0x2
 
     goto/16 :goto_6
 
@@ -8313,15 +8309,11 @@
     .line 3493
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    const/4 v4, -0x2
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    const/4 v9, -0x1
+    move-result-object v6
 
-    invoke-static {v9, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v10
-
-    invoke-virtual {v3, v0, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v0, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3495
     iget-boolean v0, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
@@ -8335,20 +8327,20 @@
     .line 3496
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-virtual {v0, v8}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 3497
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->sectionCell:Lorg/telegram/ui/Cells/ShadowSectionCell;
 
-    invoke-virtual {v0, v8}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
 
     .line 3500
     :cond_22
-    iget-wide v3, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
+    iget-wide v5, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v10, 0x0
 
-    cmp-long v0, v3, v8
+    cmp-long v0, v5, v10
 
     if-nez v0, :cond_23
 
@@ -8394,7 +8386,9 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v2, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -8406,7 +8400,9 @@
     invoke-direct {v0, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 3508
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -8429,9 +8425,9 @@
     .line 3511
     sget v3, Lorg/telegram/messenger/R$string;->PassportDeleteInfo:I
 
-    const-string v4, "PassportDeleteInfo"
+    const-string v6, "PassportDeleteInfo"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -8443,9 +8439,9 @@
     :cond_27
     sget v3, Lorg/telegram/messenger/R$string;->PassportDeleteDocument:I
 
-    const-string v4, "PassportDeleteDocument"
+    const-string v6, "PassportDeleteDocument"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -8455,15 +8451,11 @@
     :goto_c
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    const/4 v4, -0x2
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    const/4 v5, -0x1
+    move-result-object v6
 
-    invoke-static {v5, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v8
-
-    invoke-virtual {v3, v0, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v0, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3516
     new-instance v3, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda13;
@@ -8482,7 +8474,7 @@
     .line 3519
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -8493,11 +8485,7 @@
 
     iget-object v2, v1, Lorg/telegram/ui/PassportActivity;->sectionCell:Lorg/telegram/ui/Cells/ShadowSectionCell;
 
-    const/4 v3, -0x2
-
-    const/4 v4, -0x1
-
-    invoke-static {v4, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
@@ -8511,11 +8499,13 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    move-result-object v4
+    invoke-static {v2, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0, v4}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3523
     iget-boolean v0, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
@@ -8529,7 +8519,7 @@
     .line 3524
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -8540,10 +8530,8 @@
     :goto_d
     invoke-direct {v1, v7}, Lorg/telegram/ui/PassportActivity;->updateUploadText(I)V
 
-    const/4 v0, 0x4
-
     .line 3528
-    invoke-direct {v1, v0}, Lorg/telegram/ui/PassportActivity;->updateUploadText(I)V
+    invoke-direct {v1, v4}, Lorg/telegram/ui/PassportActivity;->updateUploadText(I)V
 
     return-void
 .end method
@@ -8872,462 +8860,460 @@
 .end method
 
 .method private createEmailInterface(Landroid/content/Context;)V
-    .locals 17
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
+    .locals 14
 
     .line 2721
-    iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v3, Lorg/telegram/messenger/R$string;->PassportEmail:I
+    sget v1, Lorg/telegram/messenger/R$string;->PassportEmail:I
 
-    const-string v4, "PassportEmail"
+    const-string v2, "PassportEmail"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 2723
-    iget-object v2, v0, Lorg/telegram/ui/PassportActivity;->currentEmail:Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->currentEmail:Ljava/lang/String;
 
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v2
+    move-result v0
 
-    const-string v3, "windowBackgroundGrayShadow"
+    const/4 v1, -0x2
 
-    const/4 v4, -0x2
+    const/4 v2, -0x1
 
-    const/4 v5, -0x1
+    const/4 v3, 0x0
 
-    const/4 v6, 0x0
+    const/4 v4, 0x1
 
-    const/4 v7, 0x1
-
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 2724
-    new-instance v2, Lorg/telegram/ui/Cells/TextSettingsCell;
+    new-instance v0, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    invoke-direct {v2, v1}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
-
-    const-string v8, "windowBackgroundWhiteBlueText4"
+    invoke-direct {v0, p1}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 2725
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v5
+
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
+
+    .line 2726
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 2727
+    sget v5, Lorg/telegram/messenger/R$string;->PassportPhoneUseSame:I
+
+    new-array v6, v4, [Ljava/lang/Object;
+
+    iget-object v7, p0, Lorg/telegram/ui/PassportActivity;->currentEmail:Ljava/lang/String;
+
+    aput-object v7, v6, v3
+
+    const-string v7, "PassportPhoneUseSame"
+
+    invoke-static {v7, v5, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5, v3}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
+
+    .line 2728
+    iget-object v5, p0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    invoke-static {v2, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v0, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 2729
+    new-instance v5, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda20;
+
+    invoke-direct {v5, p0}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/PassportActivity;)V
+
+    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 2735
+    new-instance v0, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+
+    invoke-direct {v0, p1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+
+    .line 2736
+    sget v5, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
+
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p1, v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 2737
+    iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+
+    sget v5, Lorg/telegram/messenger/R$string;->PassportPhoneUseSameEmailInfo:I
+
+    const-string v6, "PassportPhoneUseSameEmailInfo"
+
+    invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
+
+    .line 2738
+    iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    iget-object v5, p0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+
+    invoke-static {v2, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    :cond_0
+    new-array v0, v4, [Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    .line 2741
+    iput-object v0, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    move v0, v3
+
+    :goto_0
+    if-ge v0, v4, :cond_3
+
+    .line 2743
+    new-instance v5, Landroid/widget/FrameLayout;
+
+    invoke-direct {v5, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    .line 2744
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    const/16 v7, 0x32
+
+    invoke-static {v2, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v5, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 2745
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+
+    .line 2747
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    new-instance v7, Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-direct {v7, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
+
+    aput-object v7, v6, v0
+
+    .line 2748
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
+
+    .line 2749
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v0
+
+    const/high16 v7, 0x41800000    # 16.0f
+
+    invoke-virtual {v6, v4, v7}, Landroid/widget/EditText;->setTextSize(IF)V
+
+    .line 2750
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v0
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setHintTextColor(I)V
+
+    .line 2751
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v0
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
-    invoke-virtual {v2, v8}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
-
-    .line 2726
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 2727
-    sget v8, Lorg/telegram/messenger/R$string;->PassportPhoneUseSame:I
-
-    new-array v9, v7, [Ljava/lang/Object;
-
-    iget-object v10, v0, Lorg/telegram/ui/PassportActivity;->currentEmail:Ljava/lang/String;
-
-    aput-object v10, v9, v6
-
-    const-string v10, "PassportPhoneUseSame"
-
-    invoke-static {v10, v8, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v8, v6}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
-
-    .line 2728
-    iget-object v8, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    invoke-static {v5, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v2, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 2729
-    new-instance v8, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda20;
-
-    invoke-direct {v8, v0}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/PassportActivity;)V
-
-    invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 2735
-    new-instance v2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
-
-    invoke-direct {v2, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
-
-    iput-object v2, v0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
-
-    .line 2736
-    sget v8, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
-
-    invoke-static {v1, v8, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 2737
-    iget-object v2, v0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
-
-    sget v8, Lorg/telegram/messenger/R$string;->PassportPhoneUseSameEmailInfo:I
-
-    const-string v9, "PassportPhoneUseSameEmailInfo"
-
-    invoke-static {v9, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v8}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
-
-    .line 2738
-    iget-object v2, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    iget-object v8, v0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
-
-    invoke-static {v5, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v9
-
-    invoke-virtual {v2, v8, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    :cond_0
-    new-array v2, v7, [Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    .line 2741
-    iput-object v2, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    move v2, v6
-
-    :goto_0
-    if-ge v2, v7, :cond_3
-
-    .line 2743
-    new-instance v8, Landroid/widget/FrameLayout;
-
-    invoke-direct {v8, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    .line 2744
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    const/16 v10, 0x32
-
-    invoke-static {v5, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v8, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    const-string v9, "windowBackgroundWhite"
-
-    .line 2745
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
-
-    .line 2747
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    new-instance v10, Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-direct {v10, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
-
-    aput-object v10, v9, v2
-
-    .line 2748
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v9, v9, v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
-
-    .line 2749
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v9, v9, v2
-
-    const/high16 v10, 0x41800000    # 16.0f
-
-    invoke-virtual {v9, v7, v10}, Landroid/widget/EditText;->setTextSize(IF)V
-
-    .line 2750
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v9, v9, v2
-
-    const-string v10, "windowBackgroundWhiteHintText"
-
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v10
-
-    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setHintTextColor(I)V
-
-    .line 2751
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v9, v9, v2
-
-    const-string v10, "windowBackgroundWhiteBlackText"
-
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v11
-
-    invoke-virtual {v9, v11}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v6, v8}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 2752
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    const/4 v11, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v9, v11}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v6, v8}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 2753
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v10
+    move-result v7
 
-    invoke-virtual {v9, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
     .line 2754
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    const/16 v10, 0x14
+    const/16 v7, 0x14
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v7
 
-    invoke-virtual {v9, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
     .line 2755
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    const/high16 v10, 0x3fc00000    # 1.5f
+    const/high16 v7, 0x3fc00000    # 1.5f
 
-    invoke-virtual {v9, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
     .line 2756
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    const/16 v10, 0x21
+    const/16 v7, 0x21
 
-    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setInputType(I)V
 
     .line 2757
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    const v10, 0x10000006
+    const v7, 0x10000006
 
-    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setImeOptions(I)V
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setImeOptions(I)V
 
     .line 2758
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    sget v10, Lorg/telegram/messenger/R$string;->PaymentShippingEmailPlaceholder:I
+    sget v7, Lorg/telegram/messenger/R$string;->PaymentShippingEmailPlaceholder:I
 
-    const-string v11, "PaymentShippingEmailPlaceholder"
+    const-string v8, "PaymentShippingEmailPlaceholder"
 
-    invoke-static {v11, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v7
 
-    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
     .line 2759
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->currentTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->currentTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
 
-    if-eqz v9, :cond_1
+    if-eqz v6, :cond_1
 
-    iget-object v9, v9, Lorg/telegram/tgnet/TLRPC$TL_secureValue;->plain_data:Lorg/telegram/tgnet/TLRPC$SecurePlainData;
+    iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$TL_secureValue;->plain_data:Lorg/telegram/tgnet/TLRPC$SecurePlainData;
 
-    instance-of v10, v9, Lorg/telegram/tgnet/TLRPC$TL_securePlainEmail;
+    instance-of v7, v6, Lorg/telegram/tgnet/TLRPC$TL_securePlainEmail;
 
-    if-eqz v10, :cond_1
+    if-eqz v7, :cond_1
 
     .line 2760
-    check-cast v9, Lorg/telegram/tgnet/TLRPC$TL_securePlainEmail;
+    check-cast v6, Lorg/telegram/tgnet/TLRPC$TL_securePlainEmail;
 
     .line 2761
-    iget-object v10, v9, Lorg/telegram/tgnet/TLRPC$TL_securePlainEmail;->email:Ljava/lang/String;
+    iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$TL_securePlainEmail;->email:Ljava/lang/String;
 
-    invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v10
+    move-result v7
 
-    if-nez v10, :cond_1
+    if-nez v7, :cond_1
 
     .line 2762
-    iget-object v10, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v10, v10, v2
+    aget-object v7, v7, v0
 
-    iget-object v9, v9, Lorg/telegram/tgnet/TLRPC$TL_securePlainEmail;->email:Ljava/lang/String;
+    iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$TL_securePlainEmail;->email:Ljava/lang/String;
 
-    invoke-virtual {v10, v9}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v7, v6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 2765
     :cond_1
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v10, v9, v2
+    aget-object v7, v6, v0
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    invoke-virtual {v9}, Landroid/widget/EditText;->length()I
+    invoke-virtual {v6}, Landroid/widget/EditText;->length()I
 
-    move-result v9
+    move-result v6
 
-    invoke-virtual {v10, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
+    invoke-virtual {v7, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
     .line 2766
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    const/4 v10, 0x6
+    const/4 v7, 0x6
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v7
 
-    invoke-virtual {v9, v6, v6, v6, v10}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-virtual {v6, v3, v3, v3, v7}, Landroid/widget/EditText;->setPadding(IIII)V
 
     .line 2767
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v10, :cond_2
+    if-eqz v7, :cond_2
 
-    const/4 v10, 0x5
+    const/4 v7, 0x5
 
     goto :goto_1
 
     :cond_2
-    const/4 v10, 0x3
+    const/4 v7, 0x3
 
     :goto_1
-    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setGravity(I)V
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setGravity(I)V
 
     .line 2768
-    iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v2
+    aget-object v6, v6, v0
 
-    const/4 v10, -0x1
+    const/4 v7, -0x1
 
-    const/4 v11, -0x2
+    const/4 v8, -0x2
 
-    const/16 v12, 0x33
+    const/16 v9, 0x33
 
-    const/16 v13, 0x15
+    const/16 v10, 0x15
 
-    const/16 v14, 0xc
+    const/16 v11, 0xc
 
-    const/16 v15, 0x15
+    const/16 v12, 0x15
 
-    const/16 v16, 0x6
+    const/4 v13, 0x6
 
-    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v10
+    move-result-object v7
 
-    invoke-virtual {v8, v9, v10}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v5, v6, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 2770
-    iget-object v8, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v5, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v2
+    aget-object v5, v5, v0
 
-    new-instance v9, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda44;
+    new-instance v6, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda44;
 
-    invoke-direct {v9, v0}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v6, p0}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v5, v6}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto/16 :goto_0
 
     .line 2779
     :cond_3
-    new-instance v2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+    new-instance v0, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-direct {v2, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    iput-object v2, v0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+    iput-object v0, p0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     .line 2780
-    sget v6, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
+    sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v1, v6, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    move-result-object v1
+    invoke-static {p1, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 2781
-    iget-object v1, v0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+    iget-object p1, p0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    sget v2, Lorg/telegram/messenger/R$string;->PassportEmailUploadInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportEmailUploadInfo:I
 
     const-string v3, "PassportEmailUploadInfo"
 
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 2782
-    iget-object v1, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object p1, p0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v2, v0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+    iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-static {v5, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v2, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v1, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
@@ -9380,10 +9366,10 @@
 
     invoke-virtual {v5, v4, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const-string v3, "windowBackgroundWhite"
-
     .line 1445
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -9423,9 +9409,9 @@
 
     aget-object v3, v3, v2
 
-    const-string v5, "windowBackgroundWhiteHintText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -9436,9 +9422,9 @@
 
     aget-object v3, v3, v2
 
-    const-string v5, "windowBackgroundWhiteBlackText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -9458,7 +9444,7 @@
 
     aget-object v3, v3, v2
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -9621,9 +9607,9 @@
     .line 1497
     sget v4, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v5, "windowBackgroundGrayShadow"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p1, v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -9671,7 +9657,7 @@
 .end method
 
 .method private createIdentityInterface(Landroid/content/Context;)V
-    .locals 25
+    .locals 27
 
     move-object/from16 v1, p0
 
@@ -9763,9 +9749,9 @@
     .line 3887
     sget v5, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
 
-    const-string v6, "windowBackgroundGrayShadow"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {v2, v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
@@ -9807,10 +9793,6 @@
 
     const-wide/16 v11, 0x0
 
-    const-string v7, "windowBackgroundWhiteRedText3"
-
-    const-string v13, "windowBackgroundWhite"
-
     if-eqz v0, :cond_9
 
     .line 3893
@@ -9821,55 +9803,57 @@
     iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     .line 3894
-    iget-boolean v14, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
+    iget-boolean v7, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
 
-    if-eqz v14, :cond_1
+    if-eqz v7, :cond_1
 
     .line 3895
-    sget v14, Lorg/telegram/messenger/R$string;->PassportDocuments:I
+    sget v7, Lorg/telegram/messenger/R$string;->PassportDocuments:I
 
-    const-string v15, "PassportDocuments"
+    const-string v13, "PassportDocuments"
 
-    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v7
 
-    invoke-virtual {v0, v14}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
     .line 3897
     :cond_1
-    sget v14, Lorg/telegram/messenger/R$string;->PassportRequiredDocuments:I
+    sget v7, Lorg/telegram/messenger/R$string;->PassportRequiredDocuments:I
 
-    const-string v15, "PassportRequiredDocuments"
+    const-string v13, "PassportRequiredDocuments"
 
-    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v7
 
-    invoke-virtual {v0, v14}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 3899
     :goto_2
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result v14
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+    move-result v13
+
+    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     .line 3900
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v0, v14, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3902
     new-instance v0, Landroid/widget/LinearLayout;
@@ -9884,13 +9868,13 @@
     .line 3904
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->frontLayout:Landroid/widget/LinearLayout;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->frontLayout:Landroid/widget/LinearLayout;
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v0, v14, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3906
     new-instance v0, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -9902,29 +9886,29 @@
     .line 3907
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3908
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->uploadFrontCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->uploadFrontCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v0, v14, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3909
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->uploadFrontCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
-    new-instance v14, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda22;
+    new-instance v13, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda22;
 
-    invoke-direct {v14, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v13, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 3914
     new-instance v0, Landroid/widget/LinearLayout;
@@ -9939,13 +9923,13 @@
     .line 3916
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->reverseLayout:Landroid/widget/LinearLayout;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->reverseLayout:Landroid/widget/LinearLayout;
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v0, v14, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3918
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
@@ -9953,39 +9937,39 @@
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->selfie_required:Z
 
     .line 3920
-    new-instance v14, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
+    new-instance v13, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
-    invoke-direct {v14, v2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {v13, v2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;-><init>(Landroid/content/Context;)V
 
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->uploadReverseCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
+    iput-object v13, v1, Lorg/telegram/ui/PassportActivity;->uploadReverseCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     .line 3921
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v14, v15}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v13, v14}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3922
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->uploadReverseCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->uploadReverseCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
-    sget v15, Lorg/telegram/messenger/R$string;->PassportReverseSide:I
+    sget v14, Lorg/telegram/messenger/R$string;->PassportReverseSide:I
 
-    const-string v3, "PassportReverseSide"
+    const-string v15, "PassportReverseSide"
+
+    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v14
+
+    sget v15, Lorg/telegram/messenger/R$string;->PassportReverseSideInfo:I
+
+    const-string v3, "PassportReverseSideInfo"
 
     invoke-static {v3, v15}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    sget v15, Lorg/telegram/messenger/R$string;->PassportReverseSideInfo:I
-
-    const-string v5, "PassportReverseSideInfo"
-
-    invoke-static {v5, v15}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v14, v3, v5, v0}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
+    invoke-virtual {v13, v14, v3, v0}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     .line 3923
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -9994,9 +9978,9 @@
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v13
 
-    invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3924
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->uploadReverseCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -10031,9 +10015,9 @@
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v13
 
-    invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3934
     new-instance v0, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -10054,25 +10038,25 @@
 
     sget v3, Lorg/telegram/messenger/R$string;->PassportSelfie:I
 
-    const-string v5, "PassportSelfie"
+    const-string v13, "PassportSelfie"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    sget v5, Lorg/telegram/messenger/R$string;->PassportSelfieInfo:I
+    sget v13, Lorg/telegram/messenger/R$string;->PassportSelfieInfo:I
 
     const-string v14, "PassportSelfieInfo"
 
-    invoke-static {v14, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v13
 
     iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->currentType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
     iget-boolean v14, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->translation_required:Z
 
-    invoke-virtual {v0, v3, v5, v14}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
+    invoke-virtual {v0, v3, v13, v14}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     .line 3937
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -10081,9 +10065,9 @@
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v13
 
-    invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3938
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->uploadSelfieCell:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -10105,35 +10089,35 @@
     .line 3945
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v5
+    move-result-object v13
 
-    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3946
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    sget v5, Lorg/telegram/messenger/R$string;->PassportPersonalUploadInfo:I
+    sget v13, Lorg/telegram/messenger/R$string;->PassportPersonalUploadInfo:I
 
     const-string v14, "PassportPersonalUploadInfo"
 
-    invoke-static {v14, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v13
 
-    invoke-virtual {v0, v5}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 3947
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v14
 
-    invoke-virtual {v0, v5, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v13, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3949
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
@@ -10150,35 +10134,35 @@
     iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     .line 3951
-    sget v5, Lorg/telegram/messenger/R$string;->PassportTranslation:I
+    sget v13, Lorg/telegram/messenger/R$string;->PassportTranslation:I
 
     const-string v14, "PassportTranslation"
 
-    invoke-static {v14, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v13
 
-    invoke-virtual {v0, v5}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 3952
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v5
+    move-result v7
 
-    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+    invoke-virtual {v0, v7}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     .line 3953
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v0, v5, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v7, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3955
     new-instance v0, Landroid/widget/LinearLayout;
@@ -10193,13 +10177,13 @@
     .line 3957
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->translationLayout:Landroid/widget/LinearLayout;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->translationLayout:Landroid/widget/LinearLayout;
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v0, v5, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v7, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3959
     new-instance v0, Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -10211,29 +10195,29 @@
     .line 3960
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v7}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3961
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v0, v5, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v7, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3962
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    new-instance v5, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda12;
+    new-instance v7, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda12;
 
-    invoke-direct {v5, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v7, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v7}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 3967
     new-instance v0, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -10243,16 +10227,16 @@
     iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     .line 3968
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3970
-    iget-wide v14, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
+    iget-wide v6, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    cmp-long v0, v14, v11
+    cmp-long v0, v6, v11
 
     const-string v3, ""
 
@@ -10261,9 +10245,9 @@
     .line 3971
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddTranslationUploadInfo:I
 
-    const-string v5, "PassportAddTranslationUploadInfo"
+    const-string v6, "PassportAddTranslationUploadInfo"
 
-    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -10277,16 +10261,16 @@
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassport;
+    instance-of v6, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassport;
 
-    if-eqz v5, :cond_4
+    if-eqz v6, :cond_4
 
     .line 3974
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddPassportInfo:I
 
-    const-string v5, "PassportAddPassportInfo"
+    const-string v6, "PassportAddPassportInfo"
 
-    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -10296,16 +10280,16 @@
 
     .line 3975
     :cond_4
-    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeInternalPassport;
+    instance-of v6, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeInternalPassport;
 
-    if-eqz v5, :cond_5
+    if-eqz v6, :cond_5
 
     .line 3976
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddInternalPassportInfo:I
 
-    const-string v5, "PassportAddInternalPassportInfo"
+    const-string v6, "PassportAddInternalPassportInfo"
 
-    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -10315,16 +10299,16 @@
 
     .line 3977
     :cond_5
-    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeIdentityCard;
+    instance-of v6, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeIdentityCard;
 
-    if-eqz v5, :cond_6
+    if-eqz v6, :cond_6
 
     .line 3978
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddIdentityCardInfo:I
 
-    const-string v5, "PassportAddIdentityCardInfo"
+    const-string v6, "PassportAddIdentityCardInfo"
 
-    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -10341,9 +10325,9 @@
     .line 3980
     sget v0, Lorg/telegram/messenger/R$string;->PassportAddDriverLicenceInfo:I
 
-    const-string v5, "PassportAddDriverLicenceInfo"
+    const-string v6, "PassportAddDriverLicenceInfo"
 
-    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -10360,57 +10344,59 @@
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     .line 3987
-    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
 
-    if-eqz v5, :cond_8
+    if-eqz v6, :cond_8
 
-    const-string v14, "translation_all"
+    const-string v7, "translation_all"
 
     .line 3989
-    invoke-virtual {v5, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    if-eqz v5, :cond_8
+    if-eqz v6, :cond_8
 
     .line 3990
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
-    invoke-direct {v0, v5}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v0, v6}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    const-string v15, "\n\n"
+    const-string v13, "\n\n"
 
     .line 3991
-    invoke-virtual {v0, v15}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v13}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3992
-    iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v15}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v13}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3994
-    new-instance v15, Landroid/text/style/ForegroundColorSpan;
+    new-instance v13, Landroid/text/style/ForegroundColorSpan;
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    move-result v11
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-direct {v15, v11}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+    move-result v14
 
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    invoke-direct {v13, v14}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
 
-    move-result v5
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
 
-    const/16 v11, 0x21
+    move-result v6
 
-    invoke-virtual {v0, v15, v8, v5, v11}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    const/16 v14, 0x21
+
+    invoke-virtual {v0, v13, v8, v6, v14}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 3995
-    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
 
-    invoke-virtual {v5, v14, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3998
     :cond_8
@@ -10425,9 +10411,9 @@
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_4
 
@@ -10458,9 +10444,9 @@
 
     sget v3, Lorg/telegram/messenger/R$string;->PassportScanPassport:I
 
-    const-string v5, "PassportScanPassport"
+    const-string v7, "PassportScanPassport"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -10473,9 +10459,9 @@
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4006
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->scanDocumentCell:Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -10496,7 +10482,7 @@
     .line 4059
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -10507,9 +10493,9 @@
 
     sget v3, Lorg/telegram/messenger/R$string;->PassportScanPassportInfo:I
 
-    const-string v5, "PassportScanPassportInfo"
+    const-string v6, "PassportScanPassportInfo"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -10522,9 +10508,9 @@
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4064
     :cond_a
@@ -10543,9 +10529,9 @@
     .line 4066
     sget v3, Lorg/telegram/messenger/R$string;->PassportDocument:I
 
-    const-string v5, "PassportDocument"
+    const-string v6, "PassportDocument"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -10557,9 +10543,9 @@
     :cond_b
     sget v3, Lorg/telegram/messenger/R$string;->PassportPersonal:I
 
-    const-string v5, "PassportPersonal"
+    const-string v6, "PassportPersonal"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -10569,7 +10555,9 @@
     :goto_5
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -10582,9 +10570,9 @@
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4073
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
@@ -10596,7 +10584,7 @@
     goto :goto_6
 
     :cond_c
-    const/4 v0, 0x7
+    move v0, v5
 
     .line 4074
     :goto_6
@@ -10607,759 +10595,749 @@
     move v3, v8
 
     :goto_7
-    const-string v11, "windowBackgroundWhiteBlueHeader"
+    const/16 v14, 0x14
 
-    const-string v12, "windowBackgroundWhiteHintText"
+    const/4 v15, 0x0
 
-    const/16 v15, 0x40
+    const/high16 v11, 0x41800000    # 16.0f
 
-    const/4 v10, 0x6
+    const/16 v12, 0x40
 
-    const-string v17, "windowBackgroundWhiteBlackText"
+    const/4 v6, 0x6
 
-    if-ge v3, v0, :cond_1b
+    if-ge v3, v0, :cond_1a
 
     .line 4077
-    new-instance v5, Lorg/telegram/ui/Components/EditTextBoldCursor;
+    new-instance v7, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-direct {v5, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
+    invoke-direct {v7, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
     .line 4078
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aput-object v5, v14, v3
+    aput-object v7, v10, v3
 
     .line 4080
-    new-instance v14, Lorg/telegram/ui/PassportActivity$15;
+    new-instance v10, Lorg/telegram/ui/PassportActivity$15;
 
-    invoke-direct {v14, v1, v2, v5}, Lorg/telegram/ui/PassportActivity$15;-><init>(Lorg/telegram/ui/PassportActivity;Landroid/content/Context;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+    invoke-direct {v10, v1, v2, v7}, Lorg/telegram/ui/PassportActivity$15;-><init>(Lorg/telegram/ui/PassportActivity;Landroid/content/Context;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     .line 4123
-    invoke-virtual {v14, v8}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
+    invoke-virtual {v10, v8}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
     .line 4124
     iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    invoke-static {v9, v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v9, v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v15
+    move-result-object v12
 
-    invoke-virtual {v8, v14, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v8, v10, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4125
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v12
+
+    invoke-virtual {v10, v12}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+
+    add-int/lit8 v12, v0, -0x1
+
+    if-ne v3, v12, :cond_d
+
+    .line 4128
+    new-instance v12, Landroid/view/View;
+
+    invoke-direct {v12, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+    iput-object v12, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
+
+    .line 4129
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
-    invoke-virtual {v14, v8}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
-
-    add-int/lit8 v8, v0, -0x1
-
-    if-ne v3, v8, :cond_d
-
-    .line 4128
-    new-instance v8, Landroid/view/View;
-
-    invoke-direct {v8, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
-
-    iput-object v8, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
-
-    .line 4129
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v15
-
-    invoke-virtual {v8, v15}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v12, v8}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 4130
     iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
+    iget-object v12, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
 
-    invoke-static {v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v9, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v4
+    move-result-object v13
 
-    invoke-virtual {v8, v15, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v8, v12, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4133
     :cond_d
-    iget-boolean v4, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
+    iget-boolean v8, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
 
-    const/16 v8, 0x8
+    const/16 v12, 0x8
 
-    if-eqz v4, :cond_e
+    if-eqz v8, :cond_e
 
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    if-eqz v4, :cond_e
+    if-eqz v8, :cond_e
 
-    const/4 v4, 0x7
-
-    if-ge v3, v4, :cond_f
+    if-ge v3, v5, :cond_e
 
     .line 4134
-    invoke-virtual {v14, v8}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v10, v12}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     .line 4135
-    iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView:Landroid/view/View;
 
-    if-eqz v15, :cond_f
+    if-eqz v8, :cond_e
 
     .line 4136
-    invoke-virtual {v15, v8}, Landroid/view/View;->setVisibility(I)V
-
-    goto :goto_8
-
-    :cond_e
-    const/4 v4, 0x7
+    invoke-virtual {v8, v12}, Landroid/view/View;->setVisibility(I)V
 
     .line 4140
-    :cond_f
-    :goto_8
-    iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :cond_e
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v15, v15, v3
+    aget-object v8, v8, v3
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v13
 
-    invoke-virtual {v15, v4}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v8, v13}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
     .line 4141
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v8, v8, v3
 
-    const/4 v15, 0x1
-
-    invoke-virtual {v4, v15}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSupportRtlHint(Z)V
+    invoke-virtual {v8, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSupportRtlHint(Z)V
 
     .line 4142
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v8, v8, v3
 
-    const/high16 v9, 0x41800000    # 16.0f
-
-    invoke-virtual {v4, v15, v9}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v8, v4, v11}, Landroid/widget/EditText;->setTextSize(IF)V
 
     .line 4143
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v8, v8, v3
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    move-result v9
-
-    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
-
-    .line 4144
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v4, v4, v3
-
-    invoke-static/range {v17 .. v17}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    invoke-virtual {v4, v9}, Landroid/widget/EditText;->setTextColor(I)V
-
-    .line 4145
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v4, v4, v3
-
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHeaderHintColor(I)V
-
-    .line 4146
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v4, v4, v3
-
-    const/4 v9, 0x1
-
-    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTransformHintToHeader(Z)V
-
-    .line 4147
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v4, v4, v3
-
-    const/4 v9, 0x0
-
-    invoke-virtual {v4, v9}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 4148
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v4, v4, v3
-
-    invoke-static/range {v17 .. v17}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
-
-    .line 4149
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v4, v4, v3
-
-    const/16 v9, 0x14
-
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
-
-    .line 4150
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v4, v4, v3
-
-    const/high16 v9, 0x3fc00000    # 1.5f
-
-    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
-
-    .line 4151
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v4, v4, v3
-
-    const-string v9, "windowBackgroundWhiteInputField"
-
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    const-string v11, "windowBackgroundWhiteInputFieldActivated"
-
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v11
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-virtual {v8, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
-    move-result v12
+    .line 4144
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v4, v9, v11, v12}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
+    aget-object v8, v8, v3
 
-    const/4 v4, 0x5
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    if-eq v3, v4, :cond_14
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    if-ne v3, v10, :cond_10
+    move-result v13
 
-    goto :goto_a
+    invoke-virtual {v8, v13}, Landroid/widget/EditText;->setTextColor(I)V
 
-    :cond_10
-    const/4 v9, 0x3
+    .line 4145
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    if-eq v3, v9, :cond_13
+    aget-object v8, v8, v3
 
-    if-ne v3, v8, :cond_11
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v13
+
+    invoke-virtual {v8, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHeaderHintColor(I)V
+
+    .line 4146
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v8, v8, v3
+
+    invoke-virtual {v8, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTransformHintToHeader(Z)V
+
+    .line 4147
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v8, v8, v3
+
+    invoke-virtual {v8, v15}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 4148
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v8, v8, v3
+
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v11
+
+    invoke-virtual {v8, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+
+    .line 4149
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v8, v8, v3
+
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v11
+
+    invoke-virtual {v8, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+
+    .line 4150
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v8, v8, v3
+
+    const/high16 v11, 0x3fc00000    # 1.5f
+
+    invoke-virtual {v8, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+
+    .line 4151
+    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v8, v8, v3
+
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
+
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v11
+
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
+
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v13
+
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v14
+
+    invoke-virtual {v8, v11, v13, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
+
+    const/4 v8, 0x5
+
+    if-eq v3, v8, :cond_13
+
+    if-ne v3, v6, :cond_f
 
     goto :goto_9
 
-    :cond_11
-    const/4 v8, 0x4
+    :cond_f
+    const/4 v6, 0x3
 
-    if-ne v3, v8, :cond_12
+    if-eq v3, v6, :cond_12
+
+    if-ne v3, v12, :cond_10
+
+    goto :goto_8
+
+    :cond_10
+    const/4 v6, 0x4
+
+    if-ne v3, v6, :cond_11
 
     .line 4235
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    new-instance v9, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda37;
+    new-instance v11, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda37;
 
-    invoke-direct {v9, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v11, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 4259
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    const/4 v9, 0x0
+    const/4 v11, 0x0
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setInputType(I)V
 
     .line 4260
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setFocusable(Z)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    goto :goto_b
+    goto :goto_a
 
     .line 4262
-    :cond_12
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :cond_11
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    const/16 v9, 0x4001
+    const/16 v11, 0x4001
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setInputType(I)V
 
     .line 4263
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    const v9, 0x10000005
+    const v11, 0x10000005
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setImeOptions(I)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    goto :goto_b
+    goto :goto_a
 
     .line 4175
-    :cond_13
-    :goto_9
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :cond_12
+    :goto_8
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    new-instance v9, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda38;
+    new-instance v11, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda38;
 
-    invoke-direct {v9, v1, v2}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/PassportActivity;Landroid/content/Context;)V
+    invoke-direct {v11, v1, v2}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/PassportActivity;Landroid/content/Context;)V
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 4232
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    const/4 v9, 0x0
+    const/4 v11, 0x0
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setInputType(I)V
 
     .line 4233
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setFocusable(Z)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    goto :goto_b
+    goto :goto_a
 
-    :cond_14
-    :goto_a
-    const/4 v9, 0x0
+    :cond_13
+    :goto_9
+    const/4 v11, 0x0
 
     .line 4153
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    new-instance v10, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda36;
+    new-instance v12, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda36;
 
-    invoke-direct {v10, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda36;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v12, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda36;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v8, v10}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v6, v12}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 4173
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setInputType(I)V
 
-    :goto_b
+    :goto_a
     packed-switch v3, :pswitch_data_0
 
-    goto/16 :goto_13
+    goto/16 :goto_12
 
     .line 4322
     :pswitch_0
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportExpired:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportExpired:I
 
-    const-string v10, "PassportExpired"
+    const-string v12, "PassportExpired"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 4324
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentValues:Ljava/util/HashMap;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentValues:Ljava/util/HashMap;
 
-    const-string v9, "expiry_date"
+    const-string v11, "expiry_date"
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     .line 4317
     :pswitch_1
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportDocumentNumber:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportDocumentNumber:I
 
-    const-string v10, "PassportDocumentNumber"
+    const-string v12, "PassportDocumentNumber"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 4319
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentValues:Ljava/util/HashMap;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentValues:Ljava/util/HashMap;
 
-    const-string v9, "document_no"
+    const-string v11, "document_no"
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     .line 4312
     :pswitch_2
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportResidence:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportResidence:I
 
-    const-string v10, "PassportResidence"
+    const-string v12, "PassportResidence"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 4314
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v9, "residence_country_code"
+    const-string v11, "residence_country_code"
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     .line 4307
     :pswitch_3
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportCitizenship:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportCitizenship:I
 
-    const-string v10, "PassportCitizenship"
+    const-string v12, "PassportCitizenship"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 4309
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v9, "country_code"
+    const-string v11, "country_code"
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     .line 4302
     :pswitch_4
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportGender:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportGender:I
 
-    const-string v10, "PassportGender"
+    const-string v12, "PassportGender"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 4304
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v9, "gender"
+    const-string v11, "gender"
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     .line 4297
     :pswitch_5
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportBirthdate:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportBirthdate:I
 
-    const-string v10, "PassportBirthdate"
+    const-string v12, "PassportBirthdate"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 4299
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v9, "birth_date"
+    const-string v11, "birth_date"
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     .line 4288
     :pswitch_6
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    iget-boolean v8, v8, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
+    iget-boolean v6, v6, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
 
-    if-eqz v8, :cond_15
+    if-eqz v6, :cond_14
 
     .line 4289
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportSurnameLatin:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportSurnameLatin:I
 
-    const-string v10, "PassportSurnameLatin"
+    const-string v12, "PassportSurnameLatin"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    goto :goto_c
+    goto :goto_b
 
     .line 4291
-    :cond_15
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :cond_14
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportSurname:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportSurname:I
 
-    const-string v10, "PassportSurname"
+    const-string v12, "PassportSurname"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 4294
-    :goto_c
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    :goto_b
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v9, "last_name"
-
-    goto :goto_f
-
-    .line 4279
-    :pswitch_7
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
-
-    iget-boolean v8, v8, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
-
-    if-eqz v8, :cond_16
-
-    .line 4280
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v8, v8, v3
-
-    sget v9, Lorg/telegram/messenger/R$string;->PassportMidnameLatin:I
-
-    const-string v10, "PassportMidnameLatin"
-
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
-
-    goto :goto_d
-
-    .line 4282
-    :cond_16
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v8, v8, v3
-
-    sget v9, Lorg/telegram/messenger/R$string;->PassportMidname:I
-
-    const-string v10, "PassportMidname"
-
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
-
-    .line 4285
-    :goto_d
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
-
-    const-string v9, "middle_name"
-
-    goto :goto_f
-
-    .line 4270
-    :pswitch_8
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
-
-    iget-boolean v8, v8, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
-
-    if-eqz v8, :cond_17
-
-    .line 4271
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v8, v8, v3
-
-    sget v9, Lorg/telegram/messenger/R$string;->PassportNameLatin:I
-
-    const-string v10, "PassportNameLatin"
-
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    const-string v11, "last_name"
 
     goto :goto_e
 
+    .line 4279
+    :pswitch_7
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+
+    iget-boolean v6, v6, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
+
+    if-eqz v6, :cond_15
+
+    .line 4280
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v3
+
+    sget v11, Lorg/telegram/messenger/R$string;->PassportMidnameLatin:I
+
+    const-string v12, "PassportMidnameLatin"
+
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+
+    goto :goto_c
+
+    .line 4282
+    :cond_15
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v3
+
+    sget v11, Lorg/telegram/messenger/R$string;->PassportMidname:I
+
+    const-string v12, "PassportMidname"
+
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+
+    .line 4285
+    :goto_c
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+
+    const-string v11, "middle_name"
+
+    goto :goto_e
+
+    .line 4270
+    :pswitch_8
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+
+    iget-boolean v6, v6, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
+
+    if-eqz v6, :cond_16
+
+    .line 4271
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v3
+
+    sget v11, Lorg/telegram/messenger/R$string;->PassportNameLatin:I
+
+    const-string v12, "PassportNameLatin"
+
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+
+    goto :goto_d
+
     .line 4273
-    :cond_17
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :cond_16
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v3
+    aget-object v6, v6, v3
 
-    sget v9, Lorg/telegram/messenger/R$string;->PassportName:I
+    sget v11, Lorg/telegram/messenger/R$string;->PassportName:I
 
-    const-string v10, "PassportName"
+    const-string v12, "PassportName"
 
-    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 4276
-    :goto_e
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    :goto_d
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v9, "first_name"
+    const-string v11, "first_name"
 
     .line 4329
-    :goto_f
-    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :goto_e
+    iget-object v12, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v10, v10, v3
+    aget-object v12, v12, v3
 
-    invoke-direct {v1, v8, v10, v9}, Lorg/telegram/ui/PassportActivity;->setFieldValues(Ljava/util/HashMap;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
+    invoke-direct {v1, v6, v12, v11}, Lorg/telegram/ui/PassportActivity;->setFieldValues(Ljava/util/HashMap;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
 
     .line 4330
-    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v12, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v11, v10, v3
+    aget-object v13, v12, v3
 
-    aget-object v10, v10, v3
+    aget-object v12, v12, v3
 
-    invoke-virtual {v10}, Landroid/widget/EditText;->length()I
+    invoke-virtual {v12}, Landroid/widget/EditText;->length()I
 
-    move-result v10
+    move-result v12
 
-    invoke-virtual {v11, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
+    invoke-virtual {v13, v12}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_18
 
-    const/4 v10, 0x2
+    const/4 v12, 0x2
 
-    if-eq v3, v10, :cond_19
+    if-eq v3, v12, :cond_18
 
-    const/4 v10, 0x1
+    if-ne v3, v4, :cond_17
 
-    if-ne v3, v10, :cond_18
+    goto :goto_f
+
+    .line 4369
+    :cond_17
+    iget-object v12, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v12, v12, v3
+
+    new-instance v13, Lorg/telegram/ui/PassportActivity$17;
+
+    invoke-direct {v13, v1, v7, v11, v6}, Lorg/telegram/ui/PassportActivity$17;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;Ljava/util/HashMap;)V
+
+    invoke-virtual {v12, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     goto :goto_10
 
-    .line 4369
+    .line 4332
     :cond_18
-    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :goto_f
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v10, v10, v3
+    aget-object v6, v6, v3
 
-    new-instance v11, Lorg/telegram/ui/PassportActivity$17;
+    new-instance v12, Lorg/telegram/ui/PassportActivity$16;
 
-    invoke-direct {v11, v1, v5, v9, v8}, Lorg/telegram/ui/PassportActivity$17;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;Ljava/util/HashMap;)V
+    invoke-direct {v12, v1, v7, v11}, Lorg/telegram/ui/PassportActivity$16;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
 
-    invoke-virtual {v10, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v6, v12}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 4392
+    :goto_10
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v3
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v6, v7, v7, v7, v7}, Landroid/widget/EditText;->setPadding(IIII)V
+
+    .line 4393
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v6, v6, v3
+
+    sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v7, :cond_19
+
+    move/from16 v16, v8
 
     goto :goto_11
 
-    .line 4332
     :cond_19
-    :goto_10
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    const/16 v16, 0x3
 
-    aget-object v8, v8, v3
-
-    new-instance v10, Lorg/telegram/ui/PassportActivity$16;
-
-    invoke-direct {v10, v1, v5, v9}, Lorg/telegram/ui/PassportActivity$16;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
-
-    invoke-virtual {v8, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    .line 4392
     :goto_11
-    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    or-int/lit8 v7, v16, 0x10
 
-    aget-object v5, v5, v3
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v5, v8, v8, v8, v8}, Landroid/widget/EditText;->setPadding(IIII)V
-
-    .line 4393
-    iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v5, v5, v3
-
-    sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v8, :cond_1a
-
-    move v10, v4
-
-    goto :goto_12
-
-    :cond_1a
-    const/4 v10, 0x3
-
-    :goto_12
-    or-int/lit8 v4, v10, 0x10
-
-    invoke-virtual {v5, v4}, Landroid/widget/EditText;->setGravity(I)V
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setGravity(I)V
 
     .line 4394
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v6, v6, v3
 
     const/16 v18, -0x1
 
@@ -11377,36 +11355,34 @@
 
     invoke-static/range {v18 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v14, v4, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v10, v6, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4396
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v6, v6, v3
 
-    new-instance v5, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda43;
+    new-instance v7, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda43;
 
-    invoke-direct {v5, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda43;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v7, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda43;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v4, v5}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    :goto_13
+    :goto_12
     add-int/lit8 v3, v3, 0x1
-
-    const/4 v4, 0x1
 
     const/4 v8, 0x0
 
-    const/4 v9, -0x1
-
     const/4 v10, -0x2
+
+    const-wide/16 v11, 0x0
 
     goto/16 :goto_7
 
-    :cond_1b
-    const/4 v4, 0x5
+    :cond_1a
+    const/4 v8, 0x5
 
     .line 4415
     new-instance v0, Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -11420,13 +11396,11 @@
 
     const/4 v5, -0x2
 
-    const/4 v8, -0x1
+    invoke-static {v9, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v8, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v7
 
-    move-result-object v9
-
-    invoke-virtual {v3, v0, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v0, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4418
     new-instance v0, Lorg/telegram/ui/Cells/HeaderCell;
@@ -11436,7 +11410,9 @@
     iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     .line 4419
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -11447,11 +11423,11 @@
 
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-static {v8, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v9, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v0, v3, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     const/4 v0, 0x3
 
@@ -11462,8 +11438,8 @@
 
     const/4 v3, 0x0
 
-    :goto_14
-    if-ge v3, v0, :cond_23
+    :goto_13
+    if-ge v3, v0, :cond_22
 
     .line 4424
     new-instance v0, Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -11480,370 +11456,364 @@
 
     invoke-direct {v5, v1, v2, v0}, Lorg/telegram/ui/PassportActivity$18;-><init>(Lorg/telegram/ui/PassportActivity;Landroid/content/Context;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     .line 4470
-    invoke-virtual {v5, v8}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
+    invoke-virtual {v5, v7}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
     .line 4471
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    const/4 v9, -0x1
+    invoke-static {v9, v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v9, v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v10
 
-    move-result-object v14
-
-    invoke-virtual {v8, v5, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v5, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4472
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result v8
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v5, v8}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+    move-result v10
 
-    const/4 v8, 0x2
+    invoke-virtual {v5, v10}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    if-ne v3, v8, :cond_1c
+    const/4 v10, 0x2
+
+    if-ne v3, v10, :cond_1b
 
     .line 4475
-    new-instance v8, Landroid/view/View;
+    new-instance v10, Landroid/view/View;
 
-    invoke-direct {v8, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {v10, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object v8, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView2:Landroid/view/View;
+    iput-object v10, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView2:Landroid/view/View;
 
     .line 4476
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v9
+    move-result v7
 
-    invoke-virtual {v8, v9}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v10, v7}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 4477
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView2:Landroid/view/View;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->extraBackgroundView2:Landroid/view/View;
 
-    const/4 v14, -0x1
+    invoke-static {v9, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v14, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v13
 
-    move-result-object v4
-
-    invoke-virtual {v8, v9, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v10, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4480
-    :cond_1c
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :cond_1b
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v10
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v7, v10}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
     .line 4481
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    const/4 v8, 0x1
-
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSupportRtlHint(Z)V
+    invoke-virtual {v7, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSupportRtlHint(Z)V
 
     .line 4482
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    const/high16 v9, 0x41800000    # 16.0f
-
-    invoke-virtual {v4, v8, v9}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v7, v4, v11}, Landroid/widget/EditText;->setTextSize(IF)V
 
     .line 4483
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    move-result v8
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
+    move-result v10
+
+    invoke-virtual {v7, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
     .line 4484
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    invoke-static/range {v17 .. v17}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    move-result v8
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setTextColor(I)V
+    move-result v13
+
+    invoke-virtual {v7, v13}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 4485
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    move-result v8
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHeaderHintColor(I)V
+    move-result v13
+
+    invoke-virtual {v7, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHeaderHintColor(I)V
 
     .line 4486
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    const/4 v8, 0x1
-
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTransformHintToHeader(Z)V
+    invoke-virtual {v7, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTransformHintToHeader(Z)V
 
     .line 4487
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    const/4 v8, 0x0
-
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v7, v15}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 4488
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    invoke-static/range {v17 .. v17}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v14
+    move-result v10
 
-    invoke-virtual {v4, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+    invoke-virtual {v7, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
     .line 4489
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
-
-    const/16 v14, 0x14
+    aget-object v7, v7, v3
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v14
+    move-result v10
 
-    invoke-virtual {v4, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+    invoke-virtual {v7, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
     .line 4490
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    const/high16 v14, 0x3fc00000    # 1.5f
+    const/high16 v10, 0x3fc00000    # 1.5f
 
-    invoke-virtual {v4, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+    invoke-virtual {v7, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
     .line 4491
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v7, v7, v3
 
-    const-string v14, "windowBackgroundWhiteInputField"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
-    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v14
+    move-result v13
 
-    const-string v16, "windowBackgroundWhiteInputFieldActivated"
+    sget v17, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-static/range {v16 .. v16}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static/range {v17 .. v17}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v6
+
+    sget v17, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static/range {v17 .. v17}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    invoke-virtual {v4, v14, v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
+    invoke-virtual {v7, v13, v6, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
 
     .line 4492
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v6, v6, v3
 
-    const/16 v8, 0x4001
+    const/16 v7, 0x4001
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v6, v7}, Landroid/widget/EditText;->setInputType(I)V
 
     .line 4493
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v6, v6, v3
 
     const v8, 0x10000005
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setImeOptions(I)V
+    invoke-virtual {v6, v8}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    if-eqz v3, :cond_1f
-
-    const/4 v4, 0x1
-
-    if-eq v3, v4, :cond_1e
-
-    const/4 v4, 0x2
+    if-eqz v3, :cond_1e
 
     if-eq v3, v4, :cond_1d
 
-    goto/16 :goto_17
+    const/4 v6, 0x2
+
+    if-eq v3, v6, :cond_1c
+
+    goto :goto_16
 
     .line 4509
-    :cond_1d
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    :cond_1c
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v8, "last_name_native"
+    const-string v13, "last_name_native"
 
-    goto :goto_15
+    goto :goto_14
 
     .line 4505
-    :cond_1e
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    :cond_1d
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v8, "middle_name_native"
+    const-string v13, "middle_name_native"
 
-    goto :goto_15
+    goto :goto_14
 
     .line 4501
-    :cond_1f
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
+    :cond_1e
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->currentValues:Ljava/util/HashMap;
 
-    const-string v8, "first_name_native"
+    const-string v13, "first_name_native"
 
     .line 4514
-    :goto_15
-    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :goto_14
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v3
+    aget-object v7, v7, v3
 
-    invoke-direct {v1, v4, v9, v8}, Lorg/telegram/ui/PassportActivity;->setFieldValues(Ljava/util/HashMap;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
+    invoke-direct {v1, v6, v7, v13}, Lorg/telegram/ui/PassportActivity;->setFieldValues(Ljava/util/HashMap;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
 
     .line 4515
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v4, v3
+    aget-object v7, v6, v3
 
-    aget-object v4, v4, v3
+    aget-object v6, v6, v3
 
-    invoke-virtual {v4}, Landroid/widget/EditText;->length()I
+    invoke-virtual {v6}, Landroid/widget/EditText;->length()I
 
-    move-result v4
+    move-result v6
 
-    invoke-virtual {v9, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
+    invoke-virtual {v7, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_1f
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    if-eq v3, v4, :cond_20
+    if-eq v3, v6, :cond_1f
 
-    const/4 v4, 0x1
-
-    if-ne v3, v4, :cond_21
+    if-ne v3, v4, :cond_20
 
     .line 4517
-    :cond_20
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :cond_1f
+    iget-object v6, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v4, v4, v3
+    aget-object v6, v6, v3
 
-    new-instance v9, Lorg/telegram/ui/PassportActivity$19;
+    new-instance v7, Lorg/telegram/ui/PassportActivity$19;
 
-    invoke-direct {v9, v1, v0, v8}, Lorg/telegram/ui/PassportActivity$19;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
+    invoke-direct {v7, v1, v0, v13}, Lorg/telegram/ui/PassportActivity$19;-><init>(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/Components/EditTextBoldCursor;Ljava/lang/String;)V
 
-    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 4541
-    :cond_21
+    :cond_20
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v0, v0, v3
 
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
-    invoke-virtual {v0, v4, v4, v4, v4}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-virtual {v0, v6, v6, v6, v6}, Landroid/widget/EditText;->setPadding(IIII)V
 
     .line 4542
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v0, v0, v3
 
-    sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v4, :cond_22
+    if-eqz v6, :cond_21
 
-    const/4 v9, 0x5
+    const/4 v6, 0x5
 
-    goto :goto_16
+    goto :goto_15
 
-    :cond_22
-    const/4 v9, 0x3
+    :cond_21
+    const/4 v6, 0x3
 
-    :goto_16
-    or-int/lit8 v4, v9, 0x10
+    :goto_15
+    or-int/lit8 v6, v6, 0x10
 
-    invoke-virtual {v0, v4}, Landroid/widget/EditText;->setGravity(I)V
+    invoke-virtual {v0, v6}, Landroid/widget/EditText;->setGravity(I)V
 
     .line 4543
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v0, v0, v3
 
-    const/16 v18, -0x1
+    const/16 v20, -0x1
 
-    const/16 v19, -0x1
+    const/16 v21, -0x1
 
-    const/16 v20, 0x33
-
-    const/16 v21, 0x15
-
-    const/16 v22, 0x0
+    const/16 v22, 0x33
 
     const/16 v23, 0x15
 
     const/16 v24, 0x0
 
-    invoke-static/range {v18 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/16 v25, 0x15
 
-    move-result-object v4
+    const/16 v26, 0x0
 
-    invoke-virtual {v5, v0, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-static/range {v20 .. v26}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4545
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v0, v0, v3
 
-    new-instance v4, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda41;
+    new-instance v5, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda41;
 
-    invoke-direct {v4, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v5, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v0, v4}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v0, v5}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    :goto_17
+    :goto_16
     add-int/lit8 v3, v3, 0x1
 
     const/4 v0, 0x3
 
-    const/4 v4, 0x5
+    const/4 v6, 0x6
 
-    goto/16 :goto_14
+    const/4 v8, 0x5
+
+    goto/16 :goto_13
 
     .line 4564
-    :cond_23
+    :cond_22
     new-instance v0, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     invoke-direct {v0, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
@@ -11853,48 +11823,46 @@
     .line 4565
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    const/4 v4, -0x2
+    const/4 v5, -0x2
 
-    const/4 v5, -0x1
+    invoke-static {v9, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v5, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v6
 
-    move-result-object v8
-
-    invoke-virtual {v3, v0, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v0, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4567
-    iget-wide v3, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
+    iget-wide v5, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v7, 0x0
 
-    cmp-long v0, v3, v8
+    cmp-long v0, v5, v7
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_23
 
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_24
 
-    :cond_24
+    :cond_23
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_24
 
     iget-boolean v0, v1, Lorg/telegram/ui/PassportActivity;->documentOnly:Z
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_25
 
+    :cond_24
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
+
+    if-eqz v0, :cond_2b
+
+    .line 4568
     :cond_25
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
 
-    if-eqz v0, :cond_2c
-
-    .line 4568
-    :cond_26
-    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
-
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_29
 
     .line 4569
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValue;->files:Ljava/util/ArrayList;
@@ -11908,7 +11876,7 @@
 
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_secureFile;
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_26
 
     .line 4571
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_secureFile;
@@ -11918,14 +11886,14 @@
     invoke-direct {v1, v0, v3}, Lorg/telegram/ui/PassportActivity;->addDocumentViewInternal(Lorg/telegram/tgnet/TLRPC$TL_secureFile;I)V
 
     .line 4573
-    :cond_27
+    :cond_26
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValue;->reverse_side:Lorg/telegram/tgnet/TLRPC$SecureFile;
 
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_secureFile;
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_27
 
     .line 4574
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_secureFile;
@@ -11935,24 +11903,22 @@
     invoke-direct {v1, v0, v3}, Lorg/telegram/ui/PassportActivity;->addDocumentViewInternal(Lorg/telegram/tgnet/TLRPC$TL_secureFile;I)V
 
     .line 4576
-    :cond_28
+    :cond_27
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValue;->selfie:Lorg/telegram/tgnet/TLRPC$SecureFile;
 
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_secureFile;
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_28
 
     .line 4577
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_secureFile;
 
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v0, v3}, Lorg/telegram/ui/PassportActivity;->addDocumentViewInternal(Lorg/telegram/tgnet/TLRPC$TL_secureFile;I)V
+    invoke-direct {v1, v0, v4}, Lorg/telegram/ui/PassportActivity;->addDocumentViewInternal(Lorg/telegram/tgnet/TLRPC$TL_secureFile;I)V
 
     .line 4579
-    :cond_29
+    :cond_28
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsTypeValue:Lorg/telegram/tgnet/TLRPC$TL_secureValue;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValue;->translation:Ljava/util/ArrayList;
@@ -11960,22 +11926,22 @@
     invoke-direct {v1, v0}, Lorg/telegram/ui/PassportActivity;->addTranslationDocumentViews(Ljava/util/ArrayList;)V
 
     .line 4582
-    :cond_2a
+    :cond_29
     new-instance v0, Lorg/telegram/ui/Cells/TextSettingsCell;
 
     invoke-direct {v0, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 4583
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
-    const/4 v3, 0x1
-
     .line 4584
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -11984,7 +11950,7 @@
     .line 4585
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    if-nez v3, :cond_2b
+    if-nez v3, :cond_2a
 
     .line 4586
     sget v3, Lorg/telegram/messenger/R$string;->PassportDeleteInfo:I
@@ -11999,9 +11965,9 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    goto :goto_18
+    goto :goto_17
 
-    :cond_2b
+    :cond_2a
     const/4 v4, 0x0
 
     .line 4588
@@ -12016,18 +11982,16 @@
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
     .line 4590
-    :goto_18
+    :goto_17
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     const/4 v4, -0x2
 
-    const/4 v5, -0x1
+    invoke-static {v9, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v5, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v5
 
-    move-result-object v7
-
-    invoke-virtual {v3, v0, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4591
     new-instance v3, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda26;
@@ -12041,7 +12005,9 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -12057,7 +12023,7 @@
     .line 4596
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -12070,30 +12036,30 @@
 
     const/4 v3, -0x2
 
-    const/4 v4, -0x1
-
-    invoke-static {v4, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v9, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    goto :goto_19
+    goto :goto_18
 
     .line 4599
-    :cond_2c
+    :cond_2b
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->nativeInfoCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v2, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 4602
-    :goto_19
+    :goto_18
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/PassportActivity;->updateInterfaceStringsForDocumentType()V
 
     const/4 v0, 0x0
@@ -12102,8 +12068,6 @@
     invoke-direct {v1, v0}, Lorg/telegram/ui/PassportActivity;->checkNativeFields(Z)V
 
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -12178,9 +12142,9 @@
     .line 2430
     iget-object v0, v6, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    const-string v1, "windowBackgroundWhite"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -12211,9 +12175,9 @@
     .line 2434
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    const-string v4, "windowBackgroundGrayShadow"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {v7, v1, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v7, v1, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -12284,10 +12248,10 @@
 
     iput-object v0, v6, Lorg/telegram/ui/PassportActivity;->deletePassportCell:Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    const-string v9, "windowBackgroundWhiteRedText3"
-
     .line 2444
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -12347,7 +12311,7 @@
     .line 2483
     sget v9, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v7, v9, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v7, v9, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v11
 
@@ -12384,7 +12348,7 @@
     .line 2489
     iget-object v0, v6, Lorg/telegram/ui/PassportActivity;->emptyLayout:Landroid/widget/LinearLayout;
 
-    invoke-static {v7, v9, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v7, v9, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
@@ -12462,9 +12426,9 @@
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "sessions_devicesImage"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_sessions_devicesImage:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -12492,10 +12456,10 @@
 
     iput-object v0, v6, Lorg/telegram/ui/PassportActivity;->emptyTextView1:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
-
     .line 2502
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -12570,7 +12534,7 @@
     iput-object v0, v6, Lorg/telegram/ui/PassportActivity;->emptyTextView2:Landroid/widget/TextView;
 
     .line 2510
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -12638,10 +12602,10 @@
 
     iput-object v0, v6, Lorg/telegram/ui/PassportActivity;->emptyTextView3:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteBlueText4"
-
     .line 2518
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -12675,7 +12639,7 @@
     .line 2520
     iget-object v0, v6, Lorg/telegram/ui/PassportActivity;->emptyTextView3:Landroid/widget/TextView;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -13253,9 +13217,9 @@
 
     new-instance v5, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v8, "chat_messagePanelIcons"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -13335,9 +13299,9 @@
     .line 1553
     iget-object v2, v0, Lorg/telegram/ui/PassportActivity;->noPasswordTextView:Landroid/widget/TextView;
 
-    const-string v8, "windowBackgroundWhiteGrayText4"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -13400,10 +13364,10 @@
 
     iput-object v2, v0, Lorg/telegram/ui/PassportActivity;->noPasswordSetTextView:Landroid/widget/TextView;
 
-    const-string v8, "windowBackgroundWhiteBlueText5"
-
     .line 1558
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText5:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -13535,9 +13499,9 @@
 
     aget-object v9, v9, v2
 
-    const-string v10, "windowBackgroundWhite"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -13575,9 +13539,9 @@
 
     aget-object v9, v9, v2
 
-    const-string v10, "windowBackgroundWhiteHintText"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -13588,9 +13552,9 @@
 
     aget-object v9, v9, v2
 
-    const-string v10, "windowBackgroundWhiteBlackText"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v11
 
@@ -13608,7 +13572,7 @@
 
     aget-object v9, v9, v2
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -13793,9 +13757,9 @@
     .line 1623
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v8, "windowBackgroundGrayShadow"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {v1, v3, v8}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v3, v8}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -13836,10 +13800,10 @@
 
     iput-object v2, v0, Lorg/telegram/ui/PassportActivity;->passwordForgotButton:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlueText4"
-
     .line 1628
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -13919,7 +13883,7 @@
 .end method
 
 .method private createPhoneInterface(Landroid/content/Context;)V
-    .locals 24
+    .locals 23
 
     move-object/from16 v1, p0
 
@@ -14083,10 +14047,10 @@
 
     invoke-direct {v7, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    const-string v8, "windowBackgroundWhiteBlueText4"
-
     .line 2811
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -14166,9 +14130,9 @@
     .line 2822
     sget v7, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v10, "windowBackgroundGrayShadow"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {v2, v7, v10}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v7, v10}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v7
 
@@ -14179,9 +14143,9 @@
 
     sget v7, Lorg/telegram/messenger/R$string;->PassportPhoneUseSameInfo:I
 
-    const-string v11, "PassportPhoneUseSameInfo"
+    const-string v10, "PassportPhoneUseSameInfo"
 
-    invoke-static {v11, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v10, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v7
 
@@ -14194,9 +14158,9 @@
 
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v10
 
-    invoke-virtual {v0, v7, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v7, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 2826
     new-instance v0, Lorg/telegram/ui/Cells/HeaderCell;
@@ -14208,9 +14172,9 @@
     .line 2827
     sget v7, Lorg/telegram/messenger/R$string;->PassportPhoneUseOther:I
 
-    const-string v11, "PassportPhoneUseOther"
+    const-string v10, "PassportPhoneUseOther"
 
-    invoke-static {v11, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v10, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v7
 
@@ -14219,24 +14183,24 @@
     .line 2828
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    const-string v7, "windowBackgroundWhite"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v11
+    move-result v7
 
-    invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+    invoke-virtual {v0, v7}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     .line 2829
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-virtual {v0, v11, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v7, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     new-array v0, v3, [Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -14246,61 +14210,63 @@
     move v0, v6
 
     :goto_2
-    const/4 v11, 0x0
+    const/4 v7, 0x0
 
     if-ge v0, v3, :cond_c
 
     if-ne v0, v4, :cond_2
 
     .line 2835
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    new-instance v14, Lorg/telegram/ui/Components/HintEditText;
+    new-instance v11, Lorg/telegram/ui/Components/HintEditText;
 
-    invoke-direct {v14, v2}, Lorg/telegram/ui/Components/HintEditText;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v2}, Lorg/telegram/ui/Components/HintEditText;-><init>(Landroid/content/Context;)V
 
-    aput-object v14, v13, v0
+    aput-object v11, v10, v0
 
     goto :goto_3
 
     .line 2837
     :cond_2
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    new-instance v14, Lorg/telegram/ui/Components/EditTextBoldCursor;
+    new-instance v11, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-direct {v14, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
-    aput-object v14, v13, v0
+    aput-object v11, v10, v0
 
     :goto_3
-    const/16 v13, 0x32
+    const/16 v10, 0x32
 
     if-ne v0, v5, :cond_3
 
     .line 2842
-    new-instance v14, Landroid/widget/LinearLayout;
+    new-instance v11, Landroid/widget/LinearLayout;
 
-    invoke-direct {v14, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     .line 2843
-    invoke-virtual {v14, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {v11, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 2844
-    iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    invoke-static {v8, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v8, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-virtual {v15, v14, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v13, v11, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 2845
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result v13
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v14, v13}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+    move-result v10
+
+    invoke-virtual {v11, v10}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
     goto :goto_4
 
@@ -14308,273 +14274,275 @@
     if-ne v0, v4, :cond_4
 
     .line 2847
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v13, v13, v5
+    aget-object v10, v10, v5
 
-    invoke-virtual {v13}, Landroid/widget/EditText;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v10}, Landroid/widget/EditText;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v13
+    move-result-object v10
 
-    move-object v14, v13
+    move-object v11, v10
 
-    check-cast v14, Landroid/view/ViewGroup;
+    check-cast v11, Landroid/view/ViewGroup;
 
     goto :goto_4
 
     .line 2849
     :cond_4
-    new-instance v14, Landroid/widget/FrameLayout;
+    new-instance v11, Landroid/widget/FrameLayout;
 
-    invoke-direct {v14, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 2850
-    iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    invoke-static {v8, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v8, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-virtual {v15, v14, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v13, v11, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 2851
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result v13
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v14, v13}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+    move-result v10
+
+    invoke-virtual {v11, v10}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
     .line 2854
     :goto_4
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v13, v13, v0
+    aget-object v10, v10, v0
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v15
+    move-result-object v13
 
-    invoke-virtual {v13, v15}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v10, v13}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
     .line 2855
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v13, v13, v0
+    aget-object v10, v10, v0
 
-    const/high16 v15, 0x41800000    # 16.0f
+    const/high16 v13, 0x41800000    # 16.0f
 
-    invoke-virtual {v13, v5, v15}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v10, v5, v13}, Landroid/widget/EditText;->setTextSize(IF)V
 
     .line 2856
-    iget-object v13, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v13, v13, v0
+    aget-object v10, v10, v0
 
-    const-string v16, "windowBackgroundWhiteHintText"
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-static/range {v16 .. v16}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v9
+    move-result v14
 
-    invoke-virtual {v13, v9}, Landroid/widget/EditText;->setHintTextColor(I)V
+    invoke-virtual {v10, v14}, Landroid/widget/EditText;->setHintTextColor(I)V
 
     .line 2857
-    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v0
+    aget-object v10, v10, v0
 
-    const-string v13, "windowBackgroundWhiteBlackText"
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v8
+    move-result v15
 
-    invoke-virtual {v9, v8}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v10, v15}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 2858
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v10, v10, v0
 
-    invoke-virtual {v8, v11}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v10, v7}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 2859
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v10, v10, v0
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v9
+    move-result v15
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+    invoke-virtual {v10, v15}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
     .line 2860
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v10, v10, v0
 
-    const/16 v9, 0x14
+    const/16 v15, 0x14
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v15
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+    invoke-virtual {v10, v15}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
     .line 2861
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v10, v10, v0
 
-    const/high16 v9, 0x3fc00000    # 1.5f
+    const/high16 v15, 0x3fc00000    # 1.5f
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+    invoke-virtual {v10, v15}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
     if-nez v0, :cond_5
 
     .line 2863
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v10, v10, v0
 
-    new-instance v9, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda35;
+    new-instance v15, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda35;
 
-    invoke-direct {v9, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/PassportActivity;)V
+    invoke-direct {v15, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v10, v15}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 2888
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v10, v10, v0
 
-    sget v9, Lorg/telegram/messenger/R$string;->ChooseCountry:I
+    sget v15, Lorg/telegram/messenger/R$string;->ChooseCountry:I
 
-    const-string v11, "ChooseCountry"
+    const-string v9, "ChooseCountry"
 
-    invoke-static {v11, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v9, v15}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v9
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v9}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 2889
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v9, v9, v0
 
-    invoke-virtual {v8, v6}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v9, v6}, Landroid/widget/EditText;->setInputType(I)V
 
     .line 2890
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v9, v9, v0
 
-    invoke-virtual {v8, v6}, Landroid/widget/EditText;->setFocusable(Z)V
+    invoke-virtual {v9, v6}, Landroid/widget/EditText;->setFocusable(Z)V
 
     goto :goto_5
 
     .line 2892
     :cond_5
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v9, v9, v0
 
-    invoke-virtual {v8, v3}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v9, v3}, Landroid/widget/EditText;->setInputType(I)V
 
     if-ne v0, v4, :cond_6
 
     .line 2894
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v9, v9, v0
 
-    const v9, 0x10000006
+    const v10, 0x10000006
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setImeOptions(I)V
+    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setImeOptions(I)V
 
     goto :goto_5
 
     .line 2896
     :cond_6
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v9, v9, v0
 
-    const v9, 0x10000005
+    const v10, 0x10000005
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setImeOptions(I)V
+    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setImeOptions(I)V
 
     .line 2899
     :goto_5
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v8, v0
+    aget-object v10, v9, v0
 
-    aget-object v8, v8, v0
+    aget-object v9, v9, v0
 
-    invoke-virtual {v8}, Landroid/widget/EditText;->length()I
+    invoke-virtual {v9}, Landroid/widget/EditText;->length()I
 
-    move-result v8
+    move-result v9
 
-    invoke-virtual {v9, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
+    invoke-virtual {v10, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    const/16 v8, 0x13
+    const/16 v9, 0x13
 
-    const/4 v9, 0x5
+    const/4 v10, 0x5
 
     if-ne v0, v5, :cond_7
 
     .line 2902
-    new-instance v11, Landroid/widget/TextView;
+    new-instance v7, Landroid/widget/TextView;
 
-    invoke-direct {v11, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v7, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v11, v1, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
+    iput-object v7, v1, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
 
     .line 2903
-    invoke-virtual {v11, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v7, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 2904
-    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v13
+    move-result v14
 
-    invoke-virtual {v11, v13}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v7, v14}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 2905
-    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v11, v5, v15}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v7, v5, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 2906
-    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
+
+    const/16 v16, -0x2
 
     const/16 v17, -0x2
 
-    const/16 v18, -0x2
+    const/16 v18, 0x15
 
-    const/16 v19, 0x15
+    const/16 v19, 0xc
 
-    const/16 v20, 0xc
+    const/16 v20, 0x0
 
-    const/16 v21, 0x0
+    const/16 v21, 0x6
 
-    const/16 v22, 0x6
-
-    invoke-static/range {v17 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v16 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v13
 
-    invoke-virtual {v14, v11, v13}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v7, v13}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 2908
-    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v11, v11, v0
+    aget-object v7, v7, v0
 
     const/16 v13, 0xa
 
@@ -14582,58 +14550,58 @@
 
     move-result v13
 
-    invoke-virtual {v11, v13, v6, v6, v6}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-virtual {v7, v13, v6, v6, v6}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    new-array v11, v5, [Landroid/text/InputFilter;
+    new-array v7, v5, [Landroid/text/InputFilter;
 
     .line 2910
     new-instance v13, Landroid/text/InputFilter$LengthFilter;
 
-    invoke-direct {v13, v9}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
+    invoke-direct {v13, v10}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
 
-    aput-object v13, v11, v6
+    aput-object v13, v7, v6
 
     .line 2911
-    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v0
+    aget-object v10, v10, v0
 
-    invoke-virtual {v9, v11}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
+    invoke-virtual {v10, v7}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
     .line 2912
-    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v0
+    aget-object v7, v7, v0
 
-    invoke-virtual {v9, v8}, Landroid/widget/EditText;->setGravity(I)V
+    invoke-virtual {v7, v9}, Landroid/widget/EditText;->setGravity(I)V
 
     .line 2913
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v7, v7, v0
 
-    const/16 v17, 0x37
+    const/16 v16, 0x37
 
-    const/16 v19, 0x0
+    const/16 v18, 0x0
 
-    const/16 v21, 0x10
+    const/16 v20, 0x10
 
-    invoke-static/range {v17 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v16 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v9
 
-    invoke-virtual {v14, v8, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v7, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 2914
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v7, v7, v0
 
     new-instance v9, Lorg/telegram/ui/PassportActivity$9;
 
     invoke-direct {v9, v1}, Lorg/telegram/ui/PassportActivity$9;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     goto/16 :goto_7
 
@@ -14641,53 +14609,120 @@
     if-ne v0, v4, :cond_8
 
     .line 2990
-    iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v9, v9, v0
+    aget-object v10, v10, v0
 
-    invoke-virtual {v9, v6, v6, v6, v6}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-virtual {v10, v6, v6, v6, v6}, Landroid/widget/EditText;->setPadding(IIII)V
 
     .line 2991
+    iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v10, v10, v0
+
+    invoke-virtual {v10, v9}, Landroid/widget/EditText;->setGravity(I)V
+
+    .line 2992
     iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v0
 
-    invoke-virtual {v9, v8}, Landroid/widget/EditText;->setGravity(I)V
-
-    .line 2992
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v8, v8, v0
-
-    const/4 v9, 0x0
-
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v9, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
     .line 2993
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v7, v7, v0
 
     sget v9, Lorg/telegram/messenger/R$string;->PaymentShippingPhoneNumber:I
 
-    const-string v11, "PaymentShippingPhoneNumber"
+    const-string v10, "PaymentShippingPhoneNumber"
 
-    invoke-static {v11, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v9
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
+    invoke-virtual {v7, v9}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
     .line 2994
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v7, v7, v0
 
-    const/16 v17, -0x1
+    const/16 v16, -0x1
 
-    const/16 v18, -0x2
+    const/16 v17, -0x2
 
-    const/16 v19, 0x0
+    const/16 v18, 0x0
+
+    const/16 v19, 0xc
+
+    const/16 v20, 0x15
+
+    const/16 v21, 0x6
+
+    invoke-static/range {v16 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v9
+
+    invoke-virtual {v11, v7, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 2995
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v7, v7, v0
+
+    new-instance v9, Lorg/telegram/ui/PassportActivity$10;
+
+    invoke-direct {v9, v1}, Lorg/telegram/ui/PassportActivity$10;-><init>(Lorg/telegram/ui/PassportActivity;)V
+
+    invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    goto :goto_7
+
+    .line 3070
+    :cond_8
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v7, v7, v0
+
+    const/4 v9, 0x6
+
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v9
+
+    invoke-virtual {v7, v6, v6, v6, v9}, Landroid/widget/EditText;->setPadding(IIII)V
+
+    .line 3071
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v7, v7, v0
+
+    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v9, :cond_9
+
+    goto :goto_6
+
+    :cond_9
+    move v10, v3
+
+    :goto_6
+    invoke-virtual {v7, v10}, Landroid/widget/EditText;->setGravity(I)V
+
+    .line 3072
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    aget-object v7, v7, v0
+
+    const/16 v16, -0x1
+
+    const/16 v17, -0x2
+
+    const/16 v18, 0x33
+
+    const/16 v19, 0x15
 
     const/16 v20, 0xc
 
@@ -14695,152 +14730,77 @@
 
     const/16 v22, 0x6
 
-    invoke-static/range {v17 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v9
 
-    invoke-virtual {v14, v8, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 2995
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v8, v8, v0
-
-    new-instance v9, Lorg/telegram/ui/PassportActivity$10;
-
-    invoke-direct {v9, v1}, Lorg/telegram/ui/PassportActivity$10;-><init>(Lorg/telegram/ui/PassportActivity;)V
-
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    goto :goto_7
-
-    .line 3070
-    :cond_8
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v8, v8, v0
-
-    const/4 v11, 0x6
-
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v11
-
-    invoke-virtual {v8, v6, v6, v6, v11}, Landroid/widget/EditText;->setPadding(IIII)V
-
-    .line 3071
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v8, v8, v0
-
-    sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v11, :cond_9
-
-    goto :goto_6
-
-    :cond_9
-    move v9, v3
-
-    :goto_6
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setGravity(I)V
-
-    .line 3072
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    aget-object v8, v8, v0
-
-    const/16 v17, -0x1
-
-    const/16 v18, -0x2
-
-    const/16 v19, 0x33
-
-    const/16 v20, 0x15
-
-    const/16 v21, 0xc
-
-    const/16 v22, 0x15
-
-    const/16 v23, 0x6
-
-    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v9
-
-    invoke-virtual {v14, v8, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v7, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3075
     :goto_7
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v7, v7, v0
 
     new-instance v9, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda45;
 
     invoke-direct {v9, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda45;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v7, v9}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
     if-ne v0, v4, :cond_a
 
     .line 3086
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    aget-object v8, v8, v0
+    aget-object v7, v7, v0
 
     new-instance v9, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda32;
 
     invoke-direct {v9, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/PassportActivity;)V
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+    invoke-virtual {v7, v9}, Landroid/widget/EditText;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
     :cond_a
     if-nez v0, :cond_b
 
     .line 3098
-    new-instance v8, Landroid/view/View;
+    new-instance v7, Landroid/view/View;
 
-    invoke-direct {v8, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {v7, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     .line 3099
     iget-object v9, v1, Lorg/telegram/ui/PassportActivity;->dividers:Ljava/util/ArrayList;
 
-    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v9, "divider"
+    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 3100
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
-    invoke-virtual {v8, v9}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v7, v9}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 3101
     new-instance v9, Landroid/widget/FrameLayout$LayoutParams;
 
-    const/16 v11, 0x53
+    const/16 v10, 0x53
 
-    const/4 v13, -0x1
+    invoke-direct {v9, v8, v5, v10}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    invoke-direct {v9, v13, v5, v11}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
-
-    invoke-virtual {v14, v8, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v7, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_b
     add-int/lit8 v0, v0, 0x1
-
-    const/4 v8, -0x1
 
     const/4 v9, -0x2
 
     goto/16 :goto_2
 
-    :cond_c
-    move-object v9, v11
-
     .line 3108
+    :cond_c
     :try_start_1
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -14865,7 +14825,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-object v11, v0
+    move-object v7, v0
 
     goto :goto_8
 
@@ -14876,15 +14836,13 @@
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_d
-    move-object v11, v9
-
     :goto_8
-    if-eqz v11, :cond_e
+    if-eqz v7, :cond_e
 
     .line 3116
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->languageMap:Ljava/util/HashMap;
 
-    invoke-virtual {v0, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -14899,9 +14857,7 @@
 
     move-result v3
 
-    const/4 v4, -0x1
-
-    if-eq v3, v4, :cond_e
+    if-eq v3, v8, :cond_e
 
     .line 3120
     iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -14929,7 +14885,9 @@
     .line 3126
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v2, v3, v10}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -14955,9 +14913,7 @@
 
     const/4 v3, -0x2
 
-    const/4 v4, -0x1
-
-    invoke-static {v4, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v8, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
@@ -15115,7 +15071,7 @@
 .end method
 
 .method private createRequestInterface(Landroid/content/Context;)V
-    .locals 23
+    .locals 22
 
     move-object/from16 v6, p0
 
@@ -15208,11 +15164,9 @@
 
     invoke-virtual {v0, v12, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItem(II)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    const-string v13, "windowBackgroundGrayShadow"
+    const/4 v13, -0x2
 
-    const/4 v14, -0x2
-
-    const/4 v15, -0x1
+    const/4 v14, -0x1
 
     if-eqz v10, :cond_2
 
@@ -15226,7 +15180,7 @@
 
     const/16 v2, 0x64
 
-    invoke-static {v15, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v14, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
@@ -15246,22 +15200,22 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
+    const/16 v15, 0x40
+
     const/16 v16, 0x40
 
-    const/16 v17, 0x40
+    const/16 v17, 0x11
 
-    const/16 v18, 0x11
+    const/16 v18, 0x0
 
-    const/16 v19, 0x0
+    const/16 v19, 0x8
 
-    const/16 v20, 0x8
+    const/16 v20, 0x0
 
     const/16 v21, 0x0
 
-    const/16 v22, 0x0
-
     .line 2004
-    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v15 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
@@ -15285,7 +15239,9 @@
     .line 2010
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
 
-    invoke-static {v7, v1, v13}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v7, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -15345,7 +15301,7 @@
 
     iget-object v1, v6, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-static {v15, v14}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v14, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
@@ -15373,9 +15329,9 @@
     .line 2019
     iget-object v0, v6, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    const-string v1, "windowBackgroundWhite"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -15386,7 +15342,7 @@
 
     iget-object v1, v6, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-static {v15, v14}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v14, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
@@ -15402,17 +15358,17 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v5
+    move-result v15
 
     .line 2024
+    new-instance v5, Ljava/util/ArrayList;
+
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+
+    .line 2025
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    .line 2025
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     move v0, v9
 
@@ -15420,58 +15376,58 @@
 
     move v2, v1
 
-    move v8, v2
+    move v3, v2
 
-    move/from16 v16, v8
+    move v8, v3
 
     :goto_2
-    if-ge v0, v5, :cond_f
+    if-ge v0, v15, :cond_f
 
     .line 2031
-    iget-object v14, v6, Lorg/telegram/ui/PassportActivity;->currentForm:Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;
+    iget-object v13, v6, Lorg/telegram/ui/PassportActivity;->currentForm:Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;
 
-    iget-object v14, v14, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->required_types:Ljava/util/ArrayList;
+    iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->required_types:Ljava/util/ArrayList;
 
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v13, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v14
+    move-result-object v13
 
-    check-cast v14, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
 
     .line 2032
-    instance-of v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    instance-of v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    if-eqz v15, :cond_7
+    if-eqz v14, :cond_7
 
     .line 2033
-    check-cast v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
     .line 2034
-    iget-object v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    invoke-direct {v6, v15}, Lorg/telegram/ui/PassportActivity;->isPersonalDocument(Lorg/telegram/tgnet/TLRPC$SecureValueType;)Z
+    invoke-direct {v6, v14}, Lorg/telegram/ui/PassportActivity;->isPersonalDocument(Lorg/telegram/tgnet/TLRPC$SecureValueType;)Z
 
-    move-result v15
+    move-result v14
 
-    if-eqz v15, :cond_3
+    if-eqz v14, :cond_3
 
     .line 2035
-    invoke-virtual {v4, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_6
 
     .line 2037
     :cond_3
-    iget-object v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    invoke-direct {v6, v15}, Lorg/telegram/ui/PassportActivity;->isAddressDocument(Lorg/telegram/tgnet/TLRPC$SecureValueType;)Z
+    invoke-direct {v6, v14}, Lorg/telegram/ui/PassportActivity;->isAddressDocument(Lorg/telegram/tgnet/TLRPC$SecureValueType;)Z
 
-    move-result v15
+    move-result v14
 
-    if-eqz v15, :cond_4
+    if-eqz v14, :cond_4
 
     .line 2038
-    invoke-virtual {v3, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v8, v8, 0x1
 
@@ -15479,11 +15435,11 @@
 
     .line 2040
     :cond_4
-    iget-object v14, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    instance-of v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePersonalDetails;
+    instance-of v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePersonalDetails;
 
-    if-eqz v15, :cond_5
+    if-eqz v14, :cond_5
 
     move v1, v12
 
@@ -15491,50 +15447,50 @@
 
     .line 2042
     :cond_5
-    instance-of v14, v14, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeAddress;
+    instance-of v13, v13, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeAddress;
 
-    if-eqz v14, :cond_6
+    if-eqz v13, :cond_6
 
-    move/from16 v16, v12
+    move v3, v12
 
     :cond_6
     :goto_3
-    move-object/from16 v22, v4
+    move-object/from16 v21, v5
 
     goto/16 :goto_9
 
     .line 2045
     :cond_7
-    instance-of v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;
+    instance-of v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;
 
-    if-eqz v15, :cond_6
+    if-eqz v14, :cond_6
 
     .line 2046
-    check-cast v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;
 
     .line 2047
-    iget-object v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
+    iget-object v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
 
-    invoke-virtual {v15}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v14}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v15
+    move-result v14
 
-    if-eqz v15, :cond_8
+    if-eqz v14, :cond_8
 
     goto :goto_3
 
     .line 2050
     :cond_8
-    iget-object v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
+    iget-object v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
 
-    invoke-virtual {v15, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v14, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v14
 
-    check-cast v15, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
+    check-cast v14, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
 
     .line 2051
-    instance-of v9, v15, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    instance-of v9, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
     if-nez v9, :cond_9
 
@@ -15542,10 +15498,10 @@
 
     .line 2054
     :cond_9
-    check-cast v15, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    check-cast v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
     .line 2056
-    iget-object v9, v15, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v9, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
     invoke-direct {v6, v9}, Lorg/telegram/ui/PassportActivity;->isPersonalDocument(Lorg/telegram/tgnet/TLRPC$SecureValueType;)Z
 
@@ -15554,27 +15510,27 @@
     if-eqz v9, :cond_c
 
     .line 2057
-    iget-object v9, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
+    iget-object v9, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v9
 
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
     :goto_4
-    if-ge v15, v9, :cond_b
+    if-ge v14, v9, :cond_b
 
     .line 2058
-    iget-object v12, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
+    iget-object v12, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
 
-    invoke-virtual {v12, v15}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v12, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v12
 
     check-cast v12, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
 
-    move/from16 v22, v9
+    move/from16 v21, v9
 
     .line 2059
     instance-of v9, v12, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
@@ -15587,12 +15543,12 @@
     :cond_a
     check-cast v12, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    invoke-virtual {v4, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_5
-    add-int/lit8 v15, v15, 0x1
+    add-int/lit8 v14, v14, 0x1
 
-    move/from16 v9, v22
+    move/from16 v9, v21
 
     const/4 v12, 0x1
 
@@ -15606,7 +15562,7 @@
 
     .line 2065
     :cond_c
-    iget-object v9, v15, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v9, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
     invoke-direct {v6, v9}, Lorg/telegram/ui/PassportActivity;->isAddressDocument(Lorg/telegram/tgnet/TLRPC$SecureValueType;)Z
 
@@ -15615,7 +15571,7 @@
     if-eqz v9, :cond_6
 
     .line 2066
-    iget-object v9, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
+    iget-object v9, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
@@ -15627,58 +15583,58 @@
     if-ge v12, v9, :cond_e
 
     .line 2067
-    iget-object v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
+    iget-object v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
 
-    invoke-virtual {v15, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v14, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v14
 
-    check-cast v15, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
+    check-cast v14, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
 
-    move-object/from16 v22, v4
+    move-object/from16 v21, v5
 
     .line 2068
-    instance-of v4, v15, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    instance-of v5, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    if-nez v4, :cond_d
+    if-nez v5, :cond_d
 
     goto :goto_8
 
     .line 2071
     :cond_d
-    check-cast v15, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    check-cast v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    invoke-virtual {v3, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_8
     add-int/lit8 v12, v12, 0x1
 
-    move-object/from16 v4, v22
+    move-object/from16 v5, v21
 
     goto :goto_7
 
     :cond_e
-    move-object/from16 v22, v4
+    move-object/from16 v21, v5
 
     add-int/lit8 v8, v8, 0x1
 
     :goto_9
     add-int/lit8 v0, v0, 0x1
 
-    move-object/from16 v4, v22
+    move-object/from16 v5, v21
 
     const/4 v9, 0x0
 
     const/4 v12, 0x1
 
-    const/4 v14, -0x2
+    const/4 v13, -0x2
 
-    const/4 v15, -0x1
+    const/4 v14, -0x1
 
     goto/16 :goto_2
 
     :cond_f
-    move-object/from16 v22, v4
+    move-object/from16 v21, v5
 
     const/4 v0, 0x1
 
@@ -15698,7 +15654,7 @@
     move v9, v0
 
     :goto_b
-    if-eqz v16, :cond_13
+    if-eqz v3, :cond_13
 
     if-le v8, v0, :cond_12
 
@@ -15717,7 +15673,7 @@
     const/4 v12, 0x0
 
     :goto_e
-    if-ge v12, v5, :cond_25
+    if-ge v12, v15, :cond_25
 
     .line 2080
     iget-object v0, v6, Lorg/telegram/ui/PassportActivity;->currentForm:Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;
@@ -15765,12 +15721,12 @@
     goto :goto_10
 
     :cond_15
-    move-object/from16 v1, v22
+    move-object/from16 v1, v21
 
     :goto_10
     move-object v2, v0
 
-    move-object v4, v1
+    move-object v3, v1
 
     goto :goto_13
 
@@ -15785,7 +15741,7 @@
     goto :goto_f
 
     :cond_17
-    move-object v1, v3
+    move-object v1, v4
 
     goto :goto_10
 
@@ -15822,9 +15778,9 @@
     :goto_11
     move-object v2, v0
 
-    move-object v4, v1
+    move-object v3, v1
 
-    const/4 v14, 0x1
+    const/4 v5, 0x1
 
     goto/16 :goto_17
 
@@ -15866,10 +15822,10 @@
     :goto_12
     move-object v2, v0
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :goto_13
-    const/4 v14, 0x0
+    const/4 v5, 0x0
 
     goto/16 :goto_17
 
@@ -15945,45 +15901,41 @@
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 2131
-    iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
+    iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v3
 
-    const/4 v14, 0x0
+    const/4 v5, 0x0
 
     :goto_14
-    if-ge v14, v4, :cond_21
+    if-ge v5, v3, :cond_21
 
     .line 2132
-    iget-object v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
+    iget-object v13, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredTypeOneOf;->types:Ljava/util/ArrayList;
 
-    invoke-virtual {v15, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v13, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v13
 
-    check-cast v15, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
-
-    move-object/from16 v16, v0
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;
 
     .line 2133
-    instance-of v0, v15, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    instance-of v14, v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    if-nez v0, :cond_20
+    if-nez v14, :cond_20
 
     goto :goto_15
 
     .line 2136
     :cond_20
-    check-cast v15, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    check-cast v13, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    invoke-virtual {v2, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_15
-    add-int/lit8 v14, v14, 0x1
-
-    move-object/from16 v0, v16
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_14
 
@@ -16025,38 +15977,34 @@
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
     :goto_16
-    move-object v4, v2
+    move-object v3, v2
 
-    const/4 v14, 0x1
+    const/4 v5, 0x1
 
     move-object v2, v0
 
     :goto_17
-    add-int/lit8 v0, v5, -0x1
+    add-int/lit8 v0, v15, -0x1
 
     if-ne v12, v0, :cond_23
 
-    const/4 v15, 0x1
+    const/4 v13, 0x1
 
     goto :goto_18
 
     :cond_23
-    const/4 v15, 0x0
+    const/4 v13, 0x0
 
     :goto_18
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    move-object/from16 v16, v3
+    move-object v14, v4
 
-    move-object v3, v4
+    move v4, v5
 
-    move v4, v14
-
-    move v14, v5
-
-    move v5, v15
+    move v5, v13
 
     .line 2153
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/PassportActivity;->addField(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;Ljava/util/ArrayList;ZZ)Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
@@ -16065,16 +16013,12 @@
 
     :cond_24
     :goto_19
-    move-object/from16 v16, v3
-
-    move v14, v5
+    move-object v14, v4
 
     :goto_1a
     add-int/lit8 v12, v12, 0x1
 
-    move v5, v14
-
-    move-object/from16 v3, v16
+    move-object v4, v14
 
     goto/16 :goto_e
 
@@ -16091,7 +16035,9 @@
     .line 2159
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v7, v1, v13}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v7, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -16100,9 +16046,9 @@
     .line 2160
     iget-object v0, v6, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    const-string v1, "windowBackgroundWhiteGrayText4"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setLinkTextColorKey(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setLinkTextColorKey(I)V
 
     .line 2161
     iget-object v0, v6, Lorg/telegram/ui/PassportActivity;->currentForm:Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;
@@ -16253,7 +16199,7 @@
 
     move-result-object v0
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -16293,16 +16239,16 @@
 
     iput-object v0, v6, Lorg/telegram/ui/PassportActivity;->bottomLayout:Landroid/widget/FrameLayout;
 
-    const-string v1, "passport_authorizeBackground"
-
     .line 2182
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_passport_authorizeBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const-string v2, "passport_authorizeBackgroundSelected"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_passport_authorizeBackgroundSelected:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -16364,9 +16310,9 @@
     .line 2405
     iget-object v0, v6, Lorg/telegram/ui/PassportActivity;->acceptTextView:Landroid/widget/TextView;
 
-    const-string v1, "passport_authorizeText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_passport_authorizeText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -21522,10 +21468,10 @@
 
     if-eqz p1, :cond_0
 
-    const-string v0, "dialogTextRed"
-
     .line 2478
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -28684,15 +28630,15 @@
 
     if-eqz v5, :cond_4c
 
-    const-string v3, "windowBackgroundWhiteRedText3"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     goto :goto_22
 
     :cond_4c
-    const-string v3, "windowBackgroundWhiteGrayText2"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
     :goto_22
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -30534,7 +30480,7 @@
 
 # virtual methods
 .method public createView(Landroid/content/Context;)Landroid/view/View;
-    .locals 13
+    .locals 12
 
     .line 971
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -30562,13 +30508,11 @@
     .line 1241
     iget v0, p0, Lorg/telegram/ui/PassportActivity;->currentActivityType:I
 
-    const-string v2, "actionBarDefault"
+    const/4 v2, 0x7
 
-    const/4 v3, 0x7
+    const/4 v3, -0x1
 
-    const/4 v4, -0x1
-
-    if-ne v0, v3, :cond_0
+    if-ne v0, v2, :cond_0
 
     .line 1242
     new-instance v0, Lorg/telegram/ui/PassportActivity$4;
@@ -30585,11 +30529,13 @@
     .line 1263
     iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->scrollView:Landroid/widget/ScrollView;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    move-result v2
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-static {v0, v2}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
+    move-result v4
+
+    invoke-static {v0, v4}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
 
     goto :goto_1
 
@@ -30602,18 +30548,18 @@
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     .line 1266
-    move-object v5, v0
+    move-object v4, v0
 
-    check-cast v5, Landroid/widget/FrameLayout;
-
-    const-string v6, "windowBackgroundGray"
+    check-cast v4, Landroid/widget/FrameLayout;
 
     .line 1267
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    move-result v6
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v0, v6}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result v5
+
+    invoke-virtual {v0, v5}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 1269
     new-instance v0, Lorg/telegram/ui/PassportActivity$5;
@@ -30628,46 +30574,46 @@
     .line 1284
     iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->scrollView:Landroid/widget/ScrollView;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    move-result v2
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-static {v0, v2}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
+    move-result v5
+
+    invoke-static {v0, v5}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
 
     .line 1285
     iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->scrollView:Landroid/widget/ScrollView;
 
+    const/4 v5, -0x1
+
     const/4 v6, -0x1
 
-    const/4 v7, -0x1
+    const/16 v7, 0x33
 
-    const/16 v8, 0x33
+    const/4 v8, 0x0
 
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    iget v11, p0, Lorg/telegram/ui/PassportActivity;->currentActivityType:I
 
-    iget v2, p0, Lorg/telegram/ui/PassportActivity;->currentActivityType:I
+    if-nez v11, :cond_1
 
-    if-nez v2, :cond_1
-
-    const/16 v2, 0x30
+    const/16 v11, 0x30
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    const/4 v11, 0x0
 
     :goto_0
-    move v12, v2
+    invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    move-result-object v5
 
-    move-result-object v2
-
-    invoke-virtual {v5, v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v0, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1287
     new-instance v0, Landroid/widget/LinearLayout;
@@ -30682,21 +30628,21 @@
     .line 1289
     iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->scrollView:Landroid/widget/ScrollView;
 
-    iget-object v2, p0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object v4, p0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
 
     const/4 v6, -0x2
 
-    invoke-direct {v5, v4, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+    invoke-direct {v5, v3, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v0, v2, v5}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v5}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1292
     :goto_1
     iget v0, p0, Lorg/telegram/ui/PassportActivity;->currentActivityType:I
 
-    const/4 v2, 0x4
+    const/4 v4, 0x4
 
     const/16 v5, 0x8
 
@@ -30763,18 +30709,18 @@
     .line 1299
     iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
 
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/ContextProgressView;->setVisibility(I)V
+    invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/ContextProgressView;->setVisibility(I)V
 
     .line 1300
     iget-object v0, p0, Lorg/telegram/ui/PassportActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     iget-object v7, p0, Lorg/telegram/ui/PassportActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
 
-    invoke-static {v4, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v3, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v0, v7, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v7, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1302
     iget v0, p0, Lorg/telegram/ui/PassportActivity;->currentActivityType:I
@@ -30820,9 +30766,9 @@
     :cond_4
     iget v0, p0, Lorg/telegram/ui/PassportActivity;->currentActivityType:I
 
-    const/4 v4, 0x5
+    const/4 v3, 0x5
 
-    if-ne v0, v4, :cond_5
+    if-ne v0, v3, :cond_5
 
     .line 1318
     invoke-direct {p0, p1}, Lorg/telegram/ui/PassportActivity;->createPasswordInterface(Landroid/content/Context;)V
@@ -30870,7 +30816,7 @@
     goto :goto_2
 
     :cond_9
-    if-ne v0, v2, :cond_a
+    if-ne v0, v4, :cond_a
 
     .line 1330
     invoke-direct {p0, p1}, Lorg/telegram/ui/PassportActivity;->createEmailInterface(Landroid/content/Context;)V
@@ -30888,7 +30834,7 @@
     goto :goto_2
 
     :cond_b
-    if-ne v0, v3, :cond_c
+    if-ne v0, v2, :cond_c
 
     .line 1334
     invoke-direct {p0, p1}, Lorg/telegram/ui/PassportActivity;->createPhoneVerificationInterface(Landroid/content/Context;)V
@@ -31398,7 +31344,7 @@
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 31
+    .locals 33
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -31422,6 +31368,8 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -31430,11 +31378,9 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
-
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31445,6 +31391,8 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
@@ -31453,11 +31401,11 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "actionBarDefault"
-
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v18, v10
+
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31470,11 +31418,9 @@
 
     const/4 v9, 0x0
 
-    const-string v10, "actionBarDefault"
-
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31485,11 +31431,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
-    const-string v18, "actionBarDefaultIcon"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31500,11 +31446,11 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    const-string v10, "actionBarDefaultTitle"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31515,11 +31461,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const-string v18, "actionBarDefaultSelector"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31530,11 +31476,11 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SEARCH:I
 
-    const-string v10, "actionBarDefaultSearch"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSearch:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31545,11 +31491,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SEARCHPLACEHOLDER:I
 
-    const-string v18, "actionBarDefaultSearchPlaceholder"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSearchPlaceholder:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31570,13 +31516,13 @@
 
     sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
-    const/4 v5, 0x0
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    const-string v10, "divider"
+    const/4 v5, 0x0
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31587,15 +31533,17 @@
 
     sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
     const/16 v18, 0x0
 
     const/16 v19, 0x0
 
-    const-string v20, "windowBackgroundWhite"
-
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v20, v10
+
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31619,11 +31567,9 @@
 
     const/4 v9, 0x0
 
-    const-string v10, "windowBackgroundWhite"
-
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31663,11 +31609,11 @@
 
     const/16 v19, 0x0
 
-    const-string v20, "divider"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
     move-object v13, v3
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31728,7 +31674,7 @@
 
     const/16 v19, 0x0
 
-    const-string v20, "windowBackgroundWhite"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     move-object v13, v6
 
@@ -31736,7 +31682,7 @@
 
     move-object/from16 v16, v7
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31757,13 +31703,13 @@
 
     const/16 v20, 0x0
 
-    const-string v21, "windowBackgroundWhiteBlackText"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     move-object v13, v6
 
     move-object/from16 v16, v7
 
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31780,13 +31726,13 @@
 
     move-result-object v17
 
-    const-string v21, "windowBackgroundWhiteGrayText2"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
     move-object v13, v5
 
     move-object/from16 v16, v6
 
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31812,7 +31758,7 @@
 
     const/16 v28, 0x0
 
-    const-string v29, "windowBackgroundWhite"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     move-object/from16 v22, v2
 
@@ -31820,7 +31766,9 @@
 
     move-object/from16 v25, v6
 
-    invoke-direct/range {v22 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v29, v7
+
+    invoke-direct/range {v22 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31847,13 +31795,15 @@
 
     const/16 v20, 0x0
 
-    const-string v21, "windowBackgroundWhiteBlackText"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v21, v6
+
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31862,29 +31812,29 @@
 
     iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    const/16 v24, 0x0
+    const/16 v23, 0x0
 
-    new-array v6, v11, [Ljava/lang/Class;
+    new-array v8, v11, [Ljava/lang/Class;
 
-    const-class v7, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
+    const-class v9, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
-    aput-object v7, v6, v12
+    aput-object v9, v8, v12
 
     filled-new-array {v4}, [Ljava/lang/String;
 
-    move-result-object v26
+    move-result-object v25
 
-    const/16 v29, 0x0
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    const-string v30, "windowBackgroundWhiteGrayText2"
+    move-object/from16 v21, v2
 
-    move-object/from16 v22, v2
+    move-object/from16 v22, v3
 
-    move-object/from16 v23, v3
+    move-object/from16 v24, v8
 
-    move-object/from16 v25, v6
+    move/from16 v29, v9
 
-    invoke-direct/range {v22 .. v30}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v21 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31897,19 +31847,19 @@
 
     new-array v3, v11, [Ljava/lang/Class;
 
-    const-class v6, Lorg/telegram/ui/Cells/TextSettingsCell;
+    const-class v8, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    aput-object v6, v3, v12
+    aput-object v8, v3, v12
 
     const/16 v17, 0x0
-
-    const-string v20, "windowBackgroundWhite"
 
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v20, v7
+
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31918,29 +31868,25 @@
 
     iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    const/16 v23, 0x0
+    new-array v8, v11, [Ljava/lang/Class;
 
-    new-array v6, v11, [Ljava/lang/Class;
+    const-class v10, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    const-class v7, Lorg/telegram/ui/Cells/TextSettingsCell;
-
-    aput-object v7, v6, v12
+    aput-object v10, v8, v12
 
     filled-new-array {v5}, [Ljava/lang/String;
 
     move-result-object v25
 
-    const/16 v26, 0x0
-
-    const-string v29, "windowBackgroundWhiteBlackText"
-
     move-object/from16 v21, v2
 
     move-object/from16 v22, v3
 
-    move-object/from16 v24, v6
+    move-object/from16 v24, v8
 
-    invoke-direct/range {v21 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v29, v6
+
+    invoke-direct/range {v21 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31953,9 +31899,9 @@
 
     new-array v3, v11, [Ljava/lang/Class;
 
-    const-class v6, Lorg/telegram/ui/Cells/TextSettingsCell;
+    const-class v8, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    aput-object v6, v3, v12
+    aput-object v8, v3, v12
 
     filled-new-array {v4}, [Ljava/lang/String;
 
@@ -31963,13 +31909,13 @@
 
     const/16 v20, 0x0
 
-    const-string v21, "windowBackgroundWhiteValueText"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteValueText:I
 
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -31980,21 +31926,23 @@
 
     sget v24, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    new-array v6, v11, [Ljava/lang/Class;
+    new-array v8, v11, [Ljava/lang/Class;
 
-    const-class v7, Lorg/telegram/ui/Cells/ShadowSectionCell;
+    const-class v10, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
-    aput-object v7, v6, v12
+    aput-object v10, v8, v12
 
-    const-string v29, "windowBackgroundGrayShadow"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
     move-object/from16 v22, v2
 
     move-object/from16 v23, v3
 
-    move-object/from16 v25, v6
+    move-object/from16 v25, v8
 
-    invoke-direct/range {v22 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v29, v10
+
+    invoke-direct/range {v22 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32007,19 +31955,19 @@
 
     new-array v3, v11, [Ljava/lang/Class;
 
-    const-class v6, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
+    const-class v8, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
 
-    aput-object v6, v3, v12
+    aput-object v8, v3, v12
 
     const/16 v17, 0x0
-
-    const-string v20, "windowBackgroundWhite"
 
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v20, v7
+
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32030,25 +31978,25 @@
 
     sget v23, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    new-array v6, v11, [Ljava/lang/Class;
+    new-array v8, v11, [Ljava/lang/Class;
 
-    const-class v7, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
+    const-class v13, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
 
-    aput-object v7, v6, v12
+    aput-object v13, v8, v12
 
     filled-new-array {v5}, [Ljava/lang/String;
 
     move-result-object v25
 
-    const-string v29, "windowBackgroundWhiteBlackText"
-
     move-object/from16 v21, v2
 
     move-object/from16 v22, v3
 
-    move-object/from16 v24, v6
+    move-object/from16 v24, v8
 
-    invoke-direct/range {v21 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v29, v6
+
+    invoke-direct/range {v21 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32061,63 +32009,32 @@
 
     new-array v3, v11, [Ljava/lang/Class;
 
-    const-class v6, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
+    const-class v8, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
 
-    aput-object v6, v3, v12
+    aput-object v8, v3, v12
 
-    const-string v20, "divider"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 7965
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    sget v23, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
-
-    new-array v6, v11, [Ljava/lang/Class;
-
-    const-class v7, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
-
-    aput-object v7, v6, v12
-
-    filled-new-array {v4}, [Ljava/lang/String;
-
-    move-result-object v25
-
-    const-string v29, "windowBackgroundWhiteGrayText2"
-
-    move-object/from16 v21, v2
-
-    move-object/from16 v22, v3
-
-    move-object/from16 v24, v6
-
-    invoke-direct/range {v21 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 7966
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
-
     iget-object v14, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
+    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
     new-array v3, v11, [Ljava/lang/Class;
 
-    const-class v4, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
+    const-class v8, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
 
-    aput-object v4, v3, v12
-
-    const-string v4, "checkImageView"
+    aput-object v8, v3, v12
 
     filled-new-array {v4}, [Ljava/lang/String;
 
@@ -32125,47 +32042,53 @@
 
     const/16 v20, 0x0
 
-    const-string v21, "featuredStickers_addedIcon"
-
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v21, v9
+
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 7966
+    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    sget v23, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
+
+    new-array v4, v11, [Ljava/lang/Class;
+
+    const-class v8, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;
+
+    aput-object v8, v4, v12
+
+    const-string v8, "checkImageView"
+
+    filled-new-array {v8}, [Ljava/lang/String;
+
+    move-result-object v25
+
+    sget v29, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
+
+    move-object/from16 v21, v2
+
+    move-object/from16 v22, v3
+
+    move-object/from16 v24, v4
+
+    invoke-direct/range {v21 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 7968
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    sget v24, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
-
-    new-array v4, v11, [Ljava/lang/Class;
-
-    const-class v6, Lorg/telegram/ui/Cells/HeaderCell;
-
-    aput-object v6, v4, v12
-
-    const-string v29, "windowBackgroundWhite"
-
-    move-object/from16 v22, v2
-
-    move-object/from16 v23, v3
-
-    move-object/from16 v25, v4
-
-    invoke-direct/range {v22 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 7969
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
-
     iget-object v14, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    const/4 v15, 0x0
+    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
 
     new-array v3, v11, [Ljava/lang/Class;
 
@@ -32173,49 +32096,57 @@
 
     aput-object v4, v3, v12
 
-    filled-new-array {v5}, [Ljava/lang/String;
-
-    move-result-object v17
-
-    const-string v21, "windowBackgroundWhiteBlueHeader"
+    const/16 v17, 0x0
 
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v20, v7
+
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 7969
+    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    const/16 v22, 0x0
+
+    new-array v4, v11, [Ljava/lang/Class;
+
+    const-class v7, Lorg/telegram/ui/Cells/HeaderCell;
+
+    aput-object v7, v4, v12
+
+    filled-new-array {v5}, [Ljava/lang/String;
+
+    move-result-object v24
+
+    const/16 v25, 0x0
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    move-object/from16 v20, v2
+
+    move-object/from16 v21, v3
+
+    move-object/from16 v23, v4
+
+    move/from16 v28, v7
+
+    invoke-direct/range {v20 .. v28}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 7971
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    sget v24, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
-
-    new-array v4, v11, [Ljava/lang/Class;
-
-    const-class v6, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
-
-    aput-object v6, v4, v12
-
-    const-string v29, "windowBackgroundGrayShadow"
-
-    move-object/from16 v22, v2
-
-    move-object/from16 v23, v3
-
-    move-object/from16 v25, v4
-
-    invoke-direct/range {v22 .. v29}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 7972
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
-
     iget-object v14, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
     new-array v3, v11, [Ljava/lang/Class;
 
@@ -32223,17 +32154,40 @@
 
     aput-object v4, v3, v12
 
-    filled-new-array {v5}, [Ljava/lang/String;
-
-    move-result-object v17
-
-    const-string v21, "windowBackgroundWhiteGrayText4"
-
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v20, v10
+
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 7972
+    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    new-array v4, v11, [Ljava/lang/Class;
+
+    const-class v8, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+
+    aput-object v8, v4, v12
+
+    filled-new-array {v5}, [Ljava/lang/String;
+
+    move-result-object v24
+
+    sget v28, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
+
+    move-object/from16 v20, v2
+
+    move-object/from16 v21, v3
+
+    move-object/from16 v23, v4
+
+    invoke-direct/range {v20 .. v28}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32277,11 +32231,11 @@
 
     const/4 v10, 0x0
 
-    const-string v11, "windowBackgroundWhite"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     move-object v4, v3
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32306,11 +32260,11 @@
 
     const/16 v19, 0x0
 
-    const-string v20, "windowBackgroundWhiteBlackText"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     move-object v13, v3
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32323,11 +32277,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
 
-    const-string v11, "windowBackgroundWhiteHintText"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
     move-object v4, v3
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32344,11 +32298,11 @@
 
     or-int v15, v4, v5
 
-    const-string v20, "windowBackgroundWhiteBlueHeader"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
     move-object v13, v3
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32361,11 +32315,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    const-string v11, "windowBackgroundWhiteInputField"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
     move-object v4, v3
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32382,11 +32336,11 @@
 
     or-int v15, v4, v5
 
-    const-string v20, "windowBackgroundWhiteInputFieldActivated"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
     move-object v13, v3
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32403,11 +32357,11 @@
 
     or-int/2addr v6, v4
 
-    const-string v11, "windowBackgroundWhiteRedText3"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     move-object v4, v3
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32419,23 +32373,23 @@
     :cond_3
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    const/4 v4, 0x0
+    const/16 v22, 0x0
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v23, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const/4 v6, 0x0
+    const/16 v24, 0x0
 
-    const/4 v7, 0x0
+    const/16 v25, 0x0
 
-    const/4 v8, 0x0
+    const/16 v26, 0x0
 
-    const/4 v9, 0x0
+    const/16 v27, 0x0
 
-    const-string v10, "windowBackgroundWhiteBlackText"
+    move-object/from16 v21, v2
 
-    move-object v3, v2
+    move/from16 v28, v6
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v21 .. v28}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32454,11 +32408,11 @@
 
     const/16 v19, 0x0
 
-    const-string v20, "windowBackgroundWhiteHintText"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32467,33 +32421,39 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_PROGRESSBAR:I
+    sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_PROGRESSBAR:I
 
-    or-int/2addr v5, v3
+    or-int v15, v3, v4
 
-    const-string v10, "windowBackgroundWhiteBlueHeader"
+    move-object v13, v2
 
-    move-object v3, v2
+    move/from16 v20, v7
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 7987
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
+    const/16 v21, 0x0
 
-    const-string v20, "windowBackgroundWhiteInputField"
+    sget v22, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    move-object v13, v2
+    const/16 v23, 0x0
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    sget v27, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
+
+    move-object/from16 v20, v2
+
+    invoke-direct/range {v20 .. v27}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 7988
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    const/4 v4, 0x0
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
@@ -32501,11 +32461,19 @@
 
     or-int/2addr v5, v3
 
-    const-string v10, "windowBackgroundWhiteInputFieldActivated"
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32518,11 +32486,11 @@
 
     or-int v15, v3, v4
 
-    const-string v20, "windowBackgroundWhiteRedText3"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32565,11 +32533,11 @@
 
     const/4 v9, 0x0
 
-    const-string v10, "windowBackgroundWhite"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32594,11 +32562,11 @@
 
     const/16 v19, 0x0
 
-    const-string v20, "windowBackgroundWhiteBlackText"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32611,11 +32579,11 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
 
-    const-string v10, "windowBackgroundWhiteHintText"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32632,11 +32600,11 @@
 
     or-int v15, v3, v4
 
-    const-string v20, "windowBackgroundWhiteBlueHeader"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32649,11 +32617,11 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    const-string v10, "windowBackgroundWhiteInputField"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32670,11 +32638,11 @@
 
     or-int v15, v3, v4
 
-    const-string v20, "windowBackgroundWhiteInputFieldActivated"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32691,11 +32659,11 @@
 
     or-int/2addr v5, v3
 
-    const-string v10, "windowBackgroundWhiteRedText3"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32719,11 +32687,11 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "progressCircle"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_progressCircle:I
 
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32742,11 +32710,11 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "chat_messagePanelIcons"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32759,11 +32727,11 @@
 
     const/4 v9, 0x0
 
-    const-string v10, "windowBackgroundWhiteGrayText4"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32774,11 +32742,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v18, "windowBackgroundWhiteBlueText5"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText5:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -32789,191 +32757,227 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v10, "windowBackgroundWhiteBlueText4"
+    sget v17, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v10, v17
+
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8010
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v12, v0, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->plusTextView:Landroid/widget/TextView;
 
-    sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v20, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v18, "windowBackgroundWhiteBlackText"
+    const/16 v21, 0x0
 
-    move-object v11, v2
+    const/16 v22, 0x0
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/16 v23, 0x0
+
+    const/16 v24, 0x0
+
+    sget v25, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    move-object/from16 v18, v2
+
+    move-object/from16 v19, v3
+
+    invoke-direct/range {v18 .. v25}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8012
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v4, v0, Lorg/telegram/ui/PassportActivity;->acceptTextView:Landroid/widget/TextView;
+    iget-object v5, v0, Lorg/telegram/ui/PassportActivity;->acceptTextView:Landroid/widget/TextView;
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v10, "passport_authorizeText"
+    const/4 v10, 0x0
 
-    move-object v3, v2
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_passport_authorizeText:I
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object v4, v2
+
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8013
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v12, v0, Lorg/telegram/ui/PassportActivity;->bottomLayout:Landroid/widget/FrameLayout;
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->bottomLayout:Landroid/widget/FrameLayout;
 
-    sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
+    sget v20, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    const-string v18, "passport_authorizeBackground"
+    sget v25, Lorg/telegram/ui/ActionBar/Theme;->key_passport_authorizeBackground:I
 
-    move-object v11, v2
+    move-object/from16 v18, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v19, v3
+
+    invoke-direct/range {v18 .. v25}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8014
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v4, v0, Lorg/telegram/ui/PassportActivity;->bottomLayout:Landroid/widget/FrameLayout;
+    iget-object v5, v0, Lorg/telegram/ui/PassportActivity;->bottomLayout:Landroid/widget/FrameLayout;
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_DRAWABLESELECTEDSTATE:I
+    sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_DRAWABLESELECTEDSTATE:I
 
-    or-int/2addr v5, v3
+    or-int v6, v3, v4
 
-    const-string v10, "passport_authorizeBackgroundSelected"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_passport_authorizeBackgroundSelected:I
 
-    move-object v3, v2
+    move-object v4, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8016
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v12, v0, Lorg/telegram/ui/PassportActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
 
-    const/4 v13, 0x0
+    const/16 v20, 0x0
 
-    const-string v18, "contextProgressInner2"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressInner2:I
 
-    move-object v11, v2
+    move-object/from16 v18, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v19, v3
+
+    move/from16 v25, v11
+
+    invoke-direct/range {v18 .. v25}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8017
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v4, v0, Lorg/telegram/ui/PassportActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
 
-    const/4 v5, 0x0
+    const/16 v27, 0x0
 
-    const-string v10, "contextProgressOuter2"
+    const/16 v28, 0x0
 
-    move-object v3, v2
+    const/16 v29, 0x0
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/16 v30, 0x0
+
+    const/16 v31, 0x0
+
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressOuter2:I
+
+    move-object/from16 v25, v2
+
+    move-object/from16 v26, v3
+
+    move/from16 v32, v12
+
+    invoke-direct/range {v25 .. v32}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8018
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v12, v0, Lorg/telegram/ui/PassportActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
+    iget-object v5, v0, Lorg/telegram/ui/PassportActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
 
-    const-string v18, "contextProgressInner2"
+    const/4 v6, 0x0
 
-    move-object v11, v2
+    move-object v4, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8019
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v4, v0, Lorg/telegram/ui/PassportActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
 
-    const-string v10, "contextProgressOuter2"
+    move-object/from16 v18, v2
 
-    move-object v3, v2
+    move-object/from16 v19, v3
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v25, v12
+
+    invoke-direct/range {v18 .. v25}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8021
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v12, v0, Lorg/telegram/ui/PassportActivity;->emptyImageView:Landroid/widget/ImageView;
+    iget-object v5, v0, Lorg/telegram/ui/PassportActivity;->emptyImageView:Landroid/widget/ImageView;
 
-    sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
 
-    const-string v18, "sessions_devicesImage"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_sessions_devicesImage:I
 
-    move-object v11, v2
+    move-object v4, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8022
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v4, v0, Lorg/telegram/ui/PassportActivity;->emptyTextView1:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/PassportActivity;->emptyTextView1:Landroid/widget/TextView;
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v20, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v10, "windowBackgroundWhiteGrayText2"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    move-object v3, v2
+    move-object/from16 v18, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v19, v3
+
+    move/from16 v25, v11
+
+    invoke-direct/range {v18 .. v25}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8023
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v12, v0, Lorg/telegram/ui/PassportActivity;->emptyTextView2:Landroid/widget/TextView;
+    iget-object v5, v0, Lorg/telegram/ui/PassportActivity;->emptyTextView2:Landroid/widget/TextView;
 
-    sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v18, "windowBackgroundWhiteGrayText2"
+    move-object v4, v2
 
-    move-object v11, v2
-
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 8024
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v4, v0, Lorg/telegram/ui/PassportActivity;->emptyTextView3:Landroid/widget/TextView;
+    iget-object v11, v0, Lorg/telegram/ui/PassportActivity;->emptyTextView3:Landroid/widget/TextView;
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v12, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v10, "windowBackgroundWhiteBlueText4"
+    const/4 v13, 0x0
 
-    move-object v3, v2
+    move-object v10, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v10 .. v17}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

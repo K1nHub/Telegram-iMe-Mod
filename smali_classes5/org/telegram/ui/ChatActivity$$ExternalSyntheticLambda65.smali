@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/CharSequence;
-
-.field public final synthetic f$1:[Ljava/lang/Runnable;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/CharSequence;[Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$0:Ljava/lang/CharSequence;
-
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$1:[Ljava/lang/Runnable;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$0:Ljava/lang/CharSequence;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda65;->f$1:[Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$JVqSfPhtH9aBFp6MMaTYJ2cra9E(Ljava/lang/CharSequence;[Ljava/lang/Runnable;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$49fmlFsZcTcJXaOSLhbXTvirrXU(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Landroid/view/View;)V
 
     return-void
 .end method

@@ -21,7 +21,7 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lj$/util/a;->w(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {p0, p1}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
 
     move-result-object p0
 
@@ -55,7 +55,7 @@
     invoke-direct {v0, p2, p1}, Lj$/util/c;-><init>(Ljava/util/Comparator;Lj$/util/function/Function;)V
 
     .line 3
-    invoke-static {p0, v0}, Lj$/util/a;->w(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {p0, v0}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
 
     move-result-object p0
 
@@ -106,7 +106,7 @@
     invoke-direct {v0, p1}, Lj$/util/d;-><init>(Lj$/util/function/ToDoubleFunction;)V
 
     .line 3
-    invoke-static {p0, v0}, Lj$/util/a;->w(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {p0, v0}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
 
     move-result-object p0
 
@@ -129,7 +129,7 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lj$/util/a;->w(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {p0, p1}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
 
     move-result-object p0
 
@@ -157,7 +157,7 @@
     invoke-direct {v0, p1}, Lj$/util/d;-><init>(Lj$/util/function/ToLongFunction;)V
 
     .line 3
-    invoke-static {p0, v0}, Lj$/util/a;->w(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {p0, v0}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
 
     move-result-object p0
 

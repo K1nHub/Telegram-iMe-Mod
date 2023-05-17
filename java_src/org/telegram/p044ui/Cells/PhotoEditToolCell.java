@@ -58,7 +58,7 @@ public class PhotoEditToolCell extends FrameLayout {
         addView(this.nameTextView, LayoutHelper.createFrame(80, -2, 19, 0, 0, 0, 0));
         TextView textView2 = new TextView(context);
         this.valueTextView = textView2;
-        textView2.setTextColor(getThemedColor("dialogFloatingButton"));
+        textView2.setTextColor(getThemedColor(Theme.key_dialogFloatingButton));
         this.valueTextView.setTextSize(1, 12.0f);
         this.valueTextView.setGravity(5);
         this.valueTextView.setSingleLine(true);
@@ -119,7 +119,7 @@ public class PhotoEditToolCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(40), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(40), 1073741824));
     }
 
     public void setIconAndTextAndValue(String str, float f, int i, int i2) {
@@ -145,9 +145,7 @@ public class PhotoEditToolCell extends FrameLayout {
         this.seekBar.setProgress((int) f, false);
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

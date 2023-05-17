@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 699
+    .line 700
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment$4;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$ListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAllSizesReady()V
     .locals 1
 
-    .line 702
+    .line 703
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment$4;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/VoIPFragment;->access$2900(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/BackupImageView;

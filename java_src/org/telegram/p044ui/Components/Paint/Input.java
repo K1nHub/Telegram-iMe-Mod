@@ -104,13 +104,13 @@ public class Input {
         }
         Size size = this.renderView.getPainting().getSize();
         Point point = this.lastLocation;
-        float distance = MathUtils.distance((float) point.f1660x, (float) point.f1661y, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED);
+        float distance = MathUtils.distance((float) point.f1667x, (float) point.f1668y, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED);
         Point point2 = this.lastLocation;
-        float max = Math.max(distance, MathUtils.distance((float) point2.f1660x, (float) point2.f1661y, size.width, (float) BitmapDescriptorFactory.HUE_RED));
+        float max = Math.max(distance, MathUtils.distance((float) point2.f1667x, (float) point2.f1668y, size.width, (float) BitmapDescriptorFactory.HUE_RED));
         Point point3 = this.lastLocation;
-        float distance2 = MathUtils.distance((float) point3.f1660x, (float) point3.f1661y, (float) BitmapDescriptorFactory.HUE_RED, size.height);
+        float distance2 = MathUtils.distance((float) point3.f1667x, (float) point3.f1668y, (float) BitmapDescriptorFactory.HUE_RED, size.height);
         Point point4 = this.lastLocation;
-        final float max2 = Math.max(max, Math.max(distance2, MathUtils.distance((float) point4.f1660x, (float) point4.f1661y, size.width, size.height))) / 0.84f;
+        final float max2 = Math.max(max, Math.max(distance2, MathUtils.distance((float) point4.f1667x, (float) point4.f1668y, size.width, size.height))) / 0.84f;
         ValueAnimator valueAnimator = this.arrowAnimator;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -122,7 +122,7 @@ public class Input {
             this.fillAnimator = null;
         }
         Point point5 = this.lastLocation;
-        final Point point6 = new Point(point5.f1660x, point5.f1661y, 1.0d);
+        final Point point6 = new Point(point5.f1667x, point5.f1668y, 1.0d);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
         this.fillAnimator = ofFloat;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Input$$ExternalSyntheticLambda1
@@ -200,15 +200,15 @@ public class Input {
         double d2 = f;
         double d3 = d2 - 2.356194490192345d;
         double d4 = f2;
-        double d5 = point.f1661y;
+        double d5 = point.f1668y;
         double d6 = d2 - 2.5132741228718345d;
-        double d7 = point.f1660x;
+        double d7 = point.f1667x;
         double cos = Math.cos(d3) * d4;
         double d8 = floatValue;
-        paintPath(new Path(new Point[]{new Point(point.f1660x + (Math.cos(d3) * d4 * fArr[0]), (Math.sin(d6) * d4 * fArr[0]) + d5, d), new Point(d7 + (cos * d8), point.f1661y + (Math.sin(d6) * d4 * d8), d, true)}));
+        paintPath(new Path(new Point[]{new Point(point.f1667x + (Math.cos(d3) * d4 * fArr[0]), (Math.sin(d6) * d4 * fArr[0]) + d5, d), new Point(d7 + (cos * d8), point.f1668y + (Math.sin(d6) * d4 * d8), d, true)}));
         double d9 = d2 + 2.356194490192345d;
         double d10 = d2 + 2.5132741228718345d;
-        paintPath(new Path(new Point[]{new Point(point.f1660x + (Math.cos(d9) * d4 * fArr[0]), point.f1661y + (Math.sin(d10) * d4 * fArr[0]), d), new Point(point.f1660x + (Math.cos(d9) * d4 * d8), point.f1661y + (Math.sin(d10) * d4 * d8), d, true)}));
+        paintPath(new Path(new Point[]{new Point(point.f1667x + (Math.cos(d9) * d4 * fArr[0]), point.f1668y + (Math.sin(d10) * d4 * fArr[0]), d), new Point(point.f1667x + (Math.cos(d9) * d4 * d8), point.f1668y + (Math.sin(d10) * d4 * d8), d, true)}));
         if (!zArr[0] && floatValue > 0.4f) {
             zArr[0] = true;
             BotWebViewVibrationEffect.SELECTION_CHANGE.vibrate();
@@ -262,7 +262,7 @@ public class Input {
                     this.isFirst = false;
                 }
                 vector.add(smoothPoint);
-                this.thicknessSum += smoothPoint.f1662z;
+                this.thicknessSum += smoothPoint.f1669z;
                 this.thicknessCount += 1.0d;
                 f3 += f2;
                 i2 = i3 + 1;
@@ -295,7 +295,7 @@ public class Input {
         double d2 = f * f;
         double d3 = f3 * f3;
         double d4 = f;
-        return new Point((point.f1660x * d3) + (point3.f1660x * 2.0d * d4 * d) + (point2.f1660x * d2), (point.f1661y * d3) + (point3.f1661y * 2.0d * d4 * d) + (point2.f1661y * d2), (((((point.f1662z * Math.pow(d, 2.0d)) + (point3.f1662z * ((2.0f * f3) * f))) + (point2.f1662z * d2)) - 1.0d) * AndroidUtilities.lerp(1.0f, f2, androidx.core.math.MathUtils.clamp(this.realPointsCount / 16.0f, (float) BitmapDescriptorFactory.HUE_RED, 1.0f))) + 1.0d);
+        return new Point((point.f1667x * d3) + (point3.f1667x * 2.0d * d4 * d) + (point2.f1667x * d2), (point.f1668y * d3) + (point3.f1668y * 2.0d * d4 * d) + (point2.f1668y * d2), (((((point.f1669z * Math.pow(d, 2.0d)) + (point3.f1669z * ((2.0f * f3) * f))) + (point2.f1669z * d2)) - 1.0d) * AndroidUtilities.lerp(1.0f, f2, androidx.core.math.MathUtils.clamp(this.realPointsCount / 16.0f, (float) BitmapDescriptorFactory.HUE_RED, 1.0f))) + 1.0d);
     }
 
     private void paintPath(final Path path) {

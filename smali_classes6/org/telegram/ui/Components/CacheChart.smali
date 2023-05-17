@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final DEFAULT_COLORS:[Ljava/lang/String;
+.field private static final DEFAULT_COLORS:[I
 
 .field private static final DEFAULT_PARTICLES:[I
 
@@ -104,87 +104,103 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 9
-
-    const-string v0, "statisticChartLine_lightblue"
-
-    const-string v1, "statisticChartLine_blue"
-
-    const-string v2, "statisticChartLine_green"
-
-    const-string v3, "statisticChartLine_red"
-
-    const-string v4, "statisticChartLine_lightgreen"
-
-    const-string v5, "statisticChartLine_orange"
-
-    const-string v6, "statisticChartLine_cyan"
-
-    const-string v7, "statisticChartLine_purple"
-
-    const-string v8, "statisticChartLine_golden"
-
-    .line 49
-    filled-new-array/range {v0 .. v8}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lorg/telegram/ui/Components/CacheChart;->DEFAULT_COLORS:[Ljava/lang/String;
+    .locals 12
 
     const/16 v0, 0x9
+
+    new-array v1, v0, [I
+
+    .line 49
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_lightblue:I
+
+    const/4 v3, 0x0
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_blue:I
+
+    const/4 v4, 0x1
+
+    aput v2, v1, v4
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_green:I
+
+    const/4 v5, 0x2
+
+    aput v2, v1, v5
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_red:I
+
+    const/4 v6, 0x3
+
+    aput v2, v1, v6
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_lightgreen:I
+
+    const/4 v7, 0x4
+
+    aput v2, v1, v7
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_orange:I
+
+    const/4 v8, 0x5
+
+    aput v2, v1, v8
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_cyan:I
+
+    const/4 v9, 0x6
+
+    aput v2, v1, v9
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_purple:I
+
+    const/4 v10, 0x7
+
+    aput v2, v1, v10
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_golden:I
+
+    const/16 v11, 0x8
+
+    aput v2, v1, v11
+
+    sput-object v1, Lorg/telegram/ui/Components/CacheChart;->DEFAULT_COLORS:[I
 
     new-array v0, v0, [I
 
     .line 61
     sget v1, Lorg/telegram/messenger/R$raw;->cache_photos:I
 
-    const/4 v2, 0x0
-
-    aput v1, v0, v2
+    aput v1, v0, v3
 
     sget v1, Lorg/telegram/messenger/R$raw;->cache_videos:I
 
-    const/4 v2, 0x1
-
-    aput v1, v0, v2
+    aput v1, v0, v4
 
     sget v2, Lorg/telegram/messenger/R$raw;->cache_documents:I
 
-    const/4 v3, 0x2
-
-    aput v2, v0, v3
+    aput v2, v0, v5
 
     sget v2, Lorg/telegram/messenger/R$raw;->cache_music:I
 
-    const/4 v3, 0x3
+    aput v2, v0, v6
 
-    aput v2, v0, v3
-
-    const/4 v2, 0x4
-
-    aput v1, v0, v2
+    aput v1, v0, v7
 
     sget v1, Lorg/telegram/messenger/R$raw;->cache_stickers:I
 
-    const/4 v2, 0x5
-
-    aput v1, v0, v2
+    aput v1, v0, v8
 
     sget v1, Lorg/telegram/messenger/R$raw;->cache_profile_photos:I
 
-    const/4 v2, 0x6
-
-    aput v1, v0, v2
+    aput v1, v0, v9
 
     sget v1, Lorg/telegram/messenger/R$raw;->cache_other:I
 
-    const/4 v2, 0x7
+    aput v1, v0, v10
 
-    aput v1, v0, v2
-
-    const/16 v2, 0x8
-
-    aput v1, v0, v2
+    aput v1, v0, v11
 
     sput-object v0, Lorg/telegram/ui/Components/CacheChart;->DEFAULT_PARTICLES:[I
 
@@ -200,7 +216,7 @@
     .locals 6
 
     .line 356
-    sget-object v3, Lorg/telegram/ui/Components/CacheChart;->DEFAULT_COLORS:[Ljava/lang/String;
+    sget-object v3, Lorg/telegram/ui/Components/CacheChart;->DEFAULT_COLORS:[I
 
     sget-object v5, Lorg/telegram/ui/Components/CacheChart;->DEFAULT_PARTICLES:[I
 
@@ -212,12 +228,12 @@
 
     move-object v1, p1
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/CacheChart;-><init>(Landroid/content/Context;I[Ljava/lang/String;I[I)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/CacheChart;-><init>(Landroid/content/Context;I[II[I)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;I[Ljava/lang/String;I[I)V
+.method public constructor <init>(Landroid/content/Context;I[II[I)V
     .locals 30
 
     move-object/from16 v0, p0
@@ -402,9 +418,9 @@
     .line 371
     iget-object v1, v0, Lorg/telegram/ui/Components/CacheChart;->loadingBackgroundPaint:Landroid/graphics/Paint;
 
-    const-string v2, "listSelectorSDK21"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -564,9 +580,9 @@
     .line 385
     iget-object v1, v0, Lorg/telegram/ui/Components/CacheChart;->topText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -613,9 +629,9 @@
     .line 391
     iget-object v1, v0, Lorg/telegram/ui/Components/CacheChart;->bottomText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    const-string v5, "windowBackgroundWhiteGrayText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -743,9 +759,9 @@
     aput-object v5, v2, v1
 
     .line 409
-    aget-object v2, p3, v1
+    aget v2, p3, v1
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -756,9 +772,9 @@
     move-result v2
 
     .line 410
-    aget-object v6, p3, v1
+    aget v6, p3, v1
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 

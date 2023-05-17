@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;I)V
     .locals 0
 
-    .line 403
+    .line 402
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$4;->this$0:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-direct {p0, p2}, Landroid/view/WindowInsetsAnimation$Callback;-><init>(I)V
@@ -35,7 +35,7 @@
 .method public onEnd(Landroid/view/WindowInsetsAnimation;)V
     .locals 1
 
-    .line 428
+    .line 427
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$4;->this$0:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->access$400(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)Z
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 431
+    .line 430
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$4;->this$0:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
@@ -78,7 +78,7 @@
         }
     .end annotation
 
-    .line 407
+    .line 406
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$4;->this$0:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->access$400(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)Z
@@ -100,7 +100,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 412
+    .line 411
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -118,7 +118,7 @@
 
     check-cast v1, Landroid/view/WindowInsetsAnimation;
 
-    .line 413
+    .line 412
     invoke-virtual {v1}, Landroid/view/WindowInsetsAnimation;->getTypeMask()I
 
     move-result v2
@@ -136,7 +136,7 @@
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 419
+    .line 418
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
@@ -151,10 +151,10 @@
 
     const/4 v1, 0x1
 
-    .line 420
+    .line 419
     invoke-static {p2, v1}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->access$202(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;Z)Z
 
-    .line 421
+    .line 420
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$4;->this$0:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-virtual {v0}, Landroid/view/WindowInsetsAnimation;->getInterpolatedFraction()F

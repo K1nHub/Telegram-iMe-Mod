@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;)V
     .locals 0
 
-    .line 605
+    .line 603
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1$1;->this$2:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public onLinkEdited(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
-    .line 613
+    .line 611
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1$1;->this$2:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
@@ -55,7 +55,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 614
+    .line 612
     invoke-interface {p2, p1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$InviteDelegate;->onLinkEdited(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
 
     :cond_0

@@ -62,6 +62,9 @@
 .method public abstract finishPreviewFragment()V
 .end method
 
+.method public abstract getBottomSheet()Lorg/telegram/ui/ActionBar/BottomSheet;
+.end method
+
 .method public abstract getCurrentPreviewFragmentAlpha()F
 .end method
 

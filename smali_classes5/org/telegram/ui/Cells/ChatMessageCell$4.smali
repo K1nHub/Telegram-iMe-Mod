@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
-    .line 1419
+    .line 1426
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/FloatSeekBarAccessibilityDelegate;-><init>()V
@@ -35,7 +35,7 @@
 .method public getProgress()F
     .locals 1
 
-    .line 1422
+    .line 1429
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -48,7 +48,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1423
+    .line 1430
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/SeekBar;
@@ -61,7 +61,7 @@
 
     return v0
 
-    .line 1424
+    .line 1431
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -75,7 +75,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1425
+    .line 1432
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$1000(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1426
+    .line 1433
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$1100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/SeekBarWaveform;
@@ -97,7 +97,7 @@
 
     return v0
 
-    .line 1428
+    .line 1435
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -111,7 +111,7 @@
 
     return v0
 
-    .line 1430
+    .line 1437
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -125,7 +125,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1431
+    .line 1438
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -145,7 +145,7 @@
 .method public setProgress(F)V
     .locals 1
 
-    .line 1439
+    .line 1446
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -158,7 +158,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1440
+    .line 1447
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/SeekBar;
@@ -169,7 +169,7 @@
 
     goto :goto_1
 
-    .line 1441
+    .line 1448
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -183,7 +183,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1442
+    .line 1449
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$1000(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
@@ -192,7 +192,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1443
+    .line 1450
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$1100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/SeekBarWaveform;
@@ -203,7 +203,7 @@
 
     goto :goto_1
 
-    .line 1445
+    .line 1452
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -215,7 +215,7 @@
 
     goto :goto_1
 
-    .line 1447
+    .line 1454
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -229,7 +229,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 1448
+    .line 1455
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$1000(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
@@ -238,7 +238,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1449
+    .line 1456
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$1100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/SeekBarWaveform;
@@ -247,7 +247,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1450
+    .line 1457
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$1100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/SeekBarWaveform;
@@ -258,7 +258,7 @@
 
     goto :goto_0
 
-    .line 1453
+    .line 1460
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -268,7 +268,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1454
+    .line 1461
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/SeekBar;
@@ -277,7 +277,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/SeekBar;->setProgress(F)V
 
-    .line 1457
+    .line 1464
     :cond_4
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -288,13 +288,13 @@
 
     iput p1, v0, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 1461
+    .line 1468
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->onSeekBarDrag(F)V
 
-    .line 1462
+    .line 1469
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$4;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V

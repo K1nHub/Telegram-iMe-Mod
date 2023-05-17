@@ -447,9 +447,9 @@
     .line 1312
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
-    const-string p3, "dialogTextGray4"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray4:I
 
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 
@@ -1357,9 +1357,9 @@
 
     check-cast v3, Lorg/telegram/ui/Charts/data/ChartData$Line;
 
-    iget-object v3, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:Ljava/lang/String;
+    iget v3, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:I
 
-    if-eqz v3, :cond_0
+    if-ltz v3, :cond_0
 
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -1373,9 +1373,9 @@
 
     check-cast v3, Lorg/telegram/ui/Charts/data/ChartData$Line;
 
-    iget-object v3, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:Ljava/lang/String;
+    iget v3, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(I)Z
 
     move-result v3
 
@@ -1394,19 +1394,19 @@
 
     check-cast v3, Lorg/telegram/ui/Charts/data/ChartData$Line;
 
-    iget-object v3, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:Ljava/lang/String;
+    iget v3, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     goto :goto_2
 
-    :cond_0
-    const-string v3, "windowBackgroundWhite"
-
     .line 1668
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_0
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1493,9 +1493,9 @@
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    const-string v1, "progressCircle"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_progressCircle:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1504,9 +1504,9 @@
     .line 1678
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
-    const-string v1, "dialogTextGray4"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray4:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

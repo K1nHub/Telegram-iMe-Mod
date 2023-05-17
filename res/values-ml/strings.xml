@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">ദിവസം തിരഞ്ഞെടുക്കുന്നതിലേക്ക് മാറാൻ ടാപ്പ് ചെയ്യുക</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">ടെക്‌സ്‌റ്റ് ഇൻപുട്ട് മോഡിലേക്ക് മാറുക</string>
     <string name="mtrl_picker_toggle_to_year_selection">വർഷം തിരഞ്ഞെടുക്കുന്നതിലേക്ക് മാറാൻ ടാപ്പ് ചെയ്യുക</string>
+    <string name="nav_app_bar_navigate_up_description">മുകളിലേക്ക് നാവിഗേറ്റ് ചെയ്യുക</string>
+    <string name="nav_app_bar_open_drawer_description">നാവിഗേഷൻ ഡ്രോയർ തുറക്കുക</string>
     <string name="password_toggle_content_description">പാസ്‌വേഡ് കാണിക്കുക</string>
     <string name="search_menu_title">തിരയുക</string>
     <string name="status_bar_notification_info_overflow">999+</string>

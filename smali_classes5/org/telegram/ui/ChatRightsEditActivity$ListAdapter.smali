@@ -2723,8 +2723,6 @@
 
     move-result v0
 
-    const-string v1, "windowBackgroundGrayShadow"
-
     if-ne p2, v0, :cond_2c
 
     .line 1908
@@ -2754,7 +2752,9 @@
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
     :goto_13
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -2777,7 +2777,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -2814,7 +2816,9 @@
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
     :goto_14
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -2828,7 +2832,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -4785,16 +4791,20 @@
 
     if-ne p2, v0, :cond_8c
 
-    const-string p2, "windowBackgroundWhiteRedText5"
-
     .line 1740
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
     .line 1741
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     .line 1742
@@ -4852,16 +4862,20 @@
 
     if-ne p2, v0, :cond_91
 
-    const-string p2, "windowBackgroundWhiteBlackText"
-
     .line 1748
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
     .line 1749
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     .line 1750
@@ -5068,8 +5082,6 @@
 
     const/4 v2, 0x0
 
-    const-string v3, "windowBackgroundWhite"
-
     packed-switch p2, :pswitch_data_0
 
     .line 1587
@@ -5081,7 +5093,9 @@
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 1588
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -5095,15 +5109,15 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    const/16 v4, 0x15
+    const/16 v3, 0x15
 
-    iget-object v5, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+    iget-object v4, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {p2, v2, v0, v4, v5}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p2, v2, v0, v3, v4}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 1658
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/CheckBoxCell;->getCheckBoxRound()Lorg/telegram/ui/Components/CheckBox2;
@@ -5117,19 +5131,21 @@
 
     move-result-object p1
 
-    const-string v0, "switch2TrackChecked"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_switch2TrackChecked:I
 
-    const-string v2, "radioBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
-    const-string v4, "checkboxCheck"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-virtual {p1, v0, v2, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v0, v2, v3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 1660
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setEnabled(Z)V
 
     .line 1662
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -5156,9 +5172,9 @@
 
     move-result-object p2
 
-    const-string v0, "windowBackgroundGray"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -5323,15 +5339,15 @@
 
     move-result-object p1
 
-    new-array p2, v1, [F
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    const/high16 v1, 0x40800000    # 4.0f
+    new-array v1, v1, [F
 
-    aput v1, p2, v2
+    const/high16 v4, 0x40800000    # 4.0f
 
-    const-string v1, "featuredStickers_addButton"
+    aput v4, v1, v2
 
-    invoke-static {v1, p2}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {p2, v1}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -5404,7 +5420,7 @@
     invoke-direct {p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     .line 1622
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -5481,7 +5497,9 @@
     move-result-object p2
 
     .line 1630
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -5505,7 +5523,9 @@
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextDetailCell;-><init>(Landroid/content/Context;)V
 
     .line 1604
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -5532,7 +5552,9 @@
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextCheckCell2;-><init>(Landroid/content/Context;)V
 
     .line 1597
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -5544,22 +5566,24 @@
     :pswitch_7
     new-instance p2, Lorg/telegram/ui/Cells/HeaderCell;
 
-    iget-object v5, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    const/16 v7, 0x15
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    const/16 v8, 0xf
+    const/16 v3, 0x15
 
-    const/4 v9, 0x1
+    const/16 v4, 0xf
 
-    const-string v6, "windowBackgroundWhiteBlueHeader"
+    const/4 v5, 0x1
 
-    move-object v4, p2
+    move-object v0, p2
 
-    invoke-direct/range {v4 .. v9}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZ)V
 
     .line 1592
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -5580,9 +5604,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v1, "windowBackgroundGrayShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p1, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -5599,7 +5623,9 @@
     invoke-direct {p2, p1, v0, v2}, Lorg/telegram/ui/Cells/UserCell2;-><init>(Landroid/content/Context;II)V
 
     .line 1579
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

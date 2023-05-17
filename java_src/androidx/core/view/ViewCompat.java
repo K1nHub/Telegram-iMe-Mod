@@ -866,7 +866,7 @@ public class ViewCompat {
         if (Build.VERSION.SDK_INT >= 28) {
             return false;
         }
-        return UnhandledKeyEventManager.m837at(view).preDispatch(keyEvent);
+        return UnhandledKeyEventManager.m841at(view).preDispatch(keyEvent);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -874,7 +874,7 @@ public class ViewCompat {
         if (Build.VERSION.SDK_INT >= 28) {
             return false;
         }
-        return UnhandledKeyEventManager.m837at(view).dispatch(view, keyEvent);
+        return UnhandledKeyEventManager.m841at(view).dispatch(view, keyEvent);
     }
 
     public static void setScreenReaderFocusable(View view, boolean z) {
@@ -1182,7 +1182,7 @@ public class ViewCompat {
         }
 
         /* renamed from: at */
-        static UnhandledKeyEventManager m837at(View view) {
+        static UnhandledKeyEventManager m841at(View view) {
             int i = R$id.tag_unhandled_key_event_manager;
             UnhandledKeyEventManager unhandledKeyEventManager = (UnhandledKeyEventManager) view.getTag(i);
             if (unhandledKeyEventManager == null) {

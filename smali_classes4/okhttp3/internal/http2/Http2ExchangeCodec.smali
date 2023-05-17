@@ -72,7 +72,7 @@
 
     const-string v5, "proxy-connection"
 
-    const-string v6, "te"
+    const-string/jumbo v6, "te"
 
     const-string/jumbo v7, "transfer-encoding"
 
@@ -108,7 +108,7 @@
 
     const-string v4, "proxy-connection"
 
-    const-string v5, "te"
+    const-string/jumbo v5, "te"
 
     const-string/jumbo v6, "transfer-encoding"
 

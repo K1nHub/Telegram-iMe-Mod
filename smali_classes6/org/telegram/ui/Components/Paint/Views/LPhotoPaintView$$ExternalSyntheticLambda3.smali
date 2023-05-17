@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda3;->f$2:I
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$IrA_6eqd0ruFB_Vung8fFj_qCds(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZILandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$7so8ZAZE6nJgNZzeR8F2iXufXoY(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZILandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

@@ -150,7 +150,7 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
     public final long getGifBotId() {
         TLRPC$User tLRPC$User = this.foundContextBot;
         if (tLRPC$User != null) {
-            return tLRPC$User.f1567id;
+            return tLRPC$User.f1574id;
         }
         return 0L;
     }
@@ -316,7 +316,7 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
             this.searchingContextQuery = null;
             return;
         }
-        final String str3 = str + '_' + str2 + '_' + tLRPC$User.f1567id;
+        final String str3 = str + '_' + str2 + '_' + tLRPC$User.f1574id;
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         RequestDelegate requestDelegate = new RequestDelegate() { // from class: com.iMe.ui.smartpanel.adapter.SmartBotContentAdapter$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
@@ -436,12 +436,12 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
             ForkBotsContentPageItemNormalBinding forkBotsContentPageItemNormalBinding = this.binding;
             LinearLayout linearLayout = forkBotsContentPageItemNormalBinding.normalPhraseLayout;
             GradientDrawable gradientDrawable = new GradientDrawable();
-            gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
-            gradientDrawable.setCornerRadius(AndroidUtilities.m51dp(6.0f));
+            gradientDrawable.setColor(Theme.getColor(Theme.key_chats_actionBackground));
+            gradientDrawable.setCornerRadius(AndroidUtilities.m55dp(6.0f));
             linearLayout.setBackground(gradientDrawable);
             forkBotsContentPageItemNormalBinding.normalPhrase.setText(((TabBotAnswerItem) content).getPhrase());
             forkBotsContentPageItemNormalBinding.normalPhrase.setTextColor(-1);
-            forkBotsContentPageItemNormalBinding.normalPhrase.setPaddingRelative(AndroidUtilities.m51dp(4.0f), AndroidUtilities.m51dp(1.0f), AndroidUtilities.m51dp(4.0f), AndroidUtilities.m51dp(2.0f));
+            forkBotsContentPageItemNormalBinding.normalPhrase.setPaddingRelative(AndroidUtilities.m55dp(4.0f), AndroidUtilities.m55dp(1.0f), AndroidUtilities.m55dp(4.0f), AndroidUtilities.m55dp(2.0f));
         }
     }
 
@@ -462,7 +462,7 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
             Intrinsics.checkNotNullParameter(content, "content");
             ForkBotsContentPageItemLabelBinding forkBotsContentPageItemLabelBinding = this.binding;
             forkBotsContentPageItemLabelBinding.botName.setText(((TabBotNameItem) content).getBotName());
-            forkBotsContentPageItemLabelBinding.botName.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+            forkBotsContentPageItemLabelBinding.botName.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         }
     }
 }

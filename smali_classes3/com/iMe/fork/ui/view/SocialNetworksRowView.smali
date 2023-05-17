@@ -86,10 +86,10 @@
 
     invoke-direct {v5, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v6, "listSelectorSDK21"
-
     .line 25
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -126,9 +126,9 @@
     .line 34
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v8, "chats_menuItemIcon"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemIcon:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 

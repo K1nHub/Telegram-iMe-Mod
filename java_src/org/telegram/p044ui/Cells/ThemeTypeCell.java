@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -27,7 +27,7 @@ public class ThemeTypeCell extends FrameLayout {
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setLines(1);
         this.textView.setMaxLines(1);
@@ -39,14 +39,14 @@ public class ThemeTypeCell extends FrameLayout {
         addView(textView2, LayoutHelper.createFrame(-1, -1, (z ? 5 : 3) | 48, z ? 71 : 21, 0, z ? 21 : 23, 0));
         ImageView imageView = new ImageView(context);
         this.checkImage = imageView;
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("featuredStickers_addedIcon"), PorterDuff.Mode.MULTIPLY));
-        this.checkImage.setImageResource(C3242R.C3244drawable.sticker_added);
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addedIcon), PorterDuff.Mode.MULTIPLY));
+        this.checkImage.setImageResource(C3290R.C3292drawable.sticker_added);
         addView(this.checkImage, LayoutHelper.createFrame(19, 14, (LocaleController.isRTL ? 3 : 5) | 16, 23, 0, 23, 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(50) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     public void setValue(String str, boolean z, boolean z2) {
@@ -62,7 +62,7 @@ public class ThemeTypeCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 }

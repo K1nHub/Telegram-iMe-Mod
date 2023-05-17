@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LocationActivity;)V
     .locals 0
 
-    .line 2265
+    .line 2290
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$15;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,17 +35,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2268
+    .line 2293
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$15;->this$0:Lorg/telegram/ui/LocationActivity;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/LocationActivity;->access$3402(Lorg/telegram/ui/LocationActivity;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/LocationActivity;->access$3502(Lorg/telegram/ui/LocationActivity;Z)Z
 
-    .line 2269
+    .line 2294
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$15;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3500(Lorg/telegram/ui/LocationActivity;)V
+    invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3600(Lorg/telegram/ui/LocationActivity;)V
 
     return-void
 .end method

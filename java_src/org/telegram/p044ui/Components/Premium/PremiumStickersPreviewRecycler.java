@@ -21,6 +21,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.CubicBezierInterpolator;
 import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.RecyclerListView;
@@ -205,7 +206,7 @@ public class PremiumStickersPreviewRecycler extends RecyclerListView implements 
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onLayout$2() {
-        int size = IdFabric$RequestCode.file_saving_directory - (IdFabric$RequestCode.file_saving_directory % this.premiumStickers.size());
+        int size = IdFabric$RequestCode.FILE_SAVING_DIRECTORY - (IdFabric$RequestCode.FILE_SAVING_DIRECTORY % this.premiumStickers.size());
         LinearLayoutManager linearLayoutManager = this.layoutManager;
         this.selectStickerOnNextLayout = size;
         linearLayoutManager.scrollToPositionWithOffset(size, (getMeasuredHeight() - getChildAt(0).getMeasuredHeight()) >> 1);
@@ -374,7 +375,7 @@ public class PremiumStickersPreviewRecycler extends RecyclerListView implements 
                     super.draw(canvas);
                     StickerView stickerView = StickerView.this;
                     if (stickerView.update) {
-                        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerView.document, "windowBackgroundGray", 0.5f);
+                        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerView.document, Theme.key_windowBackgroundGray, 0.5f);
                         StickerView stickerView2 = StickerView.this;
                         stickerView2.centerImage.setImage(ImageLocation.getForDocument(stickerView2.document), null, svgThumb, "webp", null, 1);
                         if (MessageObject.isPremiumSticker(StickerView.this.document)) {
@@ -467,9 +468,9 @@ public class PremiumStickersPreviewRecycler extends RecyclerListView implements 
             int i3 = (int) (PremiumStickersPreviewRecycler.this.size * 0.6f);
             ViewGroup.LayoutParams layoutParams = this.view.getLayoutParams();
             ViewGroup.LayoutParams layoutParams2 = this.view.getLayoutParams();
-            int m50dp = i3 - AndroidUtilities.m50dp(16);
-            layoutParams2.height = m50dp;
-            layoutParams.width = m50dp;
+            int m54dp = i3 - AndroidUtilities.m54dp(16);
+            layoutParams2.height = m54dp;
+            layoutParams.width = m54dp;
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (i3 * 0.7f), 1073741824));
         }
 

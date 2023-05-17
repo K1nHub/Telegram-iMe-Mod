@@ -43,8 +43,9 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentStakingProgrammesBinding;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.ManageLinksActivity;
 /* compiled from: StakingProgrammesFragment.kt */
@@ -168,7 +169,7 @@ public final class StakingProgrammesFragment extends WalletAuthFragment implemen
         RecyclerView root = getBinding().getRoot();
         int i = ThemeDescription.FLAG_BACKGROUND;
         final StakingProgrammesRecycleAdapter stakingProgrammesRecycleAdapter = getStakingProgrammesRecycleAdapter();
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(root, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda6
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(root, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda6
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 StakingProgrammesRecycleAdapter.this.notifyDataSetChanged();
@@ -178,7 +179,7 @@ public final class StakingProgrammesFragment extends WalletAuthFragment implemen
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
@@ -259,15 +260,15 @@ public final class StakingProgrammesFragment extends WalletAuthFragment implemen
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3242R.C3245id.image_header_right_button) {
+        if (id == C3290R.C3293id.image_header_right_button) {
             this$0.getPresenter().showSelectStakingOrderTypeDialog();
-        } else if (id == C3242R.C3245id.image_info) {
+        } else if (id == C3290R.C3293id.image_info) {
             this$0.showStakingFiltersInfoDialog();
         }
     }
 
     private final void showStakingFiltersInfoDialog() {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3242R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3242R.string.staking_programmes_filters_info_description), getResourceManager().getString(C3242R.string.common_ok), null, 8, null));
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3290R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3290R.string.staking_programmes_filters_info_description), getResourceManager().getString(C3290R.string.common_ok), null, 8, null));
     }
 
     /* compiled from: StakingProgrammesFragment.kt */

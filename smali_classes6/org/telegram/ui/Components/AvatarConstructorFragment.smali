@@ -1262,12 +1262,12 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
-    const v1, 0x3e4ccccd    # 0.2f
-
-    const-string v2, "windowBackgroundWhiteGrayIcon"
-
     .line 473
-    invoke-static {v10, v2, v1}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
+
+    const v2, 0x3e4ccccd    # 0.2f
+
+    invoke-static {v10, v1, v2}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v6
 
@@ -1842,16 +1842,16 @@
 
     invoke-direct {v3, v5}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    new-array v5, v1, [F
-
-    const/high16 v6, 0x41000000    # 8.0f
-
-    aput v6, v5, v2
-
-    const-string v6, "featuredStickers_addButton"
-
     .line 1109
-    invoke-static {v6, v5}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    new-array v6, v1, [F
+
+    const/high16 v7, 0x41000000    # 8.0f
+
+    aput v7, v6, v2
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
@@ -1896,10 +1896,10 @@
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    const-string v7, "featuredStickers_buttonText"
-
     .line 1116
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -2028,9 +2028,9 @@
     .line 126
     iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -2039,7 +2039,7 @@
     .line 127
     iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -2048,9 +2048,9 @@
     .line 128
     iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v1, "listSelectorSDK21"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -2254,10 +2254,10 @@
     .line 350
     invoke-virtual {v14, v9}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
 
-    const-string v0, "windowBackgroundGray"
-
     .line 351
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -2325,9 +2325,9 @@
     .line 368
     iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteGrayText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -2438,7 +2438,7 @@
     .line 398
     iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -2603,16 +2603,16 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
 
-    new-array v1, v9, [F
-
-    const/high16 v2, 0x41000000    # 8.0f
-
-    aput v2, v1, v10
-
-    const-string v2, "featuredStickers_addButton"
-
     .line 435
-    invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    new-array v2, v9, [F
+
+    const/high16 v3, 0x41000000    # 8.0f
+
+    aput v3, v2, v10
+
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -2717,10 +2717,10 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    const-string v2, "featuredStickers_buttonText"
-
     .line 450
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -2867,11 +2867,11 @@
 
     goto :goto_1
 
-    :cond_2
-    const-string v0, "windowBackgroundGray"
-
     .line 1296
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_2
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

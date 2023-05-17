@@ -208,11 +208,11 @@
     return p0
 .end method
 
-.method static synthetic access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;Ljava/lang/String;)I
+.method static synthetic access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
     .locals 0
 
     .line 74
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(I)I
 
     move-result p0
 
@@ -368,10 +368,10 @@
 
     if-nez v4, :cond_0
 
-    const-string p1, "dialogBackground"
-
     .line 1264
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(I)I
 
     move-result p1
 
@@ -392,10 +392,10 @@
     :cond_1
     if-ne v4, v2, :cond_2
 
-    const-string p1, "windowBackgroundWhite"
-
     .line 1268
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(I)I
 
     move-result p1
 
@@ -422,7 +422,7 @@
 .method private static createEnterAnimation(Landroid/view/View;)Landroid/animation/AnimatorSet;
     .locals 4
 
-    .line 1293
+    .line 1292
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -431,7 +431,7 @@
 
     new-array v1, v1, [Landroid/animation/Animator;
 
-    .line 1294
+    .line 1293
     sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     const/4 v3, 0x2
@@ -440,7 +440,7 @@
 
     fill-array-data v3, :array_0
 
-    .line 1295
+    .line 1294
     invoke-static {p0, v2, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p0
@@ -455,7 +455,7 @@
 
     aput-object p0, v1, v2
 
-    .line 1294
+    .line 1293
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     return-object v0
@@ -472,7 +472,7 @@
 .method private static createExitAnimation(Landroid/view/View;ILandroid/animation/Animator$AnimatorListener;)Landroid/animation/AnimatorSet;
     .locals 4
 
-    .line 1300
+    .line 1299
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -481,7 +481,7 @@
 
     new-array v1, v1, [Landroid/animation/Animator;
 
-    .line 1301
+    .line 1300
     sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     const/4 v3, 0x2
@@ -508,10 +508,10 @@
 
     int-to-long p0, p1
 
-    .line 1302
+    .line 1301
     invoke-virtual {v0, p0, p1}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 1303
+    .line 1302
     invoke-virtual {v0, p2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     return-object v0
@@ -619,10 +619,10 @@
     .line 1208
     invoke-virtual {v4, v1}, Landroid/widget/TextView;->setFocusableInTouchMode(Z)V
 
-    const-string v6, "listSelectorSDK21"
-
     .line 1209
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -631,10 +631,10 @@
 
     if-nez v7, :cond_0
 
-    const-string p1, "dialogTextBlack"
-
     .line 1211
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(I)I
 
     move-result p1
 
@@ -657,10 +657,10 @@
     :cond_1
     if-ne v7, p1, :cond_2
 
-    const-string p1, "windowBackgroundWhiteBlackText"
-
     .line 1216
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(I)I
 
     move-result p1
 
@@ -766,7 +766,7 @@
 .method private static createPopupWindow(Landroid/view/ViewGroup;)Landroid/widget/PopupWindow;
     .locals 4
 
-    .line 1282
+    .line 1281
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -775,27 +775,27 @@
 
     invoke-direct {v0, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1283
+    .line 1282
     new-instance v1, Landroid/widget/PopupWindow;
 
     invoke-direct {v1, v0}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;)V
 
     const/4 v2, 0x0
 
-    .line 1284
+    .line 1283
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 1285
+    .line 1284
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 1286
+    .line 1285
     new-instance v3, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-direct {v3, v2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1287
+    .line 1286
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
     const/4 v3, -0x2
@@ -804,7 +804,7 @@
 
     invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1288
+    .line 1287
     invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     return-object v1
@@ -909,39 +909,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 1277
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 1278
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 

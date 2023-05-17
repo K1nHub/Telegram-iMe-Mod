@@ -6,24 +6,24 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
+.field public final synthetic f$0:I
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$2:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public synthetic constructor <init>(ILorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iput p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$0:I
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$2:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -33,13 +33,13 @@
 .method public final run()V
     .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$0:I
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;->f$2:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$qCu4j-wH0ElFUh5mtRLqY9SV2GE(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$GMH0As2i2VwSv4gDpV38fagYerM(ILorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
 
     return-void
 .end method

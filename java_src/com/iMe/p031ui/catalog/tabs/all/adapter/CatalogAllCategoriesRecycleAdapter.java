@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogAllCategoriesRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.all.adapter.CatalogAllCategoriesRecycleAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogAllCategoriesRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final CategoryWithCampaignsProvider categoryWithCampaignsProvider;
 

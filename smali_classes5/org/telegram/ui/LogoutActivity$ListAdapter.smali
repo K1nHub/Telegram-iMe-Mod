@@ -291,10 +291,10 @@
 
     if-ne p2, v0, :cond_8
 
-    const-string p2, "windowBackgroundWhiteRedText5"
-
     .line 229
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -517,21 +517,19 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    const-string p1, "windowBackgroundWhite"
-
     if-eqz p2, :cond_3
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    if-eq p2, v0, :cond_2
+    if-eq p2, p1, :cond_2
 
-    const/4 v0, 0x2
+    const/4 p1, 0x2
 
-    if-eq p2, v0, :cond_1
+    if-eq p2, p1, :cond_1
 
-    const/4 v0, 0x3
+    const/4 p1, 0x3
 
-    if-eq p2, v0, :cond_0
+    if-eq p2, p1, :cond_0
 
     .line 277
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -545,30 +543,32 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    const-string v1, "windowBackgroundGrayShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 271
     :cond_0
-    new-instance p2, Lorg/telegram/ui/Cells/TextSettingsCell;
+    new-instance p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/LogoutActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lorg/telegram/ui/LogoutActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 272
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_0
 
@@ -580,48 +580,51 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 260
     :cond_2
     new-instance p2, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
-    iget-object v1, p0, Lorg/telegram/ui/LogoutActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lorg/telegram/ui/LogoutActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v1}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 261
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setMultilineDetail(Z)V
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setMultilineDetail(Z)V
 
     .line 262
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
+    move-object p1, p2
+
     goto :goto_0
 
     .line 255
     :cond_3
-    new-instance p2, Lorg/telegram/ui/Cells/HeaderCell;
+    new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/LogoutActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lorg/telegram/ui/LogoutActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
     .line 256
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
 
-    :goto_0
-    move-object p1, p2
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 282
-    :goto_1
+    :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1

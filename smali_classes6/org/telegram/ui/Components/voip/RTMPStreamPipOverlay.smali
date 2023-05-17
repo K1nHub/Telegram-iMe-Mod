@@ -2313,9 +2313,9 @@
     :cond_3
     iget-object v5, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->contentFrameLayout:Landroid/widget/FrameLayout;
 
-    const-string v6, "voipgroup_actionBar"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBar:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -2491,19 +2491,19 @@
 
     invoke-virtual {v7, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const-string v9, "voipgroup_actionBarItems"
-
     .line 576
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarItems:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
     invoke-virtual {v7, v10}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    const-string v10, "listSelectorSDK21"
-
     .line 577
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
@@ -2555,14 +2555,14 @@
     invoke-virtual {v7, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 584
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
     invoke-virtual {v7, v9}, Landroid/widget/ImageView;->setColorFilter(I)V
 
     .line 585
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 

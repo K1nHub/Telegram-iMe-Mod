@@ -7,7 +7,7 @@ import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 public interface BCObjectIdentifiers {
 
     /* renamed from: bc */
-    public static final ASN1ObjectIdentifier f1232bc;
+    public static final ASN1ObjectIdentifier f1237bc;
     public static final ASN1ObjectIdentifier bc_exch;
     public static final ASN1ObjectIdentifier bc_ext;
     public static final ASN1ObjectIdentifier bc_pbe;
@@ -45,7 +45,7 @@ public interface BCObjectIdentifiers {
 
     static {
         ASN1ObjectIdentifier aSN1ObjectIdentifier = new ASN1ObjectIdentifier("1.3.6.1.4.1.22554");
-        f1232bc = aSN1ObjectIdentifier;
+        f1237bc = aSN1ObjectIdentifier;
         ASN1ObjectIdentifier branch = aSN1ObjectIdentifier.branch(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE);
         bc_pbe = branch;
         ASN1ObjectIdentifier branch2 = branch.branch(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE);

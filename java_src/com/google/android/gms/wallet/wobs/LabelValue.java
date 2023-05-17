@@ -11,9 +11,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class LabelValue extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LabelValue> CREATOR = new zzd();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     String zza;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     String zzb;
 
     LabelValue() {
@@ -36,7 +36,7 @@ public final class LabelValue extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public LabelValue(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2) {
+    public LabelValue(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2) {
         this.zza = str;
         this.zzb = str2;
     }

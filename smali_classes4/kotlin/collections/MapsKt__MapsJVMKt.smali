@@ -85,7 +85,7 @@
 
     move-result-object p0
 
-    const-string v0, "singletonMap(pair.first, pair.second)"
+    const-string/jumbo v0, "singletonMap(pair.first, pair.second)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;)V
     .locals 0
 
-    .line 2923
+    .line 2657
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,17 +35,17 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 2926
+    .line 2660
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 2927
+    .line 2661
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$11602(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$11002(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 2928
+    .line 2662
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$200(Lorg/telegram/ui/Components/EmojiView;Z)V
@@ -56,17 +56,17 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 2933
+    .line 2667
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 2934
+    .line 2668
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$11602(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$11002(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 2935
+    .line 2669
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x1

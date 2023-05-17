@@ -68,7 +68,7 @@
 
     const/4 v4, 0x0
 
-    .line 123
+    .line 122
     invoke-direct {v0, v1, v4, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/4 v5, 0x2
@@ -83,43 +83,43 @@
     .line 45
     iput-object v6, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
-    .line 113
+    .line 112
     new-instance v6, Lorg/telegram/ui/Components/ImportingAlert$$ExternalSyntheticLambda1;
 
     invoke-direct {v6, v0}, Lorg/telegram/ui/Components/ImportingAlert$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ImportingAlert;)V
 
     iput-object v6, v0, Lorg/telegram/ui/Components/ImportingAlert;->onFinishCallback:Ljava/lang/Runnable;
 
-    .line 124
+    .line 123
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
-    .line 125
+    .line 124
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
 
     move-object/from16 v7, p3
 
-    .line 126
+    .line 125
     iput-object v7, v0, Lorg/telegram/ui/Components/ImportingAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    .line 127
+    .line 126
     iput-object v2, v0, Lorg/telegram/ui/Components/ImportingAlert;->stickersShortName:Ljava/lang/String;
 
-    .line 129
+    .line 128
     new-instance v7, Landroid/widget/FrameLayout;
 
     invoke-direct {v7, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 130
+    .line 129
     invoke-virtual {v0, v7}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
-    .line 132
+    .line 131
     new-instance v8, Landroid/widget/TextView;
 
     invoke-direct {v8, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const-string v9, "fonts/rmedium.ttf"
 
-    .line 133
+    .line 132
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v10
@@ -130,22 +130,22 @@
 
     const/high16 v11, 0x41a00000    # 20.0f
 
-    .line 134
+    .line 133
     invoke-virtual {v8, v10, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v11, "dialogTextBlack"
+    .line 134
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    .line 135
-    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v12
 
     invoke-virtual {v8, v12}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 136
+    .line 135
     invoke-virtual {v8, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 137
+    .line 136
     sget-object v12, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v8, v12}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
@@ -164,14 +164,14 @@
 
     const/16 v19, 0x0
 
-    .line 138
+    .line 137
     invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v12
 
     invoke-virtual {v7, v8, v12}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 140
+    .line 139
     new-instance v12, Lorg/telegram/ui/Components/RLottieDrawable;
 
     sget v14, Lorg/telegram/messenger/R$raw;->import_finish:I
@@ -212,32 +212,32 @@
 
     iput-object v12, v0, Lorg/telegram/ui/Components/ImportingAlert;->completedDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 141
+    .line 140
     invoke-virtual {v12, v10}, Lorg/telegram/ui/Components/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
-    .line 143
+    .line 142
     new-instance v12, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v12, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v12, v0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 144
+    .line 143
     invoke-virtual {v12, v10}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 145
+    .line 144
     iget-object v12, v0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v13, Lorg/telegram/messenger/R$raw;->import_loop:I
 
     invoke-virtual {v12, v13, v4, v4}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 146
+    .line 145
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 147
+    .line 146
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v12, 0xa0
@@ -258,7 +258,7 @@
 
     invoke-virtual {v7, v4, v12}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 148
+    .line 147
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -269,52 +269,60 @@
 
     invoke-virtual {v4, v6, v12}, Lorg/telegram/ui/Components/RLottieDrawable;->setOnFinishCallback(Ljava/lang/Runnable;I)V
 
-    .line 150
+    .line 149
     new-instance v4, Landroid/widget/TextView;
 
     invoke-direct {v4, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
 
-    .line 151
+    .line 150
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v6
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 152
+    .line 151
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
 
     const/high16 v6, 0x41c00000    # 24.0f
 
     invoke-virtual {v4, v10, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 153
+    .line 152
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v6
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 154
+    .line 153
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
+
+    const/4 v11, -0x2
 
     const/4 v12, -0x2
 
-    const/4 v13, -0x2
+    const/16 v13, 0x31
 
-    const/16 v16, 0x106
+    const/16 v14, 0x11
 
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/16 v15, 0x106
+
+    const/16 v16, 0x11
+
+    const/16 v17, 0x0
+
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v7, v4, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 156
+    .line 155
     new-instance v4, Lorg/telegram/ui/Components/LineProgressView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -325,48 +333,48 @@
 
     iput-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
-    const-string v6, "featuredStickers_addButton"
+    .line 156
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    .line 157
-    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v6
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/LineProgressView;->setProgressColor(I)V
 
-    .line 158
+    .line 157
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
-    const-string v6, "dialogLineProgressBackground"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogLineProgressBackground:I
 
-    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v6
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/LineProgressView;->setBackColor(I)V
 
-    .line 159
+    .line 158
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
-    const/4 v12, -0x1
+    const/4 v11, -0x1
 
-    const/4 v13, 0x4
+    const/4 v12, 0x4
 
-    const/16 v14, 0x33
+    const/16 v13, 0x33
 
-    const/16 v15, 0x32
+    const/16 v14, 0x32
 
-    const/16 v16, 0x133
+    const/16 v15, 0x133
 
-    const/16 v17, 0x32
+    const/16 v16, 0x32
 
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v7, v4, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 161
+    .line 160
     new-instance v4, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     invoke-direct {v4, v1, v3}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -375,10 +383,10 @@
 
     const/4 v3, 0x0
 
-    .line 162
+    .line 161
     invoke-virtual {v4, v3}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 163
+    .line 162
     iget-object v3, v0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     sget v4, Lorg/telegram/messenger/R$string;->ImportDone:I
@@ -391,14 +399,14 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 164
+    .line 163
     iget-object v3, v0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     const/4 v4, 0x4
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 165
+    .line 164
     iget-object v3, v0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;->access$000(Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;)Landroid/view/View;
@@ -411,7 +419,7 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 166
+    .line 165
     iget-object v3, v0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;->access$000(Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;)Landroid/view/View;
@@ -428,7 +436,7 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setPivotY(F)V
 
-    .line 167
+    .line 166
     iget-object v3, v0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;->access$000(Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;)Landroid/view/View;
@@ -439,18 +447,18 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setScaleY(F)V
 
-    .line 168
+    .line 167
     iget-object v3, v0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
-    const/16 v13, 0x32
+    const/16 v12, 0x32
 
-    const/16 v15, 0x22
+    const/16 v14, 0x22
 
-    const/16 v16, 0xf7
+    const/16 v15, 0xf7
 
-    const/16 v17, 0x22
+    const/16 v16, 0x22
 
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v4
 
@@ -461,7 +469,7 @@
     :goto_0
     if-ge v3, v5, :cond_1
 
-    .line 171
+    .line 170
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     new-instance v6, Landroid/widget/TextView;
@@ -470,7 +478,7 @@
 
     aput-object v6, v4, v3
 
-    .line 172
+    .line 171
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
@@ -479,7 +487,7 @@
 
     invoke-virtual {v4, v10, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 173
+    .line 172
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
@@ -490,43 +498,45 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 174
+    .line 173
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
-    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v6
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 175
+    .line 174
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
+    const/4 v11, -0x2
+
     const/4 v12, -0x2
 
-    const/4 v13, -0x2
+    const/16 v13, 0x31
 
-    const/16 v14, 0x31
+    const/16 v14, 0x11
 
-    const/16 v15, 0x11
+    const/16 v15, 0x154
 
-    const/16 v16, 0x154
+    const/16 v16, 0x11
 
-    const/16 v17, 0x11
+    const/16 v17, 0x0
 
-    const/16 v18, 0x0
-
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v7, v4, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 177
+    .line 176
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     new-instance v6, Landroid/widget/TextView;
@@ -535,7 +545,7 @@
 
     aput-object v6, v4, v3
 
-    .line 178
+    .line 177
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
@@ -544,40 +554,40 @@
 
     invoke-virtual {v4, v10, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 179
+    .line 178
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
-    const-string v6, "dialogTextGray3"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
 
-    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v6
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 180
+    .line 179
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
     invoke-virtual {v4, v10}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 181
+    .line 180
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
-    const/16 v15, 0x1e
+    const/16 v14, 0x1e
 
-    const/16 v16, 0x170
+    const/16 v15, 0x170
 
-    const/16 v17, 0x1e
+    const/16 v16, 0x1e
 
-    const/16 v18, 0x2c
+    const/16 v17, 0x2c
 
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
@@ -585,16 +595,16 @@
 
     if-nez v3, :cond_0
 
-    .line 184
+    .line 183
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
     sget v6, Lorg/telegram/messenger/R$string;->ImportImportingInfo:I
 
-    const-string v12, "ImportImportingInfo"
+    const-string v11, "ImportImportingInfo"
 
-    invoke-static {v12, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v11, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -602,7 +612,7 @@
 
     goto :goto_1
 
-    .line 186
+    .line 185
     :cond_0
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
@@ -612,34 +622,34 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 187
+    .line 186
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
-    const/16 v12, 0xa
+    const/16 v11, 0xa
 
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v13
+    move-result v12
 
-    int-to-float v13, v13
+    int-to-float v12, v12
 
-    invoke-virtual {v4, v13}, Landroid/widget/TextView;->setTranslationY(F)V
+    invoke-virtual {v4, v12}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 188
+    .line 187
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 189
+    .line 188
     iget-object v4, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v4, v4, v3
 
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
@@ -652,7 +662,7 @@
 
     goto/16 :goto_0
 
-    .line 193
+    .line 192
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/Components/ImportingAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -664,7 +674,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 194
+    .line 193
     sget v1, Lorg/telegram/messenger/R$string;->ImportImportingTitle:I
 
     const-string v2, "ImportImportingTitle"
@@ -675,7 +685,7 @@
 
     invoke-virtual {v8, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 195
+    .line 194
     iget-object v1, v0, Lorg/telegram/ui/Components/ImportingAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
@@ -692,7 +702,7 @@
 
     move-result-object v1
 
-    .line 196
+    .line 195
     iget-object v2, v0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
 
     new-array v7, v10, [Ljava/lang/Object;
@@ -713,7 +723,7 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 197
+    .line 196
     iget-object v2, v0, Lorg/telegram/ui/Components/ImportingAlert;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
     iget v6, v1, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;->uploadProgress:I
@@ -724,7 +734,7 @@
 
     invoke-virtual {v2, v6, v9}, Lorg/telegram/ui/Components/LineProgressView;->setProgress(FZ)V
 
-    .line 198
+    .line 197
     iget-object v2, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v2, v2, v9
@@ -759,7 +769,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 199
+    .line 198
     iget-object v1, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     aget-object v1, v1, v10
@@ -774,7 +784,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 200
+    .line 199
     iget-object v1, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v1, v1, v10
@@ -789,7 +799,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 202
+    .line 201
     iget-object v1, v0, Lorg/telegram/ui/Components/ImportingAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -802,7 +812,7 @@
 
     goto/16 :goto_2
 
-    .line 204
+    .line 203
     :cond_2
     sget v1, Lorg/telegram/messenger/R$string;->ImportStickersImportingTitle:I
 
@@ -814,7 +824,7 @@
 
     invoke-virtual {v8, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 205
+    .line 204
     iget v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
@@ -825,7 +835,7 @@
 
     move-result-object v1
 
-    .line 206
+    .line 205
     iget-object v2, v0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
 
     new-array v7, v10, [Ljava/lang/Object;
@@ -846,7 +856,7 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 207
+    .line 206
     iget-object v2, v0, Lorg/telegram/ui/Components/ImportingAlert;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
     iget v6, v1, Lorg/telegram/messenger/SendMessagesHelper$ImportingStickers;->uploadProgress:I
@@ -857,7 +867,7 @@
 
     invoke-virtual {v2, v6, v9}, Lorg/telegram/ui/Components/LineProgressView;->setProgress(FZ)V
 
-    .line 208
+    .line 207
     iget-object v2, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v2, v2, v9
@@ -892,7 +902,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 209
+    .line 208
     iget-object v1, v0, Lorg/telegram/ui/Components/ImportingAlert;->infoTextView:[Landroid/widget/TextView;
 
     aget-object v1, v1, v10
@@ -907,7 +917,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 210
+    .line 209
     iget-object v1, v0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object v1, v1, v10
@@ -922,7 +932,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 212
+    .line 211
     iget v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -940,12 +950,12 @@
 .method private synthetic lambda$new$0()V
     .locals 2
 
-    .line 115
+    .line 114
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->completed:Z
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 115
     iget-object v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -956,14 +966,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setAutoRepeat(I)V
 
-    .line 117
+    .line 116
     iget-object v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ImportingAlert;->completedDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
-    .line 118
+    .line 117
     iget-object v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -975,7 +985,7 @@
 .method private synthetic lambda$new$1(Landroid/view/View;)V
     .locals 0
 
-    .line 165
+    .line 164
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -986,7 +996,7 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 10
 
-    .line 245
+    .line 244
     sget p2, Lorg/telegram/messenger/NotificationCenter;->historyImportProgressChanged:I
 
     const-wide v0, 0x40a7700000000000L    # 3000.0
@@ -1007,17 +1017,17 @@
 
     if-ne p1, p2, :cond_3
 
-    .line 246
+    .line 245
     array-length p1, p3
 
     if-le p1, v9, :cond_0
 
-    .line 247
+    .line 246
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
 
-    .line 250
+    .line 249
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ImportingAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -1025,7 +1035,7 @@
 
     move-result-wide p1
 
-    .line 251
+    .line 250
     iget-object p3, p0, Lorg/telegram/ui/Components/ImportingAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
@@ -1038,18 +1048,18 @@
 
     if-nez p1, :cond_1
 
-    .line 253
+    .line 252
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ImportingAlert;->setCompleted()V
 
     return-void
 
-    .line 256
+    .line 255
     :cond_1
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->completed:Z
 
     if-nez p2, :cond_2
 
-    .line 257
+    .line 256
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -1068,7 +1078,7 @@
 
     add-double/2addr p2, v0
 
-    .line 258
+    .line 257
     iget v0, p1, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;->timeUntilFinish:I
 
     int-to-double v0, v0
@@ -1077,15 +1087,15 @@
 
     if-ltz p2, :cond_2
 
-    .line 259
+    .line 258
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p2, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 260
+    .line 259
     iput-boolean v9, p0, Lorg/telegram/ui/Components/ImportingAlert;->completed:Z
 
-    .line 264
+    .line 263
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
 
@@ -1105,7 +1115,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 265
+    .line 264
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v8
@@ -1140,7 +1150,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 266
+    .line 265
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
     iget p1, p1, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;->uploadProgress:I
@@ -1153,23 +1163,23 @@
 
     goto/16 :goto_0
 
-    .line 267
+    .line 266
     :cond_3
     sget p2, Lorg/telegram/messenger/NotificationCenter;->stickersImportProgressChanged:I
 
     if-ne p1, p2, :cond_7
 
-    .line 268
+    .line 267
     array-length p1, p3
 
     if-le p1, v9, :cond_4
 
-    .line 269
+    .line 268
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
 
-    .line 273
+    .line 272
     :cond_4
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -1185,18 +1195,18 @@
 
     if-nez p1, :cond_5
 
-    .line 275
+    .line 274
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ImportingAlert;->setCompleted()V
 
     return-void
 
-    .line 278
+    .line 277
     :cond_5
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->completed:Z
 
     if-nez p2, :cond_6
 
-    .line 279
+    .line 278
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -1215,7 +1225,7 @@
 
     add-double/2addr p2, v0
 
-    .line 280
+    .line 279
     iget v0, p1, Lorg/telegram/messenger/SendMessagesHelper$ImportingStickers;->timeUntilFinish:I
 
     int-to-double v0, v0
@@ -1224,15 +1234,15 @@
 
     if-ltz p2, :cond_6
 
-    .line 281
+    .line 280
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p2, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 282
+    .line 281
     iput-boolean v9, p0, Lorg/telegram/ui/Components/ImportingAlert;->completed:Z
 
-    .line 286
+    .line 285
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
 
@@ -1252,7 +1262,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 287
+    .line 286
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->importCountTextView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v8
@@ -1287,7 +1297,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 288
+    .line 287
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
     iget p1, p1, Lorg/telegram/messenger/SendMessagesHelper$ImportingStickers;->uploadProgress:I
@@ -1306,15 +1316,15 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 294
+    .line 293
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 295
+    .line 294
     iget-object v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
 
-    .line 296
+    .line 295
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1325,7 +1335,7 @@
 
     goto :goto_0
 
-    .line 298
+    .line 297
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -1346,32 +1356,32 @@
 
     const/4 v0, 0x1
 
-    .line 217
+    .line 216
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->completed:Z
 
-    .line 218
+    .line 217
     iget-object v1, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 219
+    .line 218
     iget-object v1, p0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 220
+    .line 219
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
     const-wide/16 v3, 0xfa
 
-    .line 221
+    .line 220
     invoke-virtual {v1, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 222
+    .line 221
     sget-object v5, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
@@ -1380,7 +1390,7 @@
 
     new-array v5, v5, [Landroid/animation/Animator;
 
-    .line 223
+    .line 222
     iget-object v6, p0, Lorg/telegram/ui/Components/ImportingAlert;->percentTextView:Landroid/widget/TextView;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -1391,7 +1401,7 @@
 
     aput v9, v8, v2
 
-    .line 224
+    .line 223
     invoke-static {v6, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -1406,7 +1416,7 @@
 
     const/16 v10, 0xa
 
-    .line 225
+    .line 224
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -1433,7 +1443,7 @@
 
     aput v9, v8, v2
 
-    .line 226
+    .line 225
     invoke-static {v6, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -1450,7 +1460,7 @@
 
     new-array v11, v0, [F
 
-    .line 227
+    .line 226
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
@@ -1479,7 +1489,7 @@
 
     aput v9, v11, v2
 
-    .line 228
+    .line 227
     invoke-static {v6, v8, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -1496,7 +1506,7 @@
 
     new-array v11, v0, [F
 
-    .line 229
+    .line 228
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
@@ -1527,7 +1537,7 @@
 
     aput v12, v11, v2
 
-    .line 230
+    .line 229
     invoke-static {v6, v8, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -1546,7 +1556,7 @@
 
     aput v9, v11, v2
 
-    .line 231
+    .line 230
     invoke-static {v6, v8, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -1565,7 +1575,7 @@
 
     aput v12, v11, v2
 
-    .line 232
+    .line 231
     invoke-static {v6, v8, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -1584,7 +1594,7 @@
 
     aput v9, v13, v2
 
-    .line 233
+    .line 232
     invoke-static {v6, v11, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -1601,7 +1611,7 @@
 
     aput v9, v13, v2
 
-    .line 234
+    .line 233
     invoke-static {v6, v11, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -1610,7 +1620,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
-    .line 235
+    .line 234
     invoke-static {v6}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;->access$100(Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;)Landroid/widget/LinearLayout;
 
     move-result-object v6
@@ -1637,10 +1647,10 @@
 
     aput-object v0, v5, v2
 
-    .line 223
+    .line 222
     invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 237
+    .line 236
     iget-object v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;->access$000(Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;)Landroid/view/View;
@@ -1671,7 +1681,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 238
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;->access$200(Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1704,7 +1714,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 239
+    .line 238
     iget-object v0, p0, Lorg/telegram/ui/Components/ImportingAlert;->cell:Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;->access$200(Lorg/telegram/ui/Components/ImportingAlert$BottomSheetCell;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1713,7 +1723,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 240
+    .line 239
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void

@@ -8,11 +8,11 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
 
     @Override // org.telegram.messenger.ApplicationLoader
     protected int onGetVersionCode() {
-        return 950809;
+        return 960609;
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
     protected String onGetVersionName() {
-        return "9.5.8";
+        return "9.6.6";
     }
 }

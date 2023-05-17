@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 18
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 
     new-array v0, v0, [Lcom/iMe/fork/enums/ExternalApp;
 
-    .line 20
+    .line 21
     sget-object v1, Lcom/iMe/fork/enums/ExternalApp;->WHATSAPP:Lcom/iMe/fork/enums/ExternalApp;
 
     const/4 v2, 0x0

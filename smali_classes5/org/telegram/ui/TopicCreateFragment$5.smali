@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicCreateFragment;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 415
+    .line 416
     iput-object p1, p0, Lorg/telegram/ui/TopicCreateFragment$5;->this$0:Lorg/telegram/ui/TopicCreateFragment;
 
     move-object v0, p0
@@ -45,7 +45,7 @@
 
     const/4 p1, 0x1
 
-    .line 417
+    .line 418
     iput-boolean p1, p0, Lorg/telegram/ui/TopicCreateFragment$5;->firstLayout:Z
 
     return-void
@@ -56,7 +56,7 @@
 .method protected onEmojiSelected(Landroid/view/View;Ljava/lang/Long;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Integer;)V
     .locals 4
 
-    .line 430
+    .line 431
     iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment$5;->this$0:Lorg/telegram/ui/TopicCreateFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicCreateFragment;->access$400(Lorg/telegram/ui/TopicCreateFragment;)I
@@ -77,7 +77,7 @@
 
     if-nez p1, :cond_1
 
-    .line 431
+    .line 432
     iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment$5;->this$0:Lorg/telegram/ui/TopicCreateFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
@@ -106,13 +106,13 @@
 
     goto :goto_0
 
-    .line 432
+    .line 433
     :cond_0
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    .line 433
+    .line 434
     :goto_0
     invoke-static {p3}, Lorg/telegram/messenger/MediaDataController;->getStickerSetId(Lorg/telegram/tgnet/TLRPC$Document;)J
 
@@ -126,7 +126,7 @@
 
     move p4, p1
 
-    .line 437
+    .line 438
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment$5;->this$0:Lorg/telegram/ui/TopicCreateFragment;
 
@@ -138,20 +138,20 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 421
+    .line 422
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 422
+    .line 423
     iget-boolean p1, p0, Lorg/telegram/ui/TopicCreateFragment$5;->firstLayout:Z
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 423
+    .line 424
     iput-boolean p1, p0, Lorg/telegram/ui/TopicCreateFragment$5;->firstLayout:Z
 
-    .line 424
+    .line 425
     iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment$5;->this$0:Lorg/telegram/ui/TopicCreateFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/TopicCreateFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;

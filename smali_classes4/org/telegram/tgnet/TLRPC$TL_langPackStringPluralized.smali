@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 8742
+    .line 9165
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$LangPackString;-><init>()V
 
     return-void
@@ -28,35 +28,35 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 8747
+    .line 9170
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
-    .line 8748
+    .line 9171
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->key:Ljava/lang/String;
 
-    .line 8749
+    .line 9172
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 8750
+    .line 9173
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->zero_value:Ljava/lang/String;
 
-    .line 8752
+    .line 9175
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
@@ -64,14 +64,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 8753
+    .line 9176
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->one_value:Ljava/lang/String;
 
-    .line 8755
+    .line 9178
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
@@ -79,14 +79,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 8756
+    .line 9179
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->two_value:Ljava/lang/String;
 
-    .line 8758
+    .line 9181
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
@@ -94,14 +94,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 8759
+    .line 9182
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->few_value:Ljava/lang/String;
 
-    .line 8761
+    .line 9184
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
@@ -109,14 +109,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 8762
+    .line 9185
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->many_value:Ljava/lang/String;
 
-    .line 8764
+    .line 9187
     :cond_4
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
@@ -130,34 +130,34 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 8768
+    .line 9191
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_langPackStringPluralized;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 8769
+    .line 9192
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 8770
+    .line 9193
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->key:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8771
+    .line 9194
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 8772
+    .line 9195
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->zero_value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8774
+    .line 9197
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
@@ -165,12 +165,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 8775
+    .line 9198
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->one_value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8777
+    .line 9200
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
@@ -178,12 +178,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 8778
+    .line 9201
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->two_value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8780
+    .line 9203
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
@@ -191,12 +191,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 8781
+    .line 9204
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->few_value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8783
+    .line 9206
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->flags:I
 
@@ -204,12 +204,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 8784
+    .line 9207
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->many_value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8786
+    .line 9209
     :cond_4
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$LangPackString;->other_value:Ljava/lang/String;
 

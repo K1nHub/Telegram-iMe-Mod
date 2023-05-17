@@ -92,7 +92,7 @@ public class ThemeDescription {
     private HashMap<String, Field> cachedFields;
     private int changeFlags;
     private int currentColor;
-    private String currentKey;
+    private int currentKey;
     private ThemeDescriptionDelegate delegate;
     private Drawable[] drawablesToUpdate;
     private Class[] listClasses;
@@ -121,10 +121,10 @@ public class ThemeDescription {
         void onAnimationProgress(float f);
     }
 
-    public ThemeDescription(View view, int i, Class[] clsArr, Paint[] paintArr, Drawable[] drawableArr, ThemeDescriptionDelegate themeDescriptionDelegate, String str, Object obj) {
+    public ThemeDescription(View view, int i, Class[] clsArr, Paint[] paintArr, Drawable[] drawableArr, ThemeDescriptionDelegate themeDescriptionDelegate, int i2, Object obj) {
         this.alphaOverride = -1;
         this.previousIsDefault = new boolean[1];
-        this.currentKey = str;
+        this.currentKey = i2;
         this.paintToUpdate = paintArr;
         this.drawablesToUpdate = drawableArr;
         this.viewToInvalidate = view;
@@ -136,10 +136,10 @@ public class ThemeDescription {
         }
     }
 
-    public ThemeDescription(View view, int i, Class[] clsArr, Paint paint, Drawable[] drawableArr, ThemeDescriptionDelegate themeDescriptionDelegate, String str) {
+    public ThemeDescription(View view, int i, Class[] clsArr, Paint paint, Drawable[] drawableArr, ThemeDescriptionDelegate themeDescriptionDelegate, int i2) {
         this.alphaOverride = -1;
         this.previousIsDefault = new boolean[1];
-        this.currentKey = str;
+        this.currentKey = i2;
         if (paint != null) {
             this.paintToUpdate = new Paint[]{paint};
         }
@@ -153,10 +153,10 @@ public class ThemeDescription {
         }
     }
 
-    public ThemeDescription(View view, int i, Class[] clsArr, RLottieDrawable[] rLottieDrawableArr, String str, String str2) {
+    public ThemeDescription(View view, int i, Class[] clsArr, RLottieDrawable[] rLottieDrawableArr, String str, int i2) {
         this.alphaOverride = -1;
         this.previousIsDefault = new boolean[1];
-        this.currentKey = str2;
+        this.currentKey = i2;
         this.lottieLayerName = str;
         this.drawablesToUpdate = rLottieDrawableArr;
         this.viewToInvalidate = view;
@@ -167,14 +167,14 @@ public class ThemeDescription {
         }
     }
 
-    public ThemeDescription(View view, int i, Class[] clsArr, String[] strArr, Paint[] paintArr, Drawable[] drawableArr, ThemeDescriptionDelegate themeDescriptionDelegate, String str) {
-        this(view, i, clsArr, strArr, paintArr, drawableArr, -1, themeDescriptionDelegate, str);
+    public ThemeDescription(View view, int i, Class[] clsArr, String[] strArr, Paint[] paintArr, Drawable[] drawableArr, ThemeDescriptionDelegate themeDescriptionDelegate, int i2) {
+        this(view, i, clsArr, strArr, paintArr, drawableArr, -1, themeDescriptionDelegate, i2);
     }
 
-    public ThemeDescription(View view, int i, Class[] clsArr, String[] strArr, Paint[] paintArr, Drawable[] drawableArr, int i2, ThemeDescriptionDelegate themeDescriptionDelegate, String str) {
+    public ThemeDescription(View view, int i, Class[] clsArr, String[] strArr, Paint[] paintArr, Drawable[] drawableArr, int i2, ThemeDescriptionDelegate themeDescriptionDelegate, int i3) {
         this.alphaOverride = -1;
         this.previousIsDefault = new boolean[1];
-        this.currentKey = str;
+        this.currentKey = i3;
         this.paintToUpdate = paintArr;
         this.drawablesToUpdate = drawableArr;
         this.viewToInvalidate = view;
@@ -191,10 +191,10 @@ public class ThemeDescription {
         }
     }
 
-    public ThemeDescription(View view, int i, Class[] clsArr, String[] strArr, String str, String str2) {
+    public ThemeDescription(View view, int i, Class[] clsArr, String[] strArr, String str, int i2) {
         this.alphaOverride = -1;
         this.previousIsDefault = new boolean[1];
-        this.currentKey = str2;
+        this.currentKey = i2;
         this.lottieLayerName = str;
         this.viewToInvalidate = view;
         this.changeFlags = i;
@@ -218,14 +218,12 @@ public class ThemeDescription {
         setColor(i, z, true);
     }
 
-    private boolean checkTag(String str, View view) {
-        if (str != null && view != null) {
-            Object tag = view.getTag();
-            if (tag instanceof String) {
-                return ((String) tag).contains(str);
-            }
+    private boolean checkTag(int i, View view) {
+        if (i < 0 || view == null) {
+            return false;
         }
-        return false;
+        Object tag = view.getTag();
+        return (tag instanceof Integer) && ((Integer) tag).intValue() == i;
     }
 
     public void setColor(int i, boolean z, boolean z2) {
@@ -328,43 +326,43 @@ public class ThemeDescription {
             }
         }
         View view3 = this.viewToInvalidate;
-        if (view3 instanceof C3306ActionBar) {
+        if (view3 instanceof C3356ActionBar) {
             if ((this.changeFlags & FLAG_AB_ITEMSCOLOR) != 0) {
-                ((C3306ActionBar) view3).setItemsColor(i, false);
+                ((C3356ActionBar) view3).setItemsColor(i, false);
             }
             if ((this.changeFlags & FLAG_AB_TITLECOLOR) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setTitleColor(i);
+                ((C3356ActionBar) this.viewToInvalidate).setTitleColor(i);
             }
             if ((this.changeFlags & FLAG_AB_SELECTORCOLOR) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setItemsBackgroundColor(i, false);
+                ((C3356ActionBar) this.viewToInvalidate).setItemsBackgroundColor(i, false);
             }
             if ((this.changeFlags & FLAG_AB_AM_SELECTORCOLOR) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setItemsBackgroundColor(i, true);
+                ((C3356ActionBar) this.viewToInvalidate).setItemsBackgroundColor(i, true);
             }
             if ((this.changeFlags & FLAG_AB_AM_ITEMSCOLOR) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setItemsColor(i, true);
+                ((C3356ActionBar) this.viewToInvalidate).setItemsColor(i, true);
             }
             if ((this.changeFlags & FLAG_AB_SUBTITLECOLOR) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setSubtitleColor(i);
+                ((C3356ActionBar) this.viewToInvalidate).setSubtitleColor(i);
             }
             if ((this.changeFlags & FLAG_AB_AM_BACKGROUND) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setActionModeColor(i);
+                ((C3356ActionBar) this.viewToInvalidate).setActionModeColor(i);
             }
             if ((this.changeFlags & FLAG_AB_AM_TOPBACKGROUND) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setActionModeTopColor(i);
+                ((C3356ActionBar) this.viewToInvalidate).setActionModeTopColor(i);
             }
             if ((this.changeFlags & FLAG_AB_SEARCHPLACEHOLDER) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setSearchTextColor(i, true);
+                ((C3356ActionBar) this.viewToInvalidate).setSearchTextColor(i, true);
             }
             if ((this.changeFlags & FLAG_AB_SEARCH) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setSearchTextColor(i, false);
+                ((C3356ActionBar) this.viewToInvalidate).setSearchTextColor(i, false);
             }
             int i6 = this.changeFlags;
             if ((FLAG_AB_SUBMENUITEM & i6) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setPopupItemsColor(i, (i6 & FLAG_IMAGECOLOR) != 0, false);
+                ((C3356ActionBar) this.viewToInvalidate).setPopupItemsColor(i, (i6 & FLAG_IMAGECOLOR) != 0, false);
             }
             if ((this.changeFlags & FLAG_AB_SUBMENUBACKGROUND) != 0) {
-                ((C3306ActionBar) this.viewToInvalidate).setPopupBackgroundColor(i, false);
+                ((C3356ActionBar) this.viewToInvalidate).setPopupBackgroundColor(i, false);
             }
         }
         View view4 = this.viewToInvalidate;
@@ -459,7 +457,7 @@ public class ThemeDescription {
         if (view13 instanceof RecyclerListView) {
             RecyclerListView recyclerListView = (RecyclerListView) view13;
             if ((this.changeFlags & FLAG_SELECTOR) != 0) {
-                recyclerListView.setListSelectorColor(i);
+                recyclerListView.setListSelectorColor(Integer.valueOf(i));
             }
             if ((this.changeFlags & FLAG_FASTSCROLL) != 0) {
                 recyclerListView.updateFastScrollColors();
@@ -798,7 +796,7 @@ public class ThemeDescription {
                                 }
                             }
                         } catch (Throwable th) {
-                            FileLog.m45e(th);
+                            FileLog.m49e(th);
                             this.notFoundCachedFields.put(str, Boolean.TRUE);
                         }
                     }
@@ -810,7 +808,7 @@ public class ThemeDescription {
         }
     }
 
-    public String getCurrentKey() {
+    public int getCurrentKey() {
         return this.currentKey;
     }
 
@@ -826,8 +824,8 @@ public class ThemeDescription {
 
     public int getSetColor() {
         Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(this.currentKey) : null;
-        return color != null ? color.intValue() : Theme.getColor(this.currentKey);
+        Integer valueOf = resourcesProvider != null ? Integer.valueOf(resourcesProvider.getColor(this.currentKey)) : null;
+        return valueOf != null ? valueOf.intValue() : Theme.getColor(this.currentKey);
     }
 
     public void setAnimatedColor(int i) {
@@ -848,6 +846,6 @@ public class ThemeDescription {
     }
 
     public String getTitle() {
-        return this.currentKey;
+        return ThemeColors.getStringName(this.currentKey);
     }
 }

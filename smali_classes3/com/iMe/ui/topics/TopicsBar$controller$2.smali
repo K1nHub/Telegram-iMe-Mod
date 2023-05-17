@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/topics/TopicsBar;-><init>(Landroid/content/Context;)V
+    value = Lcom/iMe/ui/topics/TopicsBar;-><init>(Landroid/content/Context;Lcom/iMe/ui/topics/TopicsBar$Delegate;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/controller/ForkTopicsController;
     .locals 2
 
-    .line 35
+    .line 39
     sget-object v0, Lcom/iMe/fork/controller/ForkTopicsController;->Companion:Lcom/iMe/fork/controller/ForkTopicsController$Companion;
 
     iget-object v1, p0, Lcom/iMe/ui/topics/TopicsBar$controller$2;->this$0:Lcom/iMe/ui/topics/TopicsBar;
@@ -67,7 +67,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 35
+    .line 39
     invoke-virtual {p0}, Lcom/iMe/ui/topics/TopicsBar$controller$2;->invoke()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0

@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Ketik untuk beralih kepada pemilihan hari</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Beralih kepada mod input teks</string>
     <string name="mtrl_picker_toggle_to_year_selection">Ketik untuk beralih kepada pemilihan tahun</string>
+    <string name="nav_app_bar_navigate_up_description">Navigasi ke atas</string>
+    <string name="nav_app_bar_open_drawer_description">Buka laci navigasi</string>
     <string name="password_toggle_content_description">Tunjukkan kata laluan</string>
     <string name="search_menu_title">Cari</string>
     <string name="status_bar_notification_info_overflow">999+</string>

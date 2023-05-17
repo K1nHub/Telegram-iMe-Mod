@@ -30,16 +30,16 @@ public class FireworksEffect {
         float velocity;
 
         /* renamed from: vx */
-        float f1643vx;
+        float f1650vx;
 
         /* renamed from: vy */
-        float f1644vy;
+        float f1651vy;
 
         /* renamed from: x */
-        float f1645x;
+        float f1652x;
 
         /* renamed from: y */
-        float f1646y;
+        float f1653y;
 
         private Particle() {
         }
@@ -49,17 +49,17 @@ public class FireworksEffect {
                 return;
             }
             FireworksEffect.this.particlePaint.setColor(this.color);
-            FireworksEffect.this.particlePaint.setStrokeWidth(AndroidUtilities.m51dp(1.5f) * this.scale);
+            FireworksEffect.this.particlePaint.setStrokeWidth(AndroidUtilities.m55dp(1.5f) * this.scale);
             FireworksEffect.this.particlePaint.setAlpha((int) (this.alpha * 255.0f));
-            canvas.drawPoint(this.f1645x, this.f1646y, FireworksEffect.this.particlePaint);
+            canvas.drawPoint(this.f1652x, this.f1653y, FireworksEffect.this.particlePaint);
         }
     }
 
     public FireworksEffect() {
         Paint paint = new Paint(1);
         this.particlePaint = paint;
-        paint.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
-        this.particlePaint.setColor(Theme.getColor("actionBarDefaultTitle") & (-1644826));
+        paint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
+        this.particlePaint.setColor(Theme.getColor(Theme.key_actionBarDefaultTitle) & (-1644826));
         this.particlePaint.setStrokeCap(Paint.Cap.ROUND);
         this.particlePaint.setStyle(Paint.Style.STROKE);
         for (int i = 0; i < 20; i++) {
@@ -83,15 +83,15 @@ public class FireworksEffect {
                 size--;
             } else {
                 particle.alpha = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(f / f2);
-                float f3 = particle.f1645x;
-                float f4 = particle.f1643vx;
+                float f3 = particle.f1652x;
+                float f4 = particle.f1650vx;
                 float f5 = particle.velocity;
                 float f6 = (float) j;
-                particle.f1645x = f3 + (((f4 * f5) * f6) / 500.0f);
-                float f7 = particle.f1646y;
-                float f8 = particle.f1644vy;
-                particle.f1646y = f7 + (((f5 * f8) * f6) / 500.0f);
-                particle.f1644vy = f8 + (f6 / 100.0f);
+                particle.f1652x = f3 + (((f4 * f5) * f6) / 500.0f);
+                float f7 = particle.f1653y;
+                float f8 = particle.f1651vy;
+                particle.f1653y = f7 + (((f5 * f8) * f6) / 500.0f);
+                particle.f1651vy = f8 + (f6 / 100.0f);
                 particle.currentTime += f6;
             }
             i++;
@@ -110,7 +110,7 @@ public class FireworksEffect {
         if (Utilities.random.nextBoolean() && this.particles.size() + 8 < 150) {
             int i2 = Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0;
             float nextFloat = Utilities.random.nextFloat() * view.getMeasuredWidth();
-            float nextFloat2 = i2 + (Utilities.random.nextFloat() * ((view.getMeasuredHeight() - AndroidUtilities.m50dp(20)) - i2));
+            float nextFloat2 = i2 + (Utilities.random.nextFloat() * ((view.getMeasuredHeight() - AndroidUtilities.m54dp(20)) - i2));
             int nextInt = Utilities.random.nextInt(4);
             int i3 = nextInt != 0 ? nextInt != 1 ? nextInt != 2 ? nextInt != 3 ? -5752 : -15088582 : -207021 : -843755 : -13357350;
             for (int i4 = 0; i4 < 8; i4++) {
@@ -123,10 +123,10 @@ public class FireworksEffect {
                 } else {
                     particle = new Particle();
                 }
-                particle.f1645x = nextFloat;
-                particle.f1646y = nextFloat2;
-                particle.f1643vx = cos * 1.5f;
-                particle.f1644vy = sin;
+                particle.f1652x = nextFloat;
+                particle.f1653y = nextFloat2;
+                particle.f1650vx = cos * 1.5f;
+                particle.f1651vy = sin;
                 particle.color = i3;
                 particle.alpha = 1.0f;
                 particle.currentTime = BitmapDescriptorFactory.HUE_RED;

@@ -57,108 +57,118 @@
 
     const/4 v6, 0x0
 
-    invoke-static {v6, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemeFileValues(Ljava/io/File;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/HashMap;
+    invoke-static {v6, v3, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemeFileValues(Ljava/io/File;Ljava/lang/String;[Ljava/lang/String;)Landroid/util/SparseIntArray;
 
     move-result-object v3
 
     .line 46
-    new-instance v7, Ljava/util/HashMap;
+    invoke-virtual {v3}, Landroid/util/SparseIntArray;->clone()Landroid/util/SparseIntArray;
 
-    invoke-direct {v7, v3}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+    move-result-object v7
 
     .line 47
     iget-object v8, v1, Lorg/telegram/messenger/DocumentObject$ThemeDocument;->accent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    invoke-virtual {v8, v3, v7}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->fillAccentColors(Ljava/util/HashMap;Ljava/util/HashMap;)Z
-
-    const-string v3, "actionBarDefault"
+    invoke-virtual {v8, v3, v7}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->fillAccentColors(Landroid/util/SparseIntArray;Landroid/util/SparseIntArray;)Z
 
     .line 49
-    invoke-static {v7, v3}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Ljava/util/HashMap;Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
+    invoke-static {v7, v3}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Landroid/util/SparseIntArray;I)I
 
     move-result v3
 
-    const-string v8, "actionBarDefaultIcon"
-
     .line 50
-    invoke-static {v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Ljava/util/HashMap;Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
+
+    invoke-static {v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Landroid/util/SparseIntArray;I)I
 
     move-result v8
 
-    const-string v11, "chat_messagePanelBackground"
-
     .line 51
-    invoke-static {v7, v11}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Ljava/util/HashMap;Ljava/lang/String;)I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelBackground:I
+
+    invoke-static {v7, v11}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Landroid/util/SparseIntArray;I)I
 
     move-result v11
 
-    const-string v12, "chat_messagePanelIcons"
-
     .line 52
-    invoke-static {v7, v12}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Ljava/util/HashMap;Ljava/lang/String;)I
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
+
+    invoke-static {v7, v12}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Landroid/util/SparseIntArray;I)I
 
     move-result v12
 
-    const-string v13, "chat_inBubble"
-
     .line 53
-    invoke-static {v7, v13}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Ljava/util/HashMap;Ljava/lang/String;)I
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubble:I
+
+    invoke-static {v7, v13}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Landroid/util/SparseIntArray;I)I
 
     move-result v13
 
-    const-string v14, "chat_outBubble"
-
     .line 55
-    invoke-static {v7, v14}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Ljava/util/HashMap;Ljava/lang/String;)I
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
+
+    invoke-static {v7, v14}, Lorg/telegram/ui/ActionBar/Theme;->getPreviewColor(Landroid/util/SparseIntArray;I)I
 
     move-result v14
 
-    const-string v15, "chat_wallpaper"
-
     .line 56
-    invoke-virtual {v7, v15}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
+
+    invoke-virtual {v7, v15}, Landroid/util/SparseIntArray;->get(I)I
+
+    move-result v15
+
+    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
 
-    check-cast v15, Ljava/lang/Integer;
-
-    const-string v6, "chat_wallpaper_gradient_to"
-
     .line 57
-    invoke-virtual {v7, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
+
+    invoke-virtual {v7, v6}, Landroid/util/SparseIntArray;->get(I)I
+
+    move-result v6
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    check-cast v6, Ljava/lang/Integer;
-
-    const-string v4, "key_chat_wallpaper_gradient_to2"
-
     .line 58
-    invoke-virtual {v7, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
+
+    invoke-virtual {v7, v4}, Landroid/util/SparseIntArray;->get(I)I
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
-    check-cast v4, Ljava/lang/Integer;
-
-    const-string v5, "key_chat_wallpaper_gradient_to3"
-
     .line 59
-    invoke-virtual {v7, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
+
+    invoke-virtual {v7, v5}, Landroid/util/SparseIntArray;->get(I)I
+
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
-    check-cast v5, Ljava/lang/Integer;
-
     move/from16 v18, v13
 
-    const-string v13, "chat_wallpaper_gradient_rotation"
-
     .line 61
-    invoke-virtual {v7, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_rotation:I
+
+    invoke-virtual {v7, v13}, Landroid/util/SparseIntArray;->get(I)I
+
+    move-result v13
+
+    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v13
-
-    check-cast v13, Ljava/lang/Integer;
 
     if-nez v13, :cond_0
 
@@ -294,7 +304,7 @@
     const/4 v11, 0x0
 
     :goto_1
-    invoke-direct {v14, v2, v11, v3, v7}, Lorg/telegram/ui/Components/ThemePreviewDrawable$1;-><init>(IZZLjava/util/HashMap;)V
+    invoke-direct {v14, v2, v11, v3, v7}, Lorg/telegram/ui/Components/ThemePreviewDrawable$1;-><init>(IZZLandroid/util/SparseIntArray;)V
 
     aput-object v14, v8, v12
 

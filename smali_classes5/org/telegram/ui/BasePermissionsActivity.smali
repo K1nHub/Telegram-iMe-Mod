@@ -496,10 +496,10 @@
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "dialogTopBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
     .line 107
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

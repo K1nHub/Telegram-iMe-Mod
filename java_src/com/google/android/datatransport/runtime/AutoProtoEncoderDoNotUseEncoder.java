@@ -34,7 +34,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
     /* loaded from: classes.dex */
     private static final class ProtoEncoderDoNotUseEncoder implements ObjectEncoder<ProtoEncoderDoNotUse> {
         static final ProtoEncoderDoNotUseEncoder INSTANCE = new ProtoEncoderDoNotUseEncoder();
-        private static final FieldDescriptor CLIENTMETRICS_DESCRIPTOR = FieldDescriptor.m714of("clientMetrics");
+        private static final FieldDescriptor CLIENTMETRICS_DESCRIPTOR = FieldDescriptor.m718of("clientMetrics");
 
         private ProtoEncoderDoNotUseEncoder() {
         }

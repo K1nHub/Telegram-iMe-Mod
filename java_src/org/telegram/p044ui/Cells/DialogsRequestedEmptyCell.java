@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -43,7 +43,7 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
         super(context);
         this.currentAccount = UserConfig.selectedAccount;
         setOrientation(1);
-        setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         LinearLayout linearLayout = new LinearLayout(this, context) { // from class: org.telegram.ui.Cells.DialogsRequestedEmptyCell.1
             Paint paint;
             Path path = new Path();
@@ -51,8 +51,8 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
             {
                 Paint paint = new Paint(1);
                 this.paint = paint;
-                paint.setColor(Theme.getColor("windowBackgroundWhite"));
-                this.paint.setShadowLayer(AndroidUtilities.m51dp(1.33f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m51dp(0.33f), 503316480);
+                paint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                this.paint.setShadowLayer(AndroidUtilities.m55dp(1.33f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m55dp(0.33f), 503316480);
             }
 
             @Override // android.widget.LinearLayout, android.view.View
@@ -66,13 +66,13 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
                 super.onMeasure(i, i2);
                 this.path.rewind();
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(6), getMeasuredWidth() - AndroidUtilities.m50dp(12), getMeasuredHeight() - AndroidUtilities.m50dp(12));
-                this.path.addRoundRect(rectF, AndroidUtilities.m50dp(10), AndroidUtilities.m50dp(10), Path.Direction.CW);
+                rectF.set(AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(6), getMeasuredWidth() - AndroidUtilities.m54dp(12), getMeasuredHeight() - AndroidUtilities.m54dp(12));
+                this.path.addRoundRect(rectF, AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10), Path.Direction.CW);
             }
         };
         linearLayout.setWillNotDraw(false);
         linearLayout.setOrientation(1);
-        linearLayout.setPadding(AndroidUtilities.m50dp(32), AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(32), AndroidUtilities.m50dp(32));
+        linearLayout.setPadding(AndroidUtilities.m54dp(32), AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(32), AndroidUtilities.m54dp(32));
         BackupImageView backupImageView = new BackupImageView(context);
         this.stickerView = backupImageView;
         backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsRequestedEmptyCell$$ExternalSyntheticLambda1
@@ -87,23 +87,23 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
         this.titleView = textView;
         textView.setGravity(17);
         this.titleView.setTextSize(1, 18.0f);
-        this.titleView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.titleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.titleView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         linearLayout.addView(this.titleView, LayoutHelper.createLinear(-1, -2, 49, 0, 6, 0, 0));
         TextView textView2 = new TextView(context);
         this.subtitleView = textView2;
         textView2.setGravity(17);
         this.subtitleView.setTextSize(1, 14.0f);
-        this.subtitleView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+        this.subtitleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
         linearLayout.addView(this.subtitleView, LayoutHelper.createLinear(-1, -2, 49, 0, 7, 0, 0));
         TextView textView3 = new TextView(context);
         this.buttonView = textView3;
         textView3.setGravity(17);
-        this.buttonView.setBackground(Theme.AdaptiveRipple.filledRect("featuredStickers_addButton", 8.0f));
+        this.buttonView.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 8.0f));
         this.buttonView.setTextSize(1, 14.0f);
-        this.buttonView.setTextColor(Theme.getColor("featuredStickers_buttonText"));
+        this.buttonView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         this.buttonView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.buttonView.setPadding(AndroidUtilities.m50dp(14), AndroidUtilities.m50dp(14), AndroidUtilities.m50dp(14), AndroidUtilities.m50dp(14));
+        this.buttonView.setPadding(AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(14));
         this.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsRequestedEmptyCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -127,18 +127,18 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
 
     public void set(TLRPC$RequestPeerType tLRPC$RequestPeerType) {
         if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeBroadcast) {
-            this.titleView.setText(LocaleController.getString("NoSuchChannels", C3242R.string.NoSuchChannels));
-            this.subtitleView.setText(LocaleController.getString("NoSuchChannelsInfo", C3242R.string.NoSuchChannelsInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchChannels", C3290R.string.NoSuchChannels));
+            this.subtitleView.setText(LocaleController.getString("NoSuchChannelsInfo", C3290R.string.NoSuchChannelsInfo));
             this.buttonView.setVisibility(0);
-            this.buttonView.setText(LocaleController.getString("CreateChannelForThis", C3242R.string.CreateChannelForThis));
+            this.buttonView.setText(LocaleController.getString("CreateChannelForThis", C3290R.string.CreateChannelForThis));
         } else if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeChat) {
-            this.titleView.setText(LocaleController.getString("NoSuchGroups", C3242R.string.NoSuchGroups));
-            this.subtitleView.setText(LocaleController.getString("NoSuchGroupsInfo", C3242R.string.NoSuchGroupsInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchGroups", C3290R.string.NoSuchGroups));
+            this.subtitleView.setText(LocaleController.getString("NoSuchGroupsInfo", C3290R.string.NoSuchGroupsInfo));
             this.buttonView.setVisibility(0);
-            this.buttonView.setText(LocaleController.getString("CreateGroupForThis", C3242R.string.CreateGroupForThis));
+            this.buttonView.setText(LocaleController.getString("CreateGroupForThis", C3290R.string.CreateGroupForThis));
         } else {
-            this.titleView.setText(LocaleController.getString("NoSuchUsers", C3242R.string.NoSuchUsers));
-            this.subtitleView.setText(LocaleController.getString("NoSuchUsersInfo", C3242R.string.NoSuchUsersInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchUsers", C3290R.string.NoSuchUsers));
+            this.subtitleView.setText(LocaleController.getString("NoSuchUsersInfo", C3290R.string.NoSuchUsersInfo));
             this.buttonView.setVisibility(8);
         }
     }
@@ -152,7 +152,7 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
     @Override // android.view.ViewGroup, android.view.View
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.diceStickersDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.diceStickersDidLoad);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -170,7 +170,7 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
         TLRPC$TL_messages_stickerSet tLRPC$TL_messages_stickerSet = stickerSetByName;
         TLRPC$Document tLRPC$Document = (tLRPC$TL_messages_stickerSet == null || 1 >= tLRPC$TL_messages_stickerSet.documents.size()) ? null : tLRPC$TL_messages_stickerSet.documents.get(1);
         if (tLRPC$Document != null) {
-            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$Document.thumbs, "windowBackgroundGray", 0.2f);
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$Document.thumbs, Theme.key_windowBackgroundGray, 0.2f);
             if (svgThumb != null) {
                 svgThumb.overrideWidthAndHeight(512, 512);
             }

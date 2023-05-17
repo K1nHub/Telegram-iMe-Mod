@@ -331,7 +331,7 @@ public final class MediaCodecUtil {
         try {
             getDecoderInfos(str, z, z2);
         } catch (DecoderQueryException e) {
-            Log.m795e(TAG, "Codec warming failed", e);
+            Log.m799e(TAG, "Codec warming failed", e);
         }
     }
 
@@ -372,7 +372,7 @@ public final class MediaCodecUtil {
             if (z && decoderInfosInternal.isEmpty() && 21 <= i && i <= 23) {
                 decoderInfosInternal = getDecoderInfosInternal(codecKey, new MediaCodecListCompatV16());
                 if (!decoderInfosInternal.isEmpty()) {
-                    Log.m792w(TAG, "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + decoderInfosInternal.get(0).name);
+                    Log.m796w(TAG, "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + decoderInfosInternal.get(0).name);
                 }
             }
             applyWorkarounds(str, decoderInfosInternal);
@@ -758,24 +758,24 @@ public final class MediaCodecUtil {
 
     private static Pair<Integer, Integer> getDolbyVisionProfileAndLevel(String str, String[] strArr) {
         if (strArr.length < 3) {
-            Log.m792w(TAG, "Ignoring malformed Dolby Vision codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed Dolby Vision codec string: " + str);
             return null;
         }
         Matcher matcher = PROFILE_PATTERN.matcher(strArr[1]);
         if (!matcher.matches()) {
-            Log.m792w(TAG, "Ignoring malformed Dolby Vision codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed Dolby Vision codec string: " + str);
             return null;
         }
         String group = matcher.group(1);
         Integer dolbyVisionStringToProfile = dolbyVisionStringToProfile(group);
         if (dolbyVisionStringToProfile == null) {
-            Log.m792w(TAG, "Unknown Dolby Vision profile string: " + group);
+            Log.m796w(TAG, "Unknown Dolby Vision profile string: " + group);
             return null;
         }
         String str2 = strArr[2];
         Integer dolbyVisionStringToLevel = dolbyVisionStringToLevel(str2);
         if (dolbyVisionStringToLevel == null) {
-            Log.m792w(TAG, "Unknown Dolby Vision level string: " + str2);
+            Log.m796w(TAG, "Unknown Dolby Vision level string: " + str2);
             return null;
         }
         return new Pair<>(dolbyVisionStringToProfile, dolbyVisionStringToLevel);
@@ -783,19 +783,19 @@ public final class MediaCodecUtil {
 
     private static Pair<Integer, Integer> getHevcProfileAndLevel(String str, String[] strArr) {
         if (strArr.length < 4) {
-            Log.m792w(TAG, "Ignoring malformed HEVC codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed HEVC codec string: " + str);
             return null;
         }
         int i = 1;
         Matcher matcher = PROFILE_PATTERN.matcher(strArr[1]);
         if (!matcher.matches()) {
-            Log.m792w(TAG, "Ignoring malformed HEVC codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed HEVC codec string: " + str);
             return null;
         }
         String group = matcher.group(1);
         if (!IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE.equals(group)) {
             if (!"2".equals(group)) {
-                Log.m792w(TAG, "Unknown HEVC profile string: " + group);
+                Log.m796w(TAG, "Unknown HEVC profile string: " + group);
                 return null;
             }
             i = 2;
@@ -803,7 +803,7 @@ public final class MediaCodecUtil {
         String str2 = strArr[3];
         Integer hevcCodecStringToProfileLevel = hevcCodecStringToProfileLevel(str2);
         if (hevcCodecStringToProfileLevel == null) {
-            Log.m792w(TAG, "Unknown HEVC level string: " + str2);
+            Log.m796w(TAG, "Unknown HEVC level string: " + str2);
             return null;
         }
         return new Pair<>(Integer.valueOf(i), hevcCodecStringToProfileLevel);
@@ -813,7 +813,7 @@ public final class MediaCodecUtil {
         int parseInt;
         int i;
         if (strArr.length < 2) {
-            Log.m792w(TAG, "Ignoring malformed AVC codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed AVC codec string: " + str);
             return null;
         }
         try {
@@ -825,29 +825,29 @@ public final class MediaCodecUtil {
                 parseInt = Integer.parseInt(strArr[2]);
                 i = parseInt2;
             } else {
-                Log.m792w(TAG, "Ignoring malformed AVC codec string: " + str);
+                Log.m796w(TAG, "Ignoring malformed AVC codec string: " + str);
                 return null;
             }
             int avcProfileNumberToConst = avcProfileNumberToConst(i);
             if (avcProfileNumberToConst == -1) {
-                Log.m792w(TAG, "Unknown AVC profile: " + i);
+                Log.m796w(TAG, "Unknown AVC profile: " + i);
                 return null;
             }
             int avcLevelNumberToConst = avcLevelNumberToConst(parseInt);
             if (avcLevelNumberToConst == -1) {
-                Log.m792w(TAG, "Unknown AVC level: " + parseInt);
+                Log.m796w(TAG, "Unknown AVC level: " + parseInt);
                 return null;
             }
             return new Pair<>(Integer.valueOf(avcProfileNumberToConst), Integer.valueOf(avcLevelNumberToConst));
         } catch (NumberFormatException unused) {
-            Log.m792w(TAG, "Ignoring malformed AVC codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed AVC codec string: " + str);
             return null;
         }
     }
 
     private static Pair<Integer, Integer> getVp9ProfileAndLevel(String str, String[] strArr) {
         if (strArr.length < 3) {
-            Log.m792w(TAG, "Ignoring malformed VP9 codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed VP9 codec string: " + str);
             return null;
         }
         try {
@@ -855,17 +855,17 @@ public final class MediaCodecUtil {
             int parseInt2 = Integer.parseInt(strArr[2]);
             int vp9ProfileNumberToConst = vp9ProfileNumberToConst(parseInt);
             if (vp9ProfileNumberToConst == -1) {
-                Log.m792w(TAG, "Unknown VP9 profile: " + parseInt);
+                Log.m796w(TAG, "Unknown VP9 profile: " + parseInt);
                 return null;
             }
             int vp9LevelNumberToConst = vp9LevelNumberToConst(parseInt2);
             if (vp9LevelNumberToConst == -1) {
-                Log.m792w(TAG, "Unknown VP9 level: " + parseInt2);
+                Log.m796w(TAG, "Unknown VP9 level: " + parseInt2);
                 return null;
             }
             return new Pair<>(Integer.valueOf(vp9ProfileNumberToConst), Integer.valueOf(vp9LevelNumberToConst));
         } catch (NumberFormatException unused) {
-            Log.m792w(TAG, "Ignoring malformed VP9 codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed VP9 codec string: " + str);
             return null;
         }
     }
@@ -873,7 +873,7 @@ public final class MediaCodecUtil {
     private static Pair<Integer, Integer> getAv1ProfileAndLevel(String str, String[] strArr, ColorInfo colorInfo) {
         int i;
         if (strArr.length < 4) {
-            Log.m792w(TAG, "Ignoring malformed AV1 codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed AV1 codec string: " + str);
             return null;
         }
         int i2 = 1;
@@ -882,10 +882,10 @@ public final class MediaCodecUtil {
             int parseInt2 = Integer.parseInt(strArr[2].substring(0, 2));
             int parseInt3 = Integer.parseInt(strArr[3]);
             if (parseInt != 0) {
-                Log.m792w(TAG, "Unknown AV1 profile: " + parseInt);
+                Log.m796w(TAG, "Unknown AV1 profile: " + parseInt);
                 return null;
             } else if (parseInt3 != 8 && parseInt3 != 10) {
-                Log.m792w(TAG, "Unknown AV1 bit depth: " + parseInt3);
+                Log.m796w(TAG, "Unknown AV1 bit depth: " + parseInt3);
                 return null;
             } else {
                 if (parseInt3 != 8) {
@@ -893,13 +893,13 @@ public final class MediaCodecUtil {
                 }
                 int av1LevelNumberToConst = av1LevelNumberToConst(parseInt2);
                 if (av1LevelNumberToConst == -1) {
-                    Log.m792w(TAG, "Unknown AV1 level: " + parseInt2);
+                    Log.m796w(TAG, "Unknown AV1 level: " + parseInt2);
                     return null;
                 }
                 return new Pair<>(Integer.valueOf(i2), Integer.valueOf(av1LevelNumberToConst));
             }
         } catch (NumberFormatException unused) {
-            Log.m792w(TAG, "Ignoring malformed AV1 codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed AV1 codec string: " + str);
             return null;
         }
     }
@@ -907,7 +907,7 @@ public final class MediaCodecUtil {
     private static Pair<Integer, Integer> getAacCodecProfileAndLevel(String str, String[] strArr) {
         int mp4aAudioObjectTypeToProfile;
         if (strArr.length != 3) {
-            Log.m792w(TAG, "Ignoring malformed MP4A codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed MP4A codec string: " + str);
             return null;
         }
         try {
@@ -915,7 +915,7 @@ public final class MediaCodecUtil {
                 return new Pair<>(Integer.valueOf(mp4aAudioObjectTypeToProfile), 0);
             }
         } catch (NumberFormatException unused) {
-            Log.m792w(TAG, "Ignoring malformed MP4A codec string: " + str);
+            Log.m796w(TAG, "Ignoring malformed MP4A codec string: " + str);
         }
         return null;
     }

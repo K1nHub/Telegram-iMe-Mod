@@ -991,7 +991,7 @@
 .end method
 
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 31
+    .locals 32
 
     move-object/from16 v0, p0
 
@@ -1215,9 +1215,9 @@
     .line 374
     iget-object v1, v0, Lorg/telegram/ui/Components/AvatarsDrawable;->paint:Landroid/graphics/Paint;
 
-    const-string v2, "inappPlayerBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_inappPlayerBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1233,15 +1233,15 @@
 
     if-eqz v1, :cond_d
 
-    const-string v1, "returnToCallMutedBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_returnToCallMutedBackground:I
 
     goto :goto_b
 
     :cond_d
-    const-string v1, "returnToCallBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_returnToCallBackground:I
 
     :goto_b
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1797,11 +1797,9 @@
 
     const/16 v27, 0x15
 
-    const-string v28, "voipgroup_speakingText"
+    const/16 v28, 0x11
 
-    const/16 v29, 0x11
-
-    const/high16 v30, 0x42990000    # 76.5f
+    const/high16 v29, 0x42990000    # 76.5f
 
     if-eq v10, v9, :cond_31
 
@@ -1918,7 +1916,7 @@
 
     move-result v10
 
-    invoke-static/range {v29 .. v29}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
@@ -1942,7 +1940,7 @@
 
     new-instance v10, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;
 
-    invoke-static/range {v29 .. v29}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
@@ -1969,11 +1967,13 @@
 
     move-result-object v2
 
-    invoke-static/range {v28 .. v28}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
-    mul-float v11, v5, v30
+    mul-float v11, v5, v29
 
     float-to-int v11, v11
 
@@ -1993,13 +1993,13 @@
 
     move-result-object v2
 
-    const-string v10, "voipgroup_listeningText"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
-    mul-float v11, v5, v30
+    mul-float v11, v5, v29
 
     float-to-int v11, v11
 
@@ -2024,9 +2024,9 @@
 
     sub-long v27, v10, v27
 
-    const-wide/16 v29, 0x64
+    const-wide/16 v30, 0x64
 
-    cmp-long v2, v27, v29
+    cmp-long v2, v27, v30
 
     if-lez v2, :cond_30
 
@@ -2308,7 +2308,7 @@
 
     new-instance v9, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;
 
-    invoke-static/range {v29 .. v29}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
@@ -2336,11 +2336,13 @@
 
     move-result-object v2
 
-    invoke-static/range {v28 .. v28}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
-    mul-float v10, v5, v30
+    mul-float v10, v5, v29
 
     float-to-int v10, v10
 

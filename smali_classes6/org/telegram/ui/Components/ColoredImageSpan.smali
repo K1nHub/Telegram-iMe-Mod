@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field colorKey:Ljava/lang/String;
+.field colorKey:I
 
 .field drawable:Landroid/graphics/drawable/Drawable;
 
@@ -115,9 +115,9 @@
 
     .line 70
     :cond_0
-    iget-object p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->colorKey:Ljava/lang/String;
+    iget p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->colorKey:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -299,13 +299,13 @@
     return p1
 .end method
 
-.method public setColorKey(Ljava/lang/String;)V
+.method public setColorKey(I)V
     .locals 0
 
     .line 97
-    iput-object p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->colorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->colorKey:I
 
-    if-nez p1, :cond_0
+    if-gez p1, :cond_0
 
     const/4 p1, 0x1
 

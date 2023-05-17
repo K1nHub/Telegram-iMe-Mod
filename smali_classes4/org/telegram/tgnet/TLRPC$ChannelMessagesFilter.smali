@@ -7,10 +7,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 38266
+    .line 39115
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 38269
+    .line 39118
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V

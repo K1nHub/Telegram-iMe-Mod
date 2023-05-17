@@ -92,7 +92,7 @@
     .line 56
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
-    const-string v1, "stageQueue"
+    const-string/jumbo v1, "stageQueue"
 
     invoke-direct {v0, v1}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;)V
 
@@ -137,7 +137,7 @@
     .line 61
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
-    const-string v1, "themeQueue"
+    const-string/jumbo v1, "themeQueue"
 
     invoke-direct {v0, v1}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;)V
 

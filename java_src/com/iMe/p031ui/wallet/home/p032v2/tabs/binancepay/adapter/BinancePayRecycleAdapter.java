@@ -24,10 +24,10 @@ import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: BinancePayRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.adapter.BinancePayRecycleAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinancePayRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     private final BannerProvider bannerProvider;
     private final BinanceAccountProvider binanceAccountProvider;
@@ -53,7 +53,7 @@ public final class BinancePayRecycleAdapter extends BaseNodeAdapter<BaseNode> {
         Intrinsics.checkNotNullParameter(globalStateProvider, "globalStateProvider");
         this.bannerProvider = bannerProvider;
         this.binanceAccountProvider = binanceAccountProvider;
-        addChildClickViewIds(C3242R.C3245id.image_wallet_crypto_eye, C3242R.C3245id.image_wallet_crypto_tokens_settings, C3242R.C3245id.image_wallet_order_tokens, C3242R.C3245id.image_copy);
+        addChildClickViewIds(C3290R.C3293id.image_wallet_crypto_eye, C3290R.C3293id.image_wallet_crypto_tokens_settings, C3290R.C3293id.image_wallet_order_tokens, C3290R.C3293id.image_copy);
         addItemProvider(BaseQuickAdapterExtKt.asItem(bannerProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(binanceAccountProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(cardButtonProvider));
@@ -109,6 +109,6 @@ public final class BinancePayRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     protected int getItemType(List<? extends BaseNode> data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         BaseNode baseNode = data.get(i);
-        return baseNode instanceof BannerItem ? IdFabric$ViewTypes.BANNERS : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER : baseNode instanceof BinanceBalanceItem ? IdFabric$ViewTypes.TOKEN_BALANCE : baseNode instanceof TotalBalanceItem ? IdFabric$ViewTypes.TOTAL_BALANCE : baseNode instanceof CardButtonItem ? IdFabric$ViewTypes.CARD_BUTTON : baseNode instanceof HeaderItemWithNetworkSwitcher ? IdFabric$ViewTypes.HEADER_WITH_NETWORK_SWITCHER : baseNode instanceof BinanceAccountItem ? IdFabric$ViewTypes.BINANCE_ACCOUNT : baseNode instanceof GlobalStateItem ? IdFabric$ViewTypes.GLOBAL_STATE : IdFabric$ViewTypes.TOKEN_BALANCE;
+        return baseNode instanceof BannerItem ? IdFabric$ViewTypes.BANNERS : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER_CELL : baseNode instanceof BinanceBalanceItem ? IdFabric$ViewTypes.TOKEN_BALANCE : baseNode instanceof TotalBalanceItem ? IdFabric$ViewTypes.TOTAL_BALANCE : baseNode instanceof CardButtonItem ? IdFabric$ViewTypes.CARD_BUTTON : baseNode instanceof HeaderItemWithNetworkSwitcher ? IdFabric$ViewTypes.HEADER_CELL_WITH_NETWORK : baseNode instanceof BinanceAccountItem ? IdFabric$ViewTypes.BINANCE_ACCOUNT : baseNode instanceof GlobalStateItem ? IdFabric$ViewTypes.GLOBAL_STATE : IdFabric$ViewTypes.TOKEN_BALANCE;
     }
 }

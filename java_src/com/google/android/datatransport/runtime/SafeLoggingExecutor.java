@@ -29,7 +29,7 @@ class SafeLoggingExecutor implements Executor {
             try {
                 this.delegate.run();
             } catch (Exception e) {
-                Logging.m803e("Executor", "Background execution failure.", e);
+                Logging.m807e("Executor", "Background execution failure.", e);
             }
         }
     }

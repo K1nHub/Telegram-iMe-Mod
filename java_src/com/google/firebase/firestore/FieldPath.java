@@ -27,7 +27,7 @@ public final class FieldPath {
     }
 
     /* renamed from: of */
-    public static FieldPath m713of(String... strArr) {
+    public static FieldPath m717of(String... strArr) {
         Preconditions.checkArgument(strArr.length > 0, "Invalid field path. Provided path must not be empty.", new Object[0]);
         int i = 0;
         while (i < strArr.length) {
@@ -47,7 +47,7 @@ public final class FieldPath {
         Preconditions.checkNotNull(str, "Provided field path must not be null.");
         Preconditions.checkArgument(!RESERVED.matcher(str).find(), "Use FieldPath.of() for field names containing '~*/[]'.", new Object[0]);
         try {
-            return m713of(str.split("\\.", -1));
+            return m717of(str.split("\\.", -1));
         } catch (IllegalArgumentException unused) {
             throw new IllegalArgumentException("Invalid field path (" + str + "). Paths must not be empty, begin with '.', end with '.', or contain '..'");
         }

@@ -192,7 +192,7 @@ class AsynchronousMediaCodecBufferEnqueuer {
         cryptoInfo2.numBytesOfClearData = copy(cryptoInfo.numBytesOfClearData, cryptoInfo2.numBytesOfClearData);
         cryptoInfo2.numBytesOfEncryptedData = copy(cryptoInfo.numBytesOfEncryptedData, cryptoInfo2.numBytesOfEncryptedData);
         cryptoInfo2.key = (byte[]) Assertions.checkNotNull(copy(cryptoInfo.key, cryptoInfo2.key));
-        cryptoInfo2.iv = (byte[]) Assertions.checkNotNull(copy(cryptoInfo.f104iv, cryptoInfo2.iv));
+        cryptoInfo2.iv = (byte[]) Assertions.checkNotNull(copy(cryptoInfo.f107iv, cryptoInfo2.iv));
         cryptoInfo2.mode = cryptoInfo.mode;
         if (Util.SDK_INT >= 24) {
             cryptoInfo2.setPattern(new MediaCodec.CryptoInfo.Pattern(cryptoInfo.encryptedBlocks, cryptoInfo.clearBlocks));

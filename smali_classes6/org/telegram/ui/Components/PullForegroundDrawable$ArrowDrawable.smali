@@ -26,17 +26,17 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
     .locals 1
 
-    .line 666
+    .line 668
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 662
+    .line 664
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->path:Landroid/graphics/Path;
 
-    .line 663
+    .line 665
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -45,7 +45,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 667
+    .line 669
     invoke-direct {p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->updatePath()V
 
     return-void
@@ -56,17 +56,17 @@
 
     const/16 v0, 0x12
 
-    .line 671
+    .line 673
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 672
+    .line 674
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
-    .line 673
+    .line 675
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->path:Landroid/graphics/Path;
 
     shr-int/lit8 v2, v0, 0x1
@@ -81,7 +81,7 @@
 
     invoke-virtual {v1, v2, v4}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 674
+    .line 676
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->path:Landroid/graphics/Path;
 
     const v4, 0x409e6666    # 4.95f
@@ -98,7 +98,7 @@
 
     invoke-virtual {v1, v5, v7}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 675
+    .line 677
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->path:Landroid/graphics/Path;
 
     int-to-float v0, v0
@@ -115,7 +115,7 @@
 
     invoke-virtual {v1, v0, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 676
+    .line 678
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->path:Landroid/graphics/Path;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -124,21 +124,21 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 678
+    .line 680
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->paint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 679
+    .line 681
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->paint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    .line 680
+    .line 682
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->paint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -149,7 +149,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 681
+    .line 683
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->lastDensity:F
@@ -162,7 +162,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 700
+    .line 702
     iget v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->lastDensity:F
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -171,14 +171,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 701
+    .line 703
     invoke-direct {p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->updatePath()V
 
-    .line 703
+    .line 705
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 704
+    .line 706
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -197,7 +197,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 705
+    .line 707
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->paint:Landroid/graphics/Paint;
@@ -206,14 +206,14 @@
 
     const/16 v0, 0x12
 
-    .line 706
+    .line 708
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     const v1, 0x40f1eb85    # 7.56f
 
-    .line 707
+    .line 709
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v3
@@ -244,7 +244,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 708
+    .line 710
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -255,7 +255,7 @@
 
     const/16 v0, 0x12
 
-    .line 690
+    .line 692
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -266,7 +266,7 @@
 .method public getIntrinsicWidth()I
     .locals 1
 
-    .line 695
+    .line 697
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->getIntrinsicHeight()I
 
     move-result v0
@@ -291,7 +291,7 @@
 .method public setColor(I)V
     .locals 1
 
-    .line 685
+    .line 687
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V

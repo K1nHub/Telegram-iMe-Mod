@@ -11,6 +11,10 @@ import kotlinx.coroutines.intrinsics.UndispatchedKt;
 /* compiled from: CoroutineScope.kt */
 /* loaded from: classes4.dex */
 public final class CoroutineScopeKt {
+    public static final CoroutineScope plus(CoroutineScope coroutineScope, CoroutineContext coroutineContext) {
+        return new ContextScope(coroutineScope.getCoroutineContext().plus(coroutineContext));
+    }
+
     public static final CoroutineScope MainScope() {
         return new ContextScope(SupervisorKt.SupervisorJob$default(null, 1, null).plus(Dispatchers.getMain()));
     }

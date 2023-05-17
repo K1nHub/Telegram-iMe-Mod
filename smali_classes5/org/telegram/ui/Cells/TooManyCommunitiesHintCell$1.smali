@@ -58,9 +58,9 @@
     .line 64
     iget-object v0, p0, Lorg/telegram/ui/Cells/TooManyCommunitiesHintCell$1;->val$paint:Landroid/graphics/Paint;
 
-    const-string v1, "windowBackgroundWhiteRedText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

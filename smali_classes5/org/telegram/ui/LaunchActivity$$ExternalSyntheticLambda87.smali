@@ -2,38 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/ContactsLoadingObserver$Callback;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
-
-.field public final synthetic f$1:Landroid/content/Intent;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$0:Lorg/telegram/ui/LaunchActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$1:Landroid/content/Intent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onResult(Z)V
-    .locals 2
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$0:Lorg/telegram/ui/LaunchActivity;
+    check-cast p1, Ljava/lang/Void;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$1:Landroid/content/Intent;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$9GstUeHuEV3u87g8qUr7H1AB_Rc(Ljava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$WpHcDOKiaMebCj8UWda-NiFP050(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;Z)V
+    move-result-object p1
 
-    return-void
+    return-object p1
 .end method

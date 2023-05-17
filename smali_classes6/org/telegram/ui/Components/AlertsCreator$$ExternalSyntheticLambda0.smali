@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda0;->f$1:I
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$VBz2xLLf1srmvIfH9-jB-uvr-7c(IILandroid/content/DialogInterface;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$YMyV_7mdQ4_s6_xB0cWb6fA4RsE(IILandroid/content/DialogInterface;)V
 
     return-void
 .end method

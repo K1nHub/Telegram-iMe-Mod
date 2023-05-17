@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletReceiveBinancePayPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$loadAvailableToPayTokens$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletReceiveBinancePayPresenter$loadAvailableToPayTokens$1 extends Lambda implements Function0<Unit> {
     public static final WalletReceiveBinancePayPresenter$loadAvailableToPayTokens$1 INSTANCE = new WalletReceiveBinancePayPresenter$loadAvailableToPayTokens$1();
 

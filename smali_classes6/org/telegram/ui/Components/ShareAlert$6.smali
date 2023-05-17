@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/ShareAlert$6;
-.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
+.super Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;
 .source "ShareAlert.java"
 
 
@@ -22,35 +22,36 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 990
+    .line 1144
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$6;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
+    invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+.method public getSpanSize(I)I
     .locals 0
 
-    if-eqz p3, :cond_0
+    if-nez p1, :cond_0
 
-    .line 994
+    .line 1148
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$6;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$6600(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$8800(Lorg/telegram/ui/Components/ShareAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
 
-    .line 995
-    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$6;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+    move-result-object p1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$2700(Lorg/telegram/ui/Components/ShareAlert;)I
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/GridLayoutManager;->getSpanCount()I
 
-    move-result p2
+    move-result p1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->access$2602(Lorg/telegram/ui/Components/ShareAlert;I)I
+    return p1
 
     :cond_0
-    return-void
+    const/4 p1, 0x1
+
+    return p1
 .end method

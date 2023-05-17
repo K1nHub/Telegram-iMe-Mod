@@ -152,7 +152,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$ReactionCount;Z)V
-    .locals 5
+    .locals 3
 
     .line 83
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -196,161 +196,161 @@
     .line 85
     iput-object p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->message:Lorg/telegram/messenger/MessageObject;
 
-    const/4 p4, 0x0
-
     if-nez p5, :cond_0
 
-    move-object v1, p4
+    const/4 p4, 0x0
 
     goto :goto_0
 
     .line 86
     :cond_0
-    iget-object v1, p5, Lorg/telegram/tgnet/TLRPC$ReactionCount;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$ReactionCount;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     :goto_0
-    iput-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->filter:Lorg/telegram/tgnet/TLRPC$Reaction;
+    iput-object p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->filter:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     .line 87
     iput-object p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-nez p5, :cond_1
 
-    const/4 p5, 0x6
+    const/4 p4, 0x6
 
     goto :goto_1
 
     .line 88
     :cond_1
-    iget p5, p5, Lorg/telegram/tgnet/TLRPC$ReactionCount;->count:I
+    iget p4, p5, Lorg/telegram/tgnet/TLRPC$ReactionCount;->count:I
 
     :goto_1
-    iput p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->predictiveCount:I
+    iput p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->predictiveCount:I
 
     .line 89
-    new-instance p5, Lorg/telegram/ui/Components/ReactedUsersListView$1;
+    new-instance p4, Lorg/telegram/ui/Components/ReactedUsersListView$1;
 
-    invoke-direct {p5, p0, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$1;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p4, p0, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$1;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iput-object p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     .line 99
-    new-instance p5, Landroidx/recyclerview/widget/LinearLayoutManager;
+    new-instance p4, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-direct {p5, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
+    invoke-direct {p4, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
     .line 100
-    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v1, p5}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+    invoke-virtual {p5, p4}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     if-eqz p6, :cond_2
 
     .line 102
-    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const/16 v2, 0x8
+    const/16 v1, 0x8
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v1, v3, v3, v3, v2}, Landroid/view/ViewGroup;->setPadding(IIII)V
+    invoke-virtual {p5, v2, v2, v2, v1}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
     .line 103
-    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v1, v3}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
+    invoke-virtual {p5, v2}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
     .line 105
     :cond_2
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget p5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x1d
+    const/16 v1, 0x1d
 
-    const-string v3, "listSelectorSDK21"
-
-    if-lt v1, v2, :cond_3
+    if-lt p5, v1, :cond_3
 
     .line 106
-    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v2, Landroid/graphics/drawable/ColorDrawable;
+    new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    move-result v4
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-direct {v2, v4}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setVerticalScrollbarThumbDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v1, v2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    invoke-virtual {p5, v1}, Landroid/view/ViewGroup;->setVerticalScrollbarThumbDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 108
     :cond_3
-    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v2, Lorg/telegram/ui/Components/ReactedUsersListView$2;
+    new-instance v1, Lorg/telegram/ui/Components/ReactedUsersListView$2;
 
-    invoke-direct {v2, p0, p3, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$2;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v1, p0, p3, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$2;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+    iput-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+    invoke-virtual {p5, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     .line 161
-    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v2, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda6;
+    new-instance v1, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda6;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;)V
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
+    invoke-virtual {p5, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
     .line 173
-    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v2, Lorg/telegram/ui/Components/ReactedUsersListView$3;
+    new-instance v1, Lorg/telegram/ui/Components/ReactedUsersListView$3;
 
-    invoke-direct {v2, p0, p5}, Lorg/telegram/ui/Components/ReactedUsersListView$3;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroidx/recyclerview/widget/LinearLayoutManager;)V
+    invoke-direct {v1, p0, p4}, Lorg/telegram/ui/Components/ReactedUsersListView$3;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroidx/recyclerview/widget/LinearLayoutManager;)V
 
-    invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
+    invoke-virtual {p5, v1}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
     .line 181
-    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {p5, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
+    invoke-virtual {p4, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
     .line 182
-    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const/4 v1, 0x0
+    const/4 p5, 0x0
 
-    invoke-virtual {p5, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
+    invoke-virtual {p4, p5}, Landroid/view/ViewGroup;->setAlpha(F)V
 
     .line 183
-    iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const/4 v1, -0x1
+    const/4 p5, -0x1
 
-    invoke-static {v1, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {p5, p5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p0, p5, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p4, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 185
-    new-instance p5, Lorg/telegram/ui/Components/ReactedUsersListView$4;
+    new-instance p4, Lorg/telegram/ui/Components/ReactedUsersListView$4;
 
-    invoke-direct {p5, p0, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$4;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p4, p0, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$4;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
-
-    const-string p1, "actionBarDefaultSubmenuBackground"
+    iput-object p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     .line 191
-    invoke-virtual {p5, p1, v3, p4}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
+
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-virtual {p4, p1, p2, p5}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(III)V
 
     .line 193
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
@@ -367,7 +367,7 @@
     .line 195
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
-    invoke-static {v1, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {p5, p5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 

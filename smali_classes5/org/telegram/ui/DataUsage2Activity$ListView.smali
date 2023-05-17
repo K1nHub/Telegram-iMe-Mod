@@ -224,44 +224,44 @@
     return-object p0
 .end method
 
-.method static synthetic access$1100(Lorg/telegram/ui/DataUsage2Activity$ListView;Ljava/lang/String;)I
+.method static synthetic access$1100(Lorg/telegram/ui/DataUsage2Activity$ListView;I)I
     .locals 0
 
     .line 200
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$1200(Lorg/telegram/ui/DataUsage2Activity$ListView;Ljava/lang/String;)I
+.method static synthetic access$1200(Lorg/telegram/ui/DataUsage2Activity$ListView;I)I
     .locals 0
 
     .line 200
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$1300(Lorg/telegram/ui/DataUsage2Activity$ListView;Ljava/lang/String;)I
+.method static synthetic access$1300(Lorg/telegram/ui/DataUsage2Activity$ListView;I)I
     .locals 0
 
     .line 200
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$1400(Lorg/telegram/ui/DataUsage2Activity$ListView;Ljava/lang/String;)I
+.method static synthetic access$1400(Lorg/telegram/ui/DataUsage2Activity$ListView;I)I
     .locals 0
 
     .line 200
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p0
 
@@ -1149,10 +1149,10 @@
 
     if-eqz p1, :cond_2
 
-    const-string p2, "dialogTextRed"
-
     .line 255
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -1644,13 +1644,13 @@
     aget v4, v4, v8
 
     .line 368
-    invoke-static {}, Lorg/telegram/ui/DataUsage2Activity;->access$500()[Ljava/lang/String;
+    invoke-static {}, Lorg/telegram/ui/DataUsage2Activity;->access$500()[I
 
     move-result-object v5
 
-    aget-object v5, v5, v8
+    aget v5, v5, v8
 
-    invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result v5
 
@@ -1758,9 +1758,9 @@
     .line 380
     new-instance v12, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v13, "windowBackgroundWhiteBlackText"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result v14
 
@@ -1827,7 +1827,7 @@
     .line 386
     new-instance v11, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result v12
 
@@ -2298,92 +2298,92 @@
     :cond_14
     iget-boolean v3, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->empty:Z
 
-    const-string v4, "statisticChartLine_lightblue"
-
     if-nez v3, :cond_15
 
     .line 451
     iget-object v3, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
 
-    sget v8, Lorg/telegram/messenger/R$string;->TotalNetworkUsage:I
+    sget v4, Lorg/telegram/messenger/R$string;->TotalNetworkUsage:I
 
-    const-string v9, "TotalNetworkUsage"
+    const-string v8, "TotalNetworkUsage"
 
-    invoke-static {v9, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v4
 
-    invoke-static {v8}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asHeader(Ljava/lang/String;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
+    invoke-static {v4}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asHeader(Ljava/lang/String;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
 
-    move-result-object v8
+    move-result-object v4
 
-    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 452
     iget-object v3, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
 
-    sget v8, Lorg/telegram/messenger/R$drawable;->msg_filled_data_sent:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->msg_filled_data_sent:I
+
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_lightblue:I
 
     .line 455
-    invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    sget v10, Lorg/telegram/messenger/R$string;->BytesSent:I
-
-    .line 456
-    invoke-static {v7, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v7
-
-    iget-wide v10, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->totalSizeOut:J
-
-    .line 457
-    invoke-static {v10, v11}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
-
-    move-result-object v10
-
-    const/4 v11, -0x1
-
-    .line 452
-    invoke-static {v11, v8, v9, v7, v10}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asCell(IIILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 459
-    iget-object v3, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
-
-    sget v7, Lorg/telegram/messenger/R$drawable;->msg_filled_data_received:I
-
-    const-string v8, "statisticChartLine_green"
-
-    .line 462
-    invoke-virtual {v0, v8}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v8}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result v8
 
-    sget v9, Lorg/telegram/messenger/R$string;->BytesReceived:I
+    sget v9, Lorg/telegram/messenger/R$string;->BytesSent:I
 
-    .line 463
-    invoke-static {v5, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    .line 456
+    invoke-static {v7, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    iget-wide v9, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->totalSizeIn:J
+    iget-wide v9, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->totalSizeOut:J
 
-    .line 464
+    .line 457
     invoke-static {v9, v10}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
     move-result-object v9
 
+    const/4 v10, -0x1
+
+    .line 452
+    invoke-static {v10, v4, v8, v7, v9}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asCell(IIILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     .line 459
-    invoke-static {v11, v7, v8, v5, v9}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asCell(IIILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
+    iget-object v3, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
+
+    sget v4, Lorg/telegram/messenger/R$drawable;->msg_filled_data_received:I
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_green:I
+
+    .line 462
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
+
+    move-result v7
+
+    sget v8, Lorg/telegram/messenger/R$string;->BytesReceived:I
+
+    .line 463
+    invoke-static {v5, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget-wide v8, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->totalSizeIn:J
+
+    .line 464
+    invoke-static {v8, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 459
+    invoke-static {v10, v4, v7, v5, v8}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asCell(IIILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 468
     :cond_15
@@ -2422,22 +2422,24 @@
 
     invoke-static {}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asSeparator()Lorg/telegram/ui/DataUsage2Activity$ItemInner;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 476
     :cond_17
     iget-object v1, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
 
-    const/4 v5, -0x2
+    const/4 v4, -0x2
 
-    sget v7, Lorg/telegram/messenger/R$drawable;->msg_download_settings:I
+    sget v5, Lorg/telegram/messenger/R$drawable;->msg_download_settings:I
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_lightblue:I
 
     .line 479
-    invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
-    move-result v4
+    move-result v7
 
     sget v8, Lorg/telegram/messenger/R$string;->AutomaticDownloadSettings:I
 
@@ -2449,7 +2451,7 @@
     move-result-object v8
 
     .line 476
-    invoke-static {v5, v7, v4, v8, v3}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asCell(IIILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
+    invoke-static {v4, v5, v7, v8, v3}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asCell(IIILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
 
     move-result-object v4
 

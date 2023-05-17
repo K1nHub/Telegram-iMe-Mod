@@ -128,7 +128,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/messenger/SvgHelper$SvgDrawable;II)V
-    .locals 10
+    .locals 9
 
     .line 116
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -180,9 +180,9 @@
     .line 122
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->phoneFrame2:Landroid/graphics/Paint;
 
-    const-string v2, "premiumGradient2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient2:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -223,38 +223,36 @@
     goto/16 :goto_3
 
     :cond_0
-    const-string v2, "premiumStartSmallStarsColor2"
+    const/high16 v2, 0x40800000    # 4.0f
 
-    const/high16 v3, 0x40800000    # 4.0f
+    const v3, 0x3f7ae148    # 0.98f
 
-    const v4, 0x3f7ae148    # 0.98f
+    const/4 v4, 0x6
 
-    const/4 v5, 0x6
+    if-eq p4, v4, :cond_6
+
+    const/16 v5, 0x9
 
     if-eq p4, v5, :cond_6
 
-    const/16 v6, 0x9
-
-    if-eq p4, v6, :cond_6
-
     if-eq p4, p3, :cond_6
 
-    const/4 v6, 0x7
+    const/4 v5, 0x7
 
-    if-eq p4, v6, :cond_6
+    if-eq p4, v5, :cond_6
 
     if-eq p4, p2, :cond_6
 
-    const/4 v6, 0x4
+    const/4 v5, 0x4
 
-    if-ne p4, v6, :cond_1
+    if-ne p4, v5, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x2
+    const/4 v6, 0x2
 
-    if-ne p4, v7, :cond_2
+    if-ne p4, v6, :cond_2
 
     .line 153
     new-instance v2, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable;
@@ -271,9 +269,9 @@
     goto/16 :goto_3
 
     :cond_2
-    const/16 v8, 0xd
+    const/16 v7, 0xd
 
-    if-ne p4, v8, :cond_3
+    if-ne p4, v7, :cond_3
 
     .line 156
     new-instance v2, Lorg/telegram/ui/Components/Premium/HelloParticles$Drawable;
@@ -290,16 +288,16 @@
     goto :goto_3
 
     :cond_3
-    const/16 v8, 0x64
+    const/16 v7, 0x64
 
     .line 160
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
-    move-result v9
+    move-result v8
 
-    if-ne v9, v7, :cond_4
+    if-ne v8, v6, :cond_4
 
-    const/16 v8, 0x320
+    const/16 v7, 0x320
 
     goto :goto_0
 
@@ -307,131 +305,135 @@
     :cond_4
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
-    move-result v7
+    move-result v6
 
-    if-ne v7, v1, :cond_5
+    if-ne v6, v1, :cond_5
 
-    const/16 v8, 0x190
+    const/16 v7, 0x190
 
     .line 165
     :cond_5
     :goto_0
-    new-instance v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
+    new-instance v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
-    invoke-direct {v7, v8}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;-><init>(I)V
+    invoke-direct {v6, v7}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;-><init>(I)V
 
-    iput-object v7, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->starDrawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
+    iput-object v6, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->starDrawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     .line 166
-    iput-object v2, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor2:I
 
-    const/16 v2, 0x8
+    iput v7, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
+
+    const/16 v7, 0x8
 
     .line 167
-    iput v2, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
+    iput v7, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
 
     .line 168
-    iput v5, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
+    iput v4, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
 
     .line 169
-    iput v6, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
+    iput v5, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
 
     .line 170
-    iput v4, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k3:F
+    iput v3, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k3:F
 
-    iput v4, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k2:F
+    iput v3, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k2:F
 
-    iput v4, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k1:F
+    iput v3, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k1:F
 
     .line 171
-    iput-boolean v1, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useRotate:Z
+    iput-boolean v1, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useRotate:Z
 
     .line 172
-    iput v3, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->speedScale:F
+    iput v2, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->speedScale:F
 
     .line 173
-    iput-boolean v1, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->checkBounds:Z
+    iput-boolean v1, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->checkBounds:Z
 
     .line 174
-    iput-boolean v1, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->checkTime:Z
+    iput-boolean v1, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->checkTime:Z
 
     .line 175
-    iput-boolean v1, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useBlur:Z
+    iput-boolean v1, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useBlur:Z
 
     .line 176
-    iput-boolean v0, v7, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->roundEffect:Z
+    iput-boolean v0, v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->roundEffect:Z
 
     .line 177
-    invoke-virtual {v7}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->init()V
+    invoke-virtual {v6}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->init()V
 
     goto :goto_3
 
     .line 135
     :cond_6
     :goto_1
-    new-instance v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
+    new-instance v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
-    const/16 v6, 0x28
+    const/16 v5, 0x28
 
-    invoke-direct {v5, v6}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;-><init>(I)V
+    invoke-direct {v4, v5}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;-><init>(I)V
 
-    iput-object v5, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->starDrawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
+    iput-object v4, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->starDrawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
-    const/high16 v6, 0x40400000    # 3.0f
+    const/high16 v5, 0x40400000    # 3.0f
 
     .line 136
-    iput v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->speedScale:F
+    iput v5, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->speedScale:F
 
     .line 137
-    iput p4, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
+    iput p4, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
-    const/16 v6, 0xe
+    const/16 v5, 0xe
 
     if-ne p4, p3, :cond_7
 
     .line 140
-    iput v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
+    iput v5, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
 
-    const/16 v6, 0x12
+    const/16 v5, 0x12
 
     .line 141
-    iput v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size2:I
+    iput v5, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size2:I
 
     .line 142
-    iput v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size3:I
+    iput v5, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size3:I
 
     goto :goto_2
 
     .line 144
     :cond_7
-    iput v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
+    iput v5, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
 
-    const/16 v6, 0x10
+    const/16 v5, 0x10
 
     .line 145
-    iput v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size2:I
+    iput v5, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size2:I
 
-    const/16 v6, 0xf
+    const/16 v5, 0xf
 
     .line 146
-    iput v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size3:I
+    iput v5, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size3:I
 
     .line 148
     :goto_2
-    iput v4, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k3:F
+    iput v3, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k3:F
 
-    iput v4, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k2:F
+    iput v3, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k2:F
 
-    iput v4, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k1:F
+    iput v3, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k1:F
 
     .line 149
-    iput v3, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->speedScale:F
+    iput v2, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->speedScale:F
 
     .line 150
-    iput-object v2, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor2:I
+
+    iput v2, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
     .line 151
-    invoke-virtual {v5}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->init()V
+    invoke-virtual {v4}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->init()V
 
     :goto_3
     if-eq p4, v1, :cond_8
@@ -680,7 +682,7 @@
 
     const-string v0, "UTF-8"
 
-    .line 535
+    .line 536
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->file:Ljava/io/File;
 
     if-nez v1, :cond_0
@@ -689,7 +691,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 536
+    .line 537
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -697,7 +699,7 @@
 
     return-void
 
-    .line 539
+    .line 540
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
@@ -707,19 +709,19 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->setAspectRatio(FI)V
 
-    .line 540
+    .line 541
     new-instance v1, Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-direct {v1}, Lorg/telegram/ui/Components/VideoPlayer;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 541
+    .line 542
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
-    .line 542
+    .line 543
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     new-instance v2, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;
@@ -728,7 +730,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/VideoPlayer;->setDelegate(Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;)V
 
-    .line 590
+    .line 591
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->file:Ljava/io/File;
 
     if-eqz v1, :cond_2
@@ -739,7 +741,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 591
+    .line 592
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->file:Ljava/io/File;
 
     invoke-static {v0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
@@ -748,7 +750,7 @@
 
     goto/16 :goto_1
 
-    .line 594
+    .line 595
     :cond_2
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -811,7 +813,7 @@
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 599
+    .line 600
     invoke-static {v2, v0}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -824,7 +826,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->currentAccount:I
 
-    .line 600
+    .line 601
     invoke-static {v2}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object v2
@@ -851,7 +853,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 601
+    .line 602
     invoke-static {v2}, Lorg/telegram/messenger/FileLoader;->getDocumentFileName(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
 
     move-result-object v2
@@ -866,7 +868,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 602
+    .line 603
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
@@ -889,7 +891,7 @@
 
     move-result-object v0
 
-    .line 603
+    .line 604
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -924,7 +926,7 @@
 
     return-void
 
-    .line 613
+    .line 614
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -932,31 +934,31 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/Components/VideoPlayer;->preparePlayer(Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 614
+    .line 615
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setPlayWhenReady(Z)V
 
-    .line 615
+    .line 616
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->firstFrameRendered:Z
 
     if-nez v0, :cond_5
 
-    .line 616
+    .line 617
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->stopAnimation()V
 
-    .line 617
+    .line 618
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->textureView:Landroid/view/TextureView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/TextureView;->setAlpha(F)V
 
-    .line 619
+    .line 620
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -968,7 +970,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 620
+    .line 621
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
@@ -1208,33 +1210,33 @@
 .method private stopVideoPlayer()V
     .locals 3
 
-    .line 627
+    .line 628
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 628
+    .line 629
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getCurrentPosition()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->lastFrameTime:J
 
-    .line 629
+    .line 630
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
-    .line 630
+    .line 631
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
-    .line 631
+    .line 632
     iput-object v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     :cond_0
@@ -1244,7 +1246,7 @@
 .method private updateAttachState()V
     .locals 2
 
-    .line 523
+    .line 524
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->visible:Z
 
     if-eqz v0, :cond_0
@@ -1260,25 +1262,25 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 524
+    .line 525
     :goto_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->play:Z
 
     if-eq v1, v0, :cond_2
 
-    .line 525
+    .line 526
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->play:Z
 
     if-eqz v0, :cond_1
 
-    .line 527
+    .line 528
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
     goto :goto_1
 
-    .line 529
+    .line 530
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1294,19 +1296,19 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 513
+    .line 514
     sget p2, Lorg/telegram/messenger/NotificationCenter;->fileLoaded:I
 
     if-ne p1, p2, :cond_0
 
     const/4 p1, 0x0
 
-    .line 514
+    .line 515
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/String;
 
-    .line 515
+    .line 516
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->attachFileName:Ljava/lang/String;
 
     if-eqz p2, :cond_0
@@ -1319,14 +1321,14 @@
 
     const/4 p1, 0x1
 
-    .line 516
+    .line 517
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/io/File;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->file:Ljava/io/File;
 
-    .line 517
+    .line 518
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->checkVideo()V
 
     :cond_0
@@ -2003,7 +2005,10 @@
     .line 507
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->helloParticlesDrawable:Lorg/telegram/ui/Components/Premium/HelloParticles$Drawable;
 
+    .line 509
     :cond_0
+    invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->stopVideoPlayer()V
+
     return-void
 .end method
 

@@ -40,14 +40,15 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentCatalogTabsBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.ViewPagerFixed;
 /* compiled from: CatalogFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogFragment extends BottomNavigationTabFragment implements CatalogView, NavigationViewConfiguration, TabbedViewPagerDelegate<TabbedFragmentPage<CatalogTabFragment>> {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CatalogFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/catalog/tabs/CatalogPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CatalogFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentCatalogTabsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -189,8 +190,8 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         TabbedViewPager tabbedViewPager = getBinding().catalogPager;
         tabbedViewPager.init(this, ViewPagerFixed.TabsView.TabType.TITLE);
         ViewPagerFixed.TabsView tabsView = tabbedViewPager.getTabsView();
-        tabsView.setElevation(AndroidUtilities.m50dp(2));
-        tabsView.setColors("actionBarTabLine", "actionBarTabActiveText", "actionBarTabUnactiveText", "actionBarTabSelector", "actionBarDefault");
+        tabsView.setElevation(AndroidUtilities.m54dp(2));
+        tabsView.setColors(Theme.key_actionBarTabLine, Theme.key_actionBarTabActiveText, Theme.key_actionBarTabUnactiveText, Theme.key_actionBarTabSelector, Theme.key_actionBarDefault);
     }
 
     @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment
@@ -246,7 +247,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         arrayListOf.addAll(getBinding().catalogPager.getThemeDescription());
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
             arrayListOf.addAll(catalogTabFragment.getThemeDescriptions());
@@ -257,7 +258,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
     /* JADX INFO: Access modifiers changed from: private */
     public final List<CatalogNavigationTab> initPageTabs() {
         List<CatalogNavigationTab> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3242R.C3245id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3242R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$1(this), 2, null)), new CatalogNavigationTab(C3242R.C3245id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3242R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$2(this), 2, null)), new CatalogNavigationTab(C3242R.C3245id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3242R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$3(this), 2, null))});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3290R.C3293id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$1(this), 2, null)), new CatalogNavigationTab(C3290R.C3293id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$2(this), 2, null)), new CatalogNavigationTab(C3290R.C3293id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$3(this), 2, null))});
         for (CatalogNavigationTab catalogNavigationTab : listOf) {
             catalogNavigationTab.getPage().getFragment().setBottomNavigationDelegate(getBottomNavigationDelegate());
         }
@@ -266,12 +267,12 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupColors() {
-        getBinding().getRoot().setBackgroundColor(getThemedColor("windowBackgroundGray"));
+        getBinding().getRoot().setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
     }
 
     /* compiled from: CatalogFragment.kt */
     /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -61,7 +61,7 @@ public class ImageLabeler extends Detector<ImageLabel> {
             throw new IllegalArgumentException("No frame supplied.");
         }
         frame.getBitmap();
-        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m746m();
+        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m750m();
     }
 
     @Override // com.google.android.gms.vision.Detector

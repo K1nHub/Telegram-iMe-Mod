@@ -76,34 +76,34 @@
 
     move-object/from16 v2, p2
 
-    .line 1758
+    .line 1757
     iput-object v1, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    .line 1759
+    .line 1758
     invoke-direct {v0, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v3, 0x3
 
     new-array v4, v3, [Landroid/widget/TextView;
 
-    .line 1742
+    .line 1741
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
-    .line 1745
+    .line 1744
     new-instance v4, Landroid/graphics/RectF;
 
     invoke-direct {v4}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->progressRect:Landroid/graphics/RectF;
 
-    .line 1746
+    .line 1745
     new-instance v4, Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-direct {v4}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>()V
 
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
-    .line 1749
+    .line 1748
     new-instance v4, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v11, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -114,21 +114,21 @@
 
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percentAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1750
+    .line 1749
     new-instance v4, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {v4, v0, v5, v6, v11}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
 
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->usedPercentAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1751
+    .line 1750
     new-instance v4, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {v4, v0, v5, v6, v11}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
 
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1753
+    .line 1752
     new-instance v4, Landroid/graphics/Paint;
 
     const/4 v12, 0x1
@@ -137,24 +137,24 @@
 
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingBackgroundPaint:Landroid/graphics/Paint;
 
-    .line 1754
+    .line 1753
     new-instance v4, Landroid/graphics/Paint;
 
     invoke-direct {v4, v12}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percentPaint:Landroid/graphics/Paint;
 
-    .line 1755
+    .line 1754
     new-instance v4, Landroid/graphics/Paint;
 
     invoke-direct {v4, v12}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->usedPercentPaint:Landroid/graphics/Paint;
 
-    .line 1756
+    .line 1755
     iput-boolean v12, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->firstSet:Z
 
-    .line 1761
+    .line 1760
     new-instance v5, Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-direct {v5, v2}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;)V
@@ -167,10 +167,10 @@
 
     const-wide/16 v9, 0x15e
 
-    .line 1762
+    .line 1761
     invoke-virtual/range {v5 .. v11}, Lorg/telegram/ui/Components/AnimatedTextView;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 1763
+    .line 1762
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->title:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const-string v5, "fonts/rmedium.ttf"
@@ -181,7 +181,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1764
+    .line 1763
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->title:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v5, 0x14
@@ -194,7 +194,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 1765
+    .line 1764
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->title:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v5, Lorg/telegram/messenger/R$string;->StorageUsage:I
@@ -207,25 +207,25 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1766
+    .line 1765
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->title:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v5, 0x11
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 1767
+    .line 1766
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->title:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    const-string v6, "windowBackgroundWhiteBlackText"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 1768
+    .line 1767
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->title:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v6, -0x2
@@ -245,64 +245,93 @@
     move v6, v4
 
     :goto_0
-    const-string v7, "windowBackgroundWhiteGrayText4"
-
-    const/16 v8, 0x18
+    const/16 v7, 0x18
 
     if-ge v6, v3, :cond_4
 
+    .line 1770
+    iget-object v8, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+
+    new-instance v9, Landroid/widget/TextView;
+
+    invoke-direct {v9, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    aput-object v9, v8, v6
+
     .line 1771
-    iget-object v9, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+    iget-object v8, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
-    new-instance v10, Landroid/widget/TextView;
+    aget-object v8, v8, v6
 
-    invoke-direct {v10, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    const/high16 v9, 0x41500000    # 13.0f
 
-    aput-object v10, v9, v6
+    invoke-virtual {v8, v12, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 1772
-    iget-object v9, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+    iget-object v8, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
-    aget-object v9, v9, v6
+    aget-object v8, v8, v6
 
-    const/high16 v10, 0x41500000    # 13.0f
-
-    invoke-virtual {v9, v12, v10}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v8, v5}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 1773
-    iget-object v9, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+    iget-object v8, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
-    aget-object v9, v9, v6
+    aget-object v8, v8, v6
 
-    invoke-virtual {v9, v5}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 1774
-    iget-object v9, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+    move-result v9
 
-    aget-object v9, v9, v6
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    move-result v7
 
-    move-result v10
+    invoke-virtual {v8, v9, v4, v7, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v8
-
-    invoke-virtual {v9, v10, v4, v8, v4}, Landroid/widget/TextView;->setPadding(IIII)V
-
-    const/4 v8, 0x2
+    const/4 v7, 0x2
 
     if-nez v6, :cond_0
 
-    .line 1776
+    .line 1775
+    iget-object v8, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+
+    aget-object v8, v8, v6
+
+    sget v9, Lorg/telegram/messenger/R$string;->StorageUsageCalculating:I
+
+    const-string v10, "StorageUsageCalculating"
+
+    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v8, 0x4
+
+    const/4 v9, 0x0
+
+    if-ne v6, v12, :cond_1
+
+    .line 1777
+    iget-object v10, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+
+    aget-object v10, v10, v6
+
+    invoke-virtual {v10, v9}, Landroid/widget/TextView;->setAlpha(F)V
+
+    .line 1778
     iget-object v9, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     aget-object v9, v9, v6
 
-    sget v10, Lorg/telegram/messenger/R$string;->StorageUsageCalculating:I
+    sget v10, Lorg/telegram/messenger/R$string;->StorageUsageTelegram:I
 
-    const-string v11, "StorageUsageCalculating"
+    const-string v11, "StorageUsageTelegram"
 
     invoke-static {v11, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -310,30 +339,26 @@
 
     invoke-virtual {v9, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 1779
+    iget-object v9, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+
+    aget-object v9, v9, v6
+
+    invoke-virtual {v9, v8}, Landroid/widget/TextView;->setVisibility(I)V
+
     goto :goto_1
 
-    :cond_0
-    const/4 v9, 0x4
+    :cond_1
+    if-ne v6, v7, :cond_2
 
-    const/4 v10, 0x0
-
-    if-ne v6, v12, :cond_1
-
-    .line 1778
-    iget-object v11, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
-
-    aget-object v11, v11, v6
-
-    invoke-virtual {v11, v10}, Landroid/widget/TextView;->setAlpha(F)V
-
-    .line 1779
+    .line 1781
     iget-object v10, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     aget-object v10, v10, v6
 
-    sget v11, Lorg/telegram/messenger/R$string;->StorageUsageTelegram:I
+    sget v11, Lorg/telegram/messenger/R$string;->StorageCleared2:I
 
-    const-string v13, "StorageUsageTelegram"
+    const-string v13, "StorageCleared2"
 
     invoke-static {v13, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -341,64 +366,39 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1780
+    .line 1782
     iget-object v10, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     aget-object v10, v10, v6
 
-    invoke-virtual {v10, v9}, Landroid/widget/TextView;->setVisibility(I)V
-
-    goto :goto_1
-
-    :cond_1
-    if-ne v6, v8, :cond_2
-
-    .line 1782
-    iget-object v11, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
-
-    aget-object v11, v11, v6
-
-    sget v13, Lorg/telegram/messenger/R$string;->StorageCleared2:I
-
-    const-string v14, "StorageCleared2"
-
-    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v11, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v9}, Landroid/widget/TextView;->setAlpha(F)V
 
     .line 1783
-    iget-object v11, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
-
-    aget-object v11, v11, v6
-
-    invoke-virtual {v11, v10}, Landroid/widget/TextView;->setAlpha(F)V
-
-    .line 1784
-    iget-object v10, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
-
-    aget-object v10, v10, v6
-
-    invoke-virtual {v10, v9}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 1786
-    :cond_2
-    :goto_1
     iget-object v9, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     aget-object v9, v9, v6
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-virtual {v9, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
-    move-result v7
+    .line 1785
+    :cond_2
+    :goto_1
+    iget-object v8, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
-    invoke-virtual {v9, v7}, Landroid/widget/TextView;->setTextColor(I)V
+    aget-object v8, v8, v6
 
-    .line 1787
-    iget-object v7, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
 
-    aget-object v7, v7, v6
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 1786
+    iget-object v8, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+
+    aget-object v8, v8, v6
 
     const/4 v13, -0x2
 
@@ -408,17 +408,17 @@
 
     const/16 v16, 0x0
 
-    if-ne v6, v8, :cond_3
+    if-ne v6, v7, :cond_3
 
-    const/16 v8, 0xc
+    const/16 v7, 0xc
 
     goto :goto_2
 
     :cond_3
-    const/4 v8, -0x6
+    const/4 v7, -0x6
 
     :goto_2
-    move/from16 v17, v8
+    move/from16 v17, v7
 
     const/16 v18, 0x0
 
@@ -426,15 +426,15 @@
 
     invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v0, v7, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v8, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_0
 
-    .line 1790
+    .line 1789
     :cond_4
     new-instance v3, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader$1;
 
@@ -442,7 +442,7 @@
 
     iput-object v3, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->bottomImage:Landroid/view/View;
 
-    .line 1796
+    .line 1795
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -461,12 +461,12 @@
 
     move-result-object v1
 
-    .line 1797
+    .line 1796
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v3, "windowBackgroundWhite"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -476,7 +476,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1798
+    .line 1797
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->bottomImage:Landroid/view/View;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
@@ -485,12 +485,12 @@
 
     const/16 v2, 0x57
 
-    .line 1799
-    invoke-static {v1, v8, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    .line 1798
+    invoke-static {v1, v7, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
-    .line 1800
+    .line 1799
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->bottomImage:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getPaddingLeft()I
@@ -503,7 +503,7 @@
 
     const/16 v2, 0xb
 
-    .line 1801
+    .line 1800
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -512,7 +512,7 @@
 
     iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 1802
+    .line 1801
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->bottomImage:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getPaddingRight()I
@@ -523,44 +523,46 @@
 
     iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 1803
+    .line 1802
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->bottomImage:Landroid/view/View;
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1805
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 1804
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    .line 1806
+    .line 1805
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
-    const-string v3, "actionBarActionModeDefaultSelector"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultSelector:I
 
-    .line 1807
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 1806
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     const v4, 0x3e4ccccd    # 0.2f
 
-    .line 1808
+    .line 1807
     invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v1
 
-    .line 1806
+    .line 1805
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(II)V
 
-    .line 1810
+    .line 1809
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/high16 v2, 0x40800000    # 4.0f
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(F)V
 
-    .line 1811
+    .line 1810
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
@@ -571,12 +573,12 @@
 .method private drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
     .locals 5
 
-    .line 1951
+    .line 1950
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->roundPath:Landroid/graphics/Path;
 
     if-nez v0, :cond_0
 
-    .line 1952
+    .line 1951
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -585,11 +587,11 @@
 
     goto :goto_0
 
-    .line 1954
+    .line 1953
     :cond_0
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 1956
+    .line 1955
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->radii:[F
 
@@ -599,10 +601,10 @@
 
     new-array v0, v0, [F
 
-    .line 1957
+    .line 1956
     iput-object v0, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->radii:[F
 
-    .line 1959
+    .line 1958
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->radii:[F
 
@@ -630,7 +632,7 @@
 
     const/4 v3, 0x5
 
-    .line 1960
+    .line 1959
     aput p4, v0, v3
 
     aput p4, v0, v2
@@ -639,14 +641,14 @@
 
     aput p4, v0, p3
 
-    .line 1961
+    .line 1960
     iget-object p3, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->roundPath:Landroid/graphics/Path;
 
     sget-object p4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {p3, p2, v0, p4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 1962
+    .line 1961
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->roundPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, p2, p5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
@@ -657,7 +659,7 @@
 .method private synthetic lambda$updateViewVisible$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1870
+    .line 1869
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -666,7 +668,7 @@
 .method private synthetic lambda$updateViewVisible$1(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1872
+    .line 1871
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -675,7 +677,7 @@
 .method private switchSubtitle(I)V
     .locals 5
 
-    .line 1843
+    .line 1842
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -703,7 +705,7 @@
     :cond_0
     move v0, v1
 
-    .line 1844
+    .line 1843
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
@@ -721,7 +723,7 @@
     :goto_1
     invoke-direct {p0, v3, v4, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->updateViewVisible(Landroid/view/View;ZZ)V
 
-    .line 1845
+    .line 1844
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     aget-object v3, v3, v2
@@ -738,7 +740,7 @@
     :goto_2
     invoke-direct {p0, v3, v4, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->updateViewVisible(Landroid/view/View;ZZ)V
 
-    .line 1846
+    .line 1845
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     const/4 v4, 0x2
@@ -762,7 +764,7 @@
 
     return-void
 
-    .line 1853
+    .line 1852
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -774,7 +776,7 @@
 
     move p3, v1
 
-    .line 1857
+    .line 1856
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -803,7 +805,7 @@
     :cond_2
     const/4 v1, 0x4
 
-    .line 1859
+    .line 1858
     :goto_0
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -811,7 +813,7 @@
 
     const/4 p3, 0x1
 
-    .line 1860
+    .line 1859
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -826,7 +828,7 @@
     :cond_4
     move v0, v4
 
-    .line 1861
+    .line 1860
     :goto_1
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
@@ -834,7 +836,7 @@
 
     goto :goto_2
 
-    .line 1862
+    .line 1861
     :cond_5
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -845,7 +847,7 @@
     :goto_2
     invoke-virtual {p1, v4}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1863
+    .line 1862
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_3
@@ -855,20 +857,20 @@
 
     if-eqz p2, :cond_8
 
-    .line 1865
+    .line 1864
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result p2
 
     if-eqz p2, :cond_7
 
-    .line 1866
+    .line 1865
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1867
+    .line 1866
     invoke-virtual {p1, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1868
+    .line 1867
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -877,7 +879,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1870
+    .line 1869
     :cond_7
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -913,7 +915,7 @@
 
     goto :goto_3
 
-    .line 1872
+    .line 1871
     :cond_8
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -972,7 +974,7 @@
 
     move-object/from16 v6, p0
 
-    .line 1900
+    .line 1899
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     const/4 v7, 0x2
@@ -987,7 +989,7 @@
 
     sub-float v8, v1, v0
 
-    .line 1902
+    .line 1901
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v2, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percent:Ljava/lang/Float;
@@ -1008,7 +1010,7 @@
 
     move-result v10
 
-    .line 1903
+    .line 1902
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percentAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v2, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percent:Ljava/lang/Float;
@@ -1029,7 +1031,7 @@
 
     move-result v11
 
-    .line 1904
+    .line 1903
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->usedPercentAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v2, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->usedPercent:Ljava/lang/Float;
@@ -1050,18 +1052,18 @@
 
     move-result v12
 
-    .line 1906
+    .line 1905
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingBackgroundPaint:Landroid/graphics/Paint;
 
-    const-string v13, "actionBarActionModeDefaultSelector"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultSelector:I
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1907
+    .line 1906
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingBackgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
@@ -1076,7 +1078,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1908
+    .line 1907
     sget-object v14, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->progressRect:Landroid/graphics/RectF;
@@ -1087,7 +1089,7 @@
 
     const/16 v16, 0x4
 
-    .line 1910
+    .line 1909
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1114,7 +1116,7 @@
 
     iget v1, v1, Landroid/graphics/RectF;->left:F
 
-    .line 1911
+    .line 1910
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1137,14 +1139,14 @@
 
     add-float/2addr v1, v2
 
-    .line 1909
+    .line 1908
     invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
     const/4 v5, 0x1
 
-    .line 1912
+    .line 1911
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1161,10 +1163,10 @@
 
     iget v1, v1, Landroid/graphics/RectF;->bottom:F
 
-    .line 1908
+    .line 1907
     invoke-virtual {v14, v0, v2, v3, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1915
+    .line 1914
     iget v0, v14, Landroid/graphics/RectF;->left:F
 
     iget v1, v14, Landroid/graphics/RectF;->right:F
@@ -1189,7 +1191,7 @@
 
     if-lez v0, :cond_3
 
-    .line 1916
+    .line 1915
     invoke-static {v5, v7, v10}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v0
@@ -1227,7 +1229,7 @@
     :cond_3
     move/from16 v19, v5
 
-    .line 1919
+    .line 1918
     :goto_3
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
@@ -1235,7 +1237,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setBounds(Landroid/graphics/RectF;)V
 
-    .line 1920
+    .line 1919
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/high16 v1, 0x437f0000    # 255.0f
@@ -1248,23 +1250,23 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setAlpha(I)V
 
-    .line 1921
+    .line 1920
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     move-object/from16 v5, p1
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/LoadingDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1923
+    .line 1922
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->usedPercentPaint:Landroid/graphics/Paint;
 
-    const-string v18, "radioBackgroundChecked"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackgroundChecked:I
 
-    invoke-static/range {v18 .. v18}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static/range {v18 .. v18}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1278,7 +1280,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1924
+    .line 1923
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->usedPercentPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
@@ -1293,12 +1295,12 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1925
+    .line 1924
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->progressRect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->left:F
 
-    .line 1926
+    .line 1925
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1335,7 +1337,7 @@
 
     iget v1, v1, Landroid/graphics/RectF;->left:F
 
-    .line 1928
+    .line 1927
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1362,10 +1364,10 @@
 
     iget v3, v3, Landroid/graphics/RectF;->bottom:F
 
-    .line 1925
+    .line 1924
     invoke-virtual {v14, v0, v2, v1, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1931
+    .line 1930
     invoke-virtual {v14}, Landroid/graphics/RectF;->width()F
 
     move-result v0
@@ -1382,7 +1384,7 @@
 
     if-lez v0, :cond_5
 
-    .line 1932
+    .line 1931
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1419,17 +1421,17 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1935
+    .line 1934
     :cond_5
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percentPaint:Landroid/graphics/Paint;
 
-    invoke-static/range {v18 .. v18}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static/range {v18 .. v18}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1936
+    .line 1935
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percentPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
@@ -1444,7 +1446,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1937
+    .line 1936
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->progressRect:Landroid/graphics/RectF;
 
     iget v1, v0, Landroid/graphics/RectF;->left:F
@@ -1479,7 +1481,7 @@
 
     invoke-virtual {v14, v1, v0, v15, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1938
+    .line 1937
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1516,7 +1518,7 @@
 
     if-gtz v0, :cond_7
 
-    .line 1940
+    .line 1939
     iget-object v0, v6, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percentAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->isInProgress()Z
@@ -1525,11 +1527,11 @@
 
     if-eqz v0, :cond_8
 
-    .line 1941
+    .line 1940
     :cond_7
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1944
+    .line 1943
     :cond_8
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -1539,14 +1541,14 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 1878
+    .line 1877
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     const/16 v0, 0xae
 
-    .line 1879
+    .line 1878
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1567,7 +1569,7 @@
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    .line 1881
+    .line 1880
     invoke-static {p1, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
@@ -1576,7 +1578,7 @@
 
     const/16 p2, 0x48
 
-    .line 1882
+    .line 1881
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -1587,7 +1589,7 @@
 
     move v3, v2
 
-    .line 1884
+    .line 1883
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
@@ -1595,7 +1597,7 @@
 
     if-ge v2, v5, :cond_1
 
-    .line 1885
+    .line 1884
     aget-object v4, v4, v2
 
     invoke-virtual {v4}, Landroid/widget/TextView;->getMeasuredHeight()I
@@ -1631,10 +1633,10 @@
     :cond_1
     add-int/2addr p2, v3
 
-    .line 1888
+    .line 1887
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 1890
+    .line 1889
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->progressRect:Landroid/graphics/RectF;
 
     sub-int v2, p1, v0
@@ -1647,7 +1649,7 @@
 
     const/16 v4, 0x1e
 
-    .line 1892
+    .line 1891
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1664,7 +1666,7 @@
 
     const/16 v0, 0x1a
 
-    .line 1894
+    .line 1893
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1673,7 +1675,7 @@
 
     int-to-float p2, p2
 
-    .line 1890
+    .line 1889
     invoke-virtual {v1, v2, v4, p1, p2}, Landroid/graphics/RectF;->set(FFFF)V
 
     return-void
@@ -1682,12 +1684,12 @@
 .method public setData(ZFF)V
     .locals 6
 
-    .line 1815
+    .line 1814
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->title:Lorg/telegram/ui/Components/AnimatedTextView;
 
     if-eqz p1, :cond_0
 
-    .line 1817
+    .line 1816
     sget v1, Lorg/telegram/messenger/R$string;->StorageUsage:I
 
     const-string v2, "StorageUsage"
@@ -1698,7 +1700,7 @@
 
     goto :goto_0
 
-    .line 1818
+    .line 1817
     :cond_0
     sget v1, Lorg/telegram/messenger/R$string;->StorageCleared:I
 
@@ -1708,7 +1710,7 @@
 
     move-result-object v1
 
-    .line 1815
+    .line 1814
     :goto_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -1724,7 +1726,7 @@
 
     if-gez v1, :cond_1
 
-    .line 1822
+    .line 1821
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     aget-object v1, v1, v2
@@ -1751,7 +1753,7 @@
 
     goto :goto_1
 
-    .line 1824
+    .line 1823
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
@@ -1777,7 +1779,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1826
+    .line 1825
     :goto_1
     invoke-direct {p0, v2}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->switchSubtitle(I)V
 
@@ -1786,10 +1788,10 @@
     :cond_2
     const/4 v1, 0x2
 
-    .line 1828
+    .line 1827
     invoke-direct {p0, v1}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->switchSubtitle(I)V
 
-    .line 1830
+    .line 1829
     :goto_2
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->bottomImage:Landroid/view/View;
 
@@ -1799,7 +1801,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1831
+    .line 1830
     iget-boolean v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->firstSet:Z
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -1808,7 +1810,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 1832
+    .line 1831
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->bottomImage:Landroid/view/View;
 
     if-eqz p1, :cond_3
@@ -1823,7 +1825,7 @@
 
     goto :goto_5
 
-    .line 1834
+    .line 1833
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->bottomImage:Landroid/view/View;
 
@@ -1857,25 +1859,25 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1836
+    .line 1835
     :goto_5
     iput-boolean v0, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->firstSet:Z
 
-    .line 1837
+    .line 1836
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->percent:Ljava/lang/Float;
 
-    .line 1838
+    .line 1837
     invoke-static {p3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->usedPercent:Ljava/lang/Float;
 
-    .line 1839
+    .line 1838
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

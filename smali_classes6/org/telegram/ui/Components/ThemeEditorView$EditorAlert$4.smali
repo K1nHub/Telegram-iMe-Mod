@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;IZ)V
     .locals 0
 
-    .line 945
+    .line 946
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$4;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     iput p2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$4;->val$num:I
@@ -43,7 +43,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 958
+    .line 959
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$4;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$4000(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)[Landroid/animation/AnimatorSet;
@@ -72,7 +72,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 959
+    .line 960
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$4;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$4000(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)[Landroid/animation/AnimatorSet;
@@ -92,7 +92,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 948
+    .line 949
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$4;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$4000(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)[Landroid/animation/AnimatorSet;
@@ -121,12 +121,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 949
+    .line 950
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$4;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 950
+    .line 951
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$4;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$4100(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)[Landroid/view/View;
@@ -141,7 +141,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 952
+    .line 953
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$4;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 

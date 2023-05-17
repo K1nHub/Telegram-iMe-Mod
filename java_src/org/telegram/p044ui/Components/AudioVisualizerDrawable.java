@@ -17,7 +17,7 @@ public class AudioVisualizerDrawable {
     private int lastAmplitudePointer;
 
     /* renamed from: p1 */
-    private final Paint f1609p1;
+    private final Paint f1616p1;
     private View parentView;
     float rotation;
     private final int[] tmpWaveform = new int[3];
@@ -25,10 +25,10 @@ public class AudioVisualizerDrawable {
     private final float[] current = new float[8];
 
     /* renamed from: dt */
-    private final float[] f1608dt = new float[8];
+    private final float[] f1615dt = new float[8];
     private final Random random = new Random();
-    public float IDLE_RADIUS = AndroidUtilities.m50dp(6) * 0.33f;
-    public float WAVE_RADIUS = AndroidUtilities.m50dp(12) * 0.36f;
+    public float IDLE_RADIUS = AndroidUtilities.m54dp(6) * 0.33f;
+    public float WAVE_RADIUS = AndroidUtilities.m54dp(12) * 0.36f;
     public float ANIMATION_DURATION = 120.0f;
     public int ALPHA = 61;
     private float[] lastAmplitude = new float[6];
@@ -40,11 +40,11 @@ public class AudioVisualizerDrawable {
             CircleBezierDrawable circleBezierDrawable = new CircleBezierDrawable(6);
             circleBezierDrawableArr[i] = circleBezierDrawable;
             circleBezierDrawable.idleStateDiff = BitmapDescriptorFactory.HUE_RED;
-            circleBezierDrawable.radius = AndroidUtilities.m50dp(24);
+            circleBezierDrawable.radius = AndroidUtilities.m54dp(24);
             circleBezierDrawable.radiusDiff = BitmapDescriptorFactory.HUE_RED;
             circleBezierDrawable.randomK = 1.0f;
         }
-        this.f1609p1 = new Paint(1);
+        this.f1616p1 = new Paint(1);
     }
 
     public void setWaveform(boolean z, boolean z2, float[] fArr) {
@@ -103,9 +103,9 @@ public class AudioVisualizerDrawable {
                 if (this.parentView == null) {
                     this.current[i] = this.animateTo[i];
                 } else if (i == 6) {
-                    this.f1608dt[i] = (this.animateTo[i] - this.current[i]) / (this.ANIMATION_DURATION + 80.0f);
+                    this.f1615dt[i] = (this.animateTo[i] - this.current[i]) / (this.ANIMATION_DURATION + 80.0f);
                 } else {
-                    this.f1608dt[i] = (this.animateTo[i] - this.current[i]) / f3;
+                    this.f1615dt[i] = (this.animateTo[i] - this.current[i]) / f3;
                 }
                 i++;
             }
@@ -114,18 +114,18 @@ public class AudioVisualizerDrawable {
                 f = 1.0f;
             }
             fArr4[7] = f;
-            this.f1608dt[7] = (fArr4[7] - this.current[7]) / 120.0f;
+            this.f1615dt[7] = (fArr4[7] - this.current[7]) / 120.0f;
         }
     }
 
     public void draw(Canvas canvas, float f, float f2, boolean z, float f3, Theme.ResourcesProvider resourcesProvider) {
         if (LiteMode.isEnabled(32)) {
             if (z) {
-                this.f1609p1.setColor(Theme.getColor("chat_outLoader", resourcesProvider));
-                this.f1609p1.setAlpha((int) (this.ALPHA * f3));
+                this.f1616p1.setColor(Theme.getColor(Theme.key_chat_outLoader, resourcesProvider));
+                this.f1616p1.setAlpha((int) (this.ALPHA * f3));
             } else {
-                this.f1609p1.setColor(Theme.getColor("chat_inLoader", resourcesProvider));
-                this.f1609p1.setAlpha((int) (this.ALPHA * f3));
+                this.f1616p1.setColor(Theme.getColor(Theme.key_chat_inLoader, resourcesProvider));
+                this.f1616p1.setAlpha((int) (this.ALPHA * f3));
             }
             draw(canvas, f, f2);
         }
@@ -139,7 +139,7 @@ public class AudioVisualizerDrawable {
                 float[] fArr2 = this.current;
                 if (f3 != fArr2[i]) {
                     float f4 = fArr2[i];
-                    float[] fArr3 = this.f1608dt;
+                    float[] fArr3 = this.f1615dt;
                     fArr2[i] = f4 + (fArr3[i] * 16.0f);
                     if ((fArr3[i] > BitmapDescriptorFactory.HUE_RED && fArr2[i] > fArr[i]) || (fArr3[i] < BitmapDescriptorFactory.HUE_RED && fArr2[i] < fArr[i])) {
                         fArr2[i] = fArr[i];
@@ -176,14 +176,14 @@ public class AudioVisualizerDrawable {
                 this.tmpWaveform[i3] = (int) (this.current[i3 + 3] * this.WAVE_RADIUS);
             }
             this.drawables[1].setAdditionals(this.tmpWaveform);
-            float m50dp = AndroidUtilities.m50dp(22) + (AndroidUtilities.m50dp(4) * f8) + (this.IDLE_RADIUS * f7);
-            if (m50dp > AndroidUtilities.m50dp(26)) {
-                m50dp = AndroidUtilities.m50dp(26);
+            float m54dp = AndroidUtilities.m54dp(22) + (AndroidUtilities.m54dp(4) * f8) + (this.IDLE_RADIUS * f7);
+            if (m54dp > AndroidUtilities.m54dp(26)) {
+                m54dp = AndroidUtilities.m54dp(26);
             }
             CircleBezierDrawable[] circleBezierDrawableArr = this.drawables;
             CircleBezierDrawable circleBezierDrawable = circleBezierDrawableArr[0];
-            circleBezierDrawableArr[1].radius = m50dp;
-            circleBezierDrawable.radius = m50dp;
+            circleBezierDrawableArr[1].radius = m54dp;
+            circleBezierDrawable.radius = m54dp;
             canvas.save();
             float f9 = (float) (this.rotation + 0.6d);
             this.rotation = f9;
@@ -191,12 +191,12 @@ public class AudioVisualizerDrawable {
             canvas.save();
             float f10 = (this.idleScale * 0.04f) + 1.0f;
             canvas.scale(f10, f10, f, f2);
-            this.drawables[0].draw(f, f2, canvas, this.f1609p1);
+            this.drawables[0].draw(f, f2, canvas, this.f1616p1);
             canvas.restore();
             canvas.rotate(60.0f, f, f2);
             float f11 = ((1.0f - this.idleScale) * 0.04f) + 1.0f;
             canvas.scale(f11, f11, f, f2);
-            this.drawables[1].draw(f, f2, canvas, this.f1609p1);
+            this.drawables[1].draw(f, f2, canvas, this.f1616p1);
             canvas.restore();
         }
     }

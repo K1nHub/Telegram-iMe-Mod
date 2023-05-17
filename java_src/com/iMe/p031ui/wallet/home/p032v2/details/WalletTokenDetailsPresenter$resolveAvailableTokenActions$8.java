@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletTokenDetailsPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$8 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletTokenDetailsPresenter$resolveAvailableTokenActions$8 extends Lambda implements Function0<Unit> {
     final /* synthetic */ TokenDetailsArgs $args;
     final /* synthetic */ WalletTokenDetailsPresenter this$0;

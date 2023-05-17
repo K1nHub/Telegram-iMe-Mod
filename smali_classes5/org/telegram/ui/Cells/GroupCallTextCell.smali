@@ -60,10 +60,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/GroupCallTextCell;->dividerPaint:Landroid/graphics/Paint;
 
-    const-string v1, "voipgroup_actionBar"
-
     .line 49
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBar:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -81,16 +81,16 @@
 
     if-eqz p3, :cond_0
 
-    const-string v0, "dialogTextBlack"
+    .line 54
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "windowBackgroundWhiteBlackText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 54
     :goto_0
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -145,16 +145,16 @@
 
     if-eqz p3, :cond_2
 
-    const-string v4, "dialogTextBlue2"
+    .line 61
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
     goto :goto_2
 
     :cond_2
-    const-string v4, "windowBackgroundWhiteValueText"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteValueText:I
 
-    .line 61
     :goto_2
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -206,15 +206,15 @@
 
     if-eqz p3, :cond_4
 
-    const-string p3, "dialogIcon"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
 
     goto :goto_3
 
     :cond_4
-    const-string p3, "windowBackgroundWhiteGrayIcon"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
     :goto_3
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 

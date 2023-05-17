@@ -22,10 +22,10 @@
 .method public constructor <init>(IZ)V
     .locals 0
 
-    .line 25
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
+    .line 28
     iput p1, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     return-void
@@ -36,7 +36,7 @@
 .method compare(Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;)Z
     .locals 3
 
-    .line 31
+    .line 33
     iget v0, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v1, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -47,7 +47,7 @@
 
     return v2
 
-    .line 34
+    .line 36
     :cond_0
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 

@@ -3,7 +3,7 @@ package com.iMe.fork.p024ui.dialog;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 /* compiled from: SettingsHelpBottomSheet.kt */
@@ -27,6 +27,6 @@ final class SettingsHelpBottomSheet$items$4 extends Lambda implements Function0<
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        Browser.openUrl(this.this$0.getContext(), LocaleController.getInternalString(C3242R.string.settings_help_alert_channel_username));
+        Browser.openUrl(this.this$0.getContext(), LocaleController.getInternalString(C3290R.string.settings_help_alert_channel_username));
     }
 }

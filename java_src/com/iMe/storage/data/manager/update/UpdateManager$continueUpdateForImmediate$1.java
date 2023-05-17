@@ -42,7 +42,7 @@ public final class UpdateManager$continueUpdateForImmediate$1 extends Lambda imp
                 Intrinsics.checkNotNull(activity);
                 appUpdateManager.startUpdateFlowForResult(appUpdateInfo, i, activity, 777);
             } catch (IntentSender.SendIntentException e) {
-                Timber.m6d(e);
+                Timber.m8d(e);
             }
         }
     }

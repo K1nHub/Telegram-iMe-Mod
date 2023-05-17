@@ -66,21 +66,21 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 290
+    .line 292
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
 
-    .line 364
+    .line 366
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
-    .line 365
+    .line 367
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -97,10 +97,10 @@
 
     new-array v0, v0, [I
 
-    .line 317
+    .line 319
     invoke-virtual {p1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 318
+    .line 320
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     const/4 v2, 0x0
@@ -145,7 +145,7 @@
 .method private synthetic lambda$onCreateViewHolder$1(Landroid/view/View;)V
     .locals 0
 
-    .line 333
+    .line 335
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$300(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
@@ -158,7 +158,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 356
+    .line 358
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -171,7 +171,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 361
+    .line 363
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -196,19 +196,19 @@
 .method public notifyDataSetChanged()V
     .locals 5
 
-    .line 372
+    .line 375
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->oldItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 373
+    .line 376
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->oldItems:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 374
+    .line 377
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
@@ -217,7 +217,7 @@
 
     move v1, v0
 
-    .line 375
+    .line 378
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -231,7 +231,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 376
+    .line 379
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
     new-instance v3, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$InnerItem;
@@ -256,7 +256,7 @@
 
     goto :goto_0
 
-    .line 378
+    .line 381
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -268,7 +268,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 379
+    .line 382
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$InnerItem;
@@ -279,7 +279,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 381
+    .line 384
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -289,7 +289,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 382
+    .line 385
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$InnerItem;
@@ -300,7 +300,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 384
+    .line 387
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->oldItems:Ljava/util/ArrayList;
 
@@ -314,27 +314,27 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 1
 
-    .line 346
+    .line 348
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 347
+    .line 349
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 348
+    .line 350
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 349
+    .line 351
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 350
+    .line 352
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -356,75 +356,51 @@
 
     const/16 p1, 0x11
 
-    const-string v0, "dialogBackground"
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    if-eq p2, v0, :cond_1
 
-    if-eq p2, v1, :cond_1
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    if-eq p2, v1, :cond_0
 
-    if-eq p2, v2, :cond_0
-
-    .line 304
+    .line 306
     new-instance p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
 
-    invoke-direct {p1, p2, v0, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;Z)V
+    invoke-direct {p1, p2, v1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;Z)V
 
     goto/16 :goto_0
 
-    .line 323
+    .line 325
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;
+    new-instance v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
+    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
 
-    invoke-direct {v1, v3, v4}, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
+    invoke-direct {v0, v2, v3}, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
 
-    iput-object v1, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
-
-    .line 324
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
-
-    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    iget-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
-
-    invoke-direct {v1, v3, v4}, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
-
-    invoke-static {p2, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$802(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
-
-    .line 325
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
-
-    move-result-object p2
-
-    sget v1, Lorg/telegram/messenger/R$drawable;->msg_reactions_expand:I
-
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    iput-object v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
 
     .line 326
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
+    new-instance v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
 
-    move-result-object p2
+    iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
+    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
 
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    invoke-direct {v0, v2, v3}, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
+
+    invoke-static {p2, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$802(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
 
     .line 327
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -433,19 +409,43 @@
 
     move-result-object p2
 
-    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
+    sget v0, Lorg/telegram/messenger/R$drawable;->msg_reactions_expand:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    move-result v0
+    .line 328
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
+
+    move-result-object p2
+
+    sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    .line 329
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
+
+    move-result-object p2
+
+    new-instance v0, Landroid/graphics/PorterDuffColorFilter;
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v1, v0, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v0, v2, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 328
+    .line 330
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
@@ -458,11 +458,11 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const-string v3, "listSelectorSDK21"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -472,182 +472,16 @@
 
     move-result v3
 
-    invoke-static {v0, v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorCircleDrawable(III)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorCircleDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 329
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
-
-    move-result-object p2
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    invoke-virtual {p2, v0, v1, v3, v2}, Landroid/widget/ImageView;->setPadding(IIII)V
-
-    .line 330
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
-
-    move-result-object p2
-
-    sget v0, Lorg/telegram/messenger/R$string;->AccDescrExpandPanel:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
-
     .line 331
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    iget-object v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
-
     invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
-
-    move-result-object p2
-
-    const/16 v1, 0x1e
-
-    invoke-static {v1, v1, p1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p2, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 332
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
-
-    move-result-object p1
-
-    new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$$ExternalSyntheticLambda0;
-
-    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$5;)V
-
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 335
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
-
-    goto/16 :goto_0
-
-    .line 307
-    :cond_1
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    new-instance v2, Landroid/widget/FrameLayout;
-
-    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
-
-    invoke-direct {v2, v3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    iput-object v2, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockContainer:Landroid/widget/FrameLayout;
-
-    .line 308
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    new-instance v2, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
-
-    sget v4, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->TYPE_REACTIONS:I
-
-    invoke-direct {v2, v3, v4}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;-><init>(Landroid/content/Context;I)V
-
-    invoke-static {p2, v2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$702(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/Premium/PremiumLockIconView;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    .line 309
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    move-result-object p2
-
-    const-string v2, "actionBarDefaultSubmenuItemIcon"
-
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v3
-
-    const v4, 0x3f333333    # 0.7f
-
-    invoke-static {v2, v3, v4}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
-
-    move-result v2
-
-    invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->setColor(I)V
-
-    .line 310
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    move-result-object p2
-
-    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
-
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v0
-
-    sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v2, v0, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    .line 311
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    move-result-object p2
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleX(F)V
-
-    .line 312
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    move-result-object p2
-
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleY(F)V
-
-    .line 313
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     move-result-object p2
 
@@ -669,7 +503,175 @@
 
     invoke-virtual {p2, v0, v2, v3, v1}, Landroid/widget/ImageView;->setPadding(IIII)V
 
+    .line 332
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
+
+    move-result-object p2
+
+    sget v0, Lorg/telegram/messenger/R$string;->AccDescrExpandPanel:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 333
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    iget-object v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
+
+    move-result-object p2
+
+    const/16 v1, 0x1e
+
+    invoke-static {v1, v1, p1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p2, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 334
+    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
+
+    move-result-object p1
+
+    new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$$ExternalSyntheticLambda0;
+
+    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$5;)V
+
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 337
+    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
+
+    goto/16 :goto_0
+
+    .line 309
+    :cond_1
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    new-instance v1, Landroid/widget/FrameLayout;
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
+
+    invoke-direct {v1, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockContainer:Landroid/widget/FrameLayout;
+
+    .line 310
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->val$context:Landroid/content/Context;
+
+    sget v3, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->TYPE_REACTIONS:I
+
+    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;-><init>(Landroid/content/Context;I)V
+
+    invoke-static {p2, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$702(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/Premium/PremiumLockIconView;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
+
+    .line 311
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
+
+    move-result-object p2
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v1
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v3
+
+    const v4, 0x3f333333    # 0.7f
+
+    invoke-static {v1, v3, v4}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v1
+
+    invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->setColor(I)V
+
+    .line 312
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
+
+    move-result-object p2
+
+    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
+
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v1, v2, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 313
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
+
+    move-result-object p2
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleX(F)V
+
     .line 314
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
+
+    move-result-object p2
+
+    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleY(F)V
+
+    .line 315
+    iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
+
+    move-result-object p2
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    invoke-virtual {p2, v1, v2, v3, v0}, Landroid/widget/ImageView;->setPadding(IIII)V
+
+    .line 316
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockContainer:Landroid/widget/FrameLayout;
@@ -686,7 +688,7 @@
 
     invoke-virtual {v0, p2, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 315
+    .line 317
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
@@ -699,12 +701,12 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 320
+    .line 322
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockContainer:Landroid/widget/FrameLayout;
 
-    .line 339
+    .line 341
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -730,7 +732,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 340
+    .line 342
     new-instance v0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/16 v1, 0xc
@@ -745,7 +747,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 341
+    .line 343
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

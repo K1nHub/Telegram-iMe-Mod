@@ -11,8 +11,8 @@ public final /* synthetic */ class AlertsCreator$$ExternalSyntheticLambda152 imp
 
     @Override // org.telegram.p044ui.Components.NumberPicker.Formatter
     public final String format(int i) {
-        String lambda$createScheduleDatePickerDialog$84;
-        lambda$createScheduleDatePickerDialog$84 = AlertsCreator.lambda$createScheduleDatePickerDialog$84(i);
-        return lambda$createScheduleDatePickerDialog$84;
+        String lambda$createStatusUntilDatePickerDialog$105;
+        lambda$createStatusUntilDatePickerDialog$105 = AlertsCreator.lambda$createStatusUntilDatePickerDialog$105(i);
+        return lambda$createStatusUntilDatePickerDialog$105;
     }
 }

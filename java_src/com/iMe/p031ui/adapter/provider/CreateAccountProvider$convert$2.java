@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: CreateAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CreateAccountProvider$convert$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class CreateAccountProvider$convert$2 extends Lambda implements Function1<HorizontalActionButtonsView, Unit> {
     final /* synthetic */ AccountItem.Create $item;
 

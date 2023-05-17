@@ -561,17 +561,17 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1840wallet;
+        public final Wallet f1848wallet;
 
         OpenCreateWalletScreenCommand(WalletHomeCryptoView$$State walletHomeCryptoView$$State, Wallet wallet2, String str) {
             super("openCreateWalletScreen", OneExecutionStateStrategy.class);
-            this.f1840wallet = wallet2;
+            this.f1848wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletHomeCryptoView walletHomeCryptoView) {
-            walletHomeCryptoView.openCreateWalletScreen(this.f1840wallet, this.password);
+            walletHomeCryptoView.openCreateWalletScreen(this.f1848wallet, this.password);
         }
     }
 

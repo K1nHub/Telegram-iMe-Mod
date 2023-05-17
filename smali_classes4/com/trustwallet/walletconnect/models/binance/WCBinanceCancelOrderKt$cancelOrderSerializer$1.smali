@@ -120,7 +120,7 @@
 
     move-result-object p1
 
-    const-string v1, "symbol"
+    const-string/jumbo v1, "symbol"
 
     invoke-virtual {v0, v1, p1}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
 

@@ -13,6 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.fxn.BubbleTabBar;
 import com.fxn.OnBubbleClickListener;
 import com.fxn.parser.MenuItem;
+import com.github.mmin18.widget.RealtimeBlurView;
 import com.iMe.common.IdFabric$Menu;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.fork.utils.CollectionsUtilsKt;
@@ -48,17 +49,17 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.koin.core.qualifier.StringQualifier;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentCatalogGlobalBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.LanguageSelectActivity;
 /* compiled from: CatalogRootFragment.kt */
 /* renamed from: com.iMe.ui.catalog.CatalogRootFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogRootFragment extends MvpFragment implements BottomNavigationDelegate, CatalogRootView, NavigationViewConfiguration {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CatalogRootFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/catalog/CatalogRootPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CatalogRootFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentCatalogGlobalBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -210,7 +211,10 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.CatalogRootFragment$$ExternalSyntheticLambda1
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_AB_SELECTORCOLOR;
+        int i2 = Theme.key_actionBarDefaultSelector;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.CatalogRootFragment$$ExternalSyntheticLambda1
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CatalogRootFragment.getThemeDescriptions$lambda$4(CatalogRootFragment.this);
@@ -220,7 +224,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "chats_actionBackground"));
+        }, Theme.key_chats_actionBackground));
         for (CatalogFragment catalogFragment : getBottomNavigationRouter().getScreenStack()) {
             arrayListOf.addAll(catalogFragment.getThemeDescriptions());
         }
@@ -231,8 +235,8 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     public static final void getThemeDescriptions$lambda$4(CatalogRootFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ForkFragmentCatalogGlobalBinding binding = this$0.getBinding();
-        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m51dp(30.0f));
-        binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor("chats_actionBackground"), 55));
+        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m55dp(30.0f));
+        binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor(Theme.key_chats_actionBackground), 55));
     }
 
     @Override // com.iMe.p031ui.catalog.CatalogRootView
@@ -276,14 +280,14 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setCastShadows(false);
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.catalog_title));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3242R.C3244drawable.msg_language);
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.catalog.CatalogRootFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setCastShadows(false);
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.catalog_title));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3290R.C3292drawable.msg_language);
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.catalog.CatalogRootFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 CatalogRootPresenter presenter;
                 if (i == -1) {
@@ -298,14 +302,16 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
 
     private final void setupColors() {
         ForkFragmentCatalogGlobalBinding binding = getBinding();
-        binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(getThemedColor("chats_actionBackground"), 55));
+        RealtimeBlurView realtimeBlurView = binding.realtimeBlur;
+        int i = Theme.key_chats_actionBackground;
+        realtimeBlurView.setOverlayColor(ViewExtKt.withAlpha(getThemedColor(i), 55));
         BubbleTabBar bubbleTabBar = binding.bottomNavigationCatalog;
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        bubbleTabBar.setDisableIconColor(parentActivity, getThemedColor("chats_actionBackground"));
+        bubbleTabBar.setDisableIconColor(parentActivity, getThemedColor(i));
         Activity parentActivity2 = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity2, "parentActivity");
-        bubbleTabBar.setTabContainerBackground(parentActivity2, getThemedColor("chats_actionBackground"));
+        bubbleTabBar.setTabContainerBackground(parentActivity2, getThemedColor(i));
     }
 
     private final void setupNavigationRouter() {
@@ -315,9 +321,9 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     /* JADX INFO: Access modifiers changed from: private */
     public final List<NavigationTab<CatalogFragment>> initTabs() {
         List<NavigationTab<CatalogFragment>> mutableListOf;
-        int i = C3242R.C3245id.catalog_root_bottom_navigation_channels;
+        int i = C3290R.C3293id.catalog_root_bottom_navigation_channels;
         CatalogFragment.Companion companion = CatalogFragment.Companion;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3242R.C3245id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3290R.C3293id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
         Iterator<T> it = mutableListOf.iterator();
         while (it.hasNext()) {
             ((CatalogFragment) ((NavigationTab) it.next()).getFragment()).setBottomNavigationDelegate(this);
@@ -337,13 +343,13 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
                 return true;
             }
         });
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3242R.C3245id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3242R.string.catalog_navigation_channels), C3242R.C3244drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3242R.C3245id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3242R.string.catalog_navigation_groups), C3242R.C3244drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3290R.C3293id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3290R.string.catalog_navigation_channels), C3290R.C3292drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3290R.C3293id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3290R.string.catalog_navigation_groups), C3290R.C3292drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
         bubbleTabBar.setMenu(mutableListOf);
     }
 
     /* compiled from: CatalogRootFragment.kt */
     /* renamed from: com.iMe.ui.catalog.CatalogRootFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

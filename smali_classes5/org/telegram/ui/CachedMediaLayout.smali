@@ -359,10 +359,10 @@
 
     iput-object v0, v6, Lorg/telegram/ui/CachedMediaLayout;->divider:Landroid/view/View;
 
-    const-string v2, "divider"
-
     .line 120
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -400,10 +400,10 @@
 
     iput-object v8, v6, Lorg/telegram/ui/CachedMediaLayout;->actionModeLayout:Landroid/widget/LinearLayout;
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 254
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -450,19 +450,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    const-string v2, "actionBarActionModeDefaultIcon"
-
     .line 263
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultIcon:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BackDrawable;->setColor(I)V
 
-    const-string v1, "actionBarActionModeDefaultSelector"
-
     .line 264
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultSelector:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -536,7 +536,7 @@
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 275
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -567,11 +567,11 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -686,39 +686,39 @@
 .method private checkMessageObjectForAudio(Lorg/telegram/ui/Storage/CacheModel$FileInfo;I)V
     .locals 6
 
-    .line 826
+    .line 825
     iget-object v0, p1, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-nez v0, :cond_2
 
-    .line 827
+    .line 826
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 828
+    .line 827
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 829
+    .line 828
     iput p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 830
+    .line 829
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 831
+    .line 830
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 832
+    .line 831
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iget-object v3, p0, Lorg/telegram/ui/CachedMediaLayout;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -739,7 +739,7 @@
 
     iput-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 833
+    .line 832
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -754,10 +754,10 @@
 
     const-string p2, ""
 
-    .line 834
+    .line 833
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 835
+    .line 834
     iget-object p2, p1, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->file:Ljava/io/File;
 
     invoke-virtual {p2}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -766,33 +766,38 @@
 
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    .line 836
+    .line 835
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;-><init>()V
 
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 837
+    .line 836
     iget v2, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v2, v2, 0x3
 
     iput v2, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 838
+    .line 837
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
 
     iput-object v2, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 839
+    .line 838
     iget p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     or-int/lit16 p2, p2, 0x300
 
     iput p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+
+    .line 839
+    iget-wide v2, p1, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->dialogId:J
+
+    iput-wide v2, v0, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     .line 841
     iget-object p2, p1, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->file:Ljava/io/File;
@@ -958,7 +963,7 @@
 .method public static fileIsMedia(Ljava/io/File;)Z
     .locals 3
 
-    .line 1032
+    .line 1042
     invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -967,7 +972,7 @@
 
     move-result-object v0
 
-    .line 1033
+    .line 1043
     invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -1034,14 +1039,14 @@
 .method private getCellForIndex(I)Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
     .locals 4
 
-    .line 341
+    .line 340
     invoke-virtual {p0}, Lorg/telegram/ui/CachedMediaLayout;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 342
+    .line 341
     :goto_0
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1049,12 +1054,12 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 343
+    .line 342
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 344
+    .line 343
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v3
@@ -1065,7 +1070,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 345
+    .line 344
     check-cast v2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     return-object v2
@@ -1418,7 +1423,7 @@
 
     invoke-virtual {v7, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 320
+    .line 319
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v6
@@ -1437,7 +1442,7 @@
 
     goto :goto_1
 
-    .line 322
+    .line 321
     :cond_3
     iget-object v3, v1, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->file:Ljava/io/File;
 
@@ -1453,7 +1458,7 @@
 
     invoke-static {v3, v4, v5, v6, v5}, Lorg/telegram/messenger/AndroidUtilities;->openForView(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Z
 
-    .line 325
+    .line 324
     :cond_4
     :goto_1
     iget v2, v2, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->type:I
@@ -1462,7 +1467,7 @@
 
     if-ne v2, v3, :cond_7
 
-    .line 326
+    .line 325
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -1475,7 +1480,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 327
+    .line 326
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -1486,7 +1491,7 @@
 
     if-nez v2, :cond_5
 
-    .line 328
+    .line 327
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -1497,7 +1502,7 @@
 
     goto :goto_2
 
-    .line 330
+    .line 329
     :cond_5
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -1509,7 +1514,7 @@
 
     goto :goto_2
 
-    .line 334
+    .line 333
     :cond_6
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -1694,7 +1699,7 @@
 .method public getListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 412
+    .line 411
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout;->viewPagerFixed:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentView()Landroid/view/View;
@@ -1707,7 +1712,7 @@
 
     return-object v0
 
-    .line 415
+    .line 414
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout;->viewPagerFixed:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -1731,7 +1736,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 359
+    .line 358
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -1750,14 +1755,14 @@
 .method public setBottomPadding(I)V
     .locals 3
 
-    .line 431
+    .line 430
     iput p1, p0, Lorg/telegram/ui/CachedMediaLayout;->bottomPadding:I
 
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 432
+    .line 431
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/CachedMediaLayout;->viewPagerFixed:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -1769,7 +1774,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 433
+    .line 432
     iget-object v2, p0, Lorg/telegram/ui/CachedMediaLayout;->viewPagerFixed:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/ViewPagerFixed;->getViewPages()[Landroid/view/View;
@@ -1782,7 +1787,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 435
+    .line 434
     invoke-virtual {v2, v0, v0, v0, p1}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
     :cond_0
@@ -1797,10 +1802,10 @@
 .method public setCacheModel(Lorg/telegram/ui/Storage/CacheModel;)V
     .locals 0
 
-    .line 352
+    .line 351
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
 
-    .line 353
+    .line 352
     invoke-virtual {p0}, Lorg/telegram/ui/CachedMediaLayout;->update()V
 
     return-void
@@ -1824,22 +1829,22 @@
 .method public update()V
     .locals 6
 
-    .line 363
+    .line 362
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 364
+    .line 363
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 365
+    .line 364
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 366
+    .line 365
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
 
     const/4 v2, 0x0
@@ -1850,7 +1855,7 @@
 
     move v1, v2
 
-    .line 367
+    .line 366
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
 
@@ -1858,14 +1863,14 @@
 
     if-ge v1, v5, :cond_6
 
-    .line 368
+    .line 367
     aget-object v5, v4, v1
 
     if-nez v5, :cond_0
 
     goto/16 :goto_1
 
-    .line 371
+    .line 370
     :cond_0
     aget-object v4, v4, v1
 
@@ -1883,7 +1888,7 @@
 
     if-nez v4, :cond_1
 
-    .line 372
+    .line 371
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     iget-object v5, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
@@ -1894,7 +1899,7 @@
 
     goto/16 :goto_1
 
-    .line 373
+    .line 372
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
 
@@ -1914,7 +1919,7 @@
 
     if-nez v4, :cond_2
 
-    .line 374
+    .line 373
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     iget-object v5, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
@@ -1925,7 +1930,7 @@
 
     goto :goto_1
 
-    .line 375
+    .line 374
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
 
@@ -1947,7 +1952,7 @@
 
     if-nez v4, :cond_3
 
-    .line 376
+    .line 375
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     iget-object v5, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
@@ -1958,7 +1963,7 @@
 
     goto :goto_1
 
-    .line 377
+    .line 376
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
 
@@ -1980,7 +1985,7 @@
 
     if-nez v4, :cond_4
 
-    .line 378
+    .line 377
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     iget-object v5, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
@@ -1991,7 +1996,7 @@
 
     goto :goto_1
 
-    .line 379
+    .line 378
     :cond_4
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
 
@@ -2013,7 +2018,7 @@
 
     if-nez v4, :cond_5
 
-    .line 380
+    .line 379
     iget-object v4, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     iget-object v5, p0, Lorg/telegram/ui/CachedMediaLayout;->allPages:[Lorg/telegram/ui/CachedMediaLayout$Page;
@@ -2028,7 +2033,7 @@
 
     goto/16 :goto_0
 
-    .line 384
+    .line 383
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
@@ -2044,14 +2049,14 @@
 
     if-eqz v1, :cond_7
 
-    .line 385
+    .line 384
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->tabs:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     const/16 v4, 0x8
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 386
+    .line 385
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->viewPagerFixed:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2062,7 +2067,7 @@
 
     iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 387
+    .line 386
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->divider:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2073,7 +2078,7 @@
 
     iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 390
+    .line 389
     :cond_7
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2089,7 +2094,7 @@
 
     move v1, v2
 
-    .line 391
+    .line 390
     :goto_2
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2097,7 +2102,7 @@
 
     if-ge v1, v4, :cond_9
 
-    .line 392
+    .line 391
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -2137,12 +2142,12 @@
     :goto_4
     if-eqz v0, :cond_b
 
-    .line 401
+    .line 400
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout;->viewPagerFixed:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/ViewPagerFixed;->rebuild(Z)V
 
-    .line 403
+    .line 402
     :cond_b
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
@@ -2153,7 +2158,7 @@
 
     if-ge v2, v0, :cond_d
 
-    .line 404
+    .line 403
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2166,7 +2171,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 405
+    .line 404
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2193,7 +2198,7 @@
 
     const/4 v0, 0x0
 
-    .line 424
+    .line 423
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->viewPagerFixed:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -2205,7 +2210,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 425
+    .line 424
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout;->viewPagerFixed:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->getViewPages()[Landroid/view/View;
@@ -2216,7 +2221,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 426
+    .line 425
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->updateVisibleRows(Lorg/telegram/ui/Components/RecyclerListView;)V
 
     add-int/lit8 v0, v0, 0x1

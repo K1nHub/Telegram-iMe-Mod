@@ -21,9 +21,10 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.iMe.fork.utils.Callbacks$Callback1;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageReceiver;
@@ -33,7 +34,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.AlertsCreator;
@@ -70,7 +71,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
     /* renamed from: org.telegram.ui.DialogOrContactPickerActivity$ViewPage */
     /* loaded from: classes5.dex */
     public static class ViewPage extends FrameLayout {
-        private C3306ActionBar actionBar;
+        private C3356ActionBar actionBar;
         private FrameLayout fragmentView;
         private RecyclerListView listView;
         private RecyclerListView listView2;
@@ -92,9 +93,9 @@ public class DialogOrContactPickerActivity extends BaseFragment {
         this.dialogsActivity = dialogsActivity;
         dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.DialogOrContactPickerActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.p044ui.DialogsActivity.DialogsActivityDelegate
-            public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, TopicsFragment topicsFragment) {
+            public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, TopicsFragment topicsFragment, Callbacks$Callback1 callbacks$Callback1) {
                 boolean lambda$new$1;
-                lambda$new$1 = DialogOrContactPickerActivity.this.lambda$new$1(dialogsActivity2, arrayList, charSequence, z, topicsFragment);
+                lambda$new$1 = DialogOrContactPickerActivity.this.lambda$new$1(dialogsActivity2, arrayList, charSequence, z, topicsFragment, callbacks$Callback1);
                 return lambda$new$1;
             }
         });
@@ -119,16 +120,20 @@ public class DialogOrContactPickerActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, TopicsFragment topicsFragment) {
-        if (arrayList.isEmpty()) {
+    public /* synthetic */ boolean lambda$new$1(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, TopicsFragment topicsFragment, Callbacks$Callback1 callbacks$Callback1) {
+        if (callbacks$Callback1 != null) {
+            callbacks$Callback1.invoke(null);
+            return true;
+        } else if (arrayList.isEmpty()) {
+            return true;
+        } else {
+            long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+            if (DialogObject.isUserDialog(j)) {
+                showBlockAlert(getMessagesController().getUser(Long.valueOf(j)));
+                return true;
+            }
             return true;
         }
-        long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        if (DialogObject.isUserDialog(j)) {
-            showBlockAlert(getMessagesController().getUser(Long.valueOf(j)));
-            return true;
-        }
-        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -138,17 +143,17 @@ public class DialogOrContactPickerActivity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("BlockUserMultiTitle", C3242R.string.BlockUserMultiTitle));
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("BlockUserMultiTitle", C3290R.string.BlockUserMultiTitle));
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
-        this.actionBar.setExtraHeight(AndroidUtilities.m50dp(44));
+        this.actionBar.setExtraHeight(AndroidUtilities.m54dp(44));
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setClipContent(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DialogOrContactPickerActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DialogOrContactPickerActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     DialogOrContactPickerActivity.this.finishFragment();
@@ -156,7 +161,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
             }
         });
         this.hasOwnBackground = true;
-        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3242R.C3244drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.DialogOrContactPickerActivity.2
+        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3290R.C3292drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.DialogOrContactPickerActivity.2
             @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 DialogOrContactPickerActivity.this.dialogsActivity.getActionBar().openSearchField("", false);
@@ -177,7 +182,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
             }
         });
         this.searchItem = actionBarMenuItemSearchListener;
-        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3242R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3290R.string.Search));
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(context);
         this.scrollSlidingTextTabStrip = scrollSlidingTextTabStrip;
         scrollSlidingTextTabStrip.setUseSameWidth(true);
@@ -341,7 +346,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
 
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
-                DialogOrContactPickerActivity.this.backgroundPaint.setColor(Theme.getColor("windowBackgroundWhite"));
+                DialogOrContactPickerActivity.this.backgroundPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 canvas.drawRect(BitmapDescriptorFactory.HUE_RED, ((BaseFragment) DialogOrContactPickerActivity.this).actionBar.getMeasuredHeight() + ((BaseFragment) DialogOrContactPickerActivity.this).actionBar.getTranslationY(), getMeasuredWidth(), getMeasuredHeight(), DialogOrContactPickerActivity.this.backgroundPaint);
             }
 
@@ -449,8 +454,8 @@ public class DialogOrContactPickerActivity extends BaseFragment {
                                     DialogOrContactPickerActivity.this.scrollSlidingTextTabStrip.selectTabWithId(DialogOrContactPickerActivity.this.viewPages[0].selectedType, 1.0f);
                                 }
                                 DialogOrContactPickerActivity.this.tabsAnimationInProgress = false;
-                                C54264.this.maybeStartTracking = false;
-                                C54264.this.startedTracking = false;
+                                C55024.this.maybeStartTracking = false;
+                                C55024.this.startedTracking = false;
                                 ((BaseFragment) DialogOrContactPickerActivity.this).actionBar.setEnabled(true);
                                 DialogOrContactPickerActivity.this.scrollSlidingTextTabStrip.setEnabled(true);
                             }
@@ -524,7 +529,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
                             onScrollListener.onScrollStateChanged(recyclerView, i3);
                             if (i3 != 1) {
                                 int i4 = (int) (-((BaseFragment) DialogOrContactPickerActivity.this).actionBar.getTranslationY());
-                                int currentActionBarHeight = C3306ActionBar.getCurrentActionBarHeight();
+                                int currentActionBarHeight = C3356ActionBar.getCurrentActionBarHeight();
                                 if (i4 == 0 || i4 == currentActionBarHeight) {
                                     return;
                                 }
@@ -551,8 +556,8 @@ public class DialogOrContactPickerActivity extends BaseFragment {
                             if (recyclerView == DialogOrContactPickerActivity.this.viewPages[0].listView || recyclerView == DialogOrContactPickerActivity.this.viewPages[0].listView2) {
                                 float translationY = ((BaseFragment) DialogOrContactPickerActivity.this).actionBar.getTranslationY();
                                 float f = translationY - i4;
-                                if (f < (-C3306ActionBar.getCurrentActionBarHeight())) {
-                                    f = -C3306ActionBar.getCurrentActionBarHeight();
+                                if (f < (-C3356ActionBar.getCurrentActionBarHeight())) {
+                                    f = -C3356ActionBar.getCurrentActionBarHeight();
                                 } else if (f > BitmapDescriptorFactory.HUE_RED) {
                                     f = 0.0f;
                                 }
@@ -643,30 +648,30 @@ public class DialogOrContactPickerActivity extends BaseFragment {
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getString("BlockUser", C3242R.string.BlockUser));
-        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("AreYouSureBlockContact2", C3242R.string.AreYouSureBlockContact2, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name))));
-        builder.setPositiveButton(LocaleController.getString("BlockContact", C3242R.string.BlockContact), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DialogOrContactPickerActivity$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("BlockUser", C3290R.string.BlockUser));
+        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("AreYouSureBlockContact2", C3290R.string.AreYouSureBlockContact2, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name))));
+        builder.setPositiveButton(LocaleController.getString("BlockContact", C3290R.string.BlockContact), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DialogOrContactPickerActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DialogOrContactPickerActivity.this.lambda$showBlockAlert$3(tLRPC$User, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
         AlertDialog create = builder.create();
         showDialog(create);
         TextView textView = (TextView) create.getButton(-1);
         if (textView != null) {
-            textView.setTextColor(Theme.getColor("dialogTextRed"));
+            textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showBlockAlert$3(TLRPC$User tLRPC$User, DialogInterface dialogInterface, int i) {
         if (MessagesController.isSupportUser(tLRPC$User)) {
-            AlertsCreator.showSimpleToast(this, LocaleController.getString("ErrorOccurred", C3242R.string.ErrorOccurred));
+            AlertsCreator.showSimpleToast(this, LocaleController.getString("ErrorOccurred", C3290R.string.ErrorOccurred));
         } else {
-            MessagesController.getInstance(this.currentAccount).blockPeer(tLRPC$User.f1567id);
-            AlertsCreator.showSimpleToast(this, LocaleController.getString("UserBlocked", C3242R.string.UserBlocked));
+            MessagesController.getInstance(this.currentAccount).blockPeer(tLRPC$User.f1574id);
+            AlertsCreator.showSimpleToast(this, LocaleController.getString("UserBlocked", C3290R.string.UserBlocked));
         }
         finishFragment();
     }
@@ -676,10 +681,10 @@ public class DialogOrContactPickerActivity extends BaseFragment {
         if (scrollSlidingTextTabStrip == null) {
             return;
         }
-        scrollSlidingTextTabStrip.addTextTab(0, LocaleController.getString("BlockUserChatsTitle", C3242R.string.BlockUserChatsTitle));
-        this.scrollSlidingTextTabStrip.addTextTab(1, LocaleController.getString("BlockUserContactsTitle", C3242R.string.BlockUserContactsTitle));
+        scrollSlidingTextTabStrip.addTextTab(0, LocaleController.getString("BlockUserChatsTitle", C3290R.string.BlockUserChatsTitle));
+        this.scrollSlidingTextTabStrip.addTextTab(1, LocaleController.getString("BlockUserContactsTitle", C3290R.string.BlockUserContactsTitle));
         this.scrollSlidingTextTabStrip.setVisibility(0);
-        this.actionBar.setExtraHeight(AndroidUtilities.m50dp(44));
+        this.actionBar.setExtraHeight(AndroidUtilities.m54dp(44));
         int currentTabId = this.scrollSlidingTextTabStrip.getCurrentTabId();
         if (currentTabId >= 0) {
             this.viewPages[0].selectedType = currentTabId;
@@ -719,15 +724,15 @@ public class DialogOrContactPickerActivity extends BaseFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.fragmentView, 0, null, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.scrollSlidingTextTabStrip.getTabsContainer(), ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextView.class}, null, null, null, "actionBarTabActiveText"));
-        arrayList.add(new ThemeDescription(this.scrollSlidingTextTabStrip.getTabsContainer(), ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextView.class}, null, null, null, "actionBarTabUnactiveText"));
-        arrayList.add(new ThemeDescription(this.scrollSlidingTextTabStrip.getTabsContainer(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{TextView.class}, null, null, null, "actionBarTabLine"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, new Drawable[]{this.scrollSlidingTextTabStrip.getSelectorDrawable()}, null, "actionBarTabSelector"));
+        arrayList.add(new ThemeDescription(this.fragmentView, 0, null, null, null, null, Theme.key_windowBackgroundWhite));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.scrollSlidingTextTabStrip.getTabsContainer(), ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarTabActiveText));
+        arrayList.add(new ThemeDescription(this.scrollSlidingTextTabStrip.getTabsContainer(), ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarTabUnactiveText));
+        arrayList.add(new ThemeDescription(this.scrollSlidingTextTabStrip.getTabsContainer(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarTabLine));
+        arrayList.add(new ThemeDescription(null, 0, null, null, new Drawable[]{this.scrollSlidingTextTabStrip.getSelectorDrawable()}, null, Theme.key_actionBarTabSelector));
         arrayList.addAll(this.dialogsActivity.getThemeDescriptions());
         arrayList.addAll(this.contactsActivity.getThemeDescriptions());
         return arrayList;

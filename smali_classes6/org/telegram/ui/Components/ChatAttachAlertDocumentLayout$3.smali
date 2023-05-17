@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;Landroid/content/Context;Landroid/view/View;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 283
+    .line 284
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$3;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/StickerEmptyView;-><init>(Landroid/content/Context;Landroid/view/View;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method public getTranslationY()F
     .locals 2
 
-    .line 291
+    .line 292
     invoke-super {p0}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result v0
@@ -54,7 +54,7 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 286
+    .line 287
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$3;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$1100(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)F

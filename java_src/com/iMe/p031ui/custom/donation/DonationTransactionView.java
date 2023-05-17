@@ -23,7 +23,7 @@ import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.databinding.ForkRecycleItemWalletDonationTransactionBinding;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -90,7 +90,7 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
             ForkRecycleItemWalletDonationTransactionBinding forkRecycleItemWalletDonationTransactionBinding = this.binding;
             TLRPC$User user = TelegramControllersGateway.CC.getMessagesController$default(getTelegramControllersGateway(), 0, 1, null).getUser(Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId())));
             AvatarDrawable avatarDrawable = new AvatarDrawable();
-            forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.getImageReceiver().setRoundRadius(getResources().getDimensionPixelSize(C3242R.dimen.telegram_avatar_size_medium) / 2);
+            forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.getImageReceiver().setRoundRadius(getResources().getDimensionPixelSize(C3290R.dimen.telegram_avatar_size_medium) / 2);
             if (user != null) {
                 avatarDrawable.setInfo(user);
                 forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.setForUserOrChat(user, avatarDrawable);
@@ -100,7 +100,7 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
                 substring = StringsKt__StringsKt.substring(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId(), new IntRange(0, 1));
                 avatarDrawable.setInfo(parseLong, null, null, substring);
                 forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.setImageDrawable(avatarDrawable);
-                forkRecycleItemWalletDonationTransactionBinding.textUserFullName.setText(getResourceManager().getString(C3242R.string.common_id, Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId()))));
+                forkRecycleItemWalletDonationTransactionBinding.textUserFullName.setText(getResourceManager().getString(C3290R.string.common_id, Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId()))));
             }
             forkRecycleItemWalletDonationTransactionBinding.textDate.setText(item.getTransactionDate());
             forkRecycleItemWalletDonationTransactionBinding.textCoinTicker.setTicker(TokenInfo.Companion.map(item.getTransaction().getTokenCode()), getResourceManager());
@@ -117,12 +117,12 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
     public final void setupColors() {
         List<AppCompatTextView> listOf;
         ForkRecycleItemWalletDonationTransactionBinding forkRecycleItemWalletDonationTransactionBinding = this.binding;
-        forkRecycleItemWalletDonationTransactionBinding.getRoot().setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        forkRecycleItemWalletDonationTransactionBinding.getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new AppCompatTextView[]{forkRecycleItemWalletDonationTransactionBinding.textUserFullName, forkRecycleItemWalletDonationTransactionBinding.textAmount});
         for (AppCompatTextView appCompatTextView : listOf) {
-            appCompatTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+            appCompatTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         }
-        forkRecycleItemWalletDonationTransactionBinding.textDate.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+        forkRecycleItemWalletDonationTransactionBinding.textDate.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
         forkRecycleItemWalletDonationTransactionBinding.textCoinTicker.setupColors();
         forkRecycleItemWalletDonationTransactionBinding.viewDivider.setupColors();
     }

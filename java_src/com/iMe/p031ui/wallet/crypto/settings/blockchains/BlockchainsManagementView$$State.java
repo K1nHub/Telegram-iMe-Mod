@@ -207,16 +207,16 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
     public class OpenBackupScreenCommand extends ViewCommand<BlockchainsManagementView> {
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1838wallet;
+        public final Wallet f1846wallet;
 
         OpenBackupScreenCommand(BlockchainsManagementView$$State blockchainsManagementView$$State, Wallet wallet2) {
             super("openBackupScreen", OneExecutionStateStrategy.class);
-            this.f1838wallet = wallet2;
+            this.f1846wallet = wallet2;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(BlockchainsManagementView blockchainsManagementView) {
-            blockchainsManagementView.openBackupScreen(this.f1838wallet);
+            blockchainsManagementView.openBackupScreen(this.f1846wallet);
         }
     }
 

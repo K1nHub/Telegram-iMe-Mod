@@ -155,7 +155,7 @@
 .method public final textOrMask(ZLjava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

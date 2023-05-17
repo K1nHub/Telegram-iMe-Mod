@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;)V
     .locals 0
 
-    .line 1705
+    .line 1707
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView$1;->this$1:Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1708
+    .line 1710
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1709
+    .line 1711
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView$1;->this$1:Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
 
     const/4 v0, 0x1

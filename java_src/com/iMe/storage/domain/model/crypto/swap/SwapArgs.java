@@ -199,7 +199,7 @@ public abstract class SwapArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            int hashCode = ((((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + getOutputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkType.hashCode()) * 31;
+            int hashCode = ((((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + getOutputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkType.hashCode()) * 31;
             NetworkType networkType = this.outputNetworkType;
             return hashCode + (networkType == null ? 0 : networkType.hashCode());
         }

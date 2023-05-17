@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$Adapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1991
+    .line 1995
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/16 p2, 0x1a
 
-    .line 1994
+    .line 1998
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

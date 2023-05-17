@@ -10,7 +10,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WalletConnectTransactionView$$State extends MvpViewState<WalletConnectTransactionView> implements WalletConnectTransactionView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -97,7 +97,7 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView$$State$OnTransactionSuccessCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnTransactionSuccessCommand extends ViewCommand<WalletConnectTransactionView> {
         OnTransactionSuccessCommand(WalletConnectTransactionView$$State walletConnectTransactionView$$State) {
             super("onTransactionSuccess", OneExecutionStateStrategy.class);
@@ -111,14 +111,14 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView$$State$SetupScreenWithDataCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupScreenWithDataCommand extends ViewCommand<WalletConnectTransactionView> {
         public final String from;
         public final String network;
         public final String peerUrl;
 
         /* renamed from: to */
-        public final String f379to;
+        public final String f382to;
         public final String transactionAmount;
 
         SetupScreenWithDataCommand(WalletConnectTransactionView$$State walletConnectTransactionView$$State, String str, String str2, String str3, String str4, String str5) {
@@ -126,19 +126,19 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
             this.transactionAmount = str;
             this.network = str2;
             this.from = str3;
-            this.f379to = str4;
+            this.f382to = str4;
             this.peerUrl = str5;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletConnectTransactionView walletConnectTransactionView) {
-            walletConnectTransactionView.setupScreenWithData(this.transactionAmount, this.network, this.from, this.f379to, this.peerUrl);
+            walletConnectTransactionView.setupScreenWithData(this.transactionAmount, this.network, this.from, this.f382to, this.peerUrl);
         }
     }
 
     /* compiled from: WalletConnectTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView$$State$ShowFeeCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowFeeCommand extends ViewCommand<WalletConnectTransactionView> {
         public final FeeView.ChooseFeeType feeType;
 
@@ -155,7 +155,7 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<WalletConnectTransactionView> {
         public final String text;
 
@@ -172,7 +172,7 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletConnectTransactionView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -193,7 +193,7 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletConnectTransactionView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

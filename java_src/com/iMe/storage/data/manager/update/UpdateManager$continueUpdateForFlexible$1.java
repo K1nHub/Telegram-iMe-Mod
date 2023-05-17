@@ -29,7 +29,7 @@ public final class UpdateManager$continueUpdateForFlexible$1 extends Lambda impl
     public final void invoke2(AppUpdateInfo appUpdateInfo) {
         Intrinsics.checkNotNullParameter(appUpdateInfo, "appUpdateInfo");
         if (appUpdateInfo.installStatus() == 11) {
-            Timber.m7d("An update has been downloaded", new Object[0]);
+            Timber.m9d("An update has been downloaded", new Object[0]);
             this.this$0.popupSnackbarForCompleteUpdate();
         }
     }

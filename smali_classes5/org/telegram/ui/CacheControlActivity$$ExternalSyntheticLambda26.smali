@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/KeepMediaPopupView$Callback;
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
 # instance fields
@@ -22,12 +22,20 @@
 
 
 # virtual methods
-.method public final onKeepMediaChange(II)V
+.method public final didSetColor()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$iysbAQsY1sAke6vtzztk9K2C03E(Lorg/telegram/ui/CacheControlActivity;II)V
+    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$6TafDJb4qiBvtjR0Lb8aiEYDhFo(Lorg/telegram/ui/CacheControlActivity;)V
+
+    return-void
+.end method
+
+.method public synthetic onAnimationProgress(F)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
 
     return-void
 .end method

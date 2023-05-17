@@ -28,7 +28,7 @@
         }
     .end annotation
 
-    .line 92
+    .line 94
     invoke-direct {p0, p2}, Landroidx/room/SharedSQLiteStatement;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void

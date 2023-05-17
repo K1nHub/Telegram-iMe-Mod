@@ -33,15 +33,15 @@ public final class FloatingActionButton extends FrameLayout {
         this.iconView$delegate = lazy;
         StateListAnimator stateListAnimator = new StateListAnimator();
         Property property = FrameLayout.TRANSLATION_Z;
-        stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(this, property, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(4)).setDuration(200L));
-        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this, property, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(2)).setDuration(200L));
+        stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(this, property, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(4)).setDuration(200L));
+        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this, property, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(2)).setDuration(200L));
         setStateListAnimator(stateListAnimator);
         setOutlineProvider(new ViewOutlineProvider() { // from class: com.iMe.fork.ui.view.FloatingActionButton.2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view, Outline outline) {
                 Intrinsics.checkNotNullParameter(view, "view");
                 Intrinsics.checkNotNullParameter(outline, "outline");
-                outline.setOval(0, 0, AndroidUtilities.m50dp(56), AndroidUtilities.m50dp(56));
+                outline.setOval(0, 0, AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
             }
         });
         addView(getIconView(), LayoutHelper.createFrame(-1, -1));
@@ -57,8 +57,8 @@ public final class FloatingActionButton extends FrameLayout {
     }
 
     public final void updateColors() {
-        setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m50dp(56), Theme.getColor("chats_actionBackground"), Theme.getColor("chats_actionPressedBackground")));
-        getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionIcon"), PorterDuff.Mode.SRC_IN));
+        setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m54dp(56), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
+        getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.SRC_IN));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

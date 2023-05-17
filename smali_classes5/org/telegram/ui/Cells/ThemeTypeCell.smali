@@ -30,10 +30,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ThemeTypeCell;->textView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 40
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -162,9 +162,9 @@
     .line 50
     new-instance p1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "featuredStickers_addedIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

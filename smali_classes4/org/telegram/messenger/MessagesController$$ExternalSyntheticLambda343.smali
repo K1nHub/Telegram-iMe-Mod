@@ -8,34 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Ljava/util/HashMap;
+.field public final synthetic f$1:Ljava/lang/Object;
 
-.field public final synthetic f$2:Ljava/lang/String;
-
-.field public final synthetic f$3:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$4:J
-
-.field public final synthetic f$5:Z
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_saveRecentSticker;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Ljava/util/HashMap;Ljava/lang/String;Landroidx/collection/LongSparseArray;JZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$TL_messages_saveRecentSticker;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$1:Ljava/util/HashMap;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$1:Ljava/lang/Object;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$2:Ljava/lang/String;
-
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$3:Landroidx/collection/LongSparseArray;
-
-    iput-wide p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$4:J
-
-    iput-boolean p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$5:Z
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_saveRecentSticker;
 
     return-void
 .end method
@@ -43,25 +31,15 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 9
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$1:Ljava/util/HashMap;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$1:Ljava/lang/Object;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$2:Ljava/lang/String;
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_saveRecentSticker;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$3:Landroidx/collection/LongSparseArray;
-
-    iget-wide v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$4:J
-
-    iget-boolean v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda343;->f$5:Z
-
-    move-object v7, p1
-
-    move-object v8, p2
-
-    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$cxCe5CGC8VFgvfdXR5FHyQrrWXY(Lorg/telegram/messenger/MessagesController;Ljava/util/HashMap;Ljava/lang/String;Landroidx/collection/LongSparseArray;JZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Dk_7qAH1K6ni96lixb2nrUlArCQ(Lorg/telegram/messenger/MessagesController;Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$TL_messages_saveRecentSticker;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

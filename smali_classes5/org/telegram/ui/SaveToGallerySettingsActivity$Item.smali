@@ -26,12 +26,12 @@
 
     const/4 p1, 0x0
 
-    .line 578
+    .line 584
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     const/4 p1, 0x0
 
-    .line 579
+    .line 585
     iput-object p1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;->exception:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     return-void
@@ -42,15 +42,15 @@
 
     const/4 p1, 0x0
 
-    .line 588
+    .line 594
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 589
+    .line 595
     iput-object p3, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;->title:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 590
+    .line 596
     iput-object p1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;->exception:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     return-void
@@ -59,7 +59,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;ILjava/lang/String;Lorg/telegram/ui/SaveToGallerySettingsActivity$1;)V
     .locals 0
 
-    .line 572
+    .line 578
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;-><init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;ILjava/lang/String;)V
 
     return-void
@@ -70,10 +70,10 @@
 
     const/4 p1, 0x0
 
-    .line 583
+    .line 589
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 584
+    .line 590
     iput-object p3, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;->exception:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     return-void
@@ -82,7 +82,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;ILorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;Lorg/telegram/ui/SaveToGallerySettingsActivity$1;)V
     .locals 0
 
-    .line 572
+    .line 578
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;-><init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;ILorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;)V
 
     return-void
@@ -91,7 +91,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;ILorg/telegram/ui/SaveToGallerySettingsActivity$1;)V
     .locals 0
 
-    .line 572
+    .line 578
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;-><init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;I)V
 
     return-void
@@ -113,7 +113,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 596
+    .line 602
     const-class v2, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -124,11 +124,11 @@
 
     goto :goto_1
 
-    .line 597
+    .line 603
     :cond_1
     check-cast p1, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
 
-    .line 598
+    .line 604
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -137,13 +137,13 @@
 
     return v1
 
-    .line 601
+    .line 607
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;->title:Ljava/lang/String;
 
     if-eqz v2, :cond_3
 
-    .line 602
+    .line 608
     iget-object p1, p1, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;->title:Ljava/lang/String;
 
     invoke-static {v2, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -152,7 +152,7 @@
 
     return p1
 
-    .line 604
+    .line 610
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;->exception:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
@@ -162,7 +162,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 605
+    .line 611
     iget-wide v2, v2, Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;->dialogId:J
 
     iget-wide v4, p1, Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;->dialogId:J

@@ -259,6 +259,19 @@
     return-object v0
 .end method
 
+.method public varargs i(Ljava/lang/String;[Ljava/lang/Object;)V
+    .locals 2
+
+    const/4 v0, 0x4
+
+    const/4 v1, 0x0
+
+    .line 420
+    invoke-direct {p0, v0, v1, p1, p2}, Ltimber/log/Timber$Tree;->prepareLog(ILjava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method protected isLoggable(I)Z
     .locals 0
     .annotation runtime Ljava/lang/Deprecated;

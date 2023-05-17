@@ -3,7 +3,7 @@ package com.google.android.gms.internal.mlkit_language_id;
 import p034j$.util.Iterator;
 import p034j$.util.function.Consumer;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class zzdo implements zzds, Iterator {
     @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {

@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/messenger/FilesMigrationService;)V
     .locals 0
 
-    .line 73
+    .line 69
     iput-object p1, p0, Lorg/telegram/messenger/FilesMigrationService$1;->this$0:Lorg/telegram/messenger/FilesMigrationService;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -43,17 +43,17 @@
 
     const/4 v0, 0x0
 
-    .line 78
+    .line 74
     sput-boolean v0, Lorg/telegram/messenger/FilesMigrationService;->isRunning:Z
 
-    .line 79
+    .line 75
     iget-object v0, p0, Lorg/telegram/messenger/FilesMigrationService$1;->this$0:Lorg/telegram/messenger/FilesMigrationService;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/app/Service;->stopForeground(Z)V
 
-    .line 80
+    .line 76
     iget-object v0, p0, Lorg/telegram/messenger/FilesMigrationService$1;->this$0:Lorg/telegram/messenger/FilesMigrationService;
 
     invoke-virtual {v0}, Landroid/app/Service;->stopSelf()V
@@ -66,12 +66,12 @@
 .method public run()V
     .locals 1
 
-    .line 76
+    .line 72
     iget-object v0, p0, Lorg/telegram/messenger/FilesMigrationService$1;->this$0:Lorg/telegram/messenger/FilesMigrationService;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/FilesMigrationService;->migrateOldFolder()V
 
-    .line 77
+    .line 73
     new-instance v0, Lorg/telegram/messenger/FilesMigrationService$1$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/FilesMigrationService$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/FilesMigrationService$1;)V

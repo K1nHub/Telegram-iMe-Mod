@@ -26,9 +26,9 @@ import java.util.HashMap;
 import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
-import org.telegram.PhoneFormat.C3159PhoneFormat;
+import org.telegram.PhoneFormat.C3207PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Emoji;
@@ -116,19 +116,19 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             this.avatarDrawable = new AvatarDrawable(resourcesProvider);
             BackupImageView backupImageView = new BackupImageView(context);
             this.avatarImageView = backupImageView;
-            backupImageView.setRoundRadius(AndroidUtilities.m50dp(23));
+            backupImageView.setRoundRadius(AndroidUtilities.m54dp(23));
             BackupImageView backupImageView2 = this.avatarImageView;
             boolean z = LocaleController.isRTL;
             addView(backupImageView2, LayoutHelper.createFrame(46, 46, (z ? 5 : 3) | 48, z ? 0 : 14, 9, z ? 14 : 0, 0));
             SimpleTextView simpleTextView = new SimpleTextView(this, context) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.1
                 @Override // org.telegram.p044ui.ActionBar.SimpleTextView
                 public boolean setText(CharSequence charSequence, boolean z2) {
-                    return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(14), false), z2);
+                    return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(14), false), z2);
                 }
             };
             this.nameTextView = simpleTextView;
             NotificationCenter.listenEmojiLoading(simpleTextView);
-            this.nameTextView.setTextColor(getThemedColor("dialogTextBlack"));
+            this.nameTextView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
             this.nameTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.nameTextView.setTextSize(16);
             this.nameTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
@@ -138,7 +138,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             SimpleTextView simpleTextView3 = new SimpleTextView(context);
             this.statusTextView = simpleTextView3;
             simpleTextView3.setTextSize(13);
-            this.statusTextView.setTextColor(getThemedColor("dialogTextGray2"));
+            this.statusTextView.setTextColor(getThemedColor(Theme.key_dialogTextGray2));
             this.statusTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
             SimpleTextView simpleTextView4 = this.statusTextView;
             boolean z3 = LocaleController.isRTL;
@@ -198,7 +198,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             TLRPC$User tLRPC$User = this.currentUser;
             if (tLRPC$User != null) {
                 if (TextUtils.isEmpty(tLRPC$User.phone)) {
-                    this.statusTextView.setText(LocaleController.getString("NumberUnknown", C3242R.string.NumberUnknown));
+                    this.statusTextView.setText(LocaleController.getString("NumberUnknown", C3290R.string.NumberUnknown));
                 } else if (this.formattedPhoneNumberUser != this.currentUser && (charSequence2 = this.formattedPhoneNumber) != null) {
                     this.statusTextView.setText(charSequence2);
                 } else {
@@ -216,8 +216,8 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setStatus$3() {
             if (this.currentUser != null) {
-                C3159PhoneFormat c3159PhoneFormat = C3159PhoneFormat.getInstance();
-                this.formattedPhoneNumber = c3159PhoneFormat.format("+" + this.currentUser.phone);
+                C3207PhoneFormat c3207PhoneFormat = C3207PhoneFormat.getInstance();
+                this.formattedPhoneNumber = c3207PhoneFormat.format("+" + this.currentUser.phone);
                 this.formattedPhoneNumberUser = this.currentUser;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$UserCell$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
@@ -235,7 +235,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(64) + (this.needDivider ? 1 : 0), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64) + (this.needDivider ? 1 : 0), 1073741824));
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:47:0x0068, code lost:
@@ -256,14 +256,12 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             if (this.needDivider) {
-                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(70), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(70) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(70), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(70) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
             }
         }
 
-        private int getThemedColor(String str) {
-            Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-            Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-            return color != null ? color.intValue() : Theme.getColor(str);
+        protected int getThemedColor(int i) {
+            return Theme.getColor(i, this.resourcesProvider);
         }
     }
 
@@ -272,17 +270,17 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         this.searchAdapter = new ShareSearchAdapter(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.frameLayout = frameLayout;
-        frameLayout.setBackgroundColor(getThemedColor("dialogBackground"));
+        frameLayout.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
         SearchField searchField = new SearchField(context, false, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.1
             @Override // org.telegram.p044ui.Components.SearchField
             public void onTextChange(String str) {
                 if (str.length() != 0) {
                     if (ChatAttachAlertContactsLayout.this.emptyView != null) {
-                        ChatAttachAlertContactsLayout.this.emptyView.setText(LocaleController.getString("NoResult", C3242R.string.NoResult));
+                        ChatAttachAlertContactsLayout.this.emptyView.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
                     }
                 } else if (ChatAttachAlertContactsLayout.this.listView.getAdapter() != ChatAttachAlertContactsLayout.this.listAdapter) {
                     int currentTop = ChatAttachAlertContactsLayout.this.getCurrentTop();
-                    ChatAttachAlertContactsLayout.this.emptyView.setText(LocaleController.getString("NoContacts", C3242R.string.NoContacts));
+                    ChatAttachAlertContactsLayout.this.emptyView.setText(LocaleController.getString("NoContacts", C3290R.string.NoContacts));
                     ChatAttachAlertContactsLayout.this.emptyView.showTextView();
                     ChatAttachAlertContactsLayout.this.listView.setAdapter(ChatAttachAlertContactsLayout.this.listAdapter);
                     ChatAttachAlertContactsLayout.this.listAdapter.notifyDataSetChanged();
@@ -304,7 +302,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             @Override // org.telegram.p044ui.Components.SearchField
             public void processTouchEvent(MotionEvent motionEvent) {
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
-                obtain.setLocation(obtain.getRawX(), (obtain.getRawY() - ChatAttachAlertContactsLayout.this.parentAlert.getSheetContainer().getTranslationY()) - AndroidUtilities.m50dp(58));
+                obtain.setLocation(obtain.getRawX(), (obtain.getRawY() - ChatAttachAlertContactsLayout.this.parentAlert.getSheetContainer().getTranslationY()) - AndroidUtilities.m54dp(58));
                 ChatAttachAlertContactsLayout.this.listView.dispatchTouchEvent(obtain);
                 obtain.recycle();
             }
@@ -315,29 +313,29 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             }
         };
         this.searchField = searchField;
-        searchField.setHint(LocaleController.getString("SearchFriends", C3242R.string.SearchFriends));
+        searchField.setHint(LocaleController.getString("SearchFriends", C3290R.string.SearchFriends));
         this.frameLayout.addView(this.searchField, LayoutHelper.createFrame(-1, -1, 51));
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, null, resourcesProvider);
         this.emptyView = emptyTextProgressView;
         emptyTextProgressView.showTextView();
-        this.emptyView.setText(LocaleController.getString("NoContacts", C3242R.string.NoContacts));
+        this.emptyView.setText(LocaleController.getString("NoContacts", C3290R.string.NoContacts));
         addView(this.emptyView, LayoutHelper.createFrame(-1, -1, 51, 0, 52, 0, 0));
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.2
             @Override // org.telegram.p044ui.Components.RecyclerListView
             protected boolean allowSelectChildAtPosition(float f, float f2) {
-                return f2 >= ((float) ((ChatAttachAlertContactsLayout.this.parentAlert.scrollOffsetY[0] + AndroidUtilities.m50dp(30)) + ((Build.VERSION.SDK_INT < 21 || ChatAttachAlertContactsLayout.this.parentAlert.inBubbleMode) ? 0 : AndroidUtilities.statusBarHeight)));
+                return f2 >= ((float) ((ChatAttachAlertContactsLayout.this.parentAlert.scrollOffsetY[0] + AndroidUtilities.m54dp(30)) + ((Build.VERSION.SDK_INT < 21 || ChatAttachAlertContactsLayout.this.parentAlert.inBubbleMode) ? 0 : AndroidUtilities.statusBarHeight)));
             }
         };
         this.listView = recyclerListView;
         recyclerListView.setClipToPadding(false);
         RecyclerListView recyclerListView2 = this.listView;
-        FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(getContext(), 1, false, AndroidUtilities.m50dp(9), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.3
+        FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(getContext(), 1, false, AndroidUtilities.m54dp(9), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.3
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
                 LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.3.1
                     @Override // androidx.recyclerview.widget.LinearSmoothScroller
                     public int calculateDyToMakeVisible(View view, int i2) {
-                        return super.calculateDyToMakeVisible(view, i2) - (ChatAttachAlertContactsLayout.this.listView.getPaddingTop() - AndroidUtilities.m50dp(8));
+                        return super.calculateDyToMakeVisible(view, i2) - (ChatAttachAlertContactsLayout.this.listView.getPaddingTop() - AndroidUtilities.m54dp(8));
                     }
 
                     /* JADX INFO: Access modifiers changed from: protected */
@@ -360,7 +358,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         ShareAdapter shareAdapter = new ShareAdapter(context);
         this.listAdapter = shareAdapter;
         recyclerListView3.setAdapter(shareAdapter);
-        this.listView.setGlowColor(getThemedColor("dialogScrollGlow"));
+        this.listView.setGlowColor(getThemedColor(Theme.key_dialogScrollGlow));
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$$ExternalSyntheticLambda2
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
@@ -376,10 +374,10 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             }
         });
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 51);
-        layoutParams.topMargin = AndroidUtilities.m50dp(58);
+        layoutParams.topMargin = AndroidUtilities.m54dp(58);
         View view = new View(context);
         this.shadow = view;
-        view.setBackgroundColor(getThemedColor("dialogShadowLine"));
+        view.setBackgroundColor(getThemedColor(Theme.key_dialogShadowLine));
         this.shadow.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.shadow.setTag(1);
         addView(this.shadow, layoutParams);
@@ -464,7 +462,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         }
         View childAt = this.listView.getChildAt(0);
         RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int top = childAt.getTop() - AndroidUtilities.m50dp(8);
+        int top = childAt.getTop() - AndroidUtilities.m54dp(8);
         int i = (top <= 0 || holder == null || holder.getAdapterPosition() != 0) ? 0 : top;
         if (top >= 0 && holder != null && holder.getAdapterPosition() == 0) {
             runShadowAnimation(false);
@@ -473,12 +471,12 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             top = i;
         }
         this.frameLayout.setTranslationY(top);
-        return top + AndroidUtilities.m50dp(12);
+        return top + AndroidUtilities.m54dp(12);
     }
 
     @Override // org.telegram.p044ui.Components.ChatAttachAlert.AttachAlertLayout
     public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.m50dp(4);
+        return getListTopPadding() + AndroidUtilities.m54dp(4);
     }
 
     @Override // android.view.View
@@ -495,8 +493,8 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
     @Override // org.telegram.p044ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onPreMeasure(int i, int i2) {
         int i3;
-        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.m50dp(20)) {
-            i3 = AndroidUtilities.m50dp(8);
+        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.m54dp(20)) {
+            i3 = AndroidUtilities.m54dp(8);
             this.parentAlert.setAllowNestedScroll(false);
         } else {
             if (!AndroidUtilities.isTablet()) {
@@ -702,7 +700,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
                 userCell = new UserCell(this.mContext, ChatAttachAlertContactsLayout.this.resourcesProvider);
             } else if (i == 1) {
                 userCell = new View(this.mContext);
-                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m50dp(56)));
+                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m54dp(56)));
             } else {
                 userCell = new View(this.mContext);
             }
@@ -752,13 +750,13 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$0(ContactsController.Contact contact) {
-            return contact.phones.isEmpty() ? "" : C3159PhoneFormat.getInstance().format(contact.phones.get(0));
+            return contact.phones.isEmpty() ? "" : C3207PhoneFormat.getInstance().format(contact.phones.get(0));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$1(TLRPC$User tLRPC$User) {
-            C3159PhoneFormat c3159PhoneFormat = C3159PhoneFormat.getInstance();
-            return c3159PhoneFormat.format("+" + tLRPC$User.phone);
+            C3207PhoneFormat c3207PhoneFormat = C3207PhoneFormat.getInstance();
+            return c3207PhoneFormat.format("+" + tLRPC$User.phone);
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SectionsAdapter
@@ -912,7 +910,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
                 userCell = new UserCell(this.mContext, ChatAttachAlertContactsLayout.this.resourcesProvider);
             } else if (i == 1) {
                 userCell = new View(this.mContext);
-                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m50dp(56)));
+                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m54dp(56)));
             } else {
                 userCell = new View(this.mContext);
             }
@@ -959,13 +957,13 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$4(ContactsController.Contact contact) {
-            return contact.phones.isEmpty() ? "" : C3159PhoneFormat.getInstance().format(contact.phones.get(0));
+            return contact.phones.isEmpty() ? "" : C3207PhoneFormat.getInstance().format(contact.phones.get(0));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$5(TLRPC$User tLRPC$User) {
-            C3159PhoneFormat c3159PhoneFormat = C3159PhoneFormat.getInstance();
-            return c3159PhoneFormat.format("+" + tLRPC$User.phone);
+            C3207PhoneFormat c3207PhoneFormat = C3207PhoneFormat.getInstance();
+            return c3207PhoneFormat.format("+" + tLRPC$User.phone);
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
@@ -1002,29 +1000,31 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             }
         };
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.frameLayout, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "dialogBackground"));
-        arrayList.add(new ThemeDescription(this.shadow, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "dialogShadowLine"));
-        arrayList.add(new ThemeDescription(this.searchField.getSearchBackground(), ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "dialogSearchBackground"));
-        arrayList.add(new ThemeDescription(this.searchField, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{SearchField.class}, new String[]{"searchIconImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "dialogSearchIcon"));
-        arrayList.add(new ThemeDescription(this.searchField, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{SearchField.class}, new String[]{"clearSearchImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "dialogSearchIcon"));
-        arrayList.add(new ThemeDescription(this.searchField.getSearchEditText(), ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "dialogSearchText"));
-        arrayList.add(new ThemeDescription(this.searchField.getSearchEditText(), ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, "dialogSearchHint"));
-        arrayList.add(new ThemeDescription(this.searchField.getSearchEditText(), ThemeDescription.FLAG_CURSORCOLOR, null, null, null, null, "featuredStickers_addedIcon"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "emptyListPlaceholder"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_PROGRESSBAR, null, null, null, null, "progressCircle"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "dialogScrollGlow"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{UserCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "dialogTextGray2"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{UserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, "dialogTextGray2"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{UserCell.class}, null, Theme.avatarDrawables, null, "avatar_text"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundRed"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundOrange"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundViolet"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundGreen"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundCyan"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundBlue"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundPink"));
+        arrayList.add(new ThemeDescription(this.frameLayout, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_dialogBackground));
+        arrayList.add(new ThemeDescription(this.shadow, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_dialogShadowLine));
+        arrayList.add(new ThemeDescription(this.searchField.getSearchBackground(), ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_dialogSearchBackground));
+        int i = Theme.key_dialogSearchIcon;
+        arrayList.add(new ThemeDescription(this.searchField, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{SearchField.class}, new String[]{"searchIconImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i));
+        arrayList.add(new ThemeDescription(this.searchField, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{SearchField.class}, new String[]{"clearSearchImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i));
+        arrayList.add(new ThemeDescription(this.searchField.getSearchEditText(), ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_dialogSearchText));
+        arrayList.add(new ThemeDescription(this.searchField.getSearchEditText(), ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_dialogSearchHint));
+        arrayList.add(new ThemeDescription(this.searchField.getSearchEditText(), ThemeDescription.FLAG_CURSORCOLOR, null, null, null, null, Theme.key_featuredStickers_addedIcon));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_emptyListPlaceholder));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_PROGRESSBAR, null, null, null, null, Theme.key_progressCircle));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, Theme.key_dialogScrollGlow));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        int i2 = Theme.key_dialogTextGray2;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{UserCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i2));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{UserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, i2));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{UserCell.class}, null, Theme.avatarDrawables, null, Theme.key_avatar_text));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundRed));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundOrange));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundViolet));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundGreen));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundCyan));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundBlue));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundPink));
         return arrayList;
     }
 

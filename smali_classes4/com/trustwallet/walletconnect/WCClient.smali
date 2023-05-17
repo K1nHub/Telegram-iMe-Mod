@@ -345,7 +345,7 @@
 
     move-result-object p1
 
-    const-string p2, "this.registerTypeAdapter\u2026eToken<T>(), typeAdapter)"
+    const-string/jumbo p2, "this.registerTypeAdapter\u2026eToken<T>(), typeAdapter)"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1088,7 +1088,7 @@
 
     move-result-object p1
 
-    const-string v3, "this as java.lang.String).getBytes(charset)"
+    const-string/jumbo v3, "this as java.lang.String).getBytes(charset)"
 
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3566,7 +3566,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "t"
+    const-string/jumbo v0, "t"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3615,7 +3615,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

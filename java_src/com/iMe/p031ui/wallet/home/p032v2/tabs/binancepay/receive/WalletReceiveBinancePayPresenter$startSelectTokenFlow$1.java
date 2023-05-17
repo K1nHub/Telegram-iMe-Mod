@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletReceiveBinancePayPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$startSelectTokenFlow$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletReceiveBinancePayPresenter$startSelectTokenFlow$1 extends Lambda implements Function0<Unit> {
     final /* synthetic */ Callbacks$Callback1<SelectableToken> $action;
     final /* synthetic */ WalletReceiveBinancePayPresenter this$0;

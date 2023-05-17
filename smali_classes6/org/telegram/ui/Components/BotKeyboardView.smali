@@ -120,50 +120,27 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lorg/telegram/ui/Components/BotKeyboardView;Ljava/lang/String;)I
+.method static synthetic access$000(Lorg/telegram/ui/Components/BotKeyboardView;I)I
     .locals 0
 
     .line 29
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 169
     iget-object v0, p0, Lorg/telegram/ui/Components/BotKeyboardView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 170
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -645,10 +622,10 @@
 
     invoke-direct {v3, v9}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    const-string v9, "chat_botKeyboardButtonText"
-
     .line 133
-    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chat_botKeyboardButtonText:I
+
+    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(I)I
 
     move-result v9
 
@@ -897,16 +874,16 @@
     .line 61
     iget-object v0, p0, Lorg/telegram/ui/Components/BotKeyboardView;->scrollView:Landroid/widget/ScrollView;
 
-    const-string v1, "chat_emojiPanelBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(I)I
 
     move-result v2
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
 
     .line 62
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(I)I
 
     move-result v0
 
@@ -933,9 +910,9 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const-string v2, "chat_botKeyboardButtonText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_botKeyboardButtonText:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(I)I
 
     move-result v3
 
@@ -956,15 +933,15 @@
 
     move-result v3
 
-    const-string v4, "chat_botKeyboardButtonBackground"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_botKeyboardButtonBackground:I
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(I)I
 
     move-result v4
 
-    const-string v5, "chat_botKeyboardButtonBackgroundPressed"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_botKeyboardButtonBackgroundPressed:I
 
-    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(I)I
 
     move-result v5
 
@@ -983,7 +960,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotKeyboardView;->getThemedColor(I)I
 
     move-result v2
 

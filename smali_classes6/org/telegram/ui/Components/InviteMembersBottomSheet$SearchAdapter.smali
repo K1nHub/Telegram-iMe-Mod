@@ -1208,9 +1208,9 @@
     :goto_2
     new-instance v4, Landroid/text/style/ForegroundColorSpan;
 
-    const-string v7, "windowBackgroundWhiteBlueText4"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 

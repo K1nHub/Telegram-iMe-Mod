@@ -192,9 +192,9 @@
     .line 111
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v0, "dialogTextBlack"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->getThemedColor(I)I
 
     move-result v0
 
@@ -307,9 +307,9 @@
     .line 119
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->statusTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string p2, "dialogTextGray2"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->getThemedColor(I)I
 
     move-result p2
 
@@ -384,42 +384,6 @@
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
-.end method
-
-.method private getThemedColor(Ljava/lang/String;)I
-    .locals 1
-
-    .line 275
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 276
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
-    return p1
 .end method
 
 .method private synthetic lambda$setData$0(Ljava/lang/CharSequence;)V
@@ -517,6 +481,19 @@
 
 
 # virtual methods
+.method protected getThemedColor(I)I
+    .locals 1
+
+    .line 275
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public hasOverlappingRendering()Z
     .locals 1
 

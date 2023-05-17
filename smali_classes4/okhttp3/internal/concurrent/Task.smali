@@ -132,7 +132,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "task is in multiple queues"
+    const-string/jumbo v0, "task is in multiple queues"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

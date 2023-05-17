@@ -18,6 +18,8 @@
 
 .field private final __preparedStmtOfClearRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
+.field private final __preparedStmtOfRemoveAllRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
+
 .field private final __preparedStmtOfRemoveRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
 .field private final __preparedStmtOfUpdatePinned:Landroidx/room/SharedSQLiteStatement;
@@ -35,54 +37,70 @@
         }
     .end annotation
 
-    .line 46
+    .line 48
     invoke-direct {p0}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;-><init>()V
 
-    .line 47
+    .line 49
     iput-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    .line 48
+    .line 50
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$1;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__insertionAdapterOfHistoryDialogDb:Landroidx/room/EntityInsertionAdapter;
 
-    .line 63
+    .line 65
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$2;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$2;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    .line 75
+    .line 77
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$3;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$3;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    .line 92
+    .line 94
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$4;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$4;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    .line 99
+    .line 101
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$5;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$5;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfClearRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
-    .line 106
+    .line 108
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$6;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$6;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfRemoveRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
-    .line 113
+    .line 115
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$7;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$7;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfUpdatePinned:Landroidx/room/SharedSQLiteStatement;
+
+    .line 122
+    new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$8;
+
+    invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$8;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;Landroidx/room/RoomDatabase;)V
+
+    iput-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfRemoveAllRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
+
+    return-void
+.end method
+
+.method static synthetic access$401(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;JLjava/util/List;)V
+    .locals 0
+
+    .line 29
+    invoke-super {p0, p1, p2, p3}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;->restoreBackup(JLjava/util/List;)V
 
     return-void
 .end method
@@ -98,7 +116,7 @@
         }
     .end annotation
 
-    .line 435
+    .line 471
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -119,12 +137,12 @@
         }
     .end annotation
 
-    .line 288
+    .line 308
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 289
+    .line 309
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfClearRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
@@ -135,31 +153,31 @@
 
     const/4 p1, 0x1
 
-    .line 292
+    .line 312
     invoke-interface {v0, p1, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 293
+    .line 313
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
-    .line 295
+    .line 315
     :try_start_0
     invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
 
-    .line 296
+    .line 316
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 298
+    .line 318
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 299
+    .line 319
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfClearRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {p1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
@@ -169,17 +187,17 @@
     :catchall_0
     move-exception p1
 
-    .line 298
+    .line 318
     iget-object v1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 299
+    .line 319
     iget-object v1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfClearRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {v1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
 
-    .line 300
+    .line 320
     throw p1
 .end method
 
@@ -205,52 +223,52 @@
         }
     .end annotation
 
-    .line 404
+    .line 440
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 405
+    .line 441
     invoke-static {}, Landroidx/room/util/StringUtil;->newStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     const-string v1, "DELETE from HistoryDialogDb WHERE dialogId IN ("
 
-    .line 406
+    .line 442
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 407
+    .line 443
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 408
+    .line 444
     invoke-static {v0, v1}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
 
     const-string v2, ") AND userId = "
 
-    .line 409
+    .line 445
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, "?"
 
-    .line 410
+    .line 446
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 411
+    .line 447
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 412
+    .line 448
     iget-object v2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v2, v0}, Landroidx/room/RoomDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
 
     move-result-object v0
 
-    .line 414
+    .line 450
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -274,12 +292,12 @@
 
     if-nez v4, :cond_0
 
-    .line 416
+    .line 452
     invoke-interface {v0, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_1
 
-    .line 418
+    .line 454
     :cond_0
     invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
 
@@ -295,28 +313,28 @@
     :cond_1
     add-int/2addr v1, v2
 
-    .line 423
+    .line 459
     invoke-interface {v0, v1, p2, p3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 424
+    .line 460
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
-    .line 426
+    .line 462
     :try_start_0
     invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
 
     move-result p1
 
-    .line 427
+    .line 463
     iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p2}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 430
+    .line 466
     iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
@@ -330,7 +348,7 @@
 
     invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 431
+    .line 467
     throw p1
 .end method
 
@@ -360,22 +378,22 @@
 
     const/4 v2, 0x1
 
-    .line 369
+    .line 405
     invoke-static {v0, v2}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
 
     move-result-object v3
 
     move-wide/from16 v4, p1
 
-    .line 371
+    .line 407
     invoke-virtual {v3, v2, v4, v5}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
 
-    .line 372
+    .line 408
     iget-object v0, v1, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 373
+    .line 409
     iget-object v0, v1, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     const/4 v4, 0x0
@@ -389,33 +407,33 @@
     :try_start_0
     const-string v0, "userId"
 
-    .line 375
+    .line 411
     invoke-static {v5, v0}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v0
 
     const-string v6, "dialogId"
 
-    .line 376
+    .line 412
     invoke-static {v5, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
     const-string v7, "creationDate"
 
-    .line 377
+    .line 413
     invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "isPinned"
 
-    .line 378
+    .line 414
     invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
-    .line 379
+    .line 415
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-interface {v5}, Landroid/database/Cursor;->getCount()I
@@ -424,7 +442,7 @@
 
     invoke-direct {v9, v10}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 380
+    .line 416
     :goto_0
     invoke-interface {v5}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -432,22 +450,22 @@
 
     if-eqz v10, :cond_1
 
-    .line 383
+    .line 419
     invoke-interface {v5, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v12
 
-    .line 385
+    .line 421
     invoke-interface {v5, v6}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v14
 
-    .line 387
+    .line 423
     invoke-interface {v5, v7}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v16
 
-    .line 390
+    .line 426
     invoke-interface {v5, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v10
@@ -461,7 +479,7 @@
     :cond_0
     move/from16 v18, v4
 
-    .line 392
+    .line 428
     :goto_1
     new-instance v10, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;
 
@@ -469,18 +487,18 @@
 
     invoke-direct/range {v11 .. v18}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;-><init>(JJJZ)V
 
-    .line 393
+    .line 429
     invoke-interface {v9, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 397
+    .line 433
     :cond_1
     invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
-    .line 398
+    .line 434
     invoke-virtual {v3}, Landroidx/room/RoomSQLiteQuery;->release()V
 
     return-object v9
@@ -488,13 +506,13 @@
     :catchall_0
     move-exception v0
 
-    .line 397
+    .line 433
     invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
-    .line 398
+    .line 434
     invoke-virtual {v3}, Landroidx/room/RoomSQLiteQuery;->release()V
 
-    .line 399
+    .line 435
     throw v0
 .end method
 
@@ -509,17 +527,17 @@
         }
     .end annotation
 
-    .line 124
+    .line 133
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 125
+    .line 134
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
-    .line 127
+    .line 136
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__insertionAdapterOfHistoryDialogDb:Landroidx/room/EntityInsertionAdapter;
 
@@ -527,14 +545,14 @@
 
     move-result-wide v0
 
-    .line 128
+    .line 137
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 131
+    .line 140
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
@@ -548,7 +566,7 @@
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 132
+    .line 141
     throw p1
 .end method
 
@@ -573,6 +591,141 @@
     return-wide v0
 .end method
 
+.method public insert(Ljava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "obj"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 158
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    .line 159
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    .line 161
+    :try_start_0
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__insertionAdapterOfHistoryDialogDb:Landroidx/room/EntityInsertionAdapter;
+
+    invoke-virtual {v0, p1}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Iterable;)V
+
+    .line 162
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 164
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    .line 165
+    throw p1
+.end method
+
+.method public removeAllRecentChatHistory(J)V
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "userId"
+        }
+    .end annotation
+
+    .line 364
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    .line 365
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfRemoveAllRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
+
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    .line 367
+    invoke-interface {v0, v1, p1, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+
+    .line 368
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    .line 370
+    :try_start_0
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+
+    .line 371
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 373
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    .line 374
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfRemoveAllRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
+
+    invoke-virtual {p1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    .line 373
+    iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    .line 374
+    iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfRemoveAllRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
+
+    invoke-virtual {p2, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+
+    .line 375
+    throw p1
+.end method
+
 .method public removeRecentChatHistory(JJ)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
@@ -586,12 +739,12 @@
         }
     .end annotation
 
-    .line 305
+    .line 325
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 306
+    .line 326
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfRemoveRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
@@ -600,36 +753,36 @@
 
     const/4 v1, 0x1
 
-    .line 308
+    .line 328
     invoke-interface {v0, v1, p1, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     const/4 p1, 0x2
 
-    .line 310
+    .line 330
     invoke-interface {v0, p1, p3, p4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 311
+    .line 331
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
-    .line 313
+    .line 333
     :try_start_0
     invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
 
-    .line 314
+    .line 334
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 316
+    .line 336
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 317
+    .line 337
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfRemoveRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {p1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
@@ -639,17 +792,73 @@
     :catchall_0
     move-exception p1
 
-    .line 316
+    .line 336
     iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 317
+    .line 337
     iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfRemoveRecentChatHistory:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {p2, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
 
-    .line 318
+    .line 338
+    throw p1
+.end method
+
+.method public restoreBackup(JLjava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "userId",
+            "pinnedRecentChats"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 279
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    .line 281
+    :try_start_0
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->access$401(Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;JLjava/util/List;)V
+
+    .line 282
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 284
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    .line 285
     throw p1
 .end method
 
@@ -668,12 +877,12 @@
         }
     .end annotation
 
-    .line 323
+    .line 343
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 324
+    .line 344
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfUpdatePinned:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
@@ -684,41 +893,41 @@
 
     const/4 p5, 0x1
 
-    .line 327
+    .line 347
     invoke-interface {v0, p5, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     const/4 p5, 0x2
 
-    .line 329
+    .line 349
     invoke-interface {v0, p5, p3, p4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     const/4 p3, 0x3
 
-    .line 331
+    .line 351
     invoke-interface {v0, p3, p1, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 332
+    .line 352
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
-    .line 334
+    .line 354
     :try_start_0
     invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
 
-    .line 335
+    .line 355
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 337
+    .line 357
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 338
+    .line 358
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfUpdatePinned:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {p1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
@@ -728,16 +937,16 @@
     :catchall_0
     move-exception p1
 
-    .line 337
+    .line 357
     iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 338
+    .line 358
     iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->__preparedStmtOfUpdatePinned:Landroidx/room/SharedSQLiteStatement;
 
     invoke-virtual {p2, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
 
-    .line 339
+    .line 359
     throw p1
 .end method

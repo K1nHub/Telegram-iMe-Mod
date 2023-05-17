@@ -925,16 +925,16 @@
     .line 109
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string v1, "dialogBackground"
-
     .line 110
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const-string v2, "listSelectorSDK21"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -955,10 +955,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "dialogTextBlue2"
-
     .line 112
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1030,10 +1030,10 @@
     .line 128
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->setEnabled(Z)V
 
-    const-string v0, "dialogScrollGlow"
-
     .line 129
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -1080,10 +1080,10 @@
 
     invoke-direct {v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "dialogShadowLine"
-
     .line 133
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1143,81 +1143,83 @@
     .line 203
     iput-boolean p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowShowed:Z
 
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
     if-eqz p1, :cond_0
 
     .line 205
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getTopShadow()Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v3, 0x0
+
+    invoke-static {v2, v1, v0, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 207
     :cond_0
-    iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
+    iget-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
+    invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 208
     :cond_1
-    new-instance v0, Landroid/animation/AnimatorSet;
+    new-instance v2, Landroid/animation/AnimatorSet;
 
-    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
+    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
-    const/4 v1, 0x1
-
-    new-array v2, v1, [Landroid/animation/Animator;
+    new-array v3, v0, [Landroid/animation/Animator;
 
     .line 209
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getTopShadow()Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v4
 
-    sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    new-array v1, v1, [F
+    new-array v0, v0, [F
 
     if-eqz p1, :cond_2
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v6, 0x3f800000    # 1.0f
 
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x0
-
-    :goto_0
     const/4 v6, 0x0
 
-    aput v5, v1, v6
+    :goto_0
+    aput v6, v0, v1
 
-    invoke-static {v3, v4, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v4, v5, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object v1, v2, v6
+    aput-object v0, v3, v1
 
-    invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 210
-    new-instance v1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;
+    new-instance v0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Z)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Z)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v2, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    const-wide/16 v1, 0x96
+    const-wide/16 v0, 0x96
 
     .line 226
-    invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+    invoke-virtual {v2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     .line 227
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
+    invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
     .line 208
-    iput-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
+    iput-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     :cond_3
     return-void

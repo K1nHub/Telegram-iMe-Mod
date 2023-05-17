@@ -32,7 +32,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "text/plain"
+    const-string/jumbo v1, "text/plain"
 
     .line 22
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;

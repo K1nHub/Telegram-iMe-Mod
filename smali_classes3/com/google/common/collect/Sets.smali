@@ -328,6 +328,31 @@
     return-object v0
 .end method
 
+.method public static varargs newHashSet([Ljava/lang/Object;)Ljava/util/HashSet;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Object;",
+            ">([TE;)",
+            "Ljava/util/HashSet<",
+            "TE;>;"
+        }
+    .end annotation
+
+    .line 184
+    array-length v0, p0
+
+    invoke-static {v0}, Lcom/google/common/collect/Sets;->newHashSetWithExpectedSize(I)Ljava/util/HashSet;
+
+    move-result-object v0
+
+    .line 185
+    invoke-static {v0, p0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
+
+    return-object v0
+.end method
+
 .method public static newHashSetWithExpectedSize(I)Ljava/util/HashSet;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

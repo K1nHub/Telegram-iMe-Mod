@@ -26,13 +26,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 993
+    .line 991
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
-    .line 994
+    .line 992
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 979
+    .line 977
     new-instance p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell$1;-><init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell;)V
@@ -47,7 +47,7 @@
 .method public cancelTimer()V
     .locals 1
 
-    .line 1010
+    .line 1008
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell;->timerRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
@@ -58,10 +58,10 @@
 .method protected onAttachedToWindow()V
     .locals 0
 
-    .line 999
+    .line 997
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 1000
+    .line 998
     invoke-virtual {p0}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell;->runTimer()V
 
     return-void
@@ -70,10 +70,10 @@
 .method protected onDetachedFromWindow()V
     .locals 0
 
-    .line 1005
+    .line 1003
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 1006
+    .line 1004
     invoke-virtual {p0}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell;->cancelTimer()V
 
     return-void
@@ -82,15 +82,15 @@
 .method public runTimer()V
     .locals 3
 
-    .line 1014
+    .line 1012
     invoke-virtual {p0}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell;->cancelTimer()V
 
-    .line 1015
+    .line 1013
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell;->timer:Z
 
     if-eqz v0, :cond_0
 
-    .line 1016
+    .line 1014
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$TimerPrivacyCell;->timerRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x1f4

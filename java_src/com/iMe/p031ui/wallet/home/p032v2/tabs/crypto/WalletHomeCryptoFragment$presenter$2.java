@@ -23,7 +23,7 @@ public final class WalletHomeCryptoFragment$presenter$2 extends Lambda implement
     @Override // kotlin.jvm.functions.Function0
     public final WalletHomeCryptoPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2247xb8a1d255(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2286xb8a1d255(this.this$0, null, null));
         return (WalletHomeCryptoPresenter) lazy.getValue();
     }
 }

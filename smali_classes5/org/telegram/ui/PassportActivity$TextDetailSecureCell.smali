@@ -57,10 +57,10 @@
 
     iput-object v1, p0, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;->textView:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     .line 452
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -178,10 +178,10 @@
 
     iput-object v1, p0, Lorg/telegram/ui/PassportActivity$TextDetailSecureCell;->valueTextView:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
-
     .line 462
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -301,9 +301,9 @@
     .line 473
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v0, "featuredStickers_addedIcon"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

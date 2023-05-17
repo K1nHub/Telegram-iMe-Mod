@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 5792
+    .line 6212
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_geoPoint;-><init>()V
 
     return-void
@@ -28,14 +28,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 5797
+    .line 6217
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readDouble(Z)D
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GeoPoint;->_long:D
 
-    .line 5798
+    .line 6218
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readDouble(Z)D
 
     move-result-wide p1
@@ -48,17 +48,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 5802
+    .line 6222
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_geoPoint_layer81;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 5803
+    .line 6223
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GeoPoint;->_long:D
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeDouble(D)V
 
-    .line 5804
+    .line 6224
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GeoPoint;->lat:D
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeDouble(D)V

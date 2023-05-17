@@ -4671,6 +4671,8 @@ un1 أزال حزمة ملصقات المجموعة"</string>
     <string name="mtrl_picker_toggle_to_day_selection">انقر للتبديل إلى اختيار يوم</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">التبديل إلى وضع \"إدخال النص\"</string>
     <string name="mtrl_picker_toggle_to_year_selection">انقر للتبديل إلى اختيار عام</string>
+    <string name="nav_app_bar_navigate_up_description">التنقل إلى أعلى</string>
+    <string name="nav_app_bar_open_drawer_description">فتح لائحة التنقل</string>
     <string name="password_toggle_content_description">عرض كلمة المرور</string>
     <string name="search_menu_title">البحث</string>
     <string name="status_bar_notification_info_overflow">999+</string>

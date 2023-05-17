@@ -58,16 +58,155 @@
     .line 999
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v0, "checkbox"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_checkbox:I
 
-    const-string v1, "radioBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
-    const-string v2, "checkboxCheck"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 1000
-    iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
+    new-instance p1, Landroid/view/View;
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+    .line 1001
+    new-instance v0, Lorg/telegram/ui/CachedMediaLayout$CacheCell$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p0}, Lorg/telegram/ui/CachedMediaLayout$CacheCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/CachedMediaLayout$CacheCell;)V
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 1004
+    new-instance v0, Landroid/widget/FrameLayout;
+
+    invoke-direct {v0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->container:Landroid/widget/FrameLayout;
+
+    .line 1006
+    new-instance v0, Landroid/widget/TextView;
+
+    invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
+
+    const/4 p2, 0x1
+
+    const/high16 v1, 0x41800000    # 16.0f
+
+    .line 1007
+    invoke-virtual {v0, p2, v1}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 1008
+    iget-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
+
+    const/4 v0, 0x5
+
+    invoke-virtual {p2, v0}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 1009
+    iget-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 1011
+    sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz p2, :cond_0
+
+    .line 1012
+    iget-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
+
+    const/16 v0, 0x18
+
+    const/16 v1, 0x18
+
+    const/16 v2, 0x15
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/16 v5, 0x12
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    const/16 v1, 0x28
+
+    const/16 v2, 0x28
+
+    const/16 v3, 0x15
+
+    const/4 v5, 0x0
+
+    const/4 v7, 0x0
+
+    .line 1013
+    invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1014
+    iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->container:Landroid/widget/FrameLayout;
+
+    const/4 v0, -0x1
+
+    const/4 v1, -0x2
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x5a
+
+    const/16 v5, 0x28
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1015
+    iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
+
+    const/16 v0, 0x45
+
+    const/16 v2, 0x13
+
+    const/4 v3, 0x0
+
+    const/4 v5, 0x0
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    goto :goto_0
+
+    .line 1017
+    :cond_0
+    iget-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v0, 0x18
 
@@ -87,23 +226,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 1001
-    new-instance p1, Landroid/view/View;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
-
-    .line 1002
-    new-instance v0, Lorg/telegram/ui/CachedMediaLayout$CacheCell$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0, p0}, Lorg/telegram/ui/CachedMediaLayout$CacheCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/CachedMediaLayout$CacheCell;)V
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     const/16 v1, 0x28
 
@@ -113,19 +236,15 @@
 
     const/4 v7, 0x0
 
-    .line 1005
+    .line 1018
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1006
-    new-instance p1, Landroid/widget/FrameLayout;
-
-    invoke-direct {p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->container:Landroid/widget/FrameLayout;
+    .line 1019
+    iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->container:Landroid/widget/FrameLayout;
 
     const/4 v0, -0x1
 
@@ -137,46 +256,13 @@
 
     const/16 v5, 0x5a
 
-    .line 1008
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1009
-    new-instance p1, Landroid/widget/TextView;
-
-    invoke-direct {p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
-
-    const/4 p2, 0x1
-
-    const/high16 v0, 0x41800000    # 16.0f
-
-    .line 1010
-    invoke-virtual {p1, p2, v0}, Landroid/widget/TextView;->setTextSize(IF)V
-
-    .line 1011
-    iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
-
-    const/4 p2, 0x5
-
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
-
-    .line 1012
-    iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
-
-    const-string p2, "windowBackgroundWhiteBlueText"
-
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 1014
+    .line 1020
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
 
     const/16 v0, 0x45
@@ -193,13 +279,14 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    :goto_0
     return-void
 .end method
 
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 0
 
-    .line 1003
+    .line 1002
     invoke-virtual {p0}, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->onCheckBoxPressed()V
 
     return-void
@@ -210,15 +297,62 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 1020
+    .line 1026
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1021
+    .line 1027
     iget-boolean v0, p0, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->drawDivider:Z
+
+    if-eqz v0, :cond_1
+
+    .line 1028
+    sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_0
 
-    .line 1022
+    const/4 v2, 0x0
+
+    .line 1029
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    int-to-float v3, v0
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v0
+
+    const/16 v1, 0x30
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    int-to-float v4, v0
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    int-to-float v5, v0
+
+    sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+
+    move-object v1, p1
+
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    goto :goto_0
+
+    .line 1031
+    :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -261,7 +395,8 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    :cond_0
+    :cond_1
+    :goto_0
     return-void
 .end method
 

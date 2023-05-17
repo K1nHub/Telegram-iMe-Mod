@@ -17,6 +17,8 @@ import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogLanguageDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogLanguageDao_Impl;
 import com.iMe.storage.data.locale.p027db.dao.minor.cloud.AlbumsDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.cloud.AlbumsDao_Impl;
+import com.iMe.storage.data.locale.p027db.dao.minor.social.SocialNetworkDao;
+import com.iMe.storage.data.locale.p027db.dao.minor.social.SocialNetworkDao_Impl;
 import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokenBalanceDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokenBalanceDao_Impl;
 import java.util.Arrays;
@@ -31,11 +33,12 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
     private volatile AlbumsDao _albumsDao;
     private volatile CatalogCategoryDao _catalogCategoryDao;
     private volatile CatalogLanguageDao _catalogLanguageDao;
+    private volatile SocialNetworkDao _socialNetworkDao;
     private volatile WalletTokenBalanceDao _walletTokenBalanceDao;
 
     @Override // androidx.room.RoomDatabase
     protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-        return configuration.sqliteOpenHelperFactory.create(SupportSQLiteOpenHelper.Configuration.builder(configuration.context).name(configuration.name).callback(new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(7) { // from class: com.iMe.storage.data.locale.db.database.AppCacheDatabase_Impl.1
+        return configuration.sqliteOpenHelperFactory.create(SupportSQLiteOpenHelper.Configuration.builder(configuration.context).name(configuration.name).callback(new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(10) { // from class: com.iMe.storage.data.locale.db.database.AppCacheDatabase_Impl.1
             @Override // androidx.room.RoomOpenHelper.Delegate
             public void onPostMigrate(SupportSQLiteDatabase _db) {
             }
@@ -46,8 +49,9 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `CatalogLanguageDb` (`id` INTEGER NOT NULL, `nativeTitle` TEXT NOT NULL, `title` TEXT NOT NULL, PRIMARY KEY(`id`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `CloudAlbumDb` (`userId` INTEGER NOT NULL, `albumId` INTEGER NOT NULL, PRIMARY KEY(`userId`, `albumId`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `WalletTokenBalanceDb` (`tgUserId` INTEGER NOT NULL, `coinCode` TEXT NOT NULL, `total` REAL NOT NULL, `totalInDollars` REAL NOT NULL, `rateToDollars` REAL NOT NULL, `ratePercentageChange24h` REAL NOT NULL, `networkType` TEXT NOT NULL, PRIMARY KEY(`tgUserId`, `coinCode`, `networkType`))");
+                _db.execSQL("CREATE TABLE IF NOT EXISTS `social` (`profileId` INTEGER NOT NULL, `social` TEXT NOT NULL, `iconUrl` TEXT NOT NULL, `socialPosition` INTEGER NOT NULL, `socialElementId` TEXT NOT NULL, `socialElementAvatarUrl` TEXT NOT NULL, `socialUserName` TEXT NOT NULL, `socialWebUrl` TEXT NOT NULL, `isActive` INTEGER NOT NULL, `beforeConnectMessage` TEXT NOT NULL, PRIMARY KEY(`profileId`, `social`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-                _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e97e21fd036628b12b282a64590f1803')");
+                _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ecaf2fd7b9ef0744a7de30d3137a52cb')");
             }
 
             @Override // androidx.room.RoomOpenHelper.Delegate
@@ -56,6 +60,7 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
                 _db.execSQL("DROP TABLE IF EXISTS `CatalogLanguageDb`");
                 _db.execSQL("DROP TABLE IF EXISTS `CloudAlbumDb`");
                 _db.execSQL("DROP TABLE IF EXISTS `WalletTokenBalanceDb`");
+                _db.execSQL("DROP TABLE IF EXISTS `social`");
                 if (((RoomDatabase) AppCacheDatabase_Impl.this).mCallbacks != null) {
                     int size = ((RoomDatabase) AppCacheDatabase_Impl.this).mCallbacks.size();
                     for (int i = 0; i < size; i++) {
@@ -132,14 +137,30 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
                 if (!tableInfo4.equals(read4)) {
                     return new RoomOpenHelper.ValidationResult(false, "WalletTokenBalanceDb(com.iMe.storage.data.locale.db.model.wallet.WalletTokenBalanceDb).\n Expected:\n" + tableInfo4 + "\n Found:\n" + read4);
                 }
+                HashMap hashMap5 = new HashMap(10);
+                hashMap5.put("profileId", new TableInfo.Column("profileId", "INTEGER", true, 1, null, 1));
+                hashMap5.put("social", new TableInfo.Column("social", "TEXT", true, 2, null, 1));
+                hashMap5.put("iconUrl", new TableInfo.Column("iconUrl", "TEXT", true, 0, null, 1));
+                hashMap5.put("socialPosition", new TableInfo.Column("socialPosition", "INTEGER", true, 0, null, 1));
+                hashMap5.put("socialElementId", new TableInfo.Column("socialElementId", "TEXT", true, 0, null, 1));
+                hashMap5.put("socialElementAvatarUrl", new TableInfo.Column("socialElementAvatarUrl", "TEXT", true, 0, null, 1));
+                hashMap5.put("socialUserName", new TableInfo.Column("socialUserName", "TEXT", true, 0, null, 1));
+                hashMap5.put("socialWebUrl", new TableInfo.Column("socialWebUrl", "TEXT", true, 0, null, 1));
+                hashMap5.put("isActive", new TableInfo.Column("isActive", "INTEGER", true, 0, null, 1));
+                hashMap5.put("beforeConnectMessage", new TableInfo.Column("beforeConnectMessage", "TEXT", true, 0, null, 1));
+                TableInfo tableInfo5 = new TableInfo("social", hashMap5, new HashSet(0), new HashSet(0));
+                TableInfo read5 = TableInfo.read(_db, "social");
+                if (!tableInfo5.equals(read5)) {
+                    return new RoomOpenHelper.ValidationResult(false, "social(com.iMe.storage.data.locale.db.model.social.SocialNetworkDb).\n Expected:\n" + tableInfo5 + "\n Found:\n" + read5);
+                }
                 return new RoomOpenHelper.ValidationResult(true, null);
             }
-        }, "e97e21fd036628b12b282a64590f1803", "8af48148f545696cc59a5a7f9f2283d0")).build());
+        }, "ecaf2fd7b9ef0744a7de30d3137a52cb", "a73aafb8d789016f1e2bc3b953587493")).build());
     }
 
     @Override // androidx.room.RoomDatabase
     protected InvalidationTracker createInvalidationTracker() {
-        return new InvalidationTracker(this, new HashMap(0), new HashMap(0), "CatalogCategoryDb", "CatalogLanguageDb", "CloudAlbumDb", "WalletTokenBalanceDb");
+        return new InvalidationTracker(this, new HashMap(0), new HashMap(0), "CatalogCategoryDb", "CatalogLanguageDb", "CloudAlbumDb", "WalletTokenBalanceDb", "social");
     }
 
     @Override // androidx.room.RoomDatabase
@@ -149,6 +170,7 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
         hashMap.put(CatalogLanguageDao.class, CatalogLanguageDao_Impl.getRequiredConverters());
         hashMap.put(WalletTokenBalanceDao.class, WalletTokenBalanceDao_Impl.getRequiredConverters());
         hashMap.put(AlbumsDao.class, AlbumsDao_Impl.getRequiredConverters());
+        hashMap.put(SocialNetworkDao.class, SocialNetworkDao_Impl.getRequiredConverters());
         return hashMap;
     }
 
@@ -220,5 +242,20 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
             albumsDao = this._albumsDao;
         }
         return albumsDao;
+    }
+
+    @Override // com.iMe.storage.data.locale.p027db.database.AppCacheDatabase
+    public SocialNetworkDao socialNetworkDao() {
+        SocialNetworkDao socialNetworkDao;
+        if (this._socialNetworkDao != null) {
+            return this._socialNetworkDao;
+        }
+        synchronized (this) {
+            if (this._socialNetworkDao == null) {
+                this._socialNetworkDao = new SocialNetworkDao_Impl(this);
+            }
+            socialNetworkDao = this._socialNetworkDao;
+        }
+        return socialNetworkDao;
     }
 }

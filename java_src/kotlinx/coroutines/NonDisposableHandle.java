@@ -13,6 +13,11 @@ public final class NonDisposableHandle implements DisposableHandle, ChildHandle 
     public void dispose() {
     }
 
+    @Override // kotlinx.coroutines.ChildHandle
+    public Job getParent() {
+        return null;
+    }
+
     public String toString() {
         return "NonDisposableHandle";
     }

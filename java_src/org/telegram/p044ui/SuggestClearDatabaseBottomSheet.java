@@ -8,7 +8,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
@@ -41,25 +41,26 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         linearLayout.addView(stickerImageView, LayoutHelper.createLinear(144, 144, 1, 0, 16, 0, 0));
         TextView textView = new TextView(parentActivity);
         textView.setGravity(8388611);
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        int i = Theme.key_dialogTextBlack;
+        textView.setTextColor(Theme.getColor(i));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getString("SuggestClearDatabaseTitle", C3242R.string.SuggestClearDatabaseTitle));
+        textView.setText(LocaleController.getString("SuggestClearDatabaseTitle", C3290R.string.SuggestClearDatabaseTitle));
         linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 21, 30, 21, 0));
         TextView textView2 = new TextView(parentActivity);
         textView2.setGravity(8388611);
         textView2.setTextSize(1, 15.0f);
-        textView2.setTextColor(Theme.getColor("dialogTextBlack"));
-        textView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString("SuggestClearDatabaseMessage", C3242R.string.SuggestClearDatabaseMessage, AndroidUtilities.formatFileSize(baseFragment.getMessagesStorage().getDatabaseSize()))));
+        textView2.setTextColor(Theme.getColor(i));
+        textView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString("SuggestClearDatabaseMessage", C3290R.string.SuggestClearDatabaseMessage, AndroidUtilities.formatFileSize(baseFragment.getMessagesStorage().getDatabaseSize()))));
         linearLayout.addView(textView2, LayoutHelper.createFrame(-1, -2, 0, 21, 15, 21, 16));
         TextView textView3 = new TextView(parentActivity);
-        textView3.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
+        textView3.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
         textView3.setGravity(17);
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("ClearLocalDatabase", C3242R.string.ClearLocalDatabase));
-        textView3.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-        textView3.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), Theme.getColor("featuredStickers_addButton"), ColorUtils.setAlphaComponent(Theme.getColor("windowBackgroundWhite"), 120)));
+        textView3.setText(LocaleController.getString("ClearLocalDatabase", C3290R.string.ClearLocalDatabase));
+        textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
+        textView3.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
         linearLayout.addView(textView3, LayoutHelper.createFrame(-1, 48, 0, 16, 15, 16, 16));
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SuggestClearDatabaseBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
@@ -75,10 +76,10 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(final BaseFragment baseFragment, View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
-        builder.setTitle(LocaleController.getString("LocalDatabaseClearTextTitle", C3242R.string.LocalDatabaseClearTextTitle));
-        builder.setMessage(LocaleController.getString("LocalDatabaseClearText", C3242R.string.LocalDatabaseClearText));
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
-        builder.setPositiveButton(LocaleController.getString("CacheClear", C3242R.string.CacheClear), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SuggestClearDatabaseBottomSheet$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("LocalDatabaseClearTextTitle", C3290R.string.LocalDatabaseClearTextTitle));
+        builder.setMessage(LocaleController.getString("LocalDatabaseClearText", C3290R.string.LocalDatabaseClearText));
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
+        builder.setPositiveButton(LocaleController.getString("CacheClear", C3290R.string.CacheClear), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SuggestClearDatabaseBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 SuggestClearDatabaseBottomSheet.this.lambda$new$0(baseFragment, dialogInterface, i);
@@ -88,7 +89,7 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         baseFragment.showDialog(create);
         TextView textView = (TextView) create.getButton(-1);
         if (textView != null) {
-            textView.setTextColor(Theme.getColor("dialogTextRed"));
+            textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
         }
     }
 

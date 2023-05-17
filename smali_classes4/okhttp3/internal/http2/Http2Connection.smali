@@ -812,7 +812,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "streamCode"
+    const-string/jumbo v0, "streamCode"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1254,7 +1254,7 @@
         }
     .end annotation
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1757,7 +1757,7 @@
         }
     .end annotation
 
-    const-string v0, "statusCode"
+    const-string/jumbo v0, "statusCode"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1851,7 +1851,7 @@
         }
     .end annotation
 
-    const-string v0, "taskRunner"
+    const-string/jumbo v0, "taskRunner"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2047,7 +2047,7 @@
     :cond_1
     new-instance p1, Ljava/io/IOException;
 
-    const-string p2, "stream closed"
+    const-string/jumbo p2, "stream closed"
 
     invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -2211,7 +2211,7 @@
         }
     .end annotation
 
-    const-string v0, "statusCode"
+    const-string/jumbo v0, "statusCode"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

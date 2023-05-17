@@ -26,8 +26,8 @@
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 7
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/KeepMediaPopupView;
 
@@ -43,7 +43,9 @@
 
     move-object v6, p5
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/KeepMediaPopupView;->$r8$lambda$ghoZ9ALiYcc3B5EoAOgmEYyM5FM(Lorg/telegram/ui/KeepMediaPopupView;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    move-object v7, p6
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/KeepMediaPopupView;->$r8$lambda$eSo8V6DxgB3En6VusM2hPq11LD8(Lorg/telegram/ui/KeepMediaPopupView;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
     move-result p1
 

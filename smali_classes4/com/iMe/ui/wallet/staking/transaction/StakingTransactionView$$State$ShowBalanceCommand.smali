@@ -33,7 +33,7 @@
     .line 348
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
-    const-string v0, "showBalance"
+    const-string/jumbo v0, "showBalance"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 

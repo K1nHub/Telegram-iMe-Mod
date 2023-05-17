@@ -15,15 +15,15 @@
 
 
 # instance fields
-.field final synthetic val$colors:Ljava/util/HashMap;
+.field final synthetic val$colors:Landroid/util/SparseIntArray;
 
 
 # direct methods
-.method constructor <init>(IZZLjava/util/HashMap;)V
+.method constructor <init>(IZZLandroid/util/SparseIntArray;)V
     .locals 0
 
-    .line 8564
-    iput-object p4, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Ljava/util/HashMap;
+    .line 7771
+    iput-object p4, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Landroid/util/SparseIntArray;
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;-><init>(IZZ)V
 
@@ -32,53 +32,47 @@
 
 
 # virtual methods
-.method protected getColor(Ljava/lang/String;)I
+.method protected getColor(I)I
     .locals 1
 
-    .line 8567
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Ljava/util/HashMap;
+    .line 7774
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Ljava/lang/Integer;
+    if-lez v0, :cond_0
 
-    if-nez v0, :cond_0
+    .line 7776
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Landroid/util/SparseIntArray;
 
-    .line 8569
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()Ljava/util/HashMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    move-object v0, p1
-
-    check-cast v0, Ljava/lang/Integer;
-
-    .line 8571
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p1, v0}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result p1
 
     return p1
+
+    .line 7778
+    :cond_0
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()[I
+
+    move-result-object v0
+
+    aget p1, v0, p1
+
+    return p1
 .end method
 
-.method protected getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
+.method protected getCurrentColor(I)I
     .locals 1
 
-    .line 8576
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Ljava/util/HashMap;
+    .line 7784
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
 
-    move-result-object p1
+    move-result p1
 
-    check-cast p1, Ljava/lang/Integer;
-
-    return-object p1
+    return p1
 .end method

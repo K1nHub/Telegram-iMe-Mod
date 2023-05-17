@@ -210,15 +210,15 @@ public class WebpHeaderParser {
     private static final class StreamReader implements Reader {
 
         /* renamed from: is */
-        private final InputStream f79is;
+        private final InputStream f82is;
 
         StreamReader(InputStream inputStream) {
-            this.f79is = inputStream;
+            this.f82is = inputStream;
         }
 
         @Override // com.bumptech.glide.integration.webp.WebpHeaderParser.Reader
         public int getUInt16() throws IOException {
-            return ((this.f79is.read() << 8) & 65280) | (this.f79is.read() & 255);
+            return ((this.f82is.read() << 8) & 65280) | (this.f82is.read() & 255);
         }
 
         @Override // com.bumptech.glide.integration.webp.WebpHeaderParser.Reader
@@ -228,9 +228,9 @@ public class WebpHeaderParser {
             }
             long j2 = j;
             while (j2 > 0) {
-                long skip = this.f79is.skip(j2);
+                long skip = this.f82is.skip(j2);
                 if (skip <= 0) {
-                    if (this.f79is.read() == -1) {
+                    if (this.f82is.read() == -1) {
                         break;
                     }
                     skip = 1;
@@ -242,7 +242,7 @@ public class WebpHeaderParser {
 
         @Override // com.bumptech.glide.integration.webp.WebpHeaderParser.Reader
         public int getByte() throws IOException {
-            return this.f79is.read();
+            return this.f82is.read();
         }
     }
 }

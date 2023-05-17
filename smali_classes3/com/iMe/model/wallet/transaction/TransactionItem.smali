@@ -632,7 +632,7 @@
     return-object p1
 .end method
 
-.method public final getTransactionStatusColor()Ljava/lang/String;
+.method public final getTransactionStatusColor()I
     .locals 1
 
     .line 34
@@ -642,11 +642,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/StatusExtKt;->color(Lcom/iMe/storage/data/network/model/response/base/Status;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/StatusExtKt;->colorKey(Lcom/iMe/storage/data/network/model/response/base/Status;)I
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    return v0
 .end method
 
 .method public final getTransactionTime()Ljava/lang/String;

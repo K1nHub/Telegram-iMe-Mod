@@ -241,7 +241,8 @@
 
     move-result-object v5
 
-    const-string v6, "statisticChartLine_lightblue"
+    .line 158
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_lightblue:I
 
     goto :goto_1
 
@@ -257,7 +258,8 @@
 
     move-result-object v5
 
-    const-string v6, "statisticChartLine_blue"
+    .line 161
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_blue:I
 
     goto :goto_1
 
@@ -275,7 +277,8 @@
 
     move-result-object v5
 
-    const-string v6, "statisticChartLine_green"
+    .line 164
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_green:I
 
     goto :goto_1
 
@@ -293,7 +296,8 @@
 
     move-result-object v5
 
-    const-string v6, "statisticChartLine_red"
+    .line 167
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_red:I
 
     goto :goto_1
 
@@ -309,7 +313,8 @@
 
     move-result-object v5
 
-    const-string v6, "statisticChartLine_lightgreen"
+    .line 170
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_lightgreen:I
 
     goto :goto_1
 
@@ -327,7 +332,8 @@
 
     move-result-object v5
 
-    const-string v6, "statisticChartLine_orange"
+    .line 173
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_orange:I
 
     goto :goto_1
 
@@ -341,7 +347,8 @@
 
     move-result-object v5
 
-    const-string v6, "statisticChartLine_purple"
+    .line 176
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_purple:I
 
     .line 179
     :goto_1
@@ -395,7 +402,7 @@
     .line 189
     aget-object v2, v2, v1
 
-    iput-object v6, v2, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    iput v6, v2, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->colorKey:I
 
     .line 190
     new-instance v2, Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -440,21 +447,21 @@
 
     invoke-virtual {v2, v5, v3, v10, v10}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    const-string v3, "dialogTextBlack"
-
     .line 196
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->setTextColor(I)V
 
-    const-string v3, "windowBackgroundWhiteGrayIcon"
-
-    const-string v4, "checkboxCheck"
-
     .line 197
-    invoke-virtual {v2, v6, v3, v4}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCheckBoxColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
+
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
+
+    invoke-virtual {v2, v6, v3, v4}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCheckBoxColor(III)V
 
     .line 198
     new-instance v3, Lorg/telegram/ui/DilogCacheBottomSheet$$ExternalSyntheticLambda3;

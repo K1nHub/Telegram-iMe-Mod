@@ -53,9 +53,9 @@
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createActionBarBackground$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 

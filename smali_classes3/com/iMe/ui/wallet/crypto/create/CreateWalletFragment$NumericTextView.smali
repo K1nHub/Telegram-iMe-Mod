@@ -100,9 +100,9 @@
     .line 1131
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;->numericPaint:Landroid/text/TextPaint;
 
-    const-string v3, "windowBackgroundWhiteHintText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 

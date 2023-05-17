@@ -12,16 +12,16 @@ public class WebpFrame {
     boolean disposeBackgroundColor;
 
     /* renamed from: ih */
-    int f75ih;
+    int f78ih;
 
     /* renamed from: iw */
-    int f76iw;
+    int f79iw;
 
     /* renamed from: ix */
-    int f77ix;
+    int f80ix;
 
     /* renamed from: iy */
-    int f78iy;
+    int f81iy;
     @Keep
     private long mNativePtr;
 
@@ -33,10 +33,10 @@ public class WebpFrame {
 
     WebpFrame(long j, int i, int i2, int i3, int i4, int i5, boolean z, boolean z2) {
         this.mNativePtr = j;
-        this.f77ix = i;
-        this.f78iy = i2;
-        this.f76iw = i3;
-        this.f75ih = i4;
+        this.f80ix = i;
+        this.f81iy = i2;
+        this.f79iw = i3;
+        this.f78ih = i4;
         this.delay = i5;
         this.blendPreviousFrame = z;
         this.disposeBackgroundColor = z2;
@@ -62,11 +62,11 @@ public class WebpFrame {
     }
 
     public int getWidth() {
-        return this.f76iw;
+        return this.f79iw;
     }
 
     public int getHeight() {
-        return this.f75ih;
+        return this.f78ih;
     }
 
     public int getDurationMs() {
@@ -74,11 +74,11 @@ public class WebpFrame {
     }
 
     public int getXOffest() {
-        return this.f77ix;
+        return this.f80ix;
     }
 
     public int getYOffest() {
-        return this.f78iy;
+        return this.f81iy;
     }
 
     public boolean shouldDisposeToBackgroundColor() {

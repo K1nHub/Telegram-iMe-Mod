@@ -11,7 +11,7 @@ import org.telegram.p044ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StakingOperationProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingOperationProvider$convert$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class StakingOperationProvider$convert$2 extends Lambda implements Function1<AppCompatImageView, Unit> {
     final /* synthetic */ StakingOperationProvider this$0;
 
@@ -34,7 +34,7 @@ public final class StakingOperationProvider$convert$2 extends Lambda implements 
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
         StakingOperationProvider stakingOperationProvider = this.this$0;
-        materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor("windowBackgroundWhite")));
+        materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor(Theme.key_windowBackgroundWhite)));
         networkIconCornerSize = stakingOperationProvider.getNetworkIconCornerSize();
         materialShapeDrawable.setCornerSize(networkIconCornerSize);
         applyForView.setBackground(materialShapeDrawable);

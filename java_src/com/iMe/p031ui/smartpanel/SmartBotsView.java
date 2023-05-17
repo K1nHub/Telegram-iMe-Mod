@@ -13,18 +13,19 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.iMe.bots.domain.model.SmartBotResponse;
 import com.iMe.fork.controller.NeuroBotsController;
 import com.iMe.p031ui.smartpanel.SmartBotsView;
-import com.iMe.p031ui.smartpanel.extension.ImageViewExtKt;
 import com.iMe.p031ui.smartpanel.extension.SmartPanelViewExtKt;
 import com.iMe.p031ui.smartpanel.mapper.SmartContentMapper;
 import com.iMe.p031ui.smartpanel.model.SmartBotTab;
 import com.iMe.p031ui.smartpanel.model.content.TabBotAnswerItem;
 import com.iMe.p031ui.smartpanel.view.SmartBotContentView;
+import com.iMe.utils.extentions.common.ImageViewExtKt;
 import io.reactivex.disposables.CompositeDisposable;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,7 +33,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.databinding.ForkPanelViewBinding;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -234,8 +235,8 @@ public final class SmartBotsView extends FrameLayout {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
             SmartBotTab smartBotTab = (SmartBotTab) obj;
-            View inflate = View.inflate(getContext(), C3242R.layout.fork_panel_custom_tab_header, null);
-            ImageView avatar = (ImageView) inflate.findViewById(C3242R.C3245id.avatar);
+            View inflate = View.inflate(getContext(), C3290R.layout.fork_panel_custom_tab_header, null);
+            ImageView avatar = (ImageView) inflate.findViewById(C3290R.C3293id.avatar);
             if (smartBotTab.getIconRes() != 0) {
                 avatar.setImageResource(smartBotTab.getIconRes());
             } else if (smartBotTab.getIconUrl().length() > 0) {
@@ -245,7 +246,7 @@ public final class SmartBotsView extends FrameLayout {
                 Intrinsics.checkNotNullExpressionValue(context, "context");
                 ImageViewExtKt.loadFrom$default(avatar, iconUrl, context, null, false, 12, null);
             } else {
-                avatar.setImageResource(C3242R.C3244drawable.bot_avatar_any);
+                avatar.setImageResource(C3290R.C3292drawable.bot_avatar_any);
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
             if (tabAt != null) {
@@ -269,10 +270,10 @@ public final class SmartBotsView extends FrameLayout {
             gradientDrawable.setColor(0);
             gradientDrawable.setShape(1);
             if (i == this.binding.viewpager.getCurrentItem() && !Intrinsics.areEqual(smartBotTab.getBotId(), "recent")) {
-                gradientDrawable.setStroke(AndroidUtilities.m51dp(2.0f), Theme.getColor("chats_actionBackground"));
+                gradientDrawable.setStroke(AndroidUtilities.m55dp(2.0f), Theme.getColor(Theme.key_chats_actionBackground));
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
-            View findViewById = (tabAt == null || (customView = tabAt.getCustomView()) == null) ? null : customView.findViewById(C3242R.C3245id.avatar_bg);
+            View findViewById = (tabAt == null || (customView = tabAt.getCustomView()) == null) ? null : customView.findViewById(C3290R.C3293id.avatar_bg);
             if (findViewById != null) {
                 findViewById.setBackground(gradientDrawable);
             }
@@ -301,15 +302,15 @@ public final class SmartBotsView extends FrameLayout {
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setShape(1);
             if (this.binding.viewpager.getCurrentItem() == i) {
-                themedDrawable = Theme.getThemedDrawable(getContext(), C3242R.C3244drawable.ic_bots_recent, Theme.getColor("chats_actionBackground"));
+                themedDrawable = Theme.getThemedDrawable(getContext(), C3290R.C3292drawable.ic_bots_recent, Theme.getColor(Theme.key_chats_actionBackground));
                 Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(contex…_chats_actionBackground))");
                 gradientDrawable.setColor(Color.parseColor("#33cccccc"));
             } else {
-                themedDrawable = Theme.getThemedDrawable(getContext(), C3242R.C3244drawable.ic_bots_recent, Color.parseColor("#A8A8A8"));
+                themedDrawable = Theme.getThemedDrawable(getContext(), C3290R.C3292drawable.ic_bots_recent, Color.parseColor("#A8A8A8"));
                 Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(contex…or.parseColor(\"#A8A8A8\"))");
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
-            if (tabAt == null || (customView = tabAt.getCustomView()) == null || (imageView = (ImageView) customView.findViewById(C3242R.C3245id.avatar)) == null) {
+            if (tabAt == null || (customView = tabAt.getCustomView()) == null || (imageView = (ImageView) customView.findViewById(C3290R.C3293id.avatar)) == null) {
                 return;
             }
             imageView.setImageDrawable(themedDrawable);
@@ -375,19 +376,28 @@ public final class SmartBotsView extends FrameLayout {
 
     private final void setupLayoutBottom() {
         final ForkPanelViewBinding forkPanelViewBinding = this.binding;
-        forkPanelViewBinding.layoutBottom.setBackgroundColor(Theme.getColor("chat_emojiPanelBackground"));
-        Drawable createEmojiIconSelectorVectorDrawable = Theme.createEmojiIconSelectorVectorDrawable(getContext(), C3242R.C3244drawable.fork_ic_bots_responses, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
-        Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor("chat_emojiBottomPanelIcon"), false);
-        Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor("chat_emojiPanelIconSelected"), true);
+        FrameLayout frameLayout = forkPanelViewBinding.layoutBottom;
+        int i = Theme.key_chat_emojiPanelBackground;
+        frameLayout.setBackgroundColor(Theme.getColor(i));
+        Context context = getContext();
+        int i2 = C3290R.C3292drawable.fork_ic_bots_responses;
+        int i3 = Theme.key_chat_emojiBottomPanelIcon;
+        int color = Theme.getColor(i3);
+        int i4 = Theme.key_chat_emojiPanelIconSelected;
+        Drawable createEmojiIconSelectorVectorDrawable = Theme.createEmojiIconSelectorVectorDrawable(context, i2, color, Theme.getColor(i4));
+        Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor(i3), false);
+        Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor(i4), true);
         forkPanelViewBinding.imageTextResponses.setImageDrawable(createEmojiIconSelectorVectorDrawable);
-        Drawable createEmojiIconSelectorDrawable = Theme.createEmojiIconSelectorDrawable(getContext(), C3242R.C3244drawable.smiles_tab_gif, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
-        Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor("chat_emojiBottomPanelIcon"), false);
-        Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor("chat_emojiPanelIconSelected"), true);
+        Drawable createEmojiIconSelectorDrawable = Theme.createEmojiIconSelectorDrawable(getContext(), C3290R.C3292drawable.smiles_tab_gif, Theme.getColor(i3), Theme.getColor(i4));
+        Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor(i3), false);
+        Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor(i4), true);
         forkPanelViewBinding.imageGifResponses.setImageDrawable(createEmojiIconSelectorDrawable);
         forkPanelViewBinding.imageGifResponses.setSelected(true);
         forkPanelViewBinding.imageTextResponses.setSelected(true);
-        forkPanelViewBinding.imageBots.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chat_emojiPanelBackspace"), PorterDuff.Mode.SRC_IN));
-        forkPanelViewBinding.imageSettings.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chat_emojiPanelBackspace"), PorterDuff.Mode.MULTIPLY));
+        AppCompatImageView appCompatImageView = forkPanelViewBinding.imageBots;
+        int i5 = Theme.key_chat_emojiPanelBackspace;
+        appCompatImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i5), PorterDuff.Mode.SRC_IN));
+        forkPanelViewBinding.imageSettings.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i5), PorterDuff.Mode.MULTIPLY));
         forkPanelViewBinding.imageTextResponses.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.smartpanel.SmartBotsView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -414,10 +424,12 @@ public final class SmartBotsView extends FrameLayout {
         });
         forkPanelViewBinding.imageGifResponses.setSelected(this.currentBotResponseType == SmartBotContentView.BotResponseType.GIF);
         forkPanelViewBinding.imageTextResponses.setSelected(this.currentBotResponseType == SmartBotContentView.BotResponseType.TEXT);
-        forkPanelViewBinding.tabs.setBackgroundColor(Theme.getColor("chat_emojiPanelBackground"));
-        setBackgroundColor(Theme.getColor("windowBackgroundGray"));
-        forkPanelViewBinding.divider1.setBackgroundColor(Theme.getColor("divider"));
-        forkPanelViewBinding.divider2.setBackgroundColor(Theme.getColor("divider"));
+        forkPanelViewBinding.tabs.setBackgroundColor(Theme.getColor(i));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
+        View view = forkPanelViewBinding.divider1;
+        int i6 = Theme.key_divider;
+        view.setBackgroundColor(Theme.getColor(i6));
+        forkPanelViewBinding.divider2.setBackgroundColor(Theme.getColor(i6));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

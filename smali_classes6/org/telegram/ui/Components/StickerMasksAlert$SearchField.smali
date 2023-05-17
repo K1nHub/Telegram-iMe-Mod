@@ -424,7 +424,7 @@
     return-void
 .end method
 
-.method static synthetic access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;)Lorg/telegram/ui/Components/CloseProgressDrawable2;
+.method static synthetic access$6000(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;)Lorg/telegram/ui/Components/CloseProgressDrawable2;
     .locals 0
 
     .line 190

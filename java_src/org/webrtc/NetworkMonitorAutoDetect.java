@@ -84,30 +84,30 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onAvailable(Network network) {
-            Logging.m18d(NetworkMonitorAutoDetect.TAG, "Network becomes available: " + network.toString());
+            Logging.m20d(NetworkMonitorAutoDetect.TAG, "Network becomes available: " + network.toString());
             onNetworkChanged(network);
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
-            Logging.m18d(NetworkMonitorAutoDetect.TAG, "capabilities changed: " + networkCapabilities.toString());
+            Logging.m20d(NetworkMonitorAutoDetect.TAG, "capabilities changed: " + networkCapabilities.toString());
             onNetworkChanged(network);
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
-            Logging.m18d(NetworkMonitorAutoDetect.TAG, "link properties changed");
+            Logging.m20d(NetworkMonitorAutoDetect.TAG, "link properties changed");
             onNetworkChanged(network);
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onLosing(Network network, int i) {
-            Logging.m18d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " is about to lose in " + i + "ms");
+            Logging.m20d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " is about to lose in " + i + "ms");
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onLost(Network network) {
-            Logging.m18d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " is disconnected");
+            Logging.m20d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " is disconnected");
             NetworkMonitorAutoDetect.this.observer.onNetworkDisconnect(NetworkMonitorAutoDetect.networkToNetId(network));
         }
 
@@ -148,7 +148,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             }
             NetworkInfo networkInfo = connectivityManager.getNetworkInfo(network);
             if (networkInfo == null) {
-                Logging.m14w(NetworkMonitorAutoDetect.TAG, "Couldn't retrieve information from network " + network.toString());
+                Logging.m16w(NetworkMonitorAutoDetect.TAG, "Couldn't retrieve information from network " + network.toString());
                 return new NetworkState(false, -1, -1, -1, -1);
             } else if (networkInfo.getType() != 17) {
                 NetworkCapabilities networkCapabilities = this.connectivityManager.getNetworkCapabilities(network);
@@ -220,20 +220,20 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             }
             LinkProperties linkProperties = connectivityManager.getLinkProperties(network);
             if (linkProperties == null) {
-                Logging.m14w(NetworkMonitorAutoDetect.TAG, "Detected unknown network: " + network.toString());
+                Logging.m16w(NetworkMonitorAutoDetect.TAG, "Detected unknown network: " + network.toString());
                 return null;
             } else if (linkProperties.getInterfaceName() == null) {
-                Logging.m14w(NetworkMonitorAutoDetect.TAG, "Null interface name for network " + network.toString());
+                Logging.m16w(NetworkMonitorAutoDetect.TAG, "Null interface name for network " + network.toString());
                 return null;
             } else {
                 NetworkState networkState = getNetworkState(network);
                 NetworkChangeDetector.ConnectionType connectionType = NetworkMonitorAutoDetect.getConnectionType(networkState);
                 if (connectionType == NetworkChangeDetector.ConnectionType.CONNECTION_NONE) {
-                    Logging.m18d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " is disconnected");
+                    Logging.m20d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " is disconnected");
                     return null;
                 }
                 if (connectionType == NetworkChangeDetector.ConnectionType.CONNECTION_UNKNOWN || connectionType == NetworkChangeDetector.ConnectionType.CONNECTION_UNKNOWN_CELLULAR) {
-                    Logging.m18d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " connection type is " + connectionType + " because it has type " + networkState.getNetworkType() + " and subtype " + networkState.getNetworkSubType());
+                    Logging.m20d(NetworkMonitorAutoDetect.TAG, "Network " + network.toString() + " connection type is " + connectionType + " because it has type " + networkState.getNetworkType() + " and subtype " + networkState.getNetworkSubType());
                 }
                 return new NetworkChangeDetector.NetworkInformation(linkProperties.getInterfaceName(), connectionType, NetworkMonitorAutoDetect.getUnderlyingConnectionTypeForVpn(networkState), NetworkMonitorAutoDetect.networkToNetId(network), getIPAddresses(linkProperties));
             }
@@ -267,7 +267,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
 
         public void releaseCallback(ConnectivityManager.NetworkCallback networkCallback) {
             if (supportNetworkCallback()) {
-                Logging.m18d(NetworkMonitorAutoDetect.TAG, "Unregister network callback");
+                Logging.m20d(NetworkMonitorAutoDetect.TAG, "Unregister network callback");
                 this.connectivityManager.unregisterNetworkCallback(networkCallback);
             }
         }
@@ -361,7 +361,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
                 this.wifiP2pNetworkInfo = networkInformation;
                 this.observer.onNetworkConnect(networkInformation);
             } catch (SocketException e) {
-                Logging.m16e(NetworkMonitorAutoDetect.TAG, "Unable to get WifiP2p network interface", e);
+                Logging.m18e(NetworkMonitorAutoDetect.TAG, "Unable to get WifiP2p network interface", e);
             }
         }
 
@@ -391,7 +391,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             try {
                 this.connectivityManagerDelegate.requestMobileNetwork(networkCallback);
             } catch (SecurityException unused) {
-                Logging.m14w(TAG, "Unable to obtain permission to request a cellular network.");
+                Logging.m16w(TAG, "Unable to obtain permission to request a cellular network.");
                 networkCallback = null;
             }
             this.mobileNetworkCallback = networkCallback;
@@ -564,7 +564,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
         this.connectionType = connectionType;
         this.wifiSSID = wifiSSID;
-        Logging.m18d(TAG, "Network connectivity changed, type is: " + this.connectionType);
+        Logging.m20d(TAG, "Network connectivity changed, type is: " + this.connectionType);
         this.observer.onConnectionTypeChanged(connectionType);
     }
 

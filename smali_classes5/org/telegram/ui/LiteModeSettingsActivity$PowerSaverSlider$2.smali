@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;Lorg/telegram/ui/LiteModeSettingsActivity;)V
     .locals 0
 
-    .line 690
+    .line 727
     iput-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$2;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,29 +60,29 @@
 
     mul-float/2addr p2, p1
 
-    .line 693
+    .line 730
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
 
     move-result p1
 
-    .line 694
+    .line 731
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->getPowerSaverLevel()I
 
     move-result p2
 
     if-eq p1, p2, :cond_1
 
-    .line 695
+    .line 732
     invoke-static {p1}, Lorg/telegram/messenger/LiteMode;->setPowerSaverLevel(I)V
 
-    .line 696
+    .line 733
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$2;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iget-object p2, p2, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/LiteModeSettingsActivity;->access$400(Lorg/telegram/ui/LiteModeSettingsActivity;)V
 
-    .line 697
+    .line 734
     iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$2;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iget-object p2, p2, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
@@ -95,7 +95,7 @@
 
     if-lt p1, p2, :cond_1
 
-    .line 701
+    .line 738
     :cond_0
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$2;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;

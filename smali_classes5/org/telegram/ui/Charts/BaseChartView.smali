@@ -7171,20 +7171,18 @@
     .line 266
     iget-boolean v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->useAlphaSignature:Z
 
-    const-string v1, "statisticChartSignature"
-
     if-eqz v0, :cond_0
 
     .line 267
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->signaturePaint:Landroid/graphics/Paint;
 
-    const-string v2, "statisticChartSignatureAlpha"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartSignatureAlpha:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     goto :goto_0
 
@@ -7192,17 +7190,21 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->signaturePaint:Landroid/graphics/Paint;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartSignature:I
 
-    move-result v2
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 272
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->bottomSignaturePaint:Landroid/graphics/Paint;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartSignature:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -7211,9 +7213,9 @@
     .line 273
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->linePaint:Landroid/graphics/Paint;
 
-    const-string v1, "statisticChartHintLine"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartHintLine:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -7222,9 +7224,9 @@
     .line 274
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->selectedLinePaint:Landroid/graphics/Paint;
 
-    const-string v1, "statisticChartActiveLine"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartActiveLine:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -7233,9 +7235,9 @@
     .line 275
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->pickerSelectorPaint:Landroid/graphics/Paint;
 
-    const-string v1, "statisticChartActivePickerChart"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartActivePickerChart:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -7244,9 +7246,9 @@
     .line 276
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->unactiveBottomChartPaint:Landroid/graphics/Paint;
 
-    const-string v1, "statisticChartInactivePickerChart"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartInactivePickerChart:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -7255,9 +7257,9 @@
     .line 277
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->selectionBackgroundPaint:Landroid/graphics/Paint;
 
-    const-string v1, "windowBackgroundWhite"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -7266,9 +7268,9 @@
     .line 278
     iget-object v0, p0, Lorg/telegram/ui/Charts/BaseChartView;->ripplePaint:Landroid/graphics/Paint;
 
-    const-string v1, "statisticChartRipple"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartRipple:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

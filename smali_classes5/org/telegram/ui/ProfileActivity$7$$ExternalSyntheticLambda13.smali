@@ -2,56 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$User;
-
-.field public final synthetic f$2:Lorg/telegram/ui/DialogsActivity;
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$7;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/DialogsActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$7;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda13;->f$1:Lorg/telegram/tgnet/TLRPC$User;
-
-    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/ui/DialogsActivity;
+    iput-boolean p2, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda13;->f$1:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 8
+.method public final run()V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda13;->f$1:Lorg/telegram/tgnet/TLRPC$User;
+    iget-boolean v1, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda13;->f$1:Z
 
-    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/ui/DialogsActivity;
+    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity$7;->$r8$lambda$nuwz_UqOWT_53wgeZr1Caw4gZ5c(Lorg/telegram/ui/ProfileActivity$7;Z)V
 
-    move-object v3, p1
-
-    move-object v4, p2
-
-    move-object v5, p3
-
-    move v6, p4
-
-    move-object v7, p5
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$7;->$r8$lambda$zi1tXZwueLYMjJl1ZyT5GT37A_c(Lorg/telegram/ui/ProfileActivity$7;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

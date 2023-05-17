@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1974
+    .line 2394
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 1981
+    .line 2401
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -56,7 +56,7 @@
     :cond_0
     move v1, v2
 
-    .line 1982
+    .line 2402
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->free:Z
 
@@ -66,18 +66,18 @@
 
     move v2, v3
 
-    .line 1983
+    .line 2403
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->text_color:Z
 
-    .line 1984
+    .line 2404
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
 
-    .line 1985
+    .line 2405
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -94,12 +94,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 1989
+    .line 2409
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 1990
+    .line 2410
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->free:Z
 
     if-eqz v0, :cond_0
@@ -118,7 +118,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 1991
+    .line 2411
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->text_color:Z
 
     if-eqz v1, :cond_1
@@ -133,15 +133,15 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 1992
+    .line 2412
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 1993
+    .line 2413
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 1994
+    .line 2414
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->stickerset:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

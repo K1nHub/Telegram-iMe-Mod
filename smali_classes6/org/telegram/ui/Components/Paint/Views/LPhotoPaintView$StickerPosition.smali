@@ -26,16 +26,16 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Point;FF)V
     .locals 0
 
-    .line 2815
+    .line 2837
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2816
+    .line 2838
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;->position:Lorg/telegram/ui/Components/Point;
 
-    .line 2817
+    .line 2839
     iput p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;->scale:F
 
-    .line 2818
+    .line 2840
     iput p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;->angle:F
 
     return-void
@@ -44,7 +44,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;)Lorg/telegram/ui/Components/Point;
     .locals 0
 
-    .line 2810
+    .line 2832
     iget-object p0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;->position:Lorg/telegram/ui/Components/Point;
 
     return-object p0
@@ -53,7 +53,7 @@
 .method static synthetic access$3800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;)F
     .locals 0
 
-    .line 2810
+    .line 2832
     iget p0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;->angle:F
 
     return p0
@@ -62,7 +62,7 @@
 .method static synthetic access$3900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;)F
     .locals 0
 
-    .line 2810
+    .line 2832
     iget p0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;->scale:F
 
     return p0

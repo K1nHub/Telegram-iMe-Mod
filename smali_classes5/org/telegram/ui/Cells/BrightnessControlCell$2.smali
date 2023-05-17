@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Cells/BrightnessControlCell;-><init>(Landroid/content/Context;)V
+    value = Lorg/telegram/ui/Cells/BrightnessControlCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/BrightnessControlCell;)V
     .locals 0
 
-    .line 50
+    .line 60
     iput-object p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell$2;->this$0:Lorg/telegram/ui/Cells/BrightnessControlCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .method public onSeekBarDrag(ZF)V
     .locals 0
 
-    .line 53
+    .line 63
     iget-object p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell$2;->this$0:Lorg/telegram/ui/Cells/BrightnessControlCell;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/BrightnessControlCell;->didChangedValue(F)V

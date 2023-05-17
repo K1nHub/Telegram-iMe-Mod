@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;Landroid/content/Context;)V
     .locals 0
 
-    .line 1696
+    .line 1713
     iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public addView(Landroid/view/View;)V
     .locals 0
 
-    .line 1699
+    .line 1716
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1700
+    .line 1717
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
@@ -49,10 +49,10 @@
 .method public removeView(Landroid/view/View;)V
     .locals 0
 
-    .line 1705
+    .line 1722
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 1707
+    .line 1724
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
@@ -60,7 +60,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1711
+    .line 1728
     :catch_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 

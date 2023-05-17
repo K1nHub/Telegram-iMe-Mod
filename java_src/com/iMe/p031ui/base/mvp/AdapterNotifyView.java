@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: AdapterNotifyView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.base.mvp.AdapterNotifyView */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface AdapterNotifyView extends MvpView {
     void notifyDataSetChanged();
 }

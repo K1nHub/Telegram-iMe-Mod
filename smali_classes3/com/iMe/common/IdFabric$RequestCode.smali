@@ -4,9 +4,11 @@
 
 
 # static fields
-.field public static final file_saving_directory:I = 0x3fffffff
+.field public static final FILE_SAVING_DIRECTORY:I = 0x3fffffff
 
-.field public static final file_saving_write_storage_permission:I
+.field public static final FILE_SAVING_WRITE_STORAGE_PERMISSION:I
+
+.field public static final QUICK_LOGIN_AUTHORIZE:I
 
 .field private static id:I = 0x3fffffff
 
@@ -19,15 +21,22 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 239
+    .line 256
     sput v0, Lcom/iMe/common/IdFabric$RequestCode;->id:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 240
+    .line 257
     sput v1, Lcom/iMe/common/IdFabric$RequestCode;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$RequestCode;->file_saving_write_storage_permission:I
+    sput v0, Lcom/iMe/common/IdFabric$RequestCode;->FILE_SAVING_WRITE_STORAGE_PERMISSION:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 258
+    sput v0, Lcom/iMe/common/IdFabric$RequestCode;->id:I
+
+    sput v1, Lcom/iMe/common/IdFabric$RequestCode;->QUICK_LOGIN_AUTHORIZE:I
 
     return-void
 .end method

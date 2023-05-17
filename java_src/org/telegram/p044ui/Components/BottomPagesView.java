@@ -13,14 +13,14 @@ import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.BottomPagesView */
 /* loaded from: classes6.dex */
 public class BottomPagesView extends View {
-    private String colorKey;
+    private int colorKey;
     private int currentPage;
     private int pagesCount;
     private Paint paint;
     private float progress;
     private RectF rect;
     private int scrollPosition;
-    private String selectedColorKey;
+    private int selectedColorKey;
     private ViewPager viewPager;
 
     public BottomPagesView(Context context, ViewPager viewPager, int i) {
@@ -28,6 +28,8 @@ public class BottomPagesView extends View {
         this.paint = new Paint(1);
         new DecelerateInterpolator();
         this.rect = new RectF();
+        this.colorKey = -1;
+        this.selectedColorKey = -1;
         this.viewPager = viewPager;
         this.pagesCount = i;
     }
@@ -43,44 +45,44 @@ public class BottomPagesView extends View {
         invalidate();
     }
 
-    public void setColor(String str, String str2) {
-        this.colorKey = str;
-        this.selectedColorKey = str2;
+    public void setColor(int i, int i2) {
+        this.colorKey = i;
+        this.selectedColorKey = i2;
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        AndroidUtilities.m50dp(5);
-        String str = this.colorKey;
-        if (str != null) {
-            this.paint.setColor((Theme.getColor(str) & 16777215) | (-1275068416));
+        AndroidUtilities.m54dp(5);
+        int i = this.colorKey;
+        if (i >= 0) {
+            this.paint.setColor((Theme.getColor(i) & 16777215) | (-1275068416));
         } else {
             this.paint.setColor(Theme.getCurrentTheme().isDark() ? -11184811 : -4473925);
         }
         this.currentPage = this.viewPager.getCurrentItem();
-        for (int i = 0; i < this.pagesCount; i++) {
-            if (i != this.currentPage) {
-                int m50dp = AndroidUtilities.m50dp(11) * i;
-                this.rect.set(m50dp, BitmapDescriptorFactory.HUE_RED, m50dp + AndroidUtilities.m50dp(5), AndroidUtilities.m50dp(5));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m51dp(2.5f), AndroidUtilities.m51dp(2.5f), this.paint);
+        for (int i2 = 0; i2 < this.pagesCount; i2++) {
+            if (i2 != this.currentPage) {
+                int m54dp = AndroidUtilities.m54dp(11) * i2;
+                this.rect.set(m54dp, BitmapDescriptorFactory.HUE_RED, m54dp + AndroidUtilities.m54dp(5), AndroidUtilities.m54dp(5));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m55dp(2.5f), AndroidUtilities.m55dp(2.5f), this.paint);
             }
         }
-        String str2 = this.selectedColorKey;
-        if (str2 != null) {
-            this.paint.setColor(Theme.getColor(str2));
+        int i3 = this.selectedColorKey;
+        if (i3 >= 0) {
+            this.paint.setColor(Theme.getColor(i3));
         } else {
             this.paint.setColor(-13851168);
         }
-        int m50dp2 = this.currentPage * AndroidUtilities.m50dp(11);
+        int m54dp2 = this.currentPage * AndroidUtilities.m54dp(11);
         if (this.progress != BitmapDescriptorFactory.HUE_RED) {
             if (this.scrollPosition >= this.currentPage) {
-                this.rect.set(m50dp2, BitmapDescriptorFactory.HUE_RED, m50dp2 + AndroidUtilities.m50dp(5) + (AndroidUtilities.m50dp(11) * this.progress), AndroidUtilities.m50dp(5));
+                this.rect.set(m54dp2, BitmapDescriptorFactory.HUE_RED, m54dp2 + AndroidUtilities.m54dp(5) + (AndroidUtilities.m54dp(11) * this.progress), AndroidUtilities.m54dp(5));
             } else {
-                this.rect.set(m50dp2 - (AndroidUtilities.m50dp(11) * (1.0f - this.progress)), BitmapDescriptorFactory.HUE_RED, m50dp2 + AndroidUtilities.m50dp(5), AndroidUtilities.m50dp(5));
+                this.rect.set(m54dp2 - (AndroidUtilities.m54dp(11) * (1.0f - this.progress)), BitmapDescriptorFactory.HUE_RED, m54dp2 + AndroidUtilities.m54dp(5), AndroidUtilities.m54dp(5));
             }
         } else {
-            this.rect.set(m50dp2, BitmapDescriptorFactory.HUE_RED, m50dp2 + AndroidUtilities.m50dp(5), AndroidUtilities.m50dp(5));
+            this.rect.set(m54dp2, BitmapDescriptorFactory.HUE_RED, m54dp2 + AndroidUtilities.m54dp(5), AndroidUtilities.m54dp(5));
         }
-        canvas.drawRoundRect(this.rect, AndroidUtilities.m51dp(2.5f), AndroidUtilities.m51dp(2.5f), this.paint);
+        canvas.drawRoundRect(this.rect, AndroidUtilities.m55dp(2.5f), AndroidUtilities.m55dp(2.5f), this.paint);
     }
 }

@@ -77,7 +77,7 @@ public class MediaStreamTrack {
     }
 
     /* renamed from: id */
-    public String m12id() {
+    public String m14id() {
         checkMediaStreamTrackExists();
         return nativeGetId(this.nativeTrack);
     }

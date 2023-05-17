@@ -137,7 +137,7 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: com.google.firebase.database.collection.RBTreeSortedMap$Builder$Base1_2$1 */
             /* loaded from: classes3.dex */
-            public class C09931 implements Iterator<BooleanChunk>, p034j$.util.Iterator {
+            public class C09981 implements Iterator<BooleanChunk>, p034j$.util.Iterator {
                 private int current;
 
                 @Override // p034j$.util.Iterator
@@ -149,7 +149,7 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
                 public void remove() {
                 }
 
-                C09931() {
+                C09981() {
                     this.current = Base1_2.this.length - 1;
                 }
 
@@ -170,7 +170,7 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
             @Override // java.lang.Iterable
             public java.util.Iterator<BooleanChunk> iterator() {
-                return new C09931();
+                return new C09981();
             }
         }
 

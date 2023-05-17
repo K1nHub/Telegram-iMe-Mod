@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 232
+    .line 234
     invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
     return-void
@@ -29,10 +29,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 0
 
-    .line 235
+    .line 237
     invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 236
+    .line 238
     invoke-virtual {p1}, Landroid/view/View;->isEnabled()Z
 
     move-result p1
@@ -41,7 +41,7 @@
 
     const/16 p1, 0x10
 
-    .line 237
+    .line 239
     invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     :cond_0

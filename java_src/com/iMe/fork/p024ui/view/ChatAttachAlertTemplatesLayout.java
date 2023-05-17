@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Space;
 import android.widget.TextView;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,12 +31,12 @@ import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -48,21 +49,21 @@ import org.telegram.p044ui.Components.RecyclerListView;
 /* renamed from: com.iMe.fork.ui.view.ChatAttachAlertTemplatesLayout */
 /* loaded from: classes3.dex */
 public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
+    private int bottomPaddingRow;
     private float currentPanTranslationProgress;
     private final BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate delegate;
-    private int emptyRow;
     private final Lazy emptyView$delegate;
     private int headerRow;
     private boolean ignoreLayout;
     private final Lazy listAdapter$delegate;
     private final Lazy listLayoutManager$delegate;
     private final Lazy listView$delegate;
-    private int paddingRow;
     private int rowCount;
     private final Lazy sortItem$delegate;
     private final List<TemplateModel> templates;
     private int templatesStartRow;
     private int topPadding;
+    private int topPaddingRow;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean initEmptyView$lambda$6$lambda$5(View view, MotionEvent motionEvent) {
@@ -188,7 +189,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             float r0 = r0.getY()
             int r0 = (int) r0
             r3 = 8
-            int r3 = org.telegram.messenger.AndroidUtilities.m50dp(r3)
+            int r3 = org.telegram.messenger.AndroidUtilities.m54dp(r3)
             int r0 = r0 - r3
             r3 = 0
             if (r0 <= 0) goto L40
@@ -220,7 +221,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             r0 = r4
         L51:
             r1 = 13
-            int r1 = org.telegram.messenger.AndroidUtilities.m50dp(r1)
+            int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r1)
             int r0 = r0 + r1
             return r0
         */
@@ -229,7 +230,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
 
     @Override // org.telegram.p044ui.Components.ChatAttachAlert.AttachAlertLayout
     public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.m50dp(17);
+        return getListTopPadding() + AndroidUtilities.m54dp(17);
     }
 
     @Override // android.view.View
@@ -256,12 +257,12 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             org.telegram.ui.Components.SizeNotifierFrameLayout r4 = r4.sizeNotifierFrameLayout
             int r4 = r4.measureKeyboardHeight()
             r0 = 20
-            int r0 = org.telegram.messenger.AndroidUtilities.m50dp(r0)
+            int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
             r1 = 1
             r2 = 0
             if (r4 <= r0) goto L1e
             r4 = 52
-            int r4 = org.telegram.messenger.AndroidUtilities.m50dp(r4)
+            int r4 = org.telegram.messenger.AndroidUtilities.m54dp(r4)
             org.telegram.ui.Components.ChatAttachAlert r5 = r3.parentAlert
             r5.setAllowNestedScroll(r2)
             goto L45
@@ -282,7 +283,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             int r4 = r5 * 2
         L36:
             r5 = 13
-            int r5 = org.telegram.messenger.AndroidUtilities.m50dp(r5)
+            int r5 = org.telegram.messenger.AndroidUtilities.m54dp(r5)
             int r4 = r4 - r5
             if (r4 >= 0) goto L40
             r4 = r2
@@ -298,7 +299,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             r5 = 0
             r4.setItemAnimator(r5)
             com.iMe.fork.ui.view.ChatAttachAlertTemplatesLayout$ListAdapter r4 = r3.getListAdapter()
-            int r5 = r3.paddingRow
+            int r5 = r3.topPaddingRow
             r4.notifyItemChanged(r5)
         L5e:
             r3.ignoreLayout = r2
@@ -309,7 +310,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
 
     @Override // org.telegram.p044ui.Components.ChatAttachAlert.AttachAlertLayout
     public int getButtonsHideOffset() {
-        return AndroidUtilities.m50dp(70);
+        return AndroidUtilities.m54dp(70);
     }
 
     @Override // android.view.View, android.view.ViewParent
@@ -334,12 +335,12 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
     @Override // org.telegram.p044ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
         ChatAttachAlert chatAttachAlert = this.parentAlert;
-        C3306ActionBar c3306ActionBar = chatAttachAlert.actionBar;
-        c3306ActionBar.setTitle(LocaleController.getInternalString(C3242R.string.chat_templates));
-        c3306ActionBar.createMenu().setPadding(0, 0, chatAttachAlert.doneItem.getMeasuredWidth() + AndroidUtilities.m50dp(24), 0);
+        C3356ActionBar c3356ActionBar = chatAttachAlert.actionBar;
+        c3356ActionBar.setTitle(LocaleController.getInternalString(C3290R.string.chat_templates));
+        c3356ActionBar.createMenu().setPadding(0, 0, chatAttachAlert.doneItem.getMeasuredWidth() + AndroidUtilities.m54dp(24), 0);
         ActionBarMenuItem doneItem = chatAttachAlert.doneItem;
         Intrinsics.checkNotNullExpressionValue(doneItem, "doneItem");
-        ViewExtKt.visible(doneItem);
+        ViewExtKt.visible$default(doneItem, false, 1, null);
         getListLayoutManager().scrollToPositionWithOffset(0, 0);
         updateEmptyView();
         updateSortItem();
@@ -351,10 +352,10 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
         chatAttachAlert.actionBar.createMenu().setPadding(0, 0, 0, 0);
         ActionBarMenuItem doneItem = chatAttachAlert.doneItem;
         Intrinsics.checkNotNullExpressionValue(doneItem, "doneItem");
-        ViewExtKt.invisible(doneItem);
+        ViewExtKt.invisible$default(doneItem, false, 1, null);
         ActionBarMenuItem sortItem = getSortItem();
         Intrinsics.checkNotNullExpressionValue(sortItem, "sortItem");
-        ViewExtKt.gone(sortItem);
+        ViewExtKt.gone$default(sortItem, false, 1, null);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -381,7 +382,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
     @Override // org.telegram.p044ui.Components.ChatAttachAlert.AttachAlertLayout
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "dialogScrollGlow"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{EmptyView.class}, null, null, null, "windowBackgroundGray"), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteRedText5"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText3"), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, Theme.key_dialogScrollGlow), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{Space.class}, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_text_RedRegular), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText3), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
         return arrayListOf;
     }
 
@@ -393,20 +394,20 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
     /* JADX INFO: Access modifiers changed from: private */
     public final LinearLayout initEmptyView() {
         LinearLayout linearLayout = new LinearLayout(getContext());
-        ViewExtKt.gone(linearLayout);
+        ViewExtKt.gone$default(linearLayout, false, 1, null);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(17);
         ImageView imageView = new ImageView(linearLayout.getContext());
-        imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("dialogEmptyImage"), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3242R.C3244drawable.stickers_empty);
+        imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), PorterDuff.Mode.MULTIPLY));
+        imageView.setImageResource(C3290R.C3292drawable.stickers_empty);
         linearLayout.addView(imageView, LayoutHelper.createLinear(-2, -2));
         TextView textView = new TextView(linearLayout.getContext());
         ViewExtKt.withMediumTypeface(textView);
-        textView.setText(LocaleController.getInternalString(C3242R.string.chat_templates_list_header));
+        textView.setText(LocaleController.getInternalString(C3290R.string.chat_templates_list_header));
         textView.setGravity(17);
-        textView.setTextColor(getThemedColor("dialogEmptyText"));
+        textView.setTextColor(getThemedColor(Theme.key_dialogEmptyText));
         textView.setTextSize(1, 17.0f);
-        textView.setPadding(AndroidUtilities.m50dp(40), 0, AndroidUtilities.m50dp(40), 0);
+        textView.setPadding(AndroidUtilities.m54dp(40), 0, AndroidUtilities.m54dp(40), 0);
         linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 17, 0, 11, 0, 0));
         linearLayout.setOnTouchListener(ChatAttachAlertTemplatesLayout$$ExternalSyntheticLambda0.INSTANCE);
         return linearLayout;
@@ -421,7 +422,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean z) {
                 Intrinsics.checkNotNullParameter(child, "child");
                 Intrinsics.checkNotNullParameter(rectangle, "rectangle");
-                rectangle.bottom += AndroidUtilities.m50dp(60);
+                rectangle.bottom += AndroidUtilities.m54dp(60);
                 return super.requestChildRectangleOnScreen(child, rectangle, z);
             }
         };
@@ -431,9 +432,9 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
     /* JADX WARN: Type inference failed for: r3v0, types: [org.telegram.ui.Components.FillLastLinearLayoutManager, com.iMe.fork.ui.view.ChatAttachAlertTemplatesLayout$initListLayoutManager$1] */
     public final ChatAttachAlertTemplatesLayout$initListLayoutManager$1 initListLayoutManager() {
         final Context context = getContext();
-        final int m50dp = AndroidUtilities.m50dp(53);
+        final int m54dp = AndroidUtilities.m54dp(53);
         final ChatAttachAlertTemplatesLayout$initListView$1 listView = getListView();
-        ?? r3 = new FillLastLinearLayoutManager(context, m50dp, listView) { // from class: com.iMe.fork.ui.view.ChatAttachAlertTemplatesLayout$initListLayoutManager$1
+        ?? r3 = new FillLastLinearLayoutManager(context, m54dp, listView) { // from class: com.iMe.fork.ui.view.ChatAttachAlertTemplatesLayout$initListLayoutManager$1
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
                 Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
@@ -447,7 +448,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
                         Intrinsics.checkNotNullParameter(view, "view");
                         int calculateDyToMakeVisible = super.calculateDyToMakeVisible(view, i2);
                         i3 = ChatAttachAlertTemplatesLayout.this.topPadding;
-                        return calculateDyToMakeVisible - (i3 - AndroidUtilities.m50dp(7));
+                        return calculateDyToMakeVisible - (i3 - AndroidUtilities.m54dp(7));
                     }
 
                     /* JADX INFO: Access modifiers changed from: protected */
@@ -520,14 +521,14 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
                 RecyclerListView.Holder holder;
                 Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
                 if (i == 0) {
-                    int m50dp = AndroidUtilities.m50dp(13);
+                    int m54dp = AndroidUtilities.m54dp(13);
                     chatAttachAlert = ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertTemplatesLayout.this).parentAlert;
                     int backgroundPaddingTop = chatAttachAlert.getBackgroundPaddingTop();
                     chatAttachAlert2 = ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertTemplatesLayout.this).parentAlert;
-                    if (((chatAttachAlert2.scrollOffsetY[0] - backgroundPaddingTop) - m50dp) + backgroundPaddingTop >= C3306ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m50dp(53)) {
+                    if (((chatAttachAlert2.scrollOffsetY[0] - backgroundPaddingTop) - m54dp) + backgroundPaddingTop >= C3356ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m54dp(53)) {
                         return;
                     }
-                    smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m50dp(53));
+                    smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m54dp(53));
                 }
             }
         });
@@ -593,7 +594,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
         this.rowCount = 0;
         int i = 0 + 1;
         this.rowCount = i;
-        this.paddingRow = 0;
+        this.topPaddingRow = 0;
         this.rowCount = i + 1;
         this.headerRow = i;
         if (this.templates.isEmpty()) {
@@ -605,7 +606,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
         }
         int i3 = this.rowCount;
         this.rowCount = i3 + 1;
-        this.emptyRow = i3;
+        this.bottomPaddingRow = i3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -627,18 +628,14 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             return holder.getItemViewType() == IdFabric$ViewTypes.TEMPLATE;
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r10v2, types: [android.widget.LinearLayout, com.iMe.fork.ui.view.TemplateCell] */
-        /* JADX WARN: Type inference failed for: r10v3, types: [org.telegram.ui.Cells.HeaderCell] */
-        /* JADX WARN: Type inference failed for: r10v5, types: [com.iMe.fork.ui.view.ChatAttachAlertTemplatesLayout$ListAdapter$onCreateViewHolder$1] */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
-            EmptyView emptyView;
+            HeaderCell headerCell;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.CHAT_ATTACH_HEADER) {
+            if (i == IdFabric$ViewTypes.TOP_PADDING) {
                 final Context context = parent.getContext();
                 final ChatAttachAlertTemplatesLayout chatAttachAlertTemplatesLayout = ChatAttachAlertTemplatesLayout.this;
-                emptyView = new View(context) { // from class: com.iMe.fork.ui.view.ChatAttachAlertTemplatesLayout$ListAdapter$onCreateViewHolder$1
+                headerCell = new View(context) { // from class: com.iMe.fork.ui.view.ChatAttachAlertTemplatesLayout$ListAdapter$onCreateViewHolder$1
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
                         int i4;
@@ -647,22 +644,22 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
                         setMeasuredDimension(size, i4);
                     }
                 };
-            } else if (i == IdFabric$ViewTypes.HEADER) {
-                ?? headerCell = new HeaderCell(parent.getContext(), "windowBackgroundWhiteBlueHeader", 21, 7, false, ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertTemplatesLayout.this).resourcesProvider);
-                headerCell.getTextView().setGravity(48);
-                emptyView = headerCell;
-            } else if (i == IdFabric$ViewTypes.TEMPLATE) {
+            } else if (i == IdFabric$ViewTypes.HEADER_CELL) {
+                HeaderCell headerCell2 = new HeaderCell(parent.getContext(), Theme.key_windowBackgroundWhiteBlueHeader, 21, 7, false, ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertTemplatesLayout.this).resourcesProvider);
+                headerCell2.getTextView().setGravity(48);
+                headerCell = headerCell2;
+            } else if (i == IdFabric$ViewTypes.BOTTOM_PADDING) {
                 Context context2 = parent.getContext();
                 Intrinsics.checkNotNullExpressionValue(context2, "parent.context");
-                ?? templateCell = new TemplateCell(context2);
-                templateCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-                emptyView = templateCell;
+                headerCell = new EmptyView(context2);
             } else {
                 Context context3 = parent.getContext();
                 Intrinsics.checkNotNullExpressionValue(context3, "parent.context");
-                emptyView = new EmptyView(context3);
+                TemplateCell templateCell = new TemplateCell(context3);
+                templateCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+                headerCell = templateCell;
             }
-            return new RecyclerListView.Holder(emptyView);
+            return new RecyclerListView.Holder(headerCell);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -670,7 +667,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             Intrinsics.checkNotNullParameter(holder, "holder");
             View view = holder.itemView;
             if (view instanceof HeaderCell) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(ChatAttachAlertTemplatesLayout.this.templates.isEmpty() ? C3242R.string.chat_templates_list_header : C3242R.string.chat_templates));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(ChatAttachAlertTemplatesLayout.this.templates.isEmpty() ? C3290R.string.chat_templates_list_header : C3290R.string.chat_templates));
             } else if (view instanceof TemplateCell) {
                 ((TemplateCell) view).bind((TemplateModel) ChatAttachAlertTemplatesLayout.this.templates.get(i - ChatAttachAlertTemplatesLayout.this.templatesStartRow), ChatAttachAlertTemplatesLayout.this.getDelegate());
             }
@@ -678,7 +675,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == ChatAttachAlertTemplatesLayout.this.paddingRow ? IdFabric$ViewTypes.CHAT_ATTACH_HEADER : i == ChatAttachAlertTemplatesLayout.this.headerRow ? IdFabric$ViewTypes.HEADER : i == ChatAttachAlertTemplatesLayout.this.emptyRow ? IdFabric$ViewTypes.CHAT_ATTACH_FOOTER : IdFabric$ViewTypes.TEMPLATE;
+            return i == ChatAttachAlertTemplatesLayout.this.topPaddingRow ? IdFabric$ViewTypes.TOP_PADDING : i == ChatAttachAlertTemplatesLayout.this.headerRow ? IdFabric$ViewTypes.HEADER_CELL : i == ChatAttachAlertTemplatesLayout.this.bottomPaddingRow ? IdFabric$ViewTypes.BOTTOM_PADDING : IdFabric$ViewTypes.TEMPLATE;
         }
     }
 

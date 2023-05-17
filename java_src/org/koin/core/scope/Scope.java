@@ -28,7 +28,7 @@ public final class Scope {
     private Object _source;
 
     /* renamed from: id */
-    private final String f1347id;
+    private final String f1353id;
     private final boolean isRoot;
     private final ArrayList<Scope> linkedScopes;
     private final Qualifier scopeQualifier;
@@ -39,14 +39,14 @@ public final class Scope {
         }
         if (obj instanceof Scope) {
             Scope scope = (Scope) obj;
-            return Intrinsics.areEqual(this.scopeQualifier, scope.scopeQualifier) && Intrinsics.areEqual(this.f1347id, scope.f1347id) && this.isRoot == scope.isRoot && Intrinsics.areEqual(this._koin, scope._koin);
+            return Intrinsics.areEqual(this.scopeQualifier, scope.scopeQualifier) && Intrinsics.areEqual(this.f1353id, scope.f1353id) && this.isRoot == scope.isRoot && Intrinsics.areEqual(this._koin, scope._koin);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((this.scopeQualifier.hashCode() * 31) + this.f1347id.hashCode()) * 31;
+        int hashCode = ((this.scopeQualifier.hashCode() * 31) + this.f1353id.hashCode()) * 31;
         boolean z = this.isRoot;
         int i = z;
         if (z != 0) {
@@ -60,7 +60,7 @@ public final class Scope {
     }
 
     public final String getId() {
-        return this.f1347id;
+        return this.f1353id;
     }
 
     public final Koin get_koin() {
@@ -72,7 +72,7 @@ public final class Scope {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(_koin, "_koin");
         this.scopeQualifier = scopeQualifier;
-        this.f1347id = id;
+        this.f1353id = id;
         this.isRoot = z;
         this._koin = _koin;
         this.linkedScopes = new ArrayList<>();
@@ -202,7 +202,7 @@ public final class Scope {
 
     private final <T> T resolveInstance(Qualifier qualifier, KClass<?> kClass, Function0<? extends ParametersHolder> function0) {
         if (this._closed) {
-            throw new ClosedScopeException("Scope '" + this.f1347id + "' is closed");
+            throw new ClosedScopeException("Scope '" + this.f1353id + "' is closed");
         }
         ParametersHolder invoke = function0 != null ? function0.invoke() : null;
         if (invoke != null) {
@@ -211,7 +211,7 @@ public final class Scope {
             if (logger.isAt(level)) {
                 logger.display(level, "| >> parameters " + invoke + ' ');
             }
-            KoinPlatformTools.INSTANCE.m1573synchronized(this, new Scope$resolveInstance$2(this, invoke));
+            KoinPlatformTools.INSTANCE.m1612synchronized(this, new Scope$resolveInstance$2(this, invoke));
         }
         T t = (T) resolveValue(qualifier, kClass, new InstanceContext(this._koin.getLogger(), this, invoke), function0);
         if (invoke != null) {
@@ -220,7 +220,7 @@ public final class Scope {
             if (logger2.isAt(level2)) {
                 logger2.display(level2, "| << parameters");
             }
-            KoinPlatformTools.INSTANCE.m1573synchronized(this, new Scope$resolveInstance$3(this));
+            KoinPlatformTools.INSTANCE.m1612synchronized(this, new Scope$resolveInstance$3(this));
         }
         return t;
     }
@@ -259,7 +259,7 @@ public final class Scope {
                     }
                     t = (T) findInOtherScope(kClass, qualifier, function0);
                     if (t == null) {
-                        KoinPlatformTools.INSTANCE.m1573synchronized(this, new Scope$resolveValue$4$1(this));
+                        KoinPlatformTools.INSTANCE.m1612synchronized(this, new Scope$resolveValue$4$1(this));
                         Logger logger4 = this._koin.getLogger();
                         if (logger4.isAt(level)) {
                             logger4.display(level, "|- << parameters");
@@ -324,10 +324,10 @@ public final class Scope {
     }
 
     public final void close() {
-        KoinPlatformTools.INSTANCE.m1573synchronized(this, new Scope$close$1(this));
+        KoinPlatformTools.INSTANCE.m1612synchronized(this, new Scope$close$1(this));
     }
 
     public String toString() {
-        return "['" + this.f1347id + "']";
+        return "['" + this.f1353id + "']";
     }
 }

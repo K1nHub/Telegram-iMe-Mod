@@ -99,6 +99,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Trykk for å bytte til å velge dag</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Bytt til tekstinndatamodus</string>
     <string name="mtrl_picker_toggle_to_year_selection">Trykk for å bytte til å velge år</string>
+    <string name="nav_app_bar_navigate_up_description">Naviger opp</string>
+    <string name="nav_app_bar_open_drawer_description">Åpne uttrekksmenyen</string>
     <string name="password_toggle_content_description">Vis passordet</string>
     <string name="search_menu_title">Søk</string>
     <string name="status_bar_notification_info_overflow">999+</string>

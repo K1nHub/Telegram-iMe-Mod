@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1;)V
     .locals 0
 
-    .line 628
+    .line 677
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1$1;->this$2:Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -35,7 +35,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 631
+    .line 680
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1$1;->this$2:Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
@@ -56,7 +56,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -74,12 +74,12 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 636
+    .line 685
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 637
+    .line 686
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

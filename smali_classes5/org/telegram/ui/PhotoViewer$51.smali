@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/PhotoViewer$51;
-.super Landroid/view/View;
+.super Lorg/telegram/ui/Components/VideoPlayer;
 .source "PhotoViewer.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PhotoViewer;->createVideoControlsInterface()V
+    value = Lorg/telegram/ui/PhotoViewer;->preparePlayer(Landroid/net/Uri;ZZLorg/telegram/messenger/MediaController$SavedFilterState;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,30 +19,81 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
-    .line 7976
+    .line 9234
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 1
+.method public pause()V
+    .locals 2
 
-    .line 7979
+    .line 9243
+    invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
+
+    .line 9244
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1100(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayerSeekBar;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$2500(Lorg/telegram/ui/PhotoViewer;)I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-virtual {v0, p1, p0}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->draw(Landroid/graphics/Canvas;Landroid/view/View;)V
+    if-nez v0, :cond_0
 
+    .line 9245
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$23800(Lorg/telegram/ui/PhotoViewer;Z)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public play()V
+    .locals 2
+
+    .line 9237
+    invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
+
+    .line 9238
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$23800(Lorg/telegram/ui/PhotoViewer;Z)V
+
+    return-void
+.end method
+
+.method public seekTo(J)V
+    .locals 1
+
+    .line 9251
+    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
+
+    .line 9252
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1800(Lorg/telegram/ui/PhotoViewer;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 9253
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$23900(Lorg/telegram/ui/PhotoViewer;J)V
+
+    :cond_0
     return-void
 .end method

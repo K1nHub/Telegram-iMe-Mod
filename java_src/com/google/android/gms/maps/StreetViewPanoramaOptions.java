@@ -16,25 +16,25 @@ import com.google.android.gms.maps.model.StreetViewSource;
 /* loaded from: classes3.dex */
 public final class StreetViewPanoramaOptions extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaOptions> CREATOR = new zzap();
-    @SafeParcelable.Field(getter = "getStreetViewPanoramaCamera", m775id = 2)
+    @SafeParcelable.Field(getter = "getStreetViewPanoramaCamera", m779id = 2)
     private StreetViewPanoramaCamera zza;
-    @SafeParcelable.Field(getter = "getPanoramaId", m775id = 3)
+    @SafeParcelable.Field(getter = "getPanoramaId", m779id = 3)
     private String zzb;
-    @SafeParcelable.Field(getter = "getPosition", m775id = 4)
+    @SafeParcelable.Field(getter = "getPosition", m779id = 4)
     private LatLng zzc;
-    @SafeParcelable.Field(getter = "getRadius", m775id = 5)
+    @SafeParcelable.Field(getter = "getRadius", m779id = 5)
     private Integer zzd;
-    @SafeParcelable.Field(getter = "getUserNavigationEnabledForParcel", m775id = 6, type = "byte")
+    @SafeParcelable.Field(getter = "getUserNavigationEnabledForParcel", m779id = 6, type = "byte")
     private Boolean zze;
-    @SafeParcelable.Field(getter = "getZoomGesturesEnabledForParcel", m775id = 7, type = "byte")
+    @SafeParcelable.Field(getter = "getZoomGesturesEnabledForParcel", m779id = 7, type = "byte")
     private Boolean zzf;
-    @SafeParcelable.Field(getter = "getPanningGesturesEnabledForParcel", m775id = 8, type = "byte")
+    @SafeParcelable.Field(getter = "getPanningGesturesEnabledForParcel", m779id = 8, type = "byte")
     private Boolean zzg;
-    @SafeParcelable.Field(getter = "getStreetNamesEnabledForParcel", m775id = 9, type = "byte")
+    @SafeParcelable.Field(getter = "getStreetNamesEnabledForParcel", m779id = 9, type = "byte")
     private Boolean zzh;
-    @SafeParcelable.Field(getter = "getUseViewLifecycleInFragmentForParcel", m775id = 10, type = "byte")
+    @SafeParcelable.Field(getter = "getUseViewLifecycleInFragmentForParcel", m779id = 10, type = "byte")
     private Boolean zzi;
-    @SafeParcelable.Field(getter = "getSource", m775id = 11)
+    @SafeParcelable.Field(getter = "getSource", m779id = 11)
     private StreetViewSource zzj;
 
     public StreetViewPanoramaOptions() {
@@ -167,7 +167,7 @@ public final class StreetViewPanoramaOptions extends AbstractSafeParcelable impl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public StreetViewPanoramaOptions(@SafeParcelable.Param(m774id = 2) StreetViewPanoramaCamera streetViewPanoramaCamera, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) LatLng latLng, @SafeParcelable.Param(m774id = 5) Integer num, @SafeParcelable.Param(m774id = 6) byte b, @SafeParcelable.Param(m774id = 7) byte b2, @SafeParcelable.Param(m774id = 8) byte b3, @SafeParcelable.Param(m774id = 9) byte b4, @SafeParcelable.Param(m774id = 10) byte b5, @SafeParcelable.Param(m774id = 11) StreetViewSource streetViewSource) {
+    public StreetViewPanoramaOptions(@SafeParcelable.Param(m778id = 2) StreetViewPanoramaCamera streetViewPanoramaCamera, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) LatLng latLng, @SafeParcelable.Param(m778id = 5) Integer num, @SafeParcelable.Param(m778id = 6) byte b, @SafeParcelable.Param(m778id = 7) byte b2, @SafeParcelable.Param(m778id = 8) byte b3, @SafeParcelable.Param(m778id = 9) byte b4, @SafeParcelable.Param(m778id = 10) byte b5, @SafeParcelable.Param(m778id = 11) StreetViewSource streetViewSource) {
         Boolean bool = Boolean.TRUE;
         this.zze = bool;
         this.zzf = bool;

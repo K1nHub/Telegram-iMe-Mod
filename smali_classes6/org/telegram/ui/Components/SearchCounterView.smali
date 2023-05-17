@@ -46,7 +46,7 @@
 
 .field private textColor:I
 
-.field private textColorKey:Ljava/lang/String;
+.field private textColorKey:I
 
 .field textPaint:Landroid/text/TextPaint;
 
@@ -89,10 +89,10 @@
     .line 35
     iput p1, p0, Lorg/telegram/ui/Components/SearchCounterView;->countChangeProgress:F
 
-    const-string p1, "chat_searchPanelText"
-
     .line 46
-    iput-object p1, p0, Lorg/telegram/ui/Components/SearchCounterView;->textColorKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_searchPanelText:I
+
+    iput p1, p0, Lorg/telegram/ui/Components/SearchCounterView;->textColorKey:I
 
     const/16 p1, 0x11
 
@@ -377,11 +377,11 @@
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 218
-    iget-object v0, p0, Lorg/telegram/ui/Components/SearchCounterView;->textColorKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/SearchCounterView;->textColorKey:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SearchCounterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 

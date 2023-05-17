@@ -47,7 +47,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -80,6 +80,7 @@ public class Bulletin {
     private final Layout layout;
     private Layout.Transition layoutTransition;
     private boolean loaded;
+    private Runnable onHideListener;
     private final ParentLayout parentLayout;
     private boolean showing;
     public int tag;
@@ -262,7 +263,7 @@ public class Bulletin {
             };
             this.containerLayoutListener = onLayoutChangeListener;
             frameLayout.addOnLayoutChangeListener(onLayoutChangeListener);
-            this.layout.addOnLayoutChangeListener(new View$OnLayoutChangeListenerC41022(z));
+            this.layout.addOnLayoutChangeListener(new View$OnLayoutChangeListenerC41592(z));
             this.layout.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Components.Bulletin.3
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view) {
@@ -326,10 +327,10 @@ public class Bulletin {
 
     /* renamed from: org.telegram.ui.Components.Bulletin$2 */
     /* loaded from: classes6.dex */
-    public class View$OnLayoutChangeListenerC41022 implements View.OnLayoutChangeListener {
+    public class View$OnLayoutChangeListenerC41592 implements View.OnLayoutChangeListener {
         final /* synthetic */ boolean val$top;
 
-        View$OnLayoutChangeListenerC41022(boolean z) {
+        View$OnLayoutChangeListenerC41592(boolean z) {
             Bulletin.this = r1;
             this.val$top = z;
         }
@@ -366,14 +367,14 @@ public class Bulletin {
                     Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.Bulletin$2$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            Bulletin.View$OnLayoutChangeListenerC41022.this.lambda$onLayoutChange$0();
+                            Bulletin.View$OnLayoutChangeListenerC41592.this.lambda$onLayoutChange$0();
                         }
                     };
                     final boolean z = this.val$top;
                     transition.animateEnter(layout, runnable, runnable2, new Consumer() { // from class: org.telegram.ui.Components.Bulletin$2$$ExternalSyntheticLambda0
                         @Override // androidx.core.util.Consumer
                         public final void accept(Object obj) {
-                            Bulletin.View$OnLayoutChangeListenerC41022.this.lambda$onLayoutChange$1(z, (Float) obj);
+                            Bulletin.View$OnLayoutChangeListenerC41592.this.lambda$onLayoutChange$1(z, (Float) obj);
                         }
                     }, Bulletin.this.currentBottomOffset);
                     return;
@@ -414,6 +415,11 @@ public class Bulletin {
         } else {
             layout.removeCallbacks(this.hideRunnable);
         }
+    }
+
+    public Bulletin setOnHideListener(Runnable runnable) {
+        this.onHideListener = runnable;
+        return this;
     }
 
     public void ensureLayoutTransitionCreated() {
@@ -493,6 +499,10 @@ public class Bulletin {
                 });
             }
             this.layout.onDetach();
+            Runnable runnable = this.onHideListener;
+            if (runnable != null) {
+                runnable.run();
+            }
         }
     }
 
@@ -508,6 +518,10 @@ public class Bulletin {
         this.containerLayout.removeView(this.parentLayout);
         this.containerLayout.removeOnLayoutChangeListener(this.containerLayoutListener);
         this.layout.onDetach();
+        Runnable runnable = this.onHideListener;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
     public /* synthetic */ void lambda$hide$4(Float f) {
@@ -567,7 +581,7 @@ public class Bulletin {
             super(layout.getContext());
             this.rect = new Rect();
             this.layout = layout;
-            GestureDetector gestureDetector = new GestureDetector(layout.getContext(), new C41111(layout));
+            GestureDetector gestureDetector = new GestureDetector(layout.getContext(), new C41681(layout));
             this.gestureDetector = gestureDetector;
             gestureDetector.setIsLongpressEnabled(false);
             addView(layout);
@@ -575,10 +589,10 @@ public class Bulletin {
 
         /* renamed from: org.telegram.ui.Components.Bulletin$ParentLayout$1 */
         /* loaded from: classes6.dex */
-        public class C41111 extends GestureDetector.SimpleOnGestureListener {
+        public class C41681 extends GestureDetector.SimpleOnGestureListener {
             final /* synthetic */ Layout val$layout;
 
-            C41111(Layout layout) {
+            C41681(Layout layout) {
                 ParentLayout.this = r1;
                 this.val$layout = layout;
             }
@@ -615,14 +629,14 @@ public class Bulletin {
                         springAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$ParentLayout$1$$ExternalSyntheticLambda0
                             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f3, float f4) {
-                                Bulletin.ParentLayout.C41111.this.lambda$onFling$0(dynamicAnimation, z2, f3, f4);
+                                Bulletin.ParentLayout.C41681.this.lambda$onFling$0(dynamicAnimation, z2, f3, f4);
                             }
                         });
                         final Layout layout = this.val$layout;
                         springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$ParentLayout$1$$ExternalSyntheticLambda2
                             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
                             public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f3, float f4) {
-                                Bulletin.ParentLayout.C41111.lambda$onFling$1(Bulletin.Layout.this, dynamicAnimation, f3, f4);
+                                Bulletin.ParentLayout.C41681.lambda$onFling$1(Bulletin.Layout.this, dynamicAnimation, f3, f4);
                             }
                         });
                     }
@@ -635,7 +649,7 @@ public class Bulletin {
                         springAnimation2.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$ParentLayout$1$$ExternalSyntheticLambda1
                             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f3, float f4) {
-                                Bulletin.ParentLayout.C41111.this.lambda$onFling$2(dynamicAnimation, z2, f3, f4);
+                                Bulletin.ParentLayout.C41681.this.lambda$onFling$2(dynamicAnimation, z2, f3, f4);
                             }
                         });
                         springAnimation2.addUpdateListener(Bulletin$ParentLayout$1$$ExternalSyntheticLambda3.INSTANCE);
@@ -848,15 +862,15 @@ public class Bulletin {
             this.wideScreenWidth = -2;
             this.wideScreenGravity = 1;
             this.resourcesProvider = resourcesProvider;
-            setMinimumHeight(AndroidUtilities.m50dp(48));
-            setBackground(getThemedColor("undo_background"));
+            setMinimumHeight(AndroidUtilities.m54dp(48));
+            setBackground(getThemedColor(Theme.key_undo_background));
             updateSize();
-            setPadding(AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8));
+            setPadding(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8));
             setWillNotDraw(false);
         }
 
         protected void setBackground(int i) {
-            this.background = Theme.createRoundRectDrawable(AndroidUtilities.m50dp(10), i);
+            this.background = Theme.createRoundRectDrawable(AndroidUtilities.m54dp(10), i);
         }
 
         @Override // android.view.View
@@ -1205,7 +1219,7 @@ public class Bulletin {
             if (this.bulletin == null) {
                 return;
             }
-            this.background.setBounds(AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), getMeasuredWidth() - AndroidUtilities.m50dp(8), getMeasuredHeight() - AndroidUtilities.m50dp(8));
+            this.background.setBounds(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), getMeasuredWidth() - AndroidUtilities.m54dp(8), getMeasuredHeight() - AndroidUtilities.m54dp(8));
             if (isTransitionRunning() && this.delegate != null) {
                 canvas.save();
                 canvas.clipRect(BitmapDescriptorFactory.HUE_RED, this.delegate.getTopOffset(this.bulletin.tag) - getY(), getMeasuredWidth(), (((View) getParent()).getMeasuredHeight() - getBottomOffset()) - getY());
@@ -1219,10 +1233,8 @@ public class Bulletin {
             super.dispatchDraw(canvas);
         }
 
-        public int getThemedColor(String str) {
-            Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-            Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-            return color != null ? color.intValue() : Theme.getColor(str);
+        public int getThemedColor(int i) {
+            return Theme.getColor(i, this.resourcesProvider);
         }
     }
 
@@ -1253,7 +1265,7 @@ public class Bulletin {
         protected void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
             Button button = this.button;
             if (button != null && view != button) {
-                i2 += button.getMeasuredWidth() - AndroidUtilities.m50dp(12);
+                i2 += button.getMeasuredWidth() - AndroidUtilities.m54dp(12);
             }
             super.measureChildWithMargins(view, i, i2, i3, i4);
             if (view != this.button) {
@@ -1295,7 +1307,7 @@ public class Bulletin {
 
         public SimpleLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context, resourcesProvider);
-            int themedColor = getThemedColor("undo_infoColor");
+            int themedColor = getThemedColor(Theme.key_undo_infoColor);
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
             imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
@@ -1329,8 +1341,8 @@ public class Bulletin {
             this.textView = textView;
             addView(backupImageView, LayoutHelper.createFrameRelatively(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
             textView.setGravity(8388611);
-            textView.setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
-            textView.setTextColor(getThemedColor("undo_infoColor"));
+            textView.setPadding(0, AndroidUtilities.m54dp(8), 0, AndroidUtilities.m54dp(8));
+            textView.setTextColor(getThemedColor(Theme.key_undo_infoColor));
             textView.setTextSize(1, 15.0f);
             textView.setTypeface(Typeface.SANS_SERIF);
             addView(textView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 56.0f, BitmapDescriptorFactory.HUE_RED, 16.0f, BitmapDescriptorFactory.HUE_RED));
@@ -1352,7 +1364,7 @@ public class Bulletin {
 
         public TwoLineLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context, resourcesProvider);
-            int themedColor = getThemedColor("undo_infoColor");
+            int themedColor = getThemedColor(Theme.key_undo_infoColor);
             BackupImageView backupImageView = new BackupImageView(context);
             this.imageView = backupImageView;
             addView(backupImageView, LayoutHelper.createFrameRelatively(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
@@ -1371,7 +1383,7 @@ public class Bulletin {
             this.subtitleTextView = textView2;
             textView2.setMaxLines(2);
             textView2.setTextColor(themedColor);
-            textView2.setLinkTextColor(getThemedColor("undo_cancelColor"));
+            textView2.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
             textView2.setMovementMethod(new LinkMovementMethod());
             textView2.setTypeface(Typeface.SANS_SERIF);
             textView2.setTextSize(1, 13.0f);
@@ -1395,21 +1407,22 @@ public class Bulletin {
 
         public TwoLineLottieLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context, resourcesProvider);
-            this.textColor = getThemedColor("undo_infoColor");
-            setBackground(getThemedColor("undo_background"));
+            int i = Theme.key_undo_infoColor;
+            this.textColor = getThemedColor(i);
+            setBackground(getThemedColor(Theme.key_undo_background));
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.imageView = rLottieImageView;
             rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
             addView(rLottieImageView, LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388627));
-            int themedColor = getThemedColor("undo_infoColor");
-            int themedColor2 = getThemedColor("undo_cancelColor");
+            int themedColor = getThemedColor(i);
+            int themedColor2 = getThemedColor(Theme.key_undo_cancelColor);
             LinearLayout linearLayout = new LinearLayout(context);
             this.linearLayout = linearLayout;
             linearLayout.setOrientation(1);
             addView(linearLayout, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
             LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
             this.titleTextView = linksTextView;
-            linksTextView.setPadding(AndroidUtilities.m50dp(4), 0, AndroidUtilities.m50dp(4), 0);
+            linksTextView.setPadding(AndroidUtilities.m54dp(4), 0, AndroidUtilities.m54dp(4), 0);
             linksTextView.setSingleLine();
             linksTextView.setTextColor(themedColor);
             linksTextView.setTextSize(1, 14.0f);
@@ -1417,7 +1430,7 @@ public class Bulletin {
             linearLayout.addView(linksTextView);
             LinkSpanDrawable.LinksTextView linksTextView2 = new LinkSpanDrawable.LinksTextView(context);
             this.subtitleTextView = linksTextView2;
-            linksTextView2.setPadding(AndroidUtilities.m50dp(4), 0, AndroidUtilities.m50dp(4), 0);
+            linksTextView2.setPadding(AndroidUtilities.m54dp(4), 0, AndroidUtilities.m54dp(4), 0);
             linksTextView2.setTextColor(themedColor);
             linksTextView2.setLinkTextColor(themedColor2);
             linksTextView2.setTypeface(Typeface.SANS_SERIF);
@@ -1464,7 +1477,7 @@ public class Bulletin {
             LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(this, context) { // from class: org.telegram.ui.Components.Bulletin.LottieLayout.1
                 @Override // android.widget.TextView
                 public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-                    super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(13), false), bufferType);
+                    super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(13), false), bufferType);
                 }
             };
             this.textView = linksTextView;
@@ -1474,11 +1487,11 @@ public class Bulletin {
             this.textView.setTypeface(Typeface.SANS_SERIF);
             this.textView.setTextSize(1, 15.0f);
             this.textView.setEllipsize(TextUtils.TruncateAt.END);
-            this.textView.setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
+            this.textView.setPadding(0, AndroidUtilities.m54dp(8), 0, AndroidUtilities.m54dp(8));
             addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 56.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
-            this.textView.setLinkTextColor(getThemedColor("undo_cancelColor"));
-            setTextColor(getThemedColor("undo_infoColor"));
-            setBackground(getThemedColor("undo_background"));
+            this.textView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
+            setTextColor(getThemedColor(Theme.key_undo_infoColor));
+            setBackground(getThemedColor(Theme.key_undo_background));
         }
 
         public LottieLayout(Context context, Theme.ResourcesProvider resourcesProvider, int i, int i2) {
@@ -1541,10 +1554,10 @@ public class Bulletin {
             this.textLoadingView.setTypeface(Typeface.SANS_SERIF);
             this.textLoadingView.setTextSize(1, 15.0f);
             this.textLoadingView.setEllipsize(TextUtils.TruncateAt.END);
-            this.textLoadingView.setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
+            this.textLoadingView.setPadding(0, AndroidUtilities.m54dp(8), 0, AndroidUtilities.m54dp(8));
             this.textView.setVisibility(8);
             addView(this.textLoadingView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 56.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
-            setTextColor(getThemedColor("undo_infoColor"));
+            setTextColor(getThemedColor(Theme.key_undo_infoColor));
         }
 
         @Override // org.telegram.p044ui.Components.Bulletin.LottieLayout
@@ -1577,13 +1590,13 @@ public class Bulletin {
             AvatarsImageView avatarsImageView = new AvatarsImageView(context, false);
             this.avatarsImageView = avatarsImageView;
             avatarsImageView.setStyle(11);
-            this.avatarsImageView.setAvatarsTextSize(AndroidUtilities.m50dp(18));
+            this.avatarsImageView.setAvatarsTextSize(AndroidUtilities.m54dp(18));
             addView(this.avatarsImageView, LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388627, 12.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
             if (!z) {
                 LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(this, context) { // from class: org.telegram.ui.Components.Bulletin.UsersLayout.1
                     @Override // android.widget.TextView
                     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-                        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(13), false), bufferType);
+                        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(13), false), bufferType);
                     }
                 };
                 this.textView = linksTextView;
@@ -1591,7 +1604,8 @@ public class Bulletin {
                 this.textView.setTypeface(Typeface.SANS_SERIF);
                 this.textView.setTextSize(1, 15.0f);
                 this.textView.setEllipsize(TextUtils.TruncateAt.END);
-                this.textView.setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
+                this.textView.setPadding(0, AndroidUtilities.m54dp(8), 0, AndroidUtilities.m54dp(8));
+                this.textView.setGravity(LocaleController.isRTL ? 5 : 3);
                 addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 70.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
             } else {
                 LinearLayout linearLayout = new LinearLayout(getContext());
@@ -1601,7 +1615,7 @@ public class Bulletin {
                 LinkSpanDrawable.LinksTextView linksTextView2 = new LinkSpanDrawable.LinksTextView(this, context) { // from class: org.telegram.ui.Components.Bulletin.UsersLayout.2
                     @Override // android.widget.TextView
                     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-                        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(13), false), bufferType);
+                        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(13), false), bufferType);
                     }
                 };
                 this.textView = linksTextView2;
@@ -1617,12 +1631,12 @@ public class Bulletin {
                 this.subtitleView.setTextSize(1, 13.0f);
                 this.subtitleView.setEllipsize(TextUtils.TruncateAt.END);
                 this.subtitleView.setMaxLines(1);
-                this.subtitleView.setLinkTextColor(getThemedColor("undo_cancelColor"));
+                this.subtitleView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
                 this.linearLayout.addView(this.subtitleView, LayoutHelper.createLinear(-2, -2, 0, 0, 0, 0, 0));
             }
-            this.textView.setLinkTextColor(getThemedColor("undo_cancelColor"));
-            setTextColor(getThemedColor("undo_infoColor"));
-            setBackground(getThemedColor("undo_background"));
+            this.textView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
+            setTextColor(getThemedColor(Theme.key_undo_infoColor));
+            setBackground(getThemedColor(Theme.key_undo_background));
         }
 
         public void setTextColor(int i) {
@@ -1693,7 +1707,7 @@ public class Bulletin {
         public UndoButton(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.resourcesProvider = resourcesProvider;
-            int themedColor = getThemedColor("undo_cancelColor");
+            int themedColor = getThemedColor(Theme.key_undo_cancelColor);
             if (z) {
                 TextView textView = new TextView(context);
                 this.undoTextView = textView;
@@ -1707,7 +1721,7 @@ public class Bulletin {
                 this.undoTextView.setTextSize(1, 14.0f);
                 this.undoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 this.undoTextView.setTextColor(themedColor);
-                this.undoTextView.setText(LocaleController.getString("Undo", C3242R.string.Undo));
+                this.undoTextView.setText(LocaleController.getString("Undo", C3290R.string.Undo));
                 this.undoTextView.setGravity(16);
                 ViewHelper.setPaddingRelative(this.undoTextView, 12.0f, 8.0f, 12.0f, 8.0f);
                 addView(this.undoTextView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 16, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
@@ -1720,7 +1734,7 @@ public class Bulletin {
                     Bulletin.UndoButton.this.lambda$new$1(view);
                 }
             });
-            imageView.setImageResource(C3242R.C3244drawable.chats_undo);
+            imageView.setImageResource(C3290R.C3292drawable.chats_undo);
             imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
             imageView.setBackground(Theme.createSelectorDrawable((themedColor & 16777215) | 419430400));
             ViewHelper.setPaddingRelative(imageView, BitmapDescriptorFactory.HUE_RED, 12.0f, BitmapDescriptorFactory.HUE_RED, 12.0f);
@@ -1779,10 +1793,12 @@ public class Bulletin {
             return this;
         }
 
-        private int getThemedColor(String str) {
+        protected int getThemedColor(int i) {
             Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-            Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-            return color != null ? color.intValue() : Theme.getColor(str);
+            if (resourcesProvider != null) {
+                return resourcesProvider.getColor(i);
+            }
+            return Theme.getColor(i);
         }
     }
 
@@ -1831,34 +1847,36 @@ public class Bulletin {
             this.rect = new RectF();
             TextPaint textPaint = new TextPaint(1);
             this.textPaint = textPaint;
-            textPaint.setTextSize(AndroidUtilities.m50dp(12));
+            textPaint.setTextSize(AndroidUtilities.m54dp(12));
             this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.textPaint.setColor(Theme.getColor("undo_infoColor", resourcesProvider));
+            TextPaint textPaint2 = this.textPaint;
+            int i = Theme.key_undo_infoColor;
+            textPaint2.setColor(Theme.getColor(i, resourcesProvider));
             Paint paint = new Paint(1);
             this.progressPaint = paint;
             paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+            paint.setStrokeWidth(AndroidUtilities.m54dp(2));
             paint.setStrokeCap(Paint.Cap.ROUND);
-            paint.setColor(Theme.getColor("undo_infoColor", resourcesProvider));
+            paint.setColor(Theme.getColor(i, resourcesProvider));
         }
 
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             long j;
-            String format;
+            String valueOf;
             super.onDraw(canvas);
             int ceil = this.timeLeft > 0 ? (int) Math.ceil(((float) j) / 1000.0f) : 0;
-            this.rect.set(AndroidUtilities.m50dp(1), AndroidUtilities.m50dp(1), getMeasuredWidth() - AndroidUtilities.m50dp(1), getMeasuredHeight() - AndroidUtilities.m50dp(1));
+            this.rect.set(AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1), getMeasuredWidth() - AndroidUtilities.m54dp(1), getMeasuredHeight() - AndroidUtilities.m54dp(1));
             if (this.prevSeconds != ceil) {
                 this.prevSeconds = ceil;
-                this.timeLeftString = String.format("%d", Integer.valueOf(Math.max(0, ceil)));
+                this.timeLeftString = String.valueOf(Math.max(0, ceil));
                 StaticLayout staticLayout = this.timeLayout;
                 if (staticLayout != null) {
                     this.timeLayoutOut = staticLayout;
                     this.timeReplaceProgress = BitmapDescriptorFactory.HUE_RED;
                     this.textWidthOut = this.textWidth;
                 }
-                this.textWidth = (int) Math.ceil(this.textPaint.measureText(format));
+                this.textWidth = (int) Math.ceil(this.textPaint.measureText(valueOf));
                 this.timeLayout = new StaticLayout(this.timeLeftString, this.textPaint, Integer.MAX_VALUE, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             }
             float f = this.timeReplaceProgress;
@@ -1877,7 +1895,7 @@ public class Bulletin {
                 if (f3 < 1.0f) {
                     this.textPaint.setAlpha((int) (alpha * (1.0f - f3)));
                     canvas.save();
-                    canvas.translate(this.rect.centerX() - (this.textWidthOut / 2.0f), (this.rect.centerY() - (this.timeLayoutOut.getHeight() / 2.0f)) + (AndroidUtilities.m50dp(10) * this.timeReplaceProgress));
+                    canvas.translate(this.rect.centerX() - (this.textWidthOut / 2.0f), (this.rect.centerY() - (this.timeLayoutOut.getHeight() / 2.0f)) + (AndroidUtilities.m54dp(10) * this.timeReplaceProgress));
                     this.timeLayoutOut.draw(canvas);
                     this.textPaint.setAlpha(alpha);
                     canvas.restore();
@@ -1889,7 +1907,7 @@ public class Bulletin {
                     this.textPaint.setAlpha((int) (alpha * f4));
                 }
                 canvas.save();
-                canvas.translate(this.rect.centerX() - (this.textWidth / 2.0f), (this.rect.centerY() - (this.timeLayout.getHeight() / 2.0f)) - (AndroidUtilities.m50dp(10) * (1.0f - this.timeReplaceProgress)));
+                canvas.translate(this.rect.centerX() - (this.textWidth / 2.0f), (this.rect.centerY() - (this.timeLayout.getHeight() / 2.0f)) - (AndroidUtilities.m54dp(10) * (1.0f - this.timeReplaceProgress)));
                 this.timeLayout.draw(canvas);
                 if (this.timeReplaceProgress != 1.0f) {
                     this.textPaint.setAlpha(alpha);
@@ -1993,7 +2011,7 @@ public class Bulletin {
             });
             try {
                 Window window = getWindow();
-                window.setWindowAnimations(C3242R.style.DialogNoAnimation);
+                window.setWindowAnimations(C3290R.style.DialogNoAnimation);
                 window.setBackgroundDrawable(null);
                 WindowManager.LayoutParams attributes = window.getAttributes();
                 attributes.width = -1;
@@ -2017,7 +2035,7 @@ public class Bulletin {
                     attributes.layoutInDisplayCutoutMode = 1;
                 }
                 window.setAttributes(attributes);
-                if (AndroidUtilities.computePerceivedBrightness(Theme.getColor("windowBackgroundGray")) <= 0.721f) {
+                if (AndroidUtilities.computePerceivedBrightness(Theme.getColor(Theme.key_windowBackgroundGray)) <= 0.721f) {
                     z = false;
                 }
                 AndroidUtilities.setLightNavigationBar(window, z);

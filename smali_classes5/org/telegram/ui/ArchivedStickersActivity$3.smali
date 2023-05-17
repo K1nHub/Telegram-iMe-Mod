@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArchivedStickersActivity;)V
     .locals 0
 
-    .line 161
+    .line 163
     iput-object p1, p0, Lorg/telegram/ui/ArchivedStickersActivity$3;->this$0:Lorg/telegram/ui/ArchivedStickersActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 164
+    .line 166
     iget-object p1, p0, Lorg/telegram/ui/ArchivedStickersActivity$3;->this$0:Lorg/telegram/ui/ArchivedStickersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ArchivedStickersActivity;->access$000(Lorg/telegram/ui/ArchivedStickersActivity;)Z
@@ -72,7 +72,7 @@
 
     if-le p1, p2, :cond_0
 
-    .line 165
+    .line 167
     iget-object p1, p0, Lorg/telegram/ui/ArchivedStickersActivity$3;->this$0:Lorg/telegram/ui/ArchivedStickersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ArchivedStickersActivity;->access$400(Lorg/telegram/ui/ArchivedStickersActivity;)V

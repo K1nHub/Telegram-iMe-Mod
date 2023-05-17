@@ -5,7 +5,7 @@ import com.iMe.model.wallet.home.SlideItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BannerSlideDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.adapter.diff.BannerSlideDiffCallback */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BannerSlideDiffCallback extends DiffUtil.ItemCallback<SlideItem> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(SlideItem oldItem, SlideItem newItem) {

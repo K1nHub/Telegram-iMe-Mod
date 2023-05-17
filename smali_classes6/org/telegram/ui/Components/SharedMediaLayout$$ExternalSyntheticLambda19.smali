@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda19;->f$1:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$B7CDYvTK0Id9THlz6lgHzLP_iWk(Lorg/telegram/ui/Components/SharedMediaLayout;I)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$wNRAvy55Ltc8-a8VK7jqO6pJz8s(Lorg/telegram/ui/Components/SharedMediaLayout;I)V
 
     return-void
 .end method

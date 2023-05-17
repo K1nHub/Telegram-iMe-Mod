@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/DialogsActivity$21;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/EditTextBoldCursor;
 .source "DialogsActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateFinalActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->lambda$createView$35(Lorg/telegram/ui/DialogsActivity$ViewPage;Landroid/view/View;I)V
+    value = Lorg/telegram/ui/DialogsActivity;->createView(Landroid/content/Context;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,82 +19,73 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 5595
+    .line 5657
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public didFailChatCreation()V
-    .locals 0
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
 
-    return-void
-.end method
+    .line 5663
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-.method public didFinishChatCreation(Lorg/telegram/ui/GroupCreateFinalActivity;J)V
-    .locals 6
-
-    .line 5603
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    neg-long p1, p2
-
-    const/4 p3, 0x0
-
-    .line 5604
-    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/MessagesStorage$TopicKey;->of(JI)Lorg/telegram/messenger/MessagesStorage$TopicKey;
-
-    move-result-object p1
-
-    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 5605
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$32200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$29200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/GroupCreateSpan;
 
     move-result-object v0
 
-    .line 5606
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
+    if-eqz v0, :cond_0
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41900(Lorg/telegram/ui/DialogsActivity;)Z
+    .line 5664
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$29200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/GroupCreateSpan;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/GroupCreateSpan;->cancelDeleteAnimation()V
+
+    .line 5665
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$29202(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/GroupCreateSpan;)Lorg/telegram/ui/Components/GroupCreateSpan;
+
+    .line 5667
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 5668
+    invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 5669
+    invoke-virtual {p0}, Landroid/widget/EditText;->clearFocus()V
+
+    .line 5670
+    invoke-virtual {p0}, Landroid/widget/EditText;->requestFocus()Z
+
+    .line 5673
+    :cond_1
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
-
-    .line 5607
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
-
-    .line 5609
-    :cond_0
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x0
-
-    invoke-interface/range {v0 .. v5}, Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;->didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-
-    return-void
-.end method
-
-.method public didStartChatCreation()V
-    .locals 0
-
-    return-void
+    return p1
 .end method

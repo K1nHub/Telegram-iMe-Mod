@@ -7,6 +7,7 @@ import androidx.core.math.MathUtils;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.AnimatedEmojiDrawable;
@@ -143,7 +144,7 @@ public class LiteMode {
                         PRESET_MEDIUM = (int) ((TLRPC$TL_jsonNumber) arrayList.get(1)).value;
                         PRESET_HIGH = (int) ((TLRPC$TL_jsonNumber) arrayList.get(2)).value;
                     } catch (Exception e) {
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                     }
                 }
             }
@@ -156,7 +157,7 @@ public class LiteMode {
                         BATTERY_MEDIUM = (int) ((TLRPC$TL_jsonNumber) arrayList2.get(1)).value;
                         BATTERY_HIGH = (int) ((TLRPC$TL_jsonNumber) arrayList2.get(2)).value;
                     } catch (Exception e2) {
-                        FileLog.m45e(e2);
+                        FileLog.m49e(e2);
                     }
                 }
             }
@@ -271,8 +272,12 @@ public class LiteMode {
         if ((i3 & FLAGS_ANIMATED_EMOJI) > 0) {
             AnimatedEmojiDrawable.updateAll();
         }
-        if ((i3 & 32) > 0) {
-            Theme.reloadWallpaper();
+        int i4 = i3 & 32;
+        if (i4 > 0) {
+            SvgHelper.SvgDrawable.updateLiteValues();
+        }
+        if (i4 > 0) {
+            Theme.reloadWallpaper(true);
         }
     }
 

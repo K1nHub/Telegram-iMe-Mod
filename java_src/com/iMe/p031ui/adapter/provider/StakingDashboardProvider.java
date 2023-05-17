@@ -8,13 +8,13 @@ import com.iMe.model.staking.StakingDashboardItem;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: StakingDashboardProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingDashboardProvider */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class StakingDashboardProvider extends BaseNodeProvider<StakingDashboardItem> {
     private final int itemViewType = IdFabric$ViewTypes.STAKING_DASHBOARD;
-    private final int layoutId = C3242R.layout.fork_recycle_item_staking_dashboard;
+    private final int layoutId = C3290R.layout.fork_recycle_item_staking_dashboard;
     private Callbacks$Callback onCalculatorClick = StakingDashboardProvider$$ExternalSyntheticLambda0.INSTANCE;
     private Callbacks$Callback onHistoryClick = StakingDashboardProvider$$ExternalSyntheticLambda1.INSTANCE;
 
@@ -45,13 +45,13 @@ public final class StakingDashboardProvider extends BaseNodeProvider<StakingDash
     public void convert(BaseViewHolder helper, StakingDashboardItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(helper, C3242R.C3245id.view_staking_dashboard, new StakingDashboardProvider$convert$1(item, this));
+        BaseQuickAdapterExtKt.applyForView(helper, C3290R.C3293id.view_staking_dashboard, new StakingDashboardProvider$convert$1(item, this));
     }
 
     public void convert(BaseViewHolder helper, StakingDashboardItem item, List<? extends Object> payloads) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(helper, C3242R.C3245id.view_staking_dashboard, new StakingDashboardProvider$convert$2(item));
+        BaseQuickAdapterExtKt.applyForView(helper, C3290R.C3293id.view_staking_dashboard, new StakingDashboardProvider$convert$2(item));
     }
 }

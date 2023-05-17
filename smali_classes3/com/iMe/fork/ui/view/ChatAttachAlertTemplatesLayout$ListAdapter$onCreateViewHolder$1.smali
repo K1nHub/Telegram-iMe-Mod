@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
-    .line 371
+    .line 372
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 373
+    .line 374
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

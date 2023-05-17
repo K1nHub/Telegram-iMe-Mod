@@ -18,7 +18,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -72,7 +72,7 @@ public final class MovingReactionCell extends FrameLayout {
         this.moveImageView$delegate = lazy5;
         lazy6 = LazyKt__LazyJVMKt.lazy(new MovingReactionCell$emojiTextView$2(this));
         this.emojiTextView$delegate = lazy6;
-        setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         setupViews();
     }
 
@@ -129,15 +129,15 @@ public final class MovingReactionCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(urlButton, "urlButton");
         this.urlButton = urlButton;
         if (urlButton.getTitle().length() == 0) {
-            getEditText().setHint(LocaleController.getInternalString(C3242R.string.chat_reaction_enter_the_title));
+            getEditText().setHint(LocaleController.getInternalString(C3290R.string.chat_reaction_enter_the_title));
         }
         TextView valueTextView = getValueTextView();
         String url = urlButton.getUrl();
         if (url.length() == 0) {
-            url = LocaleController.getInternalString(C3242R.string.chat_reaction_link_not_added);
+            url = LocaleController.getInternalString(C3290R.string.chat_reaction_link_not_added);
         }
         valueTextView.setText(url);
-        getLinkImageView().setColorFilter(urlButton.getUrl().length() == 0 ? new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteBlueHeader"), PorterDuff.Mode.MULTIPLY) : new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
+        getLinkImageView().setColorFilter(urlButton.getUrl().length() == 0 ? new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY) : new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         getEditText().setText(urlButton.getTitle());
     }
 
@@ -145,13 +145,13 @@ public final class MovingReactionCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(address, "address");
         this.urlButton.setUrl(address);
         getValueTextView().setText(address);
-        ViewExtKt.visible(getValueTextView());
-        getLinkImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
+        ViewExtKt.visible$default(getValueTextView(), false, 1, null);
+        getLinkImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
     }
 
     public final void setEmoji(String str, boolean z) {
         this.emojiValue = str;
-        getEmojiTextView().setText(Emoji.replaceEmoji(str, getEmojiTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(24), false));
+        getEmojiTextView().setText(Emoji.replaceEmoji(str, getEmojiTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(24), false));
         this.needDivider = z;
         setWillNotDraw(!z);
     }
@@ -163,14 +163,14 @@ public final class MovingReactionCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m51dp(getValueTextView().getVisibility() == 0 ? 64.0f : 48.0f) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m55dp(getValueTextView().getVisibility() == 0 ? 64.0f : 48.0f) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         if (this.needDivider) {
-            canvas.drawLine(AndroidUtilities.m51dp(62.0f), getMeasuredHeight() - 1.0f, getMeasuredWidth(), getMeasuredHeight() - 1.0f, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m55dp(62.0f), getMeasuredHeight() - 1.0f, getMeasuredWidth(), getMeasuredHeight() - 1.0f, Theme.dividerPaint);
         }
     }
 
@@ -195,10 +195,10 @@ public final class MovingReactionCell extends FrameLayout {
         r1.setBackground(null);
         r1.setImeOptions(r1.getImeOptions() | 268435456);
         r1.setInputType(r1.getInputType() | 16384);
-        r1.setHint(LocaleController.getInternalString(C3242R.string.chat_reaction_enter_the_title));
+        r1.setHint(LocaleController.getInternalString(C3290R.string.chat_reaction_enter_the_title));
         r1.setTextSize(1, 16.0f);
-        r1.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        r1.setHintTextColor(Theme.getColor("windowBackgroundWhiteHintText"));
+        r1.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        r1.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
         return r1;
     }
 
@@ -207,9 +207,9 @@ public final class MovingReactionCell extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3242R.C3244drawable.poll_reorder);
+        imageView.setImageResource(C3290R.C3292drawable.poll_reorder);
         return imageView;
     }
 
@@ -219,8 +219,8 @@ public final class MovingReactionCell extends FrameLayout {
         ViewExtKt.singleLine(textView);
         textView.setGravity(8388611);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(LocaleController.getInternalString(C3242R.string.chat_reaction_link_not_added));
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        textView.setText(LocaleController.getInternalString(C3290R.string.chat_reaction_link_not_added));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         textView.setTextSize(1, 12.0f);
         return textView;
     }
@@ -230,9 +230,9 @@ public final class MovingReactionCell extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3242R.C3244drawable.delete);
+        imageView.setImageResource(C3290R.C3292drawable.delete);
         return imageView;
     }
 
@@ -242,9 +242,9 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setClickable(true);
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteBlueHeader"), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(this.linkIconShow ? 0 : 8);
-        imageView.setImageResource(C3242R.C3244drawable.msg_link);
+        imageView.setImageResource(C3290R.C3292drawable.msg_link);
         return imageView;
     }
 
@@ -254,8 +254,8 @@ public final class MovingReactionCell extends FrameLayout {
         ViewExtKt.singleLine(textView);
         textView.setGravity(17);
         textView.setTextSize(1, 24.0f);
-        textView.setTextColor(Theme.getColor("chat_messagePanelText"));
-        ViewExtKt.gone(getValueTextView());
+        textView.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
+        ViewExtKt.gone$default(getValueTextView(), false, 1, null);
         return textView;
     }
 

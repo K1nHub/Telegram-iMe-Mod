@@ -71,7 +71,7 @@
 .method public read(Lokio/Buffer;J)J
     .locals 1
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -160,7 +160,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "state: "
+    const-string/jumbo v2, "state: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

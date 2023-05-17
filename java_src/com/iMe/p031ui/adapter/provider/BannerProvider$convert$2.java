@@ -7,12 +7,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator;
 /* compiled from: BannerProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BannerProvider$convert$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class BannerProvider$convert$2 extends Lambda implements Function1<ScrollingPagerIndicator, Unit> {
     final /* synthetic */ BaseViewHolder $helper;
 
@@ -32,8 +32,9 @@ final class BannerProvider$convert$2 extends Lambda implements Function1<Scrolli
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(ScrollingPagerIndicator applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-        applyForView.attachToRecyclerView((RecyclerView) this.$helper.getView(C3242R.C3245id.recycle_banners));
-        applyForView.setSelectedDotColor(Theme.getColor("chats_actionBackground"));
-        applyForView.setDotColor(ViewExtKt.withAlpha(Theme.getColor("chats_actionBackground"), 55));
+        applyForView.attachToRecyclerView((RecyclerView) this.$helper.getView(C3290R.C3293id.recycle_banners));
+        int i = Theme.key_chats_actionBackground;
+        applyForView.setSelectedDotColor(Theme.getColor(i));
+        applyForView.setDotColor(ViewExtKt.withAlpha(Theme.getColor(i), 55));
     }
 }

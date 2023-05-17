@@ -955,8 +955,8 @@ public class FilterShaders {
         GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
         if (iArr[0] == 0) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m47e(GLES20.glGetShaderInfoLog(glCreateShader));
-                FileLog.m47e("shader code:\n " + str);
+                FileLog.m51e(GLES20.glGetShaderInfoLog(glCreateShader));
+                FileLog.m51e("shader code:\n " + str);
             }
             GLES20.glDeleteShader(glCreateShader);
             return 0;
@@ -1291,7 +1291,7 @@ public class FilterShaders {
             GLES20.glUniform1f(this.radialBlurExcludeSizeHandle, this.delegate.getBlurExcludeSize());
             GLES20.glUniform1f(this.radialBlurExcludeBlurSizeHandle, this.delegate.getBlurExcludeBlurSize());
             Point blurExcludePoint = this.delegate.getBlurExcludePoint();
-            GLES20.glUniform2f(this.radialBlurExcludePointHandle, blurExcludePoint.f1686x, blurExcludePoint.f1687y);
+            GLES20.glUniform2f(this.radialBlurExcludePointHandle, blurExcludePoint.f1693x, blurExcludePoint.f1694y);
             GLES20.glUniform1f(this.radialBlurAspectRatioHandle, this.renderBufferHeight / this.renderBufferWidth);
             GLES20.glEnableVertexAttribArray(this.radialBlurInputTexCoordHandle);
             GLES20.glVertexAttribPointer(this.radialBlurInputTexCoordHandle, 2, 5126, false, 8, (Buffer) this.textureBuffer);
@@ -1305,7 +1305,7 @@ public class FilterShaders {
             GLES20.glUniform1f(this.linearBlurExcludeBlurSizeHandle, this.delegate.getBlurExcludeBlurSize());
             GLES20.glUniform1f(this.linearBlurAngleHandle, this.delegate.getBlurAngle());
             Point blurExcludePoint2 = this.delegate.getBlurExcludePoint();
-            GLES20.glUniform2f(this.linearBlurExcludePointHandle, blurExcludePoint2.f1686x, blurExcludePoint2.f1687y);
+            GLES20.glUniform2f(this.linearBlurExcludePointHandle, blurExcludePoint2.f1693x, blurExcludePoint2.f1694y);
             GLES20.glUniform1f(this.linearBlurAspectRatioHandle, this.renderBufferHeight / this.renderBufferWidth);
             GLES20.glEnableVertexAttribArray(this.linearBlurInputTexCoordHandle);
             GLES20.glVertexAttribPointer(this.linearBlurInputTexCoordHandle, 2, 5126, false, 8, (Buffer) this.textureBuffer);

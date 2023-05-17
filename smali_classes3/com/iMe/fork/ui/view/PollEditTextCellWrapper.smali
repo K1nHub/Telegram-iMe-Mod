@@ -550,25 +550,31 @@
 .end method
 
 .method public final setIcon(I)V
-    .locals 1
+    .locals 4
 
-    const/4 v0, -0x1
+    const/4 v0, 0x0
 
-    if-ne p1, v0, :cond_0
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x1
+
+    if-ne p1, v3, :cond_0
 
     .line 47
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->getIconView()Landroid/widget/ImageView;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {p1, v2, v1, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 48
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->getNoIconTextView()Landroid/widget/TextView;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {p1, v2, v1, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -576,16 +582,16 @@
     :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->getNoIconTextView()Landroid/widget/TextView;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v3, v2, v1, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 51
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->getIconView()Landroid/widget/ImageView;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v3, v2, v1, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 52
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->getIconView()Landroid/widget/ImageView;
@@ -604,9 +610,9 @@
     .line 57
     iget-object v0, p0, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->pollEditTextCell:Lorg/telegram/ui/Cells/PollEditTextCell;
 
-    const-string v1, "windowBackgroundWhite"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -617,7 +623,7 @@
 
     move-result-object v0
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -628,13 +634,13 @@
 
     move-result-object v0
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const-string v2, "listSelectorSDK21"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -651,9 +657,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chats_actionBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -668,9 +674,9 @@
 
     move-result-object v0
 
-    const-string v1, "windowBackgroundWhiteGrayIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -683,7 +689,7 @@
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/LaunchActivity$7;
-.super Landroid/view/View;
+.super Lorg/telegram/ui/Components/FireworksOverlay;
 .source "LaunchActivity.java"
 
 
@@ -14,48 +14,47 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/LaunchActivity;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 881
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$7;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 836
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/FireworksOverlay;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    const/16 p1, 0x8
+
+    .line 838
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
+.method protected onStop()V
     .locals 1
 
-    .line 884
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$7;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 849
+    invoke-super {p0}, Lorg/telegram/ui/Components/FireworksOverlay;->onStop()V
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$800(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Components/RLottieDrawable;
+    const/16 v0, 0x8
 
-    move-result-object v0
+    .line 850
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    if-eqz v0, :cond_0
+    return-void
+.end method
 
-    .line 885
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$7;->this$0:Lorg/telegram/ui/LaunchActivity;
+.method public start()V
+    .locals 1
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$800(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Components/RLottieDrawable;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    .line 843
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
+    .line 844
+    invoke-super {p0}, Lorg/telegram/ui/Components/FireworksOverlay;->start()V
 
-    .line 886
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    :cond_0
     return-void
 .end method

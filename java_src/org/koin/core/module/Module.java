@@ -3,9 +3,11 @@ package org.koin.core.module;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.reflect.KClass;
 import org.koin.core.definition.BeanDefinition;
 import org.koin.core.definition.BeanDefinitionKt;
 import org.koin.core.instance.InstanceFactory;
@@ -19,7 +21,7 @@ public final class Module {
     private HashSet<SingleInstanceFactory<?>> eagerInstances;
 
     /* renamed from: id */
-    private final String f1346id;
+    private final String f1352id;
     private final List<Module> includedModules;
     private final HashMap<String, InstanceFactory<?>> mappings;
     private final HashSet<Qualifier> scopes;
@@ -30,7 +32,7 @@ public final class Module {
 
     public Module(boolean z) {
         this._createdAtStart = z;
-        this.f1346id = KoinPlatformTools.INSTANCE.generateId();
+        this.f1352id = KoinPlatformTools.INSTANCE.generateId();
         this.eagerInstances = new HashSet<>();
         this.mappings = new HashMap<>();
         this.scopes = new HashSet<>();
@@ -67,6 +69,15 @@ public final class Module {
         saveMapping(BeanDefinitionKt.indexKey(beanDefinition.getPrimaryType(), beanDefinition.getQualifier(), beanDefinition.getScopeQualifier()), instanceFactory);
     }
 
+    public final void indexSecondaryTypes(InstanceFactory<?> instanceFactory) {
+        Intrinsics.checkNotNullParameter(instanceFactory, "instanceFactory");
+        BeanDefinition<?> beanDefinition = instanceFactory.getBeanDefinition();
+        Iterator<T> it = beanDefinition.getSecondaryTypes().iterator();
+        while (it.hasNext()) {
+            saveMapping(BeanDefinitionKt.indexKey((KClass) it.next(), beanDefinition.getQualifier(), beanDefinition.getScopeQualifier()), instanceFactory);
+        }
+    }
+
     public final void prepareForCreationAtStart(SingleInstanceFactory<?> instanceFactory) {
         Intrinsics.checkNotNullParameter(instanceFactory, "instanceFactory");
         this.eagerInstances.add(instanceFactory);
@@ -82,10 +93,10 @@ public final class Module {
         if (this == obj) {
             return true;
         }
-        return obj != null && Module.class == obj.getClass() && Intrinsics.areEqual(this.f1346id, ((Module) obj).f1346id);
+        return obj != null && Module.class == obj.getClass() && Intrinsics.areEqual(this.f1352id, ((Module) obj).f1352id);
     }
 
     public int hashCode() {
-        return this.f1346id.hashCode();
+        return this.f1352id.hashCode();
     }
 }

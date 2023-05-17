@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;-><init>(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;-><init>(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/content/Context;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field parentPinnedToTop:Z
+
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
 
@@ -22,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
     .locals 0
 
-    .line 651
+    .line 661
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +41,7 @@
 
     const/16 p1, 0xd
 
-    .line 667
+    .line 686
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -74,7 +76,7 @@
     :goto_0
     add-int/2addr p1, p2
 
-    .line 668
+    .line 687
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -83,7 +85,7 @@
 
     move-result p2
 
-    .line 669
+    .line 688
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -98,14 +100,14 @@
 
     add-int/2addr v1, p2
 
-    .line 670
+    .line 689
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p1
 
     if-ge v1, p1, :cond_1
 
-    .line 671
+    .line 690
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -118,7 +120,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 672
+    .line 691
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
@@ -133,7 +135,7 @@
 
     if-le p2, v2, :cond_1
 
-    .line 673
+    .line 692
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -157,9 +159,9 @@
 .end method
 
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
-    .locals 1
+    .locals 2
 
-    .line 654
+    .line 666
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -172,7 +174,7 @@
 
     return-void
 
-    .line 657
+    .line 669
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -182,13 +184,90 @@
 
     invoke-virtual {p2, p1, v0, p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->updateLayout(Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;ZI)V
 
-    if-eqz p3, :cond_1
+    .line 670
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-    .line 660
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$1200(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView$FastScrollAdapter;->getTotalItemsCount()I
+
+    move-result p1
+
+    const/16 p2, 0x1e
+
+    const/4 v0, 0x0
+
+    if-le p1, p2, :cond_2
+
+    .line 671
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->parentPinnedToTop:Z
+
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object v1, p2, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
+
+    iget-boolean v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->pinnedToTop:Z
+
+    if-eq p1, v1, :cond_3
+
+    .line 672
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->parentPinnedToTop:Z
+
+    .line 673
+    iget-object p1, p2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->getFastScroll()Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    iget-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->parentPinnedToTop:Z
+
+    if-eqz p2, :cond_1
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    :cond_1
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0x64
+
+    invoke-virtual {p1, v0, v1}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    goto :goto_0
+
+    .line 676
+    :cond_2
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->getFastScroll()Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->setAlpha(F)V
+
+    :cond_3
+    :goto_0
+    if-eqz p3, :cond_4
+
+    .line 679
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraViewPosition()V
 
-    :cond_1
+    :cond_4
     return-void
 .end method

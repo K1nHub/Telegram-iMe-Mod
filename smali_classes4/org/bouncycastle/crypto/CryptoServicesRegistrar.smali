@@ -53,7 +53,7 @@
 
     new-instance v0, Lorg/bouncycastle/crypto/CryptoServicesPermission;
 
-    const-string v1, "threadLocalConfig"
+    const-string/jumbo v1, "threadLocalConfig"
 
     invoke-direct {v0, v1}, Lorg/bouncycastle/crypto/CryptoServicesPermission;-><init>(Ljava/lang/String;)V
 

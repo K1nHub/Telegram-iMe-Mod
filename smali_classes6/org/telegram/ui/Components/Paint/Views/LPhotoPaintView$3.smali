@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/Paint/RenderView;
 .source "LPhotoPaintView.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/Paint/RenderView$RenderViewDelegate;
 
 
 # annotations
@@ -20,203 +17,62 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-.field final synthetic val$onInit:Ljava/lang/Runnable;
+.field final synthetic val$originalBitmap:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/Runnable;)V
+.method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;Lorg/telegram/ui/Components/Paint/Painting;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 279
+    .line 289
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->val$onInit:Ljava/lang/Runnable;
+    iput-object p5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->val$originalBitmap:Landroid/graphics/Bitmap;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/Paint/RenderView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Paint/Painting;Landroid/graphics/Bitmap;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public invalidateInputView()V
-    .locals 1
-
-    .line 311
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/view/View;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 312
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public onBeganDrawing()V
+.method public selectBrush(Lorg/telegram/ui/Components/Paint/Brush;)V
     .locals 2
 
-    .line 288
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    .line 292
+    sget-object v0, Lorg/telegram/ui/Components/Paint/Brush;->BRUSHES_LIST:Ljava/util/List;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 289
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
-
-    .line 291
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setViewHidden(Z)V
-
-    return-void
-.end method
-
-.method public onFinishedDrawing(Z)V
-    .locals 1
-
-    .line 296
-    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/UndoStore;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/UndoStore;->getDelegate()Lorg/telegram/ui/Components/Paint/UndoStore$UndoStoreDelegate;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lorg/telegram/ui/Components/Paint/UndoStore$UndoStoreDelegate;->historyChanged()V
-
-    .line 297
-    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setViewHidden(Z)V
-
-    return-void
-.end method
-
-.method public onFirstDraw()V
-    .locals 1
-
-    .line 283
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->val$onInit:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    return-void
-.end method
-
-.method public resetBrush()V
-    .locals 3
-
-    .line 318
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1000(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Z
+    invoke-interface {v0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    add-int/2addr v0, v1
 
-    .line 319
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    if-le v0, v1, :cond_0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1002(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Z)Z
+    .line 293
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->val$originalBitmap:Landroid/graphics/Bitmap;
 
-    return-void
+    if-nez v1, :cond_0
 
-    .line 322
+    add-int/lit8 v0, v0, -0x1
+
+    .line 296
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;
-
-    move-result-object v0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;->select(I)V
-
-    .line 323
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    sget-object v2, Lorg/telegram/ui/Components/Paint/Brush;->BRUSHES_LIST:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;
 
     move-result-object v1
 
-    check-cast v1, Lorg/telegram/ui/Components/Paint/Brush;
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;->select(I)V
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onBrushSelected(Lorg/telegram/ui/Components/Paint/Brush;)V
-
-    return-void
-.end method
-
-.method public shouldDraw()Z
-    .locals 3
-
-    .line 302
+    .line 297
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onBrushSelected(Lorg/telegram/ui/Components/Paint/Brush;)V
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-nez v0, :cond_1
-
-    .line 304
-    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$3;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
-
-    :cond_1
-    return v0
+    return-void
 .end method

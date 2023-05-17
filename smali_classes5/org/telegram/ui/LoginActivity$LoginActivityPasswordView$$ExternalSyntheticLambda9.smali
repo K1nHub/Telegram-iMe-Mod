@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda9;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->$r8$lambda$u34V07oLkS07YwnhnjYxSUXID6c(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->$r8$lambda$A-FOT-AUIBQEWUa1TdhReSpdYVU(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

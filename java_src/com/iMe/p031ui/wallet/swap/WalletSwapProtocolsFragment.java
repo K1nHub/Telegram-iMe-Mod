@@ -43,9 +43,9 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentWalletSwapProtocolsBinding;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.ActionIntroActivity;
@@ -157,7 +157,7 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
@@ -205,12 +205,12 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.wallet_navigation_exchange));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_navigation_exchange));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapProtocolsFragment.this.finishFragment();
@@ -220,7 +220,7 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
     }
 
     private final void setupColors() {
-        getBinding().getRoot().setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        getBinding().getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
     }
 
     private final void setupListeners() {

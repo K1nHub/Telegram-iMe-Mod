@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/LaunchActivity$8;
-.super Lorg/telegram/ui/Components/FireworksOverlay;
+.super Lorg/telegram/ui/Components/RecyclerListView;
 .source "LaunchActivity.java"
 
 
@@ -18,43 +18,21 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 893
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/FireworksOverlay;-><init>(Landroid/content/Context;)V
-
-    const/16 p1, 0x8
-
-    .line 895
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    .line 855
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onStop()V
-    .locals 1
+.method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    .locals 0
 
-    .line 906
-    invoke-super {p0}, Lorg/telegram/ui/Components/FireworksOverlay;->onStop()V
+    .line 860
+    invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
-    const/16 v0, 0x8
+    move-result p1
 
-    .line 907
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public start()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 900
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
-    .line 901
-    invoke-super {p0}, Lorg/telegram/ui/Components/FireworksOverlay;->start()V
-
-    return-void
+    return p1
 .end method

@@ -19,7 +19,7 @@
 
 .field public colorDark:I
 
-.field public colorKey:Ljava/lang/String;
+.field public colorKey:I
 
 .field public id:Ljava/lang/String;
 

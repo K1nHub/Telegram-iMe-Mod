@@ -2,44 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/ReactedUsersListView$OnProfileSelectedListener;
+.implements Lorg/telegram/ui/AvatarPreviewer$Callback;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
-.field public final synthetic f$1:Lorg/telegram/ui/Cells/ChatMessageCell;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Chat;
+
+.field public final synthetic f$2:Lorg/telegram/ui/Cells/ChatMessageCell;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;->f$2:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onProfileSelected(Lorg/telegram/ui/Components/ReactedUsersListView;JLorg/telegram/tgnet/TLRPC$MessagePeerReaction;)V
-    .locals 6
+.method public final onMenuClick(Lorg/telegram/ui/AvatarPreviewer$MenuItem;)V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-object v2, p1
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda10;->f$2:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    move-wide v3, p2
-
-    move-object v5, p4
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->$r8$lambda$DFWz_IkXvQiN29tAzIXFxqkFP9Q(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/ui/Components/ReactedUsersListView;JLorg/telegram/tgnet/TLRPC$MessagePeerReaction;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->$r8$lambda$-N4vlt6oAGeG93Hxw4n88C7RyAU(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/ui/AvatarPreviewer$MenuItem;)V
 
     return-void
 .end method

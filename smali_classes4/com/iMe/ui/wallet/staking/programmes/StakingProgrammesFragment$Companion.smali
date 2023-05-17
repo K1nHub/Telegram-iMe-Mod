@@ -37,7 +37,7 @@
 .method public final newInstance(Lcom/iMe/storage/domain/model/staking/StakingTabType;)Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;
     .locals 1
 
-    const-string v0, "stakingTabType"
+    const-string/jumbo v0, "stakingTabType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

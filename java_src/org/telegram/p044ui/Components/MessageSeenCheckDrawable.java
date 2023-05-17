@@ -12,35 +12,35 @@ import org.telegram.p044ui.Cells.DialogCell;
 /* renamed from: org.telegram.ui.Components.MessageSeenCheckDrawable */
 /* loaded from: classes6.dex */
 public class MessageSeenCheckDrawable {
-    private String colorKey;
+    private int colorKey;
     private Drawable drawable;
 
     /* renamed from: h */
-    private int f1657h;
+    private int f1664h;
     private int lastColor;
     private float lastDensity;
     private CharSequence lastSpanned;
 
     /* renamed from: oy */
-    private float f1658oy;
+    private float f1665oy;
     private int resId;
 
     /* renamed from: w */
-    private int f1659w;
+    private int f1666w;
 
-    public MessageSeenCheckDrawable(int i, String str) {
-        this.f1659w = -1;
-        this.f1657h = -1;
-        this.f1658oy = 4.66f;
+    public MessageSeenCheckDrawable(int i, int i2) {
+        this.f1666w = -1;
+        this.f1664h = -1;
+        this.f1665oy = 4.66f;
         this.resId = i;
-        this.colorKey = str;
+        this.colorKey = i2;
     }
 
-    public MessageSeenCheckDrawable(int i, String str, int i2, int i3, float f) {
-        this(i, str);
-        this.f1659w = i2;
-        this.f1657h = i3;
-        this.f1658oy = f;
+    public MessageSeenCheckDrawable(int i, int i2, int i3, int i4, float f) {
+        this(i, i2);
+        this.f1666w = i3;
+        this.f1664h = i4;
+        this.f1665oy = f;
     }
 
     public CharSequence getSpanned(Context context) {
@@ -62,14 +62,14 @@ public class MessageSeenCheckDrawable {
             int color2 = Theme.getColor(this.colorKey);
             this.lastColor = color2;
             mutate.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.SRC_IN));
-            int i = this.f1659w;
-            int intrinsicWidth = i <= 0 ? this.drawable.getIntrinsicWidth() : AndroidUtilities.m50dp(i);
-            int i2 = this.f1657h;
-            int intrinsicHeight = i2 <= 0 ? this.drawable.getIntrinsicHeight() : AndroidUtilities.m50dp(i2);
-            int m51dp = AndroidUtilities.m51dp(this.f1658oy);
-            this.drawable.setBounds(0, m51dp, intrinsicWidth, intrinsicHeight + m51dp);
+            int i = this.f1666w;
+            int intrinsicWidth = i <= 0 ? this.drawable.getIntrinsicWidth() : AndroidUtilities.m54dp(i);
+            int i2 = this.f1664h;
+            int intrinsicHeight = i2 <= 0 ? this.drawable.getIntrinsicHeight() : AndroidUtilities.m54dp(i2);
+            int m55dp = AndroidUtilities.m55dp(this.f1665oy);
+            this.drawable.setBounds(0, m55dp, intrinsicWidth, intrinsicHeight + m55dp);
             spannableStringBuilder.setSpan(new ImageSpan(this.drawable, 2), 0, 1, 33);
-            spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m50dp(2)), 1, 2, 33);
+            spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(2)), 1, 2, 33);
             this.lastSpanned = spannableStringBuilder;
             return spannableStringBuilder;
         }

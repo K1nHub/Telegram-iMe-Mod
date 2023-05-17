@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: BinanceTokenBalanceProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BinanceTokenBalanceProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class BinanceTokenBalanceProvider$convert$1 extends Lambda implements Function1<CoinTickerView, Unit> {
     final /* synthetic */ BinanceBalanceItem $item;
 

@@ -6,7 +6,7 @@
 # instance fields
 .field color:I
 
-.field colorKey:Ljava/lang/String;
+.field colorKey:I
 
 .field cross:Z
 
@@ -28,7 +28,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;ILjava/lang/String;)V
+.method public constructor <init>(Landroid/content/Context;II)V
     .locals 2
 
     .line 38
@@ -65,7 +65,7 @@
     iput-object p1, p0, Lorg/telegram/ui/Components/CrossOutDrawable;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 40
-    iput-object p3, p0, Lorg/telegram/ui/Components/CrossOutDrawable;->colorKey:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/CrossOutDrawable;->colorKey:I
 
     .line 41
     iget-object p1, p0, Lorg/telegram/ui/Components/CrossOutDrawable;->paint:Landroid/graphics/Paint;
@@ -196,16 +196,16 @@
     .line 77
     :cond_1
     :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/CrossOutDrawable;->colorKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/CrossOutDrawable;->colorKey:I
 
-    if-nez v0, :cond_2
+    if-gez v0, :cond_2
 
     const/4 v0, -0x1
 
     goto :goto_1
 
     :cond_2
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

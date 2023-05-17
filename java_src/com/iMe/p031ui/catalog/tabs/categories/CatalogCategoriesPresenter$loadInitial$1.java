@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogCategoriesPresenter.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesPresenter$loadInitial$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogCategoriesPresenter$loadInitial$1 extends Lambda implements Function1<Result<? extends CampaignsCursored>, ObservableSource<? extends Result<? extends CampaignsCursored>>> {
     final /* synthetic */ boolean $isLanguageChanged;
     final /* synthetic */ CatalogCategoriesPresenter this$0;

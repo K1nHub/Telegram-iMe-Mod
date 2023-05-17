@@ -55,7 +55,7 @@
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 11
+    .locals 10
 
     const-string v0, "canvas"
 
@@ -277,61 +277,61 @@
     const/4 v4, 0x1
 
     :cond_3
-    const-string v2, "dialogBackground"
-
     if-nez v4, :cond_4
 
     .line 320
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    move-result v5
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
+    move-result v4
+
+    invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 321
-    iget-object v4, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->rect:Landroid/graphics/RectF;
+    iget-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->rect:Landroid/graphics/RectF;
+
+    iget-object v4, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
+
+    invoke-static {v4}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getBackgroundPaddingLeft$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
+
+    move-result v4
+
+    int-to-float v4, v4
 
     iget-object v5, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
-    invoke-static {v5}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getBackgroundPaddingLeft$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
+    invoke-static {v5}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getBackgroundPaddingTop$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
 
     move-result v5
 
+    add-int/2addr v5, v1
+
     int-to-float v5, v5
-
-    iget-object v8, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
-
-    invoke-static {v8}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getBackgroundPaddingTop$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
-
-    move-result v8
-
-    add-int/2addr v8, v1
-
-    int-to-float v8, v8
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
+    move-result v8
+
+    iget-object v9, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
+
+    invoke-static {v9}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getBackgroundPaddingLeft$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
+
     move-result v9
 
-    iget-object v10, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
+    sub-int/2addr v8, v9
 
-    invoke-static {v10}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getBackgroundPaddingLeft$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
+    int-to-float v8, v8
 
-    move-result v10
+    iget-object v9, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
-    sub-int/2addr v9, v10
+    invoke-static {v9}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getBackgroundPaddingTop$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
 
-    int-to-float v9, v9
+    move-result v9
 
-    iget-object v10, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
-
-    invoke-static {v10}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getBackgroundPaddingTop$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
-
-    move-result v10
-
-    add-int/2addr v10, v1
+    add-int/2addr v9, v1
 
     const/16 v1, 0x18
 
@@ -339,26 +339,18 @@
 
     move-result v1
 
-    add-int/2addr v10, v1
+    add-int/2addr v9, v1
 
-    int-to-float v1, v10
+    int-to-float v1, v9
 
-    invoke-virtual {v4, v5, v8, v9, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v2, v4, v5, v8, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 322
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->rect:Landroid/graphics/RectF;
 
-    const/16 v4, 0xc
+    const/16 v2, 0xc
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v3
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
@@ -366,9 +358,17 @@
 
     mul-float/2addr v4, v3
 
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v2, v3
+
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v1, v5, v4, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v1, v4, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     :cond_4
     const/16 v1, 0x24
@@ -379,50 +379,50 @@
     move-result v1
 
     .line 325
-    iget-object v3, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->rect:Landroid/graphics/RectF;
+    iget-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v3
+
+    sub-int/2addr v3, v1
+
+    int-to-float v3, v3
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    div-float/2addr v3, v4
+
+    int-to-float v5, v0
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v8
+
+    add-int/2addr v8, v1
+
+    int-to-float v1, v8
+
+    div-float/2addr v1, v4
+
+    const/4 v4, 0x4
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    sub-int/2addr v4, v1
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000    # 2.0f
-
-    div-float/2addr v4, v5
-
-    int-to-float v8, v0
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v9
-
-    add-int/2addr v9, v1
-
-    int-to-float v1, v9
-
-    div-float/2addr v1, v5
-
-    const/4 v5, 0x4
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    add-int/2addr v0, v5
+    add-int/2addr v0, v4
 
     int-to-float v0, v0
 
-    invoke-virtual {v3, v4, v8, v1, v0}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v2, v3, v5, v1, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 326
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    const-string v1, "key_sheet_scrollUp"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -439,18 +439,20 @@
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v1, v3, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     if-lez v7, :cond_5
 
     .line 329
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

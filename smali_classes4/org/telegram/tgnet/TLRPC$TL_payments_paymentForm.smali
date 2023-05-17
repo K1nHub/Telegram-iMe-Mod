@@ -77,24 +77,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 3613
+    .line 4033
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 3629
+    .line 4049
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->additional_methods:Ljava/util/ArrayList;
 
-    .line 3631
+    .line 4051
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_credentials:Ljava/util/ArrayList;
 
-    .line 3632
+    .line 4052
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -107,7 +107,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
     .locals 1
 
-    .line 3635
+    .line 4055
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -118,7 +118,7 @@
 
     return-object p0
 
-    .line 3637
+    .line 4057
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -144,13 +144,13 @@
 
     throw p0
 
-    .line 3642
+    .line 4062
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;-><init>()V
 
-    .line 3643
+    .line 4063
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -161,7 +161,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 3648
+    .line 4068
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -183,7 +183,7 @@
     :cond_0
     move v1, v2
 
-    .line 3649
+    .line 4069
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->can_save_credentials:Z
 
@@ -198,46 +198,46 @@
     :cond_1
     move v0, v2
 
-    .line 3650
+    .line 4070
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->password_missing:Z
 
-    .line 3651
+    .line 4071
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->form_id:J
 
-    .line 3652
+    .line 4072
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->bot_id:J
 
-    .line 3653
+    .line 4073
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->title:Ljava/lang/String;
 
-    .line 3654
+    .line 4074
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->description:Ljava/lang/String;
 
-    .line 3655
+    .line 4075
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
     and-int/lit8 v0, v0, 0x20
 
     if-eqz v0, :cond_2
 
-    .line 3656
+    .line 4076
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -248,7 +248,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->photo:Lorg/telegram/tgnet/TLRPC$WebDocument;
 
-    .line 3658
+    .line 4078
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -260,35 +260,35 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
 
-    .line 3659
+    .line 4079
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->provider_id:J
 
-    .line 3660
+    .line 4080
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->url:Ljava/lang/String;
 
-    .line 3661
+    .line 4081
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
     and-int/lit8 v0, v0, 0x10
 
     if-eqz v0, :cond_3
 
-    .line 3662
+    .line 4082
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->native_provider:Ljava/lang/String;
 
-    .line 3664
+    .line 4084
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
@@ -296,7 +296,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 3665
+    .line 4085
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -307,7 +307,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->native_params:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
-    .line 3667
+    .line 4087
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
@@ -319,7 +319,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 3668
+    .line 4088
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -330,7 +330,7 @@
 
     return-void
 
-    .line 3671
+    .line 4091
     :cond_5
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -350,7 +350,7 @@
 
     throw p1
 
-    .line 3675
+    .line 4095
     :cond_6
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -361,7 +361,7 @@
     :goto_2
     if-ge v5, v0, :cond_8
 
-    .line 3677
+    .line 4097
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -374,7 +374,7 @@
 
     return-void
 
-    .line 3681
+    .line 4101
     :cond_7
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->additional_methods:Ljava/util/ArrayList;
 
@@ -384,7 +384,7 @@
 
     goto :goto_2
 
-    .line 3684
+    .line 4104
     :cond_8
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
@@ -392,7 +392,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 3685
+    .line 4105
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -403,7 +403,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
-    .line 3687
+    .line 4107
     :cond_9
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
@@ -411,7 +411,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 3688
+    .line 4108
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -422,7 +422,7 @@
 
     return-void
 
-    .line 3691
+    .line 4111
     :cond_a
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -442,7 +442,7 @@
 
     throw p1
 
-    .line 3695
+    .line 4115
     :cond_b
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -453,7 +453,7 @@
     :goto_3
     if-ge v5, v0, :cond_d
 
-    .line 3697
+    .line 4117
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -466,7 +466,7 @@
 
     return-void
 
-    .line 3701
+    .line 4121
     :cond_c
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_credentials:Ljava/util/ArrayList;
 
@@ -476,7 +476,7 @@
 
     goto :goto_3
 
-    .line 3704
+    .line 4124
     :cond_d
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -488,7 +488,7 @@
 
     return-void
 
-    .line 3707
+    .line 4127
     :cond_e
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -508,7 +508,7 @@
 
     throw p1
 
-    .line 3711
+    .line 4131
     :cond_f
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -517,7 +517,7 @@
     :goto_4
     if-ge v2, v0, :cond_11
 
-    .line 3713
+    .line 4133
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -530,7 +530,7 @@
 
     return-void
 
-    .line 3717
+    .line 4137
     :cond_10
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->users:Ljava/util/ArrayList;
 
@@ -547,12 +547,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 3722
+    .line 4142
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3723
+    .line 4143
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->can_save_credentials:Z
 
     if-eqz v0, :cond_0
@@ -571,7 +571,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
-    .line 3724
+    .line 4144
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->password_missing:Z
 
     if-eqz v1, :cond_1
@@ -586,70 +586,70 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
-    .line 3725
+    .line 4145
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3726
+    .line 4146
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->form_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 3727
+    .line 4147
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->bot_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 3728
+    .line 4148
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 3729
+    .line 4149
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->description:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 3730
+    .line 4150
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
     and-int/lit8 v0, v0, 0x20
 
     if-eqz v0, :cond_2
 
-    .line 3731
+    .line 4151
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->photo:Lorg/telegram/tgnet/TLRPC$WebDocument;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 3733
+    .line 4153
     :cond_2
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_invoice;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 3734
+    .line 4154
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->provider_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 3735
+    .line 4155
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 3736
+    .line 4156
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
     and-int/lit8 v0, v0, 0x10
 
     if-eqz v0, :cond_3
 
-    .line 3737
+    .line 4157
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->native_provider:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 3739
+    .line 4159
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
@@ -657,12 +657,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 3740
+    .line 4160
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->native_params:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 3742
+    .line 4162
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
@@ -674,17 +674,17 @@
 
     if-eqz v0, :cond_5
 
-    .line 3743
+    .line 4163
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3744
+    .line 4164
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->additional_methods:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 3745
+    .line 4165
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v1
@@ -692,7 +692,7 @@
     :goto_2
     if-ge v3, v0, :cond_5
 
-    .line 3747
+    .line 4167
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->additional_methods:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -707,7 +707,7 @@
 
     goto :goto_2
 
-    .line 3750
+    .line 4170
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
@@ -715,12 +715,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 3751
+    .line 4171
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 3753
+    .line 4173
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->flags:I
 
@@ -728,17 +728,17 @@
 
     if-eqz v0, :cond_7
 
-    .line 3754
+    .line 4174
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3755
+    .line 4175
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_credentials:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 3756
+    .line 4176
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v1
@@ -746,7 +746,7 @@
     :goto_3
     if-ge v3, v0, :cond_7
 
-    .line 3758
+    .line 4178
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_credentials:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -761,24 +761,24 @@
 
     goto :goto_3
 
-    .line 3761
+    .line 4181
     :cond_7
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3762
+    .line 4182
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 3763
+    .line 4183
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_4
     if-ge v1, v0, :cond_8
 
-    .line 3765
+    .line 4185
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

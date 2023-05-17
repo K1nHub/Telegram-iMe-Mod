@@ -15,13 +15,13 @@ public class X9ECParameters extends ASN1Object implements X9ObjectIdentifiers {
     private X9FieldID fieldID;
 
     /* renamed from: g */
-    private X9ECPoint f1233g;
+    private X9ECPoint f1238g;
 
     /* renamed from: h */
-    private BigInteger f1234h;
+    private BigInteger f1239h;
 
     /* renamed from: n */
-    private BigInteger f1235n;
+    private BigInteger f1240n;
     private byte[] seed;
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
@@ -30,9 +30,9 @@ public class X9ECParameters extends ASN1Object implements X9ObjectIdentifiers {
         aSN1EncodableVector.add(new ASN1Integer(ONE));
         aSN1EncodableVector.add(this.fieldID);
         aSN1EncodableVector.add(new X9Curve(this.curve, this.seed));
-        aSN1EncodableVector.add(this.f1233g);
-        aSN1EncodableVector.add(new ASN1Integer(this.f1235n));
-        BigInteger bigInteger = this.f1234h;
+        aSN1EncodableVector.add(this.f1238g);
+        aSN1EncodableVector.add(new ASN1Integer(this.f1240n));
+        BigInteger bigInteger = this.f1239h;
         if (bigInteger != null) {
             aSN1EncodableVector.add(new ASN1Integer(bigInteger));
         }

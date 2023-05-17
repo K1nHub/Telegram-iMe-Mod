@@ -242,7 +242,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                 if (!(state$kotlinx_coroutines_core instanceof Incomplete) || ((Incomplete) state$kotlinx_coroutines_core).getList() == null) {
                     return;
                 }
-                jobNode.remove();
+                jobNode.mo1603remove();
                 return;
             } else if (state$kotlinx_coroutines_core != jobNode) {
                 return;
@@ -273,6 +273,11 @@ public class JobSupport implements Job, ChildJob, ParentJob {
 
     public final boolean isCompleted() {
         return !(getState$kotlinx_coroutines_core() instanceof Incomplete);
+    }
+
+    public final boolean isCancelled() {
+        Object state$kotlinx_coroutines_core = getState$kotlinx_coroutines_core();
+        return (state$kotlinx_coroutines_core instanceof CompletedExceptionally) || ((state$kotlinx_coroutines_core instanceof Finishing) && ((Finishing) state$kotlinx_coroutines_core).isCancelling());
     }
 
     private final Object finalizeFinishingState(Finishing finishing, Object obj) {
@@ -503,6 +508,10 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         return cancellationException;
     }
 
+    public final DisposableHandle invokeOnCompletion(Function1<? super Throwable, Unit> function1) {
+        return invokeOnCompletion(false, true, function1);
+    }
+
     @Override // kotlinx.coroutines.Job
     public final DisposableHandle invokeOnCompletion(boolean z, boolean z2, Function1<? super Throwable, Unit> function1) {
         JobNode makeNode = makeNode(function1, z);
@@ -631,6 +640,10 @@ public class JobSupport implements Job, ChildJob, ParentJob {
             return true;
         }
         return cancelImpl$kotlinx_coroutines_core(th) && getHandlesException$kotlinx_coroutines_core();
+    }
+
+    public final boolean cancelCoroutine(Throwable th) {
+        return cancelImpl$kotlinx_coroutines_core(th);
     }
 
     public final boolean cancelImpl$kotlinx_coroutines_core(Object obj) {

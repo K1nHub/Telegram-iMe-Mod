@@ -46,13 +46,13 @@ public class PaintTypefaceListView extends RecyclerListView {
                 return PaintTypeface.get().size();
             }
         });
-        setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
+        setPadding(0, AndroidUtilities.m54dp(8), 0, AndroidUtilities.m54dp(8));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.p044ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((Math.min(PaintTypeface.get().size(), 6) * AndroidUtilities.m50dp(48)) + AndroidUtilities.m50dp(16), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((Math.min(PaintTypeface.get().size(), 6) * AndroidUtilities.m54dp(48)) + AndroidUtilities.m54dp(16), 1073741824));
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.View

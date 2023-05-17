@@ -17,21 +17,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$editItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
-
-.field final synthetic val$newEditVisibility:I
+.field final synthetic val$newVisibilityFinal:I
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;ILorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;I)V
     .locals 0
 
-    .line 17298
+    .line 17243
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iput p2, p0, Lorg/telegram/ui/ChatActivity$93;->val$newEditVisibility:I
-
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$93;->val$editItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    iput p2, p0, Lorg/telegram/ui/ChatActivity$93;->val$newVisibilityFinal:I
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -43,10 +39,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 17310
+    .line 17255
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44800(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -54,7 +50,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44800(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -64,12 +60,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 17311
+    .line 17256
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$44802(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$44502(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
     :cond_0
     return-void
@@ -78,10 +74,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 17301
+    .line 17246
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44800(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -89,7 +85,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44800(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44500(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -99,17 +95,29 @@
 
     if-eqz p1, :cond_0
 
-    .line 17302
-    iget p1, p0, Lorg/telegram/ui/ChatActivity$93;->val$newEditVisibility:I
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$44600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 17247
+    iget p1, p0, Lorg/telegram/ui/ChatActivity$93;->val$newVisibilityFinal:I
 
     const/16 v0, 0x8
 
     if-ne p1, v0, :cond_0
 
-    .line 17303
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$93;->val$editItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    .line 17248
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$44600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     :cond_0
     return-void

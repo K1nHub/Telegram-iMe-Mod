@@ -5,27 +5,17 @@
 .implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;
+# instance fields
+.field public final synthetic f$0:[I
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>([I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;->f$0:[I
 
     return-void
 .end method
@@ -33,9 +23,11 @@
 
 # virtual methods
 .method public final format(I)Ljava/lang/String;
-    .locals 0
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$TM0olS0P2hHDQCRS9E68o4eaJx0(I)Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;->f$0:[I
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$yTzi8v9Ia4C4OnQmyJ1n17dS5g0([II)Ljava/lang/String;
 
     move-result-object p1
 

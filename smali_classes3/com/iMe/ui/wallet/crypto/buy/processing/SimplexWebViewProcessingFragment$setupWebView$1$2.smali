@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
-    .line 130
+    .line 131
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 133
+    .line 134
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->getResources()[Ljava/lang/String;
 
     move-result-object v0
@@ -51,14 +51,14 @@
 .method public onProgressChanged(Landroid/webkit/WebView;I)V
     .locals 0
 
-    .line 137
+    .line 138
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
-    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->access$getBinding(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->access$getBinding(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object p1
 
-    iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->progressBar:Landroid/widget/ProgressBar;
+    iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->progressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {p1, p2}, Landroid/widget/ProgressBar;->setProgress(I)V
 
@@ -92,7 +92,7 @@
 
     invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 144
+    .line 145
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->access$getMFilePathCallback$p(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)Landroid/webkit/ValueCallback;
@@ -105,20 +105,20 @@
 
     invoke-interface {p1, p3}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
-    .line 145
+    .line 146
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
     invoke-static {p1, p2}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->access$setMFilePathCallback$p(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;Landroid/webkit/ValueCallback;)V
 
-    .line 146
+    .line 147
     new-instance p1, Landroid/content/Intent;
 
     const-string p2, "android.media.action.IMAGE_CAPTURE"
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 147
+    .line 148
     iget-object p2, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -135,7 +135,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 151
+    .line 152
     :try_start_0
     iget-object p2, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
@@ -148,7 +148,7 @@
     :try_start_1
     const-string v0, "PhotoPath"
 
-    .line 152
+    .line 153
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->access$getMCameraPhotoPath$p(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;)Ljava/lang/String;
@@ -171,14 +171,14 @@
 
     move-object p2, p3
 
-    .line 154
+    .line 155
     :goto_0
     invoke-static {v0}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
     :goto_1
     if-eqz p2, :cond_2
 
-    .line 159
+    .line 160
     iget-object p3, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -201,7 +201,7 @@
 
     invoke-static {p3, v0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->access$setMCameraPhotoPath$p(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;Ljava/lang/String;)V
 
-    .line 160
+    .line 161
     invoke-static {p2}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object p2
@@ -213,7 +213,7 @@
     :cond_1
     move-object p3, p1
 
-    .line 166
+    .line 167
     :cond_2
     new-instance p1, Landroid/content/Intent;
 
@@ -221,7 +221,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 167
+    .line 168
     new-instance p2, Landroid/content/Intent;
 
     const-string v0, "android.intent.action.GET_CONTENT"
@@ -230,27 +230,27 @@
 
     const-string v0, "android.intent.category.OPENABLE"
 
-    .line 168
+    .line 169
     invoke-virtual {p2, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v0, "image/*"
 
-    .line 169
+    .line 170
     invoke-virtual {p2, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 170
+    .line 171
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     const-string v0, "android.intent.extra.INTENT"
 
-    .line 167
+    .line 168
     invoke-virtual {p1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     const-string p2, "android.intent.extra.TITLE"
 
     const-string v0, "Image Chooser"
 
-    .line 171
+    .line 172
     invoke-virtual {p1, p2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const/4 p2, 0x1
@@ -263,10 +263,10 @@
 
     const-string p3, "android.intent.extra.INITIAL_INTENTS"
 
-    .line 172
+    .line 173
     invoke-virtual {p1, p3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 174
+    .line 175
     iget-object p3, p0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
     invoke-virtual {p3, p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->startActivityForResult(Landroid/content/Intent;I)V

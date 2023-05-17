@@ -2322,7 +2322,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "start creating round camera session"
+    const-string/jumbo v1, "start creating round camera session"
 
     .line 539
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

@@ -3,7 +3,7 @@
 .source "ChatActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
 
 # annotations
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 2646
+    .line 2492
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$8;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,137 +35,96 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 5
+.method public synthetic applyServiceShaderMatrix(IIFF)V
+    .locals 0
 
-    .line 2649
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$applyServiceShaderMatrix(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;IIFF)V
+
+    return-void
+.end method
+
+.method public contains(I)Z
+    .locals 1
+
+    .line 2500
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$8;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$1700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
-    move-result-object v0
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->contains(I)Z
 
-    if-eqz v0, :cond_2
+    move-result p1
 
+    return p1
+.end method
+
+.method public getColor(I)I
+    .locals 1
+
+    .line 2495
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$8;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$1800(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
-    move-result-object v0
+    move-result p1
 
-    if-nez v0, :cond_0
+    return p1
+.end method
 
-    goto :goto_1
+.method public synthetic getColorOrDefault(I)I
+    .locals 0
 
-    .line 2652
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$8;->this$0:Lorg/telegram/ui/ChatActivity;
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$1700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    move-result p1
 
-    move-result-object v0
+    return p1
+.end method
 
-    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+.method public synthetic getCurrentColor(I)I
+    .locals 0
 
-    iget v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->ttl_period:I
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$8;->this$0:Lorg/telegram/ui/ChatActivity;
+    move-result p1
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
+    return p1
+.end method
 
-    move-result-object v1
+.method public synthetic getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    .locals 0
 
-    invoke-virtual {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getDrawable(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
-    move-result v1
+    move-result-object p1
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$8;->this$0:Lorg/telegram/ui/ChatActivity;
+    return-object p1
+.end method
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$1700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+.method public synthetic getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
+    .locals 0
 
-    move-result-object v2
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getPaint(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Landroid/graphics/Paint;
 
-    iget-object v2, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    move-result-object p1
 
-    iget v2, v2, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+    return-object p1
+.end method
 
-    sub-int/2addr v1, v2
+.method public synthetic hasGradientService()Z
+    .locals 1
 
-    sub-int/2addr v0, v1
-
-    const/4 v1, 0x0
-
-    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$hasGradientService(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Z
 
     move-result v0
 
-    const v2, 0x15180
+    return v0
+.end method
 
-    if-ge v0, v2, :cond_1
+.method public synthetic setAnimatedColor(II)V
+    .locals 0
 
-    .line 2655
-    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->formatDuration(IZ)Ljava/lang/String;
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    int-to-float v0, v0
-
-    const v2, 0x47a8c000    # 86400.0f
-
-    div-float/2addr v0, v2
-
-    .line 2657
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    new-array v2, v1, [Ljava/lang/Object;
-
-    const-string v3, "Days"
-
-    invoke-static {v3, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2659
-    :goto_0
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$8;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$1800(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
-
-    move-result-object v2
-
-    sget v3, Lorg/telegram/messenger/R$string;->AutoDeleteIn:I
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    aput-object v0, v4, v1
-
-    const-string v0, "AutoDeleteIn"
-
-    invoke-static {v0, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSubtext(Ljava/lang/String;)V
-
-    .line 2660
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$8;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$1900(Lorg/telegram/ui/ChatActivity;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    const-wide/16 v1, 0x3e8
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
-
-    :cond_2
-    :goto_1
     return-void
 .end method

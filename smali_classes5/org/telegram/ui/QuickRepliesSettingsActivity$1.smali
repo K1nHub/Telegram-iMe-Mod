@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/QuickRepliesSettingsActivity;)V
     .locals 0
 
-    .line 75
+    .line 74
     iput-object p1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity$1;->this$0:Lorg/telegram/ui/QuickRepliesSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 79
+    .line 78
     iget-object p1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity$1;->this$0:Lorg/telegram/ui/QuickRepliesSettingsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

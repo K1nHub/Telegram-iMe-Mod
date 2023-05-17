@@ -123,26 +123,26 @@ public class Utilities {
             fileInputStream.close();
             random.setSeed(bArr);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
     public static Bitmap stackBlurBitmapMax(Bitmap bitmap) {
-        int m50dp = AndroidUtilities.m50dp(20);
-        int m50dp2 = (int) ((AndroidUtilities.m50dp(20) * bitmap.getHeight()) / bitmap.getWidth());
-        Bitmap createBitmap = Bitmap.createBitmap(m50dp, m50dp2, Bitmap.Config.ARGB_8888);
+        int m54dp = AndroidUtilities.m54dp(20);
+        int m54dp2 = (int) ((AndroidUtilities.m54dp(20) * bitmap.getHeight()) / bitmap.getWidth());
+        Bitmap createBitmap = Bitmap.createBitmap(m54dp, m54dp2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
         canvas.drawBitmap(bitmap, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(m50dp, m50dp2) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(m54dp, m54dp2) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
         return createBitmap;
     }
 
     public static Bitmap stackBlurBitmapWithScaleFactor(Bitmap bitmap, float f) {
-        int max = (int) Math.max(AndroidUtilities.m50dp(20), bitmap.getWidth() / f);
-        int max2 = (int) Math.max((AndroidUtilities.m50dp(20) * bitmap.getHeight()) / bitmap.getWidth(), bitmap.getHeight() / f);
+        int max = (int) Math.max(AndroidUtilities.m54dp(20), bitmap.getWidth() / f);
+        int max2 = (int) Math.max((AndroidUtilities.m54dp(20) * bitmap.getHeight()) / bitmap.getWidth(), bitmap.getHeight() / f);
         Bitmap createBitmap = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
@@ -352,7 +352,7 @@ public class Utilities {
             messageDigest.update(bArr, i, i2);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return new byte[20];
         }
     }
@@ -368,7 +368,7 @@ public class Utilities {
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[20];
@@ -397,7 +397,7 @@ public class Utilities {
             messageDigest.update(bArr, i, (int) j);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return new byte[32];
         }
     }
@@ -410,7 +410,7 @@ public class Utilities {
             }
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return new byte[32];
         }
     }
@@ -421,7 +421,7 @@ public class Utilities {
             messageDigest.update(bArr, 0, bArr.length);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return new byte[64];
         }
     }
@@ -433,7 +433,7 @@ public class Utilities {
             messageDigest.update(bArr2, 0, bArr2.length);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return new byte[64];
         }
     }
@@ -452,7 +452,7 @@ public class Utilities {
             messageDigest.update(bArr3, 0, bArr3.length);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return new byte[64];
         }
     }
@@ -469,7 +469,7 @@ public class Utilities {
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[32];
@@ -500,7 +500,7 @@ public class Utilities {
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return null;
         }
     }

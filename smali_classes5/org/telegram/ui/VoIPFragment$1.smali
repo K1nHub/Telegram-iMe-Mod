@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/app/Activity;ZLorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 260
+    .line 261
     iput-object p3, p0, Lorg/telegram/ui/VoIPFragment$1;->val$fragment:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/voip/VoIPWindowView;-><init>(Landroid/app/Activity;Z)V
@@ -35,7 +35,7 @@
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 3
 
-    .line 263
+    .line 264
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment$1;->val$fragment:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/VoIPFragment;->access$000(Lorg/telegram/ui/VoIPFragment;)Z
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 266
+    .line 267
     :cond_0
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
@@ -66,7 +66,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 267
+    .line 268
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v1
@@ -81,7 +81,7 @@
 
     if-nez v1, :cond_1
 
-    .line 268
+    .line 269
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$1;->val$fragment:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$300(Lorg/telegram/ui/VoIPFragment;)V
@@ -97,7 +97,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 272
+    .line 273
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment$1;->val$fragment:Lorg/telegram/ui/VoIPFragment;
 
@@ -109,19 +109,19 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 273
+    .line 274
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    .line 275
+    .line 276
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->stopRinging()V
 
     return v2
 
-    .line 280
+    .line 281
     :cond_3
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 

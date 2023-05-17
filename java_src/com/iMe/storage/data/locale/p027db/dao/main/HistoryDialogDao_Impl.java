@@ -20,6 +20,7 @@ public final class HistoryDialogDao_Impl extends HistoryDialogDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<HistoryDialogDb> __insertionAdapterOfHistoryDialogDb;
     private final SharedSQLiteStatement __preparedStmtOfClearRecentChatHistory;
+    private final SharedSQLiteStatement __preparedStmtOfRemoveAllRecentChatHistory;
     private final SharedSQLiteStatement __preparedStmtOfRemoveRecentChatHistory;
     private final SharedSQLiteStatement __preparedStmtOfUpdatePinned;
 
@@ -91,6 +92,12 @@ public final class HistoryDialogDao_Impl extends HistoryDialogDao {
                 return "UPDATE HistoryDialogDb SET isPinned = ? WHERE dialogId = ? AND userId = ?";
             }
         };
+        this.__preparedStmtOfRemoveAllRecentChatHistory = new SharedSQLiteStatement(this, __db) { // from class: com.iMe.storage.data.locale.db.dao.main.HistoryDialogDao_Impl.8
+            @Override // androidx.room.SharedSQLiteStatement
+            public String createQuery() {
+                return "DELETE FROM HistoryDialogDb WHERE userId = ?";
+            }
+        };
     }
 
     @Override // com.iMe.storage.data.locale.p027db.dao.base.BaseDao
@@ -101,6 +108,29 @@ public final class HistoryDialogDao_Impl extends HistoryDialogDao {
             long insertAndReturnId = this.__insertionAdapterOfHistoryDialogDb.insertAndReturnId(obj);
             this.__db.setTransactionSuccessful();
             return insertAndReturnId;
+        } finally {
+            this.__db.endTransaction();
+        }
+    }
+
+    @Override // com.iMe.storage.data.locale.p027db.dao.base.BaseDao
+    public void insert(final List<? extends HistoryDialogDb> obj) {
+        this.__db.assertNotSuspendingTransaction();
+        this.__db.beginTransaction();
+        try {
+            this.__insertionAdapterOfHistoryDialogDb.insert(obj);
+            this.__db.setTransactionSuccessful();
+        } finally {
+            this.__db.endTransaction();
+        }
+    }
+
+    @Override // com.iMe.storage.data.locale.p027db.dao.main.HistoryDialogDao
+    public void restoreBackup(final long userId, final List<HistoryDialogDb> pinnedRecentChats) {
+        this.__db.beginTransaction();
+        try {
+            super.restoreBackup(userId, pinnedRecentChats);
+            this.__db.setTransactionSuccessful();
         } finally {
             this.__db.endTransaction();
         }
@@ -151,6 +181,21 @@ public final class HistoryDialogDao_Impl extends HistoryDialogDao {
         } finally {
             this.__db.endTransaction();
             this.__preparedStmtOfUpdatePinned.release(acquire);
+        }
+    }
+
+    @Override // com.iMe.storage.data.locale.p027db.dao.main.HistoryDialogDao
+    public void removeAllRecentChatHistory(final long userId) {
+        this.__db.assertNotSuspendingTransaction();
+        SupportSQLiteStatement acquire = this.__preparedStmtOfRemoveAllRecentChatHistory.acquire();
+        acquire.bindLong(1, userId);
+        this.__db.beginTransaction();
+        try {
+            acquire.executeUpdateDelete();
+            this.__db.setTransactionSuccessful();
+        } finally {
+            this.__db.endTransaction();
+            this.__preparedStmtOfRemoveAllRecentChatHistory.release(acquire);
         }
     }
 

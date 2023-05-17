@@ -336,7 +336,7 @@
     .line 112
     invoke-virtual {v0, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "short"
+    const-string/jumbo v2, "short"
 
     const-string v7, "kotlin.Short"
 

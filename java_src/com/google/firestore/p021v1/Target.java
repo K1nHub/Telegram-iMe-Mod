@@ -69,7 +69,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
         /* renamed from: com.google.firestore.v1.Target$DocumentsTarget$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DocumentsTarget, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10651 c10651) {
+            /* synthetic */ Builder(C10701 c10701) {
                 this();
             }
 
@@ -86,7 +86,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10651.f213xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10701.f216xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new DocumentsTarget();
                 case 2:
@@ -129,40 +129,40 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
 
     /* renamed from: com.google.firestore.v1.Target$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10651 {
+    static /* synthetic */ class C10701 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f213xa1df5c61;
+        static final /* synthetic */ int[] f216xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f213xa1df5c61 = iArr;
+            f216xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f213xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f216xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f213xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f216xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f213xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f216xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f213xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f216xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f213xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f216xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f213xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f216xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -213,7 +213,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
         /* renamed from: com.google.firestore.v1.Target$QueryTarget$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<QueryTarget, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10651 c10651) {
+            /* synthetic */ Builder(C10701 c10701) {
                 this();
             }
 
@@ -236,7 +236,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10651.f213xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10701.f216xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new QueryTarget();
                 case 2:
@@ -317,7 +317,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
     /* renamed from: com.google.firestore.v1.Target$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Target, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10651 c10651) {
+        /* synthetic */ Builder(C10701 c10701) {
             this();
         }
 
@@ -358,7 +358,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10651.f213xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10701.f216xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Target();
             case 2:

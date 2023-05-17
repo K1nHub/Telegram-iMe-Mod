@@ -53,7 +53,7 @@ public class GmsRpc {
         return task.continueWith(GmsRpc$$ExternalSyntheticLambda1.INSTANCE, new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return GmsRpc.this.m706xb80eb67f(task2);
+                return GmsRpc.this.m710xb80eb67f(task2);
             }
         });
     }
@@ -119,7 +119,7 @@ public class GmsRpc {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$extractResponseWhenComplete$0$com-google-firebase-messaging-GmsRpc */
-    public /* synthetic */ String m706xb80eb67f(Task task) throws Exception {
+    public /* synthetic */ String m710xb80eb67f(Task task) throws Exception {
         return handleResponse((Bundle) task.getResult(IOException.class));
     }
 

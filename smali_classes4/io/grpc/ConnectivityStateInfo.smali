@@ -16,7 +16,7 @@
     .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "state is null"
+    const-string/jumbo v0, "state is null"
 
     .line 94
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lio/grpc/ConnectivityStateInfo;->state:Lio/grpc/ConnectivityState;
 
-    const-string p1, "status is null"
+    const-string/jumbo p1, "status is null"
 
     .line 95
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -57,7 +57,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    const-string v1, "state is TRANSIENT_ERROR. Use forError() instead"
+    const-string/jumbo v1, "state is TRANSIENT_ERROR. Use forError() instead"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 

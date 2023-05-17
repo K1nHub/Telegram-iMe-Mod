@@ -23,7 +23,7 @@ import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 /* compiled from: WalletAuthFragment.kt */
 /* renamed from: com.iMe.ui.base.WalletAuthFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class WalletAuthFragment extends MvpFragment {
     private final Lazy cryptoAccessManager$delegate;
     private final Lazy cryptoPreferenceHelper$delegate;
@@ -106,9 +106,9 @@ public abstract class WalletAuthFragment extends MvpFragment {
 
     private final void listenGlobalRxEvents() {
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo693ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1918x905d501f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1919x905d5020(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1990x905d501f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1991x905d5020(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

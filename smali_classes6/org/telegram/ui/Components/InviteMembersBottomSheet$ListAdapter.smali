@@ -545,10 +545,10 @@
 
     invoke-virtual/range {v3 .. v8}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IIZ)V
 
-    const-string p1, "dialogTextBlue2"
-
     .line 576
-    invoke-virtual {p2, p1, p1}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
+
+    invoke-virtual {p2, p1, p1}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
     goto :goto_2
 

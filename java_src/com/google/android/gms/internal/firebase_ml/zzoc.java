@@ -31,7 +31,7 @@ public final class zzoc implements Callable<Void> {
         if (str.equals("OPERATION_RELEASE")) {
             zznx zznxVar = this.zzaua;
             gmsLogger = zzoa.zzasz;
-            gmsLogger.m779v("ModelResourceManager", "Releasing modelResource");
+            gmsLogger.m783v("ModelResourceManager", "Releasing modelResource");
             zznxVar.release();
             set = this.zzatt.zzatx;
             set.remove(zznxVar);
@@ -42,7 +42,7 @@ public final class zzoc implements Callable<Void> {
                 return null;
             } catch (FirebaseMLException e) {
                 gmsLogger2 = zzoa.zzasz;
-                gmsLogger2.m782e("ModelResourceManager", "Error preloading model resource", e);
+                gmsLogger2.m786e("ModelResourceManager", "Error preloading model resource", e);
                 return null;
             }
         } else {

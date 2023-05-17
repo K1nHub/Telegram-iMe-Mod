@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;Landroid/content/Context;)V
     .locals 0
 
-    .line 416
+    .line 417
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/16 p2, 0x44
 
-    .line 419
+    .line 420
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

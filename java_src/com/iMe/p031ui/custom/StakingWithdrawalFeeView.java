@@ -8,9 +8,10 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingWithdrawalFeeBinding;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: StakingWithdrawalFeeView.kt */
 /* renamed from: com.iMe.ui.custom.StakingWithdrawalFeeView */
 /* loaded from: classes3.dex */
@@ -47,16 +48,18 @@ public final class StakingWithdrawalFeeView extends FrameLayout {
 
     public final void setupColors() {
         ForkContentStakingWithdrawalFeeBinding forkContentStakingWithdrawalFeeBinding = this.binding;
+        int i = Theme.key_windowBackgroundWhiteGrayText4;
         AppCompatTextView textFeeTitle = forkContentStakingWithdrawalFeeBinding.textFeeTitle;
         Intrinsics.checkNotNullExpressionValue(textFeeTitle, "textFeeTitle");
         AppCompatTextView textTimeTitle = forkContentStakingWithdrawalFeeBinding.textTimeTitle;
         Intrinsics.checkNotNullExpressionValue(textTimeTitle, "textTimeTitle");
-        ViewExtKt.setTextsColor("windowBackgroundWhiteGrayText4", textFeeTitle, textTimeTitle);
+        ViewExtKt.setTextsColor(i, textFeeTitle, textTimeTitle);
+        int i2 = Theme.key_chat_messagePanelText;
         AppCompatTextView textFeeValue = forkContentStakingWithdrawalFeeBinding.textFeeValue;
         Intrinsics.checkNotNullExpressionValue(textFeeValue, "textFeeValue");
         AppCompatTextView textTimeValue = forkContentStakingWithdrawalFeeBinding.textTimeValue;
         Intrinsics.checkNotNullExpressionValue(textTimeValue, "textTimeValue");
-        ViewExtKt.setTextsColor("chat_messagePanelText", textFeeValue, textTimeValue);
+        ViewExtKt.setTextsColor(i2, textFeeValue, textTimeValue);
     }
 
     private final void setupView() {
@@ -67,7 +70,7 @@ public final class StakingWithdrawalFeeView extends FrameLayout {
 
     private final void setupTexts() {
         ForkContentStakingWithdrawalFeeBinding forkContentStakingWithdrawalFeeBinding = this.binding;
-        forkContentStakingWithdrawalFeeBinding.textFeeTitle.setText(LocaleController.getInternalString(C3242R.string.staking_withdraw_fee_title));
-        forkContentStakingWithdrawalFeeBinding.textTimeTitle.setText(LocaleController.getInternalString(C3242R.string.staking_withdraw_time_title));
+        forkContentStakingWithdrawalFeeBinding.textFeeTitle.setText(LocaleController.getInternalString(C3290R.string.staking_withdraw_fee_title));
+        forkContentStakingWithdrawalFeeBinding.textTimeTitle.setText(LocaleController.getInternalString(C3290R.string.staking_withdraw_time_title));
     }
 }

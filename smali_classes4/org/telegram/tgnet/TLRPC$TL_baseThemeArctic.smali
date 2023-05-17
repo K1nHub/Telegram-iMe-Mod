@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18171
+    .line 18689
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$BaseTheme;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 18176
+    .line 18694
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_baseThemeArctic;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

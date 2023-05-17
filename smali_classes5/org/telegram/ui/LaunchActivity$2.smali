@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    .line 428
+    .line 426
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$2;->val$onAuthSuccessAction:Lcom/iMe/fork/utils/Callbacks$Callback;
@@ -48,7 +48,7 @@
 .method private static synthetic lambda$showLoadingDialog$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 438
+    .line 436
     invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     return-void
@@ -59,7 +59,7 @@
 .method public hideLoadingDialog()V
     .locals 1
 
-    .line 444
+    .line 442
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -80,7 +80,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 445
+    .line 443
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -96,7 +96,7 @@
 .method public onAuthSuccess()V
     .locals 1
 
-    .line 456
+    .line 454
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->val$onAuthSuccessAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     invoke-interface {v0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
@@ -107,7 +107,7 @@
 .method public showLoadingDialog(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 4
 
-    .line 432
+    .line 430
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -116,7 +116,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 433
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 435
+    .line 433
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -141,7 +141,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->access$102(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 437
+    .line 435
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -153,7 +153,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanCancel(Z)V
 
-    .line 438
+    .line 436
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -166,7 +166,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 439
+    .line 437
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -181,7 +181,7 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 0
 
-    .line 451
+    .line 449
     invoke-static {p1}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
     return-void

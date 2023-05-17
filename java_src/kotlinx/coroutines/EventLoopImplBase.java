@@ -1,6 +1,7 @@
 package kotlinx.coroutines;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -87,8 +88,22 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
         rescheduleAllDelayed();
     }
 
+    @Override // kotlinx.coroutines.Delay
+    /* renamed from: scheduleResumeAfterDelay */
+    public void mo1605scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+        long delayToNanos = EventLoop_commonKt.delayToNanos(j);
+        if (delayToNanos < 4611686018427387903L) {
+            AbstractTimeSourceKt.getTimeSource();
+            long nanoTime = System.nanoTime();
+            DelayedResumeTask delayedResumeTask = new DelayedResumeTask(delayToNanos + nanoTime, cancellableContinuation);
+            schedule(nanoTime, delayedResumeTask);
+            CancellableContinuationKt.disposeOnCancellation(cancellableContinuation, delayedResumeTask);
+        }
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:32:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x004f  */
+    @Override // kotlinx.coroutines.EventLoop
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -152,7 +167,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public final void mo1566dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public final void mo1604dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         enqueue(runnable);
     }
 
@@ -250,8 +265,12 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     /* loaded from: classes4.dex */
     public static abstract class DelayedTask implements Runnable, Comparable<DelayedTask>, DisposableHandle, ThreadSafeHeapNode {
         private volatile Object _heap;
-        private int index;
+        private int index = -1;
         public long nanoTime;
+
+        public DelayedTask(long j) {
+            this.nanoTime = j;
+        }
 
         @Override // kotlinx.coroutines.internal.ThreadSafeHeapNode
         public ThreadSafeHeap<?> getHeap() {
@@ -348,6 +367,28 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
         public String toString() {
             return "Delayed[nanos=" + this.nanoTime + ']';
+        }
+    }
+
+    /* compiled from: EventLoop.common.kt */
+    /* loaded from: classes4.dex */
+    private final class DelayedResumeTask extends DelayedTask {
+        private final CancellableContinuation<Unit> cont;
+
+        /* JADX WARN: Multi-variable type inference failed */
+        public DelayedResumeTask(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+            super(j);
+            this.cont = cancellableContinuation;
+        }
+
+        @Override // java.lang.Runnable
+        public void run() {
+            this.cont.resumeUndispatched(EventLoopImplBase.this, Unit.INSTANCE);
+        }
+
+        @Override // kotlinx.coroutines.EventLoopImplBase.DelayedTask
+        public String toString() {
+            return super.toString() + this.cont;
         }
     }
 

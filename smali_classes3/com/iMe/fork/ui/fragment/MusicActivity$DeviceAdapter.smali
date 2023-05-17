@@ -129,7 +129,7 @@
 
     if-eqz p1, :cond_1
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING_CELL:I
 
     goto :goto_0
 
@@ -147,13 +147,13 @@
 
     if-eqz p1, :cond_2
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->DIALOGS_EMPTY_CELL:I
 
     goto :goto_0
 
     .line 401
     :cond_2
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->SHARED_AUDIO:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL:I
 
     :goto_0
     return p1
@@ -181,7 +181,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 2
+    .locals 3
 
     const-string v0, "holder"
 
@@ -192,6 +192,8 @@
 
     .line 420
     instance-of v0, p1, Lorg/telegram/ui/Cells/DialogsEmptyCell;
+
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
@@ -207,9 +209,9 @@
 
     move-result p2
 
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->setType(I)V
+    invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->setType(IZ)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 421
     :cond_0
@@ -233,30 +235,25 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$AudioEntry;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    iget-object v1, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DeviceAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
+    iget-object v2, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DeviceAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
-    invoke-static {v1}, Lcom/iMe/fork/ui/fragment/MusicActivity;->access$getDeviceMusic$p(Lcom/iMe/fork/ui/fragment/MusicActivity;)Ljava/util/List;
+    invoke-static {v2}, Lcom/iMe/fork/ui/fragment/MusicActivity;->access$getDeviceMusic$p(Lcom/iMe/fork/ui/fragment/MusicActivity;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
+    invoke-static {v2}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
 
-    move-result v1
+    move-result v2
 
-    if-eq p2, v1, :cond_1
+    if-eq p2, v2, :cond_1
 
-    const/4 p2, 0x1
-
-    goto :goto_0
+    const/4 v1, 0x1
 
     :cond_1
-    const/4 p2, 0x0
-
-    :goto_0
-    invoke-virtual {p1, v0, p2}, Lorg/telegram/ui/Cells/SharedAudioCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Z)V
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Cells/SharedAudioCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Z)V
 
     :cond_2
-    :goto_1
+    :goto_0
     return-void
 .end method
 
@@ -303,7 +300,7 @@
 
     .line 406
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING_CELL:I
 
     if-ne p2, p1, :cond_1
 
@@ -334,7 +331,7 @@
 
     .line 409
     :cond_1
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->DIALOGS_EMPTY_CELL:I
 
     if-ne p2, p1, :cond_2
 

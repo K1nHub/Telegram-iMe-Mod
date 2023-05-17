@@ -4,6 +4,7 @@ import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.core.widget.CompoundButtonCompat;
 import com.iMe.utils.common.ViewBindingAdapterHolder;
 import java.util.List;
@@ -52,9 +53,11 @@ public final class LanguagesAdapter extends RecyclerListView.ViewBindingSelectio
         final LanguageViewModel languageViewModel = this.items.get(i);
         ForkCountryItemListBinding binding = holder.getBinding();
         binding.textCountryName.setText(languageViewModel.getName());
-        binding.textCountryName.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        TextView textView = binding.textCountryName;
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        textView.setTextColor(Theme.getColor(i2));
         binding.checkbox.setChecked(languageViewModel.getChecked());
-        CompoundButtonCompat.setButtonTintList(binding.checkbox, new ColorStateList(new int[][]{new int[]{-16842912}, new int[]{16842912}}, new int[]{Theme.getColor("windowBackgroundWhiteBlackText"), Theme.getColor("chats_actionBackground")}));
+        CompoundButtonCompat.setButtonTintList(binding.checkbox, new ColorStateList(new int[][]{new int[]{-16842912}, new int[]{16842912}}, new int[]{Theme.getColor(i2), Theme.getColor(Theme.key_chats_actionBackground)}));
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.languages.LanguagesAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

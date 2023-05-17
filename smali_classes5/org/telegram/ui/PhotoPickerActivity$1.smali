@@ -974,7 +974,9 @@
     .line 260
     iget v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IZ)V
+    iget v4, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->invert:I
+
+    invoke-virtual {v0, v1, v4, v3}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IIZ)V
 
     .line 261
     iget-boolean v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z

@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ChatActivity$51;
-.super Landroid/graphics/drawable/LayerDrawable;
+.super Lorg/telegram/ui/EmojiAnimationsOverlay;
 .source "ChatActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->createBottomMessagesActionButtons()V
+    value = Lorg/telegram/ui/ChatActivity;->createView(Landroid/content/Context;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,100 +15,50 @@
 
 
 # instance fields
-.field final synthetic val$rect:Landroid/graphics/Rect;
+.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;[Landroid/graphics/drawable/Drawable;Landroid/graphics/Rect;)V
-    .locals 0
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ChatActivity;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/RecyclerListView;IJI)V
+    .locals 9
 
-    .line 9440
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
+    move-object v8, p0
 
-    invoke-direct {p0, p2}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
+    move-object v0, p1
+
+    .line 9336
+    iput-object v0, v8, Lorg/telegram/ui/ChatActivity$51;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move v4, p5
+
+    move-wide v5, p6
+
+    move/from16 v7, p8
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/EmojiAnimationsOverlay;-><init>(Lorg/telegram/ui/ChatActivity;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/RecyclerListView;IJI)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public draw(Landroid/graphics/Canvas;)V
-    .locals 4
+.method public onAllEffectsEnd()V
+    .locals 2
 
-    .line 9443
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    .line 9339
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$51;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 9444
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
+    const/4 v1, 0x0
 
-    iget v1, v0, Landroid/graphics/Rect;->left:I
-
-    int-to-float v1, v1
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    const/high16 v2, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v2
-
-    add-float/2addr v1, v0
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
-
-    iget v3, v0, Landroid/graphics/Rect;->top:I
-
-    int-to-float v3, v3
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    div-float/2addr v0, v2
-
-    add-float/2addr v3, v0
-
-    const/high16 v0, -0x3d4c0000    # -90.0f
-
-    invoke-virtual {p1, v0, v1, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
-
-    .line 9445
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    div-float/2addr v0, v2
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    div-float/2addr v1, v2
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    const/high16 v3, -0x40800000    # -1.0f
-
-    invoke-virtual {p1, v2, v3, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
-
-    .line 9446
-    invoke-super {p0, p1}, Landroid/graphics/drawable/LayerDrawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 9447
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ChatActivity;->updateMessagesVisiblePart(Z)V
 
     return-void
 .end method

@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$28;
-.super Lorg/telegram/ui/Components/NumberPicker;
+.super Landroid/widget/TextView;
 .source "AlertsCreator.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createSoundFrequencyPickerDialog(Landroid/content/Context;IILorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createStatusUntilDatePickerDialog(Landroid/content/Context;JLorg/telegram/ui/Components/AlertsCreator$StatusUntilDatePickerDelegate;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,32 +15,26 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 3869
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .line 3845
+    invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getContentDescription(I)Ljava/lang/CharSequence;
-    .locals 2
+.method public getAccessibilityClassName()Ljava/lang/CharSequence;
+    .locals 1
 
-    add-int/lit8 p1, p1, 0x1
+    .line 3848
+    const-class v0, Landroid/widget/Button;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    move-result-object v0
 
-    const-string v1, "Times"
-
-    .line 3872
-    invoke-static {v1, p1, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method

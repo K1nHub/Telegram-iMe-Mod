@@ -9,3 +9,6 @@
 # virtual methods
 .method public abstract childCancelled(Ljava/lang/Throwable;)Z
 .end method
+
+.method public abstract getParent()Lkotlinx/coroutines/Job;
+.end method

@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
-
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+.field public final synthetic f$0:Lorg/telegram/messenger/AccountInstance;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/AccountInstance;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda134;->f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda134;->f$1:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda134;->f$0:Lorg/telegram/messenger/AccountInstance;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(I)V
-    .locals 2
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda134;->f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda134;->f$0:Lorg/telegram/messenger/AccountInstance;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda134;->f$1:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$1skzB2zW3E5l_o6Ig_DE226XlgQ(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$LVwS5WQlJX2Gb2WYYuza_5LozYM(Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

@@ -51,14 +51,14 @@
     .line 608
     iget-object v0, p0, Lio/grpc/InternalChannelz$ChannelTrace$Event$Builder;->severity:Lio/grpc/InternalChannelz$ChannelTrace$Event$Severity;
 
-    const-string v1, "severity"
+    const-string/jumbo v1, "severity"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 609
     iget-object v0, p0, Lio/grpc/InternalChannelz$ChannelTrace$Event$Builder;->timestampNanos:Ljava/lang/Long;
 
-    const-string v1, "timestampNanos"
+    const-string/jumbo v1, "timestampNanos"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

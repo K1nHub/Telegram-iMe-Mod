@@ -19,7 +19,7 @@ public class FlatCheckBox extends View {
     int INNER_PADDING;
 
     /* renamed from: P */
-    int f1649P;
+    int f1656P;
     int TRANSLETE_TEXT;
     boolean attached;
     ValueAnimator checkAnimator;
@@ -44,25 +44,25 @@ public class FlatCheckBox extends View {
         this.fillPaint = new Paint(1);
         this.outLinePaint = new Paint(1);
         this.checkPaint = new Paint(1);
-        this.HEIGHT = AndroidUtilities.m50dp(36);
-        this.INNER_PADDING = AndroidUtilities.m50dp(22);
-        this.TRANSLETE_TEXT = AndroidUtilities.m50dp(8);
-        this.f1649P = AndroidUtilities.m50dp(2);
+        this.HEIGHT = AndroidUtilities.m54dp(36);
+        this.INNER_PADDING = AndroidUtilities.m54dp(22);
+        this.TRANSLETE_TEXT = AndroidUtilities.m54dp(8);
+        this.f1656P = AndroidUtilities.m54dp(2);
         this.rectF = new RectF();
         this.progress = BitmapDescriptorFactory.HUE_RED;
         this.lastW = 0;
-        this.textPaint.setTextSize(AndroidUtilities.m50dp(14));
+        this.textPaint.setTextSize(AndroidUtilities.m54dp(14));
         this.textPaint.setTextAlign(Paint.Align.CENTER);
         this.textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
         this.outLinePaint.setStrokeWidth(AndroidUtilities.dpf2(1.5f));
         this.outLinePaint.setStyle(Paint.Style.STROKE);
         this.checkPaint.setStyle(Paint.Style.STROKE);
         this.checkPaint.setStrokeCap(Paint.Cap.ROUND);
-        this.checkPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.checkPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
     }
 
     public void recolor(int i) {
-        this.colorActive = Theme.getColor("windowBackgroundWhite");
+        this.colorActive = Theme.getColor(Theme.key_windowBackgroundWhite);
         this.colorTextActive = -1;
         this.colorInactive = i;
         invalidate();
@@ -124,10 +124,10 @@ public class FlatCheckBox extends View {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         String str = this.text;
-        setMeasuredDimension((str == null ? 0 : (int) this.textPaint.measureText(str)) + (this.INNER_PADDING << 1) + (this.f1649P * 2), this.HEIGHT + AndroidUtilities.m50dp(4));
+        setMeasuredDimension((str == null ? 0 : (int) this.textPaint.measureText(str)) + (this.INNER_PADDING << 1) + (this.f1656P * 2), this.HEIGHT + AndroidUtilities.m54dp(4));
         if (getMeasuredWidth() != this.lastW) {
             this.rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-            this.rectF.inset(this.f1649P + (this.outLinePaint.getStrokeWidth() / 2.0f), this.f1649P + (this.outLinePaint.getStrokeWidth() / 2.0f) + AndroidUtilities.m50dp(2));
+            this.rectF.inset(this.f1656P + (this.outLinePaint.getStrokeWidth() / 2.0f), this.f1656P + (this.outLinePaint.getStrokeWidth() / 2.0f) + AndroidUtilities.m54dp(2));
         }
     }
 
@@ -160,12 +160,12 @@ public class FlatCheckBox extends View {
         float f3 = 2.0f - (this.progress / 0.5f);
         canvas.save();
         canvas.scale(0.9f, 0.9f, AndroidUtilities.dpf2(7.0f), measuredHeight);
-        canvas.translate(AndroidUtilities.m50dp(12), measuredHeight - AndroidUtilities.m50dp(9));
+        canvas.translate(AndroidUtilities.m54dp(12), measuredHeight - AndroidUtilities.m54dp(9));
         if (this.progress > 0.5f) {
             this.checkPaint.setColor(this.colorTextActive);
             float f4 = 1.0f - f3;
-            canvas.drawLine(AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) (AndroidUtilities.dpf2(7.0f) - (AndroidUtilities.m50dp(4) * f4)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.m50dp(4) * f4)), this.checkPaint);
-            canvas.drawLine((int) AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) (AndroidUtilities.dpf2(7.0f) + (AndroidUtilities.m50dp(8) * f4)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.m50dp(8) * f4)), this.checkPaint);
+            canvas.drawLine(AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) (AndroidUtilities.dpf2(7.0f) - (AndroidUtilities.m54dp(4) * f4)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.m54dp(4) * f4)), this.checkPaint);
+            canvas.drawLine((int) AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) (AndroidUtilities.dpf2(7.0f) + (AndroidUtilities.m54dp(8) * f4)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.m54dp(8) * f4)), this.checkPaint);
         }
         canvas.restore();
     }

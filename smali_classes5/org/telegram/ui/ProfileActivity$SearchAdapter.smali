@@ -121,6 +121,22 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$1DYwDEyEw0G2X_YzjpVWDpavHTQ(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$143()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$1Rf9HI0uCdY0YjDjskd_99LGGog(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$140()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$2CmertC2e7YAXo5LeiBvymk4H7E(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -137,14 +153,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$2UGnNrM-ilck5zSpeSMSOmjwHUc(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$search$129(Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$2yYXNvpI8Wf9BvQST9t4IP7YzEY(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -157,6 +165,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$101()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$355q3lllK383ymQMjduqpk0ZIPk(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$search$147(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -233,6 +249,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$9v_or4bCAHAE0binWUoL5px4AIw(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$134()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$Az2NQ6ysnpH2DTK-SuFGMY3yWWE(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -253,14 +277,6 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$17()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$CUX3-vsEHXXhvaoYA_vx2wEUen8(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$search$128(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     return-void
 .end method
@@ -297,6 +313,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$DdKJMyDMc1NYXPozIi3iKlN1OGc(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$135()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$EvlyFISDq5Uy1U4dmRcLXIzLTm8(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -329,6 +353,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$FzAWcqHg_EOknZ8rGGMQBlqRx-Q(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$126()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$HIjihmI9B9Oas0x13w7tkDXsR-E(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -341,6 +373,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$99()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$HoIbtNgbvrcAaQM-CN6-xFwj-1M(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$search$146(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     return-void
 .end method
@@ -393,6 +433,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$JwQS3iLWy_wNN4_8FKDiQWndmXo(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$128()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$KTlYehMLaeJFslHYvx9JFD6TiqQ(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -409,10 +457,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$LuKjJFYJzXJu_7Jpt85MPyv4I04(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$LTYlDS999Z_9XLMRFCPIhHbwYQE(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$loadFaqWebPage$127(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$136()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$LmDvAwZXeA_GlUOhW7El5fft0sU(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$133()V
 
     return-void
 .end method
@@ -501,6 +557,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$64()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$Q9c4THzmzwzp0BKxGG9jguWar8M(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$139()V
 
     return-void
 .end method
@@ -659,6 +723,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$baDu4CNiwVqEMwczGbLkO4S68aU(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$129()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$dONs2h2NVi18K6AtCE4mqAyIGbs(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -703,6 +775,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$21()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$f8fWCcTDq6kGf7_haj-ld1wuD-w(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/util/ArrayList;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$loadFaqWebPage$144(Ljava/util/ArrayList;)V
 
     return-void
 .end method
@@ -779,6 +859,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$hCdhznaIGQ6E9rfXJ8sLNQUH_FE(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$130()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$him5TLwREE1ygHiOMCkj6qVO0Zw(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -791,6 +879,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$89()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$j3_zXUDD6HCY_GgSNVUMlBU5_wc(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$loadFaqWebPage$145(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -827,6 +923,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$jdv27w5sy19l-QNyK_X_66xxmJ8(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$127()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$k2XVcQWEjhfYqnZObwzI9GDXJjQ(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -855,6 +959,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$98()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$m6lxAybjNOSdRbWaq_XDSvWmntU(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$141()V
 
     return-void
 .end method
@@ -987,10 +1099,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$r578ig_T--Zikq8QxNpvBlMXqDs(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/util/ArrayList;)V
+.method public static synthetic $r8$lambda$r1tkHsIbJga76MJxWpHmZfWtXN8(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$loadFaqWebPage$126(Ljava/util/ArrayList;)V
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$138()V
 
     return-void
 .end method
@@ -1015,6 +1127,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$107()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$sxiBOrgIXFCNEXT2zTIAq-5hKEg(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$131()V
 
     return-void
 .end method
@@ -1067,6 +1187,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$vmfp-bwEFhlDLRqNKyDW4o533qY(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$132()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$vpuduLOXUv_0bsiQ0kWkRfrcyMI(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -1083,6 +1211,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$x1HS2_3rrBHeuFbRFm-PpkqjzTI(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$142()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$xMlW9O8E8kc6C_35mAVzqcNkRTE(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
@@ -1095,6 +1231,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$49()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$xvXerxpASbpO2Y8OAbZ9KhJ1ir8(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lambda$onCreateSearchArray$137()V
 
     return-void
 .end method
@@ -1134,84 +1278,84 @@
 .method public constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 10651
+    .line 10707
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 10637
+    .line 10693
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->onCreateSearchArray()[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchArray:[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    .line 10638
+    .line 10694
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchArray:Ljava/util/ArrayList;
 
-    .line 10641
+    .line 10697
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->resultNames:Ljava/util/ArrayList;
 
-    .line 10642
+    .line 10698
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
-    .line 10643
+    .line 10699
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchResults:Ljava/util/ArrayList;
 
-    .line 10644
+    .line 10700
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
-    .line 10652
+    .line 10708
     iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->mContext:Landroid/content/Context;
 
-    .line 10654
+    .line 10710
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->updateSearchArray()V
 
     return-void
 .end method
 
-.method static synthetic access$15800(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+.method static synthetic access$16000(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
-    .line 10576
+    .line 10632
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->loadFaqWebPage()V
 
     return-void
 .end method
 
-.method static synthetic access$21102(Lorg/telegram/ui/ProfileActivity$SearchAdapter;[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+.method static synthetic access$21302(Lorg/telegram/ui/ProfileActivity$SearchAdapter;[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
     .locals 0
 
-    .line 10576
+    .line 10632
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchArray:[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     return-object p1
 .end method
 
-.method static synthetic access$21200(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+.method static synthetic access$21400(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
     .locals 0
 
-    .line 10576
+    .line 10632
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->onCreateSearchArray()[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     move-result-object p0
@@ -1219,56 +1363,47 @@
     return-object p0
 .end method
 
-.method static synthetic access$21300(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Ljava/util/ArrayList;
+.method static synthetic access$21500(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 10576
+    .line 10632
     iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     return-object p0
 .end method
 
-.method static synthetic access$21400(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+.method static synthetic access$21600(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
-    .line 10576
+    .line 10632
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->updateSearchArray()V
 
     return-void
 .end method
 
-.method static synthetic access$21500(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Ljava/lang/String;
+.method static synthetic access$21700(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Ljava/lang/String;
     .locals 0
 
-    .line 10576
+    .line 10632
     iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lastSearchString:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method static synthetic access$33300(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Z
+.method static synthetic access$33400(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Z
     .locals 0
 
-    .line 10576
+    .line 10632
     iget-boolean p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
     return p0
 .end method
 
-.method static synthetic access$33400(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Ljava/util/ArrayList;
-    .locals 0
-
-    .line 10576
-    iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
-
-    return-object p0
-.end method
-
 .method static synthetic access$33500(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 10576
-    iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchResults:Ljava/util/ArrayList;
+    .line 10632
+    iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
     return-object p0
 .end method
@@ -1276,16 +1411,25 @@
 .method static synthetic access$33600(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 10576
+    .line 10632
+    iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchResults:Ljava/util/ArrayList;
+
+    return-object p0
+.end method
+
+.method static synthetic access$33700(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Ljava/util/ArrayList;
+    .locals 0
+
+    .line 10632
     iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchArray:Ljava/util/ArrayList;
 
     return-object p0
 .end method
 
-.method static synthetic access$33800(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Lorg/telegram/tgnet/TLRPC$WebPage;
+.method static synthetic access$33900(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)Lorg/telegram/tgnet/TLRPC$WebPage;
     .locals 0
 
-    .line 10576
+    .line 10632
     iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqWebPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     return-object p0
@@ -1294,27 +1438,27 @@
 .method private getNum(Ljava/lang/Object;)I
     .locals 1
 
-    .line 11094
+    .line 11251
     instance-of v0, p1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     if-eqz v0, :cond_0
 
-    .line 11095
+    .line 11252
     check-cast p1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32500(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32600(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
 
     move-result p1
 
     return p1
 
-    .line 11096
+    .line 11253
     :cond_0
     instance-of v0, p1, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
     if-eqz v0, :cond_1
 
-    .line 11097
+    .line 11254
     check-cast p1, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
     iget p1, p1, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->num:I
@@ -1330,7 +1474,7 @@
 .method private isPremiumFeatureAvailable(I)Z
     .locals 4
 
-    .line 10877
+    .line 11034
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1366,7 +1510,7 @@
 
     return v0
 
-    .line 10884
+    .line 11041
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1388,15 +1532,15 @@
     return v1
 .end method
 
-.method private synthetic lambda$loadFaqWebPage$126(Ljava/util/ArrayList;)V
+.method private synthetic lambda$loadFaqWebPage$144(Ljava/util/ArrayList;)V
     .locals 1
 
-    .line 10941
+    .line 11098
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchArray:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 10942
+    .line 11099
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1405,7 +1549,7 @@
 
     iput-object p1, v0, Lorg/telegram/messenger/MessagesController;->faqSearchArray:Ljava/util/ArrayList;
 
-    .line 10943
+    .line 11100
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1416,42 +1560,42 @@
 
     iput-object v0, p1, Lorg/telegram/messenger/MessagesController;->faqWebPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 10944
+    .line 11101
     iget-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
     if-nez p1, :cond_0
 
-    .line 10945
+    .line 11102
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$loadFaqWebPage$127(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$loadFaqWebPage$145(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 13
 
-    .line 10900
+    .line 11057
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$WebPage;
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_8
 
-    .line 10901
+    .line 11058
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 10902
+    .line 11059
     check-cast p1, Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 10903
+    .line 11060
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
     if-eqz v1, :cond_7
 
-    .line 10904
+    .line 11061
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Page;->blocks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1463,7 +1607,7 @@
     :goto_0
     if-ge v2, v1, :cond_6
 
-    .line 10905
+    .line 11062
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Page;->blocks:Ljava/util/ArrayList;
@@ -1474,7 +1618,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 10906
+    .line 11063
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
     if-eqz v4, :cond_4
@@ -1483,7 +1627,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 10909
+    .line 11066
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Page;->blocks:Ljava/util/ArrayList;
@@ -1496,15 +1640,15 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 10910
+    .line 11067
     instance-of v6, v5, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;
 
     if-eqz v6, :cond_0
 
-    .line 10911
+    .line 11068
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;
 
-    .line 10912
+    .line 11069
     iget-object v4, v5, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-static {v4}, Lorg/telegram/ui/ArticleViewer;->getPlainText(Lorg/telegram/tgnet/TLRPC$RichText;)Ljava/lang/CharSequence;
@@ -1515,11 +1659,11 @@
 
     move-result-object v4
 
-    .line 10915
+    .line 11072
     :cond_0
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
-    .line 10916
+    .line 11073
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
@@ -1531,7 +1675,7 @@
     :goto_1
     if-ge v6, v5, :cond_5
 
-    .line 10917
+    .line 11074
     iget-object v7, v3, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1540,22 +1684,22 @@
 
     check-cast v7, Lorg/telegram/tgnet/TLRPC$PageListItem;
 
-    .line 10918
+    .line 11075
     instance-of v8, v7, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;
 
     if-eqz v8, :cond_3
 
-    .line 10919
+    .line 11076
     check-cast v7, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;
 
-    .line 10920
+    .line 11077
     iget-object v8, v7, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-static {v8}, Lorg/telegram/ui/ArticleViewer;->getUrl(Lorg/telegram/tgnet/TLRPC$RichText;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 10921
+    .line 11078
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$TL_pageListItemText;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-static {v7}, Lorg/telegram/ui/ArticleViewer;->getPlainText(Lorg/telegram/tgnet/TLRPC$RichText;)Ljava/lang/CharSequence;
@@ -1566,7 +1710,7 @@
 
     move-result-object v7
 
-    .line 10922
+    .line 11079
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
@@ -1592,7 +1736,7 @@
 
     new-array v11, v11, [Ljava/lang/String;
 
-    .line 10927
+    .line 11084
     sget v12, Lorg/telegram/messenger/R$string;->SettingsSearchFaq:I
 
     invoke-static {v9, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -1608,7 +1752,7 @@
     :cond_2
     new-array v11, v10, [Ljava/lang/String;
 
-    .line 10929
+    .line 11086
     sget v10, Lorg/telegram/messenger/R$string;->SettingsSearchFaq:I
 
     invoke-static {v9, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -1617,7 +1761,7 @@
 
     aput-object v9, v11, v0
 
-    .line 10931
+    .line 11088
     :goto_2
     new-instance v9, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
@@ -1631,7 +1775,7 @@
 
     goto :goto_1
 
-    .line 10934
+    .line 11091
     :cond_4
     instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAnchor;
 
@@ -1644,20 +1788,20 @@
 
     goto/16 :goto_0
 
-    .line 10938
+    .line 11095
     :cond_6
     :goto_4
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqWebPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 10940
+    .line 11097
     :cond_7
-    new-instance p1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda126;
+    new-instance p1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda144;
 
-    invoke-direct {p1, p0, p2}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda126;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/util/ArrayList;)V
+    invoke-direct {p1, p0, p2}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda144;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/util/ArrayList;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 10949
+    .line 11106
     :cond_8
     iput-boolean v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->loadingFaqPage:Z
 
@@ -1667,7 +1811,7 @@
 .method private synthetic lambda$onCreateSearchArray$1()V
     .locals 3
 
-    .line 10712
+    .line 10768
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ChangeNameActivity;
@@ -1686,7 +1830,7 @@
 .method private synthetic lambda$onCreateSearchArray$10()V
     .locals 2
 
-    .line 10737
+    .line 10793
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
@@ -1701,7 +1845,7 @@
 .method private synthetic lambda$onCreateSearchArray$100()V
     .locals 4
 
-    .line 10843
+    .line 10903
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -1720,7 +1864,7 @@
 .method private synthetic lambda$onCreateSearchArray$101()V
     .locals 4
 
-    .line 10844
+    .line 10904
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -1739,7 +1883,7 @@
 .method private synthetic lambda$onCreateSearchArray$102()V
     .locals 4
 
-    .line 10845
+    .line 10905
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -1758,7 +1902,7 @@
 .method private synthetic lambda$onCreateSearchArray$103()V
     .locals 2
 
-    .line 10846
+    .line 10906
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ReactionsDoubleTapManageActivity;
@@ -1773,7 +1917,7 @@
 .method private synthetic lambda$onCreateSearchArray$104()V
     .locals 2
 
-    .line 10848
+    .line 10908
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/FiltersSetupActivity;
@@ -1788,7 +1932,7 @@
 .method private synthetic lambda$onCreateSearchArray$105()V
     .locals 2
 
-    .line 10849
+    .line 10909
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/FiltersSetupActivity;
@@ -1803,7 +1947,7 @@
 .method private synthetic lambda$onCreateSearchArray$106()V
     .locals 3
 
-    .line 10851
+    .line 10911
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PremiumPreviewFragment;
@@ -1820,7 +1964,7 @@
 .method private synthetic lambda$onCreateSearchArray$107()V
     .locals 4
 
-    .line 10852
+    .line 10912
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -1843,7 +1987,7 @@
 .method private synthetic lambda$onCreateSearchArray$108()V
     .locals 5
 
-    .line 10853
+    .line 10913
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -1868,7 +2012,7 @@
 .method private synthetic lambda$onCreateSearchArray$109()V
     .locals 5
 
-    .line 10854
+    .line 10914
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -1893,7 +2037,7 @@
 .method private synthetic lambda$onCreateSearchArray$11()V
     .locals 2
 
-    .line 10738
+    .line 10794
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
@@ -1908,7 +2052,7 @@
 .method private synthetic lambda$onCreateSearchArray$110()V
     .locals 5
 
-    .line 10855
+    .line 10915
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -1933,7 +2077,7 @@
 .method private synthetic lambda$onCreateSearchArray$111()V
     .locals 5
 
-    .line 10856
+    .line 10916
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -1958,7 +2102,7 @@
 .method private synthetic lambda$onCreateSearchArray$112()V
     .locals 5
 
-    .line 10857
+    .line 10917
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -1983,7 +2127,7 @@
 .method private synthetic lambda$onCreateSearchArray$113()V
     .locals 5
 
-    .line 10858
+    .line 10918
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -2008,7 +2152,7 @@
 .method private synthetic lambda$onCreateSearchArray$114()V
     .locals 5
 
-    .line 10859
+    .line 10919
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -2033,7 +2177,7 @@
 .method private synthetic lambda$onCreateSearchArray$115()V
     .locals 5
 
-    .line 10860
+    .line 10920
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -2058,7 +2202,7 @@
 .method private synthetic lambda$onCreateSearchArray$116()V
     .locals 5
 
-    .line 10861
+    .line 10921
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -2083,7 +2227,7 @@
 .method private synthetic lambda$onCreateSearchArray$117()V
     .locals 5
 
-    .line 10862
+    .line 10922
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -2108,7 +2252,7 @@
 .method private synthetic lambda$onCreateSearchArray$118()V
     .locals 5
 
-    .line 10863
+    .line 10923
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -2133,7 +2277,7 @@
 .method private synthetic lambda$onCreateSearchArray$119()V
     .locals 5
 
-    .line 10864
+    .line 10924
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -2158,7 +2302,7 @@
 .method private synthetic lambda$onCreateSearchArray$12()V
     .locals 2
 
-    .line 10739
+    .line 10795
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
@@ -2173,12 +2317,12 @@
 .method private synthetic lambda$onCreateSearchArray$120()V
     .locals 2
 
-    .line 10866
+    .line 10926
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/LanguageSelectActivity;
+    new-instance v1, Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    invoke-direct {v1}, Lorg/telegram/ui/LanguageSelectActivity;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2188,22 +2332,447 @@
 .method private synthetic lambda$onCreateSearchArray$121()V
     .locals 2
 
-    .line 10867
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+    .line 10928
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    new-instance v1, Lorg/telegram/ui/LanguageSelectActivity;
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
 
-    invoke-direct {v1}, Lorg/telegram/ui/LanguageSelectActivity;-><init>()V
+    .line 10929
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/4 v1, 0x3
+
+    .line 10930
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
 
     return-void
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$122()V
+    .locals 3
+
+    .line 10933
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10934
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x1
+
+    .line 10935
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    .line 10936
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$123()V
+    .locals 3
+
+    .line 10939
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10940
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x1
+
+    .line 10941
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const/4 v1, 0x2
+
+    .line 10942
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$124()V
     .locals 2
 
-    .line 10868
+    .line 10945
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10946
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/16 v1, 0x701c
+
+    .line 10947
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$125()V
+    .locals 3
+
+    .line 10950
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10951
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/16 v1, 0x701c
+
+    const/4 v2, 0x1
+
+    .line 10952
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const/16 v1, 0x4004
+
+    .line 10953
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$126()V
+    .locals 3
+
+    .line 10956
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10957
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/16 v1, 0x701c
+
+    const/4 v2, 0x1
+
+    .line 10958
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const/16 v1, 0x2008
+
+    .line 10959
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$127()V
+    .locals 3
+
+    .line 10962
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10963
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/16 v1, 0x701c
+
+    const/4 v2, 0x1
+
+    .line 10964
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const/16 v1, 0x1010
+
+    .line 10965
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$128()V
+    .locals 2
+
+    .line 10968
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10969
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const v1, 0x81e0
+
+    .line 10970
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$129()V
+    .locals 3
+
+    .line 10973
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10974
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const v1, 0x81e0
+
+    const/4 v2, 0x1
+
+    .line 10975
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const/16 v1, 0x20
+
+    .line 10976
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$13()V
+    .locals 2
+
+    .line 10796
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/NotificationsSettingsActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$130()V
+    .locals 3
+
+    .line 10979
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10980
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const v1, 0x81e0
+
+    const/4 v2, 0x1
+
+    .line 10981
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const/16 v1, 0x40
+
+    .line 10982
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$131()V
+    .locals 3
+
+    .line 10985
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10986
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const v1, 0x81e0
+
+    const/4 v2, 0x1
+
+    .line 10987
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const/16 v1, 0x80
+
+    .line 10988
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$132()V
+    .locals 3
+
+    .line 10991
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10992
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const v1, 0x81e0
+
+    const/4 v2, 0x1
+
+    .line 10993
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const/16 v1, 0x100
+
+    .line 10994
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$133()V
+    .locals 3
+
+    .line 10997
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 10998
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const v1, 0x81e0
+
+    const/4 v2, 0x1
+
+    .line 10999
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/LiteModeSettingsActivity;->setExpanded(IZ)V
+
+    const v1, 0x8000
+
+    .line 11000
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$134()V
+    .locals 2
+
+    .line 11003
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 11004
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/16 v1, 0x200
+
+    .line 11005
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$135()V
+    .locals 2
+
+    .line 11008
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 11009
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/16 v1, 0x400
+
+    .line 11010
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$136()V
+    .locals 2
+
+    .line 11013
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 11014
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/16 v1, 0x800
+
+    .line 11015
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToFlags(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$137()V
+    .locals 2
+
+    .line 11018
+    new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
+
+    .line 11019
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    const/4 v1, 0x1
+
+    .line 11020
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->scrollToType(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$138()V
+    .locals 2
+
+    .line 11023
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/LanguageSelectActivity;
@@ -2215,10 +2784,55 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$123()V
+.method private synthetic lambda$onCreateSearchArray$139()V
     .locals 2
 
-    .line 10870
+    .line 11024
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/LanguageSelectActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/LanguageSelectActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$14()V
+    .locals 2
+
+    .line 10797
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/NotificationsSettingsActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$140()V
+    .locals 2
+
+    .line 11025
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/LanguageSelectActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/LanguageSelectActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$141()V
+    .locals 2
+
+    .line 11027
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 v1, 0x0
@@ -2232,10 +2846,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$124()V
+.method private synthetic lambda$onCreateSearchArray$142()V
     .locals 3
 
-    .line 10871
+    .line 11028
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2255,10 +2869,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$125()V
+.method private synthetic lambda$onCreateSearchArray$143()V
     .locals 3
 
-    .line 10872
+    .line 11029
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2278,40 +2892,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$13()V
-    .locals 2
-
-    .line 10740
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
-
-    invoke-direct {v1}, Lorg/telegram/ui/NotificationsSettingsActivity;-><init>()V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$14()V
-    .locals 2
-
-    .line 10741
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
-
-    invoke-direct {v1}, Lorg/telegram/ui/NotificationsSettingsActivity;-><init>()V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
 .method private synthetic lambda$onCreateSearchArray$15()V
     .locals 2
 
-    .line 10742
+    .line 10798
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
@@ -2326,7 +2910,7 @@
 .method private synthetic lambda$onCreateSearchArray$16()V
     .locals 2
 
-    .line 10743
+    .line 10799
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
@@ -2341,7 +2925,7 @@
 .method private synthetic lambda$onCreateSearchArray$17()V
     .locals 2
 
-    .line 10744
+    .line 10800
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
@@ -2356,7 +2940,7 @@
 .method private synthetic lambda$onCreateSearchArray$18()V
     .locals 2
 
-    .line 10745
+    .line 10801
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
@@ -2371,7 +2955,7 @@
 .method private synthetic lambda$onCreateSearchArray$19()V
     .locals 2
 
-    .line 10747
+    .line 10803
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
@@ -2386,7 +2970,7 @@
 .method private synthetic lambda$onCreateSearchArray$2()V
     .locals 3
 
-    .line 10713
+    .line 10769
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ActionIntroActivity;
@@ -2403,7 +2987,81 @@
 .method private synthetic lambda$onCreateSearchArray$20()V
     .locals 2
 
-    .line 10748
+    .line 10804
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/TwoStepVerificationActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/TwoStepVerificationActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$21()V
+    .locals 2
+
+    .line 10806
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->getGlobalTTl()I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    .line 10807
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/AutoDeleteMessagesActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/AutoDeleteMessagesActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    :cond_0
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$22()V
+    .locals 2
+
+    .line 10810
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {}, Lorg/telegram/ui/PasscodeActivity;->determineOpenFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$23()V
+    .locals 2
+
+    .line 10811
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$24()V
+    .locals 2
+
+    .line 10812
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacyUsersActivity;
@@ -2415,10 +3073,27 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$21()V
+.method private synthetic lambda$onCreateSearchArray$25()V
+    .locals 3
+
+    .line 10813
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/SessionsActivity;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lorg/telegram/ui/SessionsActivity;-><init>(I)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$26()V
     .locals 4
 
-    .line 10749
+    .line 10814
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
@@ -2434,10 +3109,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$22()V
+.method private synthetic lambda$onCreateSearchArray$27()V
     .locals 4
 
-    .line 10750
+    .line 10815
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
@@ -2453,10 +3128,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$23()V
+.method private synthetic lambda$onCreateSearchArray$28()V
     .locals 4
 
-    .line 10751
+    .line 10816
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
@@ -2472,10 +3147,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$24()V
+.method private synthetic lambda$onCreateSearchArray$29()V
     .locals 4
 
-    .line 10752
+    .line 10817
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
@@ -2485,149 +3160,6 @@
     const/4 v3, 0x1
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$25()V
-    .locals 4
-
-    .line 10753
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
-
-    const/4 v2, 0x3
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$26()V
-    .locals 4
-
-    .line 10754
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$27()V
-    .locals 3
-
-    .line 10755
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v2, v2}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$28()V
-    .locals 4
-
-    .line 10757
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 10759
-    :try_start_0
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$33000(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/View;->performHapticFeedback(II)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    .line 10761
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    .line 10763
-    :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/BulletinFactory;->createRestrictVoiceMessagesPremiumBulletin()Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
-
-    return-void
-
-    .line 10766
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
-
-    const/16 v2, 0x8
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$29()V
-    .locals 2
-
-    .line 10768
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {}, Lorg/telegram/ui/PasscodeActivity;->determineOpenFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2644,7 +3176,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 10717
+    .line 10773
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v1
@@ -2668,7 +3200,7 @@
     :goto_1
     if-ltz v0, :cond_2
 
-    .line 10723
+    .line 10779
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v2, Lorg/telegram/ui/LoginActivity;
@@ -2682,14 +3214,18 @@
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$30()V
-    .locals 2
+    .locals 4
 
-    .line 10769
+    .line 10818
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/TwoStepVerificationActivity;
+    new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
 
-    invoke-direct {v1}, Lorg/telegram/ui/TwoStepVerificationActivity;-><init>()V
+    const/4 v2, 0x3
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2697,16 +3233,18 @@
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$31()V
-    .locals 3
+    .locals 4
 
-    .line 10770
+    .line 10819
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/SessionsActivity;
+    new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    invoke-direct {v1, v2}, Lorg/telegram/ui/SessionsActivity;-><init>(I)V
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2714,14 +3252,16 @@
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$32()V
-    .locals 2
+    .locals 3
 
-    .line 10771
+    .line 10820
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
+    new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
 
-    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v2, v2}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2729,14 +3269,72 @@
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$33()V
-    .locals 2
+    .locals 4
 
-    .line 10772
+    .line 10822
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
-    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 10824
+    :try_start_0
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$33100(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/View;->performHapticFeedback(II)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    .line 10826
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    .line 10828
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/BulletinFactory;->createRestrictVoiceMessagesPremiumBulletin()Lorg/telegram/ui/Components/Bulletin;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
+
+    return-void
+
+    .line 10831
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/PrivacyControlActivity;
+
+    const/16 v2, 0x8
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2746,7 +3344,7 @@
 .method private synthetic lambda$onCreateSearchArray$34()V
     .locals 2
 
-    .line 10773
+    .line 10833
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
@@ -2759,9 +3357,39 @@
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$35()V
+    .locals 2
+
+    .line 10834
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$36()V
+    .locals 2
+
+    .line 10835
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$37()V
     .locals 3
 
-    .line 10774
+    .line 10836
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/SessionsActivity;
@@ -2775,40 +3403,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$36()V
-    .locals 2
-
-    .line 10775
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
-
-    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$37()V
-    .locals 2
-
-    .line 10776
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
-
-    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
 .method private synthetic lambda$onCreateSearchArray$38()V
     .locals 2
 
-    .line 10777
+    .line 10837
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
@@ -2823,7 +3421,7 @@
 .method private synthetic lambda$onCreateSearchArray$39()V
     .locals 2
 
-    .line 10778
+    .line 10838
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
@@ -2838,16 +3436,16 @@
 .method private synthetic lambda$onCreateSearchArray$4()V
     .locals 2
 
-    .line 10727
+    .line 10783
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$6500(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$UserFull;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$6400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$UserFull;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 10728
+    .line 10784
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ChangeBioActivity;
@@ -2863,7 +3461,7 @@
 .method private synthetic lambda$onCreateSearchArray$40()V
     .locals 2
 
-    .line 10779
+    .line 10839
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
@@ -2876,16 +3474,14 @@
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$41()V
-    .locals 3
+    .locals 2
 
-    .line 10781
+    .line 10840
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/SessionsActivity;
+    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lorg/telegram/ui/SessionsActivity;-><init>(I)V
+    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2893,16 +3489,14 @@
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$42()V
-    .locals 3
+    .locals 2
 
-    .line 10782
+    .line 10841
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/SessionsActivity;
+    new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lorg/telegram/ui/SessionsActivity;-><init>(I)V
+    invoke-direct {v1}, Lorg/telegram/ui/PrivacySettingsActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2912,7 +3506,41 @@
 .method private synthetic lambda$onCreateSearchArray$43()V
     .locals 3
 
-    .line 10783
+    .line 10843
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/SessionsActivity;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lorg/telegram/ui/SessionsActivity;-><init>(I)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$44()V
+    .locals 3
+
+    .line 10844
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/SessionsActivity;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lorg/telegram/ui/SessionsActivity;-><init>(I)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$45()V
+    .locals 3
+
+    .line 10845
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/SessionsActivity;
@@ -2930,45 +3558,15 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$44()V
-    .locals 2
-
-    .line 10785
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
-
-    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$45()V
-    .locals 2
-
-    .line 10786
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
-
-    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
 .method private synthetic lambda$onCreateSearchArray$46()V
     .locals 2
 
-    .line 10787
+    .line 10847
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/CacheControlActivity;
+    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
 
-    invoke-direct {v1}, Lorg/telegram/ui/CacheControlActivity;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2978,12 +3576,12 @@
 .method private synthetic lambda$onCreateSearchArray$47()V
     .locals 2
 
-    .line 10788
+    .line 10848
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/CacheControlActivity;
+    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
 
-    invoke-direct {v1}, Lorg/telegram/ui/CacheControlActivity;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2993,7 +3591,7 @@
 .method private synthetic lambda$onCreateSearchArray$48()V
     .locals 2
 
-    .line 10789
+    .line 10849
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/CacheControlActivity;
@@ -3008,7 +3606,7 @@
 .method private synthetic lambda$onCreateSearchArray$49()V
     .locals 2
 
-    .line 10790
+    .line 10850
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/CacheControlActivity;
@@ -3023,7 +3621,7 @@
 .method private static synthetic lambda$onCreateSearchArray$5(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 10731
+    .line 10787
     invoke-static {p0}, Lorg/telegram/ui/ProfileActivity;->access$7300(Lorg/telegram/ui/ProfileActivity;)V
 
     return-void
@@ -3032,7 +3630,37 @@
 .method private synthetic lambda$onCreateSearchArray$50()V
     .locals 2
 
-    .line 10791
+    .line 10851
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/CacheControlActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$51()V
+    .locals 2
+
+    .line 10852
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-direct {v1}, Lorg/telegram/ui/CacheControlActivity;-><init>()V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreateSearchArray$52()V
+    .locals 2
+
+    .line 10853
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataUsage2Activity;
@@ -3044,10 +3672,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$51()V
+.method private synthetic lambda$onCreateSearchArray$53()V
     .locals 2
 
-    .line 10792
+    .line 10854
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3059,10 +3687,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$52()V
+.method private synthetic lambda$onCreateSearchArray$54()V
     .locals 3
 
-    .line 10793
+    .line 10855
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataAutoDownloadActivity;
@@ -3076,10 +3704,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$53()V
+.method private synthetic lambda$onCreateSearchArray$55()V
     .locals 3
 
-    .line 10794
+    .line 10856
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataAutoDownloadActivity;
@@ -3093,10 +3721,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$54()V
+.method private synthetic lambda$onCreateSearchArray$56()V
     .locals 3
 
-    .line 10795
+    .line 10857
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataAutoDownloadActivity;
@@ -3110,40 +3738,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$55()V
-    .locals 2
-
-    .line 10796
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
-
-    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$56()V
-    .locals 2
-
-    .line 10797
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
-
-    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
 .method private synthetic lambda$onCreateSearchArray$57()V
     .locals 2
 
-    .line 10798
+    .line 10858
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3158,7 +3756,7 @@
 .method private synthetic lambda$onCreateSearchArray$58()V
     .locals 2
 
-    .line 10799
+    .line 10859
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3173,7 +3771,7 @@
 .method private synthetic lambda$onCreateSearchArray$59()V
     .locals 2
 
-    .line 10800
+    .line 10860
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3188,7 +3786,7 @@
 .method private synthetic lambda$onCreateSearchArray$6()V
     .locals 2
 
-    .line 10733
+    .line 10789
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;
@@ -3203,7 +3801,7 @@
 .method private synthetic lambda$onCreateSearchArray$60()V
     .locals 2
 
-    .line 10801
+    .line 10861
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3218,7 +3816,7 @@
 .method private synthetic lambda$onCreateSearchArray$61()V
     .locals 2
 
-    .line 10802
+    .line 10862
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3233,7 +3831,7 @@
 .method private synthetic lambda$onCreateSearchArray$62()V
     .locals 2
 
-    .line 10803
+    .line 10863
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3248,12 +3846,12 @@
 .method private synthetic lambda$onCreateSearchArray$63()V
     .locals 2
 
-    .line 10804
+    .line 10864
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
+    new-instance v1, Lorg/telegram/ui/ProxyListActivity;
 
-    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/ui/ProxyListActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -3263,7 +3861,7 @@
 .method private synthetic lambda$onCreateSearchArray$64()V
     .locals 2
 
-    .line 10805
+    .line 10865
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ProxyListActivity;
@@ -3278,12 +3876,12 @@
 .method private synthetic lambda$onCreateSearchArray$65()V
     .locals 2
 
-    .line 10806
+    .line 10866
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/ProxyListActivity;
+    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
 
-    invoke-direct {v1}, Lorg/telegram/ui/ProxyListActivity;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -3293,7 +3891,7 @@
 .method private synthetic lambda$onCreateSearchArray$66()V
     .locals 2
 
-    .line 10807
+    .line 10867
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3308,7 +3906,7 @@
 .method private synthetic lambda$onCreateSearchArray$67()V
     .locals 2
 
-    .line 10808
+    .line 10868
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3323,7 +3921,7 @@
 .method private synthetic lambda$onCreateSearchArray$68()V
     .locals 2
 
-    .line 10809
+    .line 10869
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3338,7 +3936,7 @@
 .method private synthetic lambda$onCreateSearchArray$69()V
     .locals 2
 
-    .line 10810
+    .line 10870
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
@@ -3353,7 +3951,7 @@
 .method private synthetic lambda$onCreateSearchArray$7()V
     .locals 4
 
-    .line 10734
+    .line 10790
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsCustomSettingsActivity;
@@ -3372,14 +3970,16 @@
 .end method
 
 .method private synthetic lambda$onCreateSearchArray$70()V
-    .locals 2
+    .locals 3
 
-    .line 10811
+    .line 10872
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v1, Lorg/telegram/ui/DataSettingsActivity;
+    new-instance v1, Lorg/telegram/ui/ThemeActivity;
 
-    invoke-direct {v1}, Lorg/telegram/ui/DataSettingsActivity;-><init>()V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lorg/telegram/ui/ThemeActivity;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -3389,7 +3989,7 @@
 .method private synthetic lambda$onCreateSearchArray$71()V
     .locals 3
 
-    .line 10813
+    .line 10873
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3406,24 +4006,7 @@
 .method private synthetic lambda$onCreateSearchArray$72()V
     .locals 3
 
-    .line 10814
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/ThemeActivity;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lorg/telegram/ui/ThemeActivity;-><init>(I)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$73()V
-    .locals 3
-
-    .line 10815
+    .line 10874
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/WallpapersListActivity;
@@ -3437,10 +4020,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$74()V
+.method private synthetic lambda$onCreateSearchArray$73()V
     .locals 3
 
-    .line 10816
+    .line 10875
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/WallpapersListActivity;
@@ -3454,10 +4037,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$75()V
+.method private synthetic lambda$onCreateSearchArray$74()V
     .locals 3
 
-    .line 10817
+    .line 10876
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/WallpapersListActivity;
@@ -3471,10 +4054,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateSearchArray$76()V
+.method private synthetic lambda$onCreateSearchArray$75()V
     .locals 3
 
-    .line 10818
+    .line 10877
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3488,10 +4071,27 @@
     return-void
 .end method
 
+.method private synthetic lambda$onCreateSearchArray$76()V
+    .locals 3
+
+    .line 10878
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/ThemeActivity;
+
+    const/4 v2, 0x3
+
+    invoke-direct {v1, v2}, Lorg/telegram/ui/ThemeActivity;-><init>(I)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
 .method private synthetic lambda$onCreateSearchArray$77()V
     .locals 3
 
-    .line 10819
+    .line 10879
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3508,12 +4108,12 @@
 .method private synthetic lambda$onCreateSearchArray$78()V
     .locals 3
 
-    .line 10820
+    .line 10880
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x0
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ThemeActivity;-><init>(I)V
 
@@ -3525,7 +4125,7 @@
 .method private synthetic lambda$onCreateSearchArray$79()V
     .locals 3
 
-    .line 10821
+    .line 10881
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3542,7 +4142,7 @@
 .method private synthetic lambda$onCreateSearchArray$8()V
     .locals 5
 
-    .line 10735
+    .line 10791
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsCustomSettingsActivity;
@@ -3565,7 +4165,7 @@
 .method private synthetic lambda$onCreateSearchArray$80()V
     .locals 3
 
-    .line 10822
+    .line 10882
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3582,7 +4182,7 @@
 .method private synthetic lambda$onCreateSearchArray$81()V
     .locals 3
 
-    .line 10823
+    .line 10883
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3599,24 +4199,7 @@
 .method private synthetic lambda$onCreateSearchArray$82()V
     .locals 3
 
-    .line 10824
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    new-instance v1, Lorg/telegram/ui/ThemeActivity;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lorg/telegram/ui/ThemeActivity;-><init>(I)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$onCreateSearchArray$83()V
-    .locals 3
-
-    .line 10825
+    .line 10884
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3630,10 +4213,27 @@
     return-void
 .end method
 
+.method private synthetic lambda$onCreateSearchArray$83()V
+    .locals 3
+
+    .line 10885
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    new-instance v1, Lorg/telegram/ui/ThemeActivity;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lorg/telegram/ui/ThemeActivity;-><init>(I)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
 .method private synthetic lambda$onCreateSearchArray$84()V
     .locals 3
 
-    .line 10826
+    .line 10886
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3650,7 +4250,7 @@
 .method private synthetic lambda$onCreateSearchArray$85()V
     .locals 3
 
-    .line 10827
+    .line 10887
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3667,7 +4267,7 @@
 .method private synthetic lambda$onCreateSearchArray$86()V
     .locals 3
 
-    .line 10828
+    .line 10888
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3684,7 +4284,7 @@
 .method private synthetic lambda$onCreateSearchArray$87()V
     .locals 3
 
-    .line 10829
+    .line 10889
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3701,7 +4301,7 @@
 .method private synthetic lambda$onCreateSearchArray$88()V
     .locals 3
 
-    .line 10830
+    .line 10890
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3718,7 +4318,7 @@
 .method private synthetic lambda$onCreateSearchArray$89()V
     .locals 3
 
-    .line 10831
+    .line 10891
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3735,7 +4335,7 @@
 .method private synthetic lambda$onCreateSearchArray$9()V
     .locals 5
 
-    .line 10736
+    .line 10792
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsCustomSettingsActivity;
@@ -3758,7 +4358,7 @@
 .method private synthetic lambda$onCreateSearchArray$90()V
     .locals 3
 
-    .line 10832
+    .line 10892
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3775,7 +4375,7 @@
 .method private synthetic lambda$onCreateSearchArray$91()V
     .locals 3
 
-    .line 10833
+    .line 10893
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
@@ -3792,7 +4392,7 @@
 .method private synthetic lambda$onCreateSearchArray$92()V
     .locals 4
 
-    .line 10835
+    .line 10895
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -3811,7 +4411,7 @@
 .method private synthetic lambda$onCreateSearchArray$93()V
     .locals 4
 
-    .line 10836
+    .line 10896
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -3830,7 +4430,7 @@
 .method private synthetic lambda$onCreateSearchArray$94()V
     .locals 4
 
-    .line 10837
+    .line 10897
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -3849,7 +4449,7 @@
 .method private synthetic lambda$onCreateSearchArray$95()V
     .locals 4
 
-    .line 10838
+    .line 10898
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -3868,7 +4468,7 @@
 .method private synthetic lambda$onCreateSearchArray$96()V
     .locals 3
 
-    .line 10839
+    .line 10899
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ArchivedStickersActivity;
@@ -3885,7 +4485,7 @@
 .method private synthetic lambda$onCreateSearchArray$97()V
     .locals 3
 
-    .line 10840
+    .line 10900
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/ArchivedStickersActivity;
@@ -3902,7 +4502,7 @@
 .method private synthetic lambda$onCreateSearchArray$98()V
     .locals 4
 
-    .line 10841
+    .line 10901
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -3921,7 +4521,7 @@
 .method private synthetic lambda$onCreateSearchArray$99()V
     .locals 4
 
-    .line 10842
+    .line 10902
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/StickersActivity;
@@ -3937,10 +4537,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$search$128(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.method private synthetic lambda$search$146(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 2
 
-    .line 11204
+    .line 11361
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lastSearchString:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3951,16 +4551,16 @@
 
     return-void
 
-    .line 11207
+    .line 11364
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
     if-nez p1, :cond_1
 
-    .line 11208
+    .line 11365
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
 
     move-result-object p1
 
@@ -3972,10 +4572,10 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
-    .line 11209
+    .line 11366
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
 
     move-result-object p1
 
@@ -3994,25 +4594,25 @@
     :cond_1
     const/4 p1, 0x1
 
-    .line 11211
+    .line 11368
     iput-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
-    .line 11212
+    .line 11369
     iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
-    .line 11213
+    .line 11370
     iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchResults:Ljava/util/ArrayList;
 
-    .line 11214
+    .line 11371
     iput-object p4, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->resultNames:Ljava/util/ArrayList;
 
-    .line 11215
+    .line 11372
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 11216
+    .line 11373
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
 
     move-result-object p1
 
@@ -4027,22 +4627,22 @@
     return-void
 .end method
 
-.method private synthetic lambda$search$129(Ljava/lang/String;)V
+.method private synthetic lambda$search$147(Ljava/lang/String;)V
     .locals 19
 
     move-object/from16 v6, p0
 
-    .line 11119
+    .line 11276
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 11120
+    .line 11277
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 11121
+    .line 11278
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
@@ -4051,19 +4651,19 @@
 
     move-object/from16 v2, p1
 
-    .line 11122
+    .line 11279
     invoke-virtual {v2, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 11123
+    .line 11280
     array-length v7, v1
 
     new-array v7, v7, [Ljava/lang/String;
 
     const/4 v9, 0x0
 
-    .line 11124
+    .line 11281
     :goto_0
     array-length v10, v1
 
@@ -4071,7 +4671,7 @@
 
     if-ge v9, v10, :cond_1
 
-    .line 11125
+    .line 11282
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v10
@@ -4084,7 +4684,7 @@
 
     aput-object v10, v7, v9
 
-    .line 11126
+    .line 11283
     aget-object v10, v7, v9
 
     aget-object v12, v1, v9
@@ -4095,7 +4695,7 @@
 
     if-eqz v10, :cond_0
 
-    .line 11127
+    .line 11284
     aput-object v11, v7, v9
 
     :cond_0
@@ -4106,24 +4706,22 @@
     :cond_1
     const/4 v9, 0x0
 
-    .line 11131
+    .line 11288
     :goto_1
     iget-object v10, v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchArray:[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     array-length v12, v10
 
-    const-string v14, "windowBackgroundWhiteBlueText4"
-
     if-ge v9, v12, :cond_b
 
-    .line 11132
+    .line 11289
     aget-object v10, v10, v9
 
     if-nez v10, :cond_2
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
-    .line 11136
+    .line 11293
     :cond_2
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -4131,32 +4729,32 @@
 
     invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v10}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32900(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)Ljava/lang/String;
+    invoke-static {v10}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$33000(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v15}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v12, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v12
 
-    move-object/from16 v16, v11
+    move-object v15, v11
 
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
-    .line 11138
+    .line 11295
     :goto_2
     array-length v8, v1
 
-    if-ge v15, v8, :cond_a
+    if-ge v14, v8, :cond_a
 
-    .line 11139
-    aget-object v8, v1, v15
+    .line 11296
+    aget-object v8, v1, v14
 
     invoke-virtual {v8}, Ljava/lang/String;->length()I
 
@@ -4164,10 +4762,10 @@
 
     if-eqz v8, :cond_5
 
-    .line 11140
-    aget-object v8, v1, v15
+    .line 11297
+    aget-object v8, v1, v14
 
-    .line 11141
+    .line 11298
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -4186,15 +4784,15 @@
 
     if-gez v11, :cond_3
 
-    .line 11142
-    aget-object v17, v7, v15
+    .line 11299
+    aget-object v16, v7, v14
 
-    if-eqz v17, :cond_3
+    if-eqz v16, :cond_3
 
-    .line 11143
-    aget-object v8, v7, v15
+    .line 11300
+    aget-object v8, v7, v14
 
-    .line 11144
+    .line 11301
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -4214,65 +4812,60 @@
     :cond_3
     if-ltz v11, :cond_a
 
-    if-nez v16, :cond_4
+    if-nez v15, :cond_4
 
-    .line 11148
-    new-instance v13, Landroid/text/SpannableStringBuilder;
+    .line 11305
+    new-instance v15, Landroid/text/SpannableStringBuilder;
 
-    invoke-static {v10}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32900(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)Ljava/lang/String;
+    invoke-static {v10}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$33000(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v13
 
-    invoke-direct {v13, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v15, v13}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    goto :goto_3
-
+    .line 11307
     :cond_4
-    move-object/from16 v13, v16
+    new-instance v13, Landroid/text/style/ForegroundColorSpan;
 
-    .line 11150
-    :goto_3
-    new-instance v2, Landroid/text/style/ForegroundColorSpan;
+    iget-object v2, v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    move-object/from16 v18, v12
+    move-object/from16 v17, v12
 
-    iget-object v12, v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
-    invoke-virtual {v12, v14}, Lorg/telegram/ui/ProfileActivity;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v2, v12}, Lorg/telegram/ui/ProfileActivity;->getThemedColor(I)I
 
-    move-result v12
+    move-result v2
 
-    invoke-direct {v2, v12}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+    invoke-direct {v13, v2}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
 
     invoke-virtual {v8}, Ljava/lang/String;->length()I
 
-    move-result v8
+    move-result v2
 
-    add-int/2addr v8, v11
+    add-int/2addr v2, v11
 
-    const/16 v12, 0x21
+    const/16 v8, 0x21
 
-    invoke-virtual {v13, v2, v11, v8, v12}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v15, v13, v11, v2, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_5
-    move-object/from16 v18, v12
+    move-object/from16 v17, v12
 
-    move-object/from16 v13, v16
+    :goto_3
+    if-eqz v15, :cond_9
 
-    :goto_4
-    if-eqz v13, :cond_9
-
-    .line 11155
+    .line 11312
     array-length v2, v1
 
     add-int/lit8 v2, v2, -0x1
 
-    if-ne v15, v2, :cond_9
+    if-ne v14, v2, :cond_9
 
-    .line 11156
-    invoke-static {v10}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32400(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+    .line 11313
+    invoke-static {v10}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32500(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
 
     move-result v2
 
@@ -4284,12 +4877,12 @@
 
     const/4 v8, 0x0
 
-    :goto_5
+    :goto_4
     const/4 v11, 0x5
 
     if-ge v8, v11, :cond_7
 
-    .line 11159
+    .line 11316
     invoke-static {v8}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v11
@@ -4302,42 +4895,40 @@
 
     move v2, v8
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_6
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_7
-    :goto_6
+    :goto_5
     if-gez v2, :cond_8
 
-    goto :goto_7
+    goto :goto_6
 
-    .line 11168
+    .line 11325
     :cond_8
     invoke-virtual {v3, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 11169
-    invoke-virtual {v5, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 11326
+    invoke-virtual {v5, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_9
-    :goto_7
-    add-int/lit8 v15, v15, 0x1
+    :goto_6
+    add-int/lit8 v14, v14, 0x1
 
     move-object/from16 v2, p1
 
-    move-object/from16 v16, v13
-
-    move-object/from16 v12, v18
+    move-object/from16 v12, v17
 
     const/4 v11, 0x0
 
     goto/16 :goto_2
 
     :cond_a
-    :goto_8
+    :goto_7
     add-int/lit8 v9, v9, 0x1
 
     move-object/from16 v2, p1
@@ -4346,13 +4937,13 @@
 
     goto/16 :goto_1
 
-    .line 11173
+    .line 11330
     :cond_b
     iget-object v2, v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqWebPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     if-eqz v2, :cond_11
 
-    .line 11174
+    .line 11331
     iget-object v2, v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchArray:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -4361,10 +4952,10 @@
 
     const/4 v8, 0x0
 
-    :goto_9
+    :goto_8
     if-ge v8, v2, :cond_11
 
-    .line 11175
+    .line 11332
     iget-object v9, v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchArray:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4373,7 +4964,7 @@
 
     check-cast v9, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
-    .line 11176
+    .line 11333
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -4396,13 +4987,13 @@
 
     const/4 v12, 0x0
 
-    .line 11178
-    :goto_a
+    .line 11335
+    :goto_9
     array-length v13, v1
 
     if-ge v11, v13, :cond_10
 
-    .line 11179
+    .line 11336
     aget-object v13, v1, v11
 
     invoke-virtual {v13}, Ljava/lang/String;->length()I
@@ -4411,148 +5002,145 @@
 
     if-eqz v13, :cond_e
 
-    .line 11180
+    .line 11337
     aget-object v13, v1, v11
 
-    .line 11181
-    new-instance v15, Ljava/lang/StringBuilder;
+    .line 11338
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v10, v15}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v10, v14}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v15
+    move-result v14
 
-    if-gez v15, :cond_c
+    if-gez v14, :cond_c
 
-    .line 11182
-    aget-object v16, v7, v11
+    .line 11339
+    aget-object v15, v7, v11
 
-    if-eqz v16, :cond_c
+    if-eqz v15, :cond_c
 
-    .line 11183
+    .line 11340
     aget-object v13, v7, v11
 
-    .line 11184
-    new-instance v15, Ljava/lang/StringBuilder;
+    .line 11341
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v10, v15}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v10, v14}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v15
+    move-result v14
 
     :cond_c
-    if-ltz v15, :cond_10
+    if-ltz v14, :cond_10
 
     if-nez v12, :cond_d
 
-    .line 11188
+    .line 11345
     new-instance v12, Landroid/text/SpannableStringBuilder;
 
-    move-object/from16 v16, v0
+    iget-object v15, v9, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->title:Ljava/lang/String;
 
-    iget-object v0, v9, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->title:Ljava/lang/String;
+    invoke-direct {v12, v15}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    invoke-direct {v12, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
-
-    goto :goto_b
-
+    .line 11347
     :cond_d
-    move-object/from16 v16, v0
+    new-instance v15, Landroid/text/style/ForegroundColorSpan;
 
-    .line 11190
-    :goto_b
-    new-instance v0, Landroid/text/style/ForegroundColorSpan;
+    move-object/from16 v17, v0
+
+    iget-object v0, v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     move/from16 v18, v2
 
-    iget-object v2, v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
-    invoke-virtual {v2, v14}, Lorg/telegram/ui/ProfileActivity;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/ProfileActivity;->getThemedColor(I)I
 
-    move-result v2
+    move-result v0
 
-    invoke-direct {v0, v2}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+    invoke-direct {v15, v0}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
 
     invoke-virtual {v13}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v0
 
-    add-int/2addr v2, v15
+    add-int/2addr v0, v14
 
-    const/16 v13, 0x21
+    const/16 v2, 0x21
 
-    invoke-virtual {v12, v0, v15, v2, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v12, v15, v14, v0, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_c
+    goto :goto_a
 
     :cond_e
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
     move/from16 v18, v2
 
-    const/16 v13, 0x21
+    const/16 v2, 0x21
 
-    :goto_c
+    :goto_a
     if-eqz v12, :cond_f
 
-    .line 11195
+    .line 11352
     array-length v0, v1
 
     add-int/lit8 v0, v0, -0x1
 
     if-ne v11, v0, :cond_f
 
-    .line 11196
+    .line 11353
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 11197
+    .line 11354
     invoke-virtual {v5, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_f
     add-int/lit8 v11, v11, 0x1
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
     move/from16 v2, v18
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_10
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
     move/from16 v18, v2
 
-    const/16 v13, 0x21
+    const/16 v2, 0x21
 
     add-int/lit8 v8, v8, 0x1
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
     move/from16 v2, v18
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
-    .line 11203
+    .line 11360
     :cond_11
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda125;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda143;
 
     move-object v0, v7
 
@@ -4560,7 +5148,7 @@
 
     move-object/from16 v2, p1
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda125;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda143;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -4570,12 +5158,12 @@
 .method private synthetic lambda$updateSearchArray$0(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 10699
+    .line 10755
     invoke-direct {p0, p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->getNum(Ljava/lang/Object;)I
 
     move-result p1
 
-    .line 10700
+    .line 10756
     invoke-direct {p0, p2}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->getNum(Ljava/lang/Object;)I
 
     move-result p2
@@ -4602,7 +5190,7 @@
 .method private loadFaqWebPage()V
     .locals 3
 
-    .line 10888
+    .line 11045
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -4615,7 +5203,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 10890
+    .line 11047
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchArray:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -4628,7 +5216,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 10892
+    .line 11049
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqWebPage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
@@ -4643,15 +5231,15 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 10895
+    .line 11052
     iput-boolean v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->loadingFaqPage:Z
 
-    .line 10896
+    .line 11053
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getWebPage;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getWebPage;-><init>()V
 
-    .line 10897
+    .line 11054
     sget v1, Lorg/telegram/messenger/R$string;->TelegramFaqUrl:I
 
     const-string v2, "TelegramFaqUrl"
@@ -4664,19 +5252,19 @@
 
     const/4 v1, 0x0
 
-    .line 10898
+    .line 11055
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getWebPage;->hash:I
 
-    .line 10899
+    .line 11056
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
 
-    new-instance v2, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda129;
+    new-instance v2, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda147;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda129;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda147;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -4690,25 +5278,25 @@
 
     move-object/from16 v9, p0
 
-    const/16 v0, 0x7d
+    const/16 v0, 0x8f
 
     new-array v10, v0, [Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    .line 10711
+    .line 10767
     new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     sget v0, Lorg/telegram/messenger/R$string;->EditName:I
 
     const-string v1, "EditName"
 
-    .line 10712
+    .line 10768
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda50;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda59;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda50;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda59;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0x1f4
 
@@ -4730,14 +5318,14 @@
 
     const-string v1, "ChangePhoneNumber"
 
-    .line 10713
+    .line 10769
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda96;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda109;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda96;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda109;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0x1f5
 
@@ -4757,14 +5345,14 @@
 
     const-string v1, "AddAnotherAccount"
 
-    .line 10714
+    .line 10770
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda57;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda66;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda57;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda66;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0x1f6
 
@@ -4784,14 +5372,14 @@
 
     const-string v1, "UserBio"
 
-    .line 10726
+    .line 10782
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda45;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda53;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda45;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda53;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0x1f7
 
@@ -4809,16 +5397,16 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->AddPhoto:I
 
-    .line 10731
+    .line 10787
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     iget-object v0, v9, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda127;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda145;
 
-    invoke-direct {v5, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda127;-><init>(Lorg/telegram/ui/ProfileActivity;)V
+    invoke-direct {v5, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda145;-><init>(Lorg/telegram/ui/ProfileActivity;)V
 
     const/16 v2, 0x1f8
 
@@ -4836,16 +5424,16 @@
 
     const-string v7, "NotificationsAndSounds"
 
-    .line 10733
+    .line 10789
     invoke-static {v7, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     sget v16, Lorg/telegram/messenger/R$drawable;->msg_notifications:I
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda31;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda36;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda31;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda36;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/4 v2, 0x1
 
@@ -4865,7 +5453,7 @@
 
     const-string v1, "NotificationsPrivateChats"
 
-    .line 10734
+    .line 10790
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -4874,9 +5462,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda38;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda46;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda46;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/4 v2, 0x2
 
@@ -4898,7 +5486,7 @@
 
     const-string v1, "NotificationsGroups"
 
-    .line 10735
+    .line 10791
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -4907,9 +5495,9 @@
 
     move-result-object v4
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda122;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda140;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda122;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda140;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/4 v2, 0x3
 
@@ -4935,7 +5523,7 @@
 
     const-string v1, "NotificationsChannels"
 
-    .line 10736
+    .line 10792
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -4972,7 +5560,7 @@
 
     const-string v1, "VoipNotificationSettings"
 
-    .line 10737
+    .line 10793
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -4981,9 +5569,9 @@
 
     move-result-object v5
 
-    new-instance v4, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda121;
+    new-instance v4, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda139;
 
-    invoke-direct {v4, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda121;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v4, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda139;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/4 v2, 0x5
 
@@ -5017,7 +5605,7 @@
 
     const-string v1, "BadgeNumber"
 
-    .line 10738
+    .line 10794
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5026,9 +5614,9 @@
 
     move-result-object v5
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda123;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda141;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda123;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda141;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/4 v2, 0x6
 
@@ -5056,7 +5644,7 @@
 
     const-string v1, "InAppNotifications"
 
-    .line 10739
+    .line 10795
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5065,9 +5653,9 @@
 
     move-result-object v5
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda69;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda79;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda69;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda79;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/4 v2, 0x7
 
@@ -5095,7 +5683,7 @@
 
     const-string v1, "ContactJoined"
 
-    .line 10740
+    .line 10796
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5104,9 +5692,9 @@
 
     move-result-object v5
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda84;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda95;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda84;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda95;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0x8
 
@@ -5136,7 +5724,7 @@
 
     const-string v1, "PinnedMessages"
 
-    .line 10741
+    .line 10797
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5145,9 +5733,9 @@
 
     move-result-object v5
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda47;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda55;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda47;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda55;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0x9
 
@@ -5175,7 +5763,7 @@
 
     const-string v1, "ResetAllNotifications"
 
-    .line 10742
+    .line 10798
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5184,9 +5772,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda107;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda120;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda107;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda120;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0xa
 
@@ -5206,7 +5794,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->NotificationsService:I
 
-    .line 10743
+    .line 10799
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -5215,9 +5803,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda103;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda116;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda103;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda116;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0xb
 
@@ -5235,7 +5823,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->NotificationsServiceConnection:I
 
-    .line 10744
+    .line 10800
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -5244,9 +5832,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda19;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda22;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0xc
 
@@ -5264,7 +5852,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->RepeatNotifications:I
 
-    .line 10745
+    .line 10801
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -5273,9 +5861,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda102;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda115;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda102;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda115;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0xd
 
@@ -5295,22 +5883,22 @@
 
     const-string v14, "PrivacySettings"
 
-    .line 10747
+    .line 10803
     invoke-static {v14, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    sget v7, Lorg/telegram/messenger/R$drawable;->msg_secret:I
+    sget v16, Lorg/telegram/messenger/R$drawable;->msg_secret:I
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda23;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda26;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const/16 v2, 0x64
 
     move-object v0, v6
 
-    move v4, v7
+    move/from16 v4, v16
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;ILjava/lang/Runnable;)V
 
@@ -5318,13 +5906,13 @@
 
     aput-object v6, v10, v0
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    sget v0, Lorg/telegram/messenger/R$string;->BlockedUsers:I
+    sget v0, Lorg/telegram/messenger/R$string;->TwoStepVerification:I
 
-    const-string v1, "BlockedUsers"
+    const-string v1, "TwoStepVerification"
 
-    .line 10748
+    .line 10804
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5333,62 +5921,60 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda39;
+    sget v17, Lorg/telegram/messenger/R$drawable;->msg2_secret:I
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda47;
 
-    const/16 v2, 0x65
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda47;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    move-object/from16 v0, v16
+    const/16 v2, 0x6d
+
+    move-object v0, v7
 
     move-object/from16 v1, p0
 
-    move v5, v7
+    move/from16 v5, v17
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
     const/16 v0, 0x13
 
-    aput-object v16, v10, v0
+    aput-object v7, v10, v0
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    sget v0, Lorg/telegram/messenger/R$string;->PrivacyPhone:I
+    sget v0, Lorg/telegram/messenger/R$string;->AutoDeleteMessages:I
 
-    const-string v1, "PrivacyPhone"
-
-    .line 10749
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    .line 10805
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v14, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda72;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda82;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda72;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda82;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const/16 v2, 0x69
+    const/16 v2, 0x7c
 
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, p0
+    move-object v0, v7
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
     const/16 v0, 0x14
 
-    aput-object v16, v10, v0
+    aput-object v7, v10, v0
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    sget v0, Lorg/telegram/messenger/R$string;->PrivacyLastSeen:I
+    sget v0, Lorg/telegram/messenger/R$string;->Passcode:I
 
-    const-string v1, "PrivacyLastSeen"
+    const-string v1, "Passcode"
 
-    .line 10750
+    .line 10810
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5397,13 +5983,13 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda56;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda65;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda56;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda65;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const/16 v2, 0x66
+    const/16 v2, 0x6c
 
-    move-object/from16 v0, v16
+    move-object v0, v7
 
     move-object/from16 v1, p0
 
@@ -5411,15 +5997,190 @@
 
     const/16 v0, 0x15
 
-    aput-object v16, v10, v0
+    aput-object v7, v10, v0
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    .line 10811
+    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->hasEmailLogin:Z
+
+    const/16 v19, 0x0
+
+    if-eqz v0, :cond_0
+
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x7d
+
+    sget v0, Lorg/telegram/messenger/R$string;->EmailLogin:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v14, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda39;
+
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    const-string v4, "emailLoginRow"
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, p0
+
+    move/from16 v6, v17
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    goto :goto_0
+
+    :cond_0
+    move-object/from16 v20, v19
+
+    :goto_0
+    const/16 v0, 0x16
+
+    aput-object v20, v10, v0
+
+    const/16 v7, 0x17
+
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x65
+
+    sget v0, Lorg/telegram/messenger/R$string;->BlockedUsers:I
+
+    const-string v1, "BlockedUsers"
+
+    .line 10812
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v14, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda111;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda111;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, p0
+
+    move/from16 v5, v16
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v20, v10, v7
+
+    const/16 v6, 0x18
+
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x6e
+
+    sget v0, Lorg/telegram/messenger/R$string;->SessionsTitle:I
+
+    const-string v1, "SessionsTitle"
+
+    .line 10813
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda21;
+
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v7
+
+    move-object/from16 v1, p0
+
+    move/from16 v4, v17
+
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v7, v10, v6
+
+    const/16 v7, 0x19
+
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x69
+
+    sget v0, Lorg/telegram/messenger/R$string;->PrivacyPhone:I
+
+    const-string v1, "PrivacyPhone"
+
+    .line 10814
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v14, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda33;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda33;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, p0
+
+    move/from16 v5, v16
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v20, v10, v7
+
+    const/16 v7, 0x1a
+
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x66
+
+    sget v0, Lorg/telegram/messenger/R$string;->PrivacyLastSeen:I
+
+    const-string v1, "PrivacyLastSeen"
+
+    .line 10815
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v14, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda113;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda113;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, p0
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v20, v10, v7
+
+    const/16 v7, 0x1b
+
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x67
 
     sget v0, Lorg/telegram/messenger/R$string;->PrivacyProfilePhoto:I
 
     const-string v1, "PrivacyProfilePhoto"
 
-    .line 10751
+    .line 10816
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5428,29 +6189,29 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda34;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda10;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const/16 v2, 0x67
-
-    move-object/from16 v0, v16
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    const/16 v0, 0x16
+    aput-object v20, v10, v7
 
-    aput-object v16, v10, v0
+    const/16 v7, 0x1c
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x68
 
     sget v0, Lorg/telegram/messenger/R$string;->PrivacyForwards:I
 
     const-string v1, "PrivacyForwards"
 
-    .line 10752
+    .line 10817
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5459,29 +6220,29 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda98;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda102;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda98;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda102;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const/16 v2, 0x68
-
-    move-object/from16 v0, v16
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    const/16 v0, 0x17
+    aput-object v20, v10, v7
 
-    aput-object v16, v10, v0
+    const/16 v7, 0x1d
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x7a
 
     sget v0, Lorg/telegram/messenger/R$string;->PrivacyP2P:I
 
     const-string v1, "PrivacyP2P"
 
-    .line 10753
+    .line 10818
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5490,29 +6251,29 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda18;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda14;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const/16 v2, 0x7a
-
-    move-object/from16 v0, v16
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    const/16 v0, 0x18
+    aput-object v20, v10, v7
 
-    aput-object v16, v10, v0
+    const/16 v7, 0x1e
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x6a
 
     sget v6, Lorg/telegram/messenger/R$string;->Calls:I
 
     const-string v5, "Calls"
 
-    .line 10754
+    .line 10819
     invoke-static {v5, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5521,39 +6282,39 @@
 
     move-result-object v4
 
-    new-instance v2, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda28;
+    new-instance v1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda117;
 
-    invoke-direct {v2, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v1, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda117;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const/16 v17, 0x6a
+    move-object/from16 v0, v20
 
-    move-object/from16 v0, v16
+    move-object/from16 v21, v1
 
-    move-object/from16 v19, v2
-
-    move/from16 v2, v17
+    move-object/from16 v1, p0
 
     move-object v13, v5
 
-    move v5, v7
+    move/from16 v5, v16
 
     move v12, v6
 
-    move-object/from16 v6, v19
+    move-object/from16 v6, v21
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    const/16 v0, 0x19
+    aput-object v20, v10, v7
 
-    aput-object v16, v10, v0
+    const/16 v7, 0x1f
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x6b
 
     sget v0, Lorg/telegram/messenger/R$string;->GroupsAndChannels:I
 
     const-string v1, "GroupsAndChannels"
 
-    .line 10755
+    .line 10820
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5562,29 +6323,29 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda100;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda40;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda100;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda40;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const/16 v2, 0x6b
-
-    move-object/from16 v0, v16
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    const/16 v0, 0x1a
+    aput-object v20, v10, v7
 
-    aput-object v16, v10, v0
+    const/16 v7, 0x20
 
-    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x7b
 
     sget v0, Lorg/telegram/messenger/R$string;->PrivacyVoiceMessages:I
 
     const-string v1, "PrivacyVoiceMessages"
 
-    .line 10756
+    .line 10821
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5593,118 +6354,21 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda8;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda48;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda48;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const/16 v2, 0x7b
-
-    move-object/from16 v0, v16
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    const/16 v0, 0x1b
+    aput-object v20, v10, v7
 
-    aput-object v16, v10, v0
+    const/16 v16, 0x21
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
-    sget v0, Lorg/telegram/messenger/R$string;->Passcode:I
-
-    const-string v1, "Passcode"
-
-    .line 10768
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v14, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    sget v16, Lorg/telegram/messenger/R$drawable;->msg2_secret:I
-
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda90;
-
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda90;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    const/16 v2, 0x6c
-
-    move-object v0, v7
-
-    move-object/from16 v1, p0
-
-    move/from16 v5, v16
-
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    const/16 v0, 0x1c
-
-    aput-object v7, v10, v0
-
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
-    sget v0, Lorg/telegram/messenger/R$string;->TwoStepVerification:I
-
-    const-string v1, "TwoStepVerification"
-
-    .line 10769
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v14, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda12;
-
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    const/16 v2, 0x6d
-
-    move-object v0, v7
-
-    move-object/from16 v1, p0
-
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    const/16 v0, 0x1d
-
-    aput-object v7, v10, v0
-
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
-    sget v0, Lorg/telegram/messenger/R$string;->SessionsTitle:I
-
-    const-string v1, "SessionsTitle"
-
-    .line 10770
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda104;
-
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda104;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    const/16 v2, 0x6e
-
-    move-object v0, v6
-
-    move-object/from16 v1, p0
-
-    move/from16 v4, v16
-
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;ILjava/lang/Runnable;)V
-
-    const/16 v0, 0x1e
-
-    aput-object v6, v10, v0
-
-    .line 10771
+    .line 10833
     iget-object v0, v9, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -5713,9 +6377,7 @@
 
     iget-boolean v0, v0, Lorg/telegram/messenger/MessagesController;->autoarchiveAvailable:Z
 
-    const/16 v19, 0x0
-
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -5733,9 +6395,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda35;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda50;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda50;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "newChatsRow"
 
@@ -5743,23 +6405,21 @@
 
     move-object/from16 v1, p0
 
-    move/from16 v6, v16
+    move/from16 v6, v17
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
+    :cond_1
     move-object/from16 v20, v19
 
-    :goto_0
-    const/16 v0, 0x1f
+    :goto_1
+    aput-object v20, v10, v16
 
-    aput-object v20, v10, v0
+    const/16 v16, 0x22
 
-    const/16 v20, 0x20
-
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x70
 
@@ -5767,7 +6427,7 @@
 
     const-string v1, "DeleteAccountIfAwayFor2"
 
-    .line 10772
+    .line 10834
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5776,25 +6436,25 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda40;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda81;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda40;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda81;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "deleteAccountRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
-    move/from16 v6, v16
+    move/from16 v6, v17
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v16
 
-    const/16 v20, 0x21
+    const/16 v16, 0x23
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x71
 
@@ -5802,7 +6462,7 @@
 
     const-string v1, "PrivacyPaymentsClear"
 
-    .line 10773
+    .line 10835
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5811,23 +6471,23 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda42;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda122;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda122;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "paymentsClearRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v16
 
-    const/16 v7, 0x22
+    const/16 v7, 0x24
 
-    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x72
 
@@ -5835,7 +6495,7 @@
 
     const-string v1, "WebSessionsTitle"
 
-    .line 10774
+    .line 10836
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5844,23 +6504,23 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda71;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda133;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda71;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda133;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v16
 
     move-object/from16 v1, p0
 
-    move/from16 v5, v16
+    move/from16 v5, v17
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v20, v10, v7
+    aput-object v16, v10, v7
 
-    const/16 v20, 0x23
+    const/16 v16, 0x25
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x73
 
@@ -5868,7 +6528,7 @@
 
     const-string v1, "SyncContactsDelete"
 
-    .line 10775
+    .line 10837
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5877,25 +6537,25 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda108;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda58;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda108;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda58;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "contactsDeleteRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
-    move/from16 v6, v16
+    move/from16 v6, v17
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v16
 
-    const/16 v20, 0x24
+    const/16 v16, 0x26
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x74
 
@@ -5903,7 +6563,7 @@
 
     const-string v1, "SyncContacts"
 
-    .line 10776
+    .line 10838
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5912,23 +6572,23 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda117;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda20;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda117;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "contactsSyncRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v16
 
-    const/16 v20, 0x25
+    const/16 v16, 0x27
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x75
 
@@ -5936,7 +6596,7 @@
 
     const-string v1, "SuggestContacts"
 
-    .line 10777
+    .line 10839
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5945,23 +6605,23 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda49;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda37;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda49;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "contactsSuggestRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v16
 
-    const/16 v20, 0x26
+    const/16 v16, 0x28
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x76
 
@@ -5969,7 +6629,7 @@
 
     const-string v1, "MapPreviewProvider"
 
-    .line 10778
+    .line 10840
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -5978,23 +6638,23 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda17;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda63;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda63;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "secretMapRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v16
 
-    const/16 v20, 0x27
+    const/16 v16, 0x29
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x77
 
@@ -6002,7 +6662,7 @@
 
     const-string v1, "SecretWebPage"
 
-    .line 10779
+    .line 10841
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6011,21 +6671,21 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda32;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda23;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "secretWebpageRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v16
 
-    const/16 v6, 0x28
+    const/16 v6, 0x2a
 
     new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6033,16 +6693,16 @@
 
     sget v8, Lorg/telegram/messenger/R$string;->Devices:I
 
-    .line 10781
+    .line 10843
     invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     sget v14, Lorg/telegram/messenger/R$drawable;->msg2_devices:I
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda54;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda60;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda54;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda60;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v7
 
@@ -6052,15 +6712,15 @@
 
     aput-object v7, v10, v6
 
-    const/16 v16, 0x29
+    const/16 v16, 0x2b
 
-    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v17, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0x79
 
     sget v0, Lorg/telegram/messenger/R$string;->TerminateAllSessions:I
 
-    .line 10782
+    .line 10844
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -6069,21 +6729,21 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda20;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda86;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda86;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "terminateAllSessionsRow"
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v17
 
     move v6, v14
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v20, v10, v16
+    aput-object v17, v10, v16
 
-    const/16 v7, 0x2a
+    const/16 v7, 0x2c
 
     new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6091,7 +6751,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->LinkDesktopDevice:I
 
-    .line 10783
+    .line 10845
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -6100,9 +6760,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda51;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda83;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda51;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda83;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object/from16 v0, v16
 
@@ -6112,7 +6772,7 @@
 
     aput-object v16, v10, v7
 
-    const/16 v6, 0x2b
+    const/16 v6, 0x2d
 
     new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6122,16 +6782,16 @@
 
     const-string v8, "DataSettings"
 
-    .line 10785
+    .line 10847
     invoke-static {v8, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     sget v16, Lorg/telegram/messenger/R$drawable;->msg2_data:I
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda76;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda87;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda76;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda87;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v7
 
@@ -6141,9 +6801,9 @@
 
     aput-object v7, v10, v6
 
-    const/16 v20, 0x2c
+    const/16 v17, 0x2e
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0xc9
 
@@ -6151,7 +6811,7 @@
 
     const-string v1, "DataUsage"
 
-    .line 10786
+    .line 10848
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6160,13 +6820,13 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda73;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda90;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda73;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda90;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "usageSectionRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
@@ -6174,11 +6834,11 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v17
 
-    const/16 v7, 0x2d
+    const/16 v7, 0x2f
 
-    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v17, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0xca
 
@@ -6186,7 +6846,7 @@
 
     const-string v5, "StorageUsage"
 
-    .line 10787
+    .line 10849
     invoke-static {v5, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6195,13 +6855,13 @@
 
     move-result-object v4
 
-    new-instance v1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda77;
+    new-instance v1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda77;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v1, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v17
 
-    move-object/from16 v21, v1
+    move-object/from16 v20, v1
 
     move-object/from16 v1, p0
 
@@ -6211,15 +6871,15 @@
 
     move v11, v6
 
-    move-object/from16 v6, v21
+    move-object/from16 v6, v20
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v20, v10, v7
+    aput-object v17, v10, v7
 
-    const/16 v20, 0x2e
+    const/16 v17, 0x30
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0xcb
 
@@ -6227,7 +6887,7 @@
 
     const-string v1, "KeepMedia"
 
-    .line 10788
+    .line 10850
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6240,13 +6900,13 @@
 
     move-result-object v6
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda80;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda137;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda80;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda137;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "keepMediaRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
@@ -6262,11 +6922,11 @@
 
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v17
 
-    const/16 v20, 0x2f
+    const/16 v17, 0x31
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0xcc
 
@@ -6274,7 +6934,7 @@
 
     const-string v1, "ClearMediaCache"
 
-    .line 10789
+    .line 10851
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6287,23 +6947,23 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda0;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda73;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda73;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "cacheRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v17
 
-    const/16 v20, 0x30
+    const/16 v17, 0x32
 
-    new-instance v21, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0xcd
 
@@ -6311,7 +6971,7 @@
 
     const-string v1, "LocalDatabase"
 
-    .line 10790
+    .line 10852
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6324,21 +6984,21 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda120;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda49;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda120;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda49;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "databaseRow"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v21, v10, v20
+    aput-object v20, v10, v17
 
-    const/16 v7, 0x31
+    const/16 v7, 0x33
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6348,7 +7008,108 @@
 
     const-string v1, "NetworkUsage"
 
-    .line 10791
+    .line 10853
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda126;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda126;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    move-object/from16 v1, p0
+
+    move/from16 v5, v16
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v8, 0x34
+
+    new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0xcf
+
+    sget v0, Lorg/telegram/messenger/R$string;->AutomaticMediaDownload:I
+
+    const-string v1, "AutomaticMediaDownload"
+
+    .line 10854
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda67;
+
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda67;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    const-string v4, "mediaDownloadSectionRow"
+
+    move-object v0, v11
+
+    move-object/from16 v1, p0
+
+    move/from16 v6, v16
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v11, v10, v8
+
+    const/16 v7, 0x35
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0xd0
+
+    sget v0, Lorg/telegram/messenger/R$string;->WhenUsingMobileData:I
+
+    const-string v1, "WhenUsingMobileData"
+
+    .line 10855
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda30;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    move-object/from16 v1, p0
+
+    move/from16 v5, v16
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v7, 0x36
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0xd1
+
+    sget v0, Lorg/telegram/messenger/R$string;->WhenConnectedOnWiFi:I
+
+    const-string v1, "WhenConnectedOnWiFi"
+
+    .line 10856
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6365,112 +7126,11 @@
 
     move-object/from16 v1, p0
 
-    move/from16 v5, v16
-
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
     aput-object v8, v10, v7
 
-    const/16 v8, 0x32
-
-    new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
-    const/16 v2, 0xcf
-
-    sget v0, Lorg/telegram/messenger/R$string;->AutomaticMediaDownload:I
-
-    const-string v1, "AutomaticMediaDownload"
-
-    .line 10792
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda41;
-
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    const-string v4, "mediaDownloadSectionRow"
-
-    move-object v0, v11
-
-    move-object/from16 v1, p0
-
-    move/from16 v6, v16
-
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    aput-object v11, v10, v8
-
-    const/16 v7, 0x33
-
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
-    const/16 v2, 0xd0
-
-    sget v0, Lorg/telegram/messenger/R$string;->WhenUsingMobileData:I
-
-    const-string v1, "WhenUsingMobileData"
-
-    .line 10793
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda111;
-
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda111;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    move-object v0, v8
-
-    move-object/from16 v1, p0
-
-    move/from16 v5, v16
-
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    aput-object v8, v10, v7
-
-    const/16 v7, 0x34
-
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
-    const/16 v2, 0xd1
-
-    sget v0, Lorg/telegram/messenger/R$string;->WhenConnectedOnWiFi:I
-
-    const-string v1, "WhenConnectedOnWiFi"
-
-    .line 10794
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda58;
-
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda58;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    move-object v0, v8
-
-    move-object/from16 v1, p0
-
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    aput-object v8, v10, v7
-
-    const/16 v7, 0x35
+    const/16 v7, 0x37
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6480,7 +7140,7 @@
 
     const-string v1, "WhenRoaming"
 
-    .line 10795
+    .line 10857
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6489,9 +7149,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda26;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda74;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda74;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -6501,7 +7161,7 @@
 
     aput-object v8, v10, v7
 
-    const/16 v8, 0x36
+    const/16 v8, 0x38
 
     new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6511,7 +7171,7 @@
 
     const-string v1, "ResetAutomaticMediaDownload"
 
-    .line 10796
+    .line 10858
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6520,9 +7180,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda55;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda17;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda55;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "resetDownloadRow"
 
@@ -6536,83 +7196,17 @@
 
     aput-object v11, v10, v8
 
-    const/16 v8, 0x37
-
-    new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
-    const/16 v2, 0xd4
-
-    sget v0, Lorg/telegram/messenger/R$string;->AutoplayMedia:I
-
-    const-string v1, "AutoplayMedia"
-
-    .line 10797
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda65;
-
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda65;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    const-string v4, "autoplayHeaderRow"
-
-    move-object v0, v11
-
-    move-object/from16 v1, p0
-
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    aput-object v11, v10, v8
-
-    const/16 v8, 0x38
-
-    new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
-    const/16 v2, 0xd5
-
-    sget v0, Lorg/telegram/messenger/R$string;->AutoplayGIF:I
-
-    const-string v1, "AutoplayGIF"
-
-    .line 10798
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda15;
-
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    const-string v4, "autoplayGifsRow"
-
-    move-object v0, v11
-
-    move-object/from16 v1, p0
-
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    aput-object v11, v10, v8
-
     const/16 v8, 0x39
 
     new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0xd6
+    const/16 v2, 0xd7
 
-    sget v0, Lorg/telegram/messenger/R$string;->AutoplayVideo:I
+    sget v0, Lorg/telegram/messenger/R$string;->Streaming:I
 
-    const-string v1, "AutoplayVideo"
+    const-string v1, "Streaming"
 
-    .line 10799
+    .line 10859
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6621,11 +7215,11 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda10;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda12;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const-string v4, "autoplayVideoRow"
+    const-string v4, "streamSectionRow"
 
     move-object v0, v11
 
@@ -6639,13 +7233,13 @@
 
     new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0xd7
+    const/16 v2, 0xd8
 
-    sget v0, Lorg/telegram/messenger/R$string;->Streaming:I
+    sget v0, Lorg/telegram/messenger/R$string;->EnableStreaming:I
 
-    const-string v1, "Streaming"
+    const-string v1, "EnableStreaming"
 
-    .line 10800
+    .line 10860
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6654,11 +7248,11 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda94;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda107;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda94;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda107;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const-string v4, "streamSectionRow"
+    const-string v4, "enableStreamRow"
 
     move-object v0, v11
 
@@ -6672,44 +7266,11 @@
 
     new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0xd8
-
-    sget v0, Lorg/telegram/messenger/R$string;->EnableStreaming:I
-
-    const-string v1, "EnableStreaming"
-
-    .line 10801
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v12, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda53;
-
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda53;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    const-string v4, "enableStreamRow"
-
-    move-object v0, v11
-
-    move-object/from16 v1, p0
-
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    aput-object v11, v10, v8
-
-    const/16 v8, 0x3c
-
-    new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
     const/16 v2, 0xd9
 
     move/from16 v0, v23
 
-    .line 10802
+    .line 10861
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6718,9 +7279,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda89;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda62;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda89;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda62;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "callsSectionRow"
 
@@ -6730,7 +7291,7 @@
 
     aput-object v11, v10, v8
 
-    const/16 v8, 0x3d
+    const/16 v8, 0x3c
 
     new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6740,7 +7301,7 @@
 
     const-string v1, "VoipUseLessData"
 
-    .line 10803
+    .line 10862
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6749,9 +7310,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda5;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda101;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda101;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "useLessDataForCallsRow"
 
@@ -6763,7 +7324,7 @@
 
     aput-object v11, v10, v8
 
-    const/16 v8, 0x3e
+    const/16 v8, 0x3d
 
     new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6773,7 +7334,7 @@
 
     const-string v1, "VoipQuickReplies"
 
-    .line 10804
+    .line 10863
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6782,9 +7343,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda112;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda7;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda112;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "quickRepliesRow"
 
@@ -6796,7 +7357,7 @@
 
     aput-object v11, v10, v8
 
-    const/16 v7, 0x3f
+    const/16 v7, 0x3e
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6806,7 +7367,7 @@
 
     const-string v13, "ProxySettings"
 
-    .line 10805
+    .line 10864
     invoke-static {v13, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6815,9 +7376,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda48;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda127;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda48;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda127;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -6827,9 +7388,9 @@
 
     aput-object v8, v10, v7
 
-    const/16 v15, 0x40
+    const/16 v15, 0x3f
 
-    new-instance v20, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+    new-instance v17, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/16 v2, 0xdd
 
@@ -6837,7 +7398,7 @@
 
     const-string v1, "UseProxyForCalls"
 
-    .line 10806
+    .line 10865
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6850,13 +7411,13 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda59;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda56;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda59;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda56;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "callsRow"
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v17
 
     move-object/from16 v1, p0
 
@@ -6864,9 +7425,9 @@
 
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    aput-object v20, v10, v15
+    aput-object v17, v10, v15
 
-    const/16 v8, 0x41
+    const/16 v8, 0x40
 
     new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6876,7 +7437,7 @@
 
     const-string v1, "PrivacyDeleteCloudDrafts"
 
-    .line 10807
+    .line 10866
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -6885,9 +7446,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda87;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda68;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda87;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda68;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "clearDraftsRow"
 
@@ -6901,7 +7462,7 @@
 
     aput-object v11, v10, v8
 
-    const/16 v8, 0x42
+    const/16 v8, 0x41
 
     new-instance v11, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6909,7 +7470,7 @@
 
     sget v12, Lorg/telegram/messenger/R$string;->SaveToGallery:I
 
-    .line 10808
+    .line 10867
     invoke-static {v12}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -6918,9 +7479,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda61;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda98;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda61;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda98;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "saveToGallerySectionRow"
 
@@ -6930,7 +7491,7 @@
 
     aput-object v11, v10, v8
 
-    const/16 v11, 0x43
+    const/16 v11, 0x42
 
     new-instance v13, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6938,7 +7499,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->SaveToGalleryPrivate:I
 
-    .line 10809
+    .line 10868
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -6951,9 +7512,9 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda36;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda70;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda36;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda70;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "saveToGalleryPeerRow"
 
@@ -6965,7 +7526,7 @@
 
     aput-object v13, v10, v11
 
-    const/16 v11, 0x44
+    const/16 v11, 0x43
 
     new-instance v13, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -6973,7 +7534,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->SaveToGalleryGroups:I
 
-    .line 10810
+    .line 10869
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -6986,9 +7547,9 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda68;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda42;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda68;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "saveToGalleryGroupsRow"
 
@@ -6998,7 +7559,7 @@
 
     aput-object v13, v10, v11
 
-    const/16 v11, 0x45
+    const/16 v11, 0x44
 
     new-instance v13, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7006,7 +7567,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->SaveToGalleryChannels:I
 
-    .line 10811
+    .line 10870
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7019,9 +7580,9 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda63;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda78;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda63;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda78;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "saveToGalleryChannelsRow"
 
@@ -7031,7 +7592,7 @@
 
     aput-object v13, v10, v11
 
-    const/16 v6, 0x46
+    const/16 v6, 0x45
 
     new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7041,16 +7602,16 @@
 
     const-string v12, "ChatSettings"
 
-    .line 10813
+    .line 10872
     invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     sget v13, Lorg/telegram/messenger/R$drawable;->msg2_discussion:I
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda99;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda72;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda99;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda72;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v7
 
@@ -7060,7 +7621,7 @@
 
     aput-object v7, v10, v6
 
-    const/16 v8, 0x47
+    const/16 v8, 0x46
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7070,7 +7631,7 @@
 
     const-string v1, "TextSizeHeader"
 
-    .line 10814
+    .line 10873
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7079,9 +7640,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda85;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda112;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda85;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda112;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "textSizeHeaderRow"
 
@@ -7095,7 +7656,7 @@
 
     aput-object v14, v10, v8
 
-    const/16 v7, 0x48
+    const/16 v7, 0x47
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7103,7 +7664,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->ChangeChatBackground:I
 
-    .line 10815
+    .line 10874
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7112,9 +7673,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda27;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda96;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda96;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -7124,7 +7685,7 @@
 
     aput-object v8, v10, v7
 
-    const/16 v14, 0x49
+    const/16 v14, 0x48
 
     new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7134,7 +7695,7 @@
 
     const-string v1, "SetColor"
 
-    .line 10816
+    .line 10875
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7153,9 +7714,9 @@
 
     move-result-object v6
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda14;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda31;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda31;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v15
 
@@ -7173,7 +7734,7 @@
 
     aput-object v15, v10, v14
 
-    const/16 v14, 0x4a
+    const/16 v14, 0x49
 
     new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7183,7 +7744,7 @@
 
     const-string v1, "ResetChatBackgrounds"
 
-    .line 10817
+    .line 10876
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7200,9 +7761,9 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda118;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda16;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda118;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "resetRow"
 
@@ -7214,7 +7775,7 @@
 
     aput-object v15, v10, v14
 
-    const/16 v8, 0x4b
+    const/16 v8, 0x4a
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7224,7 +7785,7 @@
 
     const-string v1, "ColorTheme"
 
-    .line 10818
+    .line 10877
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7233,9 +7794,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda78;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda134;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda78;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda134;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "themeHeaderRow"
 
@@ -7249,7 +7810,7 @@
 
     aput-object v14, v10, v8
 
-    const/16 v8, 0x4c
+    const/16 v8, 0x4b
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7257,7 +7818,7 @@
 
     sget v15, Lorg/telegram/messenger/R$string;->BrowseThemes:I
 
-    .line 10819
+    .line 10878
     invoke-static {v15}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7268,9 +7829,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda95;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda88;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda95;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda88;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v14
 
@@ -7278,7 +7839,7 @@
 
     aput-object v14, v10, v8
 
-    const/16 v14, 0x4d
+    const/16 v14, 0x4c
 
     new-instance v16, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7286,7 +7847,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->CreateNewTheme:I
 
-    .line 10820
+    .line 10879
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7299,9 +7860,9 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda101;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda108;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda101;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda108;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "createNewThemeRow"
 
@@ -7313,7 +7874,7 @@
 
     aput-object v16, v10, v14
 
-    const/16 v8, 0x4e
+    const/16 v8, 0x4d
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7321,7 +7882,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->BubbleRadius:I
 
-    .line 10821
+    .line 10880
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7330,9 +7891,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda37;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda114;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda114;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "bubbleRadiusHeaderRow"
 
@@ -7344,7 +7905,7 @@
 
     aput-object v14, v10, v8
 
-    const/16 v8, 0x4f
+    const/16 v8, 0x4e
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7352,7 +7913,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->ChatList:I
 
-    .line 10822
+    .line 10881
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7361,11 +7922,40 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda52;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda43;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda52;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda43;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "chatListHeaderRow"
+
+    move-object v0, v14
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v14, v10, v8
+
+    const/16 v8, 0x4f
+
+    new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x143
+
+    sget v0, Lorg/telegram/messenger/R$string;->ChatListSwipeGesture:I
+
+    .line 10882
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda61;
+
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda61;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    const-string v4, "swipeGestureHeaderRow"
 
     move-object v0, v14
 
@@ -7377,40 +7967,11 @@
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0x143
-
-    sget v0, Lorg/telegram/messenger/R$string;->ChatListSwipeGesture:I
-
-    .line 10823
-    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda33;
-
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda33;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
-
-    const-string v4, "swipeGestureHeaderRow"
-
-    move-object v0, v14
-
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
-
-    aput-object v14, v10, v8
-
-    const/16 v8, 0x51
-
-    new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
-
     const/16 v2, 0x144
 
     sget v0, Lorg/telegram/messenger/R$string;->AppIcon:I
 
-    .line 10824
+    .line 10883
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7419,9 +7980,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda116;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda38;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda116;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "appIconHeaderRow"
 
@@ -7431,7 +7992,7 @@
 
     aput-object v14, v10, v8
 
-    const/16 v7, 0x52
+    const/16 v7, 0x51
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7441,7 +8002,7 @@
 
     const-string v1, "AutoNightTheme"
 
-    .line 10825
+    .line 10884
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7450,9 +8011,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda9;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda131;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda131;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -7464,7 +8025,7 @@
 
     aput-object v8, v10, v7
 
-    const/16 v8, 0x53
+    const/16 v8, 0x52
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -7474,7 +8035,7 @@
 
     const-string v1, "ChromeCustomTabs"
 
-    .line 10826
+    .line 10885
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7483,9 +8044,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda86;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda11;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda86;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "customTabsRow"
 
@@ -7499,18 +8060,16 @@
 
     aput-object v14, v10, v8
 
-    const/16 v8, 0x54
+    const/16 v8, 0x53
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0x134
+    const/16 v2, 0x148
 
-    sget v0, Lorg/telegram/messenger/R$string;->DirectShare:I
+    sget v0, Lorg/telegram/messenger/R$string;->NextMediaTap:I
 
-    const-string v1, "DirectShare"
-
-    .line 10827
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    .line 10886
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -7518,15 +8077,42 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda75;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda97;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda75;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda97;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const-string v4, "directShareRow"
+    const-string v4, "nextMediaTapRow"
 
     move-object v0, v14
 
-    move-object/from16 v1, p0
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v14, v10, v8
+
+    const/16 v8, 0x54
+
+    new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x147
+
+    sget v0, Lorg/telegram/messenger/R$string;->RaiseToListen:I
+
+    .line 10887
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda85;
+
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda85;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    const-string v4, "raiseToListenRow"
+
+    move-object v0, v14
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
@@ -7536,13 +8122,13 @@
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0x135
+    const/16 v2, 0x136
 
-    sget v0, Lorg/telegram/messenger/R$string;->EnableAnimations:I
+    sget v0, Lorg/telegram/messenger/R$string;->RaiseToSpeak:I
 
-    const-string v1, "EnableAnimations"
+    const-string v1, "RaiseToSpeak"
 
-    .line 10828
+    .line 10888
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7551,11 +8137,11 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda16;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda18;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const-string v4, "enableAnimationsRow"
+    const-string v4, "raiseToSpeakRow"
 
     move-object v0, v14
 
@@ -7569,14 +8155,12 @@
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0x136
+    const/16 v2, 0x146
 
-    sget v0, Lorg/telegram/messenger/R$string;->RaiseToSpeak:I
+    sget v0, Lorg/telegram/messenger/R$string;->PauseMusicOnMedia:I
 
-    const-string v1, "RaiseToSpeak"
-
-    .line 10829
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    .line 10889
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -7584,15 +8168,13 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda62;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda71;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda62;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda71;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const-string v4, "raiseToSpeakRow"
+    const-string v4, "pauseOnMediaRow"
 
     move-object v0, v14
-
-    move-object/from16 v1, p0
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
@@ -7606,7 +8188,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->MicrophoneForVoiceMessages:I
 
-    .line 10830
+    .line 10890
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7615,9 +8197,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda115;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda130;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda115;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda130;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "bluetoothScoRow"
 
@@ -7631,13 +8213,13 @@
 
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0x137
+    const/16 v2, 0x134
 
-    sget v0, Lorg/telegram/messenger/R$string;->SendByEnter:I
+    sget v0, Lorg/telegram/messenger/R$string;->DirectShare:I
 
-    const-string v1, "SendByEnter"
+    const-string v1, "DirectShare"
 
-    .line 10831
+    .line 10891
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7646,11 +8228,11 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda83;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda94;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda83;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda94;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const-string v4, "sendByEnterRow"
+    const-string v4, "directShareRow"
 
     move-object v0, v14
 
@@ -7662,20 +8244,16 @@
 
     const/16 v8, 0x59
 
-    .line 10832
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->canBlurChat()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
     new-instance v14, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    const/16 v2, 0x146
+    const/16 v2, 0x137
 
-    sget v0, Lorg/telegram/messenger/R$string;->BlurInChat:I
+    sget v0, Lorg/telegram/messenger/R$string;->SendByEnter:I
 
-    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+    const-string v1, "SendByEnter"
+
+    .line 10892
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -7683,26 +8261,18 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda119;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda136;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda119;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda136;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
-    const-string v4, "chatBlurRow"
+    const-string v4, "sendByEnterRow"
 
     move-object v0, v14
 
     move-object/from16 v1, p0
 
-    move v6, v13
-
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    goto :goto_1
-
-    :cond_1
-    move-object/from16 v14, v19
-
-    :goto_1
     aput-object v14, v10, v8
 
     const/16 v8, 0x5a
@@ -7715,7 +8285,7 @@
 
     const-string v1, "DistanceUnits"
 
-    .line 10833
+    .line 10893
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7724,17 +8294,15 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda4;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda6;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "distanceRow"
 
     move-object v0, v14
 
     move-object/from16 v1, p0
-
-    move v6, v13
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
@@ -7748,16 +8316,16 @@
 
     sget v11, Lorg/telegram/messenger/R$string;->StickersName:I
 
-    .line 10835
+    .line 10895
     invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     sget v12, Lorg/telegram/messenger/R$drawable;->msg2_sticker:I
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda24;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda28;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v7
 
@@ -7777,7 +8345,7 @@
 
     const-string v1, "SuggestStickers"
 
-    .line 10836
+    .line 10896
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7786,9 +8354,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda44;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda52;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda52;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "suggestRow"
 
@@ -7812,7 +8380,7 @@
 
     const-string v1, "FeaturedStickers"
 
-    .line 10837
+    .line 10897
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7821,9 +8389,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda74;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda84;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda74;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda84;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "featuredStickersHeaderRow"
 
@@ -7845,7 +8413,7 @@
 
     const-string v1, "Masks"
 
-    .line 10838
+    .line 10898
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7856,9 +8424,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda81;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda91;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda81;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda91;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v13
 
@@ -7878,7 +8446,7 @@
 
     const-string v1, "ArchivedStickers"
 
-    .line 10839
+    .line 10899
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7887,9 +8455,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda92;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda105;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda92;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda105;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v13
 
@@ -7909,7 +8477,7 @@
 
     const-string v1, "ArchivedMasks"
 
-    .line 10840
+    .line 10900
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -7918,9 +8486,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda97;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda110;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda97;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda110;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v13
 
@@ -7938,7 +8506,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->LargeEmoji:I
 
-    .line 10841
+    .line 10901
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7947,9 +8515,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda91;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda103;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda91;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda103;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "largeEmojiRow"
 
@@ -7967,7 +8535,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->LoopAnimatedStickers:I
 
-    .line 10842
+    .line 10902
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -7976,9 +8544,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda29;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda34;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda29;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "loopRow"
 
@@ -7996,7 +8564,7 @@
 
     sget v14, Lorg/telegram/messenger/R$string;->Emoji:I
 
-    .line 10843
+    .line 10903
     invoke-static {v14}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -8009,9 +8577,9 @@
 
     sget v15, Lorg/telegram/messenger/R$drawable;->input_smile:I
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda25;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda29;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda29;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v13
 
@@ -8029,7 +8597,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->SuggestAnimatedEmoji:I
 
-    .line 10844
+    .line 10904
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -8042,9 +8610,9 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda7;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda9;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "suggestAnimatedEmojiRow"
 
@@ -8064,7 +8632,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->FeaturedEmojiPacks:I
 
-    .line 10845
+    .line 10905
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -8077,9 +8645,9 @@
 
     move-result-object v6
 
-    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda60;
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda69;
 
-    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda60;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda69;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "featuredStickersHeaderRow"
 
@@ -8097,7 +8665,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->DoubleTapSetting:I
 
-    .line 10846
+    .line 10906
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -8108,9 +8676,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda70;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda80;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda70;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda80;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v13
 
@@ -8128,16 +8696,16 @@
 
     sget v11, Lorg/telegram/messenger/R$string;->Filters:I
 
-    .line 10848
+    .line 10908
     invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     sget v12, Lorg/telegram/messenger/R$drawable;->msg2_folder:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda6;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda8;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8155,7 +8723,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->CreateNewFilter:I
 
-    .line 10849
+    .line 10909
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -8164,9 +8732,9 @@
 
     move-result-object v5
 
-    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda82;
+    new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda93;
 
-    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda82;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v7, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda93;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     const-string v4, "createFilterRow"
 
@@ -8182,7 +8750,7 @@
 
     const/4 v0, -0x1
 
-    .line 10851
+    .line 10911
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8223,7 +8791,7 @@
 
     const/4 v0, 0x0
 
-    .line 10852
+    .line 10912
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8248,9 +8816,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda110;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda124;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda110;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda124;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8270,7 +8838,7 @@
 
     const/16 v0, 0xb
 
-    .line 10853
+    .line 10913
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8295,9 +8863,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda109;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda123;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda109;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda123;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8317,12 +8885,12 @@
 
     const/4 v0, 0x1
 
-    .line 10854
+    .line 10914
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_5
+    if-eqz v1, :cond_5
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -8342,9 +8910,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda43;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda51;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda43;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda51;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8364,7 +8932,7 @@
 
     const/4 v0, 0x2
 
-    .line 10855
+    .line 10915
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8389,9 +8957,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda13;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda15;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8411,7 +8979,7 @@
 
     const/16 v0, 0x8
 
-    .line 10856
+    .line 10916
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8436,9 +9004,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda114;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda129;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda114;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda129;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8458,7 +9026,7 @@
 
     const/4 v0, 0x3
 
-    .line 10857
+    .line 10917
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8483,9 +9051,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda11;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda13;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8505,7 +9073,7 @@
 
     const/4 v0, 0x4
 
-    .line 10858
+    .line 10918
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8552,7 +9120,7 @@
 
     const/4 v0, 0x5
 
-    .line 10859
+    .line 10919
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8577,9 +9145,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda113;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda128;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda113;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda128;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8599,7 +9167,7 @@
 
     const/16 v0, 0x9
 
-    .line 10860
+    .line 10920
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8624,9 +9192,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda21;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda24;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8646,7 +9214,7 @@
 
     const/4 v0, 0x6
 
-    .line 10861
+    .line 10921
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8671,9 +9239,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda22;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda25;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8693,7 +9261,7 @@
 
     const/4 v0, 0x7
 
-    .line 10862
+    .line 10922
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8718,9 +9286,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda93;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda106;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda93;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda106;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8740,7 +9308,7 @@
 
     const/16 v0, 0xa
 
-    .line 10863
+    .line 10923
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8765,9 +9333,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda46;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda54;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda46;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda54;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8787,7 +9355,7 @@
 
     const/16 v0, 0xc
 
-    .line 10864
+    .line 10924
     invoke-direct {v9, v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->isPremiumFeatureAvailable(I)Z
 
     move-result v0
@@ -8812,9 +9380,9 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda79;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda89;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda79;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda89;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8830,7 +9398,578 @@
     :goto_f
     aput-object v8, v10, v7
 
-    const/16 v6, 0x77
+    const/16 v7, 0x77
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x384
+
+    sget v11, Lorg/telegram/messenger/R$string;->PowerUsage:I
+
+    .line 10926
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    sget v12, Lorg/telegram/messenger/R$drawable;->msg2_battery:I
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda118;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda118;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    move-object/from16 v1, p0
+
+    move v5, v12
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v7, 0x78
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x385
+
+    sget v13, Lorg/telegram/messenger/R$string;->LiteOptionsStickers:I
+
+    .line 10927
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda77;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda77;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v14, 0x79
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x386
+
+    sget v16, Lorg/telegram/messenger/R$string;->LiteOptionsAutoplayKeyboard:I
+
+    .line 10932
+    invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda35;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    move v7, v12
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v14, 0x7a
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x387
+
+    sget v17, Lorg/telegram/messenger/R$string;->LiteOptionsAutoplayChat:I
+
+    .line 10938
+    invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda100;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda100;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v7, 0x7b
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x388
+
+    sget v13, Lorg/telegram/messenger/R$string;->LiteOptionsEmoji:I
+
+    .line 10944
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda119;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda119;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    move v5, v12
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v14, 0x7c
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x389
+
+    .line 10949
+    invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda75;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda75;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    move v7, v12
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v14, 0x7d
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x38a
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsAutoplayReactions:I
+
+    .line 10955
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda32;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v14, 0x7e
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x38b
+
+    .line 10961
+    invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda99;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda99;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v7, 0x7f
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x38c
+
+    sget v13, Lorg/telegram/messenger/R$string;->LiteOptionsChat:I
+
+    .line 10967
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda41;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    move v5, v12
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v14, 0x80
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x38d
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsBackground:I
+
+    .line 10972
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda76;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda76;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    move v7, v12
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v14, 0x81
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x38e
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsTopics:I
+
+    .line 10978
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda92;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda92;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v14, 0x82
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x38f
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsSpoiler:I
+
+    .line 10984
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda125;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda125;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v14, 0x83
+
+    .line 10990
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-lt v0, v1, :cond_10
+
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x146
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsBlur:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda132;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda132;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    move-object/from16 v1, p0
+
+    move v7, v12
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    goto :goto_10
+
+    :cond_10
+    move-object/from16 v15, v19
+
+    :goto_10
+    aput-object v15, v10, v14
+
+    const/16 v14, 0x84
+
+    .line 10995
+    new-instance v15, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x390
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsScale:I
+
+    .line 10996
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda45;
+
+    invoke-direct {v8, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda45;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v15
+
+    move-object/from16 v1, p0
+
+    move v7, v12
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v15, v10, v14
+
+    const/16 v7, 0x85
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x391
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsCalls:I
+
+    .line 11002
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda19;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    move v5, v12
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v7, 0x86
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0xd6
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsAutoplayVideo:I
+
+    .line 11007
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda27;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v7, 0x87
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0xd5
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteOptionsAutoplayGifs:I
+
+    .line 11012
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda44;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v7, 0x88
+
+    new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
+
+    const/16 v2, 0x392
+
+    sget v0, Lorg/telegram/messenger/R$string;->LiteSmoothTransitions:I
+
+    .line 11017
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda138;
+
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda138;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
+
+    aput-object v8, v10, v7
+
+    const/16 v6, 0x89
 
     new-instance v7, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -8840,20 +9979,18 @@
 
     const-string v0, "Language"
 
-    .line 10866
+    .line 11023
     invoke-static {v0, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     sget v11, Lorg/telegram/messenger/R$drawable;->msg2_language:I
 
-    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda105;
+    new-instance v5, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda121;
 
-    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda105;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v5, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda121;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v7
-
-    move-object/from16 v1, p0
 
     move v4, v11
 
@@ -8861,7 +9998,7 @@
 
     aput-object v7, v10, v6
 
-    const/16 v7, 0x78
+    const/16 v7, 0x8a
 
     new-instance v12, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -8869,7 +10006,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->ShowTranslateButton:I
 
-    .line 10867
+    .line 11024
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -8878,9 +10015,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda67;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda57;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda67;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda57;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v12
 
@@ -8890,12 +10027,12 @@
 
     aput-object v12, v10, v7
 
-    const/16 v7, 0x79
+    const/16 v7, 0x8b
 
-    .line 10868
+    .line 11025
     iget-object v0, v9, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$32600(Lorg/telegram/ui/ProfileActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$32700(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
 
@@ -8911,7 +10048,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_11
 
     new-instance v19, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -8927,9 +10064,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda30;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda5;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object/from16 v0, v19
 
@@ -8939,10 +10076,10 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
-    :cond_10
+    :cond_11
     aput-object v19, v10, v7
 
-    const/16 v7, 0x7a
+    const/16 v7, 0x8c
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -8952,7 +10089,7 @@
 
     const-string v1, "AskAQuestion"
 
-    .line 10870
+    .line 11027
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -8967,9 +10104,9 @@
 
     sget v13, Lorg/telegram/messenger/R$drawable;->msg2_help:I
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda88;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda104;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda88;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda104;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -8981,7 +10118,7 @@
 
     aput-object v8, v10, v7
 
-    const/16 v7, 0x7b
+    const/16 v7, 0x8d
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -8991,7 +10128,7 @@
 
     const-string v1, "TelegramFAQ"
 
-    .line 10871
+    .line 11028
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -9000,9 +10137,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda106;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda135;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda106;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda135;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -9012,7 +10149,7 @@
 
     aput-object v8, v10, v7
 
-    const/16 v7, 0x7c
+    const/16 v7, 0x8e
 
     new-instance v8, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -9022,7 +10159,7 @@
 
     const-string v1, "PrivacyPolicy"
 
-    .line 10872
+    .line 11029
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -9031,9 +10168,9 @@
 
     move-result-object v4
 
-    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda66;
+    new-instance v6, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda4;
 
-    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda66;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v6, v9}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     move-object v0, v8
 
@@ -9049,7 +10186,7 @@
 .method private updateSearchArray()V
     .locals 11
 
-    .line 10658
+    .line 10714
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -9058,7 +10195,7 @@
 
     move v2, v1
 
-    .line 10659
+    .line 10715
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchArray:[Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
@@ -9066,18 +10203,18 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 10660
+    .line 10716
     aget-object v4, v3, v2
 
     if-nez v4, :cond_0
 
     goto :goto_1
 
-    .line 10663
+    .line 10719
     :cond_0
     aget-object v3, v3, v2
 
-    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32400(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32500(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
 
     move-result v3
 
@@ -9096,7 +10233,7 @@
 
     goto :goto_0
 
-    .line 10665
+    .line 10721
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
@@ -9112,7 +10249,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 10667
+    .line 10723
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -9132,7 +10269,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 10669
+    .line 10725
     :try_start_0
     new-instance v5, Lorg/telegram/tgnet/SerializedData;
 
@@ -9142,31 +10279,31 @@
 
     invoke-direct {v5, v3}, Lorg/telegram/tgnet/SerializedData;-><init>([B)V
 
-    .line 10670
+    .line 10726
     invoke-virtual {v5, v1}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v3
 
-    .line 10671
+    .line 10727
     invoke-virtual {v5, v1}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v6
 
     if-nez v6, :cond_5
 
-    .line 10673
+    .line 10729
     invoke-virtual {v5, v1}, Lorg/telegram/tgnet/SerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 10674
+    .line 10730
     invoke-virtual {v5, v1}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v7
 
     if-lez v7, :cond_3
 
-    .line 10677
+    .line 10733
     new-array v8, v7, [Ljava/lang/String;
 
     move v9, v1
@@ -9174,7 +10311,7 @@
     :goto_3
     if-ge v9, v7, :cond_4
 
-    .line 10679
+    .line 10735
     invoke-virtual {v5, v1}, Lorg/telegram/tgnet/SerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v10
@@ -9188,21 +10325,21 @@
     :cond_3
     move-object v8, v4
 
-    .line 10682
+    .line 10738
     :cond_4
     invoke-virtual {v5, v1}, Lorg/telegram/tgnet/SerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 10683
+    .line 10739
     new-instance v7, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
     invoke-direct {v7, v6, v8, v5}, Lorg/telegram/messenger/MessagesController$FaqSearchResult;-><init>(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10684
+    .line 10740
     iput v3, v7, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->num:I
 
-    .line 10685
+    .line 10741
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -9214,7 +10351,7 @@
 
     if-ne v6, v7, :cond_2
 
-    .line 10687
+    .line 10743
     invoke-virtual {v5, v1}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v5
@@ -9231,10 +10368,10 @@
 
     if-eqz v5, :cond_2
 
-    .line 10689
-    invoke-static {v5, v3}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32502(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;I)I
+    .line 10745
+    invoke-static {v5, v3}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32602(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;I)I
 
-    .line 10690
+    .line 10746
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -9243,13 +10380,13 @@
 
     goto :goto_2
 
-    .line 10698
+    .line 10754
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
-    new-instance v1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda128;
+    new-instance v1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda146;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda128;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda146;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -9261,7 +10398,7 @@
 .method public addRecent(Ljava/lang/Object;)V
     .locals 4
 
-    .line 11063
+    .line 11220
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -9270,12 +10407,12 @@
 
     if-ltz v0, :cond_0
 
-    .line 11065
+    .line 11222
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 11067
+    .line 11224
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
@@ -9283,15 +10420,15 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 11068
+    .line 11225
     iget-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
     if-nez p1, :cond_1
 
-    .line 11069
+    .line 11226
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 11071
+    .line 11228
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
@@ -9303,7 +10440,7 @@
 
     if-le p1, v0, :cond_2
 
-    .line 11072
+    .line 11229
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -9314,13 +10451,13 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 11074
+    .line 11231
     :cond_2
     new-instance p1, Ljava/util/LinkedHashSet;
 
     invoke-direct {p1}, Ljava/util/LinkedHashSet;-><init>()V
 
-    .line 11075
+    .line 11232
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -9330,41 +10467,41 @@
     :goto_0
     if-ge v1, v0, :cond_5
 
-    .line 11076
+    .line 11233
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 11077
+    .line 11234
     instance-of v3, v2, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     if-eqz v3, :cond_3
 
-    .line 11078
+    .line 11235
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    invoke-static {v3, v1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32502(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;I)I
+    invoke-static {v3, v1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32602(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;I)I
 
     goto :goto_1
 
-    .line 11079
+    .line 11236
     :cond_3
     instance-of v3, v2, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
     if-eqz v3, :cond_4
 
-    .line 11080
+    .line 11237
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
     iput v1, v3, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->num:I
 
-    .line 11082
+    .line 11239
     :cond_4
     :goto_1
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -9377,7 +10514,7 @@
 
     goto :goto_0
 
-    .line 11084
+    .line 11241
     :cond_5
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
@@ -9401,12 +10538,12 @@
 .method public clearRecent()V
     .locals 2
 
-    .line 11088
+    .line 11245
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 11089
+    .line 11246
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -9423,7 +10560,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 11090
+    .line 11247
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -9432,14 +10569,14 @@
 .method public getItemCount()I
     .locals 3
 
-    .line 10955
+    .line 11112
     iget-boolean v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 10956
+    .line 11113
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -9470,7 +10607,7 @@
 
     return v0
 
-    .line 10958
+    .line 11115
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
@@ -9522,7 +10659,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 11042
+    .line 11199
     iget-boolean v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
     const/4 v1, 0x0
@@ -9531,7 +10668,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 11043
+    .line 11200
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -9542,7 +10679,7 @@
 
     return v1
 
-    .line 11045
+    .line 11202
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
@@ -9557,7 +10694,7 @@
     :cond_1
     if-nez p1, :cond_3
 
-    .line 11050
+    .line 11207
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -9573,7 +10710,7 @@
     :cond_2
     return v2
 
-    .line 11055
+    .line 11212
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
@@ -9602,7 +10739,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 0
 
-    .line 10963
+    .line 11120
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -9623,7 +10760,7 @@
 .method public isSearchWas()Z
     .locals 1
 
-    .line 11222
+    .line 11379
     iget-boolean v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
     return v0
@@ -9632,7 +10769,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 6
 
-    .line 10968
+    .line 11125
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -9649,13 +10786,13 @@
 
     goto/16 :goto_4
 
-    .line 11014
+    .line 11171
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 11015
+    .line 11172
     sget p2, Lorg/telegram/messenger/R$string;->SettingsRecent:I
 
     const-string v0, "SettingsRecent"
@@ -9668,13 +10805,13 @@
 
     goto/16 :goto_4
 
-    .line 11009
+    .line 11166
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
-    .line 11010
+    .line 11167
     sget p2, Lorg/telegram/messenger/R$string;->SettingsFaqSearchTitle:I
 
     const-string v0, "SettingsFaqSearchTitle"
@@ -9687,20 +10824,20 @@
 
     goto/16 :goto_4
 
-    .line 10970
+    .line 11127
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/SettingsSearchCell;
 
-    .line 10971
+    .line 11128
     iget-boolean v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
     const/4 v2, 0x0
 
     if-eqz v0, :cond_8
 
-    .line 10972
+    .line 11129
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -9709,7 +10846,7 @@
 
     if-ge p2, v0, :cond_6
 
-    .line 10973
+    .line 11130
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9720,7 +10857,7 @@
 
     if-lez p2, :cond_3
 
-    .line 10974
+    .line 11131
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
     add-int/lit8 v4, p2, -0x1
@@ -9739,12 +10876,12 @@
     :goto_0
     if-eqz v3, :cond_4
 
-    .line 10976
-    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32700(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+    .line 11133
+    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32800(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
 
     move-result v3
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32700(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32800(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
 
     move-result v4
 
@@ -9754,13 +10891,13 @@
 
     goto :goto_1
 
-    .line 10979
+    .line 11136
     :cond_4
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32700(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32800(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
 
     move-result v3
 
-    .line 10981
+    .line 11138
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->resultNames:Ljava/util/ArrayList;
 
@@ -9770,7 +10907,7 @@
 
     check-cast v4, Ljava/lang/CharSequence;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32800(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)[Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32900(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -9794,7 +10931,7 @@
 
     goto/16 :goto_4
 
-    .line 10983
+    .line 11140
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
@@ -9806,7 +10943,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 10984
+    .line 11141
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchResults:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9815,7 +10952,7 @@
 
     check-cast v0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
-    .line 10985
+    .line 11142
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->resultNames:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
@@ -9851,7 +10988,7 @@
 
     goto/16 :goto_4
 
-    .line 10988
+    .line 11145
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
@@ -9863,7 +11000,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 10991
+    .line 11148
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
@@ -9873,27 +11010,27 @@
 
     if-ge p2, v0, :cond_d
 
-    .line 10992
+    .line 11149
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 10993
+    .line 11150
     instance-of v3, v0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     if-eqz v3, :cond_b
 
-    .line 10994
+    .line 11151
     check-cast v0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    .line 10995
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32900(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)Ljava/lang/String;
+    .line 11152
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$33000(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32800(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)[Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->access$32900(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -9917,16 +11054,16 @@
 
     goto :goto_4
 
-    .line 10996
+    .line 11153
     :cond_b
     instance-of v3, v0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
     if-eqz v3, :cond_f
 
-    .line 10997
+    .line 11154
     check-cast v0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
-    .line 10998
+    .line 11155
     iget-object v3, v0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->title:Ljava/lang/String;
 
     iget-object v0, v0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->path:[Ljava/lang/String;
@@ -9948,7 +11085,7 @@
 
     goto :goto_4
 
-    .line 11001
+    .line 11158
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->recentSearches:Ljava/util/ArrayList;
 
@@ -9960,7 +11097,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 11002
+    .line 11159
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchArray:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9969,7 +11106,7 @@
 
     check-cast v0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
-    .line 11003
+    .line 11160
     iget-object v3, v0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->title:Ljava/lang/String;
 
     iget-object v0, v0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->path:[Ljava/lang/String;
@@ -10003,7 +11140,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 11033
+    .line 11190
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->mContext:Landroid/content/Context;
@@ -10014,7 +11151,7 @@
 
     goto :goto_0
 
-    .line 11029
+    .line 11186
     :cond_0
     new-instance p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
@@ -10024,7 +11161,7 @@
 
     goto :goto_0
 
-    .line 11026
+    .line 11183
     :cond_1
     new-instance p1, Lorg/telegram/ui/Cells/SettingsSearchCell;
 
@@ -10032,7 +11169,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/SettingsSearchCell;-><init>(Landroid/content/Context;)V
 
-    .line 11036
+    .line 11193
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -10044,7 +11181,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 11037
+    .line 11194
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -10055,15 +11192,15 @@
 .method public search(Ljava/lang/String;)V
     .locals 4
 
-    .line 11103
+    .line 11260
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->lastSearchString:Ljava/lang/String;
 
-    .line 11104
+    .line 11261
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 11105
+    .line 11262
     sget-object v0, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
@@ -10072,10 +11209,10 @@
 
     const/4 v0, 0x0
 
-    .line 11106
+    .line 11263
     iput-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
-    .line 11108
+    .line 11265
     :cond_0
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -10085,28 +11222,28 @@
 
     const/4 p1, 0x0
 
-    .line 11109
+    .line 11266
     iput-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchWas:Z
 
-    .line 11110
+    .line 11267
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchResults:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 11111
+    .line 11268
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->faqSearchResults:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 11112
+    .line 11269
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->resultNames:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 11113
+    .line 11270
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
 
     move-result-object p1
 
@@ -10118,10 +11255,10 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
-    .line 11114
+    .line 11271
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$9900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
 
     move-result-object p1
 
@@ -10137,18 +11274,18 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 11115
+    .line 11272
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
 
-    .line 11118
+    .line 11275
     :cond_1
     sget-object v0, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda124;
+    new-instance v1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda142;
 
-    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda124;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda142;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;)V
 
     iput-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 

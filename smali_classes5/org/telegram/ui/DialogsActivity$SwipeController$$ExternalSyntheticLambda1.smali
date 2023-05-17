@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/DialogsActivity$SwipeController;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$SwipeController;->$r8$lambda$ZtAarUNuEmSDolPlot0KLEFT2OM(Lorg/telegram/ui/DialogsActivity$SwipeController;)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$SwipeController;->$r8$lambda$VfJsZNiRrNS10V-GY4CvZ3RYxTY(Lorg/telegram/ui/DialogsActivity$SwipeController;)V
 
     return-void
 .end method

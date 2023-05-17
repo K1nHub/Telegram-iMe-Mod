@@ -112,7 +112,7 @@
 .method public read(Lokio/Buffer;J)J
     .locals 7
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

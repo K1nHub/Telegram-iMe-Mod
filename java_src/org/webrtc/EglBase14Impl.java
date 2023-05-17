@@ -30,7 +30,7 @@ public class EglBase14Impl implements EglBase14 {
         sb.append(i);
         sb.append(". isEGL14Supported: ");
         sb.append(i >= 18);
-        Logging.m18d(TAG, sb.toString());
+        Logging.m20d(TAG, sb.toString());
         return i >= 18;
     }
 
@@ -61,7 +61,7 @@ public class EglBase14Impl implements EglBase14 {
         this.eglDisplay = eglDisplay;
         this.eglConfig = getEglConfig(eglDisplay, iArr);
         int openGlesVersionFromConfig = EglBase.CC.getOpenGlesVersionFromConfig(iArr);
-        Logging.m18d(TAG, "Using OpenGL ES version " + openGlesVersionFromConfig);
+        Logging.m20d(TAG, "Using OpenGL ES version " + openGlesVersionFromConfig);
         this.eglContext = createEglContext(eGLContext, this.eglDisplay, this.eglConfig, openGlesVersionFromConfig);
     }
 

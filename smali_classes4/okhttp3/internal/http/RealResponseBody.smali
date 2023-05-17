@@ -15,7 +15,7 @@
 .method public constructor <init>(Ljava/lang/String;JLokio/BufferedSource;)V
     .locals 1
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

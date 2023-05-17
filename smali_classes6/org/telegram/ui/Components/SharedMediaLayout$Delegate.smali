@@ -27,7 +27,7 @@
 .method public abstract isFragmentOpened()Z
 .end method
 
-.method public abstract onMemberClick(Lorg/telegram/tgnet/TLRPC$ChatParticipant;ZZ)Z
+.method public abstract onMemberClick(Lorg/telegram/tgnet/TLRPC$ChatParticipant;ZZLandroid/view/View;)Z
 .end method
 
 .method public abstract scrollToSharedMedia()V

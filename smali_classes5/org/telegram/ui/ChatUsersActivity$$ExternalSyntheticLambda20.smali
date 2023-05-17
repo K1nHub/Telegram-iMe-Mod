@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
@@ -22,20 +22,18 @@
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatUsersActivity;->$r8$lambda$DZg0PBD9kYhD-9lixi1aStIkCS8(Lorg/telegram/ui/ChatUsersActivity;)V
+    check-cast p1, Lorg/telegram/tgnet/TLObject;
 
-    return-void
-.end method
+    check-cast p2, Lorg/telegram/tgnet/TLObject;
 
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatUsersActivity;->$r8$lambda$w6B2c7fhUJidfDmSGWVfZWaeB2g(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;)I
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

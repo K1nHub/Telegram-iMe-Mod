@@ -1,6 +1,6 @@
 package io.grpc.internal;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Stopwatch;
@@ -54,17 +54,17 @@ public final class GrpcUtil {
     private static final Logger log = Logger.getLogger(GrpcUtil.class.getName());
 
     static {
-        Charset.forName(C0470C.ASCII_NAME);
-        TIMEOUT_KEY = Metadata.Key.m680of("grpc-timeout", new TimeoutMarshaller());
+        Charset.forName(C0475C.ASCII_NAME);
+        TIMEOUT_KEY = Metadata.Key.m685of("grpc-timeout", new TimeoutMarshaller());
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        MESSAGE_ENCODING_KEY = Metadata.Key.m680of("grpc-encoding", asciiMarshaller);
+        MESSAGE_ENCODING_KEY = Metadata.Key.m685of("grpc-encoding", asciiMarshaller);
         MESSAGE_ACCEPT_ENCODING_KEY = InternalMetadata.keyOf("grpc-accept-encoding", new AcceptEncodingMarshaller());
-        CONTENT_ENCODING_KEY = Metadata.Key.m680of("content-encoding", asciiMarshaller);
+        CONTENT_ENCODING_KEY = Metadata.Key.m685of("content-encoding", asciiMarshaller);
         CONTENT_ACCEPT_ENCODING_KEY = InternalMetadata.keyOf("accept-encoding", new AcceptEncodingMarshaller());
-        CONTENT_TYPE_KEY = Metadata.Key.m680of("content-type", asciiMarshaller);
-        TE_HEADER = Metadata.Key.m680of("te", asciiMarshaller);
-        USER_AGENT_KEY = Metadata.Key.m680of("user-agent", asciiMarshaller);
-        Splitter.m742on(',').trimResults();
+        CONTENT_TYPE_KEY = Metadata.Key.m685of("content-type", asciiMarshaller);
+        TE_HEADER = Metadata.Key.m685of("te", asciiMarshaller);
+        USER_AGENT_KEY = Metadata.Key.m685of("user-agent", asciiMarshaller);
+        Splitter.m746on(',').trimResults();
         TimeUnit timeUnit = TimeUnit.SECONDS;
         DEFAULT_KEEPALIVE_TIMEOUT_NANOS = timeUnit.toNanos(20L);
         TimeUnit.HOURS.toNanos(2L);

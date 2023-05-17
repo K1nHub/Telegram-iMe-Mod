@@ -22,9 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/catalog/tabs/CatalogPresenter;",
+        "Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;",
         ">;"
     }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$60\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2,2:433\n129#3,5:435\n129#3,5:440\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$60\n*L\n373#1:433,2\n375#1:435,5\n376#1:440,5\n*E\n"
 .end annotation
 
 
@@ -57,23 +61,106 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/catalog/tabs/CatalogPresenter;
-    .locals 1
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;
+    .locals 7
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "it"
+    const-string v0, "<name for destructuring parameter 0>"
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 373
-    new-instance p1, Lcom/iMe/ui/catalog/tabs/CatalogPresenter;
+    .line 44
+    const-class v0, Lcom/iMe/model/catalog/CampaignItem;
 
-    invoke-direct {p1}, Lcom/iMe/ui/catalog/tabs/CatalogPresenter;-><init>()V
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    return-object p1
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lcom/iMe/model/catalog/CampaignItem;
+
+    .line 45
+    const-class v0, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    move-object v3, p2
+
+    check-cast v3, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    .line 374
+    new-instance p2, Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;
+
+    .line 133
+    const-class v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    .line 133
+    const-class v0, Lcom/iMe/manager/TelegramApi;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lcom/iMe/manager/TelegramApi;
+
+    const-class v0, Lcom/iMe/gateway/TelegramControllersGateway;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v6, p1
+
+    check-cast v6, Lcom/iMe/gateway/TelegramControllersGateway;
+
+    move-object v1, p2
+
+    .line 374
+    invoke-direct/range {v1 .. v6}, Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;-><init>(Lcom/iMe/model/catalog/CampaignItem;Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/manager/TelegramApi;Lcom/iMe/gateway/TelegramControllersGateway;)V
+
+    return-object p2
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -84,7 +171,7 @@
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$60;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/catalog/tabs/CatalogPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$60;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;
 
     move-result-object p1
 

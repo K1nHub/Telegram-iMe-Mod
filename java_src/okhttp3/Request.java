@@ -7,7 +7,7 @@ import kotlin.Pair;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt;
+import kotlin.text.StringsKt__StringsJVMKt;
 import okhttp3.Headers;
 import okhttp3.internal.Util;
 import okhttp3.internal.http.HttpMethod;
@@ -156,21 +156,27 @@ public final class Request {
         }
 
         public Builder url(String url) {
+            boolean startsWith;
+            boolean startsWith2;
             Intrinsics.checkNotNullParameter(url, "url");
-            if (StringsKt.startsWith(url, "ws:", true)) {
+            startsWith = StringsKt__StringsJVMKt.startsWith(url, "ws:", true);
+            if (startsWith) {
                 StringBuilder sb = new StringBuilder();
                 sb.append("http:");
                 String substring = url.substring(3);
                 Intrinsics.checkNotNullExpressionValue(substring, "(this as java.lang.String).substring(startIndex)");
                 sb.append(substring);
                 url = sb.toString();
-            } else if (StringsKt.startsWith(url, "wss:", true)) {
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append("https:");
-                String substring2 = url.substring(4);
-                Intrinsics.checkNotNullExpressionValue(substring2, "(this as java.lang.String).substring(startIndex)");
-                sb2.append(substring2);
-                url = sb2.toString();
+            } else {
+                startsWith2 = StringsKt__StringsJVMKt.startsWith(url, "wss:", true);
+                if (startsWith2) {
+                    StringBuilder sb2 = new StringBuilder();
+                    sb2.append("https:");
+                    String substring2 = url.substring(4);
+                    Intrinsics.checkNotNullExpressionValue(substring2, "(this as java.lang.String).substring(startIndex)");
+                    sb2.append(substring2);
+                    url = sb2.toString();
+                }
             }
             return url(HttpUrl.Companion.get(url));
         }

@@ -13,7 +13,7 @@ import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.ColoredImageSpan */
 /* loaded from: classes6.dex */
 public class ColoredImageSpan extends ReplacementSpan {
-    String colorKey;
+    int colorKey;
     Drawable drawable;
     int drawableColor;
     private int size;
@@ -82,7 +82,7 @@ public class ColoredImageSpan extends ReplacementSpan {
             if (i10 == 0) {
                 i10 = this.drawable.getIntrinsicHeight();
             }
-            i6 = AndroidUtilities.m50dp(this.topOffset) + i3 + ((i9 - i10) / 2);
+            i6 = AndroidUtilities.m54dp(this.topOffset) + i3 + ((i9 - i10) / 2);
         }
         canvas.translate(f, i6);
         Drawable drawable3 = this.drawable;
@@ -92,9 +92,9 @@ public class ColoredImageSpan extends ReplacementSpan {
         canvas.restore();
     }
 
-    public void setColorKey(String str) {
-        this.colorKey = str;
-        this.usePaintColor = str == null;
+    public void setColorKey(int i) {
+        this.colorKey = i;
+        this.usePaintColor = i < 0;
     }
 
     public void setTopOffset(int i) {

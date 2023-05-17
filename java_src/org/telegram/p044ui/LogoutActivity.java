@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -21,7 +21,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -92,14 +92,14 @@ public class LogoutActivity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("LogOutTitle", C3242R.string.LogOutTitle));
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("LogOutTitle", C3290R.string.LogOutTitle));
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LogoutActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LogoutActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     LogoutActivity.this.finishFragment();
@@ -109,7 +109,7 @@ public class LogoutActivity extends BaseFragment {
         this.listAdapter = new ListAdapter(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
         recyclerListView.setVerticalScrollBarEnabled(false);
@@ -171,8 +171,8 @@ public class LogoutActivity extends BaseFragment {
 
     public static AlertDialog makeLogOutDialog(Context context, final int i) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(LocaleController.getString("AreYouSureLogout", C3242R.string.AreYouSureLogout));
-        int i2 = C3242R.string.LogOut;
+        builder.setMessage(LocaleController.getString("AreYouSureLogout", C3290R.string.AreYouSureLogout));
+        int i2 = C3290R.string.LogOut;
         builder.setTitle(LocaleController.getString("LogOut", i2));
         builder.setPositiveButton(LocaleController.getString("LogOut", i2), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LogoutActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
@@ -180,11 +180,11 @@ public class LogoutActivity extends BaseFragment {
                 LogoutActivity.lambda$makeLogOutDialog$1(i, dialogInterface, i3);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
         AlertDialog create = builder.create();
         TextView textView = (TextView) create.getButton(-1);
         if (textView != null) {
-            textView.setTextColor(Theme.getColor("dialogTextRed"));
+            textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
         }
         return create;
     }
@@ -229,20 +229,20 @@ public class LogoutActivity extends BaseFragment {
             if (itemViewType == 0) {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 if (i == LogoutActivity.this.alternativeHeaderRow) {
-                    headerCell.setText(LocaleController.getString("AlternativeOptions", C3242R.string.AlternativeOptions));
+                    headerCell.setText(LocaleController.getString("AlternativeOptions", C3290R.string.AlternativeOptions));
                 }
             } else if (itemViewType != 1) {
                 if (itemViewType == 3) {
                     TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;
                     if (i == LogoutActivity.this.logoutRow) {
-                        textSettingsCell.setTextColor(Theme.getColor("windowBackgroundWhiteRedText5"));
-                        textSettingsCell.setText(LocaleController.getString("LogOutTitle", C3242R.string.LogOutTitle), false);
+                        textSettingsCell.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
+                        textSettingsCell.setText(LocaleController.getString("LogOutTitle", C3290R.string.LogOutTitle), false);
                     }
                 } else if (itemViewType != 4) {
                 } else {
                     TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
                     if (i == LogoutActivity.this.logoutSectionRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getString("LogOutInfo", C3242R.string.LogOutInfo));
+                        textInfoPrivacyCell.setText(LocaleController.getString("LogOutInfo", C3290R.string.LogOutInfo));
                     }
                 }
             } else {
@@ -252,21 +252,21 @@ public class LogoutActivity extends BaseFragment {
                         if (i != LogoutActivity.this.cacheRow) {
                             if (i != LogoutActivity.this.phoneRow) {
                                 if (i == LogoutActivity.this.supportRow) {
-                                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ContactSupport", C3242R.string.ContactSupport), LocaleController.getString("ContactSupportInfo", C3242R.string.ContactSupportInfo), C3242R.C3244drawable.msg_help, false);
+                                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ContactSupport", C3290R.string.ContactSupport), LocaleController.getString("ContactSupportInfo", C3290R.string.ContactSupportInfo), C3290R.C3292drawable.msg_help, false);
                                     return;
                                 }
                                 return;
                             }
-                            textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ChangePhoneNumber", C3242R.string.ChangePhoneNumber), LocaleController.getString("ChangePhoneNumberInfo", C3242R.string.ChangePhoneNumberInfo), C3242R.C3244drawable.msg_newphone, true);
+                            textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ChangePhoneNumber", C3290R.string.ChangePhoneNumber), LocaleController.getString("ChangePhoneNumberInfo", C3290R.string.ChangePhoneNumberInfo), C3290R.C3292drawable.msg_newphone, true);
                             return;
                         }
-                        textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ClearCache", C3242R.string.ClearCache), LocaleController.getString("ClearCacheInfo", C3242R.string.ClearCacheInfo), C3242R.C3244drawable.msg_clearcache, true);
+                        textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ClearCache", C3290R.string.ClearCache), LocaleController.getString("ClearCacheInfo", C3290R.string.ClearCacheInfo), C3290R.C3292drawable.msg_clearcache, true);
                         return;
                     }
-                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("SetPasscode", C3242R.string.SetPasscode), LocaleController.getString("SetPasscodeInfo", C3242R.string.SetPasscodeInfo), C3242R.C3244drawable.msg_permissions, true);
+                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("SetPasscode", C3290R.string.SetPasscode), LocaleController.getString("SetPasscodeInfo", C3290R.string.SetPasscodeInfo), C3290R.C3292drawable.msg_permissions, true);
                     return;
                 }
-                textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("AddAnotherAccount", C3242R.string.AddAnotherAccount), LocaleController.getString("AddAnotherAccountInfo", C3242R.string.AddAnotherAccountInfo), C3242R.C3244drawable.msg_contact_add, true);
+                textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("AddAnotherAccount", C3290R.string.AddAnotherAccount), LocaleController.getString("AddAnotherAccountInfo", C3290R.string.AddAnotherAccountInfo), C3290R.C3292drawable.msg_contact_add, true);
             }
         }
 
@@ -278,34 +278,26 @@ public class LogoutActivity extends BaseFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            TextDetailSettingsCell textDetailSettingsCell;
-            View view;
+            View headerCell;
             if (i == 0) {
-                FrameLayout headerCell = new HeaderCell(this.mContext);
-                headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                textDetailSettingsCell = headerCell;
+                headerCell = new HeaderCell(this.mContext);
+                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 1) {
-                TextDetailSettingsCell textDetailSettingsCell2 = new TextDetailSettingsCell(this.mContext);
-                textDetailSettingsCell2.setMultilineDetail(true);
-                textDetailSettingsCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                textDetailSettingsCell = textDetailSettingsCell2;
+                TextDetailSettingsCell textDetailSettingsCell = new TextDetailSettingsCell(this.mContext);
+                textDetailSettingsCell.setMultilineDetail(true);
+                textDetailSettingsCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                headerCell = textDetailSettingsCell;
+            } else if (i == 2) {
+                headerCell = new ShadowSectionCell(this.mContext);
+            } else if (i == 3) {
+                headerCell = new TextSettingsCell(this.mContext);
+                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else {
-                if (i == 2) {
-                    view = new ShadowSectionCell(this.mContext);
-                } else if (i == 3) {
-                    FrameLayout textSettingsCell = new TextSettingsCell(this.mContext);
-                    textSettingsCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                    textDetailSettingsCell = textSettingsCell;
-                } else {
-                    view = new TextInfoPrivacyCell(this.mContext);
-                    view.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
-                }
-                view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-                return new RecyclerListView.Holder(view);
+                headerCell = new TextInfoPrivacyCell(this.mContext);
+                headerCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
             }
-            view = textDetailSettingsCell;
-            view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            return new RecyclerListView.Holder(view);
+            headerCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+            return new RecyclerListView.Holder(headerCell);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -326,23 +318,27 @@ public class LogoutActivity extends BaseFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, HeaderCell.class, TextDetailSettingsCell.class}, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteRedText5"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextDetailSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextDetailSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextDetailSettingsCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayIcon"));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, HeaderCell.class, TextDetailSettingsCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
+        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        int i3 = Theme.key_windowBackgroundGrayShadow;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_text_RedRegular));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextDetailSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextDetailSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextDetailSettingsCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayIcon));
         return arrayList;
     }
 }

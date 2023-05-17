@@ -2,32 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 1
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$mnC_q59nS0V7jp19KxBQQ0rDXXk(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$DW183bs0JzOr7IEue3eiMVQ-UIA(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

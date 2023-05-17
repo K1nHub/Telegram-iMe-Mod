@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 3568
+    .line 3581
     invoke-direct {p0}, Lorg/telegram/ui/Components/CloseProgressDrawable2;-><init>()V
 
     return-void
@@ -29,10 +29,10 @@
 .method protected getCurrentColor()I
     .locals 1
 
-    const-string v0, "windowBackgroundWhiteBlackText"
+    .line 3584
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 3571
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

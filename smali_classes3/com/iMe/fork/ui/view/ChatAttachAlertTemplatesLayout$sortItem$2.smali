@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 48
+    .line 49
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$sortItem$2;->invoke()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
     .locals 1
 
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$sortItem$2;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$initSortItem(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;

@@ -12,13 +12,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Reserved({1000})
 /* loaded from: classes.dex */
 public final class zzg extends AbstractSafeParcelable implements Result {
-    @SafeParcelable.Field(getter = "getStatus", m775id = 1)
+    @SafeParcelable.Field(getter = "getStatus", m779id = 1)
     private final Status zzb;
     public static final zzg zza = new zzg(Status.RESULT_SUCCESS);
     public static final Parcelable.Creator<zzg> CREATOR = new zzh();
 
     @SafeParcelable.Constructor
-    public zzg(@SafeParcelable.Param(m774id = 1) Status status) {
+    public zzg(@SafeParcelable.Param(m778id = 1) Status status) {
         this.zzb = status;
     }
 

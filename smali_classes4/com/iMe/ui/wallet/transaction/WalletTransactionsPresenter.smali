@@ -108,7 +108,7 @@
 
     invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "stakingInteractor"
+    const-string/jumbo v0, "stakingInteractor"
 
     invoke-static {p9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -564,7 +564,7 @@
 .method private static final loadInternal$lambda$0(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

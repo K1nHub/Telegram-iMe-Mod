@@ -979,7 +979,6 @@
     <string name="ChatSettings">聊天室設定</string>
     <string name="ChatThemeChangedTo">%1$s 將聊天室主題變更為 %2$s</string>
     <string name="ChatThemeChangedYou">您將聊天室主題變更為 %1$s</string>
-    <string name="ChatThemeDayNightSwitchTooltip">點擊此處可查看在使用夜間模式時，**%s** 會看到的主題模樣。</string>
     <string name="ChatThemeDisabled">%1$s 停用了聊天室主題</string>
     <string name="ChatThemeDisabledYou">您停用了聊天室主題</string>
     <string name="ChatThemeSaveDialogApply">套用</string>
@@ -5278,9 +5277,6 @@ Telegram 更新到最新版本。"</string>
     <string name="collection_tab_all">全部</string>
     <string name="collection_tab_categories">類別</string>
     <string name="collection_tab_my">我的</string>
-    <string name="combine_messages_alert_message">"您連續傳送訊息可能會造成其他使用者的困擾。
-
-是否要啟用選項以將您在 30 秒內連續傳送的訊息合併為一則訊息？"</string>
     <string name="combine_messages_disable">不要合併訊息</string>
     <string name="combine_messages_enable">合併訊息</string>
     <string name="combine_messages_send_without_combine">不合併傳送</string>
@@ -5369,13 +5365,11 @@ Telegram 更新到最新版本。"</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">您確定嗎？</string>
     <string name="deleting_messages">刪除訊息中……已處理 %1$d of %2$d</string>
     <string name="deleting_messages_success">已刪除服務訊息</string>
-    <string name="dialog_message_enable_archive_in_drawer">如果您關閉全部聊天室分頁，您將無法進入封存。將封存存取按鈕放在側邊選單中嗎？</string>
     <string name="dialog_promo_discussion_group_description">群組</string>
     <string name="dialog_promo_en_news_channel_description">English</string>
     <string name="dialog_promo_ru_news_channel_description">Russian</string>
     <string name="dialog_promo_subscribe_subtitle">那麼就加我們頻道</string>
     <string name="dialog_promo_subscribe_title">您想要追蹤 iMe 的新聞嗎？</string>
-    <string name="dialog_title_enable_archive_in_drawer">存取封存</string>
     <string name="dialogs_activity_move_to_folder">移到資料夾</string>
     <string name="dialogs_albums_sort_alphabetically">按照字母排序</string>
     <string name="dialogs_albums_sort_date">按照日期排序</string>
@@ -5641,6 +5635,8 @@ Telegram 更新到最新版本。"</string>
 新增音樂到播放清單"</string>
     <string name="music_playlists_tab">播放清單</string>
     <string name="music_tab_playlist">播放清單</string>
+    <string name="nav_app_bar_navigate_up_description">向上瀏覽</string>
+    <string name="nav_app_bar_open_drawer_description">開啟導覽匣</string>
     <string name="neurobots_enable_dialog_description">欲啟用並配置智能機器人，請前往設定</string>
     <string name="neurobots_enable_dialog_positive_btn_text">前往</string>
     <string name="neurobots_enable_dialog_title">智能機器人已停用</string>
@@ -5873,8 +5869,6 @@ Telegram 更新到最新版本。"</string>
     <string name="settings_tools_combine_messages_hint">"如果您經常連續傳送訊息，可能會造成其他使用者的困擾。
 
 是否要啟用此選項，將您在 30 秒內連續傳送的訊息合併為一則訊息？"</string>
-    <string name="settings_tools_custom_sharing">批次分享</string>
-    <string name="settings_tools_custom_sharing_hint">從外部分享時，顯示主要和封存聊天室清單的分類分頁。例如，當您在 iMe 中分享裝置圖庫中的相片時。</string>
     <string name="settings_tools_customization">自訂</string>
     <string name="settings_tools_design_icon">圖標設計</string>
     <string name="settings_tools_message_popup_reactions">在右鍵選單中</string>

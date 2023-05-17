@@ -32,12 +32,12 @@
 .method public constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 2313
+    .line 2320
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 2314
+    .line 2321
     iput-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -46,7 +46,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;)Landroid/content/Context;
     .locals 0
 
-    .line 2305
+    .line 2312
     iget-object p0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
 
     return-object p0
@@ -55,7 +55,7 @@
 .method static synthetic access$7600(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;)I
     .locals 0
 
-    .line 2305
+    .line 2312
     iget p0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->messagesEndRow:I
 
     return p0
@@ -66,7 +66,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 2337
+    .line 2344
     iget v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->rowCount:I
 
     return v0
@@ -83,7 +83,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 2842
+    .line 2849
     iget v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->messagesStartRow:I
 
     if-lt p1, v0, :cond_0
@@ -92,7 +92,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 2843
+    .line 2850
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity;->messages:Ljava/util/ArrayList;
@@ -128,10 +128,10 @@
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 2899
+    .line 2906
     invoke-virtual {p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->updateRows()V
 
-    .line 2901
+    .line 2908
     :try_start_0
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
     :try_end_0
@@ -142,7 +142,7 @@
     :catch_0
     move-exception v0
 
-    .line 2903
+    .line 2910
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -152,10 +152,10 @@
 .method public notifyItemChanged(I)V
     .locals 0
 
-    .line 2909
+    .line 2916
     invoke-virtual {p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->updateRows()V
 
-    .line 2911
+    .line 2918
     :try_start_0
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
     :try_end_0
@@ -166,7 +166,7 @@
     :catch_0
     move-exception p1
 
-    .line 2913
+    .line 2920
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -176,10 +176,10 @@
 .method public notifyItemMoved(II)V
     .locals 0
 
-    .line 2939
+    .line 2946
     invoke-virtual {p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->updateRows()V
 
-    .line 2941
+    .line 2948
     :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
     :try_end_0
@@ -190,7 +190,7 @@
     :catch_0
     move-exception p1
 
-    .line 2943
+    .line 2950
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -200,10 +200,10 @@
 .method public notifyItemRangeChanged(II)V
     .locals 0
 
-    .line 2919
+    .line 2926
     invoke-virtual {p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->updateRows()V
 
-    .line 2921
+    .line 2928
     :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
     :try_end_0
@@ -214,7 +214,7 @@
     :catch_0
     move-exception p1
 
-    .line 2923
+    .line 2930
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -224,10 +224,10 @@
 .method public notifyItemRangeInserted(II)V
     .locals 0
 
-    .line 2949
+    .line 2956
     invoke-virtual {p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->updateRows()V
 
-    .line 2951
+    .line 2958
     :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
     :try_end_0
@@ -238,7 +238,7 @@
     :catch_0
     move-exception p1
 
-    .line 2953
+    .line 2960
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -248,10 +248,10 @@
 .method public notifyItemRangeRemoved(II)V
     .locals 0
 
-    .line 2969
+    .line 2976
     invoke-virtual {p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->updateRows()V
 
-    .line 2971
+    .line 2978
     :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
     :try_end_0
@@ -262,7 +262,7 @@
     :catch_0
     move-exception p1
 
-    .line 2973
+    .line 2980
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -272,10 +272,10 @@
 .method public notifyItemRemoved(I)V
     .locals 0
 
-    .line 2959
+    .line 2966
     invoke-virtual {p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->updateRows()V
 
-    .line 2961
+    .line 2968
     :try_start_0
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
     :try_end_0
@@ -286,7 +286,7 @@
     :catch_0
     move-exception p1
 
-    .line 2963
+    .line 2970
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -296,7 +296,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 13
 
-    .line 2803
+    .line 2810
     iget v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->loadingUpRow:I
 
     const/4 v1, 0x0
@@ -305,12 +305,12 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 2804
+    .line 2811
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ChatLoadingCell;
 
-    .line 2805
+    .line 2812
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$6700(Lorg/telegram/ui/ChannelAdminLogActivity;)I
@@ -326,7 +326,7 @@
 
     goto/16 :goto_2
 
-    .line 2806
+    .line 2813
     :cond_1
     iget v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->messagesStartRow:I
 
@@ -336,7 +336,7 @@
 
     if-ge p2, v0, :cond_5
 
-    .line 2807
+    .line 2814
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity;->messages:Ljava/util/ArrayList;
@@ -359,35 +359,35 @@
 
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 2808
+    .line 2815
     iget-object v3, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 2810
+    .line 2817
     instance-of v4, v3, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v4, :cond_4
 
-    .line 2811
+    .line 2818
     check-cast v3, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 2812
+    .line 2819
     iput-boolean v2, v3, Lorg/telegram/ui/Cells/ChatMessageCell;->isChat:Z
 
     add-int/lit8 v4, p2, 0x1
 
-    .line 2813
+    .line 2820
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->getItemViewType(I)I
 
     move-result v5
 
     add-int/lit8 v6, p2, -0x1
 
-    .line 2814
+    .line 2821
     invoke-virtual {p0, v6}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->getItemViewType(I)I
 
     move-result v6
 
-    .line 2817
+    .line 2824
     iget-object v7, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$Message;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
@@ -404,7 +404,7 @@
 
     if-ne v5, v7, :cond_2
 
-    .line 2818
+    .line 2825
     iget-object v5, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     iget-object v5, v5, Lorg/telegram/ui/ChannelAdminLogActivity;->messages:Ljava/util/ArrayList;
@@ -427,7 +427,7 @@
 
     check-cast v4, Lorg/telegram/messenger/MessageObject;
 
-    .line 2819
+    .line 2826
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result v5
@@ -473,7 +473,7 @@
     :cond_2
     move v4, v1
 
-    .line 2823
+    .line 2830
     :goto_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -481,7 +481,7 @@
 
     if-ne v6, p1, :cond_3
 
-    .line 2824
+    .line 2831
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChannelAdminLogActivity;->messages:Ljava/util/ArrayList;
@@ -502,7 +502,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 2825
+    .line 2832
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Message;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
@@ -557,32 +557,32 @@
     :goto_1
     const/4 p1, 0x0
 
-    .line 2829
+    .line 2836
     invoke-virtual {v3, v0, p1, v4, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZZ)V
 
-    .line 2830
+    .line 2837
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlighted(Z)V
 
-    .line 2831
+    .line 2838
     invoke-virtual {v3, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlightedText(Ljava/lang/String;)V
 
     goto :goto_2
 
-    .line 2832
+    .line 2839
     :cond_4
     instance-of p1, v3, Lorg/telegram/ui/Cells/ChatActionCell;
 
     if-eqz p1, :cond_5
 
-    .line 2833
+    .line 2840
     check-cast v3, Lorg/telegram/ui/Cells/ChatActionCell;
 
-    .line 2834
+    .line 2841
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Cells/ChatActionCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;)V
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 2835
+    .line 2842
     invoke-virtual {v3, p1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
     :cond_5
@@ -597,7 +597,7 @@
 
     if-nez p2, :cond_1
 
-    .line 2349
+    .line 2356
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$4200(Lorg/telegram/ui/ChannelAdminLogActivity;)Ljava/util/ArrayList;
@@ -610,7 +610,7 @@
 
     if-nez p2, :cond_0
 
-    .line 2350
+    .line 2357
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$4200(Lorg/telegram/ui/ChannelAdminLogActivity;)Ljava/util/ArrayList;
@@ -625,7 +625,7 @@
 
     check-cast p2, Landroid/view/View;
 
-    .line 2351
+    .line 2358
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$4200(Lorg/telegram/ui/ChannelAdminLogActivity;)Ljava/util/ArrayList;
@@ -636,7 +636,7 @@
 
     goto :goto_0
 
-    .line 2353
+    .line 2360
     :cond_0
     new-instance p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -644,20 +644,20 @@
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;)V
 
-    .line 2355
+    .line 2362
     :goto_0
     move-object v0, p2
 
     check-cast v0, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 2356
+    .line 2363
     new-instance v1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;-><init>(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setDelegate(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)V
 
-    .line 2667
+    .line 2674
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setAllowAssistant(Z)V
 
     goto :goto_1
@@ -665,14 +665,14 @@
     :cond_1
     if-ne p2, p1, :cond_2
 
-    .line 2669
+    .line 2676
     new-instance p2, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$2;
 
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$2;-><init>(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;Landroid/content/Context;)V
 
-    .line 2678
+    .line 2685
     new-instance p1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;-><init>(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;)V
@@ -688,7 +688,7 @@
 
     if-ne p2, p1, :cond_3
 
-    .line 2793
+    .line 2800
     new-instance p2, Lorg/telegram/ui/Cells/ChatUnreadCell;
 
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
@@ -697,7 +697,7 @@
 
     goto :goto_1
 
-    .line 2795
+    .line 2802
     :cond_3
     new-instance p2, Lorg/telegram/ui/Cells/ChatLoadingCell;
 
@@ -711,7 +711,7 @@
 
     invoke-direct {p2, p1, v1, v0}, Lorg/telegram/ui/Cells/ChatLoadingCell;-><init>(Landroid/content/Context;Landroid/view/View;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2797
+    .line 2804
     :goto_1
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -723,7 +723,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2798
+    .line 2805
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -734,7 +734,7 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 3
 
-    .line 2850
+    .line 2857
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -745,7 +745,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2852
+    .line 2859
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
@@ -757,7 +757,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 2878
+    .line 2885
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -765,25 +765,25 @@
 
     if-eqz v0, :cond_2
 
-    .line 2879
+    .line 2886
     check-cast p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 2880
+    .line 2887
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     const/4 v0, 0x0
 
-    .line 2882
+    .line 2889
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 2883
+    .line 2890
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setCheckPressed(ZZ)V
 
-    .line 2885
+    .line 2892
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlighted(Z)V
 
     :cond_2
@@ -795,10 +795,10 @@
 
     const/4 v0, 0x0
 
-    .line 2318
+    .line 2325
     iput v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->rowCount:I
 
-    .line 2319
+    .line 2326
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity;->messages:Ljava/util/ArrayList;
@@ -811,7 +811,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2320
+    .line 2327
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$4100(Lorg/telegram/ui/ChannelAdminLogActivity;)Z
@@ -820,7 +820,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2321
+    .line 2328
     iget v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -831,17 +831,17 @@
 
     goto :goto_0
 
-    .line 2323
+    .line 2330
     :cond_0
     iput v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->loadingUpRow:I
 
-    .line 2325
+    .line 2332
     :goto_0
     iget v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->messagesStartRow:I
 
-    .line 2326
+    .line 2333
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ChannelAdminLogActivity;->messages:Ljava/util/ArrayList;
@@ -854,19 +854,19 @@
 
     iput v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->rowCount:I
 
-    .line 2327
+    .line 2334
     iput v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->messagesEndRow:I
 
     goto :goto_1
 
-    .line 2329
+    .line 2336
     :cond_1
     iput v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->loadingUpRow:I
 
-    .line 2330
+    .line 2337
     iput v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->messagesStartRow:I
 
-    .line 2331
+    .line 2338
     iput v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->messagesEndRow:I
 
     :goto_1

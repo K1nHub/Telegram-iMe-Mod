@@ -33,7 +33,7 @@
     .line 47
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "targetAddress"
+    const-string/jumbo v0, "targetAddress"
 
     .line 48
     invoke-static {p2, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -258,7 +258,7 @@
 
     iget-object v1, p0, Lio/grpc/HttpConnectProxiedSocketAddress;->targetAddress:Ljava/net/InetSocketAddress;
 
-    const-string v2, "targetAddr"
+    const-string/jumbo v2, "targetAddr"
 
     .line 112
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

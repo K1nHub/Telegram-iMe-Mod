@@ -38,7 +38,7 @@
     .line 554
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$7;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$900(Lorg/telegram/ui/Components/ColorPicker;)I
+    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$1000(Lorg/telegram/ui/Components/ColorPicker;)I
 
     move-result p1
 
@@ -51,7 +51,7 @@
     .line 555
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$7;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$100(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$200(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -64,7 +64,7 @@
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ColorPicker$7;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ColorPicker;->access$400(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/ColorPicker$RadioButton;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ColorPicker;->access$500(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/ColorPicker$RadioButton;
 
     move-result-object v1
 
@@ -75,7 +75,7 @@
     .line 558
     iget-object v1, p0, Lorg/telegram/ui/Components/ColorPicker$7;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ColorPicker;->access$400(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/ColorPicker$RadioButton;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ColorPicker;->access$500(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/ColorPicker$RadioButton;
 
     move-result-object v1
 
@@ -92,7 +92,7 @@
     .line 559
     iget-object v1, p0, Lorg/telegram/ui/Components/ColorPicker$7;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ColorPicker;->access$400(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/ColorPicker$RadioButton;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ColorPicker;->access$500(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/ColorPicker$RadioButton;
 
     move-result-object v1
 
@@ -111,7 +111,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ColorPicker;->access$1002(Lorg/telegram/ui/Components/ColorPicker;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ColorPicker;->access$1102(Lorg/telegram/ui/Components/ColorPicker;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
     return-void
 .end method

@@ -54,10 +54,10 @@ public final class DonationSeeMoreButton extends FrameLayout {
     }
 
     public final void setupColors() {
-        setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         AppCompatTextView textView = getTextView();
-        textView.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed")));
+        textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
+        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
     }
 
     @Override // android.view.View
@@ -72,8 +72,8 @@ public final class DonationSeeMoreButton extends FrameLayout {
         ViewExtKt.withMediumTypeface(appCompatTextView);
         appCompatTextView.setSingleLine();
         appCompatTextView.setGravity(17);
-        int m50dp = AndroidUtilities.m50dp(10);
-        appCompatTextView.setPadding(m50dp, m50dp, m50dp, m50dp);
+        int m54dp = AndroidUtilities.m54dp(10);
+        appCompatTextView.setPadding(m54dp, m54dp, m54dp, m54dp);
         return appCompatTextView;
     }
 

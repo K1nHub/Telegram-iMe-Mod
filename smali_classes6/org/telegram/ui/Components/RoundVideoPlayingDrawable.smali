@@ -97,39 +97,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 148
     iget-object v0, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 149
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -312,9 +289,9 @@
     .line 106
     iget-object v1, v0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->paint:Landroid/graphics/Paint;
 
-    const-string v2, "chat_serviceText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_serviceText:I
 
-    invoke-direct {v0, v2}, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v2}, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->getThemedColor(I)I
 
     move-result v2
 

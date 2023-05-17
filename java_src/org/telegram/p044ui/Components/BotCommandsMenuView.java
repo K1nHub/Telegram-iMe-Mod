@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.collection.LongSparseArray;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.controller.TemplatesController;
@@ -24,11 +25,14 @@ import com.iMe.storage.domain.model.templates.TemplateModel;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.MenuDrawable;
 import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p044ui.ChatActivity;
 import org.telegram.p044ui.Components.RecyclerListView;
 import org.telegram.tgnet.TLRPC$BotInfo;
 import org.telegram.tgnet.TLRPC$TL_botCommand;
@@ -41,6 +45,7 @@ public class BotCommandsMenuView extends View {
     float expandProgress;
     boolean expanded;
     boolean isOpened;
+    private boolean isTemplatesMode;
     boolean isWebView;
     boolean isWebViewOpened;
     int lastSize;
@@ -55,12 +60,38 @@ public class BotCommandsMenuView extends View {
     protected void onTranslationChanged(float f) {
     }
 
-    public void enableTemplatesMode() {
-        this.templatesDrawable = getResources().getDrawable(C3242R.C3244drawable.fork_templates);
+    public void setTemplatesMode(boolean z, final ChatActivity chatActivity) {
+        this.isTemplatesMode = z;
+        if (z) {
+            this.templatesDrawable = ContextCompat.getDrawable(getContext(), C3290R.C3292drawable.fork_templates);
+            setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.BotCommandsMenuView$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnLongClickListener
+                public final boolean onLongClick(View view) {
+                    boolean lambda$setTemplatesMode$0;
+                    lambda$setTemplatesMode$0 = BotCommandsMenuView.this.lambda$setTemplatesMode$0(chatActivity, view);
+                    return lambda$setTemplatesMode$0;
+                }
+            });
+            return;
+        }
+        this.templatesDrawable = null;
+        setOnLongClickListener(null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ boolean lambda$setTemplatesMode$0(ChatActivity chatActivity, View view) {
+        if (this.isOpened) {
+            return true;
+        }
+        if (chatActivity != null) {
+            chatActivity.showChooseTemplatesModeDialog();
+            return false;
+        }
+        return false;
     }
 
     public boolean isTemplatesMode() {
-        return this.templatesDrawable != null;
+        return this.isTemplatesMode;
     }
 
     public BotCommandsMenuView(Context context) {
@@ -77,8 +108,8 @@ public class BotCommandsMenuView extends View {
             }
         };
         this.backDrawable = menuDrawable;
-        int i = C3242R.raw.bot_webview_sheet_to_cross;
-        this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(20)) { // from class: org.telegram.ui.Components.BotCommandsMenuView.2
+        int i = C3290R.raw.bot_webview_sheet_to_cross;
+        this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(20)) { // from class: org.telegram.ui.Components.BotCommandsMenuView.2
             @Override // android.graphics.drawable.Drawable
             public void invalidateSelf() {
                 super.invalidateSelf();
@@ -91,7 +122,7 @@ public class BotCommandsMenuView extends View {
                 BotCommandsMenuView.this.invalidate();
             }
         };
-        this.menuText = LocaleController.getString(C3242R.string.BotsMenuTitle);
+        this.menuText = LocaleController.getString(C3290R.string.BotsMenuTitle);
         this.drawBackgroundDrawable = true;
         updateColors();
         menuDrawable.setMiniIcon(true);
@@ -100,10 +131,10 @@ public class BotCommandsMenuView extends View {
         menuDrawable.setCallback(this);
         textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         menuDrawable.setRoundCap();
-        Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(16), 0, Theme.getColor("featuredStickers_addButtonPressed"));
+        Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(16), 0, Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
         this.backgroundDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
-        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3242R.string.AccDescrBotMenu));
+        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3290R.string.AccDescrBotMenu));
     }
 
     public void setDrawBackgroundDrawable(boolean z) {
@@ -130,8 +161,8 @@ public class BotCommandsMenuView extends View {
     }
 
     private void updateColors() {
-        this.paint.setColor(Theme.getColor("chat_messagePanelVoiceBackground"));
-        int color = Theme.getColor("chat_messagePanelVoiceDuration");
+        this.paint.setColor(Theme.getColor(Theme.key_chat_messagePanelVoiceBackground));
+        int color = Theme.getColor(Theme.key_chat_messagePanelVoiceDuration);
         this.backDrawable.setBackColor(color);
         this.backDrawable.setIconColor(color);
         RLottieDrawable rLottieDrawable = this.webViewAnimation;
@@ -146,7 +177,7 @@ public class BotCommandsMenuView extends View {
         int size = (View.MeasureSpec.getSize(i) + View.MeasureSpec.getSize(i2)) << 16;
         if (this.lastSize != size || this.menuTextLayout == null) {
             this.backDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            this.textPaint.setTextSize(AndroidUtilities.m50dp(15));
+            this.textPaint.setTextSize(AndroidUtilities.m54dp(15));
             this.lastSize = size;
             if (isTemplatesMode()) {
                 this.menuText = "";
@@ -154,12 +185,12 @@ public class BotCommandsMenuView extends View {
             int measureText = (int) this.textPaint.measureText(this.menuText);
             this.menuTextLayout = StaticLayoutEx.createStaticLayout(this.menuText, this.textPaint, measureText, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false, TextUtils.TruncateAt.END, measureText, 1);
         }
-        onTranslationChanged((this.menuTextLayout.getWidth() + AndroidUtilities.m50dp(4)) * this.expandProgress);
-        int m50dp = AndroidUtilities.m50dp(40);
+        onTranslationChanged((this.menuTextLayout.getWidth() + AndroidUtilities.m54dp(4)) * this.expandProgress);
+        int m54dp = AndroidUtilities.m54dp(40);
         if (this.expanded) {
-            m50dp += this.menuTextLayout.getWidth() + AndroidUtilities.m50dp(4);
+            m54dp += this.menuTextLayout.getWidth() + AndroidUtilities.m54dp(4);
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(m50dp, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(32), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(m54dp, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(32), 1073741824));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x0048  */
@@ -183,7 +214,7 @@ public class BotCommandsMenuView extends View {
 
     public boolean setMenuText(String str) {
         if (str == null) {
-            str = LocaleController.getString(C3242R.string.BotsMenuTitle);
+            str = LocaleController.getString(C3290R.string.BotsMenuTitle);
         }
         String str2 = this.menuText;
         boolean z = str2 == null || !str2.equals(str);
@@ -362,26 +393,36 @@ public class BotCommandsMenuView extends View {
         public BotCommandView(Context context) {
             super(context);
             setOrientation(0);
-            setPadding(AndroidUtilities.m50dp(16), 0, AndroidUtilities.m50dp(16), 0);
-            TextView textView = new TextView(context);
+            setPadding(AndroidUtilities.m54dp(16), 0, AndroidUtilities.m54dp(16), 0);
+            TextView textView = new TextView(this, context) { // from class: org.telegram.ui.Components.BotCommandsMenuView.BotCommandView.1
+                @Override // android.widget.TextView
+                public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+                    super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(14), false), bufferType);
+                }
+            };
             this.description = textView;
-            textView.setTextSize(1, 16.0f);
-            this.description.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-            this.description.setTag("windowBackgroundWhiteBlackText");
+            NotificationCenter.listenEmojiLoading(textView);
+            this.description.setTextSize(1, 16.0f);
+            TextView textView2 = this.description;
+            int i = Theme.key_windowBackgroundWhiteBlackText;
+            textView2.setTextColor(Theme.getColor(i));
+            this.description.setTag(Integer.valueOf(i));
             this.description.setLines(1);
             this.description.setEllipsize(TextUtils.TruncateAt.END);
-            addView(this.description, LayoutHelper.createLinear(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.m50dp(8), 0));
-            TextView textView2 = new TextView(context);
-            this.command = textView2;
-            textView2.setTextSize(1, 14.0f);
-            this.command.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
-            this.command.setTag("windowBackgroundWhiteGrayText");
+            addView(this.description, LayoutHelper.createLinear(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.m54dp(8), 0));
+            TextView textView3 = new TextView(context);
+            this.command = textView3;
+            textView3.setTextSize(1, 14.0f);
+            TextView textView4 = this.command;
+            int i2 = Theme.key_windowBackgroundWhiteGrayText;
+            textView4.setTextColor(Theme.getColor(i2));
+            this.command.setTag(Integer.valueOf(i2));
             addView(this.command, LayoutHelper.createLinear(-2, -2, BitmapDescriptorFactory.HUE_RED, 16));
         }
 
         @Override // android.widget.LinearLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(36), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(36), 1073741824));
         }
 
         public String getCommand() {

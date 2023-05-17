@@ -73,7 +73,7 @@
 
     move-object v9, p2
 
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$bX3wVb_tc1sHmyikzSLFnOQoBrI(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Ljava/lang/Integer;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$wgyetdzs1VYcpThRSXaGvuSHiOo(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Ljava/lang/Integer;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

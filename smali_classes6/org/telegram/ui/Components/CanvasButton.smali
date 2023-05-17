@@ -197,10 +197,10 @@
 
     new-array v1, v1, [I
 
-    const-string v3, "listSelectorSDK21"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     .line 96
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

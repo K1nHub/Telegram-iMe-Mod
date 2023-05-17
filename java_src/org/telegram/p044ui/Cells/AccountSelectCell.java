@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
@@ -38,10 +38,10 @@ public class AccountSelectCell extends FrameLayout {
         super(context);
         AvatarDrawable avatarDrawable = new AvatarDrawable();
         this.avatarDrawable = avatarDrawable;
-        avatarDrawable.setTextSize(AndroidUtilities.m50dp(12));
+        avatarDrawable.setTextSize(AndroidUtilities.m54dp(12));
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(18));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(18));
         addView(this.imageView, LayoutHelper.createFrame(36, 36, 51, 10, 10, 0, 0));
         TextView textView = new TextView(context);
         this.textView = textView;
@@ -54,37 +54,37 @@ public class AccountSelectCell extends FrameLayout {
         this.textView.setEllipsize(TextUtils.TruncateAt.END);
         if (z) {
             addView(this.textView, LayoutHelper.createFrame(-2, -2, 51, 61, 7, 8, 0));
-            this.textView.setTextColor(Theme.getColor("voipgroup_nameText"));
-            this.textView.setText(LocaleController.getString("VoipGroupDisplayAs", C3242R.string.VoipGroupDisplayAs));
+            this.textView.setTextColor(Theme.getColor(Theme.key_voipgroup_nameText));
+            this.textView.setText(LocaleController.getString("VoipGroupDisplayAs", C3290R.string.VoipGroupDisplayAs));
             TextView textView2 = new TextView(context);
             this.infoTextView = textView2;
-            textView2.setTextColor(Theme.getColor("voipgroup_lastSeenText"));
+            textView2.setTextColor(Theme.getColor(Theme.key_voipgroup_lastSeenText));
             this.infoTextView.setTextSize(1, 15.0f);
             this.infoTextView.setLines(1);
             this.infoTextView.setMaxLines(1);
             this.infoTextView.setSingleLine(true);
-            this.infoTextView.setMaxWidth(AndroidUtilities.m50dp(320));
+            this.infoTextView.setMaxWidth(AndroidUtilities.m54dp(320));
             this.infoTextView.setGravity(51);
             this.infoTextView.setEllipsize(TextUtils.TruncateAt.END);
             addView(this.infoTextView, LayoutHelper.createFrame(-2, -2, 51, 61, 27, 8, 0));
             return;
         }
         addView(this.textView, LayoutHelper.createFrame(-1, -1, 51, 61, 0, 56, 0));
-        this.textView.setTextColor(Theme.getColor("actionBarDefaultSubmenuItem"));
+        this.textView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem));
         ImageView imageView = new ImageView(context);
         this.checkImageView = imageView;
-        imageView.setImageResource(C3242R.C3244drawable.account_check);
+        imageView.setImageResource(C3290R.C3292drawable.account_check);
         this.checkImageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.checkImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuItemCheck"), PorterDuff.Mode.MULTIPLY));
+        this.checkImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemCheck), PorterDuff.Mode.MULTIPLY));
         addView(this.checkImageView, LayoutHelper.createFrame(40, -1, 53, 0, 0, 6, 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (this.checkImageView != null || (this.infoTextView != null && getLayoutParams().width != -2)) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(56), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(56), 1073741824));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(56), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(56), 1073741824));
         }
     }
 
@@ -92,7 +92,7 @@ public class AccountSelectCell extends FrameLayout {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.infoTextView == null) {
-            this.textView.setTextColor(Theme.getColor("chats_menuItemText"));
+            this.textView.setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
         }
     }
 

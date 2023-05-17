@@ -3,12 +3,12 @@
 .source "LoginActivity.java"
 
 # interfaces
-.implements Lorg/telegram/ui/Components/QRCodeBottomSheet$LoginTokenCallback;
+.implements Landroid/text/TextWatcher;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LoginActivity$PhoneView;->lambda$new$8(Landroid/view/View;)V
+    value = Lorg/telegram/ui/LoginActivity$PhoneView;-><init>(Lorg/telegram/ui/LoginActivity;Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,242 +18,360 @@
 
 
 # instance fields
+.field private actionPosition:I
+
+.field private characterAction:I
+
 .field final synthetic this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
 
 # direct methods
-.method public static synthetic $r8$lambda$T0yjylUpRYIwYdQZDcckdOmyBMo(Lorg/telegram/ui/LoginActivity$PhoneView$5;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneView;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/LoginActivity$PhoneView$5;->lambda$onTwoStepVerificationNeeded$1(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$pQPnHJ49BTPgkLqyxq0VzJAvwTU(Lorg/telegram/ui/LoginActivity$PhoneView$5;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/LoginActivity$PhoneView$5;->lambda$onTwoStepVerificationNeeded$0(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneView;)V
-    .locals 0
-
-    .line 2393
+    .line 2532
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    const/4 p1, -0x1
 
-.method private synthetic lambda$onTwoStepVerificationNeeded$0(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
-    .locals 4
-
-    .line 2403
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$9402(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
-
-    .line 2404
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
-
-    iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LoginActivity;->access$2800(Lorg/telegram/ui/LoginActivity;ZZ)V
-
-    if-nez p1, :cond_1
-
-    .line 2406
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$account_Password;
-
-    .line 2407
-    invoke-static {p2, v2}, Lorg/telegram/ui/TwoStepVerificationActivity;->canHandleCurrentPassword(Lorg/telegram/tgnet/TLRPC$account_Password;Z)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    .line 2408
-    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
-
-    iget-object p1, p1, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object p1
-
-    sget p2, Lorg/telegram/messenger/R$string;->UpdateAppAlert:I
-
-    const-string v0, "UpdateAppAlert"
-
-    invoke-static {v0, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p1, p2, v2}, Lorg/telegram/ui/Components/AlertsCreator;->showUpdateAppAlert(Landroid/content/Context;Ljava/lang/String;Z)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    return-void
-
-    .line 2411
-    :cond_0
-    new-instance p1, Landroid/os/Bundle;
-
-    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
-
-    .line 2412
-    new-instance v0, Lorg/telegram/tgnet/SerializedData;
-
-    invoke-virtual {p2}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
-
-    move-result v3
-
-    invoke-direct {v0, v3}, Lorg/telegram/tgnet/SerializedData;-><init>(I)V
-
-    .line 2413
-    invoke-virtual {p2, v0}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
-
-    .line 2414
-    invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->toByteArray()[B
-
-    move-result-object p2
-
-    invoke-static {p2}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string v0, "password"
-
-    invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2415
-    iget-object p2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
-
-    iget-object p2, p2, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
-
-    const/4 v0, 0x6
-
-    invoke-virtual {p2, v0, v2, p1, v1}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
-
-    goto :goto_0
-
-    .line 2417
-    :cond_1
-    iget-object p2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
-
-    iget-object p2, p2, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
-
-    sget v0, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
-
-    invoke-static {p2, v0, p1}, Lorg/telegram/ui/LoginActivity;->access$6900(Lorg/telegram/ui/LoginActivity;Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method private synthetic lambda$onTwoStepVerificationNeeded$1(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 1
-
-    .line 2402
-    new-instance v0, Lorg/telegram/ui/LoginActivity$PhoneView$5$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/LoginActivity$PhoneView$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LoginActivity$PhoneView$5;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    .line 2534
+    iput p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAuthorized(Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;)V
-    .locals 1
+.method public afterTextChanged(Landroid/text/Editable;)V
+    .locals 10
 
-    .line 2396
+    .line 2596
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5000(Lorg/telegram/ui/LoginActivity$PhoneView;)Z
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/LoginActivity;->access$8600(Lorg/telegram/ui/LoginActivity;Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;)V
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     return-void
-.end method
 
-.method public onError()V
-    .locals 3
-
-    .line 2424
+    .line 2599
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$2900(Lorg/telegram/ui/LoginActivity;)Landroid/widget/FrameLayout;
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/widget/EditText;->getSelectionStart()I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
+    move-result v0
 
-    move-result-object v0
-
-    sget v1, Lorg/telegram/messenger/R$raw;->error:I
-
-    sget v2, Lorg/telegram/messenger/R$string;->common_unexpected_error_title:I
-
-    invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/BulletinFactory;->createSimpleBulletin(ILjava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
-
-    return-void
-.end method
-
-.method public onTwoStepVerificationNeeded()V
-    .locals 4
-
-    .line 2401
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;
-
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;-><init>()V
-
-    .line 2402
+    .line 2601
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    iget-object v1, v1, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/LoginActivity;->access$9300(Lorg/telegram/ui/LoginActivity;)I
-
-    move-result v1
-
-    invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
 
     move-result-object v1
 
-    new-instance v2, Lorg/telegram/ui/LoginActivity$PhoneView$5$$ExternalSyntheticLambda1;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/LoginActivity$PhoneView$5$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/LoginActivity$PhoneView$5;)V
+    move-result-object v1
 
-    const/16 v3, 0xa
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, v0, v2, v3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;I)I
+    move-result-object v1
+
+    .line 2602
+    iget v2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
+
+    const/4 v3, 0x3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
+
+    if-ne v2, v3, :cond_1
+
+    .line 2603
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget v6, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->actionPosition:I
+
+    invoke-virtual {v1, v4, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v6, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->actionPosition:I
+
+    add-int/2addr v6, v5
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    add-int/lit8 v0, v0, -0x1
+
+    .line 2606
+    :cond_1
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    invoke-direct {v2, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    move v6, v4
+
+    .line 2607
+    :goto_0
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    if-ge v6, v7, :cond_3
+
+    add-int/lit8 v7, v6, 0x1
+
+    .line 2608
+    invoke-virtual {v1, v6, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v8, "0123456789"
+
+    .line 2609
+    invoke-virtual {v8, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
+    .line 2610
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    move v6, v7
+
+    goto :goto_0
+
+    .line 2613
+    :cond_3
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
+
+    invoke-static {v1, v5}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5002(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
+
+    .line 2614
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;->getHintText()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_6
+
+    move v6, v4
+
+    .line 2616
+    :goto_1
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v7
+
+    if-ge v6, v7, :cond_6
+
+    .line 2617
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    const/4 v8, 0x2
+
+    const/16 v9, 0x20
+
+    if-ge v6, v7, :cond_5
+
+    .line 2618
+    invoke-virtual {v1, v6}, Ljava/lang/String;->charAt(I)C
+
+    move-result v7
+
+    if-ne v7, v9, :cond_4
+
+    .line 2619
+    invoke-virtual {v2, v6, v9}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v6, v6, 0x1
+
+    if-ne v0, v6, :cond_4
+
+    .line 2621
+    iget v7, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
+
+    if-eq v7, v8, :cond_4
+
+    if-eq v7, v3, :cond_4
+
+    add-int/lit8 v0, v0, 0x1
+
+    :cond_4
+    add-int/2addr v6, v5
+
+    goto :goto_1
+
+    .line 2626
+    :cond_5
+    invoke-virtual {v2, v6, v9}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
+
+    add-int/2addr v6, v5
+
+    if-ne v0, v6, :cond_6
+
+    .line 2627
+    iget v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
+
+    if-eq v1, v8, :cond_6
+
+    if-eq v1, v3, :cond_6
+
+    add-int/lit8 v0, v0, 0x1
+
+    .line 2634
+    :cond_6
+    invoke-interface {p1}, Landroid/text/Editable;->length()I
+
+    move-result v1
+
+    invoke-interface {p1, v4, v1, v2}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
+
+    if-ltz v0, :cond_7
+
+    .line 2636
+    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
+
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+
+    move-result-object p1
+
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->length()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
+
+    .line 2638
+    :cond_7
+    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
+
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/HintEditText;->onTextChange()V
+
+    .line 2639
+    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
+
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5100(Lorg/telegram/ui/LoginActivity$PhoneView;)V
+
+    .line 2640
+    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
+
+    invoke-static {p1, v4}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5002(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
+
+    return-void
+.end method
+
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-nez p3, :cond_0
+
+    if-ne p4, v0, :cond_0
+
+    .line 2540
+    iput v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p3, v0, :cond_2
+
+    if-nez p4, :cond_2
+
+    .line 2542
+    invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result p1
+
+    const/16 p3, 0x20
+
+    if-ne p1, p3, :cond_1
+
+    if-lez p2, :cond_1
+
+    const/4 p1, 0x3
+
+    .line 2543
+    iput p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
+
+    sub-int/2addr p2, v0
+
+    .line 2544
+    iput p2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->actionPosition:I
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p1, 0x2
+
+    .line 2546
+    iput p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
+
+    goto :goto_0
+
+    :cond_2
+    const/4 p1, -0x1
+
+    .line 2549
+    iput p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
+
+    :goto_0
+    return-void
+.end method
+
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
 
     return-void
 .end method

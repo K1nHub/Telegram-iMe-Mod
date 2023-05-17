@@ -13,27 +13,27 @@ import com.google.android.gms.identity.intents.model.UserAddress;
 /* loaded from: classes3.dex */
 public final class FullWallet extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<FullWallet> CREATOR = new zzl();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     String zza;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     String zzb;
-    @SafeParcelable.Field(m775id = 4)
+    @SafeParcelable.Field(m779id = 4)
     zzaj zzc;
-    @SafeParcelable.Field(m775id = 5)
+    @SafeParcelable.Field(m779id = 5)
     String zzd;
-    @SafeParcelable.Field(m775id = 6)
+    @SafeParcelable.Field(m779id = 6)
     zza zze;
-    @SafeParcelable.Field(m775id = 7)
+    @SafeParcelable.Field(m779id = 7)
     zza zzf;
-    @SafeParcelable.Field(m775id = 8)
+    @SafeParcelable.Field(m779id = 8)
     String[] zzg;
-    @SafeParcelable.Field(m775id = 9)
+    @SafeParcelable.Field(m779id = 9)
     UserAddress zzh;
-    @SafeParcelable.Field(m775id = 10)
+    @SafeParcelable.Field(m779id = 10)
     UserAddress zzi;
-    @SafeParcelable.Field(m775id = 11)
+    @SafeParcelable.Field(m779id = 11)
     InstrumentInfo[] zzj;
-    @SafeParcelable.Field(m775id = 12)
+    @SafeParcelable.Field(m779id = 12)
     PaymentMethodToken zzk;
 
     private FullWallet() {
@@ -58,7 +58,7 @@ public final class FullWallet extends AbstractSafeParcelable implements Reflecte
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public FullWallet(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) zzaj zzajVar, @SafeParcelable.Param(m774id = 5) String str3, @SafeParcelable.Param(m774id = 6) zza zzaVar, @SafeParcelable.Param(m774id = 7) zza zzaVar2, @SafeParcelable.Param(m774id = 8) String[] strArr, @SafeParcelable.Param(m774id = 9) UserAddress userAddress, @SafeParcelable.Param(m774id = 10) UserAddress userAddress2, @SafeParcelable.Param(m774id = 11) InstrumentInfo[] instrumentInfoArr, @SafeParcelable.Param(m774id = 12) PaymentMethodToken paymentMethodToken) {
+    public FullWallet(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2, @SafeParcelable.Param(m778id = 4) zzaj zzajVar, @SafeParcelable.Param(m778id = 5) String str3, @SafeParcelable.Param(m778id = 6) zza zzaVar, @SafeParcelable.Param(m778id = 7) zza zzaVar2, @SafeParcelable.Param(m778id = 8) String[] strArr, @SafeParcelable.Param(m778id = 9) UserAddress userAddress, @SafeParcelable.Param(m778id = 10) UserAddress userAddress2, @SafeParcelable.Param(m778id = 11) InstrumentInfo[] instrumentInfoArr, @SafeParcelable.Param(m778id = 12) PaymentMethodToken paymentMethodToken) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = zzajVar;

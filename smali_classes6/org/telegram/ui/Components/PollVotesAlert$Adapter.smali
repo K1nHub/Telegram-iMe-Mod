@@ -735,20 +735,20 @@
     .line 1150
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$Adapter;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
-    const-string v0, "dialogBackground"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/PollVotesAlert;->access$4500(Lorg/telegram/ui/Components/PollVotesAlert;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/PollVotesAlert;->access$4500(Lorg/telegram/ui/Components/PollVotesAlert;I)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    const-string p1, "switchTrackChecked"
-
-    const-string v0, "windowBackgroundWhiteBlueText4"
-
     .line 1151
-    invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
     goto :goto_0
 

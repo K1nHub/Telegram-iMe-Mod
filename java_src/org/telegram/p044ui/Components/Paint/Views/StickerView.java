@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC$TL_maskCoords;
 public class StickerView extends EntityView {
     private int anchor;
     private Size baseSize;
-    private ImageReceiver centerImage;
+    public final ImageReceiver centerImage;
     private FrameLayoutDrawer containerView;
     private boolean mirrored;
     private Object parentObject;
@@ -70,7 +70,7 @@ public class StickerView extends EntityView {
             if (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeSticker) {
                 TLRPC$TL_maskCoords tLRPC$TL_maskCoords = tLRPC$DocumentAttribute.mask_coords;
                 if (tLRPC$TL_maskCoords != null) {
-                    this.anchor = tLRPC$TL_maskCoords.f1504n;
+                    this.anchor = tLRPC$TL_maskCoords.f1510n;
                 }
             } else {
                 i++;
@@ -222,12 +222,12 @@ public class StickerView extends EntityView {
 
         @Override // org.telegram.p044ui.Components.Paint.Views.EntityView.SelectionView
         protected int pointInsideHandle(float f, float f2) {
-            float m51dp = AndroidUtilities.m51dp(19.5f);
-            float m51dp2 = AndroidUtilities.m51dp(1.0f) + m51dp;
-            float f3 = m51dp2 * 2.0f;
-            float measuredHeight = ((getMeasuredHeight() - f3) / 2.0f) + m51dp2;
-            if (f <= m51dp2 - m51dp || f2 <= measuredHeight - m51dp || f >= m51dp2 + m51dp || f2 >= measuredHeight + m51dp) {
-                if (f <= ((getMeasuredWidth() - f3) + m51dp2) - m51dp || f2 <= measuredHeight - m51dp || f >= m51dp2 + (getMeasuredWidth() - f3) + m51dp || f2 >= measuredHeight + m51dp) {
+            float m55dp = AndroidUtilities.m55dp(19.5f);
+            float m55dp2 = AndroidUtilities.m55dp(1.0f) + m55dp;
+            float f3 = m55dp2 * 2.0f;
+            float measuredHeight = ((getMeasuredHeight() - f3) / 2.0f) + m55dp2;
+            if (f <= m55dp2 - m55dp || f2 <= measuredHeight - m55dp || f >= m55dp2 + m55dp || f2 >= measuredHeight + m55dp) {
+                if (f <= ((getMeasuredWidth() - f3) + m55dp2) - m55dp || f2 <= measuredHeight - m55dp || f >= m55dp2 + (getMeasuredWidth() - f3) + m55dp || f2 >= measuredHeight + m55dp) {
                     float measuredWidth = getMeasuredWidth() / 2.0f;
                     return Math.pow((double) (f - measuredWidth), 2.0d) + Math.pow((double) (f2 - measuredWidth), 2.0d) < Math.pow((double) measuredWidth, 2.0d) ? 3 : 0;
                 }
@@ -239,18 +239,18 @@ public class StickerView extends EntityView {
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-            float m51dp = AndroidUtilities.m51dp(4.5f);
-            float m51dp2 = AndroidUtilities.m51dp(1.0f) + m51dp + AndroidUtilities.m50dp(15);
-            float measuredWidth = (getMeasuredWidth() / 2) - m51dp2;
-            float f = m51dp2 + (2.0f * measuredWidth);
-            this.arcRect.set(m51dp2, m51dp2, f, f);
+            float m55dp = AndroidUtilities.m55dp(4.5f);
+            float m55dp2 = AndroidUtilities.m55dp(1.0f) + m55dp + AndroidUtilities.m54dp(15);
+            float measuredWidth = (getMeasuredWidth() / 2) - m55dp2;
+            float f = m55dp2 + (2.0f * measuredWidth);
+            this.arcRect.set(m55dp2, m55dp2, f, f);
             canvas.drawArc(this.arcRect, BitmapDescriptorFactory.HUE_RED, 180.0f, false, this.paint);
             canvas.drawArc(this.arcRect, 180.0f, 180.0f, false, this.paint);
-            float f2 = measuredWidth + m51dp2;
-            canvas.drawCircle(m51dp2, f2, m51dp, this.dotPaint);
-            canvas.drawCircle(m51dp2, f2, m51dp, this.dotStrokePaint);
-            canvas.drawCircle(f, f2, m51dp, this.dotPaint);
-            canvas.drawCircle(f, f2, m51dp, this.dotStrokePaint);
+            float f2 = measuredWidth + m55dp2;
+            canvas.drawCircle(m55dp2, f2, m55dp, this.dotPaint);
+            canvas.drawCircle(m55dp2, f2, m55dp, this.dotStrokePaint);
+            canvas.drawCircle(f, f2, m55dp, this.dotPaint);
+            canvas.drawCircle(f, f2, m55dp, this.dotStrokePaint);
         }
     }
 }

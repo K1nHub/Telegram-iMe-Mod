@@ -38,10 +38,10 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;)V
     .locals 0
 
-    .line 522
+    .line 534
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 523
+    .line 535
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -54,7 +54,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;)V
     .locals 0
 
-    .line 522
+    .line 534
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;-><init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;)V
 
     return-void

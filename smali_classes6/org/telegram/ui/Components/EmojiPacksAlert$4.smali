@@ -178,9 +178,9 @@
     .line 329
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->highlightPaint:Landroid/graphics/Paint;
 
-    const-string v4, "chat_linkSelectBackground"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_linkSelectBackground:I
 
-    invoke-virtual {p0, v4}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v4}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result v4
 

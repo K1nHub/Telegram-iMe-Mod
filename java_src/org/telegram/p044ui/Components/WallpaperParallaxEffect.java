@@ -16,7 +16,7 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     private SensorManager sensorManager;
 
     /* renamed from: wm */
-    private WindowManager f1754wm;
+    private WindowManager f1761wm;
     private float[] rollBuffer = new float[3];
     private float[] pitchBuffer = new float[3];
 
@@ -31,7 +31,7 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     }
 
     public WallpaperParallaxEffect(Context context) {
-        this.f1754wm = (WindowManager) context.getSystemService("window");
+        this.f1761wm = (WindowManager) context.getSystemService("window");
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         this.sensorManager = sensorManager;
         this.accelerometer = sensorManager.getDefaultSensor(1);
@@ -58,10 +58,10 @@ public class WallpaperParallaxEffect implements SensorEventListener {
 
     public float getScale(int i, int i2) {
         float f = i;
-        float m50dp = AndroidUtilities.m50dp(16) * 2;
-        float f2 = (f + m50dp) / f;
+        float m54dp = AndroidUtilities.m54dp(16) * 2;
+        float f2 = (f + m54dp) / f;
         float f3 = i2;
-        return Math.max(f2, (m50dp + f3) / f3);
+        return Math.max(f2, (m54dp + f3) / f3);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x00e5  */

@@ -31,6 +31,10 @@ public class ParametersHolder {
         this((i & 1) != 0 ? new ArrayList() : list);
     }
 
+    public final List<Object> getValues() {
+        return this._values;
+    }
+
     public <T> T elementAt(int i, KClass<?> clazz) {
         Intrinsics.checkNotNullParameter(clazz, "clazz");
         if (this._values.size() > i) {

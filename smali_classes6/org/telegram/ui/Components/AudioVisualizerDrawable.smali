@@ -597,9 +597,9 @@
     .line 122
     iget-object p4, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->p1:Landroid/graphics/Paint;
 
-    const-string v0, "chat_outLoader"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outLoader:I
 
-    invoke-static {v0, p6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, p6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p6
 
@@ -624,9 +624,9 @@
     :cond_1
     iget-object p4, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->p1:Landroid/graphics/Paint;
 
-    const-string v0, "chat_inLoader"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inLoader:I
 
-    invoke-static {v0, p6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, p6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p6
 

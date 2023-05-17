@@ -13,7 +13,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Cells.PollEditTextCell;
@@ -92,22 +92,26 @@ public final class PollEditTextCellWrapper extends LinearLayout {
 
     public final void setIcon(int i) {
         if (i == -1) {
-            ViewExtKt.gone(getIconView());
-            ViewExtKt.visible(getNoIconTextView());
+            ViewExtKt.gone$default(getIconView(), false, 1, null);
+            ViewExtKt.visible$default(getNoIconTextView(), false, 1, null);
             return;
         }
-        ViewExtKt.gone(getNoIconTextView());
-        ViewExtKt.visible(getIconView());
+        ViewExtKt.gone$default(getNoIconTextView(), false, 1, null);
+        ViewExtKt.visible$default(getIconView(), false, 1, null);
         getIconView().setImageResource(i);
     }
 
     public final void updateColors() {
-        this.pollEditTextCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        getIconLayout().setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        getIconLayout().setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor("windowBackgroundWhite"), Theme.getColor("listSelectorSDK21")));
-        getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionBackground"), PorterDuff.Mode.SRC_IN));
-        getNoIconTextView().setTextColor(Theme.getColor("windowBackgroundWhiteGrayIcon"));
-        getArrowImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayIcon"), PorterDuff.Mode.MULTIPLY));
+        PollEditTextCell pollEditTextCell = this.pollEditTextCell;
+        int i = Theme.key_windowBackgroundWhite;
+        pollEditTextCell.setBackgroundColor(Theme.getColor(i));
+        getIconLayout().setBackgroundColor(Theme.getColor(i));
+        getIconLayout().setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(i), Theme.getColor(Theme.key_listSelector)));
+        getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionBackground), PorterDuff.Mode.SRC_IN));
+        TextView noIconTextView = getNoIconTextView();
+        int i2 = Theme.key_windowBackgroundWhiteGrayIcon;
+        noIconTextView.setTextColor(Theme.getColor(i2));
+        getArrowImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
     }
 
     public final boolean checkEditTextTouch(float f) {
@@ -125,7 +129,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final LinearLayout initIconLayout() {
         LinearLayout linearLayout = new LinearLayout(getContext());
-        ViewExtKt.setHorizontalPadding(linearLayout, Integer.valueOf(AndroidUtilities.m50dp(6)));
+        ViewExtKt.setHorizontalPadding(linearLayout, Integer.valueOf(AndroidUtilities.m54dp(6)));
         linearLayout.setGravity(17);
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.PollEditTextCellWrapper$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -155,7 +159,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initNoIconTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3242R.string.no_icon));
+        textView.setText(LocaleController.getInternalString(C3290R.string.no_icon));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -164,7 +168,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     public final ImageView initArrowImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(C3242R.C3244drawable.arrow_more);
+        imageView.setImageResource(C3290R.C3292drawable.arrow_more);
         return imageView;
     }
 

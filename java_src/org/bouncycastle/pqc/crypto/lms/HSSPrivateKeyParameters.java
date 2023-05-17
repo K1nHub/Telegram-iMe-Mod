@@ -16,14 +16,14 @@ public class HSSPrivateKeyParameters extends LMSKeyParameters {
     private List<LMSPrivateKeyParameters> keys;
 
     /* renamed from: l */
-    private final int f1303l;
+    private final int f1308l;
     private HSSPublicKeyParameters publicKey;
     private List<LMSSignature> sig;
 
     private HSSPrivateKeyParameters(int i, List<LMSPrivateKeyParameters> list, List<LMSSignature> list2, long j, long j2, boolean z) {
         super(true);
         this.index = 0L;
-        this.f1303l = i;
+        this.f1308l = i;
         this.keys = Collections.unmodifiableList(list);
         this.sig = Collections.unmodifiableList(list2);
         this.index = j;
@@ -106,7 +106,7 @@ public class HSSPrivateKeyParameters extends LMSKeyParameters {
             return false;
         }
         HSSPrivateKeyParameters hSSPrivateKeyParameters = (HSSPrivateKeyParameters) obj;
-        if (this.f1303l == hSSPrivateKeyParameters.f1303l && this.isShard == hSSPrivateKeyParameters.isShard && this.indexLimit == hSSPrivateKeyParameters.indexLimit && this.index == hSSPrivateKeyParameters.index && this.keys.equals(hSSPrivateKeyParameters.keys)) {
+        if (this.f1308l == hSSPrivateKeyParameters.f1308l && this.isShard == hSSPrivateKeyParameters.isShard && this.indexLimit == hSSPrivateKeyParameters.indexLimit && this.index == hSSPrivateKeyParameters.index && this.keys.equals(hSSPrivateKeyParameters.keys)) {
             return this.sig.equals(hSSPrivateKeyParameters.sig);
         }
         return false;
@@ -115,7 +115,7 @@ public class HSSPrivateKeyParameters extends LMSKeyParameters {
     @Override // org.bouncycastle.pqc.crypto.lms.LMSKeyParameters, org.bouncycastle.util.Encodable
     public synchronized byte[] getEncoded() throws IOException {
         Composer bool;
-        bool = Composer.compose().u32str(0).u32str(this.f1303l).u64str(this.index).u64str(this.indexLimit).bool(this.isShard);
+        bool = Composer.compose().u32str(0).u32str(this.f1308l).u64str(this.index).u64str(this.indexLimit).bool(this.isShard);
         for (LMSPrivateKeyParameters lMSPrivateKeyParameters : this.keys) {
             bool.bytes(lMSPrivateKeyParameters);
         }
@@ -126,11 +126,11 @@ public class HSSPrivateKeyParameters extends LMSKeyParameters {
     }
 
     public int getL() {
-        return this.f1303l;
+        return this.f1308l;
     }
 
     public synchronized HSSPublicKeyParameters getPublicKey() {
-        return new HSSPublicKeyParameters(this.f1303l, getRootKey().getPublicKey());
+        return new HSSPublicKeyParameters(this.f1308l, getRootKey().getPublicKey());
     }
 
     LMSPrivateKeyParameters getRootKey() {
@@ -140,6 +140,6 @@ public class HSSPrivateKeyParameters extends LMSKeyParameters {
     public int hashCode() {
         long j = this.indexLimit;
         long j2 = this.index;
-        return (((((((((this.f1303l * 31) + (this.isShard ? 1 : 0)) * 31) + this.keys.hashCode()) * 31) + this.sig.hashCode()) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)));
+        return (((((((((this.f1308l * 31) + (this.isShard ? 1 : 0)) * 31) + this.keys.hashCode()) * 31) + this.sig.hashCode()) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)));
     }
 }

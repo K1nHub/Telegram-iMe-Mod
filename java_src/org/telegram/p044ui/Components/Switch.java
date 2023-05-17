@@ -61,10 +61,10 @@ public class Switch extends View {
     private RippleDrawable rippleDrawable;
     private Paint ripplePaint;
     private boolean semHaptics;
-    private String thumbCheckedColorKey;
-    private String thumbColorKey;
-    private String trackCheckedColorKey;
-    private String trackColorKey;
+    private int thumbCheckedColorKey;
+    private int thumbColorKey;
+    private int trackCheckedColorKey;
+    private int trackColorKey;
 
     /* renamed from: org.telegram.ui.Components.Switch$OnCheckedChangeListener */
     /* loaded from: classes6.dex */
@@ -87,10 +87,11 @@ public class Switch extends View {
     public Switch(Context context, Theme.ResourcesProvider resourcesProvider, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.iconProgress = 1.0f;
-        this.trackColorKey = "switch2Track";
-        this.trackCheckedColorKey = "switch2TrackChecked";
-        this.thumbColorKey = "windowBackgroundWhite";
-        this.thumbCheckedColorKey = "windowBackgroundWhite";
+        this.trackColorKey = Theme.key_fill_RedNormal;
+        this.trackCheckedColorKey = Theme.key_switch2TrackChecked;
+        int i = Theme.key_windowBackgroundWhite;
+        this.thumbColorKey = i;
+        this.thumbCheckedColorKey = i;
         this.pressedState = new int[]{16842910, 16842919};
         this.semHaptics = false;
         this.resourcesProvider = resourcesProvider;
@@ -100,7 +101,7 @@ public class Switch extends View {
         this.paint2 = paint;
         paint.setStyle(Paint.Style.STROKE);
         this.paint2.setStrokeCap(Paint.Cap.ROUND);
-        this.paint2.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.paint2.setStrokeWidth(AndroidUtilities.m54dp(2));
         setHapticFeedbackEnabled(true);
     }
 
@@ -153,8 +154,6 @@ public class Switch extends View {
     }
 
     public void setDrawRipple(boolean z) {
-        Theme.ResourcesProvider resourcesProvider;
-        String str;
         int i = Build.VERSION.SDK_INT;
         if (i < 21 || z == this.drawRipple) {
             return;
@@ -181,29 +180,22 @@ public class Switch extends View {
                 @Override // android.graphics.drawable.Drawable
                 public void draw(Canvas canvas) {
                     Rect bounds = getBounds();
-                    canvas.drawCircle(bounds.centerX(), bounds.centerY(), AndroidUtilities.m50dp(18), Switch.this.ripplePaint);
+                    canvas.drawCircle(bounds.centerX(), bounds.centerY(), AndroidUtilities.m54dp(18), Switch.this.ripplePaint);
                 }
             });
             this.rippleDrawable = rippleDrawable;
             if (i >= 23) {
-                rippleDrawable.setRadius(AndroidUtilities.m50dp(18));
+                rippleDrawable.setRadius(AndroidUtilities.m54dp(18));
             }
             this.rippleDrawable.setCallback(this);
         }
         boolean z2 = this.isChecked;
         if ((z2 && this.colorSet != 2) || (!z2 && this.colorSet != 1)) {
-            if (z2) {
-                resourcesProvider = this.resourcesProvider;
-                str = "switchTrackBlueSelectorChecked";
-            } else {
-                resourcesProvider = this.resourcesProvider;
-                str = "switchTrackBlueSelector";
-            }
-            this.rippleDrawable.setColor(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{Theme.getColor(str, resourcesProvider)}));
+            this.rippleDrawable.setColor(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{Theme.getColor(z2 ? Theme.key_switchTrackBlueSelectorChecked : Theme.key_switchTrackBlueSelector, this.resourcesProvider)}));
             this.colorSet = this.isChecked ? 2 : 1;
         }
         if (i >= 28 && z) {
-            this.rippleDrawable.setHotspot(this.isChecked ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(100), AndroidUtilities.m50dp(18));
+            this.rippleDrawable.setHotspot(this.isChecked ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(100), AndroidUtilities.m54dp(18));
         }
         this.rippleDrawable.setState(z ? this.pressedState : StateSet.NOTHING);
         invalidate();
@@ -215,11 +207,11 @@ public class Switch extends View {
         return super.verifyDrawable(drawable) || ((rippleDrawable = this.rippleDrawable) != null && drawable == rippleDrawable);
     }
 
-    public void setColors(String str, String str2, String str3, String str4) {
-        this.trackColorKey = str;
-        this.trackCheckedColorKey = str2;
-        this.thumbColorKey = str3;
-        this.thumbCheckedColorKey = str4;
+    public void setColors(int i, int i2, int i3, int i4) {
+        this.trackColorKey = i;
+        this.trackCheckedColorKey = i2;
+        this.thumbColorKey = i3;
+        this.thumbCheckedColorKey = i4;
     }
 
     private void animateToCheckedState(boolean z) {

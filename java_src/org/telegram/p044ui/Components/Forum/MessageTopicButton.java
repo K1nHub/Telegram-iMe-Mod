@@ -69,19 +69,19 @@ public class MessageTopicButton {
         this.resourcesProvider = resourcesProvider;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x0544, code lost:
-        if (r1.type == 5) goto L96;
+    /* JADX WARN: Code restructure failed: missing block: B:115:0x053b, code lost:
+        if (r1.type == 5) goto L97;
      */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0572  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0581  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0592  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0569  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0578  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0589  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public int set(org.telegram.p044ui.Cells.ChatMessageCell r29, org.telegram.messenger.MessageObject r30, org.telegram.tgnet.TLRPC$TL_forumTopic r31, int r32) {
         /*
-            Method dump skipped, instructions count: 1488
+            Method dump skipped, instructions count: 1480
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.Forum.MessageTopicButton.set(org.telegram.ui.Cells.ChatMessageCell, org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$TL_forumTopic, int):int");
@@ -106,13 +106,13 @@ public class MessageTopicButton {
     private void setupColors(int i) {
         MessageObject messageObject = this.lastMessageObject;
         if (messageObject != null && messageObject.shouldDrawWithoutBackground()) {
-            this.topicNameColor = getThemedColor("chat_stickerReplyNameText");
+            this.topicNameColor = getThemedColor(Theme.key_chat_stickerReplyNameText);
             return;
         }
         MessageObject messageObject2 = this.lastMessageObject;
         if (messageObject2 != null && messageObject2.isOutOwner()) {
-            this.topicNameColor = getThemedColor("chat_outReactionButtonText");
-            this.topicBackgroundColor = ColorUtils.setAlphaComponent(getThemedColor("chat_outReactionButtonBackground"), 38);
+            this.topicNameColor = getThemedColor(Theme.key_chat_outReactionButtonText);
+            this.topicBackgroundColor = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_chat_outReactionButtonBackground), 38);
             return;
         }
         if (this.topicHSV == null) {
@@ -122,11 +122,11 @@ public class MessageTopicButton {
         float[] fArr = this.topicHSV;
         float f = fArr[0];
         if (fArr[1] <= 0.02f) {
-            this.topicNameColor = getThemedColor("chat_inReactionButtonText");
-            this.topicBackgroundColor = ColorUtils.setAlphaComponent(getThemedColor("chat_inReactionButtonBackground"), 38);
+            this.topicNameColor = getThemedColor(Theme.key_chat_inReactionButtonText);
+            this.topicBackgroundColor = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_chat_inReactionButtonBackground), 38);
             return;
         }
-        Color.colorToHSV(getThemedColor("chat_inReactionButtonText"), this.topicHSV);
+        Color.colorToHSV(getThemedColor(Theme.key_chat_inReactionButtonText), this.topicHSV);
         this.topicHSV[0] = f;
         float[] fArr2 = Theme.isCurrentThemeDark() ? darkHueRanges : lightHueRanges;
         float[] fArr3 = Theme.isCurrentThemeDark() ? darkSatValues : lightSatValues;
@@ -145,7 +145,7 @@ public class MessageTopicButton {
                 i2++;
             }
         }
-        this.topicNameColor = Color.HSVToColor(Color.alpha(getThemedColor("chat_inReactionButtonText")), this.topicHSV);
+        this.topicNameColor = Color.HSVToColor(Color.alpha(getThemedColor(Theme.key_chat_inReactionButtonText)), this.topicHSV);
         this.topicBackgroundColor = Color.HSVToColor(38, this.topicHSV);
     }
 
@@ -276,7 +276,7 @@ public class MessageTopicButton {
         int i4 = this.topicNameColor;
         if (this.topicNameLayout != null) {
             canvas.save();
-            canvas.translate((AndroidUtilities.m50dp(this.isGeneralTopic ? 13 : 17) + Theme.chat_topicTextPaint.getTextSize()) - this.topicNameLeft, AndroidUtilities.m51dp(4.5f));
+            canvas.translate((AndroidUtilities.m54dp(this.isGeneralTopic ? 13 : 17) + Theme.chat_topicTextPaint.getTextSize()) - this.topicNameLeft, AndroidUtilities.m55dp(4.5f));
             AnimatedColor animatedColor2 = this.topicNameColorAnimated;
             if (animatedColor2 != null) {
                 TextPaint textPaint2 = Theme.chat_topicTextPaint;
@@ -332,10 +332,8 @@ public class MessageTopicButton {
         }
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 
     private Paint getThemedPaint(String str) {

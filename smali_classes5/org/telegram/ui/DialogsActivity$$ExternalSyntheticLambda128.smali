@@ -2,72 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/util/Comparator;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
-
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$User;
-
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$Chat;
-
-.field public final synthetic f$4:J
-
-.field public final synthetic f$5:Z
-
-.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImportPeer;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;JZLorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImportPeer;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;
+
+    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$0:Lorg/telegram/ui/DialogsActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$2:Lorg/telegram/tgnet/TLRPC$User;
-
-    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$3:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    iput-wide p5, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$4:J
-
-    iput-boolean p7, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$5:Z
-
-    iput-object p8, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImportPeer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 10
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$0:Lorg/telegram/ui/DialogsActivity;
+    check-cast p1, Ljava/lang/Integer;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+    check-cast p2, Ljava/lang/Integer;
 
-    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$2:Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$wMlaDuwg9PrWahWylaOa05BefwY(Ljava/lang/Integer;Ljava/lang/Integer;)I
 
-    iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$3:Lorg/telegram/tgnet/TLRPC$Chat;
+    move-result p1
 
-    iget-wide v4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$4:J
-
-    iget-boolean v6, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$5:Z
-
-    iget-object v7, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda128;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImportPeer;
-
-    move-object v8, p1
-
-    move-object v9, p2
-
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$UAwtRrjhbHXseBFbug1Z_oXcYIc(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;JZLorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImportPeer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
+    return p1
 .end method

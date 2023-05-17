@@ -7,15 +7,16 @@ import com.iMe.model.wallet.home.nft.NftTokenItem;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: NftTokenProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.NftTokenProvider */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class NftTokenProvider extends BaseNodeProvider<NftTokenItem> {
     private int spanCount = 4;
-    private int spacing = AndroidUtilities.m50dp(16);
+    private int spacing = AndroidUtilities.m54dp(16);
     private final int itemViewType = IdFabric$ViewTypes.NFT_AVATAR;
-    private final int layoutId = C3242R.layout.fork_recycle_item_nft_token;
+    private final int layoutId = C3290R.layout.fork_recycle_item_nft_token;
 
     public final void setSpanCount(int i) {
         this.spanCount = i;
@@ -39,8 +40,9 @@ public final class NftTokenProvider extends BaseNodeProvider<NftTokenItem> {
         int i = this.spanCount;
         int i2 = indexOf % i;
         int i3 = this.spacing;
-        int i4 = ((i2 + 1) * i3) / i;
-        int i5 = C3242R.C3245id.card_nft_token;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i5, false), i5, "windowBackgroundWhite"), C3242R.C3245id.nft_root_view, new NftTokenProvider$convert$1(item, i3 - ((i2 * i3) / i), i4)), C3242R.C3245id.image_nft_image, new NftTokenProvider$convert$2(item));
+        int i4 = i3 - ((i2 * i3) / i);
+        int i5 = ((i2 + 1) * i3) / i;
+        int i6 = C3290R.C3293id.card_nft_token;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i6, false), i6, Theme.key_windowBackgroundWhite), C3290R.C3293id.nft_root_view, new NftTokenProvider$convert$1(item, i4, i5)), C3290R.C3293id.image_nft_image, new NftTokenProvider$convert$2(item));
     }
 }

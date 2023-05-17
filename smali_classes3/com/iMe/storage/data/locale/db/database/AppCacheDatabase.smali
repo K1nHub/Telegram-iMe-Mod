@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 19
+    .line 22
     invoke-direct {p0}, Landroidx/room/RoomDatabase;-><init>()V
 
     return-void
@@ -22,6 +22,9 @@
 .end method
 
 .method public abstract cloudAlbumDao()Lcom/iMe/storage/data/locale/db/dao/minor/cloud/AlbumsDao;
+.end method
+
+.method public abstract socialNetworkDao()Lcom/iMe/storage/data/locale/db/dao/minor/social/SocialNetworkDao;
 .end method
 
 .method public abstract walletTokenBalanceDao()Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;

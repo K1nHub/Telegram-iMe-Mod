@@ -51,10 +51,10 @@
     .line 41
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    const-string v1, "windowBackgroundGray"
-
     .line 42
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -148,9 +148,9 @@
     .line 79
     iget-object v3, p0, Lorg/telegram/ui/Cells/DialogsRequestedEmptyCell;->titleView:Landroid/widget/TextView;
 
-    const-string v5, "windowBackgroundWhiteBlackText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -210,9 +210,9 @@
     .line 86
     iget-object v3, p0, Lorg/telegram/ui/Cells/DialogsRequestedEmptyCell;->subtitleView:Landroid/widget/TextView;
 
-    const-string v7, "windowBackgroundWhiteGrayText"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -252,15 +252,15 @@
     .line 91
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogsRequestedEmptyCell;->buttonView:Landroid/widget/TextView;
 
-    new-array v3, v0, [F
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    const/high16 v4, 0x41000000    # 8.0f
+    new-array v4, v0, [F
 
-    aput v4, v3, v2
+    const/high16 v7, 0x41000000    # 8.0f
 
-    const-string v2, "featuredStickers_addButton"
+    aput v7, v4, v2
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -274,9 +274,9 @@
     .line 93
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogsRequestedEmptyCell;->buttonView:Landroid/widget/TextView;
 
-    const-string v0, "featuredStickers_buttonText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -454,11 +454,11 @@
     .line 163
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
-    const v1, 0x3e4ccccd    # 0.2f
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    const-string v3, "windowBackgroundGray"
+    const v3, 0x3e4ccccd    # 0.2f
 
-    invoke-static {v0, v3, v1}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {v0, v1, v3}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v6
 
@@ -610,7 +610,7 @@
 
     sget v1, Lorg/telegram/messenger/NotificationCenter;->diceStickersDidLoad:I
 
-    invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
+    invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
     return-void
 .end method

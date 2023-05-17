@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: StakingDashboardProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingDashboardProvider$convert$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class StakingDashboardProvider$convert$2 extends Lambda implements Function1<StakingDashboardView, Unit> {
     final /* synthetic */ StakingDashboardItem $item;
 

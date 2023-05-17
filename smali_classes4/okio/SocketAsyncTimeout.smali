@@ -11,7 +11,7 @@
 .method public constructor <init>(Ljava/net/Socket;)V
     .locals 1
 
-    const-string v0, "socket"
+    const-string/jumbo v0, "socket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -31,7 +31,7 @@
     .line 143
     new-instance v0, Ljava/net/SocketTimeoutException;
 
-    const-string v1, "timeout"
+    const-string/jumbo v1, "timeout"
 
     invoke-direct {v0, v1}, Ljava/net/SocketTimeoutException;-><init>(Ljava/lang/String;)V
 

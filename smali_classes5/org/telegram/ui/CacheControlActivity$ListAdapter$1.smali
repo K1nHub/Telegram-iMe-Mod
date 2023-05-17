@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 2442
+    .line 2462
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/CacheChart;-><init>(Landroid/content/Context;)V
@@ -59,7 +59,7 @@
 
     if-nez p2, :cond_0
 
-    .line 2460
+    .line 2480
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -86,7 +86,7 @@
 
     move v1, p2
 
-    .line 2467
+    .line 2487
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
@@ -102,7 +102,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2468
+    .line 2488
     iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v2, v2, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -119,7 +119,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2469
+    .line 2489
     iget v3, v2, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     const/16 v4, 0xb
@@ -143,7 +143,7 @@
     :goto_1
     if-ltz v0, :cond_4
 
-    .line 2477
+    .line 2497
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -160,7 +160,7 @@
 
     goto :goto_2
 
-    .line 2479
+    .line 2499
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 

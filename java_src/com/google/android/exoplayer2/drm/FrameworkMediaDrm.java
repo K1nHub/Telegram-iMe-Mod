@@ -11,7 +11,7 @@ import android.media.metrics.LogSessionId;
 import android.os.Handler;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.drm.DrmInitData;
 import com.google.android.exoplayer2.drm.ExoMediaDrm;
@@ -53,7 +53,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         try {
             return newInstance(uuid);
         } catch (UnsupportedDrmException unused) {
-            Log.m796e(TAG, "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
+            Log.m800e(TAG, "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
             return new DummyExoMediaDrm();
         }
     }
@@ -74,12 +74,12 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
 
     private FrameworkMediaDrm(UUID uuid) throws UnsupportedSchemeException {
         Assertions.checkNotNull(uuid);
-        Assertions.checkArgument(!C0470C.COMMON_PSSH_UUID.equals(uuid), "Use C.CLEARKEY_UUID instead");
+        Assertions.checkArgument(!C0475C.COMMON_PSSH_UUID.equals(uuid), "Use C.CLEARKEY_UUID instead");
         this.uuid = uuid;
         MediaDrm mediaDrm = new MediaDrm(adjustUuid(uuid));
         this.mediaDrm = mediaDrm;
         this.referenceCount = 1;
-        if (C0470C.WIDEVINE_UUID.equals(uuid) && needsForceWidevineL3Workaround()) {
+        if (C0475C.WIDEVINE_UUID.equals(uuid) && needsForceWidevineL3Workaround()) {
             forceWidevineL3(mediaDrm);
         }
     }
@@ -157,7 +157,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             try {
                 Api31.setLogSessionIdOnMediaDrmSession(this.mediaDrm, bArr, playerId);
             } catch (UnsupportedOperationException unused) {
-                Log.m792w(TAG, "setLogSessionId failed.");
+                Log.m796w(TAG, "setLogSessionId failed.");
             }
         }
     }
@@ -190,7 +190,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
 
     @Override // com.google.android.exoplayer2.drm.ExoMediaDrm
     public byte[] provideKeyResponse(byte[] bArr, byte[] bArr2) throws NotProvisionedException, DeniedByServerException {
-        if (C0470C.CLEARKEY_UUID.equals(this.uuid)) {
+        if (C0475C.CLEARKEY_UUID.equals(this.uuid)) {
             bArr2 = ClearKeyUtil.adjustResponseData(bArr2);
         }
         return this.mediaDrm.provideKeyResponse(bArr, bArr2);
@@ -279,12 +279,12 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
 
     @Override // com.google.android.exoplayer2.drm.ExoMediaDrm
     public FrameworkCryptoConfig createCryptoConfig(byte[] bArr) throws MediaCryptoException {
-        return new FrameworkCryptoConfig(adjustUuid(this.uuid), bArr, Util.SDK_INT < 21 && C0470C.WIDEVINE_UUID.equals(this.uuid) && "L3".equals(getPropertyString("securityLevel")));
+        return new FrameworkCryptoConfig(adjustUuid(this.uuid), bArr, Util.SDK_INT < 21 && C0475C.WIDEVINE_UUID.equals(this.uuid) && "L3".equals(getPropertyString("securityLevel")));
     }
 
     private static DrmInitData.SchemeData getSchemeData(UUID uuid, List<DrmInitData.SchemeData> list) {
         boolean z;
-        if (!C0470C.WIDEVINE_UUID.equals(uuid)) {
+        if (!C0475C.WIDEVINE_UUID.equals(uuid)) {
             return list.get(0);
         }
         if (Util.SDK_INT >= 28 && list.size() > 1) {
@@ -327,7 +327,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
     }
 
     private static UUID adjustUuid(UUID uuid) {
-        return (Util.SDK_INT >= 27 || !C0470C.CLEARKEY_UUID.equals(uuid)) ? uuid : C0470C.COMMON_PSSH_UUID;
+        return (Util.SDK_INT >= 27 || !C0475C.CLEARKEY_UUID.equals(uuid)) ? uuid : C0475C.COMMON_PSSH_UUID;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0056, code lost:
@@ -339,7 +339,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
     */
     private static byte[] adjustRequestInitData(java.util.UUID r3, byte[] r4) {
         /*
-            java.util.UUID r0 = com.google.android.exoplayer2.C0470C.PLAYREADY_UUID
+            java.util.UUID r0 = com.google.android.exoplayer2.C0475C.PLAYREADY_UUID
             boolean r1 = r0.equals(r3)
             if (r1 == 0) goto L18
             byte[] r1 = com.google.android.exoplayer2.extractor.mp4.PsshAtomUtil.parseSchemeSpecificData(r4, r3)
@@ -354,7 +354,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             int r1 = com.google.android.exoplayer2.util.Util.SDK_INT
             r2 = 23
             if (r1 >= r2) goto L26
-            java.util.UUID r1 = com.google.android.exoplayer2.C0470C.WIDEVINE_UUID
+            java.util.UUID r1 = com.google.android.exoplayer2.C0475C.WIDEVINE_UUID
             boolean r1 = r1.equals(r3)
             if (r1 != 0) goto L58
         L26:
@@ -388,11 +388,11 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
     }
 
     private static String adjustRequestMimeType(UUID uuid, String str) {
-        return (Util.SDK_INT < 26 && C0470C.CLEARKEY_UUID.equals(uuid) && (MimeTypes.VIDEO_MP4.equals(str) || MimeTypes.AUDIO_MP4.equals(str))) ? "cenc" : str;
+        return (Util.SDK_INT < 26 && C0475C.CLEARKEY_UUID.equals(uuid) && (MimeTypes.VIDEO_MP4.equals(str) || MimeTypes.AUDIO_MP4.equals(str))) ? "cenc" : str;
     }
 
     private static byte[] adjustRequestData(UUID uuid, byte[] bArr) {
-        return C0470C.CLEARKEY_UUID.equals(uuid) ? ClearKeyUtil.adjustRequestData(bArr) : bArr;
+        return C0475C.CLEARKEY_UUID.equals(uuid) ? ClearKeyUtil.adjustRequestData(bArr) : bArr;
     }
 
     private static void forceWidevineL3(MediaDrm mediaDrm) {
@@ -410,7 +410,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         short readLittleEndianShort = parsableByteArray.readLittleEndianShort();
         short readLittleEndianShort2 = parsableByteArray.readLittleEndianShort();
         if (readLittleEndianShort != 1 || readLittleEndianShort2 != 1) {
-            Log.m794i(TAG, "Unexpected record count or type. Skipping LA_URL workaround.");
+            Log.m798i(TAG, "Unexpected record count or type. Skipping LA_URL workaround.");
             return bArr;
         }
         short readLittleEndianShort3 = parsableByteArray.readLittleEndianShort();
@@ -420,7 +420,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             return bArr;
         }
         if (readString.indexOf("</DATA>") == -1) {
-            Log.m792w(TAG, "Could not find the </DATA> tag. Skipping LA_URL workaround.");
+            Log.m796w(TAG, "Could not find the </DATA> tag. Skipping LA_URL workaround.");
         }
         String str = readString.substring(0, indexOf) + MOCK_LA_URL + readString.substring(indexOf);
         int i = readLittleEndianInt + 52;

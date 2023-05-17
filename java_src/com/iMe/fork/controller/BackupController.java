@@ -106,6 +106,14 @@ public final class BackupController extends BaseController implements KoinCompon
                 iArr[BackupComponent.TOPICS.ordinal()] = 10;
             } catch (NoSuchFieldError unused10) {
             }
+            try {
+                iArr[BackupComponent.HIDDEN_CHATS.ordinal()] = 11;
+            } catch (NoSuchFieldError unused11) {
+            }
+            try {
+                iArr[BackupComponent.RECENT_CHATS.ordinal()] = 12;
+            } catch (NoSuchFieldError unused12) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -185,16 +193,16 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /*  JADX ERROR: IndexOutOfBoundsException in pass: SSATransform
-        java.lang.IndexOutOfBoundsException: bitIndex < 0: -79
+        java.lang.IndexOutOfBoundsException: bitIndex < 0: -80
         	at java.base/java.util.BitSet.get(BitSet.java:626)
         	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.fillBasicBlockInfo(LiveVarAnalysis.java:65)
         	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.runAnalysis(LiveVarAnalysis.java:36)
         	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:55)
         	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:41)
         */
-    public final void backup(boolean r177) {
+    public final void backup(boolean r176) {
         /*
-            Method dump skipped, instructions count: 1249
+            Method dump skipped, instructions count: 1312
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.BackupController.backup(boolean):void");
@@ -208,13 +216,13 @@ public final class BackupController extends BaseController implements KoinCompon
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.BackupController$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BackupController.restore$lambda$14(BackupController.this, backupMessage, components, parentFragment, onEnd);
+                BackupController.restore$lambda$16(BackupController.this, backupMessage, components, parentFragment, onEnd);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void restore$lambda$14(final BackupController this$0, MessageObject backupMessage, List components, BaseFragment parentFragment, final Callbacks$Callback1 onEnd) {
+    public static final void restore$lambda$16(final BackupController this$0, MessageObject backupMessage, List components, BaseFragment parentFragment, final Callbacks$Callback1 onEnd) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(backupMessage, "$backupMessage");
         Intrinsics.checkNotNullParameter(components, "$components");
@@ -235,8 +243,8 @@ public final class BackupController extends BaseController implements KoinCompon
             if (migrateToCurrentVersion.getSelectedStickersSize() != null) {
                 SharedConfig.setSelectedStickersSize(StickersSize.Companion.mapNameToEnum(migrateToCurrentVersion.getSelectedStickersSize()));
             }
-            if (migrateToCurrentVersion.isProxyButtonForceVisible() != null) {
-                SharedConfig.setProxyButtonForceVisible(migrateToCurrentVersion.isProxyButtonForceVisible().booleanValue());
+            if (migrateToCurrentVersion.isProxyButtonVisible() != null) {
+                SharedConfig.setProxyButtonEnabled(migrateToCurrentVersion.isProxyButtonVisible().booleanValue());
             }
             if (migrateToCurrentVersion.isReadAllChatsConfirmationShown() != null) {
                 SharedConfig.setReadAllChatsConfirmationShown(migrateToCurrentVersion.isReadAllChatsConfirmationShown().booleanValue());
@@ -255,7 +263,6 @@ public final class BackupController extends BaseController implements KoinCompon
                 switch (WhenMappings.$EnumSwitchMapping$0[((BackupComponent) it.next()).ordinal()]) {
                     case 1:
                         this$0.getToolsController().restoreBackup(migrateToCurrentVersion);
-                        this$0.getRecentChatsController().restoreBackup(migrateToCurrentVersion);
                         if (migrateToCurrentVersion.getDrawerHeaderSettings() != null) {
                             SharedConfig.setDrawerHeaderSettings(migrateToCurrentVersion.getDrawerHeaderSettings());
                         }
@@ -312,9 +319,6 @@ public final class BackupController extends BaseController implements KoinCompon
                         }
                         if (migrateToCurrentVersion.isOpenForwardingOptionsAutomaticallyEnabled() != null) {
                             SharedConfig.setOpenForwardingOptionsAutomaticallyEnabled(migrateToCurrentVersion.isOpenForwardingOptionsAutomaticallyEnabled().booleanValue());
-                        }
-                        if (migrateToCurrentVersion.isCustomSharingModeEnabled() != null) {
-                            SharedConfig.setCustomSharingModeEnabled(migrateToCurrentVersion.isCustomSharingModeEnabled().booleanValue());
                         }
                         if (migrateToCurrentVersion.isMultiReplyEnabled() != null) {
                             SharedConfig.setMultiReplyEnabled(migrateToCurrentVersion.isMultiReplyEnabled().booleanValue());
@@ -438,26 +442,32 @@ public final class BackupController extends BaseController implements KoinCompon
                     case 10:
                         this$0.getForkTopicsController().restoreBackup(migrateToCurrentVersion);
                         break;
+                    case 11:
+                        this$0.getHiddenChatsController().restoreBackup(migrateToCurrentVersion);
+                        break;
+                    case 12:
+                        this$0.getRecentChatsController().restoreBackup(migrateToCurrentVersion);
+                        break;
                 }
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.BackupController$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupController.restore$lambda$14$lambda$12(BackupController.this, onEnd);
+                    BackupController.restore$lambda$16$lambda$14(BackupController.this, onEnd);
                 }
             });
         } catch (Exception e) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.BackupController$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupController.restore$lambda$14$lambda$13(e, onEnd);
+                    BackupController.restore$lambda$16$lambda$15(e, onEnd);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void restore$lambda$14$lambda$12(BackupController this$0, Callbacks$Callback1 onEnd) {
+    public static final void restore$lambda$16$lambda$14(BackupController this$0, Callbacks$Callback1 onEnd) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(onEnd, "$onEnd");
         this$0.getMessagesController().sortDialogs(null);
@@ -465,7 +475,7 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void restore$lambda$14$lambda$13(Exception e, Callbacks$Callback1 onEnd) {
+    public static final void restore$lambda$16$lambda$15(Exception e, Callbacks$Callback1 onEnd) {
         Intrinsics.checkNotNullParameter(e, "$e");
         Intrinsics.checkNotNullParameter(onEnd, "$onEnd");
         ContextExtKt.toast(String.valueOf(e.getMessage()));
@@ -480,10 +490,10 @@ public final class BackupController extends BaseController implements KoinCompon
         return "iMeBackup_" + Constants.INSTANCE.getDateDotsFormat().format(new Date()) + "_id" + j + ".ime";
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x00b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x00b6, code lost:
         r1 = kotlin.collections.CollectionsKt___CollectionsKt.sortedWith(r1, new com.iMe.fork.controller.BackupController$migrateToCurrentVersion$$inlined$sortedBy$1());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x027c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x027a, code lost:
         r1 = kotlin.collections.CollectionsKt___CollectionsKt.sortedWith(r1, new com.iMe.fork.controller.BackupController$migrateToCurrentVersion$$inlined$sortedBy$2());
      */
     /* JADX WARN: Multi-variable type inference failed */
@@ -491,16 +501,16 @@ public final class BackupController extends BaseController implements KoinCompon
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private final com.iMe.fork.models.backup.Backup migrateToCurrentVersion(com.iMe.fork.models.backup.Backup r235) {
+    private final com.iMe.fork.models.backup.Backup migrateToCurrentVersion(com.iMe.fork.models.backup.Backup r237) {
         /*
-            Method dump skipped, instructions count: 1738
+            Method dump skipped, instructions count: 1742
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.BackupController.migrateToCurrentVersion(com.iMe.fork.models.backup.Backup):com.iMe.fork.models.backup.Backup");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean migrateToCurrentVersion$lambda$19(Function1 tmp0, Object obj) {
+    public static final boolean migrateToCurrentVersion$lambda$21(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return ((Boolean) tmp0.invoke(obj)).booleanValue();
     }

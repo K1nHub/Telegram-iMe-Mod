@@ -27,7 +27,7 @@ public class OkHttpClientStream extends AbstractClientStream {
     private String authority;
 
     /* renamed from: id */
-    private volatile int f432id;
+    private volatile int f435id;
     private final MethodDescriptor<?, ?> method;
     private Object outboundFlowState;
     private final Sink sink;
@@ -39,7 +39,7 @@ public class OkHttpClientStream extends AbstractClientStream {
     /* JADX INFO: Access modifiers changed from: package-private */
     public OkHttpClientStream(MethodDescriptor<?, ?> methodDescriptor, Metadata metadata, ExceptionHandlingFrameWriter exceptionHandlingFrameWriter, OkHttpClientTransport okHttpClientTransport, OutboundFlowController outboundFlowController, Object obj, int i, int i2, String str, String str2, StatsTraceContext statsTraceContext, TransportTracer transportTracer, CallOptions callOptions, boolean z) {
         super(new OkHttpWritableBufferAllocator(), statsTraceContext, transportTracer, metadata, callOptions, z && methodDescriptor.isSafe());
-        this.f432id = -1;
+        this.f435id = -1;
         this.sink = new Sink();
         this.useGet = false;
         this.statsTraceCtx = (StatsTraceContext) Preconditions.checkNotNull(statsTraceContext, "statsTraceCtx");
@@ -67,8 +67,8 @@ public class OkHttpClientStream extends AbstractClientStream {
     }
 
     /* renamed from: id */
-    public int m677id() {
-        return this.f432id;
+    public int m682id() {
+        return this.f435id;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -193,15 +193,15 @@ public class OkHttpClientStream extends AbstractClientStream {
         }
 
         public void start(int i) {
-            Preconditions.checkState(OkHttpClientStream.this.f432id == -1, "the stream has been started with id %s", i);
-            OkHttpClientStream.this.f432id = i;
+            Preconditions.checkState(OkHttpClientStream.this.f435id == -1, "the stream has been started with id %s", i);
+            OkHttpClientStream.this.f435id = i;
             OkHttpClientStream.this.state.onStreamAllocated();
             if (this.canStart) {
-                this.frameWriter.synStream(OkHttpClientStream.this.useGet, false, OkHttpClientStream.this.f432id, 0, this.requestHeaders);
+                this.frameWriter.synStream(OkHttpClientStream.this.useGet, false, OkHttpClientStream.this.f435id, 0, this.requestHeaders);
                 OkHttpClientStream.this.statsTraceCtx.clientOutboundHeaders();
                 this.requestHeaders = null;
                 if (this.pendingData.size() > 0) {
-                    this.outboundFlow.data(this.pendingDataHasEndOfStream, OkHttpClientStream.this.f432id, this.pendingData, this.flushPendingData);
+                    this.outboundFlow.data(this.pendingDataHasEndOfStream, OkHttpClientStream.this.f435id, this.pendingData, this.flushPendingData);
                 }
                 this.canStart = false;
             }
@@ -233,7 +233,7 @@ public class OkHttpClientStream extends AbstractClientStream {
                 int i4 = i3 - i2;
                 this.window += i4;
                 this.processedWindow = i2 + i4;
-                this.frameWriter.windowUpdate(OkHttpClientStream.this.m677id(), i4);
+                this.frameWriter.windowUpdate(OkHttpClientStream.this.m682id(), i4);
             }
         }
 
@@ -262,8 +262,8 @@ public class OkHttpClientStream extends AbstractClientStream {
             int size = this.window - ((int) buffer.size());
             this.window = size;
             if (size < 0) {
-                this.frameWriter.rstStream(OkHttpClientStream.this.m677id(), ErrorCode.FLOW_CONTROL_ERROR);
-                this.transport.finishStream(OkHttpClientStream.this.m677id(), Status.INTERNAL.withDescription("Received data size exceeded our receiving window size"), ClientStreamListener.RpcProgress.PROCESSED, false, null, null);
+                this.frameWriter.rstStream(OkHttpClientStream.this.m682id(), ErrorCode.FLOW_CONTROL_ERROR);
+                this.transport.finishStream(OkHttpClientStream.this.m682id(), Status.INTERNAL.withDescription("Received data size exceeded our receiving window size"), ClientStreamListener.RpcProgress.PROCESSED, false, null, null);
                 return;
             }
             super.transportDataReceived(new OkHttpReadableBuffer(buffer), z);
@@ -271,9 +271,9 @@ public class OkHttpClientStream extends AbstractClientStream {
 
         private void onEndOfStream() {
             if (!isOutboundClosed()) {
-                this.transport.finishStream(OkHttpClientStream.this.m677id(), null, ClientStreamListener.RpcProgress.PROCESSED, false, ErrorCode.CANCEL, null);
+                this.transport.finishStream(OkHttpClientStream.this.m682id(), null, ClientStreamListener.RpcProgress.PROCESSED, false, ErrorCode.CANCEL, null);
             } else {
-                this.transport.finishStream(OkHttpClientStream.this.m677id(), null, ClientStreamListener.RpcProgress.PROCESSED, false, null, null);
+                this.transport.finishStream(OkHttpClientStream.this.m682id(), null, ClientStreamListener.RpcProgress.PROCESSED, false, null, null);
             }
         }
 
@@ -294,7 +294,7 @@ public class OkHttpClientStream extends AbstractClientStream {
                 transportReportStatus(status, true, metadata);
                 return;
             }
-            this.transport.finishStream(OkHttpClientStream.this.m677id(), status, ClientStreamListener.RpcProgress.PROCESSED, z, ErrorCode.CANCEL, metadata);
+            this.transport.finishStream(OkHttpClientStream.this.m682id(), status, ClientStreamListener.RpcProgress.PROCESSED, z, ErrorCode.CANCEL, metadata);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -308,8 +308,8 @@ public class OkHttpClientStream extends AbstractClientStream {
                 this.flushPendingData |= z2;
                 return;
             }
-            Preconditions.checkState(OkHttpClientStream.this.m677id() != -1, "streamId should be set");
-            this.outboundFlow.data(z, OkHttpClientStream.this.m677id(), buffer, z2);
+            Preconditions.checkState(OkHttpClientStream.this.m682id() != -1, "streamId should be set");
+            this.outboundFlow.data(z, OkHttpClientStream.this.m682id(), buffer, z2);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

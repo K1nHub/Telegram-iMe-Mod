@@ -55,6 +55,6 @@ public final class WalletTransactionsRecycleAdapter extends BaseNodeAdapter<Base
     protected int getItemType(List<? extends BaseNode> data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         BaseNode baseNode = data.get(i);
-        return baseNode instanceof TransactionItem ? IdFabric$ViewTypes.TRANSACTION : baseNode instanceof StakingOperationItem ? IdFabric$ViewTypes.STAKING_OPERATION : baseNode instanceof GlobalStateItem ? IdFabric$ViewTypes.GLOBAL_STATE : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER : IdFabric$ViewTypes.TRANSACTION;
+        return baseNode instanceof TransactionItem ? IdFabric$ViewTypes.TRANSACTION : baseNode instanceof StakingOperationItem ? IdFabric$ViewTypes.STAKING_OPERATION : baseNode instanceof GlobalStateItem ? IdFabric$ViewTypes.GLOBAL_STATE : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER_CELL : IdFabric$ViewTypes.TRANSACTION;
     }
 }

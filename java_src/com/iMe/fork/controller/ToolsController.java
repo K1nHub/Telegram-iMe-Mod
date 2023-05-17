@@ -43,7 +43,6 @@ public final class ToolsController extends BaseController {
     private boolean isChannelWidePostsEnabled;
     private boolean isMessagePopupAggregatorEnabled;
     private boolean isRememberLastDialogEnabled;
-    private boolean isRevokeByDefault;
     private boolean isShowChannelBottomPanel;
     private boolean isSilentSendingEnabled;
     private boolean isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled;
@@ -74,7 +73,6 @@ public final class ToolsController extends BaseController {
         this.selectedMessagePopupItems = new LinkedHashSet();
         this.isMessagePopupAggregatorEnabled = TelegramPreferenceKeys.User.Default.isMessagePopupAggregatorEnabled();
         this.isChannelWidePostsEnabled = TelegramPreferenceKeys.User.Default.isChannelWidePostsEnabled();
-        this.isRevokeByDefault = TelegramPreferenceKeys.User.Default.isRevokeByDefault();
     }
 
     public final boolean isSilentSendingEnabled() {
@@ -170,14 +168,6 @@ public final class ToolsController extends BaseController {
         this.isChannelWidePostsEnabled = z;
     }
 
-    public final boolean isRevokeByDefault() {
-        return this.isRevokeByDefault;
-    }
-
-    public final void setRevokeByDefault(boolean z) {
-        this.isRevokeByDefault = z;
-    }
-
     public final void loadConfig(SharedPreferences preferences) {
         int mapCapacity;
         int coerceAtLeast;
@@ -208,7 +198,6 @@ public final class ToolsController extends BaseController {
         this.selectedMessagePopupItems = MessagePopupItem.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedMessagePopupItems(), TelegramPreferenceKeys.User.Default.selectedMessagePopupItems()));
         this.isMessagePopupAggregatorEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isMessagePopupAggregatorEnabled(), TelegramPreferenceKeys.User.Default.isMessagePopupAggregatorEnabled());
         this.isChannelWidePostsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isChannelWidePostsEnabled(), TelegramPreferenceKeys.User.Default.isChannelWidePostsEnabled());
-        this.isRevokeByDefault = preferences.getBoolean(TelegramPreferenceKeys.User.isRevokeByDefault(), TelegramPreferenceKeys.User.Default.isRevokeByDefault());
     }
 
     public final void saveConfig() {
@@ -228,7 +217,6 @@ public final class ToolsController extends BaseController {
         edit.putStringSet(TelegramPreferenceKeys.User.selectedMessagePopupItems(), MessagePopupItem.Companion.mapEnumsToNames(this.selectedMessagePopupItems));
         edit.putBoolean(TelegramPreferenceKeys.User.isMessagePopupAggregatorEnabled(), this.isMessagePopupAggregatorEnabled);
         edit.putBoolean(TelegramPreferenceKeys.User.isChannelWidePostsEnabled(), this.isChannelWidePostsEnabled);
-        edit.putBoolean(TelegramPreferenceKeys.User.isRevokeByDefault(), this.isRevokeByDefault);
         edit.apply();
     }
 
@@ -275,8 +263,8 @@ public final class ToolsController extends BaseController {
             for (Map.Entry entry : arrayList) {
                 DialogType mapNameToEnum = DialogType.Companion.mapNameToEnum((String) entry.getKey());
                 Intrinsics.checkNotNull(mapNameToEnum, "null cannot be cast to non-null type com.iMe.fork.enums.DialogType");
-                Pair m80to = TuplesKt.m80to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
-                linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
+                Pair m85to = TuplesKt.m85to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
+                linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.selectedChatAttachAlertButtons = mutableMap;
@@ -291,9 +279,6 @@ public final class ToolsController extends BaseController {
         }
         if (backup.isChannelWidePostsEnabled() != null) {
             this.isChannelWidePostsEnabled = backup.isChannelWidePostsEnabled().booleanValue();
-        }
-        if (backup.isRevokeByDefault() != null) {
-            this.isRevokeByDefault = backup.isRevokeByDefault().booleanValue();
         }
         saveConfig();
     }
@@ -354,8 +339,8 @@ public final class ToolsController extends BaseController {
         Iterator<T> it = entrySet.iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            Pair m80to = TuplesKt.m80to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
-            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
+            Pair m85to = TuplesKt.m85to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
+            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;

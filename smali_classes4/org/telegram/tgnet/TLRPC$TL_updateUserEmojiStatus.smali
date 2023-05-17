@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 32705
+    .line 33554
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
     return-void
@@ -34,14 +34,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 32712
+    .line 33561
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateUserEmojiStatus;->user_id:J
 
-    .line 32713
+    .line 33562
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -58,17 +58,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 32717
+    .line 33566
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateUserEmojiStatus;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32718
+    .line 33567
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateUserEmojiStatus;->user_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 32719
+    .line 33568
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateUserEmojiStatus;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

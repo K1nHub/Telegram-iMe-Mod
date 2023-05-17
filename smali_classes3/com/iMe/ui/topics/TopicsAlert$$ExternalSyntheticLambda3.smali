@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback2;
 
 
 # instance fields
@@ -22,12 +22,16 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsAlert$$ExternalSyntheticLambda3;->f$0:Lcom/iMe/ui/topics/TopicsAlert;
 
-    invoke-static {v0, p1, p2}, Lcom/iMe/ui/topics/TopicsAlert;->$r8$lambda$JZ0rDbKqrZkWSWN_rAjrPcQ7Uis(Lcom/iMe/ui/topics/TopicsAlert;Landroid/view/View;I)V
+    check-cast p1, Lorg/telegram/messenger/MessagesController$DialogFilter;
+
+    check-cast p2, Lcom/iMe/storage/domain/model/topics/TopicModel;
+
+    invoke-static {v0, p1, p2}, Lcom/iMe/ui/topics/TopicsAlert;->$r8$lambda$Jq_JSIrOVD8ZHTjDgQaiAOlwV-8(Lcom/iMe/ui/topics/TopicsAlert;Lorg/telegram/messenger/MessagesController$DialogFilter;Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     return-void
 .end method

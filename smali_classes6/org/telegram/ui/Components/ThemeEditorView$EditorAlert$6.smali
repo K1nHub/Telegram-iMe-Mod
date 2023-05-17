@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)V
     .locals 0
 
-    .line 1031
+    .line 1032
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$6;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1034
+    .line 1035
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$6;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$100(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -54,7 +54,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1035
+    .line 1036
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$6;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$4300(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
@@ -63,7 +63,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->showKeyboard()V
 
-    .line 1037
+    .line 1038
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$6;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1038
+    .line 1039
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$6;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$4800(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Landroid/widget/FrameLayout;
@@ -84,7 +84,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1039
+    .line 1040
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$6;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     const/4 v0, 0x0

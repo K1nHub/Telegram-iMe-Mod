@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ManageLinksActivity;
 /* compiled from: WalletDonationsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletDonationsPresenter extends BasePresenter<WalletDonationsView> {
     private final CryptoAccessManager accessManager;
     private Result<String> addressInfoResultState;
@@ -97,7 +97,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     public final String getCurrentDonationsAddress() {
         Result<String> result = this.addressInfoResultState;
         if ((result instanceof Result.Loading) || result == null) {
-            return this.resourceManager.getString(C3242R.string.common_progress_state_title);
+            return this.resourceManager.getString(C3290R.string.common_progress_state_title);
         }
         return this.currentDonationsAddress;
     }
@@ -141,13 +141,13 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     public final void linkAddress(String address) {
         Intrinsics.checkNotNullParameter(address, "address");
         if ((address.length() > 0) && Intrinsics.areEqual(address, this.currentDonationsAddress)) {
-            ((WalletDonationsView) getViewState()).showToast(this.resourceManager.getString(C3242R.string.channel_donations_the_same_address_error));
+            ((WalletDonationsView) getViewState()).showToast(this.resourceManager.getString(C3290R.string.channel_donations_the_same_address_error));
         } else if (CryptoHelper.isWithEthereumPrefix(address)) {
             extractAddressForLink(address);
         } else {
-            Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(address, BlockchainType.EVM).observeOn(this.schedulersProvider.mo693ui());
+            Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(address, BlockchainType.EVM).observeOn(this.schedulersProvider.mo698ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-            Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2192x3596b839(this, address)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2193x3596b83a(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+            Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2231x3596b839(this, address)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2232x3596b83a(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
         }
     }
 
@@ -165,9 +165,9 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final void extractAddressForLink(String str) {
-        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(str, BlockchainType.EVM, this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(str, BlockchainType.EVM, this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddress(\n        …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2190x82948e4f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2191x82948e50(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2229x82948e4f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2230x82948e50(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 
     private final boolean isDonationEnabled() {
@@ -184,27 +184,27 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void loadDonationAddress() {
-        Observable<Result<String>> observeOn = this.donationsInteractor.getDonationAddress(this.apiChatId).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<String>> observeOn = this.donationsInteractor.getDonationAddress(this.apiChatId).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2194x23f668db(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2195x23f668dc((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2233x23f668db(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2234x23f668dc((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void loadDonationTransactions() {
-        Observable observeOn = DonationsInteractor.getDonationTransactionHistory$default(this.donationsInteractor, this.apiChatId, null, 0, null, 14, null).observeOn(this.schedulersProvider.mo693ui());
+        Observable observeOn = DonationsInteractor.getDonationTransactionHistory$default(this.donationsInteractor, this.apiChatId, null, 0, null, 14, null).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2196x571632f4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2197x571632f5((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2235x571632f4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2236x571632f5((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void disableDonation() {
-        Observable<Result<Boolean>> observeOn = this.donationsInteractor.disableDonation(this.apiChatId).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<Boolean>> observeOn = this.donationsInteractor.disableDonation(this.apiChatId).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2188x93b9a39(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2189x93b9a3a((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2227x93b9a39(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2228x93b9a3a((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -212,19 +212,19 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     /* JADX INFO: Access modifiers changed from: private */
     public final void saveDonationAddress(String str) {
         Wallet.EVM evm = (Wallet.EVM) this.accessManager.getWallet(BlockchainType.EVM);
-        Observable<Result<Boolean>> observeOn = this.donationsInteractor.enableDonationFor(this.apiChatId, str, Intrinsics.areEqual(evm != null ? evm.getAddress() : null, str)).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<Boolean>> observeOn = this.donationsInteractor.enableDonationFor(this.apiChatId, str, Intrinsics.areEqual(evm != null ? evm.getAddress() : null, str)).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2200x322e1e4(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2201x322e1e5((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2239x322e1e4(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2240x322e1e5((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void loadDonationWalletBalance() {
-        Observable observeOn = DonationsInteractor.getDonationWalletBalance$default(this.donationsInteractor, this.apiChatId, null, 2, null).observeOn(this.schedulersProvider.mo693ui());
+        Observable observeOn = DonationsInteractor.getDonationWalletBalance$default(this.donationsInteractor, this.apiChatId, null, 2, null).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2198x2935900a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2199x2935900b((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2237x2935900a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2238x2935900b((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -235,17 +235,17 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final DialogModel getUnlinkWalletAddressDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3242R.string.channel_donations_unlink_address_dialog_title), this.resourceManager.getString(C3242R.string.channel_donations_unlink_address_dialog_description, str), this.resourceManager.getString(C3242R.string.common_cancel), this.resourceManager.getString(C3242R.string.channel_donations_unlink_address_dialog_positive_button));
+        return new DialogModel(this.resourceManager.getString(C3290R.string.channel_donations_unlink_address_dialog_title), this.resourceManager.getString(C3290R.string.channel_donations_unlink_address_dialog_description, str), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.channel_donations_unlink_address_dialog_positive_button));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getLinkAddressDialogModel(String str, boolean z) {
         int i;
         if (z) {
-            i = C3242R.string.channel_donations_link_non_castodial_wallet_address_dialog_title;
+            i = C3290R.string.channel_donations_link_non_castodial_wallet_address_dialog_title;
         } else {
-            i = C3242R.string.channel_donations_link_address_dialog_title;
+            i = C3290R.string.channel_donations_link_address_dialog_title;
         }
-        return new DialogModel(this.resourceManager.getString(i), this.resourceManager.getString(C3242R.string.channel_donations_link_address_dialog_description, str), this.resourceManager.getString(C3242R.string.common_cancel), this.resourceManager.getString(C3242R.string.channel_donations_link_address_dialog_positive_button));
+        return new DialogModel(this.resourceManager.getString(i), this.resourceManager.getString(C3290R.string.channel_donations_link_address_dialog_description, str), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.channel_donations_link_address_dialog_positive_button));
     }
 }

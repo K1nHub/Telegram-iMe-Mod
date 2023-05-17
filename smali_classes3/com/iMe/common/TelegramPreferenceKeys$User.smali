@@ -34,7 +34,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 411
+    .line 405
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,7 +55,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 552
+    .line 546
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -90,7 +90,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 518
+    .line 512
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -125,7 +125,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 549
+    .line 543
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -160,7 +160,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 558
+    .line 552
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -199,7 +199,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 577
+    .line 571
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -246,7 +246,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 574
+    .line 568
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -289,7 +289,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 540
+    .line 534
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -324,7 +324,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 555
+    .line 549
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -359,7 +359,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 543
+    .line 537
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -394,7 +394,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 537
+    .line 531
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -429,7 +429,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 459
+    .line 453
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -468,7 +468,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 456
+    .line 450
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -507,7 +507,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 462
+    .line 456
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -546,7 +546,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 561
+    .line 555
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -581,7 +581,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 546
+    .line 540
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -612,7 +612,7 @@
 .method public static final isAccountMuted()Ljava/lang/String;
     .locals 2
 
-    .line 481
+    .line 475
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isAccountMuted"
@@ -627,7 +627,7 @@
 .method public static final isAllChatsTabEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 441
+    .line 435
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "allChatsTabEnabled"
@@ -642,7 +642,7 @@
 .method public static final isArchiveSortingChatsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 453
+    .line 447
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "archiveSorting"
@@ -657,7 +657,7 @@
 .method public static final isAutoBackupEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 422
+    .line 416
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "autoBackupEnabled"
@@ -672,7 +672,7 @@
 .method public static final isAutoUpdateTopicsCatalogEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 638
+    .line 632
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "autoUpdateTopicsCatalogEnabled"
@@ -687,7 +687,7 @@
 .method public static final isChannelWidePostsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 527
+    .line 521
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "channelWidePosts"
@@ -702,7 +702,7 @@
 .method public static final isFoldersFirstEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 438
+    .line 432
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "foldersFirst"
@@ -714,25 +714,10 @@
     return-object v0
 .end method
 
-.method public static final isHiddenChatsHidden()Ljava/lang/String;
+.method public static final isFoldersHidden()Ljava/lang/String;
     .locals 2
 
-    .line 664
-    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
-
-    const-string v1, "hiddenChatsHidden"
-
-    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static final isHideFoldersEnabled()Ljava/lang/String;
-    .locals 2
-
-    .line 435
+    .line 429
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "hideFolders"
@@ -744,10 +729,25 @@
     return-object v0
 .end method
 
+.method public static final isHiddenChatsHidden()Ljava/lang/String;
+    .locals 2
+
+    .line 658
+    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
+
+    const-string v1, "hiddenChatsHidden"
+
+    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static final isHideMultiPanelOnScrollEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 571
+    .line 565
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isHideMultiPanelOnScrollEnabled"
@@ -762,7 +762,7 @@
 .method public static final isIconInsteadAllChatsTabTitleEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 444
+    .line 438
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "iconInsteadAllChatsTabTitle"
@@ -777,7 +777,7 @@
 .method public static final isMessagePopupAggregatorEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 524
+    .line 518
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isMessagePopupAggregatorEnabled"
@@ -800,7 +800,7 @@
 .method public static final isNeuroBotsAutoEnabledInGroups()Ljava/lang/String;
     .locals 2
 
-    .line 597
+    .line 591
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "neuroBotsAutoEnabledInGroups"
@@ -815,7 +815,7 @@
 .method public static final isNeuroBotsAutoEnabledInPersonalChats()Ljava/lang/String;
     .locals 2
 
-    .line 594
+    .line 588
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "neuroBotsAutoEnabledInPersonalChats"
@@ -830,7 +830,7 @@
 .method public static final isNeuroBotsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 591
+    .line 585
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "neuroBotsEnabled"
@@ -845,7 +845,7 @@
 .method public static final isNoTopicFirstEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 644
+    .line 638
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "noTopicFirst"
@@ -860,7 +860,7 @@
 .method public static final isOpenAlbumsInsteadCloudEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 415
+    .line 409
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "openAlbumsInsteadCloud"
@@ -875,7 +875,7 @@
 .method public static final isPremiumAnimateAvatars()Ljava/lang/String;
     .locals 2
 
-    .line 496
+    .line 490
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "premiumAnimateAvatars"
@@ -890,7 +890,7 @@
 .method public static final isPremiumAnimateStickers()Ljava/lang/String;
     .locals 2
 
-    .line 487
+    .line 481
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "premiumAnimateStickers"
@@ -905,7 +905,7 @@
 .method public static final isQuickReactionEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 484
+    .line 478
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "quickReactionEnabled"
@@ -920,7 +920,7 @@
 .method public static final isRecentChatsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 654
+    .line 648
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "recentChatsEnabled"
@@ -935,7 +935,7 @@
 .method public static final isRememberLastDialogEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 620
+    .line 614
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "rememberLastDialog"
@@ -950,7 +950,7 @@
 .method public static final isRevokeByDefault()Ljava/lang/String;
     .locals 2
 
-    .line 530
+    .line 524
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "deleteForAllSelectedByDefault"
@@ -965,7 +965,7 @@
 .method public static final isSaveArchiveRecentChatsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 657
+    .line 651
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "saveArchiveRecentChatsEnabled"
@@ -980,7 +980,7 @@
 .method public static final isShowChannelBottomPanel()Ljava/lang/String;
     .locals 2
 
-    .line 515
+    .line 509
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "showChannelBottomPanel"
@@ -995,7 +995,7 @@
 .method public static final isShowOftenUsedNeuroBotsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 600
+    .line 594
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "showOftenUsedNeuroBots"
@@ -1010,7 +1010,7 @@
 .method public static final isShowPremiumBadgeEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 490
+    .line 484
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "premiumShowStar"
@@ -1025,7 +1025,7 @@
 .method public static final isShowPremiumStatusEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 493
+    .line 487
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "premiumShowStatus"
@@ -1040,7 +1040,7 @@
 .method public static final isSilentSendingEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 614
+    .line 608
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "silentSending"
@@ -1063,7 +1063,7 @@
 .method public static final isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 509
+    .line 503
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "swipeToGoToNextUnreadDialogConsiderArchive"
@@ -1078,7 +1078,7 @@
 .method public static final isSwipeToGoToNextUnreadDialogEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 506
+    .line 500
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "swipeToGoToNextUnreadDialog"
@@ -1093,7 +1093,7 @@
 .method public static final isTopicsBarAtBottomEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 635
+    .line 629
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "topicsBarAtBottom"
@@ -1108,7 +1108,7 @@
 .method public static final isTopicsBarEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 632
+    .line 626
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "topicsEnabled"
@@ -1123,7 +1123,7 @@
 .method public static final lastAutoBackupTime()Ljava/lang/String;
     .locals 2
 
-    .line 428
+    .line 422
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "lastAutoBackupTime"
@@ -1138,7 +1138,7 @@
 .method public static final lastAutoUpdateTopicsCatalogTime()Ljava/lang/String;
     .locals 2
 
-    .line 647
+    .line 641
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "lastAutoUpdateTopicsCatalogTime"
@@ -1153,7 +1153,7 @@
 .method public static final lastFilterTab()Ljava/lang/String;
     .locals 2
 
-    .line 478
+    .line 472
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "lastFilterTab"
@@ -1168,7 +1168,7 @@
 .method public static final rememberLastDialogId()Ljava/lang/String;
     .locals 2
 
-    .line 623
+    .line 617
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "rememberLastDialogId"
@@ -1183,7 +1183,7 @@
 .method public static final rememberLastDialogTopicId()Ljava/lang/String;
     .locals 2
 
-    .line 626
+    .line 620
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "rememberLastDialogTopicId"
@@ -1198,7 +1198,7 @@
 .method public static final selectedAllChatsTabFabs()Ljava/lang/String;
     .locals 2
 
-    .line 447
+    .line 441
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedAllChatsTabFabs"
@@ -1213,7 +1213,7 @@
 .method public static final selectedAutoBackupInterval()Ljava/lang/String;
     .locals 2
 
-    .line 425
+    .line 419
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "autoBackupInterval"
@@ -1228,7 +1228,7 @@
 .method public static final selectedAutoUpdateTopicsCatalogInterval()Ljava/lang/String;
     .locals 2
 
-    .line 641
+    .line 635
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "autoUpdateTopicsCatalogInterval"
@@ -1243,7 +1243,7 @@
 .method public static final selectedContactsFilter()Ljava/lang/String;
     .locals 2
 
-    .line 499
+    .line 493
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "contactsFilter"
@@ -1258,7 +1258,7 @@
 .method public static final selectedDialogTypesForSwipeToGoToNextUnreadDialog()Ljava/lang/String;
     .locals 2
 
-    .line 512
+    .line 506
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "swipeToGoToNextUnreadDialogTypes"
@@ -1273,7 +1273,7 @@
 .method public static final selectedDrawStatusTypes()Ljava/lang/String;
     .locals 2
 
-    .line 684
+    .line 678
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedDrawStatusTypes"
@@ -1288,7 +1288,7 @@
 .method public static final selectedMessagePopupItems()Ljava/lang/String;
     .locals 2
 
-    .line 521
+    .line 515
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "messagePopupItems"
@@ -1303,7 +1303,7 @@
 .method public static final selectedMusicTab()Ljava/lang/String;
     .locals 2
 
-    .line 584
+    .line 578
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "lastMusicTab"
@@ -1318,7 +1318,7 @@
 .method public static final selectedRecentChatsDialogTypes()Ljava/lang/String;
     .locals 2
 
-    .line 681
+    .line 675
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedRecentChatsDialogTypes"
@@ -1333,7 +1333,7 @@
 .method public static final selectedSentMessageFont()Ljava/lang/String;
     .locals 2
 
-    .line 617
+    .line 611
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedSentMessageFont"
@@ -1348,7 +1348,7 @@
 .method public static final sortingDeployVersion()Ljava/lang/String;
     .locals 2
 
-    .line 475
+    .line 469
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "SortingFilters_DeployVersion"
@@ -1363,7 +1363,7 @@
 .method public static final templatesChannelId()Ljava/lang/String;
     .locals 2
 
-    .line 607
+    .line 601
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "templatesChannelId"
@@ -1378,7 +1378,7 @@
 .method public static final walletFingerprintUnlockEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 674
+    .line 668
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "walletFingerprintUnlockEnabled"
@@ -1393,7 +1393,7 @@
 .method public static final walletPinCodeEncrypted()Ljava/lang/String;
     .locals 2
 
-    .line 671
+    .line 665
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "walletPinCodeEncrypted"

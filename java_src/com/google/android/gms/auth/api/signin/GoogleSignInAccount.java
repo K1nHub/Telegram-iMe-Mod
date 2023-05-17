@@ -35,35 +35,35 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
     public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new zab();
     @VisibleForTesting
     public static Clock zaa = DefaultClock.getInstance();
-    @SafeParcelable.VersionField(m772id = 1)
+    @SafeParcelable.VersionField(m776id = 1)
     final int zab;
-    @SafeParcelable.Field(m775id = 10)
+    @SafeParcelable.Field(m779id = 10)
     List zac;
-    @SafeParcelable.Field(getter = "getId", m775id = 2)
+    @SafeParcelable.Field(getter = "getId", m779id = 2)
     private String zad;
-    @SafeParcelable.Field(getter = "getIdToken", m775id = 3)
+    @SafeParcelable.Field(getter = "getIdToken", m779id = 3)
     private String zae;
-    @SafeParcelable.Field(getter = "getEmail", m775id = 4)
+    @SafeParcelable.Field(getter = "getEmail", m779id = 4)
     private String zaf;
-    @SafeParcelable.Field(getter = "getDisplayName", m775id = 5)
+    @SafeParcelable.Field(getter = "getDisplayName", m779id = 5)
     private String zag;
-    @SafeParcelable.Field(getter = "getPhotoUrl", m775id = 6)
+    @SafeParcelable.Field(getter = "getPhotoUrl", m779id = 6)
     private Uri zah;
-    @SafeParcelable.Field(getter = "getServerAuthCode", m775id = 7)
+    @SafeParcelable.Field(getter = "getServerAuthCode", m779id = 7)
     private String zai;
-    @SafeParcelable.Field(getter = "getExpirationTimeSecs", m775id = 8)
+    @SafeParcelable.Field(getter = "getExpirationTimeSecs", m779id = 8)
     private long zaj;
-    @SafeParcelable.Field(getter = "getObfuscatedIdentifier", m775id = 9)
+    @SafeParcelable.Field(getter = "getObfuscatedIdentifier", m779id = 9)
     private String zak;
-    @SafeParcelable.Field(getter = "getGivenName", m775id = 11)
+    @SafeParcelable.Field(getter = "getGivenName", m779id = 11)
     private String zal;
-    @SafeParcelable.Field(getter = "getFamilyName", m775id = 12)
+    @SafeParcelable.Field(getter = "getFamilyName", m779id = 12)
     private String zam;
     private Set zan = new HashSet();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GoogleSignInAccount(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) String str3, @SafeParcelable.Param(m774id = 5) String str4, @SafeParcelable.Param(m774id = 6) Uri uri, @SafeParcelable.Param(m774id = 7) String str5, @SafeParcelable.Param(m774id = 8) long j, @SafeParcelable.Param(m774id = 9) String str6, @SafeParcelable.Param(m774id = 10) List list, @SafeParcelable.Param(m774id = 11) String str7, @SafeParcelable.Param(m774id = 12) String str8) {
+    public GoogleSignInAccount(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2, @SafeParcelable.Param(m778id = 4) String str3, @SafeParcelable.Param(m778id = 5) String str4, @SafeParcelable.Param(m778id = 6) Uri uri, @SafeParcelable.Param(m778id = 7) String str5, @SafeParcelable.Param(m778id = 8) long j, @SafeParcelable.Param(m778id = 9) String str6, @SafeParcelable.Param(m778id = 10) List list, @SafeParcelable.Param(m778id = 11) String str7, @SafeParcelable.Param(m778id = 12) String str8) {
         this.zab = i;
         this.zad = str;
         this.zae = str2;

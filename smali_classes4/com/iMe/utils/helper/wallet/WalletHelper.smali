@@ -233,9 +233,9 @@
     .line 156
     new-instance v2, Landroid/text/style/ForegroundColorSpan;
 
-    const-string/jumbo v3, "windowBackgroundWhiteLinkText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

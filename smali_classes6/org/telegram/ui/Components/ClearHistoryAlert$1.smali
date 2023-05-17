@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ClearHistoryAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 141
+    .line 140
     iput-object p1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-direct {p0, p2}, Landroidx/core/widget/NestedScrollView;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 204
+    .line 203
     iget-object v0, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$000(Lorg/telegram/ui/Components/ClearHistoryAlert;)I
@@ -68,7 +68,7 @@
 
     float-to-int v0, v0
 
-    .line 205
+    .line 204
     iget-object v1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$600(Lorg/telegram/ui/Components/ClearHistoryAlert;)Landroid/graphics/drawable/Drawable;
@@ -111,7 +111,7 @@
 
     invoke-virtual {v1, v4, v0, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 206
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$600(Lorg/telegram/ui/Components/ClearHistoryAlert;)Landroid/graphics/drawable/Drawable;
@@ -126,7 +126,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 147
+    .line 146
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -157,7 +157,7 @@
 
     if-gez v0, :cond_0
 
-    .line 148
+    .line 147
     iget-object p1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
@@ -166,7 +166,7 @@
 
     return p1
 
-    .line 151
+    .line 150
     :cond_0
     invoke-super {p0, p1}, Landroidx/core/widget/NestedScrollView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -178,10 +178,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 190
+    .line 189
     invoke-super/range {p0 .. p5}, Landroidx/core/widget/NestedScrollView;->onLayout(ZIIII)V
 
-    .line 191
+    .line 190
     iget-object p1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$100(Lorg/telegram/ui/Components/ClearHistoryAlert;)V
@@ -192,12 +192,12 @@
 .method protected onMeasure(II)V
     .locals 8
 
-    .line 167
+    .line 166
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 168
+    .line 167
     iget-object v1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$200(Lorg/telegram/ui/Components/ClearHistoryAlert;)Landroid/widget/LinearLayout;
@@ -216,7 +216,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroidx/core/widget/NestedScrollView;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 169
+    .line 168
     iget-object p2, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$200(Lorg/telegram/ui/Components/ClearHistoryAlert;)Landroid/widget/LinearLayout;
@@ -227,14 +227,14 @@
 
     move-result p2
 
-    .line 170
+    .line 169
     div-int/lit8 v1, v0, 0x5
 
     mul-int/lit8 v1, v1, 0x3
 
     sub-int v2, v0, v1
 
-    .line 172
+    .line 171
     iget-object v3, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$300(Lorg/telegram/ui/Components/ClearHistoryAlert;)Z
@@ -265,7 +265,7 @@
 
     goto :goto_0
 
-    .line 175
+    .line 174
     :cond_0
     div-int/lit8 p2, p2, 0x2
 
@@ -283,7 +283,7 @@
     :goto_0
     sub-int v1, v0, p2
 
-    .line 180
+    .line 179
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
@@ -293,21 +293,21 @@
 
     const/4 p2, 0x1
 
-    .line 181
+    .line 180
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->ignoreLayout:Z
 
     const/4 p2, 0x0
 
-    .line 182
+    .line 181
     invoke-virtual {p0, p2, v1, p2, p2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 183
+    .line 182
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->ignoreLayout:Z
 
     :cond_3
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 185
+    .line 184
     invoke-static {v0, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -320,10 +320,10 @@
 .method protected onScrollChanged(IIII)V
     .locals 0
 
-    .line 211
+    .line 210
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/core/widget/NestedScrollView;->onScrollChanged(IIII)V
 
-    .line 212
+    .line 211
     iget-object p1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$100(Lorg/telegram/ui/Components/ClearHistoryAlert;)V
@@ -334,7 +334,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 156
+    .line 155
     iget-object v0, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
@@ -363,14 +363,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 196
+    .line 195
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 199
+    .line 198
     :cond_0
     invoke-super {p0}, Landroidx/core/widget/NestedScrollView;->requestLayout()V
 
@@ -380,10 +380,10 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 161
+    .line 160
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 162
+    .line 161
     iget-object p1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$1;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$100(Lorg/telegram/ui/Components/ClearHistoryAlert;)V

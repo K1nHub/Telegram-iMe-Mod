@@ -30,7 +30,7 @@ public final class MediaPeriodQueue {
     private final Timeline.Window window = new Timeline.Window();
 
     private boolean areDurationsCompatible(long j, long j2) {
-        return j == C0470C.TIME_UNSET || j == j2;
+        return j == C0475C.TIME_UNSET || j == j2;
     }
 
     public MediaPeriodQueue(AnalyticsCollector analyticsCollector, HandlerWrapper handlerWrapper) {
@@ -62,7 +62,7 @@ public final class MediaPeriodQueue {
 
     public boolean shouldLoadNextMediaPeriod() {
         MediaPeriodHolder mediaPeriodHolder = this.loading;
-        return mediaPeriodHolder == null || (!mediaPeriodHolder.info.isFinal && mediaPeriodHolder.isFullyBuffered() && this.loading.info.durationUs != C0470C.TIME_UNSET && this.length < 100);
+        return mediaPeriodHolder == null || (!mediaPeriodHolder.info.isFinal && mediaPeriodHolder.isFullyBuffered() && this.loading.info.durationUs != C0475C.TIME_UNSET && this.length < 100);
     }
 
     public MediaPeriodInfo getNextMediaPeriodInfo(long j, PlaybackInfo playbackInfo) {
@@ -125,7 +125,7 @@ public final class MediaPeriodQueue {
             this.loading = null;
             MediaPeriodHolder mediaPeriodHolder2 = this.playing;
             this.oldFrontPeriodUid = mediaPeriodHolder2.uid;
-            this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder2.info.f101id.windowSequenceNumber;
+            this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder2.info.f104id.windowSequenceNumber;
         }
         this.playing = this.playing.getNext();
         notifyQueueUpdate();
@@ -159,7 +159,7 @@ public final class MediaPeriodQueue {
         }
         MediaPeriodHolder mediaPeriodHolder = (MediaPeriodHolder) Assertions.checkStateNotNull(this.playing);
         this.oldFrontPeriodUid = mediaPeriodHolder.uid;
-        this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder.info.f101id.windowSequenceNumber;
+        this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder.info.f104id.windowSequenceNumber;
         while (mediaPeriodHolder != null) {
             mediaPeriodHolder.release();
             mediaPeriodHolder = mediaPeriodHolder.getNext();
@@ -193,7 +193,7 @@ public final class MediaPeriodQueue {
             if (!areDurationsCompatible(mediaPeriodInfo2.durationUs, mediaPeriodInfo.durationUs)) {
                 mediaPeriodHolder.updateClipping();
                 long j3 = mediaPeriodInfo.durationUs;
-                return (removeAfter(mediaPeriodHolder) || (mediaPeriodHolder == this.reading && !mediaPeriodHolder.info.isFollowedByTransitionToSameStream && ((j2 > Long.MIN_VALUE ? 1 : (j2 == Long.MIN_VALUE ? 0 : -1)) == 0 || (j2 > ((j3 > C0470C.TIME_UNSET ? 1 : (j3 == C0470C.TIME_UNSET ? 0 : -1)) == 0 ? Long.MAX_VALUE : mediaPeriodHolder.toRendererTime(j3)) ? 1 : (j2 == ((j3 > C0470C.TIME_UNSET ? 1 : (j3 == C0470C.TIME_UNSET ? 0 : -1)) == 0 ? Long.MAX_VALUE : mediaPeriodHolder.toRendererTime(j3)) ? 0 : -1)) >= 0))) ? false : true;
+                return (removeAfter(mediaPeriodHolder) || (mediaPeriodHolder == this.reading && !mediaPeriodHolder.info.isFollowedByTransitionToSameStream && ((j2 > Long.MIN_VALUE ? 1 : (j2 == Long.MIN_VALUE ? 0 : -1)) == 0 || (j2 > ((j3 > C0475C.TIME_UNSET ? 1 : (j3 == C0475C.TIME_UNSET ? 0 : -1)) == 0 ? Long.MAX_VALUE : mediaPeriodHolder.toRendererTime(j3)) ? 1 : (j2 == ((j3 > C0475C.TIME_UNSET ? 1 : (j3 == C0475C.TIME_UNSET ? 0 : -1)) == 0 ? Long.MAX_VALUE : mediaPeriodHolder.toRendererTime(j3)) ? 0 : -1)) >= 0))) ? false : true;
             }
             mediaPeriodHolder2 = mediaPeriodHolder;
             mediaPeriodHolder = mediaPeriodHolder.getNext();
@@ -213,11 +213,11 @@ public final class MediaPeriodQueue {
             r0 = r18
             r1 = r19
             r2 = r20
-            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r3 = r2.f101id
+            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r3 = r2.f104id
             boolean r12 = r0.isLastInPeriod(r3)
             boolean r13 = r0.isLastInWindow(r1, r3)
             boolean r14 = r0.isLastInTimeline(r1, r3, r12)
-            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r4 = r2.f101id
+            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r4 = r2.f104id
             java.lang.Object r4 = r4.periodUid
             com.google.android.exoplayer2.Timeline$Period r5 = r0.period
             r1.getPeriodByUid(r4, r5)
@@ -342,10 +342,10 @@ public final class MediaPeriodQueue {
     private void notifyQueueUpdate() {
         final ImmutableList.Builder builder = ImmutableList.builder();
         for (MediaPeriodHolder mediaPeriodHolder = this.playing; mediaPeriodHolder != null; mediaPeriodHolder = mediaPeriodHolder.getNext()) {
-            builder.add((ImmutableList.Builder) mediaPeriodHolder.info.f101id);
+            builder.add((ImmutableList.Builder) mediaPeriodHolder.info.f104id);
         }
         MediaPeriodHolder mediaPeriodHolder2 = this.reading;
-        final MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodHolder2 == null ? null : mediaPeriodHolder2.info.f101id;
+        final MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodHolder2 == null ? null : mediaPeriodHolder2.info.f104id;
         this.analyticsCollectorHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaPeriodQueue$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
@@ -368,13 +368,13 @@ public final class MediaPeriodQueue {
         }
         for (MediaPeriodHolder mediaPeriodHolder = this.playing; mediaPeriodHolder != null; mediaPeriodHolder = mediaPeriodHolder.getNext()) {
             if (mediaPeriodHolder.uid.equals(obj)) {
-                return mediaPeriodHolder.info.f101id.windowSequenceNumber;
+                return mediaPeriodHolder.info.f104id.windowSequenceNumber;
             }
         }
         for (MediaPeriodHolder mediaPeriodHolder2 = this.playing; mediaPeriodHolder2 != null; mediaPeriodHolder2 = mediaPeriodHolder2.getNext()) {
             int indexOfPeriod2 = timeline.getIndexOfPeriod(mediaPeriodHolder2.uid);
             if (indexOfPeriod2 != -1 && timeline.getPeriod(indexOfPeriod2, this.period).windowIndex == i) {
-                return mediaPeriodHolder2.info.f101id.windowSequenceNumber;
+                return mediaPeriodHolder2.info.f104id.windowSequenceNumber;
             }
         }
         long j = this.nextWindowSequenceNumber;
@@ -387,7 +387,7 @@ public final class MediaPeriodQueue {
     }
 
     private boolean canKeepMediaPeriodHolder(MediaPeriodInfo mediaPeriodInfo, MediaPeriodInfo mediaPeriodInfo2) {
-        return mediaPeriodInfo.startPositionUs == mediaPeriodInfo2.startPositionUs && mediaPeriodInfo.f101id.equals(mediaPeriodInfo2.f101id);
+        return mediaPeriodInfo.startPositionUs == mediaPeriodInfo2.startPositionUs && mediaPeriodInfo.f104id.equals(mediaPeriodInfo2.f104id);
     }
 
     private boolean updateForPlaybackModeChange(Timeline timeline) {
@@ -443,7 +443,7 @@ public final class MediaPeriodQueue {
         MediaSource.MediaPeriodId mediaPeriodId = new MediaSource.MediaPeriodId(obj, i, i2, j2);
         long adDurationUs = timeline.getPeriodByUid(mediaPeriodId.periodUid, this.period).getAdDurationUs(mediaPeriodId.adGroupIndex, mediaPeriodId.adIndexInAdGroup);
         long adResumePositionUs = i2 == this.period.getFirstAdIndexToPlay(i) ? this.period.getAdResumePositionUs() : 0L;
-        return new MediaPeriodInfo(mediaPeriodId, (adDurationUs == C0470C.TIME_UNSET || adResumePositionUs < adDurationUs) ? adResumePositionUs : Math.max(0L, adDurationUs - 1), j, C0470C.TIME_UNSET, adDurationUs, this.period.isServerSideInsertedAdGroup(mediaPeriodId.adGroupIndex), false, false, false);
+        return new MediaPeriodInfo(mediaPeriodId, (adDurationUs == C0475C.TIME_UNSET || adResumePositionUs < adDurationUs) ? adResumePositionUs : Math.max(0L, adDurationUs - 1), j, C0475C.TIME_UNSET, adDurationUs, this.period.isServerSideInsertedAdGroup(mediaPeriodId.adGroupIndex), false, false, false);
     }
 
     private MediaPeriodInfo getMediaPeriodInfoForContent(Timeline timeline, Object obj, long j, long j2, long j3) {
@@ -485,8 +485,8 @@ public final class MediaPeriodQueue {
             j5 = this.period.durationUs;
         } else {
             j4 = -9223372036854775807L;
-            j6 = (j4 != C0470C.TIME_UNSET || j4 == Long.MIN_VALUE) ? this.period.durationUs : j4;
-            if (j6 != C0470C.TIME_UNSET && j7 >= j6) {
+            j6 = (j4 != C0475C.TIME_UNSET || j4 == Long.MIN_VALUE) ? this.period.durationUs : j4;
+            if (j6 != C0475C.TIME_UNSET && j7 >= j6) {
                 if (!isLastInTimeline && z) {
                     i = 0;
                 }
@@ -495,9 +495,9 @@ public final class MediaPeriodQueue {
             return new MediaPeriodInfo(mediaPeriodId, j7, j2, j4, j6, z2, isLastInPeriod, isLastInWindow, isLastInTimeline);
         }
         j4 = j5;
-        if (j4 != C0470C.TIME_UNSET) {
+        if (j4 != C0475C.TIME_UNSET) {
         }
-        if (j6 != C0470C.TIME_UNSET) {
+        if (j6 != C0475C.TIME_UNSET) {
             if (!isLastInTimeline) {
                 i = 0;
             }

@@ -4,7 +4,7 @@ import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX WARN: Incorrect field signature: TK; */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzgz implements Comparable<zzgz>, Map.Entry<K, V> {
     private final Comparable zza;
     private V zzb;

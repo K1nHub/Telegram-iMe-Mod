@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 1047
+    .line 1048
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment$10;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$onFirstFrameRendered$0()V
     .locals 1
 
-    .line 1050
+    .line 1051
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment$10;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/VoIPFragment;->access$2800(Lorg/telegram/ui/VoIPFragment;)V
@@ -57,7 +57,7 @@
 .method public onFirstFrameRendered()V
     .locals 1
 
-    .line 1050
+    .line 1051
     new-instance v0, Lorg/telegram/ui/VoIPFragment$10$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/VoIPFragment$10$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/VoIPFragment$10;)V

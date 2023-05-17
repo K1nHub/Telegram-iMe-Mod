@@ -30,9 +30,9 @@
     .line 593
     iget-object p1, p1, Lorg/telegram/ui/DataUsage2Activity$ListView$Adapter;->this$1:Lorg/telegram/ui/DataUsage2Activity$ListView;
 
-    const-string p2, "windowBackgroundWhite"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/DataUsage2Activity$ListView;->access$1400(Lorg/telegram/ui/DataUsage2Activity$ListView;Ljava/lang/String;)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/DataUsage2Activity$ListView;->access$1400(Lorg/telegram/ui/DataUsage2Activity$ListView;I)I
 
     move-result p1
 

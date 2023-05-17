@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;Z)V
     .locals 0
 
-    .line 87
+    .line 88
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton$1;->this$0:Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton$1;->val$isProgressVisible:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 90
+    .line 91
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton$1;->val$isProgressVisible:Z
 
     if-nez p1, :cond_0
 
-    .line 91
+    .line 92
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton$1;->this$0:Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->access$000(Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;)Lorg/telegram/ui/Components/RadialProgressView;

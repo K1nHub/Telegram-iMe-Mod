@@ -15,6 +15,10 @@ public final class JsonObject extends JsonElement {
         linkedTreeMap.put(str, jsonElement);
     }
 
+    public JsonElement remove(String str) {
+        return this.members.remove(str);
+    }
+
     public void addProperty(String str, String str2) {
         add(str, str2 == null ? JsonNull.INSTANCE : new JsonPrimitive(str2));
     }

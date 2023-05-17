@@ -54,7 +54,7 @@ public class SizeNotifierFrameLayoutPhoto extends FrameLayout {
             return height - (rect.bottom - rect.top);
         }
         int height2 = (((Activity) rootView.getContext()).getWindow().getDecorView().getHeight() - AndroidUtilities.getViewInset(rootView)) - rootView.getBottom();
-        if (height2 <= Math.max(AndroidUtilities.m50dp(10), AndroidUtilities.statusBarHeight)) {
+        if (height2 <= Math.max(AndroidUtilities.m54dp(10), AndroidUtilities.statusBarHeight)) {
             return 0;
         }
         return height2;

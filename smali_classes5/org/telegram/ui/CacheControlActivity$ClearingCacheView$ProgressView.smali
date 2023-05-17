@@ -28,10 +28,10 @@
 .method public constructor <init>(Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;Landroid/content/Context;)V
     .locals 2
 
-    .line 2030
+    .line 2029
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 2027
+    .line 2026
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -46,7 +46,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView$ProgressView;->out:Landroid/graphics/Paint;
 
-    .line 2037
+    .line 2036
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -57,21 +57,21 @@
 
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView$ProgressView;->progressT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 2032
+    .line 2031
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView$ProgressView;->in:Landroid/graphics/Paint;
 
-    const-string p2, "switchTrackChecked"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2033
+    .line 2032
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView$ProgressView;->out:Landroid/graphics/Paint;
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -91,10 +91,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 2046
+    .line 2045
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 2048
+    .line 2047
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -115,7 +115,7 @@
 
     const/4 v1, 0x3
 
-    .line 2049
+    .line 2048
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -132,7 +132,7 @@
 
     invoke-virtual {p1, v0, v2, v4, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 2051
+    .line 2050
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -157,7 +157,7 @@
 
     invoke-virtual {v0, v3, v3, v2, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2052
+    .line 2051
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -180,10 +180,10 @@
 .method public setProgress(F)V
     .locals 0
 
-    .line 2040
+    .line 2039
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView$ProgressView;->progress:F
 
-    .line 2041
+    .line 2040
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

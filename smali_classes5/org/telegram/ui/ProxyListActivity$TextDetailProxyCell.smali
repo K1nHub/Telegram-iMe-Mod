@@ -69,10 +69,10 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->textView:Landroid/widget/TextView;
 
-    const-string v0, "windowBackgroundWhiteBlackText"
-
     .line 137
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -324,9 +324,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "windowBackgroundWhiteGrayText3"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText3:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -407,14 +407,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string p2, "checkbox"
-
-    const-string v1, "radioBackground"
-
-    const-string v4, "checkboxCheck"
-
     .line 166
-    invoke-virtual {p1, p2, v1, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_checkbox:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
+
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
+
+    invoke-virtual {p1, p2, v1, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 167
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -1111,7 +1111,7 @@
 .end method
 
 .method public updateStatus()V
-    .locals 11
+    .locals 12
 
     .line 186
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->currentProxy:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
@@ -1126,11 +1126,9 @@
 
     const-string v5, ", "
 
-    const-string v6, "windowBackgroundWhiteGrayText2"
+    const-wide/16 v6, 0x0
 
-    const-wide/16 v7, 0x0
-
-    if-ne v0, v1, :cond_4
+    if-ne v0, v1, :cond_3
 
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -1138,7 +1136,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     .line 187
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->this$0:Lorg/telegram/ui/ProxyListActivity;
@@ -1163,119 +1161,122 @@
 
     goto :goto_0
 
-    .line 199
+    .line 198
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    sget v1, Lorg/telegram/messenger/R$string;->Connecting:I
+    .line 199
+    iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
-    const-string v2, "Connecting"
+    sget v2, Lorg/telegram/messenger/R$string;->Connecting:I
 
-    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    const-string v3, "Connecting"
 
-    move-result-object v1
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_3
 
-    .line 189
+    .line 188
     :cond_1
     :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText6:I
 
-    iget-wide v0, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
+    .line 189
+    iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    cmp-long v0, v0, v7
+    iget-wide v8, v1, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
-    const-string v1, "Connected"
+    cmp-long v1, v8, v6
 
-    if-eqz v0, :cond_2
+    const-string v8, "Connected"
+
+    if-eqz v1, :cond_2
 
     .line 190
-    iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget v9, Lorg/telegram/messenger/R$string;->Connected:I
+    sget v10, Lorg/telegram/messenger/R$string;->Connected:I
 
-    invoke-static {v1, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v8
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget v1, Lorg/telegram/messenger/R$string;->Ping:I
+    sget v5, Lorg/telegram/messenger/R$string;->Ping:I
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    iget-object v5, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
+    iget-object v8, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    iget-wide v9, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
+    iget-wide v10, v8, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v5
+    move-result-object v8
 
-    aput-object v5, v3, v2
+    aput-object v8, v3, v2
 
-    invoke-static {v4, v1, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v5, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
     .line 192
     :cond_2
-    iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->Connected:I
 
-    invoke-static {v1, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 194
     :goto_1
-    iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
+    iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    iget-boolean v1, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
+    iget-boolean v2, v1, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
 
-    if-nez v1, :cond_3
+    if-nez v2, :cond_7
 
-    iget-boolean v1, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
+    iget-boolean v2, v1, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
 
-    if-nez v1, :cond_3
+    if-nez v2, :cond_7
 
     .line 195
-    iput-wide v7, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->availableCheckTime:J
-
-    :cond_3
-    const-string v6, "windowBackgroundWhiteBlueText6"
+    iput-wide v6, v1, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->availableCheckTime:J
 
     goto :goto_3
 
     .line 202
-    :cond_4
+    :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     iget-boolean v1, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_4
 
     .line 203
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
@@ -1290,22 +1291,25 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 204
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
     goto :goto_3
 
     .line 205
-    :cond_5
+    :cond_4
     iget-boolean v1, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_6
 
     .line 206
     iget-wide v0, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
-    cmp-long v0, v0, v7
+    cmp-long v0, v0, v6
 
     const-string v1, "Available"
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     .line 207
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
@@ -1353,7 +1357,7 @@
     goto :goto_2
 
     .line 209
-    :cond_6
+    :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->Available:I
@@ -1364,13 +1368,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 211
     :goto_2
-    const-string v6, "windowBackgroundWhiteGreenText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText:I
 
     goto :goto_3
 
     .line 213
-    :cond_7
+    :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->Unavailable:I
@@ -1383,20 +1388,26 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v6, "windowBackgroundWhiteRedText4"
+    .line 214
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     .line 217
+    :cond_7
     :goto_3
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v0
+    move-result v1
 
-    iput v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->color:I
+    iput v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->color:I
 
     .line 218
-    iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 219
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;

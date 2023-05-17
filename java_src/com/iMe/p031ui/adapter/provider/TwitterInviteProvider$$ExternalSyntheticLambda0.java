@@ -3,7 +3,7 @@ package com.iMe.p031ui.adapter.provider;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.twitter.TwitterInviteItem;
 /* renamed from: com.iMe.ui.adapter.provider.TwitterInviteProvider$$ExternalSyntheticLambda0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final /* synthetic */ class TwitterInviteProvider$$ExternalSyntheticLambda0 implements Callbacks$Callback1 {
     public static final /* synthetic */ TwitterInviteProvider$$ExternalSyntheticLambda0 INSTANCE = new TwitterInviteProvider$$ExternalSyntheticLambda0();
 

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentCatalogCategoriesBinding implements ViewBinding {
     public final RecyclerView recycleCampaigns;
@@ -28,7 +28,7 @@ public final class ForkFragmentCatalogCategoriesBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogCategoriesBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_catalog_categories, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3290R.layout.fork_fragment_catalog_categories, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentCatalogCategoriesBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogCategoriesBinding bind(View view) {
-        int i = C3242R.C3245id.recycle_campaigns;
+        int i = C3290R.C3293id.recycle_campaigns;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentCatalogCategoriesBinding((SwipeRefreshLayout) view, recyclerView);

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 1552
+    .line 1553
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$5;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public setVisibility(I)V
     .locals 1
 
-    .line 1555
+    .line 1556
     invoke-virtual {p0}, Landroid/widget/ImageView;->getVisibility()I
 
     move-result v0
@@ -44,18 +44,18 @@
 
     return-void
 
-    .line 1558
+    .line 1559
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1559
+    .line 1560
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$5;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/SharedMediaLayout;->photoVideoOptionsItem:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_1
 
-    .line 1560
+    .line 1561
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2300(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1

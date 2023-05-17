@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -61,24 +61,24 @@ public class UserCell2 extends FrameLayout {
         float f;
         this.currentAccount = UserConfig.selectedAccount;
         this.resourcesProvider = resourcesProvider;
-        this.statusColor = Theme.getColor("windowBackgroundWhiteGrayText", resourcesProvider);
-        this.statusOnlineColor = Theme.getColor("windowBackgroundWhiteBlueText", resourcesProvider);
+        this.statusColor = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider);
+        this.statusOnlineColor = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText, resourcesProvider);
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(24));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(24));
         View view = this.avatarImageView;
         boolean z = LocaleController.isRTL;
         addView(view, LayoutHelper.createFrame(48, 48, (z ? 5 : 3) | 48, z ? 0 : i + 7, 11, z ? i + 7 : 0, 0));
         SimpleTextView simpleTextView = new SimpleTextView(this, context) { // from class: org.telegram.ui.Cells.UserCell2.1
             @Override // org.telegram.p044ui.ActionBar.SimpleTextView
             public boolean setText(CharSequence charSequence) {
-                return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(15), false));
+                return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(15), false));
             }
         };
         this.nameTextView = simpleTextView;
         NotificationCenter.listenEmojiLoading(simpleTextView);
-        this.nameTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText", resourcesProvider));
+        this.nameTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
         this.nameTextView.setTextSize(17);
         this.nameTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         View view2 = this.nameTextView;
@@ -106,7 +106,7 @@ public class UserCell2 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.imageView = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayIcon", resourcesProvider), PorterDuff.Mode.MULTIPLY));
+        this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon, resourcesProvider), PorterDuff.Mode.MULTIPLY));
         this.imageView.setVisibility(8);
         View view4 = this.imageView;
         boolean z4 = LocaleController.isRTL;
@@ -117,10 +117,10 @@ public class UserCell2 extends FrameLayout {
             boolean z5 = LocaleController.isRTL;
             addView(checkBoxSquare, LayoutHelper.createFrame(18, 18, (z5 ? 3 : 5) | 16, z5 ? 19 : 0, 0, z5 ? 0 : 19, 0));
         } else if (i2 == 1) {
-            CheckBox checkBox = new CheckBox(context, C3242R.C3244drawable.round_check2);
+            CheckBox checkBox = new CheckBox(context, C3290R.C3292drawable.round_check2);
             this.checkBox = checkBox;
             checkBox.setVisibility(4);
-            this.checkBox.setColor(Theme.getColor("checkbox", resourcesProvider), Theme.getColor("checkboxCheck", resourcesProvider));
+            this.checkBox.setColor(Theme.getColor(Theme.key_checkbox, resourcesProvider), Theme.getColor(Theme.key_checkboxCheck, resourcesProvider));
             View view5 = this.checkBox;
             boolean z6 = LocaleController.isRTL;
             addView(view5, LayoutHelper.createFrame(22, 22, (z6 ? 5 : 3) | 48, z6 ? 0 : i + 37, 41, z6 ? i + 37 : 0, 0));
@@ -161,7 +161,7 @@ public class UserCell2 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(70), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(70), 1073741824));
     }
 
     @Override // android.view.View

@@ -40,35 +40,33 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 8
 
     .line 400
     new-instance v0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_mini_checks:I
 
-    const-string v2, "windowBackgroundWhiteGrayText"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;-><init>(ILjava/lang/String;)V
+    invoke-direct {v0, v1, v4}, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;-><init>(II)V
 
     sput-object v0, Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;->seenDrawable:Lorg/telegram/ui/Components/MessageSeenCheckDrawable;
 
     .line 401
     new-instance v0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;
 
-    sget v4, Lorg/telegram/messenger/R$drawable;->msg_reactions:I
+    sget v3, Lorg/telegram/messenger/R$drawable;->msg_reactions:I
 
-    const-string v5, "windowBackgroundWhiteGrayText"
+    const/16 v5, 0x10
 
     const/16 v6, 0x10
 
-    const/16 v7, 0x10
+    const v7, 0x40b51eb8    # 5.66f
 
-    const v8, 0x40b51eb8    # 5.66f
+    move-object v2, v0
 
-    move-object v3, v0
-
-    invoke-direct/range {v3 .. v8}, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;-><init>(ILjava/lang/String;IIF)V
+    invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;-><init>(IIIIF)V
 
     sput-object v0, Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;->reactDrawable:Lorg/telegram/ui/Components/MessageSeenCheckDrawable;
 
@@ -165,9 +163,9 @@
     .line 421
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v0, "actionBarDefaultSubmenuItem"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -295,9 +293,9 @@
     .line 435
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v4, "windowBackgroundWhiteGrayText"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -629,11 +627,11 @@
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    const-string v7, "windowBackgroundGray"
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    invoke-static {v2, v7, v6}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {v2, v6, v7}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v11
 

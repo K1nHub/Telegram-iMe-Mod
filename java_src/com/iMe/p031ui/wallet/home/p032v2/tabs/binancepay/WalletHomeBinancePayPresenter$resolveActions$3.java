@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletHomeBinancePayPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$resolveActions$3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletHomeBinancePayPresenter$resolveActions$3 extends Lambda implements Function0<Unit> {
     final /* synthetic */ WalletHomeBinancePayPresenter this$0;
 

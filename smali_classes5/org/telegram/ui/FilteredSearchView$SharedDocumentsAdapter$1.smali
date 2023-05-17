@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1343
+    .line 1361
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Cells/SharedAudioCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method public needPlayMessage(Lorg/telegram/messenger/MessageObject;)Z
     .locals 11
 
-    .line 1346
+    .line 1364
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
     move-result v0
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 1350
+    .line 1368
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
@@ -60,7 +60,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1351
+    .line 1369
     new-instance v0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
@@ -87,7 +87,7 @@
 
     invoke-direct/range {v2 .. v10}, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;-><init>(Ljava/lang/String;JJJLorg/telegram/ui/Adapters/FiltersView$MediaFilterData;)V
 
-    .line 1352
+    .line 1370
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -98,7 +98,7 @@
 
     iput-boolean v1, v0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->endReached:Z
 
-    .line 1353
+    .line 1371
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -109,7 +109,7 @@
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->nextSearchRate:I
 
-    .line 1354
+    .line 1372
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -120,7 +120,7 @@
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->totalCount:I
 
-    .line 1355
+    .line 1373
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -129,7 +129,7 @@
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->folderId:I
 
-    .line 1356
+    .line 1374
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -155,7 +155,7 @@
     :cond_1
     return v1
 
-    .line 1347
+    .line 1365
     :cond_2
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
@@ -166,7 +166,7 @@
 
     move-result p1
 
-    .line 1348
+    .line 1366
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0

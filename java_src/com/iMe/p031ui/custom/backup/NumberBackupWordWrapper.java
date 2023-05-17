@@ -37,14 +37,14 @@ public final class NumberBackupWordWrapper extends FrameLayout {
 
     public final void applyColors() {
         ForkContentBackupNumberWordBinding forkContentBackupNumberWordBinding = this.binding;
-        forkContentBackupNumberWordBinding.textNumber.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        forkContentBackupNumberWordBinding.textNumber.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         forkContentBackupNumberWordBinding.viewBackupWord.applyColors();
     }
 
     private final void setupView(String str, int i) {
         ForkContentBackupNumberWordBinding forkContentBackupNumberWordBinding = this.binding;
         forkContentBackupNumberWordBinding.textNumber.setText(String.valueOf(i));
-        forkContentBackupNumberWordBinding.textNumber.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        forkContentBackupNumberWordBinding.textNumber.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         forkContentBackupNumberWordBinding.viewBackupWord.setWord(str);
         addView(this.binding.getRoot());
     }

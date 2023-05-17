@@ -142,10 +142,10 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/MovingReactionCell;->emojiTextView$delegate:Lkotlin/Lazy;
 
-    const-string p1, "windowBackgroundWhite"
-
     .line 49
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -293,9 +293,9 @@
     .line 139
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "stickers_menu"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menu:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -389,19 +389,19 @@
     .line 114
     invoke-virtual {v1, v0, v2}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    const-string v0, "windowBackgroundWhiteBlackText"
-
     .line 115
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setTextColor(I)V
 
-    const-string v0, "windowBackgroundWhiteHintText"
-
     .line 116
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -411,7 +411,7 @@
 .end method
 
 .method private final initEmojiTextView()Landroid/widget/TextView;
-    .locals 3
+    .locals 5
 
     .line 153
     new-instance v0, Landroid/widget/TextView;
@@ -437,21 +437,25 @@
     .line 156
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "chat_messagePanelText"
-
     .line 157
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
-    move-result v1
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v2
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 159
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingReactionCell;->getValueTextView()Landroid/widget/TextView;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-static {v2, v3, v1, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     return-object v0
 .end method
@@ -486,9 +490,9 @@
     .line 148
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v3, "windowBackgroundWhiteBlueHeader"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -545,9 +549,9 @@
     .line 122
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "stickers_menu"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menu:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -604,10 +608,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "windowBackgroundWhiteGrayText2"
-
     .line 132
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -830,7 +834,13 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v0, v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 69
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/MovingReactionCell;->getLinkImageView()Landroid/widget/ImageView;
@@ -839,9 +849,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "stickers_menu"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menu:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1259,9 +1269,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "windowBackgroundWhiteBlueHeader"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1274,9 +1284,9 @@
     :cond_5
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "stickers_menu"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menu:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

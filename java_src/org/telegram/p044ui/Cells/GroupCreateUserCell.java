@@ -69,19 +69,19 @@ public class GroupCreateUserCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(24));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(24));
         BackupImageView backupImageView2 = this.avatarImageView;
         boolean z3 = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(46, 46, (z3 ? 5 : 3) | 48, z3 ? 0 : this.padding + 13, 6, z3 ? this.padding + 13 : 0, 0));
         SimpleTextView simpleTextView = new SimpleTextView(this, context) { // from class: org.telegram.ui.Cells.GroupCreateUserCell.1
             @Override // org.telegram.p044ui.ActionBar.SimpleTextView
             public boolean setText(CharSequence charSequence, boolean z4) {
-                return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(14), false), z4);
+                return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(14), false), z4);
             }
         };
         this.nameTextView = simpleTextView;
         NotificationCenter.listenEmojiLoading(simpleTextView);
-        this.nameTextView.setTextColor(Theme.getColor(this.forceDarkTheme ? "voipgroup_nameText" : "windowBackgroundWhiteBlackText"));
+        this.nameTextView.setTextColor(Theme.getColor(this.forceDarkTheme ? Theme.key_voipgroup_nameText : Theme.key_windowBackgroundWhiteBlackText));
         this.nameTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.nameTextView.setTextSize(16);
         this.nameTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
@@ -104,7 +104,7 @@ public class GroupCreateUserCell extends FrameLayout {
         if (i == 1) {
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
-            checkBox2.setColor(null, "windowBackgroundWhite", "checkboxCheck");
+            checkBox2.setColor(-1, Theme.key_windowBackgroundWhite, Theme.key_checkboxCheck);
             this.checkBox.setDrawUnchecked(false);
             this.checkBox.setDrawBackgroundAsArc(3);
             CheckBox2 checkBox22 = this.checkBox;
@@ -114,7 +114,7 @@ public class GroupCreateUserCell extends FrameLayout {
             Paint paint = new Paint(1);
             this.paint = paint;
             paint.setStyle(Paint.Style.STROKE);
-            this.paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+            this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
         }
         setWillNotDraw(false);
     }
@@ -130,6 +130,14 @@ public class GroupCreateUserCell extends FrameLayout {
         this.currentName = charSequence;
         this.drawDivider = false;
         update(0);
+    }
+
+    public void setForbiddenCheck(boolean z) {
+        this.checkBox.setForbidden(z);
+    }
+
+    public CheckBox2 getCheckBox() {
+        return this.checkBox;
     }
 
     public void setChecked(boolean z, boolean z2) {
@@ -209,7 +217,7 @@ public class GroupCreateUserCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(this.currentObject instanceof String ? 50 : 58), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.currentObject instanceof String ? 50 : 58), 1073741824));
     }
 
     public void recycle() {
@@ -217,16 +225,16 @@ public class GroupCreateUserCell extends FrameLayout {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00da, code lost:
-        if (r14.equals("archived") == false) goto L15;
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00d6, code lost:
+        if (r12.equals("archived") == false) goto L15;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void update(int r14) {
+    public void update(int r12) {
         /*
-            Method dump skipped, instructions count: 1198
+            Method dump skipped, instructions count: 1218
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Cells.GroupCreateUserCell.update(int):void");
@@ -236,18 +244,18 @@ public class GroupCreateUserCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.checkBoxType == 2 && (this.isChecked || this.checkProgress > BitmapDescriptorFactory.HUE_RED)) {
-            this.paint.setColor(Theme.getColor("checkboxSquareBackground"));
-            canvas.drawCircle(this.avatarImageView.getLeft() + (this.avatarImageView.getMeasuredWidth() / 2), this.avatarImageView.getTop() + (this.avatarImageView.getMeasuredHeight() / 2), AndroidUtilities.m50dp(18) + (AndroidUtilities.m50dp(4) * this.checkProgress), this.paint);
+            this.paint.setColor(Theme.getColor(Theme.key_checkboxSquareBackground));
+            canvas.drawCircle(this.avatarImageView.getLeft() + (this.avatarImageView.getMeasuredWidth() / 2), this.avatarImageView.getTop() + (this.avatarImageView.getMeasuredHeight() / 2), AndroidUtilities.m54dp(18) + (AndroidUtilities.m54dp(4) * this.checkProgress), this.paint);
         }
         if (this.drawDivider) {
-            int m50dp = AndroidUtilities.m50dp(LocaleController.isRTL ? 0 : this.padding + 72);
-            int measuredWidth = getMeasuredWidth() - AndroidUtilities.m50dp(LocaleController.isRTL ? this.padding + 72 : 0);
+            int m54dp = AndroidUtilities.m54dp(LocaleController.isRTL ? 0 : this.padding + 72);
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.m54dp(LocaleController.isRTL ? this.padding + 72 : 0);
             if (this.forceDarkTheme) {
-                Theme.dividerExtraPaint.setColor(Theme.getColor("voipgroup_actionBar"));
-                canvas.drawRect(m50dp, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), Theme.dividerExtraPaint);
+                Theme.dividerExtraPaint.setColor(Theme.getColor(Theme.key_voipgroup_actionBar));
+                canvas.drawRect(m54dp, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), Theme.dividerExtraPaint);
                 return;
             }
-            canvas.drawRect(m50dp, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), Theme.dividerPaint);
+            canvas.drawRect(m54dp, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), Theme.dividerPaint);
         }
     }
 

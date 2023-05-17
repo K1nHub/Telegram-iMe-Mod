@@ -53,9 +53,9 @@ public final class StakingRepositoryImpl implements StakingRepository {
 
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<StakingTotalStats>> getStakingTotalStats() {
-        Observable<R> map = this.stakingApi.getStakingTotalStats().map(new C1498x85ce2865(new StakingRepositoryImpl$getStakingTotalStats$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.getStakingTotalStats().map(new C1567x85ce2865(new StakingRepositoryImpl$getStakingTotalStats$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<StakingTotalStats>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new C1497x2d5c7315(this.errorHandler)));
+        Observable<Result<StakingTotalStats>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new C1566x2d5c7315(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -63,9 +63,9 @@ public final class StakingRepositoryImpl implements StakingRepository {
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<StakingProgrammes>> getStakingProgrammesList(StakingOrderType orderType, Long l) {
         Intrinsics.checkNotNullParameter(orderType, "orderType");
-        Observable<R> map = this.stakingApi.getStakingProgrammesList(new StakingProgrammesRequest(null, l, null, StakingOrderStrategyRequest.Companion.createFromOrderType(orderType), false, 21, null)).map(new C1498x85ce2865(new C1496x8c291be6(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.getStakingProgrammesList(new StakingProgrammesRequest(null, l, null, StakingOrderStrategyRequest.Companion.createFromOrderType(orderType), false, 21, null)).map(new C1567x85ce2865(new C1565x8c291be6(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<StakingProgrammes>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new C1495xdc02197b(this.errorHandler)));
+        Observable<Result<StakingProgrammes>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new C1564xdc02197b(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -78,36 +78,36 @@ public final class StakingRepositoryImpl implements StakingRepository {
         StakingOrderStrategyRequest createFromOrderType = StakingOrderStrategyRequest.Companion.createFromOrderType(orderType);
         String lowerCase = filterType.name().toLowerCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
-        Observable<R> map = stakingApi.getStakingOwnProgrammesList(new StakingOwnProgrammesRequest(null, l, null, createFromOrderType, lowerCase, 5, null)).map(new C1498x85ce2865(new C1494xf12a9dc4(this.firebaseErrorHandler)));
+        Observable<R> map = stakingApi.getStakingOwnProgrammesList(new StakingOwnProgrammesRequest(null, l, null, createFromOrderType, lowerCase, 5, null)).map(new C1567x85ce2865(new C1563xf12a9dc4(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<StakingProgrammes>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new C1493x1730d35d(this.errorHandler)));
+        Observable<Result<StakingProgrammes>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new C1562x1730d35d(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<StakingDetailedMetadata>> getStakingDetails(long j) {
-        Observable<R> map = this.stakingApi.getStakingDetails(new StakingIdRequest(j)).map(new C1498x85ce2865(new StakingRepositoryImpl$getStakingDetails$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.getStakingDetails(new StakingIdRequest(j)).map(new C1567x85ce2865(new StakingRepositoryImpl$getStakingDetails$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<StakingDetailedMetadata>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new StakingRepositoryImpl$getStakingDetails$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<StakingDetailedMetadata>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new StakingRepositoryImpl$getStakingDetails$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<StakingOperationsPaged>> getStakingOperations(Long l, StakingOperationType stakingOperationType, NetworkType networkType, String str) {
-        Observable<R> map = this.stakingApi.getStakingOperations(new StakingOperationsRequest(l, stakingOperationType, null, networkType, str == null ? null : new StakingOperationsPaginationRequest(str, null, 2, null), 4, null)).map(new C1498x85ce2865(new StakingRepositoryImpl$getStakingOperations$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.getStakingOperations(new StakingOperationsRequest(l, stakingOperationType, null, networkType, str == null ? null : new StakingOperationsPaginationRequest(str, null, 2, null), 4, null)).map(new C1567x85ce2865(new StakingRepositoryImpl$getStakingOperations$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<StakingOperationsPaged>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new C1492xe0f1d7c4(this.errorHandler)));
+        Observable<Result<StakingOperationsPaged>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new C1561xe0f1d7c4(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<StakingApprovalInfo>> getApprovalInfo(long j) {
-        Observable<R> map = this.stakingApi.getApprovalInfo(new StakingIdRequest(j)).map(new C1498x85ce2865(new StakingRepositoryImpl$getApprovalInfo$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.getApprovalInfo(new StakingIdRequest(j)).map(new C1567x85ce2865(new StakingRepositoryImpl$getApprovalInfo$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<StakingApprovalInfo>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new StakingRepositoryImpl$getApprovalInfo$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<StakingApprovalInfo>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new StakingRepositoryImpl$getApprovalInfo$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -115,9 +115,9 @@ public final class StakingRepositoryImpl implements StakingRepository {
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<Pair<String, StakingTransactionAction>>> sendApprovalPrepare(long j, StakingApprovalTokenType tokenType) {
         Intrinsics.checkNotNullParameter(tokenType, "tokenType");
-        Observable<R> map = this.stakingApi.sendApprovalPrepare(new StakingApprovalPrepareRequest(j, tokenType.name())).map(new C1498x85ce2865(new StakingRepositoryImpl$sendApprovalPrepare$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.sendApprovalPrepare(new StakingApprovalPrepareRequest(j, tokenType.name())).map(new C1567x85ce2865(new StakingRepositoryImpl$sendApprovalPrepare$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Pair<String, StakingTransactionAction>>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new StakingRepositoryImpl$sendApprovalPrepare$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<Pair<String, StakingTransactionAction>>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new StakingRepositoryImpl$sendApprovalPrepare$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -132,9 +132,9 @@ public final class StakingRepositoryImpl implements StakingRepository {
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<Pair<String, StakingTransactionAction>>> sendDepositPrepare(long j, BigDecimal amount) {
         Intrinsics.checkNotNullParameter(amount, "amount");
-        Observable<R> map = this.stakingApi.sendDepositPrepare(new StakingDepositPrepareRequest(j, amount)).map(new C1498x85ce2865(new StakingRepositoryImpl$sendDepositPrepare$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.sendDepositPrepare(new StakingDepositPrepareRequest(j, amount)).map(new C1567x85ce2865(new StakingRepositoryImpl$sendDepositPrepare$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Pair<String, StakingTransactionAction>>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new StakingRepositoryImpl$sendDepositPrepare$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<Pair<String, StakingTransactionAction>>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new StakingRepositoryImpl$sendDepositPrepare$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -148,9 +148,9 @@ public final class StakingRepositoryImpl implements StakingRepository {
 
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<Pair<String, StakingTransactionAction>>> sendClaimPrepare(long j) {
-        Observable<R> map = this.stakingApi.sendClaimPrepare(new StakingIdRequest(j)).map(new C1498x85ce2865(new StakingRepositoryImpl$sendClaimPrepare$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.sendClaimPrepare(new StakingIdRequest(j)).map(new C1567x85ce2865(new StakingRepositoryImpl$sendClaimPrepare$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Pair<String, StakingTransactionAction>>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new StakingRepositoryImpl$sendClaimPrepare$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<Pair<String, StakingTransactionAction>>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new StakingRepositoryImpl$sendClaimPrepare$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -165,9 +165,9 @@ public final class StakingRepositoryImpl implements StakingRepository {
     @Override // com.iMe.i_staking.repository.StakingRepository
     public Observable<Result<Pair<String, StakingTransactionAction>>> sendWithdrawPrepare(long j, BigDecimal amount, boolean z) {
         Intrinsics.checkNotNullParameter(amount, "amount");
-        Observable<R> map = this.stakingApi.sendWithdrawPrepare(new StakingWithdrawPrepareRequest(j, amount, z)).map(new C1498x85ce2865(new StakingRepositoryImpl$sendWithdrawPrepare$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.stakingApi.sendWithdrawPrepare(new StakingWithdrawPrepareRequest(j, amount, z)).map(new C1567x85ce2865(new StakingRepositoryImpl$sendWithdrawPrepare$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Pair<String, StakingTransactionAction>>> onErrorReturn = map.onErrorReturn(new C1498x85ce2865(new StakingRepositoryImpl$sendWithdrawPrepare$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<Pair<String, StakingTransactionAction>>> onErrorReturn = map.onErrorReturn(new C1567x85ce2865(new StakingRepositoryImpl$sendWithdrawPrepare$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

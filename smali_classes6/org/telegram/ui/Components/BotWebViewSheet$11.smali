@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;)V
     .locals 0
 
-    .line 960
+    .line 964
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$11;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +38,10 @@
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 0
 
-    .line 963
+    .line 967
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 965
+    .line 969
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$11;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1500(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
@@ -62,7 +62,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->setSwipeOffsetY(F)V
 
-    .line 966
+    .line 970
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$11;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1600(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -73,7 +73,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 968
+    .line 972
     new-instance p1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$11;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
@@ -94,24 +94,24 @@
 
     const/high16 p3, 0x3f400000    # 0.75f
 
-    .line 970
+    .line 974
     invoke-virtual {p2, p3}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p2
 
     const/high16 p3, 0x43fa0000    # 500.0f
 
-    .line 971
+    .line 975
     invoke-virtual {p2, p3}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p2
 
-    .line 969
+    .line 973
     invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     move-result-object p1
 
-    .line 972
+    .line 976
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     return-void

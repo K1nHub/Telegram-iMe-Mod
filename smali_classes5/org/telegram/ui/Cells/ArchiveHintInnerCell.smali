@@ -30,9 +30,9 @@
     .line 30
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chats_nameMessage_threeLines"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_nameMessage_threeLines:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -50,7 +50,7 @@
     iput-object v0, p0, Lorg/telegram/ui/Cells/ArchiveHintInnerCell;->headerTextView:Landroid/widget/TextView;
 
     .line 33
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -113,10 +113,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ArchiveHintInnerCell;->messageTextView:Landroid/widget/TextView;
 
-    const-string v3, "chats_message"
-
     .line 40
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -326,9 +326,9 @@
 
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v0, "chats_unreadCounter"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounter:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

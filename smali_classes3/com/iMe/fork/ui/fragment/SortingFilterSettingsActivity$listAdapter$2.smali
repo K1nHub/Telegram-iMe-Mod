@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
     .locals 4
 
-    .line 41
+    .line 43
     new-instance v0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$listAdapter$2;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
@@ -69,7 +69,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 41
+    .line 43
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$listAdapter$2;->invoke()Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;
 
     move-result-object v0

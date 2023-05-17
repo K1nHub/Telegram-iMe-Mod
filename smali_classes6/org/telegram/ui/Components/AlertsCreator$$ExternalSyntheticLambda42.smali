@@ -39,7 +39,7 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda42;->f$2:Z
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$mlhMmAPMcK47kXRvUG92iAKZjDE(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;ZLandroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$MI3lddTOH9-jpGrvBLYh7sHZ698(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;ZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method

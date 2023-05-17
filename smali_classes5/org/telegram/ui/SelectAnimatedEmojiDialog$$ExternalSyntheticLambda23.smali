@@ -2,54 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/HashMap;
+.field public final synthetic f$0:Ljava/util/LinkedHashSet;
 
-.field public final synthetic f$1:Ljava/util/HashMap;
-
-.field public final synthetic f$2:Ljava/util/ArrayList;
-
-.field public final synthetic f$3:Ljava/lang/Runnable;
+.field public final synthetic f$1:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/ArrayList;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Ljava/util/LinkedHashSet;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$0:Ljava/util/HashMap;
+    iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$0:Ljava/util/LinkedHashSet;
 
-    iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$1:Ljava/util/HashMap;
-
-    iput-object p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$2:Ljava/util/ArrayList;
-
-    iput-object p4, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$3:Ljava/lang/Runnable;
+    iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$1:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/util/ArrayList;Ljava/lang/String;)V
-    .locals 6
+.method public final run(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$0:Ljava/util/HashMap;
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$0:Ljava/util/LinkedHashSet;
 
-    iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$1:Ljava/util/HashMap;
+    iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$1:Ljava/lang/Runnable;
 
-    iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$2:Ljava/util/ArrayList;
+    check-cast p1, Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda23;->f$3:Ljava/lang/Runnable;
-
-    move-object v4, p1
-
-    move-object v5, p2
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$VnybNAgkd0fkxobi_3ImiYLdPTY(Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/ArrayList;Ljava/lang/Runnable;Ljava/util/ArrayList;Ljava/lang/String;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$GWc5CMn1NYy5DcNK22Lwhgmjcv4(Ljava/util/LinkedHashSet;Ljava/lang/Runnable;Ljava/util/ArrayList;)V
 
     return-void
 .end method

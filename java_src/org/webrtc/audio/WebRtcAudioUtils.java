@@ -116,7 +116,7 @@ final class WebRtcAudioUtils {
     }
 
     static void logDeviceInfo(String str) {
-        Logging.m18d(str, "Android SDK: " + Build.VERSION.SDK_INT + ", Release: " + Build.VERSION.RELEASE + ", Brand: " + Build.BRAND + ", Device: " + Build.DEVICE + ", Id: " + Build.ID + ", Hardware: " + Build.HARDWARE + ", Manufacturer: " + Build.MANUFACTURER + ", Model: " + Build.MODEL + ", Product: " + Build.PRODUCT);
+        Logging.m20d(str, "Android SDK: " + Build.VERSION.SDK_INT + ", Release: " + Build.VERSION.RELEASE + ", Brand: " + Build.BRAND + ", Device: " + Build.DEVICE + ", Id: " + Build.ID + ", Hardware: " + Build.HARDWARE + ", Manufacturer: " + Build.MANUFACTURER + ", Model: " + Build.MODEL + ", Product: " + Build.PRODUCT);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -153,7 +153,7 @@ final class WebRtcAudioUtils {
     }
 
     private static void logAudioStateBasic(String str, Context context, AudioManager audioManager) {
-        Logging.m18d(str, "Audio State: audio mode: " + modeToString(audioManager.getMode()) + ", has mic: " + hasMicrophone(context) + ", mic muted: " + audioManager.isMicrophoneMute() + ", music active: " + audioManager.isMusicActive() + ", speakerphone: " + audioManager.isSpeakerphoneOn() + ", BT SCO: " + audioManager.isBluetoothScoOn());
+        Logging.m20d(str, "Audio State: audio mode: " + modeToString(audioManager.getMode()) + ", has mic: " + hasMicrophone(context) + ", mic muted: " + audioManager.isMicrophoneMute() + ", music active: " + audioManager.isMusicActive() + ", speakerphone: " + audioManager.isSpeakerphoneOn() + ", BT SCO: " + audioManager.isBluetoothScoOn());
     }
 
     private static boolean isVolumeFixed(AudioManager audioManager) {
@@ -165,9 +165,9 @@ final class WebRtcAudioUtils {
 
     private static void logAudioStateVolume(String str, AudioManager audioManager) {
         int[] iArr = {0, 3, 2, 4, 5, 1};
-        Logging.m18d(str, "Audio State: ");
+        Logging.m20d(str, "Audio State: ");
         boolean isVolumeFixed = isVolumeFixed(audioManager);
-        Logging.m18d(str, "  fixed volume=" + isVolumeFixed);
+        Logging.m20d(str, "  fixed volume=" + isVolumeFixed);
         if (isVolumeFixed) {
             return;
         }
@@ -180,7 +180,7 @@ final class WebRtcAudioUtils {
             sb.append(", max=");
             sb.append(audioManager.getStreamMaxVolume(i2));
             logIsStreamMute(str, audioManager, i2, sb);
-            Logging.m18d(str, sb.toString());
+            Logging.m20d(str, sb.toString());
         }
     }
 
@@ -199,7 +199,7 @@ final class WebRtcAudioUtils {
         if (devices.length == 0) {
             return;
         }
-        Logging.m18d(str, "Audio Devices: ");
+        Logging.m20d(str, "Audio Devices: ");
         for (AudioDeviceInfo audioDeviceInfo : devices) {
             StringBuilder sb = new StringBuilder();
             sb.append("  ");
@@ -222,7 +222,7 @@ final class WebRtcAudioUtils {
             }
             sb.append("id=");
             sb.append(audioDeviceInfo.getId());
-            Logging.m18d(str, sb.toString());
+            Logging.m20d(str, sb.toString());
         }
     }
 

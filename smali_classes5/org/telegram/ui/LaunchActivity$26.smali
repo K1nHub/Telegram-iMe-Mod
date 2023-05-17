@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/LaunchActivity$26;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "LaunchActivity.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->didReceivedNotification(II[Ljava/lang/Object;)V
+    value = Lorg/telegram/ui/LaunchActivity;->onPasscodePause()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,110 +20,112 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/LaunchActivity;
 
-.field final synthetic val$darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
-
-.field final synthetic val$toDark:Z
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/LaunchActivity;ZLorg/telegram/ui/Components/RLottieImageView;)V
+.method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 6684
+    .line 7397
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/LaunchActivity$26;->val$toDark:Z
-
-    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$26;->val$darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+.method public run()V
+    .locals 8
 
-    .line 6687
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 7400
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    const/4 v0, 0x0
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$2900(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/Runnable;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/LaunchActivity;->access$2602(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;)Landroid/view/View;
+    move-result-object v0
 
-    .line 6688
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
+    if-ne v0, p0, :cond_3
 
-    iget-object p1, p1, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
+    const/4 v0, 0x1
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
+    .line 7401
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->needShowPasscode(Z)Z
 
-    .line 6689
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
+    move-result v0
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2700(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/ImageView;
+    if-eqz v0, :cond_1
 
-    move-result-object p1
+    .line 7402
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    invoke-virtual {p1}, Landroid/widget/ImageView;->invalidate()V
+    if-eqz v0, :cond_0
 
-    .line 6690
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
+    const-string v0, "lock app"
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2700(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/ImageView;
+    .line 7403
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    move-result-object p1
+    .line 7405
+    :cond_0
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    const/4 v2, 0x1
 
-    .line 6691
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
+    const/4 v3, 0x0
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2700(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/ImageView;
+    const/4 v4, -0x1
 
-    move-result-object p1
+    const/4 v5, -0x1
 
-    const/16 v0, 0x8
+    const/4 v6, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+    const/4 v7, 0x0
 
-    .line 6692
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
+    invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/LaunchActivity;->showPasscodeActivity(ZZIILjava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2800(Lorg/telegram/ui/LaunchActivity;)Landroid/view/View;
+    .line 7407
+    :try_start_0
+    sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    move-result-object p1
+    invoke-static {v0}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    move-result-object v0
 
-    .line 6693
-    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
+    invoke-virtual {v0}, Lorg/telegram/messenger/NotificationsController;->showNotifications()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object p1
+    goto :goto_0
 
-    sget v0, Lorg/telegram/messenger/NotificationCenter;->themeAccentListUpdated:I
+    :catch_0
+    move-exception v0
+
+    .line 7409
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    .line 7412
+    :cond_1
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "didn\'t pass lock check"
+
+    .line 7413
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 7416
+    :cond_2
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$26;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     const/4 v1, 0x0
 
-    new-array v2, v1, [Ljava/lang/Object;
+    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->access$2902(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    invoke-virtual {p1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
-
-    .line 6694
-    iget-boolean p1, p0, Lorg/telegram/ui/LaunchActivity$26;->val$toDark:Z
-
-    if-nez p1, :cond_0
-
-    .line 6695
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$26;->val$darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
-
-    invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 6697
-    :cond_0
-    sput-boolean v1, Lorg/telegram/ui/Cells/DrawerProfileCell;->switchingTheme:Z
-
+    :cond_3
     return-void
 .end method

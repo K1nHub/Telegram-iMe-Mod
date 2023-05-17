@@ -52,7 +52,7 @@
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 1
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

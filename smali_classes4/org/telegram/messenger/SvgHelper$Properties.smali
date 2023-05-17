@@ -42,29 +42,29 @@
         }
     .end annotation
 
-    .line 1020
+    .line 1025
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1021
+    .line 1026
     iput-object p1, p0, Lorg/telegram/messenger/SvgHelper$Properties;->atts:Lorg/xml/sax/Attributes;
 
-    const-string v0, "style"
+    const-string/jumbo v0, "style"
 
-    .line 1022
+    .line 1027
     invoke-static {v0, p1}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1024
+    .line 1029
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/SvgHelper$Properties;->styles:Ljava/util/ArrayList;
 
-    .line 1025
+    .line 1030
     new-instance p2, Lorg/telegram/messenger/SvgHelper$StyleSet;
 
     const/4 v1, 0x0
@@ -78,14 +78,14 @@
     :cond_0
     const-string v0, "class"
 
-    .line 1027
+    .line 1032
     invoke-static {v0, p1}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    .line 1029
+    .line 1034
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -94,20 +94,20 @@
 
     const-string v0, " "
 
-    .line 1030
+    .line 1035
     invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p1
 
     const/4 v0, 0x0
 
-    .line 1031
+    .line 1036
     :goto_0
     array-length v1, p1
 
     if-ge v0, v1, :cond_2
 
-    .line 1032
+    .line 1037
     aget-object v1, p1, v0
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1034
+    .line 1039
     iget-object v2, p0, Lorg/telegram/messenger/SvgHelper$Properties;->styles:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -140,7 +140,7 @@
 .method synthetic constructor <init>(Lorg/xml/sax/Attributes;Ljava/util/HashMap;Lorg/telegram/messenger/SvgHelper$1;)V
     .locals 0
 
-    .line 1016
+    .line 1021
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/SvgHelper$Properties;-><init>(Lorg/xml/sax/Attributes;Ljava/util/HashMap;)V
 
     return-void
@@ -151,7 +151,7 @@
 .method public getAttr(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
 
-    .line 1043
+    .line 1048
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$Properties;->styles:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -166,7 +166,7 @@
 
     const/4 v0, 0x0
 
-    .line 1044
+    .line 1049
     iget-object v2, p0, Lorg/telegram/messenger/SvgHelper$Properties;->styles:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -176,7 +176,7 @@
     :goto_0
     if-ge v0, v2, :cond_1
 
-    .line 1045
+    .line 1050
     iget-object v1, p0, Lorg/telegram/messenger/SvgHelper$Properties;->styles:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -202,7 +202,7 @@
     :goto_1
     if-nez v1, :cond_2
 
-    .line 1052
+    .line 1057
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$Properties;->atts:Lorg/xml/sax/Attributes;
 
     invoke-static {p1, v0}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
@@ -216,7 +216,7 @@
 .method public getFloat(Ljava/lang/String;)Ljava/lang/Float;
     .locals 1
 
-    .line 1084
+    .line 1089
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/SvgHelper$Properties;->getAttr(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -227,7 +227,7 @@
 
     return-object v0
 
-    .line 1089
+    .line 1094
     :cond_0
     :try_start_0
     invoke-static {p1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -249,14 +249,14 @@
 .method public getFloat(Ljava/lang/String;F)Ljava/lang/Float;
     .locals 0
 
-    .line 1075
+    .line 1080
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/SvgHelper$Properties;->getFloat(Ljava/lang/String;)Ljava/lang/Float;
 
     move-result-object p1
 
     if-nez p1, :cond_0
 
-    .line 1077
+    .line 1082
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
@@ -268,7 +268,7 @@
 .method public getHex(Ljava/lang/String;)Ljava/lang/Integer;
     .locals 2
 
-    .line 1062
+    .line 1067
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/SvgHelper$Properties;->getAttr(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -282,7 +282,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 1067
+    .line 1072
     :try_start_0
     invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -302,7 +302,7 @@
 
     return-object p1
 
-    .line 1069
+    .line 1074
     :catch_0
     invoke-static {p1}, Lorg/telegram/messenger/SvgHelper;->access$400(Ljava/lang/String;)Ljava/lang/Integer;
 
@@ -314,7 +314,7 @@
 .method public getString(Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 1058
+    .line 1063
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/SvgHelper$Properties;->getAttr(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1

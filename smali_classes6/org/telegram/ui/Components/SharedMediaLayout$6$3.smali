@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;)V
     .locals 0
 
-    .line 1669
+    .line 1670
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$3;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 1672
+    .line 1673
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$3;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -47,7 +47,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3000(Lorg/telegram/ui/Components/SharedMediaLayout;Z)V
 
-    .line 1673
+    .line 1674
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$3;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -56,7 +56,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1674
+    .line 1675
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_0

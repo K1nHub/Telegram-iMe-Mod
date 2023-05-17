@@ -72,9 +72,9 @@
     .line 312
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkBotsContentPageItemLabelBinding;->botName:Landroid/widget/TextView;
 
-    const-string v0, "windowBackgroundWhiteBlackText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

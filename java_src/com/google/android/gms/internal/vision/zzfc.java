@@ -6,8 +6,8 @@ import com.iMe.common.IdFabric$RequestCode;
 public final class zzfc extends zzfb {
     public static int zza(int i, int i2, int i3) {
         if (!(i2 <= 1073741823)) {
-            throw new IllegalArgumentException(zzdg.zza("min (%s) must be less than or equal to max (%s)", Integer.valueOf(i2), Integer.valueOf((int) IdFabric$RequestCode.file_saving_directory)));
+            throw new IllegalArgumentException(zzdg.zza("min (%s) must be less than or equal to max (%s)", Integer.valueOf(i2), Integer.valueOf((int) IdFabric$RequestCode.FILE_SAVING_DIRECTORY)));
         }
-        return Math.min(Math.max(i, i2), (int) IdFabric$RequestCode.file_saving_directory);
+        return Math.min(Math.max(i, i2), (int) IdFabric$RequestCode.FILE_SAVING_DIRECTORY);
     }
 }

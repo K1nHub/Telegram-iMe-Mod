@@ -44,10 +44,6 @@ public final class TopicInfo {
         this.iconResId = i3;
     }
 
-    public final int getColorResId() {
-        return this.colorResId;
-    }
-
     public final int getTitleResId() {
         return this.titleResId;
     }

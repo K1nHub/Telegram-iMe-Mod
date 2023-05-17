@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer;Landroid/content/Context;Landroid/widget/LinearLayout;)V
     .locals 0
 
-    .line 1786
+    .line 1799
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$5;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iput-object p3, p0, Lorg/telegram/ui/ArticleViewer$5;->val$linearLayout:Landroid/widget/LinearLayout;
@@ -39,7 +39,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 5
 
-    .line 1790
+    .line 1803
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$5;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/ArticleViewer;->textSelectionHelperBottomSheet:Lorg/telegram/ui/Cells/TextSelectionHelper$ArticleTextSelectionHelper;
@@ -52,12 +52,12 @@
 
     move-result-object v0
 
-    .line 1791
+    .line 1804
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v1
 
-    .line 1792
+    .line 1805
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$5;->val$linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2}, Landroid/widget/LinearLayout;->getX()F
@@ -76,7 +76,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    .line 1793
+    .line 1806
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$5;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object v2, v2, Lorg/telegram/ui/ArticleViewer;->textSelectionHelperBottomSheet:Lorg/telegram/ui/Cells/TextSelectionHelper$ArticleTextSelectionHelper;
@@ -109,7 +109,7 @@
 
     return v3
 
-    .line 1797
+    .line 1810
     :cond_0
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->checkOnTap(Landroid/view/MotionEvent;)Z
 
@@ -119,10 +119,10 @@
 
     const/4 v0, 0x3
 
-    .line 1798
+    .line 1811
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->setAction(I)V
 
-    .line 1801
+    .line 1814
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -172,7 +172,7 @@
 
     if-lez v0, :cond_4
 
-    .line 1802
+    .line 1815
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$5;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -192,7 +192,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1803
+    .line 1816
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -202,7 +202,7 @@
     :cond_3
     return v3
 
-    .line 1808
+    .line 1821
     :cond_4
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -214,10 +214,10 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1813
+    .line 1826
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 1814
+    .line 1827
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$5;->val$linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
@@ -238,7 +238,7 @@
 
     move-result p2
 
-    .line 1815
+    .line 1828
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

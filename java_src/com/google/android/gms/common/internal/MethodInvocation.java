@@ -13,23 +13,23 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class MethodInvocation extends AbstractSafeParcelable {
     public static final Parcelable.Creator<MethodInvocation> CREATOR = new zan();
-    @SafeParcelable.Field(getter = "getMethodKey", m775id = 1)
+    @SafeParcelable.Field(getter = "getMethodKey", m779id = 1)
     private final int zaa;
-    @SafeParcelable.Field(getter = "getResultStatusCode", m775id = 2)
+    @SafeParcelable.Field(getter = "getResultStatusCode", m779id = 2)
     private final int zab;
-    @SafeParcelable.Field(getter = "getConnectionResultStatusCode", m775id = 3)
+    @SafeParcelable.Field(getter = "getConnectionResultStatusCode", m779id = 3)
     private final int zac;
-    @SafeParcelable.Field(getter = "getStartTimeMillis", m775id = 4)
+    @SafeParcelable.Field(getter = "getStartTimeMillis", m779id = 4)
     private final long zad;
-    @SafeParcelable.Field(getter = "getEndTimeMillis", m775id = 5)
+    @SafeParcelable.Field(getter = "getEndTimeMillis", m779id = 5)
     private final long zae;
-    @SafeParcelable.Field(getter = "getCallingModuleId", m775id = 6)
+    @SafeParcelable.Field(getter = "getCallingModuleId", m779id = 6)
     private final String zaf;
-    @SafeParcelable.Field(getter = "getCallingEntryPoint", m775id = 7)
+    @SafeParcelable.Field(getter = "getCallingEntryPoint", m779id = 7)
     private final String zag;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getServiceId", m775id = 8)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getServiceId", m779id = 8)
     private final int zah;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getLatencyMillis", m775id = 9)
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getLatencyMillis", m779id = 9)
     private final int zai;
 
     @KeepForSdk
@@ -54,7 +54,7 @@ public class MethodInvocation extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public MethodInvocation(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) int i2, @SafeParcelable.Param(m774id = 3) int i3, @SafeParcelable.Param(m774id = 4) long j, @SafeParcelable.Param(m774id = 5) long j2, @SafeParcelable.Param(m774id = 6) String str, @SafeParcelable.Param(m774id = 7) String str2, @SafeParcelable.Param(m774id = 8) int i4, @SafeParcelable.Param(m774id = 9) int i5) {
+    public MethodInvocation(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) int i2, @SafeParcelable.Param(m778id = 3) int i3, @SafeParcelable.Param(m778id = 4) long j, @SafeParcelable.Param(m778id = 5) long j2, @SafeParcelable.Param(m778id = 6) String str, @SafeParcelable.Param(m778id = 7) String str2, @SafeParcelable.Param(m778id = 8) int i4, @SafeParcelable.Param(m778id = 9) int i5) {
         this.zaa = i;
         this.zab = i2;
         this.zac = i3;

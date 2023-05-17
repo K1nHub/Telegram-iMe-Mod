@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectNewSessionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionBottomSheetDialog$setupListeners$1$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectNewSessionBottomSheetDialog$setupListeners$1$2 extends Lambda implements Function1<View, Unit> {
     final /* synthetic */ WalletConnectNewSessionBottomSheetDialog this$0;
 

@@ -11,7 +11,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -81,16 +81,16 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         ApplicationLoader.postInitApplication();
         requestWindowFeature(1);
         if (!SharedConfig.isVibrationEnabled) {
-            setTheme(C3242R.style.Theme_TMessages_NoHapticFeedback);
+            setTheme(C3290R.style.Theme_TMessages_NoHapticFeedback);
         } else {
-            setTheme(C3242R.style.Theme_TMessages);
+            setTheme(C3290R.style.Theme_TMessages);
         }
-        getWindow().setBackgroundDrawableResource(C3242R.C3244drawable.transparent);
+        getWindow().setBackgroundDrawableResource(C3290R.C3292drawable.transparent);
         if (SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture) {
             try {
                 getWindow().setFlags(8192, 8192);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
         super.onCreate(bundle);
@@ -298,11 +298,11 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
                     if (BubbleActivity.this.lockRunnable == this) {
                         if (AndroidUtilities.needShowPasscode(true)) {
                             if (BuildVars.LOGS_ENABLED) {
-                                FileLog.m48d("lock app");
+                                FileLog.m52d("lock app");
                             }
                             BubbleActivity.this.showPasscodeActivity();
                         } else if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m48d("didn't pass lock check");
+                            FileLog.m52d("didn't pass lock check");
                         }
                         BubbleActivity.this.lockRunnable = null;
                     }

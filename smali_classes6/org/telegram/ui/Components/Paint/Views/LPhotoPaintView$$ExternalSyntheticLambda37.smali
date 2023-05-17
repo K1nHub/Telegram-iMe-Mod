@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$SRes0jrkQ11z7qHHCH7lfZ12Mh4()V
+    invoke-static {}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$iLOCEppt5xNzsL9hX1CSgobXZHc()V
 
     return-void
 .end method

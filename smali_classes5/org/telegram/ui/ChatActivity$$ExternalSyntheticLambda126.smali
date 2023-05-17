@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda126;->f$1:Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$sFfVdY9x7SbzAG_ZpKesXr1MVLw(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$7tAxj2ZS4LLwIqIhhrwJVs5-xW8(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

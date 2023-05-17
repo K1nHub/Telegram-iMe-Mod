@@ -74,15 +74,15 @@
 
     move-object/from16 v2, p2
 
-    .line 320
+    .line 321
     iput-object v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
-    .line 321
+    .line 322
     invoke-direct {v0, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/16 v3, 0x14
 
-    .line 294
+    .line 295
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -93,29 +93,29 @@
 
     new-array v5, v4, [Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 303
+    .line 304
     iput-object v5, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v5, 0x3
 
     new-array v6, v5, [F
 
-    .line 307
+    .line 308
     fill-array-data v6, :array_0
 
     iput-object v6, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorHSV:[F
 
     const/high16 v6, 0x3f800000    # 1.0f
 
-    .line 308
+    .line 309
     iput v6, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alpha:F
 
     new-array v6, v5, [F
 
-    .line 310
+    .line 311
     iput-object v6, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->hsvTemp:[F
 
-    .line 318
+    .line 319
     new-instance v6, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v6}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
@@ -124,10 +124,10 @@
 
     const/4 v6, 0x0
 
-    .line 322
+    .line 323
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 324
+    .line 325
     new-instance v7, Landroid/graphics/Paint;
 
     const/4 v8, 0x1
@@ -136,7 +136,7 @@
 
     iput-object v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circlePaint:Landroid/graphics/Paint;
 
-    .line 325
+    .line 326
     invoke-virtual/range {p2 .. p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
@@ -153,47 +153,47 @@
 
     iput-object v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circleDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 327
+    .line 328
     new-instance v7, Landroid/graphics/Paint;
 
     invoke-direct {v7}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelPaint:Landroid/graphics/Paint;
 
-    .line 328
+    .line 329
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 329
+    .line 330
     iget-object v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 331
+    .line 332
     new-instance v7, Landroid/graphics/Paint;
 
     invoke-direct {v7}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->valueSliderPaint:Landroid/graphics/Paint;
 
-    .line 332
+    .line 333
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 333
+    .line 334
     iget-object v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->valueSliderPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 335
+    .line 336
     new-instance v7, Landroid/widget/LinearLayout;
 
     invoke-direct {v7, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->linearLayout:Landroid/widget/LinearLayout;
 
-    .line 336
+    .line 337
     invoke-virtual {v7, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 337
+    .line 338
     iget-object v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->linearLayout:Landroid/widget/LinearLayout;
 
     const/4 v9, -0x2
@@ -211,7 +211,7 @@
     :goto_0
     if-ge v7, v4, :cond_6
 
-    .line 339
+    .line 340
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v10, Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -220,7 +220,7 @@
 
     aput-object v10, v9, v7
 
-    .line 340
+    .line 341
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -229,7 +229,7 @@
 
     invoke-virtual {v9, v10}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 341
+    .line 342
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -238,14 +238,14 @@
 
     invoke-virtual {v9, v11}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 342
+    .line 343
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
 
     invoke-virtual {v9, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 343
+    .line 344
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -256,7 +256,7 @@
 
     invoke-virtual {v9, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    .line 344
+    .line 345
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -265,7 +265,7 @@
 
     invoke-virtual {v9, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 345
+    .line 346
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -274,7 +274,7 @@
 
     invoke-virtual {v9, v8, v11}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 346
+    .line 347
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -283,39 +283,39 @@
 
     invoke-virtual {v9, v11}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 347
+    .line 348
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
 
-    const-string v11, "dialogInputField"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogInputField:I
 
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v11
 
-    const-string v12, "dialogInputFieldActivated"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogInputFieldActivated:I
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
-    const-string v13, "dialogTextRed"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
     invoke-virtual {v9, v11, v12, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
 
-    .line 348
+    .line 349
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
 
     invoke-virtual {v9, v8}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 349
+    .line 350
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -326,7 +326,7 @@
 
     invoke-virtual {v9, v11}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
-    .line 350
+    .line 351
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -337,7 +337,7 @@
 
     if-nez v7, :cond_0
 
-    .line 352
+    .line 353
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -351,7 +351,7 @@
     :cond_0
     if-ne v7, v8, :cond_1
 
-    .line 354
+    .line 355
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -365,7 +365,7 @@
     :cond_1
     if-ne v7, v10, :cond_2
 
-    .line 356
+    .line 357
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -379,7 +379,7 @@
     :cond_2
     if-ne v7, v5, :cond_3
 
-    .line 358
+    .line 359
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -388,7 +388,7 @@
 
     invoke-virtual {v9, v10}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 360
+    .line 361
     :cond_3
     :goto_1
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -413,21 +413,21 @@
 
     new-array v9, v8, [Landroid/text/InputFilter;
 
-    .line 362
+    .line 363
     new-instance v10, Landroid/text/InputFilter$LengthFilter;
 
     invoke-direct {v10, v5}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
 
     aput-object v10, v9, v6
 
-    .line 363
+    .line 364
     iget-object v10, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v10, v10, v7
 
     invoke-virtual {v10, v9}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
-    .line 365
+    .line 366
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->linearLayout:Landroid/widget/LinearLayout;
 
     iget-object v10, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -460,7 +460,7 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 366
+    .line 367
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -471,7 +471,7 @@
 
     invoke-virtual {v9, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 411
+    .line 412
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v9, v9, v7
@@ -498,7 +498,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
     .locals 0
 
-    .line 290
+    .line 291
     iget-object p0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     return-object p0
@@ -507,7 +507,7 @@
 .method private createColorWheelBitmap(II)Landroid/graphics/Bitmap;
     .locals 10
 
-    .line 491
+    .line 492
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {p1, p2, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -522,7 +522,7 @@
 
     new-array v3, v3, [F
 
-    .line 496
+    .line 497
     fill-array-data v3, :array_0
 
     const/4 v4, 0x0
@@ -536,14 +536,14 @@
 
     add-int/lit16 v6, v6, 0xb4
 
-    .line 498
+    .line 499
     rem-int/lit16 v6, v6, 0x168
 
     int-to-float v6, v6
 
     aput v6, v3, v4
 
-    .line 499
+    .line 500
     invoke-static {v3}, Landroid/graphics/Color;->HSVToColor([F)I
 
     move-result v6
@@ -554,7 +554,7 @@
 
     goto :goto_0
 
-    .line 501
+    .line 502
     :cond_0
     aget v1, v2, v4
 
@@ -562,7 +562,7 @@
 
     aput v1, v2, v3
 
-    .line 503
+    .line 504
     new-instance v1, Landroid/graphics/SweepGradient;
 
     div-int/lit8 p1, p1, 0x2
@@ -577,7 +577,7 @@
 
     invoke-direct {v1, p1, p2, v2, v3}, Landroid/graphics/SweepGradient;-><init>(FF[I[F)V
 
-    .line 504
+    .line 505
     new-instance v2, Landroid/graphics/RadialGradient;
 
     iget v3, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
@@ -598,24 +598,24 @@
 
     invoke-direct/range {v3 .. v9}, Landroid/graphics/RadialGradient;-><init>(FFFIILandroid/graphics/Shader$TileMode;)V
 
-    .line 505
+    .line 506
     new-instance v3, Landroid/graphics/ComposeShader;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
 
     invoke-direct {v3, v1, v2, v4}, Landroid/graphics/ComposeShader;-><init>(Landroid/graphics/Shader;Landroid/graphics/Shader;Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 507
+    .line 508
     iget-object v1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 509
+    .line 510
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 510
+    .line 511
     iget v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
 
     int-to-float v2, v2
@@ -641,12 +641,12 @@
 
     const/16 v0, 0xd
 
-    .line 471
+    .line 472
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 472
+    .line 473
     iget-object v1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circleDrawable:Landroid/graphics/drawable/Drawable;
 
     sub-int v2, p2, v0
@@ -659,12 +659,12 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 473
+    .line 474
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circleDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 475
+    .line 476
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circlePaint:Landroid/graphics/Paint;
 
     const/4 v1, -0x1
@@ -677,7 +677,7 @@
 
     const/16 v0, 0xb
 
-    .line 476
+    .line 477
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -688,14 +688,14 @@
 
     invoke-virtual {p1, p2, p3, v0, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 477
+    .line 478
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circlePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p4}, Landroid/graphics/Paint;->setColor(I)V
 
     const/16 p4, 0x9
 
-    .line 478
+    .line 479
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
@@ -716,7 +716,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 413
+    .line 414
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     const/4 p0, 0x1
@@ -732,7 +732,7 @@
 .method private startColorChange(Z)V
     .locals 8
 
-    .line 516
+    .line 517
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1200(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Z
@@ -743,7 +743,7 @@
 
     return-void
 
-    .line 519
+    .line 520
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
@@ -753,7 +753,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 520
+    .line 521
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1300(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Landroid/animation/AnimatorSet;
@@ -762,13 +762,13 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 522
+    .line 523
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1202(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;Z)Z
 
-    .line 523
+    .line 524
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     new-instance v1, Landroid/animation/AnimatorSet;
@@ -777,7 +777,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1302(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 524
+    .line 525
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1300(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Landroid/animation/AnimatorSet;
@@ -790,7 +790,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
-    .line 525
+    .line 526
     invoke-static {v2}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1400(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Landroid/graphics/drawable/ColorDrawable;
 
     move-result-object v2
@@ -823,7 +823,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
-    .line 526
+    .line 527
     invoke-static {v2}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1500(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Landroid/view/ViewGroup;
 
     move-result-object v2
@@ -850,10 +850,10 @@
 
     aput-object p1, v1, v4
 
-    .line 524
+    .line 525
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 527
+    .line 528
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1300(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Landroid/animation/AnimatorSet;
@@ -864,7 +864,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 528
+    .line 529
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1300(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Landroid/animation/AnimatorSet;
@@ -875,7 +875,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 529
+    .line 530
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$1300(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Landroid/animation/AnimatorSet;
@@ -892,7 +892,7 @@
 .method public getColor()I
     .locals 3
 
-    .line 640
+    .line 641
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorHSV:[F
 
     invoke-static {v0}, Landroid/graphics/Color;->HSVToColor([F)I
@@ -925,7 +925,7 @@
 
     move-object/from16 v7, p1
 
-    .line 432
+    .line 433
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -940,7 +940,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 433
+    .line 434
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v2
@@ -955,7 +955,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 435
+    .line 436
     iget-object v3, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelBitmap:Landroid/graphics/Bitmap;
 
     iget v4, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
@@ -972,7 +972,7 @@
 
     invoke-virtual {v7, v3, v5, v4, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 437
+    .line 438
     iget-object v3, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorHSV:[F
 
     const/4 v9, 0x0
@@ -989,7 +989,7 @@
 
     float-to-double v3, v3
 
-    .line 438
+    .line 439
     invoke-static {v3, v4}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v5
@@ -1016,7 +1016,7 @@
 
     add-int/2addr v5, v1
 
-    .line 439
+    .line 440
     invoke-static {v3, v4}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v3
@@ -1041,31 +1041,31 @@
 
     add-int/2addr v3, v2
 
-    .line 443
+    .line 444
     iget-object v4, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->hsvTemp:[F
 
     aget v10, v6, v9
 
     aput v10, v4, v9
 
-    .line 444
+    .line 445
     aget v6, v6, v11
 
     aput v6, v4, v11
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    .line 445
+    .line 446
     aput v10, v4, v8
 
-    .line 447
+    .line 448
     invoke-static {v4}, Landroid/graphics/Color;->HSVToColor([F)I
 
     move-result v4
 
     invoke-direct {v0, v7, v5, v3, v4}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->drawPointerArrow(Landroid/graphics/Canvas;III)V
 
-    .line 449
+    .line 450
     iget v3, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
 
     add-int/2addr v1, v3
@@ -1078,22 +1078,22 @@
 
     const/16 v1, 0x9
 
-    .line 451
+    .line 452
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
-    .line 452
+    .line 453
     iget v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
 
     mul-int/lit8 v14, v1, 0x2
 
-    .line 453
+    .line 454
     iget-object v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorGradient:Landroid/graphics/LinearGradient;
 
     if-nez v1, :cond_0
 
-    .line 454
+    .line 455
     new-instance v1, Landroid/graphics/LinearGradient;
 
     int-to-float v3, v12
@@ -1144,7 +1144,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorGradient:Landroid/graphics/LinearGradient;
 
-    .line 456
+    .line 457
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->valueSliderPaint:Landroid/graphics/Paint;
 
@@ -1164,7 +1164,7 @@
 
     int-to-float v15, v2
 
-    .line 457
+    .line 458
     iget-object v6, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->valueSliderPaint:Landroid/graphics/Paint;
 
     move-object/from16 v1, p1
@@ -1177,7 +1177,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 458
+    .line 459
     div-int/lit8 v23, v13, 0x2
 
     add-int v1, v12, v23
@@ -1200,28 +1200,28 @@
 
     invoke-direct {v0, v7, v1, v3, v2}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->drawPointerArrow(Landroid/graphics/Canvas;III)V
 
-    .line 460
+    .line 461
     iget v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->paramValueSliderWidth:I
 
     mul-int/2addr v1, v8
 
     add-int/2addr v12, v1
 
-    .line 461
+    .line 462
     iget-object v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alphaGradient:Landroid/graphics/LinearGradient;
 
     const v24, 0xffffff
 
     if-nez v1, :cond_1
 
-    .line 462
+    .line 463
     iget-object v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->hsvTemp:[F
 
     invoke-static {v1}, Landroid/graphics/Color;->HSVToColor([F)I
 
     move-result v1
 
-    .line 463
+    .line 464
     new-instance v2, Landroid/graphics/LinearGradient;
 
     int-to-float v3, v12
@@ -1265,7 +1265,7 @@
     :cond_1
     move v6, v15
 
-    .line 465
+    .line 466
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->valueSliderPaint:Landroid/graphics/Paint;
 
@@ -1279,7 +1279,7 @@
 
     int-to-float v4, v13
 
-    .line 466
+    .line 467
     iget-object v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->valueSliderPaint:Landroid/graphics/Paint;
 
     move-object/from16 v1, p1
@@ -1294,7 +1294,7 @@
 
     add-int v12, v12, v23
 
-    .line 467
+    .line 468
     iget v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alpha:F
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -1335,27 +1335,27 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 423
+    .line 424
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 424
+    .line 425
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 425
+    .line 426
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 426
+    .line 427
     iget-object v1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v1, p1, p2}, Landroid/widget/FrameLayout;->measureChild(Landroid/view/View;II)V
 
-    .line 427
+    .line 428
     invoke-virtual {p0, v0, v0}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
     return-void
@@ -1364,7 +1364,7 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 483
+    .line 484
     div-int/lit8 p1, p1, 0x2
 
     iget p2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->paramValueSliderWidth:I
@@ -1393,7 +1393,7 @@
 
     mul-int/lit8 p1, p1, 0x2
 
-    .line 484
+    .line 485
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->createColorWheelBitmap(II)Landroid/graphics/Bitmap;
 
     move-result-object p1
@@ -1402,10 +1402,10 @@
 
     const/4 p1, 0x0
 
-    .line 486
+    .line 487
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorGradient:Landroid/graphics/LinearGradient;
 
-    .line 487
+    .line 488
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alphaGradient:Landroid/graphics/LinearGradient;
 
     return-void
@@ -1416,7 +1416,7 @@
 
     move-object v0, p0
 
-    .line 534
+    .line 535
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
@@ -1435,20 +1435,20 @@
 
     goto :goto_0
 
-    .line 607
+    .line 608
     :cond_0
     iput-boolean v3, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alphaPressed:Z
 
-    .line 608
+    .line 609
     iput-boolean v3, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorPressed:Z
 
-    .line 609
+    .line 610
     iput-boolean v3, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circlePressed:Z
 
-    .line 610
+    .line 611
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->startColorChange(Z)V
 
-    .line 613
+    .line 614
     :goto_0
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1456,7 +1456,7 @@
 
     return v1
 
-    .line 539
+    .line 540
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -1464,14 +1464,14 @@
 
     float-to-int v1, v1
 
-    .line 540
+    .line 541
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v5
 
     float-to-int v5, v5
 
-    .line 541
+    .line 542
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v6
@@ -1484,7 +1484,7 @@
 
     sub-int/2addr v6, v7
 
-    .line 542
+    .line 543
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v7
@@ -1511,12 +1511,12 @@
 
     int-to-double v10, v10
 
-    .line 545
+    .line 546
     invoke-static {v10, v11}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v10
 
-    .line 547
+    .line 548
     iget-boolean v12, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circlePressed:Z
 
     if-nez v12, :cond_2
@@ -1537,7 +1537,7 @@
 
     if-gtz v12, :cond_4
 
-    .line 548
+    .line 549
     :cond_2
     iget v12, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
 
@@ -1549,11 +1549,11 @@
 
     int-to-double v10, v12
 
-    .line 551
+    .line 552
     :cond_3
     iput-boolean v4, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circlePressed:Z
 
-    .line 552
+    .line 553
     iget-object v12, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorHSV:[F
 
     int-to-double v13, v9
@@ -1576,7 +1576,7 @@
 
     aput v8, v12, v3
 
-    .line 553
+    .line 554
     iget-object v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorHSV:[F
 
     iget v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
@@ -1603,13 +1603,13 @@
 
     const/4 v8, 0x0
 
-    .line 554
+    .line 555
     iput-object v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorGradient:Landroid/graphics/LinearGradient;
 
-    .line 555
+    .line 556
     iput-object v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alphaGradient:Landroid/graphics/LinearGradient;
 
-    .line 557
+    .line 558
     :cond_4
     iget-boolean v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorPressed:Z
 
@@ -1651,7 +1651,7 @@
 
     if-gt v5, v8, :cond_8
 
-    .line 558
+    .line 559
     :cond_5
     iget v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
 
@@ -1686,17 +1686,17 @@
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    .line 564
+    .line 565
     :cond_7
     :goto_1
     iget-object v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorHSV:[F
 
     aput v10, v8, v2
 
-    .line 565
+    .line 566
     iput-boolean v4, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorPressed:Z
 
-    .line 567
+    .line 568
     :cond_8
     iget-boolean v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alphaPressed:Z
 
@@ -1740,7 +1740,7 @@
 
     if-gt v5, v8, :cond_c
 
-    .line 568
+    .line 569
     :cond_9
     iget v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
 
@@ -1768,7 +1768,7 @@
 
     if-gez v6, :cond_a
 
-    .line 570
+    .line 571
     iput v5, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alpha:F
 
     goto :goto_2
@@ -1778,15 +1778,15 @@
 
     if-lez v5, :cond_b
 
-    .line 572
+    .line 573
     iput v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alpha:F
 
-    .line 574
+    .line 575
     :cond_b
     :goto_2
     iput-boolean v4, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alphaPressed:Z
 
-    .line 576
+    .line 577
     :cond_c
     iget-boolean v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alphaPressed:Z
 
@@ -1800,18 +1800,18 @@
 
     if-eqz v1, :cond_14
 
-    .line 577
+    .line 578
     :cond_d
     invoke-direct {p0, v4}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->startColorChange(Z)V
 
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->getColor()I
 
     move-result v1
 
     move v5, v3
 
-    .line 579
+    .line 580
     :goto_3
     iget-object v6, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
@@ -1827,7 +1827,7 @@
 
     if-ge v5, v6, :cond_11
 
-    .line 580
+    .line 581
     iget-object v6, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->this$0:Lorg/telegram/ui/Components/ThemeEditorView;
@@ -1842,69 +1842,45 @@
 
     check-cast v6, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 581
-    invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()Ljava/lang/String;
-
-    move-result-object v6
-
-    if-nez v5, :cond_e
-
-    const-string v7, "chat_wallpaper"
-
     .line 582
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_f
-
-    :cond_e
-    const-string v7, "chat_wallpaper_gradient_to"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_f
-
-    const-string v7, "key_chat_wallpaper_gradient_to2"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_f
-
-    const-string v7, "key_chat_wallpaper_gradient_to3"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_f
-
-    const-string v7, "windowBackgroundWhite"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_f
-
-    const-string v7, "windowBackgroundGray"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()I
 
     move-result v6
 
-    if-eqz v6, :cond_10
+    if-nez v5, :cond_e
+
+    .line 583
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
+
+    if-eq v6, v7, :cond_f
+
+    :cond_e
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
+
+    if-eq v6, v7, :cond_f
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
+
+    if-eq v6, v7, :cond_f
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
+
+    if-eq v6, v7, :cond_f
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    if-eq v6, v7, :cond_f
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    if-ne v6, v7, :cond_10
 
     :cond_f
     const/high16 v6, -0x1000000
 
     or-int/2addr v1, v6
 
-    .line 585
+    .line 586
     :cond_10
     iget-object v6, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
@@ -1926,28 +1902,28 @@
 
     goto :goto_3
 
-    .line 587
+    .line 588
     :cond_11
     invoke-static {v1}, Landroid/graphics/Color;->red(I)I
 
     move-result v5
 
-    .line 588
+    .line 589
     invoke-static {v1}, Landroid/graphics/Color;->green(I)I
 
     move-result v6
 
-    .line 589
+    .line 590
     invoke-static {v1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v7
 
-    .line 590
+    .line 591
     invoke-static {v1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v1
 
-    .line 591
+    .line 592
     iget-object v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$900(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Z
@@ -1956,12 +1932,12 @@
 
     if-nez v8, :cond_13
 
-    .line 592
+    .line 593
     iget-object v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v8, v4}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$902(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;Z)Z
 
-    .line 593
+    .line 594
     iget-object v8, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v8, v8, v3
@@ -1982,7 +1958,7 @@
 
     invoke-virtual {v8, v5}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 594
+    .line 595
     iget-object v5, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v5, v5, v4
@@ -2001,7 +1977,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 595
+    .line 596
     iget-object v5, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v5, v2
@@ -2020,7 +1996,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 596
+    .line 597
     iget-object v2, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v5, 0x3
@@ -2046,7 +2022,7 @@
     :goto_4
     if-ge v1, v10, :cond_12
 
-    .line 598
+    .line 599
     iget-object v2, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v5, v2, v1
@@ -2063,13 +2039,13 @@
 
     goto :goto_4
 
-    .line 600
+    .line 601
     :cond_12
     iget-object v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v1, v3}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$902(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;Z)Z
 
-    .line 602
+    .line 603
     :cond_13
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -2080,27 +2056,27 @@
 .method public setColor(I)V
     .locals 9
 
-    .line 617
+    .line 618
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
 
-    .line 618
+    .line 619
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v1
 
-    .line 619
+    .line 620
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v2
 
-    .line 620
+    .line 621
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v3
 
-    .line 621
+    .line 622
     iget-object v4, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$900(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Z
@@ -2109,14 +2085,14 @@
 
     if-nez v4, :cond_1
 
-    .line 622
+    .line 623
     iget-object v4, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     const/4 v5, 0x1
 
     invoke-static {v4, v5}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$902(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;Z)Z
 
-    .line 623
+    .line 624
     iget-object v4, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v6, 0x0
@@ -2139,7 +2115,7 @@
 
     invoke-virtual {v4, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 624
+    .line 625
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v0, v0, v5
@@ -2158,7 +2134,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 625
+    .line 626
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x2
@@ -2179,7 +2155,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 626
+    .line 627
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x3
@@ -2207,7 +2183,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 628
+    .line 629
     iget-object v1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v1, v0
@@ -2224,7 +2200,7 @@
 
     goto :goto_0
 
-    .line 630
+    .line 631
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
@@ -2233,10 +2209,10 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 632
+    .line 633
     iput-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alphaGradient:Landroid/graphics/LinearGradient;
 
-    .line 633
+    .line 634
     iput-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorGradient:Landroid/graphics/LinearGradient;
 
     int-to-float v0, v3
@@ -2245,15 +2221,15 @@
 
     div-float/2addr v0, v1
 
-    .line 634
+    .line 635
     iput v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alpha:F
 
-    .line 635
+    .line 636
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorHSV:[F
 
     invoke-static {p1, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 636
+    .line 637
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

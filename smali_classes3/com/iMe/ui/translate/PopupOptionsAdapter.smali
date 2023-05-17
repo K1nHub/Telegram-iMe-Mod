@@ -147,9 +147,9 @@
 
     move-result-object p1
 
-    const-string p3, "chat_messagePanelText"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 

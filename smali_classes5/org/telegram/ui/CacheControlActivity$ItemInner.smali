@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field colorKey:Ljava/lang/String;
+.field colorKey:I
 
 .field entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
 
@@ -44,22 +44,22 @@
 
     const/4 v0, 0x1
 
-    .line 3149
+    .line 3169
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     const/16 p1, 0xf
 
-    .line 3116
+    .line 3136
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerTopMargin:I
 
     const/4 p1, 0x0
 
-    .line 3117
+    .line 3137
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerBottomMargin:I
 
     const/4 p1, -0x1
 
-    .line 3118
+    .line 3138
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->keepMediaType:I
 
     return-void
@@ -70,25 +70,25 @@
 
     const/4 v0, 0x1
 
-    .line 3136
+    .line 3156
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     const/16 p1, 0xf
 
-    .line 3116
+    .line 3136
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerTopMargin:I
 
     const/4 p1, 0x0
 
-    .line 3117
+    .line 3137
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerBottomMargin:I
 
     const/4 p1, -0x1
 
-    .line 3118
+    .line 3138
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->keepMediaType:I
 
-    .line 3137
+    .line 3157
     iput p2, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->keepMediaType:I
 
     return-void
@@ -99,28 +99,28 @@
 
     const/4 v0, 0x1
 
-    .line 3130
+    .line 3150
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     const/16 p1, 0xf
 
-    .line 3116
+    .line 3136
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerTopMargin:I
 
     const/4 p1, 0x0
 
-    .line 3117
+    .line 3137
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerBottomMargin:I
 
     const/4 p1, -0x1
 
-    .line 3118
+    .line 3138
     iput p1, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->keepMediaType:I
 
-    .line 3131
+    .line 3151
     iput-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerName:Ljava/lang/CharSequence;
 
-    .line 3132
+    .line 3152
     iput-object p3, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
 
     return-void
@@ -129,13 +129,13 @@
 .method synthetic constructor <init>(ILorg/telegram/ui/CacheControlActivity$1;)V
     .locals 0
 
-    .line 3114
+    .line 3134
     invoke-direct {p0, p1}, Lorg/telegram/ui/CacheControlActivity$ItemInner;-><init>(I)V
 
     return-void
 .end method
 
-.method public static asCheckBox(Ljava/lang/CharSequence;IJLjava/lang/String;)Lorg/telegram/ui/CacheControlActivity$ItemInner;
+.method public static asCheckBox(Ljava/lang/CharSequence;IJI)Lorg/telegram/ui/CacheControlActivity$ItemInner;
     .locals 6
 
     const/4 v5, 0x0
@@ -146,39 +146,39 @@
 
     move-wide v2, p2
 
-    move-object v4, p4
+    move v4, p4
 
-    .line 3153
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/CacheControlActivity$ItemInner;->asCheckBox(Ljava/lang/CharSequence;IJLjava/lang/String;Z)Lorg/telegram/ui/CacheControlActivity$ItemInner;
+    .line 3173
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/CacheControlActivity$ItemInner;->asCheckBox(Ljava/lang/CharSequence;IJIZ)Lorg/telegram/ui/CacheControlActivity$ItemInner;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static asCheckBox(Ljava/lang/CharSequence;IJLjava/lang/String;Z)Lorg/telegram/ui/CacheControlActivity$ItemInner;
+.method public static asCheckBox(Ljava/lang/CharSequence;IJIZ)Lorg/telegram/ui/CacheControlActivity$ItemInner;
     .locals 2
 
-    .line 3157
+    .line 3177
     new-instance v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;
 
     const/16 v1, 0xb
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/CacheControlActivity$ItemInner;-><init>(I)V
 
-    .line 3158
+    .line 3178
     iput p1, v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->index:I
 
-    .line 3159
+    .line 3179
     iput-object p0, v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerName:Ljava/lang/CharSequence;
 
-    .line 3160
+    .line 3180
     iput-wide p2, v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->size:J
 
-    .line 3161
-    iput-object p4, v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->colorKey:Ljava/lang/String;
+    .line 3181
+    iput p4, v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->colorKey:I
 
-    .line 3162
+    .line 3182
     iput-boolean p5, v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->last:Z
 
     return-object v0
@@ -187,14 +187,14 @@
 .method public static asInfo(Ljava/lang/String;)Lorg/telegram/ui/CacheControlActivity$ItemInner;
     .locals 2
 
-    .line 3167
+    .line 3187
     new-instance v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/CacheControlActivity$ItemInner;-><init>(I)V
 
-    .line 3168
+    .line 3188
     iput-object p0, v0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->text:Ljava/lang/String;
 
     return-object v0
@@ -216,7 +216,7 @@
 
     if-eqz p1, :cond_d
 
-    .line 3175
+    .line 3195
     const-class v2, Lorg/telegram/ui/CacheControlActivity$ItemInner;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -227,11 +227,11 @@
 
     goto/16 :goto_4
 
-    .line 3176
+    .line 3196
     :cond_1
     check-cast p1, Lorg/telegram/ui/CacheControlActivity$ItemInner;
 
-    .line 3177
+    .line 3197
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -253,7 +253,7 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 3181
+    .line 3201
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
 
     if-eqz v3, :cond_4
@@ -262,7 +262,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 3182
+    .line 3202
     iget-wide v2, v3, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->dialogId:J
 
     iget-wide v4, v4, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->dialogId:J
@@ -305,7 +305,7 @@
 
     if-ne v2, v3, :cond_6
 
-    .line 3188
+    .line 3208
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerName:Ljava/lang/CharSequence;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ItemInner;->headerName:Ljava/lang/CharSequence;
@@ -319,7 +319,7 @@
     :cond_6
     if-ne v2, v0, :cond_7
 
-    .line 3191
+    .line 3211
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->text:Ljava/lang/String;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ItemInner;->text:Ljava/lang/String;
@@ -335,7 +335,7 @@
 
     if-ne v2, v3, :cond_9
 
-    .line 3194
+    .line 3214
     iget v2, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->index:I
 
     iget v3, p1, Lorg/telegram/ui/CacheControlActivity$ItemInner;->index:I
@@ -363,7 +363,7 @@
 
     if-ne v2, v3, :cond_b
 
-    .line 3197
+    .line 3217
     iget v2, p0, Lorg/telegram/ui/CacheControlActivity$ItemInner;->keepMediaType:I
 
     iget p1, p1, Lorg/telegram/ui/CacheControlActivity$ItemInner;->keepMediaType:I

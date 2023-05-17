@@ -13,7 +13,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 36907
+    .line 37756
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 
     goto :goto_0
 
-    .line 36928
+    .line 37777
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputChannelFromMessage;
 
@@ -36,7 +36,7 @@
 
     goto :goto_0
 
-    .line 36916
+    .line 37765
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputChannelFromMessage_layer131;
 
@@ -44,7 +44,7 @@
 
     goto :goto_0
 
-    .line 36922
+    .line 37771
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputChannel;
 
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 36925
+    .line 37774
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputChannelEmpty;
 
@@ -60,7 +60,7 @@
 
     goto :goto_0
 
-    .line 36919
+    .line 37768
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputChannel_layer131;
 
@@ -73,7 +73,7 @@
 
     goto :goto_1
 
-    .line 36932
+    .line 37781
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -103,7 +103,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 36935
+    .line 37784
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

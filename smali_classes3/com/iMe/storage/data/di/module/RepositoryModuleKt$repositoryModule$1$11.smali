@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;",
+        "Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;",
         ">;"
     }
 .end annotation
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;
     .locals 5
 
     const-string v0, "$this$single"
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 92
-    new-instance p2, Lcom/iMe/storage/data/repository/twitter/TwitterRepositoryImpl;
+    new-instance p2, Lcom/iMe/storage/data/repository/socialMedias/TwitterRepositoryImpl;
 
     .line 133
     const-class v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
@@ -128,7 +128,7 @@
     check-cast p1, Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;
 
     .line 92
-    invoke-direct {p2, v0, v2, v3, p1}, Lcom/iMe/storage/data/repository/twitter/TwitterRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/TwitterApi;Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;)V
+    invoke-direct {p2, v0, v2, v3, p1}, Lcom/iMe/storage/data/repository/socialMedias/TwitterRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/TwitterApi;Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;)V
 
     return-object p2
 .end method
@@ -141,7 +141,7 @@
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$11;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$11;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;
 
     move-result-object p1
 

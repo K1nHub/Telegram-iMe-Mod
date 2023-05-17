@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private final color:Ljava/lang/String;
+.field private final colorKey:I
 
 .field private final name:Ljava/lang/String;
 
@@ -23,16 +23,12 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;D)V
+.method public constructor <init>(Ljava/lang/String;ID)V
     .locals 1
 
     const-string v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "color"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +37,7 @@
     iput-object p1, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->name:Ljava/lang/String;
 
     .line 10
-    iput-object p2, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->color:Ljava/lang/String;
+    iput p2, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->colorKey:I
 
     .line 11
     iput-wide p3, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->value:D
@@ -49,7 +45,7 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;Ljava/lang/String;Ljava/lang/String;DILjava/lang/Object;)Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
+.method public static synthetic copy$default(Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;Ljava/lang/String;IDILjava/lang/Object;)Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
     .locals 0
 
     and-int/lit8 p6, p5, 0x1
@@ -63,7 +59,7 @@
 
     if-eqz p6, :cond_1
 
-    iget-object p2, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->color:Ljava/lang/String;
+    iget p2, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->colorKey:I
 
     :cond_1
     and-int/lit8 p5, p5, 0x4
@@ -73,7 +69,7 @@
     iget-wide p3, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->value:D
 
     :cond_2
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->copy(Ljava/lang/String;Ljava/lang/String;D)Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->copy(Ljava/lang/String;ID)Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
 
     move-result-object p0
 
@@ -90,12 +86,12 @@
     return-object v0
 .end method
 
-.method public final component2()Ljava/lang/String;
+.method public final component2()I
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->color:Ljava/lang/String;
+    iget v0, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->colorKey:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public final component3()D
@@ -106,20 +102,16 @@
     return-wide v0
 .end method
 
-.method public final copy(Ljava/lang/String;Ljava/lang/String;D)Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
+.method public final copy(Ljava/lang/String;ID)Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
     .locals 1
 
     const-string v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "color"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
 
-    invoke-direct {v0, p1, p2, p3, p4}, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;-><init>(Ljava/lang/String;Ljava/lang/String;D)V
+    invoke-direct {v0, p1, p2, p3, p4}, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;-><init>(Ljava/lang/String;ID)V
 
     return-object v0
 .end method
@@ -158,15 +150,11 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->color:Ljava/lang/String;
+    iget v1, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->colorKey:I
 
-    iget-object v3, p1, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->color:Ljava/lang/String;
+    iget v3, p1, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->colorKey:I
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
+    if-eq v1, v3, :cond_3
 
     return v2
 
@@ -187,13 +175,13 @@
     return v0
 .end method
 
-.method public final getColor()Ljava/lang/String;
+.method public final getColorKey()I
     .locals 1
 
     .line 10
-    iget-object v0, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->color:Ljava/lang/String;
+    iget v0, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->colorKey:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public final getName()Ljava/lang/String;
@@ -225,11 +213,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->color:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
+    iget v1, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->colorKey:I
 
     add-int/2addr v0, v1
 
@@ -261,13 +245,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", color="
+    const-string v1, ", colorKey="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->color:Ljava/lang/String;
+    iget v1, p0, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;->colorKey:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, ", value="
 

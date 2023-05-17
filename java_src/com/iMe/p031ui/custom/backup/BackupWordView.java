@@ -57,9 +57,9 @@ public final class BackupWordView extends FrameLayout {
 
     public final void applyColors() {
         ForkContentBackupWordBinding forkContentBackupWordBinding = this.binding;
-        forkContentBackupWordBinding.cardWord.setCardBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        forkContentBackupWordBinding.cardWord.setCardBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         AppCompatTextView applyColors$lambda$1$lambda$0 = forkContentBackupWordBinding.textWord;
-        applyColors$lambda$1$lambda$0.setTextColor(Theme.getColor("chats_actionBackground"));
+        applyColors$lambda$1$lambda$0.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
         Intrinsics.checkNotNullExpressionValue(applyColors$lambda$1$lambda$0, "applyColors$lambda$1$lambda$0");
         ViewExtKt.withMediumTypeface(applyColors$lambda$1$lambda$0);
     }
@@ -72,11 +72,11 @@ public final class BackupWordView extends FrameLayout {
     private final void markChecked(boolean z) {
         ForkContentBackupWordBinding forkContentBackupWordBinding = this.binding;
         if (z) {
-            forkContentBackupWordBinding.cardWord.setCardBackgroundColor(Theme.getColor("chats_actionBackground"));
-            forkContentBackupWordBinding.textWord.setTextColor(Theme.getColor("actionBarDefaultTitle"));
+            forkContentBackupWordBinding.cardWord.setCardBackgroundColor(Theme.getColor(Theme.key_chats_actionBackground));
+            forkContentBackupWordBinding.textWord.setTextColor(Theme.getColor(Theme.key_actionBarDefaultTitle));
             return;
         }
-        forkContentBackupWordBinding.cardWord.setCardBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        forkContentBackupWordBinding.textWord.setTextColor(Theme.getColor("chats_actionBackground"));
+        forkContentBackupWordBinding.cardWord.setCardBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        forkContentBackupWordBinding.textWord.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
     }
 }

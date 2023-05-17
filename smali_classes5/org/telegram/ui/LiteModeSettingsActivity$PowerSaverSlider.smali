@@ -76,20 +76,20 @@
 
     move-object/from16 v9, p2
 
-    .line 654
+    .line 691
     iput-object v8, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    .line 655
+    .line 692
     invoke-direct {v7, v9}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 657
+    .line 694
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, v9}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerLayout:Landroid/widget/LinearLayout;
 
-    .line 658
+    .line 695
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v11, 0x3
@@ -106,14 +106,14 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 659
+    .line 696
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerLayout:Landroid/widget/LinearLayout;
 
     const/4 v12, 0x4
 
     invoke-virtual {v0, v12}, Landroid/widget/LinearLayout;->setImportantForAccessibility(I)V
 
-    .line 661
+    .line 698
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, v9}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -124,10 +124,10 @@
 
     const/4 v13, 0x1
 
-    .line 662
+    .line 699
     invoke-virtual {v0, v13, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 663
+    .line 700
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerTextView:Landroid/widget/TextView;
 
     const-string v14, "fonts/rmedium.ttf"
@@ -138,18 +138,18 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 664
+    .line 701
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerTextView:Landroid/widget/TextView;
 
-    const-string v15, "windowBackgroundWhiteBlueHeader"
+    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 665
+    .line 702
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerTextView:Landroid/widget/TextView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -166,7 +166,7 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 666
+    .line 703
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerTextView:Landroid/widget/TextView;
 
     const-string v1, "LiteBatteryTitle"
@@ -177,7 +177,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 667
+    .line 704
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerLayout:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerTextView:Landroid/widget/TextView;
@@ -192,7 +192,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 669
+    .line 706
     new-instance v5, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$1;
 
     const/4 v3, 0x1
@@ -217,14 +217,14 @@
 
     iput-object v10, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    .line 680
+    .line 717
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 681
+    .line 718
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const v1, 0x40aa8f5c    # 5.33f
@@ -249,7 +249,7 @@
 
     invoke-virtual {v0, v2, v4, v1, v5}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 682
+    .line 719
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v1, 0xc
@@ -262,16 +262,16 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 683
+    .line 720
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 684
+    .line 721
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerLayout:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -296,7 +296,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 686
+    .line 723
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerLayout:Landroid/widget/LinearLayout;
 
     const/16 v18, -0x1
@@ -317,7 +317,7 @@
 
     invoke-virtual {v7, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 688
+    .line 725
     new-instance v0, Lorg/telegram/ui/Components/SeekBarView;
 
     const/4 v1, 0x0
@@ -326,10 +326,10 @@
 
     iput-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
-    .line 689
+    .line 726
     invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/SeekBarView;->setReportChanges(Z)V
 
-    .line 690
+    .line 727
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
     new-instance v1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$2;
@@ -338,7 +338,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SeekBarView;->setDelegate(Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;)V
 
-    .line 713
+    .line 750
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->getPowerSaverLevel()I
@@ -353,12 +353,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SeekBarView;->setProgress(F)V
 
-    .line 714
+    .line 751
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    .line 715
+    .line 752
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
     const/16 v19, 0x2c
@@ -377,17 +377,17 @@
 
     invoke-virtual {v7, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 717
+    .line 754
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, v9}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->valuesView:Landroid/widget/FrameLayout;
 
-    .line 718
+    .line 755
     invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    .line 720
+    .line 757
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, v9}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -396,26 +396,26 @@
 
     const/high16 v10, 0x41500000    # 13.0f
 
-    .line 721
+    .line 758
     invoke-virtual {v0, v13, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 722
+    .line 759
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->leftTextView:Landroid/widget/TextView;
 
-    const-string v12, "windowBackgroundWhiteGrayText"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 723
+    .line 760
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->leftTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 724
+    .line 761
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->leftTextView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->LiteBatteryDisabled:I
@@ -428,7 +428,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 725
+    .line 762
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->valuesView:Landroid/widget/FrameLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->leftTextView:Landroid/widget/TextView;
@@ -443,7 +443,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 727
+    .line 764
     new-instance v15, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$3;
 
     const/4 v3, 0x0
@@ -468,19 +468,19 @@
 
     const-wide/16 v21, 0xf0
 
-    .line 739
+    .line 776
     sget-object v23, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     move-object/from16 v17, v15
 
     invoke-virtual/range {v17 .. v23}, Lorg/telegram/ui/Components/AnimatedTextView;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 740
+    .line 777
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 741
+    .line 778
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v1, 0xd
@@ -493,18 +493,18 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 742
+    .line 779
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    const-string v1, "windowBackgroundWhiteBlueText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 743
+    .line 780
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->valuesView:Landroid/widget/FrameLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -517,7 +517,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 745
+    .line 782
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     const-string v1, "b"
@@ -526,14 +526,14 @@
 
     iput-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->batteryText:Landroid/text/SpannableStringBuilder;
 
-    .line 746
+    .line 783
     new-instance v0, Lorg/telegram/ui/Components/BatteryDrawable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/BatteryDrawable;-><init>()V
 
     iput-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->batteryIcon:Lorg/telegram/ui/Components/BatteryDrawable;
 
-    .line 747
+    .line 784
     iget-object v1, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView;->getPaint()Landroid/text/TextPaint;
@@ -542,7 +542,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BatteryDrawable;->colorFromPaint(Landroid/graphics/Paint;)V
 
-    .line 748
+    .line 785
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->batteryIcon:Lorg/telegram/ui/Components/BatteryDrawable;
 
     const/high16 v1, 0x3fc00000    # 1.5f
@@ -555,7 +555,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BatteryDrawable;->setTranslationY(F)V
 
-    .line 749
+    .line 786
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->batteryIcon:Lorg/telegram/ui/Components/BatteryDrawable;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -578,7 +578,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 750
+    .line 787
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->batteryText:Landroid/text/SpannableStringBuilder;
 
     new-instance v1, Landroid/text/style/ImageSpan;
@@ -597,33 +597,33 @@
 
     invoke-virtual {v0, v1, v4, v2, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 752
+    .line 789
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, v9}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->rightTextView:Landroid/widget/TextView;
 
-    .line 753
+    .line 790
     invoke-virtual {v0, v13, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 754
+    .line 791
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->rightTextView:Landroid/widget/TextView;
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 755
+    .line 792
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->rightTextView:Landroid/widget/TextView;
 
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 756
+    .line 793
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->rightTextView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->LiteBatteryEnabled:I
@@ -636,7 +636,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 757
+    .line 794
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->valuesView:Landroid/widget/FrameLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->rightTextView:Landroid/widget/TextView;
@@ -649,7 +649,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 759
+    .line 796
     iget-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->valuesView:Landroid/widget/FrameLayout;
 
     const/4 v9, -0x1
@@ -672,14 +672,14 @@
 
     invoke-virtual {v7, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 761
+    .line 798
     new-instance v0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$4;
 
     invoke-direct {v0, v7, v8}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$4;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;Lorg/telegram/ui/LiteModeSettingsActivity;)V
 
     iput-object v0, v7, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarAccessibilityDelegate:Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
 
-    .line 809
+    .line 846
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->update()V
 
     return-void
@@ -688,7 +688,7 @@
 .method static synthetic access$602(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;F)F
     .locals 0
 
-    .line 638
+    .line 675
     iput p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveT:F
 
     return p1
@@ -697,7 +697,7 @@
 .method static synthetic access$702(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;F)F
     .locals 0
 
-    .line 638
+    .line 675
     iput p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveT:F
 
     return p1
@@ -706,24 +706,24 @@
 .method private synthetic lambda$updateOffActive$1(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 910
+    .line 947
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->leftTextView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteGrayText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    .line 911
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 948
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const-string v2, "windowBackgroundWhiteBlueText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
-    .line 912
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 949
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
-    .line 913
+    .line 950
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -736,7 +736,7 @@
 
     iput p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveT:F
 
-    .line 910
+    .line 947
     invoke-static {v1, v2, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result p1
@@ -749,24 +749,24 @@
 .method private synthetic lambda$updateOnActive$0(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 874
+    .line 911
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->rightTextView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteGrayText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    .line 875
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 912
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const-string v2, "windowBackgroundWhiteBlueText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
-    .line 876
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 913
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
-    .line 877
+    .line 914
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -779,7 +779,7 @@
 
     iput p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveT:F
 
-    .line 874
+    .line 911
     invoke-static {v1, v2, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result p1
@@ -792,20 +792,20 @@
 .method private updateHeaderOnVisibility(Z)V
     .locals 2
 
-    .line 853
+    .line 890
     iget-boolean v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnVisible:Z
 
     if-eq p1, v0, :cond_1
 
-    .line 854
+    .line 891
     iput-boolean p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnVisible:Z
 
-    .line 855
+    .line 892
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 856
+    .line 893
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -856,7 +856,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 900
+    .line 937
     :goto_0
     iget v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveT:F
 
@@ -864,20 +864,20 @@
 
     if-eqz v0, :cond_2
 
-    .line 901
+    .line 938
     iput p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveT:F
 
-    .line 903
+    .line 940
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 904
+    .line 941
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 905
+    .line 942
     iput-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveAnimator:Landroid/animation/ValueAnimator;
 
     :cond_1
@@ -887,7 +887,7 @@
 
     const/4 v1, 0x0
 
-    .line 908
+    .line 945
     iget v2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveT:F
 
     aput v2, v0, v1
@@ -902,14 +902,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveAnimator:Landroid/animation/ValueAnimator;
 
-    .line 909
+    .line 946
     new-instance v1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 916
+    .line 953
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$6;
@@ -918,21 +918,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 926
+    .line 963
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 927
+    .line 964
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x140
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 928
+    .line 965
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->offActiveAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -953,7 +953,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 864
+    .line 901
     :goto_0
     iget v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveT:F
 
@@ -961,20 +961,20 @@
 
     if-eqz v0, :cond_2
 
-    .line 865
+    .line 902
     iput p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveT:F
 
-    .line 867
+    .line 904
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 868
+    .line 905
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 869
+    .line 906
     iput-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveAnimator:Landroid/animation/ValueAnimator;
 
     :cond_1
@@ -984,7 +984,7 @@
 
     const/4 v1, 0x0
 
-    .line 872
+    .line 909
     iget v2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveT:F
 
     aput v2, v0, v1
@@ -999,14 +999,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveAnimator:Landroid/animation/ValueAnimator;
 
-    .line 873
+    .line 910
     new-instance v1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 880
+    .line 917
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$5;
@@ -1015,21 +1015,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 890
+    .line 927
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 891
+    .line 928
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x140
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 892
+    .line 929
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->onActiveAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1043,10 +1043,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 814
+    .line 851
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 816
+    .line 853
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarAccessibilityDelegate:Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
@@ -1057,7 +1057,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 935
+    .line 972
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1070,7 +1070,7 @@
 
     const/16 v0, 0x70
 
-    .line 936
+    .line 973
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1079,7 +1079,7 @@
 
     move-result p2
 
-    .line 934
+    .line 971
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -1088,10 +1088,10 @@
 .method public onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
-    .line 821
+    .line 858
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 823
+    .line 860
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarAccessibilityDelegate:Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
 
     invoke-virtual {v0, p0, p1}, Landroid/view/View$AccessibilityDelegate;->onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
@@ -1102,7 +1102,7 @@
 .method public performAccessibilityAction(ILandroid/os/Bundle;)Z
     .locals 1
 
-    .line 828
+    .line 865
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->seekBarAccessibilityDelegate:Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
 
     invoke-virtual {v0, p0, p1, p2}, Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
@@ -1115,12 +1115,12 @@
 .method public update()V
     .locals 9
 
-    .line 832
+    .line 869
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->getPowerSaverLevel()I
 
     move-result v0
 
-    .line 834
+    .line 871
     iget-object v1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView;->cancelAnimation()V
@@ -1133,7 +1133,7 @@
 
     if-gtz v0, :cond_0
 
-    .line 836
+    .line 873
     iget-object v4, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v5, Lorg/telegram/messenger/R$string;->LiteBatteryAlwaysDisabled:I
@@ -1155,7 +1155,7 @@
     :cond_0
     if-lt v0, v1, :cond_1
 
-    .line 838
+    .line 875
     iget-object v4, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v5, Lorg/telegram/messenger/R$string;->LiteBatteryAlwaysEnabled:I
@@ -1174,7 +1174,7 @@
 
     goto :goto_0
 
-    .line 840
+    .line 877
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->batteryIcon:Lorg/telegram/ui/Components/BatteryDrawable;
 
@@ -1186,7 +1186,7 @@
 
     invoke-virtual {v4, v6, v3}, Lorg/telegram/ui/Components/BatteryDrawable;->setFillValue(FZ)V
 
-    .line 841
+    .line 878
     iget-object v4, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->middleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v6, Lorg/telegram/messenger/R$string;->LiteBatteryWhenBelow:I
@@ -1241,7 +1241,7 @@
 
     invoke-virtual {v4, v5, v6}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 844
+    .line 881
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->headerOnView:Lorg/telegram/ui/Components/AnimatedTextView;
 
@@ -1284,7 +1284,7 @@
     :cond_3
     move v4, v2
 
-    .line 845
+    .line 882
     :goto_2
     invoke-direct {p0, v4}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->updateHeaderOnVisibility(Z)V
 
@@ -1297,7 +1297,7 @@
     :cond_4
     move v1, v2
 
-    .line 847
+    .line 884
     :goto_3
     invoke-direct {p0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->updateOnActive(Z)V
 
@@ -1305,7 +1305,7 @@
 
     move v2, v3
 
-    .line 848
+    .line 885
     :cond_5
     invoke-direct {p0, v2}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->updateOffActive(Z)V
 

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRecentChatsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecentChatsController.kt\ncom/iMe/fork/controller/RecentChatsController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,142:1\n56#2,6:143\n766#3:149\n857#3,2:150\n1054#3:152\n819#3:153\n847#3,2:154\n1054#3:156\n1179#3,2:157\n1253#3,4:159\n1855#3,2:163\n1045#3:165\n1549#3:166\n1620#3,3:167\n*S KotlinDebug\n*F\n+ 1 RecentChatsController.kt\ncom/iMe/fork/controller/RecentChatsController\n*L\n20#1:143,6\n96#1:149\n96#1:150,2\n96#1:152\n97#1:153\n97#1:154,2\n97#1:156\n104#1:157,2\n104#1:159,4\n115#1:163,2\n131#1:165\n132#1:166\n132#1:167,3\n*E\n"
+    value = "SMAP\nRecentChatsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecentChatsController.kt\ncom/iMe/fork/controller/RecentChatsController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,153:1\n56#2,6:154\n1549#3:160\n1620#3,3:161\n1179#3,2:164\n1253#3,4:166\n766#3:170\n857#3,2:171\n1054#3:173\n1179#3,2:174\n1253#3,4:176\n1855#3,2:180\n1045#3:182\n1549#3:183\n1620#3,3:184\n819#3:187\n847#3,2:188\n1054#3:190\n*S KotlinDebug\n*F\n+ 1 RecentChatsController.kt\ncom/iMe/fork/controller/RecentChatsController\n*L\n20#1:154,6\n65#1:160\n65#1:161,3\n66#1:164,2\n66#1:166,4\n101#1:170\n101#1:171,2\n101#1:173\n109#1:174,2\n109#1:176,4\n120#1:180,2\n136#1:182\n137#1:183\n137#1:184,3\n143#1:187\n143#1:188,2\n143#1:190\n*E\n"
 .end annotation
 
 
@@ -73,6 +73,22 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$1k3Mr_IGiKAGyVdty5SBXk1Z1aQ(Lcom/iMe/fork/controller/RecentChatsController;Lcom/iMe/storage/domain/model/HistoryDialogModel;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/fork/controller/RecentChatsController;->updateCreationDate$lambda$4(Lcom/iMe/fork/controller/RecentChatsController;Lcom/iMe/storage/domain/model/HistoryDialogModel;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$4sV11_8x2mp67rcaNOrR6VjuBsY(Lcom/iMe/fork/controller/RecentChatsController;JZ)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/fork/controller/RecentChatsController;->updatePin$lambda$5(Lcom/iMe/fork/controller/RecentChatsController;JZ)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$A7nbBf7qAtZHZn_6hKHe0p0iEag(Lcom/iMe/fork/controller/RecentChatsController;Ljava/util/List;)V
     .locals 0
 
@@ -91,26 +107,10 @@
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$Wf_sriXIER47BBUIyOobglsJBdg(Lcom/iMe/fork/controller/RecentChatsController;JZ)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/fork/controller/RecentChatsController;->updatePin$lambda$3(Lcom/iMe/fork/controller/RecentChatsController;JZ)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$XhZEy7ySrOTJqmX_PhwY388UI2s(Lcom/iMe/fork/controller/RecentChatsController;J)V
     .locals 0
 
     invoke-static {p0, p1, p2}, Lcom/iMe/fork/controller/RecentChatsController;->removeRecentChat$lambda$9(Lcom/iMe/fork/controller/RecentChatsController;J)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$oDByoveeCveOZ9Wza-itxgCDRJQ(Lcom/iMe/fork/controller/RecentChatsController;Lcom/iMe/storage/domain/model/HistoryDialogModel;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/fork/controller/RecentChatsController;->updateCreationDate$lambda$2(Lcom/iMe/fork/controller/RecentChatsController;Lcom/iMe/storage/domain/model/HistoryDialogModel;)V
 
     return-void
 .end method
@@ -134,7 +134,7 @@
 
     sput-object v0, Lcom/iMe/fork/controller/RecentChatsController;->Companion:Lcom/iMe/fork/controller/RecentChatsController$Companion;
 
-    .line 137
+    .line 148
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v1, 0x5
@@ -227,7 +227,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 127
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -248,7 +248,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 124
+    .line 129
     invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     move-result-object p0
@@ -275,7 +275,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 117
+    .line 122
     invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     move-result-object v0
@@ -318,6 +318,77 @@
     return-object p0
 .end method
 
+.method private final getUnPinnedRecentChats()Ljava/util/List;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/HistoryDialogModel;",
+            ">;"
+        }
+    .end annotation
+
+    .line 143
+    invoke-virtual {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getRecentChatsList()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 819
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 847
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v3, v2
+
+    check-cast v3, Lcom/iMe/storage/domain/model/HistoryDialogModel;
+
+    .line 143
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->isPinned()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 847
+    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 1054
+    :cond_1
+    new-instance v0, Lcom/iMe/fork/controller/RecentChatsController$getUnPinnedRecentChats$$inlined$sortedByDescending$1;
+
+    invoke-direct {v0}, Lcom/iMe/fork/controller/RecentChatsController$getUnPinnedRecentChats$$inlined$sortedByDescending$1;-><init>()V
+
+    invoke-static {v1, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method private static final removeRecentChat$lambda$9(Lcom/iMe/fork/controller/RecentChatsController;J)V
     .locals 3
 
@@ -325,7 +396,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 110
+    .line 115
     invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     move-result-object v0
@@ -341,7 +412,7 @@
     return-void
 .end method
 
-.method private static final updateCreationDate$lambda$2(Lcom/iMe/fork/controller/RecentChatsController;Lcom/iMe/storage/domain/model/HistoryDialogModel;)V
+.method private static final updateCreationDate$lambda$4(Lcom/iMe/fork/controller/RecentChatsController;Lcom/iMe/storage/domain/model/HistoryDialogModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -352,7 +423,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 74
+    .line 84
     invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     move-result-object v0
@@ -372,14 +443,14 @@
     return-void
 .end method
 
-.method private static final updatePin$lambda$3(Lcom/iMe/fork/controller/RecentChatsController;JZ)V
+.method private static final updatePin$lambda$5(Lcom/iMe/fork/controller/RecentChatsController;JZ)V
     .locals 7
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 89
+    .line 94
     invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     move-result-object v1
@@ -404,7 +475,7 @@
 .method public final clearRecentChatsHistory()V
     .locals 3
 
-    .line 122
+    .line 127
     iget-object v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -419,7 +490,7 @@
 
     invoke-static {v0, v2}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
-    .line 123
+    .line 128
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lcom/iMe/fork/controller/RecentChatsController$$ExternalSyntheticLambda0;
@@ -468,7 +539,7 @@
 
     move-result-wide v1
 
-    .line 115
+    .line 120
     iget-object v3, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -479,7 +550,7 @@
 
     goto :goto_0
 
-    .line 116
+    .line 121
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -503,7 +574,7 @@
         }
     .end annotation
 
-    .line 130
+    .line 135
     iget-object v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->selectedRecentChatsDialogTypes:Ljava/util/Set;
 
     .line 1045
@@ -545,7 +616,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/fork/enums/RecentChatsDialogType;
 
-    .line 132
+    .line 137
     invoke-virtual {v2}, Lcom/iMe/fork/enums/RecentChatsDialogType;->getTitle()Ljava/lang/String;
 
     move-result-object v2
@@ -571,7 +642,7 @@
 .end method
 
 .method public final getRecentChatsFilter()Ljava/util/List;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -581,7 +652,7 @@
         }
     .end annotation
 
-    .line 95
+    .line 100
     invoke-virtual {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getRecentChatsList()Ljava/util/Collection;
 
     move-result-object v0
@@ -598,96 +669,53 @@
     .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v0
 
     :cond_0
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v3, v2
+
+    check-cast v3, Lcom/iMe/storage/domain/model/HistoryDialogModel;
+
+    .line 101
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->isPinned()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v4, v3
-
-    check-cast v4, Lcom/iMe/storage/domain/model/HistoryDialogModel;
-
-    .line 96
-    invoke-virtual {v4}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->isPinned()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
     .line 857
-    invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     .line 1054
     :cond_1
-    new-instance v2, Lcom/iMe/fork/controller/RecentChatsController$getRecentChatsFilter$$inlined$sortedByDescending$1;
+    new-instance v0, Lcom/iMe/fork/controller/RecentChatsController$getRecentChatsFilter$$inlined$sortedByDescending$1;
 
-    invoke-direct {v2}, Lcom/iMe/fork/controller/RecentChatsController$getRecentChatsFilter$$inlined$sortedByDescending$1;-><init>()V
+    invoke-direct {v0}, Lcom/iMe/fork/controller/RecentChatsController$getRecentChatsFilter$$inlined$sortedByDescending$1;-><init>()V
 
-    invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    invoke-static {v1, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 102
+    invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getUnPinnedRecentChats()Ljava/util/List;
 
     move-result-object v1
 
-    .line 819
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    .line 847
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_2
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v4, v3
-
-    check-cast v4, Lcom/iMe/storage/domain/model/HistoryDialogModel;
-
-    .line 97
-    invoke-virtual {v4}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->isPinned()Z
-
-    move-result v4
-
-    if-nez v4, :cond_2
-
-    .line 847
-    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 1054
-    :cond_3
-    new-instance v0, Lcom/iMe/fork/controller/RecentChatsController$getRecentChatsFilter$$inlined$sortedByDescending$2;
-
-    invoke-direct {v0}, Lcom/iMe/fork/controller/RecentChatsController$getRecentChatsFilter$$inlined$sortedByDescending$2;-><init>()V
-
-    invoke-static {v2, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 98
-    invoke-static {v1, v0}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
+    .line 103
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v0
 
@@ -705,7 +733,7 @@
         }
     .end annotation
 
-    .line 128
+    .line 133
     iget-object v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -756,7 +784,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 101
+    .line 106
     iget-object v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->selectedDrawStatusTypes:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -869,7 +897,7 @@
 .method public final loadRecentChats()V
     .locals 5
 
-    .line 104
+    .line 109
     invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     move-result-object v0
@@ -925,7 +953,7 @@
     .line 1254
     check-cast v1, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;
 
-    .line 104
+    .line 109
     invoke-virtual {v1}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getDialogId()J
 
     move-result-wide v3
@@ -955,7 +983,7 @@
 
     goto :goto_0
 
-    .line 104
+    .line 109
     :cond_0
     invoke-static {v2}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -969,7 +997,7 @@
 .method public final removeRecentChat(J)V
     .locals 2
 
-    .line 108
+    .line 113
     iget-object v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -978,7 +1006,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 109
+    .line 114
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lcom/iMe/fork/controller/RecentChatsController$$ExternalSyntheticLambda1;
@@ -991,7 +1019,7 @@
 .end method
 
 .method public final restoreBackup(Lcom/iMe/fork/models/backup/Backup;)V
-    .locals 2
+    .locals 9
 
     const-string v0, "backup"
 
@@ -1068,16 +1096,167 @@
 
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getSelectedDrawStatusTypes()Ljava/util/Set;
 
-    move-result-object p1
+    move-result-object v1
 
-    invoke-virtual {v0, p1}, Lcom/iMe/fork/enums/DrawStatusType$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
+    invoke-virtual {v0, v1}, Lcom/iMe/fork/enums/DrawStatusType$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object p1
+    move-result-object v0
 
-    iput-object p1, p0, Lcom/iMe/fork/controller/RecentChatsController;->selectedDrawStatusTypes:Ljava/util/Set;
+    iput-object v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->selectedDrawStatusTypes:Ljava/util/Set;
 
     .line 64
     :cond_3
+    invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getPinnedRecentChats()Ljava/util/List;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_6
+
+    .line 65
+    invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v1
+
+    iget-wide v1, v1, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+
+    invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getPinnedRecentChats()Ljava/util/List;
+
+    move-result-object v3
+
+    .line 1549
+    new-instance v4, Ljava/util/ArrayList;
+
+    const/16 v5, 0xa
+
+    invoke-static {v3, v5}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v6
+
+    invoke-direct {v4, v6}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 1620
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v6
+
+    .line 1621
+    check-cast v6, Lcom/iMe/storage/domain/model/HistoryDialogModel;
+
+    .line 65
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v7
+
+    iget-wide v7, v7, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+
+    invoke-static {v6, v7, v8}, Lcom/iMe/storage/data/mapper/recent_chats/RecentChatsMappingKt;->mapToDb(Lcom/iMe/storage/domain/model/HistoryDialogModel;J)Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;
+
+    move-result-object v6
+
+    .line 1621
+    invoke-interface {v4, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 65
+    :cond_4
+    invoke-virtual {v0, v1, v2, v4}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;->restoreBackup(JLjava/util/List;)V
+
+    .line 66
+    invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getPinnedRecentChats()Ljava/util/List;
+
+    move-result-object p1
+
+    .line 1179
+    invoke-static {p1, v5}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v0
+
+    invoke-static {v0}, Lkotlin/collections/MapsKt;->mapCapacity(I)I
+
+    move-result v0
+
+    const/16 v1, 0x10
+
+    invoke-static {v0, v1}, Lkotlin/ranges/RangesKt;->coerceAtLeast(II)I
+
+    move-result v0
+
+    .line 1180
+    new-instance v1, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v1, v0}, Ljava/util/LinkedHashMap;-><init>(I)V
+
+    .line 1253
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 1254
+    check-cast v0, Lcom/iMe/storage/domain/model/HistoryDialogModel;
+
+    .line 66
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->getDialogId()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-static {v2, v0}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+
+    move-result-object v0
+
+    .line 1254
+    invoke-virtual {v0}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Lkotlin/Pair;->getSecond()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    .line 66
+    :cond_5
+    invoke-static {v1}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
+
+    .line 68
+    :cond_6
     invoke-virtual {p0}, Lcom/iMe/fork/controller/RecentChatsController;->saveConfig()V
 
     return-void
@@ -1226,43 +1405,27 @@
     return-void
 .end method
 
-.method public final toggleEnabled()V
-    .locals 1
-
-    .line 80
-    iget-boolean v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->isRecentChatsEnabled:Z
-
-    xor-int/lit8 v0, v0, 0x1
-
-    iput-boolean v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->isRecentChatsEnabled:Z
-
-    .line 81
-    invoke-virtual {p0}, Lcom/iMe/fork/controller/RecentChatsController;->saveConfig()V
-
-    return-void
-.end method
-
 .method public final updateCreationDate(JZ)V
-    .locals 7
+    .locals 8
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
 
     if-nez p3, :cond_1
 
-    .line 68
+    .line 72
     iget-object p3, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {p3, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p3
 
     check-cast p3, Lcom/iMe/storage/domain/model/HistoryDialogModel;
-
-    const/4 v1, 0x1
 
     if-eqz p3, :cond_0
 
@@ -1270,27 +1433,29 @@
 
     move-result p3
 
-    if-ne p3, v1, :cond_0
+    if-ne p3, v0, :cond_0
+
+    move p3, v0
 
     goto :goto_0
 
     :cond_0
-    move v1, v0
+    move p3, v1
 
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz p3, :cond_1
 
     return-void
 
-    .line 70
+    .line 73
     :cond_1
     iget-object p3, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {p3, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -1300,34 +1465,92 @@
 
     new-instance p3, Lcom/iMe/storage/domain/model/HistoryDialogModel;
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v5, 0x0
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    move-object v1, p3
+    move-object v2, p3
 
-    move-wide v2, p1
+    move-wide v3, p1
 
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/HistoryDialogModel;-><init>(JJZ)V
+    invoke-direct/range {v2 .. v7}, Lcom/iMe/storage/domain/model/HistoryDialogModel;-><init>(JJZ)V
 
-    .line 71
+    .line 74
     :cond_2
+    iget-object v2, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
+
+    invoke-interface {v2}, Ljava/util/Map;->size()I
+
+    move-result v2
+
+    const/16 v3, 0x19
+
+    if-lt v2, v3, :cond_4
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
+
+    invoke-interface {v3, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_4
+
+    .line 75
+    invoke-direct {p0}, Lcom/iMe/fork/controller/RecentChatsController;->getUnPinnedRecentChats()Ljava/util/List;
+
+    move-result-object v2
+
+    .line 76
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    return-void
+
+    .line 79
+    :cond_3
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    sub-int/2addr v3, v0
+
+    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/storage/domain/model/HistoryDialogModel;
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->getDialogId()J
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v2, v3}, Lcom/iMe/fork/controller/RecentChatsController;->removeRecentChat(J)V
+
+    .line 81
+    :cond_4
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-virtual {p3, v1, v2}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->setCreationDate(J)V
+    invoke-virtual {p3, v2, v3}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->setCreationDate(J)V
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
-    .line 72
+    .line 82
     iget-object p2, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-interface {p2, p1, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 73
+    .line 83
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p2, Lcom/iMe/fork/controller/RecentChatsController$$ExternalSyntheticLambda3;
@@ -1336,14 +1559,14 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 76
+    .line 86
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
 
     sget p2, Lorg/telegram/messenger/NotificationCenter;->recentChatsDidLoad:I
 
-    new-array p3, v0, [Ljava/lang/Object;
+    new-array p3, v1, [Ljava/lang/Object;
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
@@ -1353,7 +1576,7 @@
 .method public final updatePin(J)V
     .locals 3
 
-    .line 85
+    .line 90
     iget-object v0, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1370,13 +1593,13 @@
 
     return-void
 
-    .line 86
+    .line 91
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->isPinned()Z
 
     move-result v0
 
-    .line 87
+    .line 92
     iget-object v1, p0, Lcom/iMe/fork/controller/RecentChatsController;->historyDialogs:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1398,7 +1621,7 @@
 
     invoke-virtual {v1, v2}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->setPinned(Z)V
 
-    .line 88
+    .line 93
     :goto_0
     sget-object v1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -1410,7 +1633,7 @@
 
     const/4 v0, 0x1
 
-    .line 91
+    .line 96
     invoke-virtual {p0, p1, p2, v0}, Lcom/iMe/fork/controller/RecentChatsController;->updateCreationDate(JZ)V
 
     return-void

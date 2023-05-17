@@ -33,12 +33,12 @@
         }
     .end annotation
 
-    .line 322
+    .line 328
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 324
+    .line 330
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->updateRows()V
 
     return-void
@@ -70,201 +70,191 @@
 .method private final updateRows()V
     .locals 3
 
-    .line 465
+    .line 469
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setCustomizationAutoOpenForwardingOptionsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 466
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setCustomSharingRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
-
-    .line 467
+    .line 470
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMultiReplyRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 468
+    .line 471
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setDrawerHeaderSettingsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 469
+    .line 472
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setDrawerItemsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 470
+    .line 473
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setDrawerHolidayIconType$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 471
+    .line 474
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatListActionBarAccountSwitchRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 472
+    .line 475
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatListActionBarMenuRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 473
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setProxyButtonForceVisibleRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
-
-    .line 474
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatProfileTelegramIdRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
-
-    .line 475
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setCloudAlbumsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
-
     .line 476
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatListRecentChatsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setEnableProxyButtonRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 477
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatFolderAndChatSortingRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatProfileTelegramIdRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 478
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setSettingsTopicsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setCloudAlbumsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 479
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatMultiPanelRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatListRecentChatsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 480
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatSwipeToGoToNextUnreadDialogRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatFolderAndChatSortingRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 481
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatBottomPanelRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setSettingsTopicsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 482
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatThemesEnableRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatMultiPanelRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 483
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatHideKeyboardOnScrollRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatSwipeToGoToNextUnreadDialogRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 484
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatAttachMenuButtonsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatBottomPanelRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 485
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatExtendedAvatarPreviewerRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatThemesEnableRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 486
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMessagesTranslate$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatHideKeyboardOnScrollRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 487
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMessagesContextMenu$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatAttachMenuButtonsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 488
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setSendMessages$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatExtendedAvatarPreviewerRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 489
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatsTemplatesRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMessagesTranslate$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 490
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatMemoryRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMessagesContextMenu$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 491
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setReactionSettingsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setSendMessages$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 492
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setSendPopupReactionsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatsTemplatesRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 493
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationCallsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatMemoryRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 494
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationDeleteCloudRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setReactionSettingsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 495
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationDeleteTwoSideRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setSendPopupReactionsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 496
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationSendingGifRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationCallsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 497
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationSendingStickerRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationDeleteCloudRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 498
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationSpeakWithoutHoldRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationSendingGifRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 499
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationVideoSpeakWithoutHoldRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationSendingStickerRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 500
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationVideoVoiceCameraRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationSpeakWithoutHoldRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 501
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMessageWidePostsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationVideoSpeakWithoutHoldRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+
+    .line 502
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
+
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationVideoVoiceCameraRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 503
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
+
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMessageWidePostsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+
+    .line 505
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 504
+    .line 506
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-virtual {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->getCategory()Lcom/iMe/fork/enums/SettingsToolsCategory;
@@ -283,7 +273,7 @@
 
     goto/16 :goto_0
 
-    .line 551
+    .line 552
     :pswitch_0
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -297,19 +287,6 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationCallsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 552
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
-
-    move-result v1
-
-    add-int/lit8 v2, v1, 0x1
-
-    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationDeleteCloudRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
-
     .line 553
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -321,7 +298,7 @@
 
     invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationDeleteTwoSideRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setConfirmationDeleteCloudRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     .line 554
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
@@ -390,7 +367,7 @@
 
     goto/16 :goto_0
 
-    .line 547
+    .line 548
     :pswitch_1
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -404,7 +381,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setReactionSettingsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 548
+    .line 549
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -419,7 +396,7 @@
 
     goto/16 :goto_0
 
-    .line 541
+    .line 542
     :pswitch_2
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -433,7 +410,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMessagesTranslate$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 542
+    .line 543
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -446,7 +423,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setMessagesContextMenu$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 543
+    .line 544
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -459,7 +436,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setSendMessages$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 544
+    .line 545
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -474,7 +451,7 @@
 
     goto/16 :goto_0
 
-    .line 530
+    .line 531
     :pswitch_3
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -488,7 +465,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatMultiPanelRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 531
+    .line 532
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -501,7 +478,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatSwipeToGoToNextUnreadDialogRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 532
+    .line 533
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -514,7 +491,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatBottomPanelRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 533
+    .line 534
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -527,7 +504,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatThemesEnableRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 534
+    .line 535
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -540,7 +517,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatMemoryRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 535
+    .line 536
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -553,7 +530,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatHideKeyboardOnScrollRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 536
+    .line 537
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -566,7 +543,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatsTemplatesRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 537
+    .line 538
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -579,7 +556,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatAttachMenuButtonsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 538
+    .line 539
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -594,7 +571,7 @@
 
     goto/16 :goto_0
 
-    .line 525
+    .line 526
     :pswitch_4
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -608,7 +585,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatListRecentChatsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 526
+    .line 527
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -621,7 +598,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatFolderAndChatSortingRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 527
+    .line 528
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -636,7 +613,7 @@
 
     goto/16 :goto_0
 
-    .line 522
+    .line 523
     :pswitch_5
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -652,7 +629,7 @@
 
     goto/16 :goto_0
 
-    .line 520
+    .line 521
     :pswitch_6
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -666,9 +643,9 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatProfileTelegramIdRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 516
+    .line 517
     :pswitch_7
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -682,7 +659,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatListActionBarAccountSwitchRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 517
+    .line 518
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -695,7 +672,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setChatListActionBarMenuRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 518
+    .line 519
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -706,11 +683,11 @@
 
     invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setProxyButtonForceVisibleRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setEnableProxyButtonRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
     goto :goto_0
 
-    .line 511
+    .line 512
     :pswitch_8
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -724,7 +701,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setDrawerHeaderSettingsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 512
+    .line 513
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -737,7 +714,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setDrawerItemsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 513
+    .line 514
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -752,7 +729,7 @@
 
     goto :goto_0
 
-    .line 506
+    .line 508
     :pswitch_9
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -766,20 +743,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setCustomizationAutoOpenForwardingOptionsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
 
-    .line 507
-    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
-
-    move-result v1
-
-    add-int/lit8 v2, v1, 0x1
-
-    invoke-static {v0, v2}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
-
-    invoke-static {v0, v1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$setCustomSharingRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;I)V
-
-    .line 508
+    .line 509
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -794,6 +758,8 @@
 
     :goto_0
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -815,7 +781,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 456
+    .line 460
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getRowCount$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -828,7 +794,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 330
+    .line 336
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getDrawerItemsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -1039,11 +1005,11 @@
     :goto_11
     if-eqz v0, :cond_12
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL:I
 
     goto/16 :goto_1c
 
-    .line 331
+    .line 337
     :cond_12
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -1119,11 +1085,11 @@
     :goto_17
     if-eqz v0, :cond_19
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
 
     goto :goto_1c
 
-    .line 332
+    .line 338
     :cond_19
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
@@ -1175,13 +1141,13 @@
     :goto_1b
     if-eqz v1, :cond_1e
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATIONS_CHECK_CELL:I
 
     goto :goto_1c
 
-    .line 333
+    .line 339
     :cond_1e
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     :goto_1c
     return p1
@@ -1202,7 +1168,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 355
+    .line 361
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->getItemCount()I
 
     move-result v0
@@ -1222,29 +1188,29 @@
     :cond_0
     move v0, v2
 
-    .line 356
+    .line 362
     :goto_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v3
 
-    .line 357
+    .line 363
     iget-object v4, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v5, "holder.itemView"
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 359
-    sget v5, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    .line 365
+    sget v5, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
-    if-ne v3, v5, :cond_14
+    if-ne v3, v5, :cond_12
 
     instance-of v5, v4, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    if-eqz v5, :cond_14
+    if-eqz v5, :cond_12
 
-    .line 360
+    .line 366
     check-cast v4, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-direct {p0, p2}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->hasHint(I)Z
@@ -1253,7 +1219,7 @@
 
     invoke-virtual {v4, p1}, Lorg/telegram/ui/Cells/TextCheckCell;->setDrawSwitchDivider(Z)V
 
-    .line 362
+    .line 368
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getCustomizationAutoOpenForwardingOptionsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -1274,37 +1240,15 @@
 
     goto/16 :goto_2
 
-    .line 363
+    .line 369
     :cond_1
-    iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getCustomSharingRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
-
-    move-result p1
-
-    if-ne p2, p1, :cond_2
-
-    sget p1, Lorg/telegram/messenger/R$string;->settings_tools_custom_sharing:I
-
-    invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->isCustomSharingModeEnabled:Z
-
-    invoke-virtual {v4, p1, p2, v0}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
-
-    goto/16 :goto_2
-
-    .line 364
-    :cond_2
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getMultiReplyRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_3
+    if-ne p2, p1, :cond_2
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_tools_multi_reply:I
 
@@ -1318,15 +1262,15 @@
 
     goto/16 :goto_2
 
-    .line 365
-    :cond_3
+    .line 370
+    :cond_2
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatListActionBarAccountSwitchRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_4
+    if-ne p2, p1, :cond_3
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_action_bar_account_switch:I
 
@@ -1340,15 +1284,15 @@
 
     goto/16 :goto_2
 
-    .line 366
-    :cond_4
+    .line 371
+    :cond_3
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatListActionBarMenuRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_5
+    if-ne p2, p1, :cond_4
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_action_bar_menu:I
 
@@ -1362,15 +1306,15 @@
 
     goto/16 :goto_2
 
-    .line 367
-    :cond_5
+    .line 372
+    :cond_4
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getProxyButtonForceVisibleRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
+    invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getEnableProxyButtonRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_6
+    if-ne p2, p1, :cond_5
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_proxy_button_in_toolbar:I
 
@@ -1378,21 +1322,21 @@
 
     move-result-object p1
 
-    sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->isProxyButtonForceVisible:Z
+    sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->isProxyButtonEnabled:Z
 
     invoke-virtual {v4, p1, p2, v0}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
     goto/16 :goto_2
 
-    .line 368
-    :cond_6
+    .line 373
+    :cond_5
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getCloudAlbumsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_7
+    if-ne p2, p1, :cond_6
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_tools_cloud_albums:I
 
@@ -1406,15 +1350,15 @@
 
     goto/16 :goto_2
 
-    .line 369
-    :cond_7
+    .line 374
+    :cond_6
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatBottomPanelRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_8
+    if-ne p2, p1, :cond_7
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_bottom_panel_in_channel:I
 
@@ -1436,15 +1380,15 @@
 
     goto/16 :goto_2
 
-    .line 370
-    :cond_8
+    .line 375
+    :cond_7
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatHideKeyboardOnScrollRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_9
+    if-ne p2, p1, :cond_8
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_chat_hide_keyboard_on_scroll:I
 
@@ -1458,15 +1402,15 @@
 
     goto/16 :goto_2
 
-    .line 371
-    :cond_9
+    .line 376
+    :cond_8
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatThemesEnableRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_a
+    if-ne p2, p1, :cond_9
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_chat_themes:I
 
@@ -1480,15 +1424,15 @@
 
     goto/16 :goto_2
 
-    .line 372
-    :cond_a
+    .line 377
+    :cond_9
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatMemoryRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_b
+    if-ne p2, p1, :cond_a
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_tools_remember_chat:I
 
@@ -1510,15 +1454,15 @@
 
     goto/16 :goto_2
 
-    .line 373
-    :cond_b
+    .line 378
+    :cond_a
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getSendPopupReactionsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_c
+    if-ne p2, p1, :cond_b
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_tools_send_popup_reactions:I
 
@@ -1532,15 +1476,15 @@
 
     goto/16 :goto_2
 
-    .line 374
-    :cond_c
+    .line 379
+    :cond_b
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getConfirmationCallsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_d
+    if-ne p2, p1, :cond_c
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_calls_confirmation:I
 
@@ -1554,15 +1498,15 @@
 
     goto/16 :goto_2
 
-    .line 375
-    :cond_d
+    .line 380
+    :cond_c
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getConfirmationDeleteCloudRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_e
+    if-ne p2, p1, :cond_d
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_delete_cloud_confirmation:I
 
@@ -1576,45 +1520,15 @@
 
     goto/16 :goto_2
 
-    .line 376
-    :cond_e
-    iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getConfirmationDeleteTwoSideRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
-
-    move-result p1
-
-    if-ne p2, p1, :cond_f
-
-    sget p1, Lorg/telegram/messenger/R$string;->settings_revoke_by_default:I
-
-    invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
-
-    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault()Z
-
-    move-result p2
-
-    invoke-virtual {v4, p1, p2, v0}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
-
-    goto/16 :goto_2
-
-    .line 377
-    :cond_f
+    .line 381
+    :cond_d
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getConfirmationSendingGifRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_10
+    if-ne p2, p1, :cond_e
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_sending_gif_confirmation:I
 
@@ -1628,15 +1542,15 @@
 
     goto/16 :goto_2
 
-    .line 378
-    :cond_10
+    .line 382
+    :cond_e
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getConfirmationSendingStickerRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_11
+    if-ne p2, p1, :cond_f
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_sending_sticker_confirmation:I
 
@@ -1650,15 +1564,15 @@
 
     goto/16 :goto_2
 
-    .line 379
-    :cond_11
+    .line 383
+    :cond_f
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getConfirmationSpeakWithoutHoldRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_12
+    if-ne p2, p1, :cond_10
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_speak_without_hold:I
 
@@ -1672,15 +1586,15 @@
 
     goto/16 :goto_2
 
-    .line 380
-    :cond_12
+    .line 384
+    :cond_10
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getConfirmationVideoSpeakWithoutHoldRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_13
+    if-ne p2, p1, :cond_11
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_video_speak_without_hold:I
 
@@ -1694,15 +1608,15 @@
 
     goto/16 :goto_2
 
-    .line 381
-    :cond_13
+    .line 385
+    :cond_11
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getMessageWidePostsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_2c
+    if-ne p2, p1, :cond_2a
 
     sget p1, Lorg/telegram/messenger/R$string;->settings_interface_wide_posts_in_channel:I
 
@@ -1724,24 +1638,24 @@
 
     goto/16 :goto_2
 
-    .line 384
-    :cond_14
-    sget v5, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT:I
+    .line 388
+    :cond_12
+    sget v5, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL:I
 
-    if-ne v3, v5, :cond_1e
+    if-ne v3, v5, :cond_1c
 
     instance-of v5, v4, Lorg/telegram/ui/Cells/TextCell;
 
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_1c
 
-    .line 385
+    .line 389
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getDrawerHeaderSettingsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_15
+    if-ne p2, p1, :cond_13
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1755,15 +1669,15 @@
 
     goto/16 :goto_2
 
-    .line 386
-    :cond_15
+    .line 390
+    :cond_13
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getDrawerItemsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_16
+    if-ne p2, p1, :cond_14
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1777,21 +1691,21 @@
 
     goto/16 :goto_2
 
-    .line 387
-    :cond_16
+    .line 391
+    :cond_14
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatFolderAndChatSortingRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_17
+    if-ne p2, p1, :cond_15
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
-    sget p1, Lorg/telegram/messenger/R$string;->FilterAvailableTitle:I
+    sget p1, Lorg/telegram/messenger/R$string;->Filters:I
 
-    const-string p2, "FilterAvailableTitle"
+    const-string p2, "Filters"
 
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -1801,15 +1715,15 @@
 
     goto/16 :goto_2
 
-    .line 388
-    :cond_17
+    .line 392
+    :cond_15
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getSettingsTopicsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_18
+    if-ne p2, p1, :cond_16
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1823,15 +1737,15 @@
 
     goto/16 :goto_2
 
-    .line 389
-    :cond_18
+    .line 393
+    :cond_16
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatAttachMenuButtonsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_19
+    if-ne p2, p1, :cond_17
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1845,15 +1759,15 @@
 
     goto/16 :goto_2
 
-    .line 390
-    :cond_19
+    .line 394
+    :cond_17
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatExtendedAvatarPreviewerRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_1a
+    if-ne p2, p1, :cond_18
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1867,15 +1781,15 @@
 
     goto/16 :goto_2
 
-    .line 391
-    :cond_1a
+    .line 395
+    :cond_18
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getReactionSettingsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_1b
+    if-ne p2, p1, :cond_19
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1891,15 +1805,15 @@
 
     goto/16 :goto_2
 
-    .line 392
-    :cond_1b
+    .line 396
+    :cond_19
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getMessagesTranslate$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_1c
+    if-ne p2, p1, :cond_1a
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1915,15 +1829,15 @@
 
     goto/16 :goto_2
 
-    .line 393
-    :cond_1c
+    .line 397
+    :cond_1a
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getMessagesContextMenu$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_1d
+    if-ne p2, p1, :cond_1b
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1939,15 +1853,15 @@
 
     goto/16 :goto_2
 
-    .line 394
-    :cond_1d
+    .line 398
+    :cond_1b
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getSendMessages$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_2c
+    if-ne p2, p1, :cond_2a
 
     check-cast v4, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1963,24 +1877,24 @@
 
     goto/16 :goto_2
 
-    .line 397
-    :cond_1e
-    sget v5, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    .line 401
+    :cond_1c
+    sget v5, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
 
-    if-ne v3, v5, :cond_22
+    if-ne v3, v5, :cond_20
 
     instance-of v5, v4, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    if-eqz v5, :cond_22
+    if-eqz v5, :cond_20
 
-    .line 398
+    .line 402
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatProfileTelegramIdRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_1f
+    if-ne p2, p1, :cond_1d
 
     check-cast v4, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -2004,15 +1918,15 @@
 
     goto/16 :goto_2
 
-    .line 399
-    :cond_1f
+    .line 403
+    :cond_1d
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatsTemplatesRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_20
+    if-ne p2, p1, :cond_1e
 
     check-cast v4, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -2036,15 +1950,15 @@
 
     goto/16 :goto_2
 
-    .line 400
-    :cond_20
+    .line 404
+    :cond_1e
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getConfirmationVideoVoiceCameraRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_21
+    if-ne p2, p1, :cond_1f
 
     check-cast v4, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -2068,15 +1982,15 @@
 
     goto/16 :goto_2
 
-    .line 401
-    :cond_21
+    .line 405
+    :cond_1f
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getDrawerHolidayIconType$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result p1
 
-    if-ne p2, p1, :cond_2c
+    if-ne p2, p1, :cond_2a
 
     check-cast v4, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -2096,19 +2010,19 @@
 
     goto/16 :goto_2
 
-    .line 403
-    :cond_22
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    .line 407
+    :cond_20
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATIONS_CHECK_CELL:I
 
-    if-ne v3, v0, :cond_2c
+    if-ne v3, v0, :cond_2a
 
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, v0, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2a
 
-    .line 408
+    .line 412
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatMultiPanelRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
@@ -2119,16 +2033,16 @@
 
     const-string v4, ", "
 
-    if-ne p2, v0, :cond_25
+    if-ne p2, v0, :cond_23
 
-    .line 409
+    .line 413
     sget p2, Lorg/telegram/messenger/R$string;->settings_multi_panel_item_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 410
+    .line 414
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
@@ -2139,9 +2053,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_22
 
-    .line 412
+    .line 416
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
@@ -2152,14 +2066,14 @@
 
     move-result-object p2
 
-    .line 413
+    .line 417
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_21
 
-    .line 414
+    .line 418
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_multi_panel_no_buttons:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2168,16 +2082,16 @@
 
     goto/16 :goto_1
 
-    .line 416
-    :cond_23
+    .line 420
+    :cond_21
     invoke-static {v4, p2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object p2
 
     goto/16 :goto_1
 
-    .line 419
-    :cond_24
+    .line 423
+    :cond_22
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_sorting_settings_item_value_off:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2186,24 +2100,24 @@
 
     goto/16 :goto_1
 
-    .line 422
-    :cond_25
+    .line 426
+    :cond_23
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatSwipeToGoToNextUnreadDialogRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_28
+    if-ne p2, v0, :cond_26
 
-    .line 423
+    .line 427
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_swipe_to_next_unread_dialog:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 424
+    .line 428
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
@@ -2214,9 +2128,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_25
 
-    .line 426
+    .line 430
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
@@ -2227,14 +2141,14 @@
 
     move-result-object p2
 
-    .line 427
+    .line 431
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_24
 
-    .line 428
+    .line 432
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_multi_panel_no_buttons:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2243,16 +2157,16 @@
 
     goto :goto_1
 
-    .line 430
-    :cond_26
+    .line 434
+    :cond_24
     invoke-static {v4, p2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object p2
 
     goto :goto_1
 
-    .line 433
-    :cond_27
+    .line 437
+    :cond_25
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_sorting_settings_item_value_off:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2261,24 +2175,24 @@
 
     goto :goto_1
 
-    .line 436
-    :cond_28
+    .line 440
+    :cond_26
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->access$getChatListRecentChatsRow$p(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_2b
+    if-ne p2, v0, :cond_29
 
-    .line 437
+    .line 441
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_recent_chats:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 438
+    .line 442
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
@@ -2289,9 +2203,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_28
 
-    .line 440
+    .line 444
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
@@ -2302,14 +2216,14 @@
 
     move-result-object p2
 
-    .line 441
+    .line 445
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_27
 
-    .line 442
+    .line 446
     sget p2, Lorg/telegram/messenger/R$string;->settings_interface_multi_panel_no_buttons:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2318,16 +2232,16 @@
 
     goto :goto_1
 
-    .line 444
-    :cond_29
+    .line 448
+    :cond_27
     invoke-static {v4, p2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object p2
 
     goto :goto_1
 
-    .line 447
-    :cond_2a
+    .line 451
+    :cond_28
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_sorting_settings_item_value_off:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2336,10 +2250,10 @@
 
     goto :goto_1
 
-    :cond_2b
+    :cond_29
     move-object p2, v3
 
-    .line 451
+    .line 455
     :goto_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2347,7 +2261,7 @@
 
     invoke-virtual {p1, v3, p2, v2, v1}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/CharSequence;ZZ)V
 
-    :cond_2c
+    :cond_2a
     :goto_2
     return-void
 .end method
@@ -2355,7 +2269,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 322
+    .line 328
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -2370,10 +2284,8 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 337
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
-
-    const-string v0, "windowBackgroundWhite"
+    .line 343
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p2, p1, :cond_0
 
@@ -2387,8 +2299,10 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 338
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 344
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2396,9 +2310,9 @@
 
     goto :goto_0
 
-    .line 340
+    .line 346
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL:I
 
     if-ne p2, p1, :cond_1
 
@@ -2412,8 +2326,10 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    .line 341
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 347
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2421,9 +2337,9 @@
 
     goto :goto_0
 
-    .line 343
+    .line 349
     :cond_1
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
 
     if-ne p2, p1, :cond_2
 
@@ -2437,8 +2353,10 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 344
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 350
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2446,9 +2364,9 @@
 
     goto :goto_0
 
-    .line 346
+    .line 352
     :cond_2
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATIONS_CHECK_CELL:I
 
     if-ne p2, p1, :cond_3
 
@@ -2462,8 +2380,10 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 347
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 353
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2471,7 +2391,7 @@
 
     goto :goto_0
 
-    .line 349
+    .line 355
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -2483,7 +2403,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 351
+    .line 357
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -2495,7 +2415,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 336
+    .line 342
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

@@ -104,19 +104,19 @@
 
     move-result v3
 
-    invoke-static {v1}, Lcom/iMe/ui/music/NoPermissionMusicCell;->access$getButtonDefaultColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lcom/iMe/ui/music/NoPermissionMusicCell;->access$getButtonDefaultColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
 
     move-result v4
 
-    invoke-static {v1}, Lcom/iMe/ui/music/NoPermissionMusicCell;->access$getButtonPressedColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result-object v5
+    move-result v4
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lcom/iMe/ui/music/NoPermissionMusicCell;->access$getButtonPressedColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
+
+    move-result v5
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -154,11 +154,11 @@
     invoke-virtual {v0, v3, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 62
-    invoke-static {v1}, Lcom/iMe/ui/music/NoPermissionMusicCell;->access$getButtonTextColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/iMe/ui/music/NoPermissionMusicCell;->access$getButtonTextColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

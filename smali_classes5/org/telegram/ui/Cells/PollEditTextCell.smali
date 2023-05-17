@@ -39,14 +39,14 @@
 
     const/4 v0, 0x0
 
-    .line 73
+    .line 65
     invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Cells/PollEditTextCell;-><init>(Landroid/content/Context;ZLandroid/view/View$OnClickListener;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ZLandroid/view/View$OnClickListener;)V
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -54,7 +54,7 @@
 
     move-object/from16 v2, p3
 
-    .line 77
+    .line 69
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v3, 0x0
@@ -63,21 +63,21 @@
 
     if-eqz p2, :cond_0
 
-    .line 80
+    .line 72
     new-instance v5, Lorg/telegram/ui/Cells/PollEditTextCell$1;
 
     invoke-direct {v5, v0, v1, v3}, Lorg/telegram/ui/Cells/PollEditTextCell$1;-><init>(Lorg/telegram/ui/Cells/PollEditTextCell;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 121
+    .line 113
     check-cast v5, Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/EditTextCaption;->setAllowTextEntitiesIntersection(Z)V
 
     goto :goto_0
 
-    .line 123
+    .line 115
     :cond_0
     new-instance v5, Lorg/telegram/ui/Cells/PollEditTextCell$2;
 
@@ -85,550 +85,528 @@
 
     iput-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 151
+    .line 143
     :goto_0
     iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v6, "windowBackgroundWhiteBlackText"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 152
+    .line 144
     iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v6, "windowBackgroundWhiteHintText"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 153
+    .line 145
     iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/high16 v6, 0x41800000    # 16.0f
 
     invoke-virtual {v5, v4, v6}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 154
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    const/4 v7, 0x5
-
-    const/4 v8, 0x3
-
-    if-eqz v6, :cond_1
-
-    move v6, v7
-
-    goto :goto_1
-
-    :cond_1
-    move v6, v8
-
-    :goto_1
-    or-int/lit8 v6, v6, 0x10
-
-    invoke-virtual {v5, v6}, Landroid/widget/EditText;->setGravity(I)V
-
-    .line 155
+    .line 147
     iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v5, v3}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 156
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    .line 148
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v5}, Landroid/widget/EditText;->getImeOptions()I
+    invoke-virtual {v3}, Landroid/widget/EditText;->getImeOptions()I
 
-    move-result v6
+    move-result v5
 
-    const/high16 v9, 0x10000000
+    const/high16 v6, 0x10000000
 
-    or-int/2addr v6, v9
+    or-int/2addr v5, v6
 
-    invoke-virtual {v5, v6}, Landroid/widget/EditText;->setImeOptions(I)V
+    invoke-virtual {v3, v5}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 157
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    .line 149
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v5}, Landroid/widget/EditText;->getInputType()I
+    invoke-virtual {v3}, Landroid/widget/EditText;->getInputType()I
 
-    move-result v6
+    move-result v5
 
-    or-int/lit16 v6, v6, 0x4000
+    or-int/lit16 v5, v5, 0x4000
 
-    invoke-virtual {v5, v6}, Landroid/widget/EditText;->setInputType(I)V
+    invoke-virtual {v3, v5}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 158
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    .line 150
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v6, 0x4
+    const/4 v5, 0x4
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    const/16 v10, 0xa
-
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v10
-
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
-    const/16 v11, 0xb
+    const/16 v7, 0xa
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v7
 
-    invoke-virtual {v5, v9, v10, v6, v11}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    if-eqz v2, :cond_e
+    move-result v5
 
-    .line 161
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    const/16 v8, 0xb
 
-    const/4 v9, -0x1
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/4 v10, -0x2
+    move-result v8
 
-    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    invoke-virtual {v3, v6, v7, v5, v8}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    if-eqz v6, :cond_2
+    const/4 v3, 0x5
 
-    move v11, v7
+    const/4 v5, 0x3
+
+    if-eqz v2, :cond_d
+
+    .line 153
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/4 v7, -0x1
+
+    const/4 v8, -0x2
+
+    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v9, :cond_1
+
+    move v10, v3
+
+    goto :goto_1
+
+    :cond_1
+    move v10, v5
+
+    :goto_1
+    or-int/lit8 v10, v10, 0x10
+
+    const/16 v11, 0x3a
+
+    const/16 v12, 0x40
+
+    if-eqz v9, :cond_2
+
+    move v13, v11
 
     goto :goto_2
 
     :cond_2
-    move v11, v8
+    move v13, v12
 
     :goto_2
-    or-int/lit8 v11, v11, 0x10
+    const/4 v14, 0x0
 
-    const/16 v12, 0x3a
+    if-nez v9, :cond_3
 
-    const/16 v13, 0x40
-
-    if-eqz v6, :cond_3
-
-    move v14, v12
-
-    goto :goto_3
+    move v12, v11
 
     :cond_3
-    move v14, v13
-
-    :goto_3
     const/4 v15, 0x0
 
-    if-nez v6, :cond_4
+    move v9, v10
 
-    move v6, v12
+    move v10, v13
 
-    goto :goto_4
-
-    :cond_4
-    move v6, v13
-
-    :goto_4
-    const/16 v16, 0x0
-
-    move v12, v14
+    move v11, v14
 
     move v13, v15
 
-    move v14, v6
+    invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move/from16 v15, v16
+    move-result-object v7
 
-    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-virtual {v0, v6, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    move-result-object v6
+    .line 155
+    new-instance v6, Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-direct {v6, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 163
-    new-instance v5, Landroid/widget/ImageView;
+    iput-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
 
-    invoke-direct {v5, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    const/4 v7, 0x0
 
-    iput-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
+    .line 156
+    invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setFocusable(Z)V
 
-    const/4 v6, 0x0
+    .line 157
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
 
-    .line 164
-    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setFocusable(Z)V
+    sget-object v8, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    .line 165
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
+    invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    sget-object v9, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+    .line 158
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v9}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    sget v8, Lorg/telegram/messenger/R$drawable;->poll_reorder:I
 
-    .line 166
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
+    invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    sget v9, Lorg/telegram/messenger/R$drawable;->poll_reorder:I
+    .line 159
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v9}, Landroid/widget/ImageView;->setImageResource(I)V
+    new-instance v8, Landroid/graphics/PorterDuffColorFilter;
 
-    .line 167
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    new-instance v9, Landroid/graphics/PorterDuffColorFilter;
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    const-string v10, "windowBackgroundWhiteGrayIcon"
-
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v11
-
-    sget-object v12, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v9, v11, v12}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v5, v9}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    .line 168
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
-
-    const/16 v11, 0x30
-
-    const/16 v12, 0x30
-
-    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v9, :cond_5
-
-    move v9, v7
-
-    goto :goto_5
-
-    :cond_5
-    move v9, v8
-
-    :goto_5
-    or-int/lit8 v13, v9, 0x30
-
-    const/4 v14, 0x6
-
-    const/4 v15, 0x2
-
-    const/16 v16, 0x6
-
-    const/16 v17, 0x0
-
-    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v9
-
-    invoke-virtual {v0, v5, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 170
-    new-instance v5, Landroid/widget/ImageView;
-
-    invoke-direct {v5, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
-
-    iput-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
-
-    .line 171
-    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setFocusable(Z)V
-
-    .line 172
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
-
-    sget-object v9, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v5, v9}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    .line 173
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
-
-    const-string v9, "stickers_menuSelector"
-
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v9
-
-    invoke-virtual {v5, v9}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 174
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
-
-    sget v9, Lorg/telegram/messenger/R$drawable;->poll_remove:I
-
-    invoke-virtual {v5, v9}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 175
-    iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
-
-    invoke-virtual {v5, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 176
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
-
-    new-instance v5, Landroid/graphics/PorterDuffColorFilter;
-
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v9
+    move-result v10
 
     sget-object v11, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v5, v9, v11}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v8, v10, v11}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 177
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+    .line 160
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
 
-    sget v5, Lorg/telegram/messenger/R$string;->Delete:I
-
-    const-string v9, "Delete"
-
-    invoke-static {v9, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    .line 178
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+    const/16 v10, 0x30
 
     const/16 v11, 0x30
 
-    const/16 v12, 0x32
+    sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    if-eqz v8, :cond_4
 
-    if-eqz v5, :cond_6
+    move v8, v3
 
-    move v9, v8
+    goto :goto_3
+
+    :cond_4
+    move v8, v5
+
+    :goto_3
+    or-int/lit8 v12, v8, 0x30
+
+    const/4 v13, 0x6
+
+    const/4 v14, 0x2
+
+    const/4 v15, 0x6
+
+    const/16 v16, 0x0
+
+    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v8
+
+    invoke-virtual {v0, v6, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 162
+    new-instance v6, Landroid/widget/ImageView;
+
+    invoke-direct {v6, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+
+    iput-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+
+    .line 163
+    invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setFocusable(Z)V
+
+    .line 164
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+
+    sget-object v8, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    .line 165
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menuSelector:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v8
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v8
+
+    invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 166
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+
+    sget v8, Lorg/telegram/messenger/R$drawable;->poll_remove:I
+
+    invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 167
+    iget-object v6, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+
+    invoke-virtual {v6, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 168
+    iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+
+    new-instance v6, Landroid/graphics/PorterDuffColorFilter;
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v8
+
+    sget-object v10, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v6, v8, v10}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 169
+    iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+
+    sget v6, Lorg/telegram/messenger/R$string;->Delete:I
+
+    const-string v8, "Delete"
+
+    invoke-static {v8, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 170
+    iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
+
+    const/16 v10, 0x30
+
+    const/16 v11, 0x32
+
+    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v6, :cond_5
+
+    move v8, v5
+
+    goto :goto_4
+
+    :cond_5
+    move v8, v3
+
+    :goto_4
+    or-int/lit8 v12, v8, 0x30
+
+    if-eqz v6, :cond_6
+
+    move v13, v5
+
+    goto :goto_5
+
+    :cond_6
+    move v13, v7
+
+    :goto_5
+    const/4 v14, 0x0
+
+    if-eqz v6, :cond_7
+
+    move v15, v7
 
     goto :goto_6
 
-    :cond_6
-    move v9, v7
+    :cond_7
+    move v15, v5
 
     :goto_6
-    or-int/lit8 v13, v9, 0x30
+    const/16 v16, 0x0
 
-    if-eqz v5, :cond_7
+    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move v14, v8
+    move-result-object v6
 
-    goto :goto_7
+    invoke-virtual {v0, v2, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    :cond_7
-    move v14, v6
-
-    :goto_7
-    const/4 v15, 0x0
-
-    if-eqz v5, :cond_8
-
-    move/from16 v16, v6
-
-    goto :goto_8
-
-    :cond_8
-    move/from16 v16, v8
-
-    :goto_8
-    const/16 v17, 0x0
-
-    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v2, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 180
+    .line 172
     new-instance v2, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/16 v5, 0xd
+    const/16 v6, 0xd
 
-    .line 181
-    invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
+    .line 173
+    invoke-virtual {v2, v6}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 182
+    .line 174
     iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v5, :cond_9
+    if-eqz v6, :cond_8
 
-    move v5, v8
+    move v6, v5
+
+    goto :goto_7
+
+    :cond_8
+    move v6, v3
+
+    :goto_7
+    or-int/lit8 v6, v6, 0x30
+
+    invoke-virtual {v2, v6}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
+
+    .line 175
+    iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const/16 v10, 0x30
+
+    const/16 v11, 0x18
+
+    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v6, :cond_9
+
+    move v8, v5
+
+    goto :goto_8
+
+    :cond_9
+    move v8, v3
+
+    :goto_8
+    or-int/lit8 v12, v8, 0x30
+
+    const/16 v8, 0x14
+
+    if-eqz v6, :cond_a
+
+    move v13, v8
 
     goto :goto_9
 
-    :cond_9
-    move v5, v7
+    :cond_a
+    move v13, v7
 
     :goto_9
-    or-int/lit8 v5, v5, 0x30
+    const/16 v14, 0x2b
 
-    invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
+    if-eqz v6, :cond_b
 
-    .line 183
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    const/16 v11, 0x30
-
-    const/16 v12, 0x18
-
-    sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v5, :cond_a
-
-    move v9, v8
+    move v15, v7
 
     goto :goto_a
 
-    :cond_a
-    move v9, v7
+    :cond_b
+    move v15, v8
 
     :goto_a
-    or-int/lit8 v13, v9, 0x30
+    const/16 v16, 0x0
 
-    const/16 v9, 0x14
+    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    if-eqz v5, :cond_b
+    move-result-object v6
 
-    move v14, v9
+    invoke-virtual {v0, v2, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    goto :goto_b
-
-    :cond_b
-    move v14, v6
-
-    :goto_b
-    const/16 v15, 0x2b
-
-    if-eqz v5, :cond_c
-
-    move/from16 v16, v6
-
-    goto :goto_c
-
-    :cond_c
-    move/from16 v16, v9
-
-    :goto_c
-    const/16 v17, 0x0
-
-    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v2, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 185
+    .line 177
     new-instance v2, Lorg/telegram/ui/Components/CheckBox2;
 
-    const/16 v5, 0x15
+    const/16 v6, 0x15
 
-    invoke-direct {v2, v1, v5}, Lorg/telegram/ui/Components/CheckBox2;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v2, v1, v6}, Lorg/telegram/ui/Components/CheckBox2;-><init>(Landroid/content/Context;I)V
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v1, "checkboxCheck"
+    const/4 v1, -0x1
 
-    .line 186
-    invoke-virtual {v2, v3, v10, v1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .line 178
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    .line 187
+    invoke-virtual {v2, v1, v9, v6}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
+
+    .line 179
     iget-object v1, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrQuizCorrectAnswer:I
 
-    const-string v3, "AccDescrQuizCorrectAnswer"
+    const-string v6, "AccDescrQuizCorrectAnswer"
 
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 188
+    .line 180
     iget-object v1, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 189
+    .line 181
     iget-object v1, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    invoke-virtual {v1, v4, v6}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
+    invoke-virtual {v1, v4, v7}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
 
-    .line 190
+    .line 182
     iget-object v1, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 191
+    .line 183
     iget-object v1, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 192
+    .line 184
     iget-object v1, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const/16 v9, 0x30
+    const/16 v6, 0x30
 
-    const/16 v10, 0x30
+    const/16 v7, 0x30
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
-    goto :goto_d
+    goto :goto_b
 
-    :cond_d
-    move v7, v8
+    :cond_c
+    move v3, v5
 
-    :goto_d
-    or-int/lit8 v11, v7, 0x30
+    :goto_b
+    or-int/lit8 v8, v3, 0x30
 
-    const/4 v12, 0x6
+    const/4 v9, 0x6
 
-    const/4 v13, 0x2
+    const/4 v10, 0x2
 
-    const/4 v14, 0x6
+    const/4 v11, 0x6
 
-    const/4 v15, 0x0
+    const/4 v12, 0x0
 
-    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 193
+    .line 185
     iget-object v1, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     new-instance v2, Lorg/telegram/ui/Cells/PollEditTextCell$$ExternalSyntheticLambda0;
@@ -637,43 +615,43 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto :goto_f
+    goto :goto_d
 
-    .line 200
-    :cond_e
+    .line 192
+    :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v9, -0x1
+    const/4 v6, -0x1
 
-    const/4 v10, -0x2
+    const/4 v7, -0x2
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_e
 
-    goto :goto_e
+    goto :goto_c
 
-    :cond_f
-    move v7, v8
+    :cond_e
+    move v3, v5
 
-    :goto_e
-    or-int/lit8 v11, v7, 0x10
+    :goto_c
+    or-int/lit8 v8, v3, 0x10
 
-    const/16 v12, 0x13
+    const/16 v9, 0x13
 
-    const/4 v13, 0x0
+    const/4 v10, 0x0
 
-    const/16 v14, 0x13
+    const/16 v11, 0x13
 
-    const/4 v15, 0x0
+    const/4 v12, 0x0
 
-    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    :goto_f
+    :goto_d
     return-void
 .end method
 
@@ -689,7 +667,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 0
 
-    .line 194
+    .line 186
     iget-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -700,7 +678,7 @@
 
     return-void
 
-    .line 197
+    .line 189
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
@@ -720,7 +698,7 @@
 .method public addTextWatcher(Landroid/text/TextWatcher;)V
     .locals 1
 
-    .line 284
+    .line 276
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
@@ -731,14 +709,14 @@
 .method public callOnDelete()V
     .locals 1
 
-    .line 265
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 268
+    .line 260
     :cond_0
     invoke-virtual {v0}, Landroid/widget/ImageView;->callOnClick()Z
 
@@ -750,10 +728,10 @@
 
     const/4 v0, 0x1
 
-    .line 205
+    .line 197
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->alwaysShowText2:Z
 
-    .line 206
+    .line 198
     new-instance v0, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -766,10 +744,10 @@
 
     const/16 v1, 0xd
 
-    .line 207
+    .line 199
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 208
+    .line 200
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -792,7 +770,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
-    .line 209
+    .line 201
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v4, 0x30
@@ -859,7 +837,7 @@
 .method public getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
     .locals 1
 
-    .line 280
+    .line 272
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     return-object v0
@@ -868,7 +846,7 @@
 .method public getText()Ljava/lang/String;
     .locals 1
 
-    .line 304
+    .line 296
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -885,7 +863,7 @@
 .method public getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
     .locals 1
 
-    .line 276
+    .line 268
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     return-object v0
@@ -894,7 +872,7 @@
 .method public getTextView2()Lorg/telegram/ui/ActionBar/SimpleTextView;
     .locals 1
 
-    .line 372
+    .line 364
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     return-object v0
@@ -917,15 +895,15 @@
 .method protected onAttachedToWindow()V
     .locals 3
 
-    .line 245
+    .line 237
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 246
+    .line 238
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 239
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/PollEditTextCell;->shouldShowCheckBox()Z
 
     move-result v0
@@ -934,7 +912,7 @@
 
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Cells/PollEditTextCell;->setShowCheckBox(ZZ)V
 
-    .line 248
+    .line 240
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p0, p0}, Lorg/telegram/ui/Cells/PollEditTextCell;->isChecked(Lorg/telegram/ui/Cells/PollEditTextCell;)Z
@@ -950,7 +928,7 @@
 .method protected onCheckBoxClick(Lorg/telegram/ui/Cells/PollEditTextCell;Z)V
     .locals 1
 
-    .line 253
+    .line 245
     iget-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/4 v0, 0x1
@@ -963,24 +941,24 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 378
+    .line 370
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->needVerticalDivider:Z
 
     if-eqz v0, :cond_0
 
-    .line 379
+    .line 371
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 380
+    .line 372
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x2
 
-    .line 381
+    .line 373
     div-int/lit8 v2, v0, 0x4
 
     int-to-float v4, v1
@@ -995,14 +973,14 @@
 
     int-to-float v7, v0
 
-    .line 382
+    .line 374
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
     move-object v3, p1
 
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 385
+    .line 377
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->needDivider:Z
 
@@ -1014,7 +992,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 386
+    .line 378
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x3f
@@ -1125,12 +1103,12 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 214
+    .line 206
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 215
+    .line 207
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
 
     const/16 v0, 0x30
@@ -1139,7 +1117,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 216
+    .line 208
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1158,13 +1136,13 @@
 
     invoke-virtual {p2, v2, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 218
+    .line 210
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
 
     if-eqz p2, :cond_1
 
-    .line 219
+    .line 211
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1183,13 +1161,13 @@
 
     invoke-virtual {p2, v2, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 221
+    .line 213
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz p2, :cond_2
 
-    .line 222
+    .line 214
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1210,13 +1188,13 @@
 
     invoke-virtual {p2, v2, v3}, Landroid/view/View;->measure(II)V
 
-    .line 224
+    .line 216
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     if-eqz p2, :cond_3
 
-    .line 225
+    .line 217
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1235,7 +1213,7 @@
 
     invoke-virtual {p2, v2, v0}, Landroid/view/View;->measure(II)V
 
-    .line 228
+    .line 220
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -1245,7 +1223,7 @@
 
     goto :goto_0
 
-    .line 230
+    .line 222
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
 
@@ -1258,7 +1236,7 @@
     :cond_5
     const/16 p2, 0x7a
 
-    .line 235
+    .line 227
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -1292,7 +1270,7 @@
 
     invoke-virtual {v0, p2, v1}, Landroid/widget/EditText;->measure(II)V
 
-    .line 236
+    .line 228
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p2}, Landroid/widget/EditText;->getMeasuredHeight()I
@@ -1301,7 +1279,7 @@
 
     const/16 v0, 0x32
 
-    .line 237
+    .line 229
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1322,7 +1300,7 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 238
+    .line 230
     iget-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz p1, :cond_7
@@ -1333,7 +1311,7 @@
 
     const/16 v0, 0x34
 
-    .line 239
+    .line 231
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1357,7 +1335,7 @@
 .method public setChecked(ZZ)V
     .locals 1
 
-    .line 300
+    .line 292
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
@@ -1365,21 +1343,10 @@
     return-void
 .end method
 
-.method public setHint(Ljava/lang/String;)V
-    .locals 1
-
-    .line 55
-    iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual {v0, p1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
 .method public setShowCheckBox(ZZ)V
     .locals 9
 
-    .line 316
+    .line 308
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -1404,7 +1371,7 @@
 
     return-void
 
-    .line 319
+    .line 311
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBoxAnimation:Landroid/animation/AnimatorSet;
 
@@ -1412,13 +1379,13 @@
 
     if-eqz v0, :cond_2
 
-    .line 320
+    .line 312
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 321
+    .line 313
     iput-object v3, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBoxAnimation:Landroid/animation/AnimatorSet;
 
-    .line 323
+    .line 315
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
@@ -1437,7 +1404,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 325
+    .line 317
     new-instance p2, Landroid/animation/AnimatorSet;
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1448,7 +1415,7 @@
 
     new-array v4, v4, [Landroid/animation/Animator;
 
-    .line 326
+    .line 318
     iget-object v5, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -1467,7 +1434,7 @@
     :goto_1
     aput v8, v7, v1
 
-    .line 327
+    .line 319
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
@@ -1487,31 +1454,31 @@
     :cond_5
     aput v0, v7, v1
 
-    .line 328
+    .line 320
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
     aput-object p1, v4, v2
 
-    .line 326
+    .line 318
     invoke-virtual {p2, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 329
+    .line 321
     iget-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBoxAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0xb4
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 330
+    .line 322
     iget-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBoxAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_3
 
-    .line 332
+    .line 324
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
@@ -1527,7 +1494,7 @@
     :goto_2
     invoke-virtual {p2, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 333
+    .line 325
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->moveImageView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_8
@@ -1544,7 +1511,7 @@
 .method public setShowNextButton(Z)V
     .locals 0
 
-    .line 272
+    .line 264
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->showNextButton:Z
 
     return-void
@@ -1553,14 +1520,14 @@
 .method public setText2(Ljava/lang/String;)V
     .locals 1
 
-    .line 365
+    .line 357
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 368
+    .line 360
     :cond_0
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
@@ -1570,30 +1537,30 @@
 .method public setTextAndHint(Ljava/lang/CharSequence;Ljava/lang/String;Z)V
     .locals 2
 
-    .line 344
+    .line 336
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->deleteImageView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 345
+    .line 337
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 347
+    .line 339
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 348
+    .line 340
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-nez p1, :cond_1
 
-    .line 349
+    .line 341
     iget-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->length()I
@@ -1602,18 +1569,18 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 351
+    .line 343
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 352
+    .line 344
     iput-boolean p3, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->needDivider:Z
 
     xor-int/lit8 p1, p3, 0x1
 
-    .line 353
+    .line 345
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -1622,7 +1589,7 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 312
+    .line 304
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setTextColor(I)V

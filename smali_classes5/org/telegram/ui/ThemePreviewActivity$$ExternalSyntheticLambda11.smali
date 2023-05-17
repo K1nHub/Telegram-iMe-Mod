@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda11;->f$2:Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$4NqfvFau_z6mUClUT3uRgJanGrs(Lorg/telegram/ui/ThemePreviewActivity;ILorg/telegram/ui/Components/WallpaperCheckBoxView;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$TAl5yGt42XQUPPLvyTn2qnh4Htg(Lorg/telegram/ui/ThemePreviewActivity;ILorg/telegram/ui/Components/WallpaperCheckBoxView;Landroid/view/View;)V
 
     return-void
 .end method

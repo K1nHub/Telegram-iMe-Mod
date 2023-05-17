@@ -46,7 +46,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -172,10 +172,10 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3242R.string.multiple_files_sending_selected));
-        textView.setTextColor(getThemedColor("dialogTextBlack"));
+        textView.setText(LocaleController.getInternalString(C3290R.string.multiple_files_sending_selected));
+        textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
-        textView.setLinkTextColor(getThemedColor("dialogTextLink"));
+        textView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
         return textView;
     }
 
@@ -186,9 +186,9 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setAllCaps(true);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
-        textView.setBackground(Theme.createSelectorWithBackgroundDrawable(getThemedColor("dialogBackground"), getThemedColor("listSelectorSDK21")));
-        textView.setText(LocaleController.getString("Save", C3242R.string.Save));
-        textView.setTextColor(getThemedColor("dialogTextBlue2"));
+        textView.setBackground(Theme.createSelectorWithBackgroundDrawable(getThemedColor(Theme.key_dialogBackground), getThemedColor(Theme.key_listSelector)));
+        textView.setText(LocaleController.getString("Save", C3290R.string.Save));
+        textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
         return textView;
     }
 
@@ -210,14 +210,14 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         r1.setVerticalScrollBarEnabled(false);
         r1.setClipToPadding(false);
         r1.setEnabled(true);
-        r1.setGlowColor(getThemedColor("dialogScrollGlow"));
+        r1.setGlowColor(getThemedColor(Theme.key_dialogScrollGlow));
         return r1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final View initShadow(boolean z) {
         View view = new View(getContext());
-        view.setBackgroundColor(getThemedColor("dialogShadowLine"));
+        view.setBackgroundColor(getThemedColor(Theme.key_dialogShadowLine));
         view.setVisibility(z ? 8 : 0);
         return view;
     }
@@ -285,7 +285,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void openFile$lambda$16(final FileItem fileItem, final SelectedFilesBottomSheet this$0) {
-        Object m1555constructorimpl;
+        Object m1574constructorimpl;
         Intrinsics.checkNotNullParameter(fileItem, "$fileItem");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         File checkDirectory = FileLoader.checkDirectory(3);
@@ -312,22 +312,22 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                 openInputStream.close();
                 fileOutputStream.close();
             }
-            m1555constructorimpl = Result.m1555constructorimpl(Unit.INSTANCE);
+            m1574constructorimpl = Result.m1574constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1555constructorimpl = Result.m1555constructorimpl(ResultKt.createFailure(th));
+            m1574constructorimpl = Result.m1574constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1556exceptionOrNullimpl = Result.m1556exceptionOrNullimpl(m1555constructorimpl);
-        if (m1556exceptionOrNullimpl != null) {
+        final Throwable m1575exceptionOrNullimpl = Result.m1575exceptionOrNullimpl(m1574constructorimpl);
+        if (m1575exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1556exceptionOrNullimpl);
+                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1575exceptionOrNullimpl);
                 }
             });
         }
-        if (Result.m1558isSuccessimpl(m1555constructorimpl)) {
-            Unit unit = (Unit) m1555constructorimpl;
+        if (Result.m1577isSuccessimpl(m1574constructorimpl)) {
+            Unit unit = (Unit) m1574constructorimpl;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -340,7 +340,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void openFile$lambda$16$lambda$13$lambda$12(Throwable it) {
         Intrinsics.checkNotNullParameter(it, "$it");
-        Timber.m4e(it);
+        Timber.m6e(it);
         ThrowableExtKt.showToast(it);
     }
 
@@ -389,7 +389,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         if (this.shadowShowed != z) {
             this.shadowShowed = z;
             if (z) {
-                ViewExtKt.visible(getTopShadow());
+                ViewExtKt.visible$default(getTopShadow(), false, 1, null);
             }
             AnimatorSet animatorSet = this.shadowAnimation;
             if (animatorSet != null) {
@@ -416,7 +416,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                         if (Intrinsics.areEqual(animatorSet4, animation)) {
                             if (!z) {
                                 topShadow2 = SelectedFilesBottomSheet.this.getTopShadow();
-                                ViewExtKt.invisible(topShadow2);
+                                ViewExtKt.invisible$default(topShadow2, false, 1, null);
                             }
                             SelectedFilesBottomSheet.this.shadowAnimation = null;
                         }
@@ -479,11 +479,11 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
             SelectedFilesBottomSheet.this.ignoreLayout = false;
             SelectedFilesBottomSheet.this.itemWidth = View.MeasureSpec.getSize(i);
-            int m50dp = AndroidUtilities.m50dp(110) + (SelectedFilesBottomSheet.this.files.size() * AndroidUtilities.m50dp(60)) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            int m54dp = AndroidUtilities.m54dp(110) + (SelectedFilesBottomSheet.this.files.size() * AndroidUtilities.m54dp(60)) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int i3 = size / 5;
-            int i4 = ((float) m50dp) < ((float) i3) * 3.2f ? 0 : i3 * 2;
-            if (i4 != 0 && m50dp < size) {
-                i4 -= size - m50dp;
+            int i4 = ((float) m54dp) < ((float) i3) * 3.2f ? 0 : i3 * 2;
+            if (i4 != 0 && m54dp < size) {
+                i4 -= size - m54dp;
             }
             if (i4 == 0) {
                 i4 = ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop;
@@ -493,8 +493,8 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                 SelectedFilesBottomSheet.this.getListView().setPadding(0, i4, 0, 0);
                 SelectedFilesBottomSheet.this.ignoreLayout = false;
             }
-            this.fullHeight = m50dp >= size;
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m50dp, size), 1073741824));
+            this.fullHeight = m54dp >= size;
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m54dp, size), 1073741824));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -521,12 +521,12 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m50dp = (SelectedFilesBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m50dp(6);
-            int m50dp2 = (SelectedFilesBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m50dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m50dp(15) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop;
+            int m54dp = (SelectedFilesBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m54dp(6);
+            int m54dp2 = (SelectedFilesBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m54dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(15) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m50dp2 + i2;
-            int i4 = m50dp + i2;
+            int i3 = m54dp2 + i2;
+            int i4 = m54dp + i2;
             int i5 = measuredHeight - i2;
             if (this.fullHeight) {
                 int i6 = ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3;
@@ -549,16 +549,16 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             ((BottomSheet) SelectedFilesBottomSheet.this).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), i5);
             ((BottomSheet) SelectedFilesBottomSheet.this).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
-                Theme.dialogs_onlineCirclePaint.setColor(SelectedFilesBottomSheet.this.getThemedColor("dialogBackground"));
-                this.rect.set(((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m50dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(12) * f, AndroidUtilities.m50dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                Theme.dialogs_onlineCirclePaint.setColor(SelectedFilesBottomSheet.this.getThemedColor(Theme.key_dialogBackground));
+                this.rect.set(((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m54dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m50dp3 = AndroidUtilities.m50dp(36);
-            this.rect.set((getMeasuredWidth() - m50dp3) / 2, i4, (getMeasuredWidth() + m50dp3) / 2, i4 + AndroidUtilities.m50dp(4));
-            Theme.dialogs_onlineCirclePaint.setColor(SelectedFilesBottomSheet.this.getThemedColor("key_sheet_scrollUp"));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), Theme.dialogs_onlineCirclePaint);
+            int m54dp3 = AndroidUtilities.m54dp(36);
+            this.rect.set((getMeasuredWidth() - m54dp3) / 2, i4, (getMeasuredWidth() + m54dp3) / 2, i4 + AndroidUtilities.m54dp(4));
+            Theme.dialogs_onlineCirclePaint.setColor(SelectedFilesBottomSheet.this.getThemedColor(Theme.key_sheet_scrollUp));
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
-                int themedColor = SelectedFilesBottomSheet.this.getThemedColor("dialogBackground");
+                int themedColor = SelectedFilesBottomSheet.this.getThemedColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
                 canvas.drawRect(((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i, getMeasuredWidth() - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
             }
@@ -641,8 +641,8 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             this.sizeTextView$delegate = lazy3;
             lazy4 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$FileView$deleteButton$2(this));
             this.deleteButton$delegate = lazy4;
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, AndroidUtilities.m50dp(16));
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingVertical(this, AndroidUtilities.m50dp(8));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, AndroidUtilities.m54dp(16));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingVertical(this, AndroidUtilities.m54dp(8));
             setGravity(16);
             addView(getImageView(), LayoutHelper.createLinear(-2, -2));
             LinearLayout linearLayout = new LinearLayout(context);
@@ -686,9 +686,9 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         public final ImageView initImageView() {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
-            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), C3242R.C3244drawable.msg_round_file_s);
-            Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor("chat_outMediaIcon"), false);
-            Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor("chat_inMediaIcon"), true);
+            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(44), C3290R.C3292drawable.msg_round_file_s);
+            Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor(Theme.key_chat_outMediaIcon), false);
+            Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor(Theme.key_chat_inMediaIcon), true);
             imageView.setImageDrawable(createCircleDrawableWithIcon);
             return imageView;
         }
@@ -698,7 +698,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             TextView textView = new TextView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
             textView.setTextSize(1, 16.0f);
-            textView.setTextColor(selectedFilesBottomSheet.getThemedColor("windowBackgroundWhiteBlackText"));
+            textView.setTextColor(selectedFilesBottomSheet.getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
             ViewExtKt.singleLine(textView);
             textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
             ViewExtKt.withMediumTypeface(textView);
@@ -710,7 +710,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             TextView textView = new TextView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
             textView.setTextSize(1, 12.0f);
-            textView.setTextColor(selectedFilesBottomSheet.getThemedColor("windowBackgroundWhiteGrayText"));
+            textView.setTextColor(selectedFilesBottomSheet.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
             return textView;
         }
 
@@ -718,11 +718,11 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         public final ImageView initDeleteButton() {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
-            imageView.setColorFilter(new PorterDuffColorFilter(selectedFilesBottomSheet.getThemedColor("chat_replyPanelClose"), PorterDuff.Mode.MULTIPLY));
-            imageView.setContentDescription(LocaleController.getString("Delete", C3242R.string.Delete));
+            imageView.setColorFilter(new PorterDuffColorFilter(selectedFilesBottomSheet.getThemedColor(Theme.key_chat_replyPanelClose), PorterDuff.Mode.MULTIPLY));
+            imageView.setContentDescription(LocaleController.getString("Delete", C3290R.string.Delete));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3242R.C3244drawable.input_clear);
-            imageView.setBackground(Theme.createSelectorDrawable(selectedFilesBottomSheet.getThemedColor("listSelectorSDK21"), 3));
+            imageView.setImageResource(C3290R.C3292drawable.input_clear);
+            imageView.setBackground(Theme.createSelectorDrawable(selectedFilesBottomSheet.getThemedColor(Theme.key_listSelector), 3));
             return imageView;
         }
     }

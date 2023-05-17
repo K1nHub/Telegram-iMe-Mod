@@ -24,14 +24,14 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity$ThemeListViewController;Lorg/telegram/ui/QrActivity;)V
     .locals 0
 
-    .line 1438
+    .line 1444
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$4;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 1439
+    .line 1445
     iput p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$4;->yScroll:I
 
     return-void
@@ -42,17 +42,17 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 1442
+    .line 1448
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 1443
+    .line 1449
     iget p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$4;->yScroll:I
 
     add-int/2addr p1, p3
 
     iput p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$4;->yScroll:I
 
-    .line 1444
+    .line 1450
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$4;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {p1}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$2100(Lorg/telegram/ui/QrActivity$ThemeListViewController;)Landroid/view/View;

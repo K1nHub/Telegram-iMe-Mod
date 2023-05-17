@@ -1,4 +1,4 @@
-.class final Landroidx/transition/ViewGroupUtilsApi14$1;
+.class Landroidx/transition/ViewGroupUtilsApi14$1;
 .super Landroid/animation/LayoutTransition;
 .source "ViewGroupUtilsApi14.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 46
+    .line 47
     invoke-direct {p0}, Landroid/animation/LayoutTransition;-><init>()V
 
     return-void

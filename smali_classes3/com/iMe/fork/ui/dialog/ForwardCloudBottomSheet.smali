@@ -502,10 +502,10 @@
 
     invoke-virtual {v1, v3, v0, v2, v0}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    const-string v0, "dialogScrollGlow"
-
     .line 105
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -599,7 +599,7 @@
 .end method
 
 .method private final initShadow()Landroid/view/View;
-    .locals 2
+    .locals 4
 
     .line 84
     new-instance v0, Landroid/view/View;
@@ -610,27 +610,31 @@
 
     invoke-direct {v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
     .line 85
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     const/4 v1, 0x0
 
     .line 86
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    const/4 v1, 0x1
-
     .line 87
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    const-string v1, "dialogShadowLine"
-
     .line 88
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -657,10 +661,10 @@
     .line 73
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->singleLine(Landroid/widget/TextView;)V
 
-    const-string v1, "dialogLinkSelection"
-
     .line 74
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogLinkSelection:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -685,10 +689,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "dialogTextBlack"
-
     .line 78
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -701,10 +705,10 @@
     .line 79
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "dialogTextLink"
-
     .line 80
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -763,95 +767,97 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     if-eqz p1, :cond_2
 
-    const/4 v2, 0x0
+    move-object v3, v1
 
     goto :goto_0
 
     :cond_2
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v3
 
     :goto_0
-    invoke-virtual {v0, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    const/4 v0, 0x0
 
     if-eqz p1, :cond_3
 
     .line 157
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;->getShadow()Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v3, v0, v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 159
     :cond_3
-    iget-object v0, p0, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
+    iget-object v1, p0, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
-    if-eqz v0, :cond_4
+    if-eqz v1, :cond_4
 
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
+    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 160
     :cond_4
-    new-instance v0, Landroid/animation/AnimatorSet;
+    new-instance v1, Landroid/animation/AnimatorSet;
 
-    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
+    invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    const-wide/16 v2, 0x96
+    const-wide/16 v3, 0x96
 
     .line 161
-    invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+    invoke-virtual {v1, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    new-array v2, v1, [Landroid/animation/Animator;
+    new-array v3, v2, [Landroid/animation/Animator;
 
     .line 162
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;->getShadow()Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v4
 
-    sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    new-array v1, v1, [F
+    new-array v2, v2, [F
 
     if-eqz p1, :cond_5
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v6, 0x3f800000    # 1.0f
 
     goto :goto_1
 
     :cond_5
-    const/4 v5, 0x0
-
-    :goto_1
     const/4 v6, 0x0
 
-    aput v5, v1, v6
+    :goto_1
+    aput v6, v2, v0
 
-    invoke-static {v3, v4, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v4, v5, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v1
+    move-result-object v2
 
-    aput-object v1, v2, v6
+    aput-object v2, v3, v0
 
-    invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 163
-    new-instance v1, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$runShadowAnimation$1$1;
+    new-instance v0, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$runShadowAnimation$1$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$runShadowAnimation$1$1;-><init>(Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;Z)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$runShadowAnimation$1$1;-><init>(Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;Z)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     .line 179
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
+    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     .line 160
-    iput-object v0, p0, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
+    iput-object v1, p0, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     :cond_6
     return-void

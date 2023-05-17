@@ -39,7 +39,7 @@ public final class CatalogRepositoryImpl$getLanguages$2 extends Lambda implement
         if (entities.isEmpty()) {
             Observable<Result<List<CatalogLanguage>>> languages = this.this$0.getLanguages(true);
             schedulersProvider = this.this$0.schedulersProvider;
-            return languages.subscribeOn(schedulersProvider.mo694io());
+            return languages.subscribeOn(schedulersProvider.mo699io());
         }
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(entities, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);

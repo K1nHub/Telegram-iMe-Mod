@@ -327,7 +327,7 @@ public class GlGenericDrawer implements RendererCommon.GlDrawer {
                 this.inPosLocation[i][i8] = createShader.getAttribLocation(INPUT_VERTEX_COORDINATE_NAME);
                 this.inTcLocation[i][i8] = createShader.getAttribLocation(INPUT_TEXTURE_COORDINATE_NAME);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 return;
             }
         }

@@ -72,9 +72,9 @@
     .line 908
     iget-object p1, p0, Lorg/telegram/ui/DataUsage2Activity$RoundingCell;->paint:Landroid/graphics/Paint;
 
-    const-string v0, "windowBackgroundWhite"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

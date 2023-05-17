@@ -439,7 +439,7 @@
     .line 562
     iget-object v9, v1, Lio/grpc/internal/AbstractManagedChannelImplBuilder;->target:Ljava/lang/String;
 
-    const-string v10, "target"
+    const-string/jumbo v10, "target"
 
     invoke-static {v9, v10}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -458,7 +458,7 @@
 
     iput-object v12, v0, Lio/grpc/internal/ManagedChannelImpl;->logId:Lio/grpc/InternalLogId;
 
-    const-string v10, "timeProvider"
+    const-string/jumbo v10, "timeProvider"
 
     .line 564
     invoke-static {v3, v10}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -868,7 +868,7 @@
 
     iput-object v2, v0, Lio/grpc/internal/ManagedChannelImpl;->interceptorChannel:Lio/grpc/Channel;
 
-    const-string v2, "stopwatchSupplier"
+    const-string/jumbo v2, "stopwatchSupplier"
 
     move-object/from16 v7, p5
 
@@ -2553,7 +2553,7 @@
 
     sget-object v1, Lio/grpc/ChannelLogger$ChannelLogLevel;->DEBUG:Lio/grpc/ChannelLogger$ChannelLogLevel;
 
-    const-string v2, "shutdown() called"
+    const-string/jumbo v2, "shutdown() called"
 
     invoke-virtual {v0, v1, v2}, Lio/grpc/ChannelLogger;->log(Lio/grpc/ChannelLogger$ChannelLogLevel;Ljava/lang/String;)V
 
@@ -2620,7 +2620,7 @@
 
     sget-object v1, Lio/grpc/ChannelLogger$ChannelLogLevel;->DEBUG:Lio/grpc/ChannelLogger$ChannelLogLevel;
 
-    const-string v2, "shutdownNow() called"
+    const-string/jumbo v2, "shutdownNow() called"
 
     invoke-virtual {v0, v1, v2}, Lio/grpc/ChannelLogger;->log(Lio/grpc/ChannelLogger$ChannelLogLevel;Ljava/lang/String;)V
 
@@ -2669,7 +2669,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/ManagedChannelImpl;->target:Ljava/lang/String;
 
-    const-string v2, "target"
+    const-string/jumbo v2, "target"
 
     .line 1725
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

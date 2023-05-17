@@ -2,38 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/StickersActivity$ListAdapter;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/StickersActivity$ListAdapter;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
+    iput-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/StickersActivity$ListAdapter;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    invoke-static {v0, v1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->$r8$lambda$Pi9n0PsV-ZUAui1iCsR1RY_pOdw(Lorg/telegram/ui/StickersActivity$ListAdapter;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/StickersActivity$ListAdapter;->$r8$lambda$bUX_jk5vTU_t2KxWqXA2MkXi_nk(Lorg/telegram/ui/StickersActivity$ListAdapter;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

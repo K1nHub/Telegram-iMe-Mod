@@ -35,7 +35,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "stakingProgrammeProvider"
+    const-string/jumbo v0, "stakingProgrammeProvider"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -166,7 +166,7 @@
 
     if-eqz p2, :cond_1
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_WITH_RIGHT_BUTTON:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_ITEM_WITH_RIGHT_BUTTON:I
 
     goto :goto_0
 

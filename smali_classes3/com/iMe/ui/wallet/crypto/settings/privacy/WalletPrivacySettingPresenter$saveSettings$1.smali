@@ -70,7 +70,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 89
+    .line 90
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     check-cast p2, Lcom/iMe/storage/domain/model/Result;
@@ -120,7 +120,7 @@
 
     aput-object p2, v0, p1
 
-    .line 90
+    .line 91
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1

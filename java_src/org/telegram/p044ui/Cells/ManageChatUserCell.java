@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.SimpleTextView;
@@ -30,7 +30,7 @@ public class ManageChatUserCell extends FrameLayout {
     private CharSequence currrntStatus;
     private ImageView customImageView;
     private ManageChatUserCellDelegate delegate;
-    private String dividerColor;
+    private int dividerColor;
     private boolean isAdmin;
     private TLRPC$FileLocation lastAvatar;
     private String lastName;
@@ -62,20 +62,21 @@ public class ManageChatUserCell extends FrameLayout {
     public ManageChatUserCell(Context context, int i, int i2, boolean z, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.currentAccount = UserConfig.selectedAccount;
+        this.dividerColor = -1;
         this.resourcesProvider = resourcesProvider;
-        this.statusColor = Theme.getColor("windowBackgroundWhiteGrayText", resourcesProvider);
-        this.statusOnlineColor = Theme.getColor("windowBackgroundWhiteBlueText", resourcesProvider);
+        this.statusColor = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider);
+        this.statusOnlineColor = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText, resourcesProvider);
         this.namePadding = i2;
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(23));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(23));
         BackupImageView backupImageView2 = this.avatarImageView;
         boolean z2 = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(46, 46, (z2 ? 5 : 3) | 48, z2 ? 0 : i + 7, 8, z2 ? i + 7 : 0, 0));
         SimpleTextView simpleTextView = new SimpleTextView(context);
         this.nameTextView = simpleTextView;
-        simpleTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText", resourcesProvider));
+        simpleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
         this.nameTextView.setTextSize(17);
         this.nameTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.nameTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
@@ -93,9 +94,9 @@ public class ManageChatUserCell extends FrameLayout {
             ImageView imageView = new ImageView(context);
             this.optionsButton = imageView;
             imageView.setFocusable(false);
-            this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("stickers_menuSelector", resourcesProvider)));
-            this.optionsButton.setImageResource(C3242R.C3244drawable.ic_ab_other);
-            this.optionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu", resourcesProvider), PorterDuff.Mode.MULTIPLY));
+            this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector, resourcesProvider)));
+            this.optionsButton.setImageResource(C3290R.C3292drawable.ic_ab_other);
+            this.optionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu, resourcesProvider), PorterDuff.Mode.MULTIPLY));
             this.optionsButton.setScaleType(ImageView.ScaleType.CENTER);
             addView(this.optionsButton, LayoutHelper.createFrame(60, 64, (LocaleController.isRTL ? 3 : 5) | 48));
             this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.ManageChatUserCell$$ExternalSyntheticLambda0
@@ -104,7 +105,7 @@ public class ManageChatUserCell extends FrameLayout {
                     ManageChatUserCell.this.lambda$new$0(view);
                 }
             });
-            this.optionsButton.setContentDescription(LocaleController.getString("AccDescrUserOptions", C3242R.string.AccDescrUserOptions));
+            this.optionsButton.setContentDescription(LocaleController.getString("AccDescrUserOptions", C3290R.string.AccDescrUserOptions));
         }
     }
 
@@ -118,7 +119,7 @@ public class ManageChatUserCell extends FrameLayout {
         this.customImageView = imageView;
         imageView.setImageResource(i);
         this.customImageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.customImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("voipgroup_mutedIconUnscrolled", this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
+        this.customImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_voipgroup_mutedIconUnscrolled, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
         addView(this.customImageView, LayoutHelper.createFrame(52, 64, (LocaleController.isRTL ? 3 : 5) | 48));
     }
 
@@ -198,13 +199,13 @@ public class ManageChatUserCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(64) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     public long getUserId() {
         Object obj = this.currentObject;
         if (obj instanceof TLRPC$User) {
-            return ((TLRPC$User) obj).f1567id;
+            return ((TLRPC$User) obj).f1574id;
         }
         return 0L;
     }
@@ -226,8 +227,8 @@ public class ManageChatUserCell extends FrameLayout {
         this.nameTextView.setTextColor(i);
     }
 
-    public void setDividerColor(String str) {
-        this.dividerColor = str;
+    public void setDividerColor(int i) {
+        this.dividerColor = i;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:114:0x019f, code lost:
@@ -263,11 +264,11 @@ public class ManageChatUserCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            String str = this.dividerColor;
-            if (str != null) {
-                Theme.dividerExtraPaint.setColor(Theme.getColor(str, this.resourcesProvider));
+            int i = this.dividerColor;
+            if (i >= 0) {
+                Theme.dividerExtraPaint.setColor(Theme.getColor(i, this.resourcesProvider));
             }
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(68), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(68) : 0), getMeasuredHeight() - 1, this.dividerColor != null ? Theme.dividerExtraPaint : Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(68), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(68) : 0), getMeasuredHeight() - 1, this.dividerColor >= 0 ? Theme.dividerExtraPaint : Theme.dividerPaint);
         }
     }
 }

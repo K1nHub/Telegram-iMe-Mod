@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: HeaderWithNetworkSwitcherProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.HeaderWithNetworkSwitcherProvider$convert$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class HeaderWithNetworkSwitcherProvider$convert$2 extends Lambda implements Function1<NetworkTypeView, Unit> {
     final /* synthetic */ HeaderItemWithNetworkSwitcher $item;
 

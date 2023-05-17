@@ -25,7 +25,7 @@ final class AddressMismatchPresenter$deleteActiveWallet$2 extends Lambda impleme
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(Throwable th) {
-        Timber.m6d(th);
+        Timber.m8d(th);
         AddressMismatchView addressMismatchView = (AddressMismatchView) this.this$0.getViewState();
         String message = th.getMessage();
         if (message == null) {

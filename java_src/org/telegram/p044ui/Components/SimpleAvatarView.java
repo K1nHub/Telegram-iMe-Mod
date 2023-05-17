@@ -28,8 +28,8 @@ public class SimpleAvatarView extends View {
         this.avatarImage = new ImageReceiver(this);
         this.avatarDrawable = new AvatarDrawable();
         this.selectPaint = new Paint(1);
-        this.avatarImage.setRoundRadius(AndroidUtilities.m50dp(28));
-        this.selectPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.avatarImage.setRoundRadius(AndroidUtilities.m54dp(28));
+        this.selectPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.selectPaint.setStyle(Paint.Style.STROKE);
     }
 
@@ -51,7 +51,7 @@ public class SimpleAvatarView extends View {
         canvas.save();
         float f = (this.selectProgress * 0.1f) + 0.9f;
         canvas.scale(f, f);
-        this.selectPaint.setColor(Theme.getColor("dialogTextBlue"));
+        this.selectPaint.setColor(Theme.getColor(Theme.key_dialogTextBlue));
         Paint paint = this.selectPaint;
         paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.selectProgress));
         float strokeWidth = this.selectPaint.getStrokeWidth();

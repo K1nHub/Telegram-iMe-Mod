@@ -7,7 +7,7 @@ import android.os.Build;
 import android.system.OsConstants;
 import android.util.Log;
 import androidx.exifinterface.media.ExifInterfaceUtils;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.io.BufferedInputStream;
@@ -15,6 +15,7 @@ import java.io.ByteArrayInputStream;
 import java.io.DataInput;
 import java.io.DataInputStream;
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -133,7 +134,7 @@ public class ExifInterface {
         sExifTagMapsForWriting = new HashMap[exifTagArr11.length];
         sTagSetForCompatibility = new HashSet<>(Arrays.asList("FNumber", "DigitalZoomRatio", "ExposureTime", "SubjectDistance", "GPSTimeStamp"));
         sExifPointerTagMap = new HashMap<>();
-        Charset forName = Charset.forName(C0470C.ASCII_NAME);
+        Charset forName = Charset.forName(C0475C.ASCII_NAME);
         ASCII = forName;
         IDENTIFIER_EXIF_APP1 = "Exif\u0000\u0000".getBytes(forName);
         IDENTIFIER_XMP_APP1 = "http://ns.adobe.com/xap/1.0/\u0000".getBytes(forName);
@@ -436,6 +437,15 @@ public class ExifInterface {
             }
             return (i3 == 12 || i2 == 12) && i == 11;
         }
+    }
+
+    public ExifInterface(File file) throws IOException {
+        ExifTag[][] exifTagArr = EXIF_TAGS;
+        this.mAttributes = new HashMap[exifTagArr.length];
+        this.mAttributesOffsets = new HashSet(exifTagArr.length);
+        this.mExifByteOrder = ByteOrder.BIG_ENDIAN;
+        Objects.requireNonNull(file, "file cannot be null");
+        initForFilename(file.getAbsolutePath());
     }
 
     public ExifInterface(String str) throws IOException {

@@ -37,7 +37,7 @@
 .method constructor <init>(Ljava/lang/String;Lorg/telegram/tgnet/ResultCallback;)V
     .locals 0
 
-    .line 159
+    .line 166
     iput-object p1, p0, Lorg/telegram/messenger/ChatThemeController$1;->val$emoticon:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/messenger/ChatThemeController$1;->val$callback:Lorg/telegram/tgnet/ResultCallback;
@@ -52,7 +52,7 @@
 .method public bridge synthetic onComplete(Ljava/lang/Object;)V
     .locals 0
 
-    .line 159
+    .line 166
     check-cast p1, Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/ChatThemeController$1;->onComplete(Ljava/util/List;)V
@@ -71,7 +71,7 @@
         }
     .end annotation
 
-    .line 162
+    .line 169
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -89,7 +89,7 @@
 
     check-cast v0, Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 163
+    .line 170
     iget-object v1, p0, Lorg/telegram/messenger/ChatThemeController$1;->val$emoticon:Ljava/lang/String;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getEmoticon()Ljava/lang/String;
@@ -102,10 +102,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 164
+    .line 171
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/EmojiThemes;->initColors()V
 
-    .line 165
+    .line 172
     iget-object p1, p0, Lorg/telegram/messenger/ChatThemeController$1;->val$callback:Lorg/telegram/tgnet/ResultCallback;
 
     invoke-interface {p1, v0}, Lorg/telegram/tgnet/ResultCallback;->onComplete(Ljava/lang/Object;)V
@@ -125,7 +125,7 @@
 .method public onError(Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 172
+    .line 179
     iget-object p1, p0, Lorg/telegram/messenger/ChatThemeController$1;->val$callback:Lorg/telegram/tgnet/ResultCallback;
 
     const/4 v0, 0x0

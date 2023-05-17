@@ -23,8 +23,8 @@ public class LoadingDrawable extends Drawable {
     public Paint backgroundPaint;
     public Integer color1;
     public Integer color2;
-    public String colorKey1;
-    public String colorKey2;
+    public int colorKey1;
+    public int colorKey2;
     private LinearGradient disappearGradient;
     private int disappearGradientWidth;
     private Matrix disappearMatrix;
@@ -69,8 +69,8 @@ public class LoadingDrawable extends Drawable {
         this.disappearStart = -1L;
         this.matrix = new Matrix();
         this.strokeMatrix = new Matrix();
-        this.colorKey1 = "dialogBackground";
-        this.colorKey2 = "dialogBackgroundGray";
+        this.colorKey1 = Theme.key_dialogBackground;
+        this.colorKey2 = Theme.key_dialogBackgroundGray;
         this.gradientWidthScale = 1.0f;
         this.speed = 1.0f;
         this.paint = new Paint(1);
@@ -129,15 +129,15 @@ public class LoadingDrawable extends Drawable {
 
     public void setRadiiDp(float f) {
         if (this.usePath != null) {
-            this.paint.setPathEffect(new CornerPathEffect(AndroidUtilities.m51dp(f)));
-            this.strokePaint.setPathEffect(new CornerPathEffect(AndroidUtilities.m51dp(f)));
+            this.paint.setPathEffect(new CornerPathEffect(AndroidUtilities.m55dp(f)));
+            this.strokePaint.setPathEffect(new CornerPathEffect(AndroidUtilities.m55dp(f)));
             return;
         }
         setRadiiDp(f, f, f, f);
     }
 
     public void setRadiiDp(float f, float f2, float f3, float f4) {
-        setRadii(AndroidUtilities.m51dp(f), AndroidUtilities.m51dp(f2), AndroidUtilities.m51dp(f3), AndroidUtilities.m51dp(f4));
+        setRadii(AndroidUtilities.m55dp(f), AndroidUtilities.m55dp(f2), AndroidUtilities.m55dp(f3), AndroidUtilities.m55dp(f4));
     }
 
     public void setRadii(float f, float f2, float f3, float f4) {
@@ -159,6 +159,26 @@ public class LoadingDrawable extends Drawable {
         this.path.addRoundRect(this.rectF, this.radii, Path.Direction.CW);
     }
 
+    public void setRadii(float[] fArr) {
+        if (fArr == null || fArr.length != 8) {
+            return;
+        }
+        boolean z = false;
+        for (int i = 0; i < 8; i++) {
+            float[] fArr2 = this.radii;
+            if (fArr2[i] != fArr[i]) {
+                fArr2[i] = fArr[i];
+                z = true;
+            }
+        }
+        if (this.lastBounds == null || !z) {
+            return;
+        }
+        this.path.rewind();
+        this.rectF.set(this.lastBounds);
+        this.path.addRoundRect(this.rectF, fArr, Path.Direction.CW);
+    }
+
     public void setBounds(RectF rectF) {
         super.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
     }
@@ -178,20 +198,22 @@ public class LoadingDrawable extends Drawable {
         this.disappearStart = -1L;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0220  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02f0  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0317  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0323  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x03ca  */
-    /* JADX WARN: Removed duplicated region for block: B:99:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0222  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x02f7  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x031e  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x032a  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0331  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0379  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x03c5  */
+    /* JADX WARN: Removed duplicated region for block: B:94:? A[RETURN, SYNTHETIC] */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void draw(android.graphics.Canvas r25) {
+    public void draw(android.graphics.Canvas r26) {
         /*
-            Method dump skipped, instructions count: 1060
+            Method dump skipped, instructions count: 1056
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.LoadingDrawable.draw(android.graphics.Canvas):void");

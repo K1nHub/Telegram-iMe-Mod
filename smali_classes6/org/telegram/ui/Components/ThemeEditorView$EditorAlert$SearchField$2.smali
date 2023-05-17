@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;Landroid/content/Context;Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)V
     .locals 0
 
-    .line 198
+    .line 199
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$2;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 201
+    .line 202
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 202
+    .line 203
     invoke-virtual {v0}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v1
@@ -65,7 +65,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/MotionEvent;->setLocation(FF)V
 
-    .line 203
+    .line 204
     iget-object v1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$2;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -76,10 +76,10 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 204
+    .line 205
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 205
+    .line 206
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1

@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 41
+    .line 48
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$rootView$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->access$initRootView(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Landroid/widget/LinearLayout;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 41
+    .line 48
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$rootView$2;->invoke()Landroid/widget/LinearLayout;
 
     move-result-object v0

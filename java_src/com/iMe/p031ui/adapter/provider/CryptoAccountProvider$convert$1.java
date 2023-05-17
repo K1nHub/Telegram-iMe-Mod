@@ -7,14 +7,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CryptoAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CryptoAccountProvider$convert$1 extends Lambda implements Function1<ActionBarMenuItem, Unit> {
     final /* synthetic */ CryptoAccountItem $item;
     final /* synthetic */ CryptoAccountProvider this$0;
@@ -38,13 +38,13 @@ public final class CryptoAccountProvider$convert$1 extends Lambda implements Fun
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         applyForView.setLongClickEnabled(false);
         applyForView.setSubMenuOpenSide(2);
-        applyForView.setIcon(C3242R.C3244drawable.ic_ab_other);
+        applyForView.setIcon(C3290R.C3292drawable.ic_ab_other);
         ViewExtKt.setCircleRippleBackground(applyForView);
         this.this$0.setupMenuItems(applyForView, this.$item.getNetworkType(), this.$item.getAddress());
-        applyForView.redrawPopup(Theme.getColor("actionBarDefaultSubmenuBackground"));
-        applyForView.setPopupItemsColor(Theme.getColor("actionBarDefaultSubmenuItem"), false);
-        applyForView.setPopupItemsColor(Theme.getColor("actionBarDefaultSubmenuItemIcon"), true);
-        applyForView.setupPopupRadialSelectors(Theme.getColor("listSelectorSDK21"));
+        applyForView.redrawPopup(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground));
+        applyForView.setPopupItemsColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem), false);
+        applyForView.setPopupItemsColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon), true);
+        applyForView.setupPopupRadialSelectors(Theme.getColor(Theme.key_listSelector));
         applyForView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$1$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -52,7 +52,7 @@ public final class CryptoAccountProvider$convert$1 extends Lambda implements Fun
             }
         });
         applyForView.setDelegate(this.this$0.getActionBarMenuItemDelegate());
-        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
+        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

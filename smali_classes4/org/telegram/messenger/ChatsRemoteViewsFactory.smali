@@ -95,7 +95,7 @@
 
     iput p2, p0, Lorg/telegram/messenger/ChatsRemoteViewsFactory;->appWidgetId:I
 
-    const-string p2, "shortcut_widget"
+    const-string/jumbo p2, "shortcut_widget"
 
     .line 58
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
@@ -1445,9 +1445,9 @@
     :try_start_1
     new-instance v0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;
 
-    const-string v11, "chats_attachMessage"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chats_attachMessage:I
 
-    invoke-direct {v0, v11}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v11}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(I)V
 
     invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
 
@@ -1556,9 +1556,9 @@
     :try_start_2
     new-instance v0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;
 
-    const-string v4, "chats_nameMessage"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_nameMessage:I
 
-    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(I)V
 
     invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
 

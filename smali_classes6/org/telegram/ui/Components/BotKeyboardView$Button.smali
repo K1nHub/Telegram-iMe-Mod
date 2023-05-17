@@ -24,10 +24,10 @@
     .line 151
     invoke-virtual {p0, p3}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    const-string p2, "chat_botKeyboardButtonText"
-
     .line 152
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/BotKeyboardView;->access$000(Lorg/telegram/ui/Components/BotKeyboardView;Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_botKeyboardButtonText:I
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/BotKeyboardView;->access$000(Lorg/telegram/ui/Components/BotKeyboardView;I)I
 
     move-result p2
 
@@ -40,15 +40,15 @@
 
     move-result v0
 
-    const-string v1, "chat_botKeyboardButtonBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_botKeyboardButtonBackground:I
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/BotKeyboardView;->access$000(Lorg/telegram/ui/Components/BotKeyboardView;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/BotKeyboardView;->access$000(Lorg/telegram/ui/Components/BotKeyboardView;I)I
 
     move-result v1
 
-    const-string v2, "chat_botKeyboardButtonBackgroundPressed"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_botKeyboardButtonBackgroundPressed:I
 
-    invoke-static {p1, v2}, Lorg/telegram/ui/Components/BotKeyboardView;->access$000(Lorg/telegram/ui/Components/BotKeyboardView;Ljava/lang/String;)I
+    invoke-static {p1, v2}, Lorg/telegram/ui/Components/BotKeyboardView;->access$000(Lorg/telegram/ui/Components/BotKeyboardView;I)I
 
     move-result p1
 

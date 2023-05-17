@@ -1900,14 +1900,12 @@
 
     move-object/from16 v1, p0
 
-    const-string v2, "dialogTextBlack"
-
     .line 1318
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v3, 0x17
+    const/16 v2, 0x17
 
-    if-ge v0, v3, :cond_0
+    if-ge v0, v2, :cond_0
 
     return-void
 
@@ -1922,21 +1920,21 @@
     if-eqz v0, :cond_5
 
     .line 1322
-    iget-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintView:Landroid/widget/ImageView;
+    iget-object v2, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintView:Landroid/widget/ImageView;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getVisibility()I
+    invoke-virtual {v2}, Landroid/widget/ImageView;->getVisibility()I
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_5
+    if-nez v2, :cond_5
 
-    sget-boolean v3, Lorg/telegram/messenger/ApplicationLoader;->mainInterfacePaused:Z
+    sget-boolean v2, Lorg/telegram/messenger/ApplicationLoader;->mainInterfacePaused:Z
 
-    if-nez v3, :cond_5
+    if-nez v2, :cond_5
 
-    instance-of v3, v0, Lorg/telegram/ui/LaunchActivity;
+    instance-of v2, v0, Lorg/telegram/ui/LaunchActivity;
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     check-cast v0, Lorg/telegram/ui/LaunchActivity;
 
@@ -1984,16 +1982,16 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat;->from(Landroid/content/Context;)Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 1332
-    invoke-virtual {v3}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat;->isHardwareDetected()Z
+    invoke-virtual {v2}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat;->isHardwareDetected()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    invoke-virtual {v3}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat;->hasEnrolledFingerprints()Z
+    invoke-virtual {v2}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat;->hasEnrolledFingerprints()Z
 
     move-result v0
 
@@ -2016,69 +2014,71 @@
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-direct {v0, v4}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v3}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
 
-    const/16 v4, 0x18
+    const/16 v3, 0x18
 
     .line 1334
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    const/4 v6, 0x0
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-virtual {v0, v5, v6, v4, v6}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
+    move-result v3
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v0, v4, v5, v3, v5}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
 
     .line 1336
-    new-instance v4, Landroid/widget/TextView;
+    new-instance v3, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v4, v5}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v4}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const/16 v5, 0x3e8
+    const/16 v4, 0x3e8
 
     .line 1337
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setId(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setId(I)V
 
-    const v5, 0x1030208
+    const v4, 0x1030208
 
     .line 1338
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextAppearance(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextAppearance(I)V
 
     .line 1339
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    move-result v5
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v6
 
-    const-string v5, "FingerprintInfo"
+    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v6, "FingerprintInfo"
 
     .line 1340
     sget v7, Lorg/telegram/messenger/R$string;->FingerprintInfo:I
 
-    invoke-static {v5, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1341
-    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;)V
 
-    const/4 v5, -0x2
+    const/4 v6, -0x2
 
     .line 1342
-    invoke-static {v5, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createRelative(II)Landroid/widget/RelativeLayout$LayoutParams;
+    invoke-static {v6, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createRelative(II)Landroid/widget/RelativeLayout$LayoutParams;
 
     move-result-object v7
 
@@ -2093,33 +2093,33 @@
     invoke-virtual {v7, v8}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     .line 1345
-    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1347
-    new-instance v4, Landroid/widget/ImageView;
+    new-instance v3, Landroid/widget/ImageView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v7
 
-    invoke-direct {v4, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    iput-object v4, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintImageView:Landroid/widget/ImageView;
+    iput-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintImageView:Landroid/widget/ImageView;
 
     .line 1348
     sget v7, Lorg/telegram/messenger/R$drawable;->ic_fp_40px:I
 
-    invoke-virtual {v4, v7}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 1349
-    iget-object v4, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintImageView:Landroid/widget/ImageView;
+    iget-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintImageView:Landroid/widget/ImageView;
 
     const/16 v7, 0x3e9
 
-    invoke-virtual {v4, v7}, Landroid/widget/ImageView;->setId(I)V
+    invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setId(I)V
 
     .line 1350
-    iget-object v4, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintImageView:Landroid/widget/ImageView;
+    iget-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintImageView:Landroid/widget/ImageView;
 
     const/high16 v8, -0x40000000    # -2.0f
 
@@ -2143,26 +2143,26 @@
 
     move-result-object v8
 
-    invoke-virtual {v0, v4, v8}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v8}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1352
-    new-instance v4, Landroid/widget/TextView;
+    new-instance v3, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v8
 
-    invoke-direct {v4, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v4, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
+    iput-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
 
     const/16 v8, 0x10
 
     .line 1353
-    invoke-virtual {v4, v8}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 1354
-    iget-object v4, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
+    iget-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
 
     const-string v9, "FingerprintHelp"
 
@@ -2172,87 +2172,87 @@
 
     move-result-object v9
 
-    invoke-virtual {v4, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1355
-    iget-object v4, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
+    iget-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
 
     const v9, 0x10301f0
 
-    invoke-virtual {v4, v9}, Landroid/widget/TextView;->setTextAppearance(I)V
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setTextAppearance(I)V
 
     .line 1356
-    iget-object v4, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
+    iget-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v2
+    move-result v4
 
     const v9, 0x42ffffff    # 127.99999f
 
-    and-int/2addr v2, v9
+    and-int/2addr v4, v9
 
-    invoke-virtual {v4, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 1357
-    iget-object v2, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
+    iget-object v3, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;)V
 
     .line 1358
-    invoke-static {v5, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createRelative(II)Landroid/widget/RelativeLayout$LayoutParams;
+    invoke-static {v6, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createRelative(II)Landroid/widget/RelativeLayout$LayoutParams;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 1359
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMarginStart(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMarginStart(I)V
 
     const/16 v4, 0x8
 
     .line 1360
-    invoke-virtual {v2, v4, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    invoke-virtual {v3, v4, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
     const/4 v4, 0x6
 
     .line 1361
-    invoke-virtual {v2, v4, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    invoke-virtual {v3, v4, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
     const/16 v4, 0x11
 
     .line 1362
-    invoke-virtual {v2, v4, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    invoke-virtual {v3, v4, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
     .line 1363
     iget-object v4, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintStatusTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1365
-    new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    new-instance v3, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
-    invoke-direct {v2, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     const-string v4, "AppName"
 
     .line 1366
-    sget v5, Lorg/telegram/messenger/R$string;->AppName:I
+    sget v6, Lorg/telegram/messenger/R$string;->AppName:I
 
-    invoke-static {v4, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 1367
-    invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    invoke-virtual {v3, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     const-string v0, "Cancel"
 
@@ -2265,14 +2265,14 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v2, v0, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    invoke-virtual {v3, v0, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 1369
     new-instance v0, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/PasscodeView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/PasscodeView;)V
 
-    invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    invoke-virtual {v3, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 1380
     iget-object v0, v1, Lorg/telegram/ui/Components/PasscodeView;->fingerprintDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -2309,7 +2309,7 @@
     .line 1389
     :cond_3
     :goto_0
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
@@ -2323,7 +2323,7 @@
     iput-object v0, v1, Lorg/telegram/ui/Components/PasscodeView;->cancellationSignal:Landroidx/core/os/CancellationSignal;
 
     .line 1392
-    iput-boolean v6, v1, Lorg/telegram/ui/Components/PasscodeView;->selfCancelled:Z
+    iput-boolean v5, v1, Lorg/telegram/ui/Components/PasscodeView;->selfCancelled:Z
 
     .line 1394
     invoke-static {}, Lorg/telegram/messenger/FingerprintController;->createCipher()Z
@@ -2336,29 +2336,34 @@
 
     invoke-static {}, Lorg/telegram/messenger/FingerprintController;->getCipher()Ljavax/crypto/Cipher;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-direct {v0, v2}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat$CryptoObject;-><init>(Ljavax/crypto/Cipher;)V
+    invoke-direct {v0, v3}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat$CryptoObject;-><init>(Ljavax/crypto/Cipher;)V
 
     .line 1398
-    iget-boolean v2, v1, Lorg/telegram/ui/Components/PasscodeView;->isWalletScreen:Z
+    iget-boolean v3, v1, Lorg/telegram/ui/Components/PasscodeView;->isWalletScreen:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v3, :cond_4
 
-    move-object v4, v0
+    move-object v3, v0
+
+    goto :goto_1
 
     :cond_4
-    const/4 v5, 0x0
+    move-object v3, v4
 
-    iget-object v6, v1, Lorg/telegram/ui/Components/PasscodeView;->cancellationSignal:Landroidx/core/os/CancellationSignal;
+    :goto_1
+    const/4 v4, 0x0
 
-    new-instance v7, Lorg/telegram/ui/Components/PasscodeView$8;
+    iget-object v5, v1, Lorg/telegram/ui/Components/PasscodeView;->cancellationSignal:Landroidx/core/os/CancellationSignal;
 
-    invoke-direct {v7, v1}, Lorg/telegram/ui/Components/PasscodeView$8;-><init>(Lorg/telegram/ui/Components/PasscodeView;)V
+    new-instance v6, Lorg/telegram/ui/Components/PasscodeView$8;
 
-    const/4 v8, 0x0
+    invoke-direct {v6, v1}, Lorg/telegram/ui/Components/PasscodeView$8;-><init>(Lorg/telegram/ui/Components/PasscodeView;)V
 
-    invoke-virtual/range {v3 .. v8}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat;->authenticate(Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat$CryptoObject;ILandroidx/core/os/CancellationSignal;Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat$AuthenticationCallback;Landroid/os/Handler;)V
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat;->authenticate(Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat$CryptoObject;ILandroidx/core/os/CancellationSignal;Lorg/telegram/messenger/support/fingerprint/FingerprintManagerCompat$AuthenticationCallback;Landroid/os/Handler;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 

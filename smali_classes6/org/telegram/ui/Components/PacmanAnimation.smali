@@ -891,9 +891,9 @@
     .line 135
     iget-object v3, v0, Lorg/telegram/ui/Components/PacmanAnimation;->paint:Landroid/graphics/Paint;
 
-    const-string v4, "windowBackgroundWhite"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 

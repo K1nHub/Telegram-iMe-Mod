@@ -165,9 +165,9 @@
     .line 60
     iget-object v3, v0, Lorg/telegram/ui/Components/ContactsEmptyView;->titleTextView:Landroid/widget/TextView;
 
-    const-string v5, "windowBackgroundWhiteBlackText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -309,9 +309,9 @@
     .line 77
     new-instance v11, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v12, "windowBackgroundWhiteGrayText"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -342,7 +342,7 @@
     invoke-virtual {v11, v2, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 83
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 

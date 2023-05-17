@@ -35,7 +35,7 @@
     .line 461
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
-    const-string v0, "setupNetworkType"
+    const-string/jumbo v0, "setupNetworkType"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 

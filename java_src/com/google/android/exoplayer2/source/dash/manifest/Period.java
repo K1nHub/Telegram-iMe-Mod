@@ -9,7 +9,7 @@ public class Period {
     public final List<EventStream> eventStreams;
 
     /* renamed from: id */
-    public final String f129id;
+    public final String f132id;
     public final long startMs;
 
     public Period(String str, long j, List<AdaptationSet> list) {
@@ -21,7 +21,7 @@ public class Period {
     }
 
     public Period(String str, long j, List<AdaptationSet> list, List<EventStream> list2, Descriptor descriptor) {
-        this.f129id = str;
+        this.f132id = str;
         this.startMs = j;
         this.adaptationSets = Collections.unmodifiableList(list);
         this.eventStreams = Collections.unmodifiableList(list2);

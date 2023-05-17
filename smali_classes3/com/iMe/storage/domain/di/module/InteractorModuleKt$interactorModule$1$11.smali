@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n129#2,5:78\n129#2,5:83\n129#2,5:88\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$11\n*L\n54#1:78,5\n55#1:83,5\n56#1:88,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,81:1\n129#2,5:82\n129#2,5:87\n129#2,5:92\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$11\n*L\n58#1:82,5\n59#1:87,5\n60#1:92,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 54
+    .line 58
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 54
+    .line 58
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 54
+    .line 58
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 55
+    .line 59
     move-object v8, p2
 
     check-cast v8, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -149,7 +149,7 @@
 
     move-result-object p2
 
-    .line 55
+    .line 59
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/interactor/crypto/pin/PinCodeInteractor;
@@ -165,7 +165,7 @@
 
     move-result-object p2
 
-    .line 55
+    .line 59
     move-object v7, p2
 
     check-cast v7, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
@@ -181,12 +181,12 @@
 
     move-result-object p1
 
-    .line 56
+    .line 60
     move-object v5, p1
 
     check-cast v5, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 53
+    .line 57
     new-instance p1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     move-object v1, p1
@@ -199,7 +199,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 52
+    .line 56
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/PhotoViewer;
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda20;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final onDismiss(Landroid/content/DialogInterface;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/PhotoViewer;
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda20;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$BXMdYTJmG-nlMobfWOe0wQelqAc(Lorg/telegram/ui/PhotoViewer;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$RbBYSoLp2Q44qMD67uIx3DA6OC0(Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

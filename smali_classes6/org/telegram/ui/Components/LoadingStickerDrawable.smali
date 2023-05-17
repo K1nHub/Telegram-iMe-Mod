@@ -75,13 +75,13 @@
 
     return-void
 
-    :cond_0
-    const-string v0, "dialogBackground"
-
-    const-string v1, "dialogBackgroundGray"
-
     .line 62
-    invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Components/LoadingStickerDrawable;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    :cond_0
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackgroundGray:I
+
+    invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Components/LoadingStickerDrawable;->setColors(II)V
 
     .line 63
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -220,16 +220,16 @@
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(II)V
     .locals 9
 
     .line 43
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     .line 44
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

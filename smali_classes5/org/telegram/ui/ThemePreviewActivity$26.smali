@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$26;
-.super Landroid/view/View;
+.super Landroid/widget/FrameLayout;
 .source "ThemePreviewActivity.java"
 
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private paint:Landroid/graphics/Paint;
+.field private loc:[I
 
 .field final synthetic this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -24,109 +24,157 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 2017
+    .line 2302
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2019
-    new-instance p1, Landroid/graphics/Paint;
+    const/4 p1, 0x2
 
-    const/4 p2, 0x1
+    new-array p1, p1, [I
 
-    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->paint:Landroid/graphics/Paint;
+    .line 2304
+    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->loc:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 6
+.method public invalidate()V
+    .locals 1
 
-    .line 2023
+    .line 2308
+    invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 2309
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6800(Lorg/telegram/ui/ThemePreviewActivity;)Landroidx/viewpager/widget/ViewPager;
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$7400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
+    if-eqz v0, :cond_0
 
-    move-result v0
+    .line 2310
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    .line 2024
-    iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->paint:Landroid/graphics/Paint;
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$7400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    move-result-object v0
 
-    const-string v3, "chat_fieldOverlayText"
-
-    invoke-static {v2, v3}, Lorg/telegram/ui/ThemePreviewActivity;->access$6900(Lorg/telegram/ui/ThemePreviewActivity;Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
-
-    const/4 v1, 0x0
-
-    :goto_0
-    const/4 v2, 0x2
-
-    if-ge v1, v2, :cond_1
-
-    .line 2026
-    iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->paint:Landroid/graphics/Paint;
-
-    if-ne v1, v0, :cond_0
-
-    const/16 v3, 0xff
-
-    goto :goto_1
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_0
-    const/16 v3, 0x7f
+    return-void
+.end method
 
-    :goto_1
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
+.method protected onDraw(Landroid/graphics/Canvas;)V
+    .locals 4
 
-    mul-int/lit8 v2, v1, 0xf
+    .line 2316
+    sget-boolean p1, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
 
-    const/4 v3, 0x3
+    if-nez p1, :cond_2
 
-    add-int/2addr v2, v3
+    .line 2317
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->loc:[I
 
-    .line 2027
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
 
-    move-result v2
+    .line 2318
+    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    int-to-float v2, v2
+    const/16 v0, 0x15
 
-    const/4 v4, 0x4
+    const/4 v1, 0x1
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    if-ge p1, v0, :cond_0
 
-    move-result v4
+    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
-    int-to-float v4, v4
+    move-result p1
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    if-nez p1, :cond_0
 
-    move-result v3
+    .line 2319
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->loc:[I
 
-    int-to-float v3, v3
+    aget v0, p1, v1
 
-    iget-object v5, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->paint:Landroid/graphics/Paint;
+    sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    invoke-virtual {p1, v2, v4, v3, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    sub-int/2addr v0, v2
 
-    add-int/lit8 v1, v1, 0x1
+    aput v0, p1, v1
 
-    goto :goto_0
+    .line 2321
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
+
+    move-result p1
+
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->loc:[I
+
+    aget v0, v0, v1
+
+    int-to-float v0, v0
+
+    cmpl-float p1, p1, v0
+
+    if-eqz p1, :cond_1
+
+    .line 2322
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->loc:[I
+
+    aget v0, v0, v1
+
+    neg-int v0, v0
+
+    int-to-float v0, v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setTranslationY(F)V
+
+    .line 2323
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$7400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 2325
     :cond_1
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$26;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$7500(Lorg/telegram/ui/ThemePreviewActivity;)J
+
+    move-result-wide v2
+
+    cmp-long p1, v0, v2
+
+    if-gez p1, :cond_2
+
+    .line 2326
+    invoke-virtual {p0}, Lorg/telegram/ui/ThemePreviewActivity$26;->invalidate()V
+
+    :cond_2
     return-void
 .end method

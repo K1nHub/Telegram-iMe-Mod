@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity;)V
     .locals 0
 
-    .line 290
+    .line 327
     iput-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity;Lorg/telegram/ui/LiteModeSettingsActivity$1;)V
     .locals 0
 
-    .line 290
+    .line 327
     invoke-direct {p0, p1}, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 389
+    .line 426
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;->access$100(Lorg/telegram/ui/LiteModeSettingsActivity;)Ljava/util/ArrayList;
@@ -63,7 +63,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 381
+    .line 418
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;->access$100(Lorg/telegram/ui/LiteModeSettingsActivity;)Ljava/util/ArrayList;
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 384
+    .line 421
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
@@ -106,7 +106,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    .line 394
+    .line 431
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -151,7 +151,7 @@
 
     if-ltz p2, :cond_d
 
-    .line 332
+    .line 369
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;->access$100(Lorg/telegram/ui/LiteModeSettingsActivity;)Ljava/util/ArrayList;
@@ -166,7 +166,7 @@
 
     goto/16 :goto_5
 
-    .line 336
+    .line 373
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
@@ -180,19 +180,19 @@
 
     check-cast v0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
-    .line 337
+    .line 374
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 339
+    .line 376
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 340
+    .line 377
     iget-object p2, v0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
@@ -204,12 +204,12 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 342
+    .line 379
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
-    .line 343
+    .line 380
     invoke-virtual {p1}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->update()V
 
     goto/16 :goto_5
@@ -221,12 +221,12 @@
 
     if-ne v1, v3, :cond_9
 
-    .line 346
+    .line 383
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 347
+    .line 384
     iget-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -237,29 +237,29 @@
 
     const/16 v1, 0xc
 
-    .line 348
+    .line 385
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto :goto_0
 
-    .line 350
+    .line 387
     :cond_3
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 352
+    .line 389
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 353
+    .line 390
     iget-object v0, v0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
     if-lez p2, :cond_4
 
-    .line 354
+    .line 391
     iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LiteModeSettingsActivity;->access$100(Lorg/telegram/ui/LiteModeSettingsActivity;)Ljava/util/ArrayList;
@@ -288,7 +288,7 @@
     :goto_1
     add-int/2addr p2, v2
 
-    .line 355
+    .line 392
     iget-object v1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->access$100(Lorg/telegram/ui/LiteModeSettingsActivity;)Ljava/util/ArrayList;
@@ -323,22 +323,22 @@
     move v2, v4
 
     :goto_2
-    const-string p2, "windowBackgroundGrayShadow"
-
     if-eqz v0, :cond_6
 
     if-eqz v2, :cond_6
 
-    .line 357
-    iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
+    .line 394
+    iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p2
 
-    sget v1, Lorg/telegram/messenger/R$drawable;->greydivider:I
+    sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v0, v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -349,16 +349,18 @@
     :cond_6
     if-eqz v0, :cond_7
 
-    .line 359
-    iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
+    .line 396
+    iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p2
 
-    sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
+    sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v0, v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -369,16 +371,18 @@
     :cond_7
     if-eqz v2, :cond_8
 
-    .line 361
-    iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
+    .line 398
+    iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p2
 
-    sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
+    sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
 
-    invoke-static {v0, v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -389,7 +393,7 @@
     :cond_8
     const/4 p2, 0x0
 
-    .line 363
+    .line 400
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_5
@@ -410,29 +414,29 @@
 
     if-ne v1, p2, :cond_d
 
-    .line 370
+    .line 407
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCell;
 
-    .line 371
+    .line 408
     iget p2, v0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->type:I
 
-    if-nez p2, :cond_d
+    if-ne p2, v2, :cond_d
 
-    .line 372
+    .line 409
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p2
 
     const-string v1, "view_animations"
 
-    .line 373
+    .line 410
     invoke-interface {p2, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p2
 
-    .line 374
+    .line 411
     iget-object v0, v0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0, p2, v4}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -443,7 +447,7 @@
     :goto_3
     add-int/2addr p2, v2
 
-    .line 366
+    .line 403
     iget-object v1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/LiteModeSettingsActivity;->access$100(Lorg/telegram/ui/LiteModeSettingsActivity;)Ljava/util/ArrayList;
@@ -477,13 +481,13 @@
     :cond_c
     move v2, v4
 
-    .line 367
+    .line 404
     :goto_4
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;
 
-    .line 368
+    .line 405
     invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;->set(Lorg/telegram/ui/LiteModeSettingsActivity$Item;Z)V
 
     :cond_d
@@ -494,80 +498,82 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 6
 
-    .line 295
+    .line 332
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const-string p1, "windowBackgroundWhite"
-
     if-nez p2, :cond_0
 
-    .line 298
-    new-instance p2, Lorg/telegram/ui/Cells/HeaderCell;
+    .line 335
+    new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-direct {p2, v1}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, v1}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 299
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 336
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_1
 
     :cond_0
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    if-ne p2, v0, :cond_1
+    if-ne p2, p1, :cond_1
 
-    .line 301
-    new-instance p2, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
+    .line 338
+    new-instance p1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
-    iget-object v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
+    iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    invoke-direct {p2, v0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity;Landroid/content/Context;)V
+    invoke-direct {p1, p2, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity;Landroid/content/Context;)V
 
-    .line 303
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 340
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x2
+    const/4 p1, 0x2
 
-    if-ne p2, v0, :cond_2
+    if-ne p2, p1, :cond_2
 
-    .line 305
-    new-instance p2, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter$1;
+    .line 342
+    new-instance p1, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter$1;
 
-    invoke-direct {p2, p0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter$1;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;Landroid/content/Context;)V
+    invoke-direct {p1, p0, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter$1;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;Landroid/content/Context;)V
 
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x3
+    const/4 p1, 0x3
 
-    if-eq p2, v0, :cond_5
+    if-eq p2, p1, :cond_5
 
-    const/4 v0, 0x4
+    const/4 p1, 0x4
 
-    if-ne p2, v0, :cond_3
+    if-ne p2, p1, :cond_3
 
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x5
+    const/4 p1, 0x5
 
-    if-ne p2, v0, :cond_4
+    if-ne p2, p1, :cond_4
 
-    .line 324
-    new-instance p2, Lorg/telegram/ui/Cells/TextCell;
+    .line 361
+    new-instance p1, Lorg/telegram/ui/Cells/TextCell;
 
     const/16 v2, 0x17
 
@@ -577,38 +583,40 @@
 
     const/4 v5, 0x0
 
-    move-object v0, p2
+    move-object v0, p1
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;IZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 325
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 362
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_1
 
     :cond_4
-    const/4 p2, 0x0
+    const/4 p1, 0x0
 
     goto :goto_1
 
-    .line 322
+    .line 359
     :cond_5
     :goto_0
-    new-instance p2, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;
+    new-instance p1, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;
 
-    iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
+    iget-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Adapter;->this$0:Lorg/telegram/ui/LiteModeSettingsActivity;
 
-    invoke-direct {p2, p1, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity;Landroid/content/Context;)V
+    invoke-direct {p1, p2, v1}, Lorg/telegram/ui/LiteModeSettingsActivity$SwitchCell;-><init>(Lorg/telegram/ui/LiteModeSettingsActivity;Landroid/content/Context;)V
 
-    .line 327
+    .line 364
     :goto_1
-    new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
+    new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
 
-    return-object p1
+    return-object p2
 .end method

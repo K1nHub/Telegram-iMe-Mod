@@ -97,3 +97,57 @@
 
     return-void
 .end method
+
+.method constructor <init>(Landroidx/fragment/app/FragmentTransaction$Op;)V
+    .locals 1
+
+    .line 102
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 103
+    iget v0, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mCmd:I
+
+    iput v0, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mCmd:I
+
+    .line 104
+    iget-object v0, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mFragment:Landroidx/fragment/app/Fragment;
+
+    iput-object v0, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mFragment:Landroidx/fragment/app/Fragment;
+
+    .line 105
+    iget-boolean v0, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mFromExpandedOp:Z
+
+    iput-boolean v0, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mFromExpandedOp:Z
+
+    .line 106
+    iget v0, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mEnterAnim:I
+
+    iput v0, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mEnterAnim:I
+
+    .line 107
+    iget v0, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mExitAnim:I
+
+    iput v0, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mExitAnim:I
+
+    .line 108
+    iget v0, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mPopEnterAnim:I
+
+    iput v0, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mPopEnterAnim:I
+
+    .line 109
+    iget v0, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mPopExitAnim:I
+
+    iput v0, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mPopExitAnim:I
+
+    .line 110
+    iget-object v0, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mOldMaxState:Landroidx/lifecycle/Lifecycle$State;
+
+    iput-object v0, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mOldMaxState:Landroidx/lifecycle/Lifecycle$State;
+
+    .line 111
+    iget-object p1, p1, Landroidx/fragment/app/FragmentTransaction$Op;->mCurrentMaxState:Landroidx/lifecycle/Lifecycle$State;
+
+    iput-object p1, p0, Landroidx/fragment/app/FragmentTransaction$Op;->mCurrentMaxState:Landroidx/lifecycle/Lifecycle$State;
+
+    return-void
+.end method

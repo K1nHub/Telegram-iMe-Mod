@@ -15,8 +15,8 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.android.gms.common.internal.ImagesContract;
 import com.iMe.model.wallet.crypto.simplex.PaymentResult;
 import com.iMe.p031ui.base.WalletAuthFragment;
@@ -42,16 +42,16 @@ import kotlin.reflect.KProperty;
 import kotlin.text.Charsets;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3242R;
-import org.telegram.messenger.databinding.ForkFragmentWebViewBinding;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.messenger.C3290R;
+import org.telegram.messenger.databinding.ForkWebScreenBinding;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 /* compiled from: SimplexWebViewProcessingFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment */
 /* loaded from: classes3.dex */
 public final class SimplexWebViewProcessingFragment extends WalletAuthFragment implements SimplexWebViewProcessingView {
-    static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(SimplexWebViewProcessingFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(SimplexWebViewProcessingFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;", 0)), Reflection.property1(new PropertyReference1Impl(SimplexWebViewProcessingFragment.class, ImagesContract.URL, "getUrl()Ljava/lang/String;", 0))};
+    static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(SimplexWebViewProcessingFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(SimplexWebViewProcessingFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;", 0)), Reflection.property1(new PropertyReference1Impl(SimplexWebViewProcessingFragment.class, ImagesContract.URL, "getUrl()Ljava/lang/String;", 0))};
     public static final Companion Companion = new Companion(null);
     private final ResettableLazy binding$delegate;
     private String mCameraPhotoPath;
@@ -84,8 +84,8 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final ForkFragmentWebViewBinding getBinding() {
-        return (ForkFragmentWebViewBinding) this.binding$delegate.getValue(this, $$delegatedProperties[1]);
+    public final ForkWebScreenBinding getBinding() {
+        return (ForkWebScreenBinding) this.binding$delegate.getValue(this, $$delegatedProperties[1]);
     }
 
     private final String getUrl() {
@@ -95,10 +95,13 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
     @Override // com.iMe.p031ui.base.mvp.MvpFragment
     public View onCreateView(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
+        WebView webView = getBinding().webView;
+        Intrinsics.checkNotNullExpressionValue(webView, "binding.webView");
+        ViewExtKt.gone$default(webView, false, 1, null);
         setupActionBar();
         setupWebView();
         setupColors();
-        LinearLayout root = getBinding().getRoot();
+        ConstraintLayout root = getBinding().getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "binding.root");
         return root;
     }
@@ -201,7 +204,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
+        }, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
         return arrayListOf;
     }
 
@@ -224,7 +227,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
 
             @Override // android.webkit.WebChromeClient
             public void onProgressChanged(WebView webView2, int i) {
-                ForkFragmentWebViewBinding binding;
+                ForkWebScreenBinding binding;
                 binding = SimplexWebViewProcessingFragment.this.getBinding();
                 binding.progressBar.setProgress(i);
             }
@@ -274,7 +277,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
                     r0 = move-exception
                     r4 = r5
                 L4d:
-                    timber.log.Timber.m4e(r0)
+                    timber.log.Timber.m6e(r0)
                 L50:
                     if (r4 == 0) goto L76
                     com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment r5 = com.iMe.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.this
@@ -324,12 +327,12 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
         webView.setWebViewClient(new WebViewClient() { // from class: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$setupWebView$1$3
             @Override // android.webkit.WebViewClient
             public void onPageStarted(WebView webView2, String str, Bitmap bitmap) {
-                ForkFragmentWebViewBinding binding;
+                ForkWebScreenBinding binding;
                 super.onPageStarted(webView2, str, bitmap);
                 binding = SimplexWebViewProcessingFragment.this.getBinding();
                 ProgressBar progressBar = binding.progressBar;
                 Intrinsics.checkNotNullExpressionValue(progressBar, "binding.progressBar");
-                ViewExtKt.visible(progressBar);
+                ViewExtKt.visible$default(progressBar, false, 1, null);
             }
 
             @Override // android.webkit.WebViewClient
@@ -354,20 +357,20 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
 
             @Override // android.webkit.WebViewClient
             public void onPageFinished(WebView webView2, String str) {
-                ForkFragmentWebViewBinding binding;
+                ForkWebScreenBinding binding;
                 binding = SimplexWebViewProcessingFragment.this.getBinding();
                 ProgressBar progressBar = binding.progressBar;
                 Intrinsics.checkNotNullExpressionValue(progressBar, "binding.progressBar");
-                ViewExtKt.gone(progressBar);
+                ViewExtKt.gone$default(progressBar, false, 1, null);
             }
 
             @Override // android.webkit.WebViewClient
             public void onReceivedError(WebView webView2, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
-                ForkFragmentWebViewBinding binding;
+                ForkWebScreenBinding binding;
                 binding = SimplexWebViewProcessingFragment.this.getBinding();
                 ProgressBar progressBar = binding.progressBar;
                 Intrinsics.checkNotNullExpressionValue(progressBar, "binding.progressBar");
-                ViewExtKt.gone(progressBar);
+                ViewExtKt.gone$default(progressBar, false, 1, null);
             }
         });
     }
@@ -389,12 +392,12 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.wallet_crypto_buy_processing_toolbar_title));
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_crypto_buy_processing_toolbar_title));
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SimplexWebViewProcessingFragment.this.handleBackPress();
@@ -412,11 +415,11 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
     }
 
     private final void setupColors() {
-        ForkFragmentWebViewBinding binding = getBinding();
+        ForkWebScreenBinding binding = getBinding();
         ProgressBar progressBar = binding.progressBar;
         Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
-        ViewExtKt.tintIndeterminateProgress(progressBar, Theme.getColor("chats_actionBackground"));
-        binding.progressBar.setBackgroundColor(Theme.getColor("actionBarDefault"));
+        ViewExtKt.tintIndeterminateProgress(progressBar, Theme.getColor(Theme.key_chats_actionBackground));
+        binding.progressBar.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefault));
     }
 
     /* compiled from: SimplexWebViewProcessingFragment.kt */
@@ -433,7 +436,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
         public final SimplexWebViewProcessingFragment newInstance(String url, Function1<? super PaymentResult, Unit> resultDelegate) {
             Intrinsics.checkNotNullParameter(url, "url");
             Intrinsics.checkNotNullParameter(resultDelegate, "resultDelegate");
-            return (SimplexWebViewProcessingFragment) BaseFragmentExtKt.withArgs(new SimplexWebViewProcessingFragment(resultDelegate), TuplesKt.m80to("url_arg", url));
+            return (SimplexWebViewProcessingFragment) BaseFragmentExtKt.withArgs(new SimplexWebViewProcessingFragment(resultDelegate), TuplesKt.m85to("url_arg", url));
         }
     }
 }

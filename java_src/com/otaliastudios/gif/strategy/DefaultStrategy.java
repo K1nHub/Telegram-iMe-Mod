@@ -97,7 +97,7 @@ public class DefaultStrategy implements Strategy {
         int width = bestInputSize.getWidth();
         int height = bestInputSize.getHeight();
         Logger logger = LOG;
-        logger.m686i("Input width&height: " + width + "x" + height);
+        logger.m691i("Input width&height: " + width + "x" + height);
         try {
             Size outputSize = this.options.resizer.getOutputSize(bestInputSize);
             if (outputSize instanceof ExactSize) {
@@ -111,7 +111,7 @@ public class DefaultStrategy implements Strategy {
                 minor = outputSize.getMinor();
                 major = outputSize.getMajor();
             }
-            logger.m686i("Output width&height: " + minor + "x" + major);
+            logger.m691i("Output width&height: " + minor + "x" + major);
             int minFrameRate = getMinFrameRate(list);
             int min = minFrameRate > 0 ? Math.min(minFrameRate, this.options.targetFrameRate) : this.options.targetFrameRate;
             mediaFormat.setString("mime", this.options.targetMimeType);

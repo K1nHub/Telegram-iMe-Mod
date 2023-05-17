@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingProgrammesPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingProgrammesPresenter.kt\ncom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 6 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n*L\n1#1,287:1\n39#2,8:288\n39#2,8:308\n39#2,8:319\n1#3:296\n350#4,7:297\n11335#5:304\n11670#5,3:305\n16#6,3:316\n*S KotlinDebug\n*F\n+ 1 StakingProgrammesPresenter.kt\ncom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter\n*L\n88#1:288,8\n258#1:308,8\n281#1:319,8\n158#1:297,7\n230#1:304\n230#1:305,3\n280#1:316,3\n*E\n"
+    value = "SMAP\nStakingProgrammesPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingProgrammesPresenter.kt\ncom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 6 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n*L\n1#1,288:1\n39#2,8:289\n39#2,8:309\n39#2,8:320\n1#3:297\n350#4,7:298\n11335#5:305\n11670#5,3:306\n16#6,3:317\n*S KotlinDebug\n*F\n+ 1 StakingProgrammesPresenter.kt\ncom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter\n*L\n89#1:289,8\n259#1:309,8\n282#1:320,8\n159#1:298,7\n231#1:305\n231#1:306,3\n281#1:317,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -108,7 +108,7 @@
 .method public constructor <init>(Lcom/iMe/storage/domain/model/staking/StakingTabType;Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/i_staking/StakingInteractor;)V
     .locals 1
 
-    const-string v0, "stakingTabType"
+    const-string/jumbo v0, "stakingTabType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -132,75 +132,75 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "stakingInteractor"
+    const-string/jumbo v0, "stakingInteractor"
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 46
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 38
+    .line 39
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
-    .line 39
+    .line 40
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    .line 40
+    .line 41
     iput-object p3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 41
+    .line 42
     iput-object p4, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 42
+    .line 43
     iput-object p5, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 43
+    .line 44
     iput-object p6, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 44
+    .line 45
     iput-object p7, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
-
-    .line 48
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
 
     .line 49
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
+
+    .line 50
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->items:Ljava/util/List;
-
-    .line 51
-    new-instance p1, Ljava/util/LinkedHashMap;
-
-    invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammesByFilterType:Ljava/util/Map;
 
     .line 52
     new-instance p1, Ljava/util/LinkedHashMap;
 
     invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->lastItemIdByFilterType:Ljava/util/Map;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammesByFilterType:Ljava/util/Map;
 
     .line 53
     new-instance p1, Ljava/util/LinkedHashMap;
 
     invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
 
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->lastItemIdByFilterType:Ljava/util/Map;
+
+    .line 54
+    new-instance p1, Ljava/util/LinkedHashMap;
+
+    invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
+
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->itemsCountByFilterType:Ljava/util/Map;
 
-    .line 55
+    .line 56
     sget-object p1, Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;->RUNNING:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
 
-    .line 56
+    .line 57
     invoke-static {}, Lio/reactivex/disposables/Disposables;->disposed()Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
@@ -217,7 +217,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 36
+    .line 37
     iget-object p0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -226,7 +226,7 @@
 .method public static final synthetic access$getRxEventBus$p(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;)Lcom/iMe/storage/domain/utils/rx/RxEventBus;
     .locals 0
 
-    .line 36
+    .line 37
     iget-object p0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     return-object p0
@@ -235,7 +235,7 @@
 .method public static final synthetic access$getStakingTabType$p(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;)Lcom/iMe/storage/domain/model/staking/StakingTabType;
     .locals 0
 
-    .line 36
+    .line 37
     iget-object p0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
     return-object p0
@@ -244,7 +244,7 @@
 .method public static final synthetic access$onProgrammesDataObtained(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;Ljava/util/List;IZ)V
     .locals 0
 
-    .line 36
+    .line 37
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->onProgrammesDataObtained(Ljava/util/List;IZ)V
 
     return-void
@@ -253,7 +253,7 @@
 .method public static final synthetic access$openStakingCheckingAccountLevel(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
     .locals 0
 
-    .line 36
+    .line 37
     invoke-direct {p0, p1, p2}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->openStakingCheckingAccountLevel(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
 
     return-void
@@ -262,7 +262,7 @@
 .method public static final synthetic access$renderGlobalStateItemsList(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;Lcom/iMe/model/state/GlobalState;)V
     .locals 0
 
-    .line 36
+    .line 37
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->renderGlobalStateItemsList(Lcom/iMe/model/state/GlobalState;)V
 
     return-void
@@ -271,7 +271,7 @@
 .method private final getFiltersListItem()Lcom/iMe/model/common/FiltersListItem;
     .locals 11
 
-    .line 228
+    .line 229
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
     sget-object v1, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -286,7 +286,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 230
+    .line 231
     invoke-static {}, Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;->values()[Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
 
     move-result-object v0
@@ -310,17 +310,17 @@
 
     aget-object v5, v0, v4
 
-    .line 231
+    .line 232
     new-instance v6, Lcom/iMe/model/common/FilterItem;
 
-    .line 232
+    .line 233
     invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
 
     move-result v7
 
     int-to-long v7, v7
 
-    .line 233
+    .line 234
     iget-object v9, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v5}, Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;->getTitleResId()I
@@ -331,7 +331,7 @@
 
     move-result-object v9
 
-    .line 234
+    .line 235
     iget-object v10, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
 
     if-ne v10, v5, :cond_0
@@ -343,7 +343,7 @@
     :cond_0
     move v5, v3
 
-    .line 231
+    .line 232
     :goto_1
     invoke-direct {v6, v7, v8, v9, v5}, Lcom/iMe/model/common/FilterItem;-><init>(JLjava/lang/String;Z)V
 
@@ -354,13 +354,13 @@
 
     goto :goto_0
 
-    .line 236
+    .line 237
     :cond_1
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 229
+    .line 230
     new-instance v1, Lcom/iMe/model/common/FiltersListItem;
 
     invoke-direct {v1, v0}, Lcom/iMe/model/common/FiltersListItem;-><init>(Ljava/util/List;)V
@@ -388,7 +388,7 @@
         }
     .end annotation
 
-    .line 177
+    .line 178
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
     sget-object v1, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -407,20 +407,20 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 182
+    .line 183
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 183
+    .line 184
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getStakingProgrammesOrderType()Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;
 
     move-result-object v1
 
-    .line 185
+    .line 186
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
 
-    .line 182
+    .line 183
     invoke-virtual {v0, v1, p1, v2}, Lcom/iMe/i_staking/StakingInteractor;->getStakingOwnProgrammesList(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -434,18 +434,18 @@
 
     throw p1
 
-    .line 178
+    .line 179
     :cond_1
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 179
+    .line 180
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getStakingProgrammesOrderType()Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;
 
     move-result-object v1
 
-    .line 178
+    .line 179
     invoke-virtual {v0, v1, p1}, Lcom/iMe/i_staking/StakingInteractor;->getStakingProgrammesList(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;Ljava/lang/Long;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -457,7 +457,7 @@
 .method private final listenEvents()V
     .locals 5
 
-    .line 279
+    .line 280
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     .line 16
@@ -521,7 +521,7 @@
 
     const/4 v1, 0x1
 
-    .line 282
+    .line 283
     invoke-static {p0, v0, v3, v1, v3}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -530,7 +530,7 @@
 .method private final loadAccountLevelAndOpenStaking(Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 5
 
-    .line 255
+    .line 256
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
     const-wide/16 v1, 0x0
@@ -539,27 +539,17 @@
 
     const/4 v4, 0x0
 
-    .line 256
+    .line 257
     invoke-static {v0, v1, v2, v3, v4}, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;->getAccountLevelRemote$default(Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;JILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 257
-    iget-object v1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+    .line 258
+    invoke-static {v0}, Lcom/iMe/utils/extentions/rx/SchedulersExtKt;->scheduleIO(Lio/reactivex/Observable;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    const-string v1, "accountLevelInteractor\n \u2026(schedulersProvider.ui())"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 258
+    .line 259
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -594,7 +584,7 @@
     .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 265
+    .line 266
     invoke-static {p0, p1, v4, v3, v4}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -618,7 +608,7 @@
 
     move p2, v0
 
-    .line 75
+    .line 76
     :cond_1
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->loadStakingProgrammes(ZZ)V
 
@@ -636,7 +626,7 @@
         }
     .end annotation
 
-    .line 194
+    .line 195
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
     sget-object v1, Lcom/iMe/storage/domain/model/staking/StakingTabType;->PARTICIPATED:Lcom/iMe/storage/domain/model/staking/StakingTabType;
@@ -645,7 +635,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 195
+    .line 196
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->lastItemIdByFilterType:Ljava/util/Map;
 
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
@@ -673,7 +663,7 @@
 
     move-result-object v0
 
-    .line 196
+    .line 197
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->itemsCountByFilterType:Ljava/util/Map;
 
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
@@ -682,7 +672,7 @@
 
     goto :goto_0
 
-    .line 198
+    .line 199
     :cond_1
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
@@ -703,7 +693,7 @@
     :cond_2
     iput-object v2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->lastItemId:Ljava/lang/Long;
 
-    .line 200
+    .line 201
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
@@ -713,12 +703,12 @@
 
     if-nez p3, :cond_3
 
-    .line 202
+    .line 203
     sget-object p1, Lcom/iMe/model/state/GlobalState$Empty$Staking;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$Staking;
 
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->renderGlobalStateItemsList(Lcom/iMe/model/state/GlobalState;)V
 
-    .line 204
+    .line 205
     :cond_3
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -730,7 +720,7 @@
 
     goto :goto_1
 
-    .line 206
+    .line 207
     :cond_4
     iget-object p3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->items:Ljava/util/List;
 
@@ -740,17 +730,17 @@
 
     if-eqz p3, :cond_5
 
-    .line 207
+    .line 208
     iget-object p3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->items:Ljava/util/List;
 
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/iMe/model/common/NoChildNode;
 
-    .line 209
+    .line 210
     new-instance v2, Lcom/iMe/model/wallet/home/HeaderItemWithRightButton;
 
-    .line 210
+    .line 211
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->staking_programmes_count:I
@@ -771,41 +761,41 @@
 
     move-result-object p2
 
-    .line 211
+    .line 212
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_sort_28:I
 
-    .line 209
+    .line 210
     invoke-direct {v2, p2, v3}, Lcom/iMe/model/wallet/home/HeaderItemWithRightButton;-><init>(Ljava/lang/String;I)V
 
     aput-object v2, v0, v7
 
-    .line 213
+    .line 214
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->getFiltersListItem()Lcom/iMe/model/common/FiltersListItem;
 
     move-result-object p2
 
     aput-object p2, v0, v5
 
-    .line 208
+    .line 209
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 207
+    .line 208
     invoke-interface {p3, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 217
+    .line 218
     :cond_5
     iget-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
 
     invoke-interface {p2, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 218
+    .line 219
     iget-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
     if-ne p2, v1, :cond_6
 
-    .line 219
+    .line 220
     iget-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammesByFilterType:Ljava/util/Map;
 
     iget-object p3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
@@ -814,15 +804,15 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 220
+    .line 221
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 219
+    .line 220
     invoke-interface {p2, p3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 223
+    .line 224
     :cond_6
     iget-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->items:Ljava/util/List;
 
@@ -832,7 +822,7 @@
 
     invoke-interface {p2, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 224
+    .line 225
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -856,7 +846,7 @@
 
     const/4 p3, 0x0
 
-    .line 189
+    .line 190
     :cond_0
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->onProgrammesDataObtained(Ljava/util/List;IZ)V
 
@@ -866,7 +856,7 @@
 .method private final openStakingCheckingAccountLevel(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
     .locals 1
 
-    .line 270
+    .line 271
     invoke-virtual {p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getMinimalRank()Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
     move-result-object v0
@@ -877,7 +867,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 271
+    .line 272
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -888,7 +878,7 @@
 
     goto :goto_0
 
-    .line 273
+    .line 274
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -915,7 +905,7 @@
 
     const/4 p1, 0x0
 
-    .line 60
+    .line 61
     :cond_0
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->reload(Z)V
 
@@ -925,7 +915,7 @@
 .method private final renderGlobalStateItemsList(Lcom/iMe/model/state/GlobalState;)V
     .locals 5
 
-    .line 242
+    .line 243
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -936,10 +926,10 @@
 
     new-array v1, v1, [Lcom/iMe/model/common/NoChildNode;
 
-    .line 244
+    .line 245
     new-instance v2, Lcom/iMe/model/wallet/home/HeaderItemWithRightButton;
 
-    .line 245
+    .line 246
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->staking_list_header:I
@@ -948,17 +938,17 @@
 
     move-result-object v3
 
-    .line 246
+    .line 247
     sget v4, Lorg/telegram/messenger/R$drawable;->fork_ic_sort_28:I
 
-    .line 244
+    .line 245
     invoke-direct {v2, v3, v4}, Lcom/iMe/model/wallet/home/HeaderItemWithRightButton;-><init>(Ljava/lang/String;I)V
 
     const/4 v3, 0x0
 
     aput-object v2, v1, v3
 
-    .line 248
+    .line 249
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->getFiltersListItem()Lcom/iMe/model/common/FiltersListItem;
 
     move-result-object v2
@@ -967,7 +957,7 @@
 
     aput-object v2, v1, v3
 
-    .line 249
+    .line 250
     new-instance v2, Lcom/iMe/model/common/GlobalStateItem;
 
     invoke-direct {v2, p1}, Lcom/iMe/model/common/GlobalStateItem;-><init>(Lcom/iMe/model/state/GlobalState;)V
@@ -976,17 +966,17 @@
 
     aput-object v2, v1, p1
 
-    .line 243
+    .line 244
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 250
+    .line 251
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 242
+    .line 243
     invoke-interface {v0, p1}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;->renderItems(Ljava/util/List;)V
 
     return-void
@@ -995,7 +985,7 @@
 .method private final renderItemsOnFilterChanged()V
     .locals 7
 
-    .line 164
+    .line 165
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammesByFilterType:Ljava/util/Map;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
@@ -1010,22 +1000,22 @@
 
     if-eqz v2, :cond_0
 
-    .line 166
+    .line 167
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->items:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 167
+    .line 168
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 168
+    .line 169
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammesLoadingDisposable:Lio/reactivex/disposables/Disposable;
 
     invoke-interface {v0}, Lio/reactivex/disposables/Disposable;->dispose()V
 
-    .line 169
+    .line 170
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->itemsCountByFilterType:Ljava/util/Map;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
@@ -1052,7 +1042,7 @@
 
     goto :goto_0
 
-    .line 171
+    .line 172
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -1066,7 +1056,7 @@
 
     const/4 v0, 0x1
 
-    .line 172
+    .line 173
     invoke-virtual {p0, v0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->reload(Z)V
 
     :goto_0
@@ -1076,7 +1066,7 @@
 .method private final updateFiltersItem()V
     .locals 4
 
-    .line 158
+    .line 159
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->items:Ljava/util/List;
 
     .line 351
@@ -1102,7 +1092,7 @@
     .line 352
     check-cast v2, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 158
+    .line 159
     instance-of v2, v2, Lcom/iMe/model/common/FiltersListItem;
 
     if-eqz v2, :cond_0
@@ -1122,7 +1112,7 @@
 
     return-void
 
-    .line 160
+    .line 161
     :cond_2
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->items:Ljava/util/List;
 
@@ -1158,7 +1148,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 77
+    .line 78
     :goto_0
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
@@ -1166,7 +1156,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 78
+    .line 79
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->lastItemIdByFilterType:Ljava/util/Map;
 
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
@@ -1179,7 +1169,7 @@
 
     goto :goto_1
 
-    .line 80
+    .line 81
     :cond_1
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->lastItemId:Ljava/lang/Long;
 
@@ -1188,7 +1178,7 @@
 
     if-nez v2, :cond_2
 
-    .line 83
+    .line 84
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -1199,13 +1189,13 @@
 
     return-void
 
-    .line 86
+    .line 87
     :cond_2
     invoke-direct {p0, v2}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->getProgrammesObservable(Ljava/lang/Long;)Lio/reactivex/Observable;
 
     move-result-object v2
 
-    .line 87
+    .line 88
     iget-object v3, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v3}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1250,10 +1240,10 @@
     .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 110
+    .line 111
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammesLoadingDisposable:Lio/reactivex/disposables/Disposable;
 
-    .line 111
+    .line 112
     invoke-static {p0, p1, v1, v0, v1}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -1262,7 +1252,7 @@
 .method public final onFilterSelected(J)V
     .locals 1
 
-    .line 136
+    .line 137
     sget-object v0, Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;->Companion:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType$Companion;
 
     long-to-int p1, p1
@@ -1271,18 +1261,18 @@
 
     move-result-object p1
 
-    .line 137
+    .line 138
     iget-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
 
     if-eq p2, p1, :cond_0
 
-    .line 138
+    .line 139
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->selectedFilterType:Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;
 
-    .line 139
+    .line 140
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->updateFiltersItem()V
 
-    .line 140
+    .line 141
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->renderItemsOnFilterChanged()V
 
     :cond_0
@@ -1300,10 +1290,10 @@
 
     const/4 v3, 0x0
 
-    .line 149
+    .line 150
     invoke-static {p0, v0, v1, v2, v3}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->loadStakingProgrammes$default(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;ZZILjava/lang/Object;)V
 
-    .line 150
+    .line 151
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->listenEvents()V
 
     return-void
@@ -1316,12 +1306,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
+    .line 132
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setStakingProgrammesOrderType(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;)V
 
-    .line 132
+    .line 133
     iget-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     sget-object v0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingProgrammesRefresh;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingProgrammesRefresh;
@@ -1334,11 +1324,11 @@
 .method public final onStakingProgrammeClick(Lcom/iMe/model/staking/StakingProgrammeItem;)V
     .locals 6
 
-    const-string v0, "stakingProgrammeItem"
+    const-string/jumbo v0, "stakingProgrammeItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 116
+    .line 117
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1400,11 +1390,11 @@
 
     goto :goto_2
 
-    .line 117
+    .line 118
     :cond_3
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->accountLevel:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
-    .line 119
+    .line 120
     invoke-virtual {p1}, Lcom/iMe/model/staking/StakingProgrammeItem;->isParticipated()Z
 
     move-result p1
@@ -1424,12 +1414,12 @@
     :cond_4
     if-nez v1, :cond_5
 
-    .line 120
+    .line 121
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->loadAccountLevelAndOpenStaking(Lcom/iMe/model/staking/StakingDetailsItem;)V
 
     goto :goto_2
 
-    .line 121
+    .line 122
     :cond_5
     invoke-direct {p0, v0, v1}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->openStakingCheckingAccountLevel(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
 
@@ -1441,27 +1431,27 @@
 .method public final reload(Z)V
     .locals 2
 
-    .line 61
+    .line 62
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammesLoadingDisposable:Lio/reactivex/disposables/Disposable;
 
     invoke-interface {v0}, Lio/reactivex/disposables/Disposable;->dispose()V
 
     const/4 v0, 0x0
 
-    .line 62
+    .line 63
     iput-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->lastItemId:Ljava/lang/Long;
 
-    .line 63
+    .line 64
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 64
+    .line 65
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->items:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 66
+    .line 67
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
     sget-object v1, Lcom/iMe/storage/domain/model/staking/StakingTabType;->PARTICIPATED:Lcom/iMe/storage/domain/model/staking/StakingTabType;
@@ -1470,17 +1460,17 @@
 
     if-nez p1, :cond_0
 
-    .line 67
+    .line 68
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->stakingProgrammesByFilterType:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 68
+    .line 69
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->lastItemIdByFilterType:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 69
+    .line 70
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->itemsCountByFilterType:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
@@ -1488,7 +1478,7 @@
     :cond_0
     xor-int/lit8 v0, p1, 0x1
 
-    .line 72
+    .line 73
     invoke-virtual {p0, p1, v0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;->loadStakingProgrammes(ZZ)V
 
     return-void
@@ -1497,7 +1487,7 @@
 .method public final showSelectStakingOrderTypeDialog()V
     .locals 2
 
-    .line 127
+    .line 128
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0

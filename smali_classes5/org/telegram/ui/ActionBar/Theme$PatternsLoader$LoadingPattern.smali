@@ -32,10 +32,10 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 1098
+    .line 1128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1100
+    .line 1130
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -48,7 +48,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ActionBar/Theme$1;)V
     .locals 0
 
-    .line 1098
+    .line 1128
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/Theme$PatternsLoader$LoadingPattern;-><init>()V
 
     return-void

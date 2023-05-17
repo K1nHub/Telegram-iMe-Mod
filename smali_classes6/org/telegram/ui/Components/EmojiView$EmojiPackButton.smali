@@ -26,10 +26,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;)V
     .locals 7
 
-    .line 4264
+    .line 3975
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 4266
+    .line 3977
     new-instance v0, Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -40,7 +40,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    .line 4267
+    .line 3978
     sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const v1, 0x3e99999a    # 0.3f
@@ -51,7 +51,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/AnimatedTextView;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 4268
+    .line 3979
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v0, 0xe
@@ -64,7 +64,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 4269
+    .line 3980
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const-string v0, "fonts/rmedium.ttf"
@@ -75,25 +75,25 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 4270
+    .line 3981
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    const-string v0, "featuredStickers_buttonText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;I)I
 
     move-result v0
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 4271
+    .line 3982
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v0, 0x11
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 4273
+    .line 3984
     new-instance p2, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -104,10 +104,10 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonView:Landroid/widget/FrameLayout;
 
-    const-string v1, "featuredStickers_addButton"
+    .line 3985
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    .line 4274
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;I)I
 
     move-result p1
 
@@ -127,7 +127,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4275
+    .line 3986
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonView:Landroid/widget/FrameLayout;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -142,7 +142,7 @@
 
     invoke-virtual {p1, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4276
+    .line 3987
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->addButtonView:Landroid/widget/FrameLayout;
 
     invoke-static {v1, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -151,7 +151,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4278
+    .line 3989
     new-instance p1, Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -162,12 +162,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
-    .line 4279
+    .line 3990
     sget p2, Lorg/telegram/messenger/R$raw;->unlock_icon:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setIcon(I)V
 
-    .line 4280
+    .line 3991
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     invoke-static {v1, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -186,7 +186,7 @@
 
     const/4 p2, 0x6
 
-    .line 4302
+    .line 4013
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -209,7 +209,7 @@
 
     const/16 p2, 0x2c
 
-    .line 4303
+    .line 4014
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

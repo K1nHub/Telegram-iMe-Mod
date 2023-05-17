@@ -198,7 +198,7 @@
     .line 156
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "status_text"
+    const-string/jumbo v1, "status_text"
 
     .line 157
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -213,12 +213,12 @@
     .line 159
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "stripped_thumb"
+    const-string/jumbo v1, "stripped_thumb"
 
     .line 160
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "strippedBitmap"
+    const-string/jumbo v1, "strippedBitmap"
 
     .line 161
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -270,7 +270,19 @@
 
     move-result-object v0
 
+    const-class v1, Lorg/telegram/tgnet/TLObject;
+
+    const-string/jumbo v2, "type_"
+
     .line 189
+    invoke-static {v1, v2}, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->of(Ljava/lang/Class;Ljava/lang/String;)Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/gson/GsonBuilder;->registerTypeAdapterFactory(Lcom/google/gson/TypeAdapterFactory;)Lcom/google/gson/GsonBuilder;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
 
     move-result-object v0

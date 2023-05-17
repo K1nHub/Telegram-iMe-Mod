@@ -29,7 +29,7 @@ class CircleImageView extends ImageView {
         int i2 = (int) (BitmapDescriptorFactory.HUE_RED * f);
         this.mShadowRadius = (int) (3.5f * f);
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(R$styleable.SwipeRefreshLayout);
-        this.mBackgroundColor = obtainStyledAttributes.getColor(R$styleable.f50xaa980688, -328966);
+        this.mBackgroundColor = obtainStyledAttributes.getColor(R$styleable.f53xaa980688, -328966);
         obtainStyledAttributes.recycle();
         if (elevationSupported()) {
             shapeDrawable = new ShapeDrawable(new OvalShape());

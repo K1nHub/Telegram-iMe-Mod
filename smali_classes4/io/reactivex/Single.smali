@@ -43,7 +43,7 @@
         }
     .end annotation
 
-    const-string v0, "source is null"
+    const-string/jumbo v0, "source is null"
 
     .line 518
     invoke-static {p0, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -502,7 +502,7 @@
     .line 3608
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "subscribeActual failed"
+    const-string/jumbo v1, "subscribeActual failed"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

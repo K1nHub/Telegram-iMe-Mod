@@ -4,7 +4,7 @@ import java.util.Iterator;
 import p034j$.util.Iterator;
 import p034j$.util.function.Consumer;
 /* compiled from: com.android.billingclient:billing@@5.1.0 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class zzah implements Iterator, p034j$.util.Iterator {
     @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {

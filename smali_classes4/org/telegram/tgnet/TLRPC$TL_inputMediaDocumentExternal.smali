@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 29872
+    .line 30627
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$InputMedia;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 29878
+    .line 30633
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -52,25 +52,25 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 29879
+    .line 30634
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->spoiler:Z
 
-    .line 29880
+    .line 30635
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDocumentExternal;->url:Ljava/lang/String;
 
-    .line 29881
+    .line 30636
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
     and-int/2addr v0, v1
 
     if-eqz v0, :cond_1
 
-    .line 29882
+    .line 30637
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -84,12 +84,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 29887
+    .line 30642
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDocumentExternal;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 29888
+    .line 30643
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->spoiler:Z
 
     if-eqz v0, :cond_0
@@ -108,22 +108,22 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
-    .line 29889
+    .line 30644
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 29890
+    .line 30645
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDocumentExternal;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 29891
+    .line 30646
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 29892
+    .line 30647
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->ttl_seconds:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

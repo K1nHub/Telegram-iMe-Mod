@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$22\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n129#2,5:434\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$22\n*L\n214#1:434,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$22\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n129#2,5:433\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$22\n*L\n214#1:433,5\n*E\n"
 .end annotation
 
 

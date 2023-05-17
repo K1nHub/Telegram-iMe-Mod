@@ -7,6 +7,25 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: _Sets.kt */
 /* loaded from: classes4.dex */
 public class SetsKt___SetsKt extends SetsKt__SetsKt {
+    public static <T> Set<T> minus(Set<? extends T> set, T t) {
+        int mapCapacity;
+        Intrinsics.checkNotNullParameter(set, "<this>");
+        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(set.size());
+        LinkedHashSet linkedHashSet = new LinkedHashSet(mapCapacity);
+        boolean z = false;
+        for (T t2 : set) {
+            boolean z2 = true;
+            if (!z && Intrinsics.areEqual(t2, t)) {
+                z = true;
+                z2 = false;
+            }
+            if (z2) {
+                linkedHashSet.add(t2);
+            }
+        }
+        return linkedHashSet;
+    }
+
     public static <T> Set<T> plus(Set<? extends T> set, T t) {
         int mapCapacity;
         Intrinsics.checkNotNullParameter(set, "<this>");

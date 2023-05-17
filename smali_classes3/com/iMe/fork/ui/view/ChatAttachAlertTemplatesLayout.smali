@@ -15,16 +15,16 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatAttachAlertTemplatesLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertTemplatesLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,406:1\n262#2,2:407\n260#2:411\n262#2,2:412\n13579#3,2:409\n*S KotlinDebug\n*F\n+ 1 ChatAttachAlertTemplatesLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout\n*L\n323#1:407,2\n335#1:411\n343#1:412,2\n325#1:409,2\n*E\n"
+    value = "SMAP\nChatAttachAlertTemplatesLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertTemplatesLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,407:1\n262#2,2:408\n260#2:412\n262#2,2:413\n13579#3,2:410\n*S KotlinDebug\n*F\n+ 1 ChatAttachAlertTemplatesLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout\n*L\n324#1:408,2\n336#1:412\n344#1:413,2\n326#1:410,2\n*E\n"
 .end annotation
 
 
 # instance fields
+.field private bottomPaddingRow:I
+
 .field private currentPanTranslationProgress:F
 
 .field private final delegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
-
-.field private emptyRow:I
 
 .field private final emptyView$delegate:Lkotlin/Lazy;
 
@@ -37,8 +37,6 @@
 .field private final listLayoutManager$delegate:Lkotlin/Lazy;
 
 .field private final listView$delegate:Lkotlin/Lazy;
-
-.field private paddingRow:I
 
 .field private rowCount:I
 
@@ -57,6 +55,8 @@
 .field private templatesStartRow:I
 
 .field private topPadding:I
+
+.field private topPaddingRow:I
 
 
 # direct methods
@@ -103,13 +103,13 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 46
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;-><init>(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 44
+    .line 45
     iput-object p4, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->delegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
-    .line 48
+    .line 49
     new-instance p1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$sortItem$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$sortItem$2;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V
@@ -120,7 +120,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->sortItem$delegate:Lkotlin/Lazy;
 
-    .line 49
+    .line 50
     new-instance p1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$emptyView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$emptyView$2;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V
@@ -131,7 +131,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->emptyView$delegate:Lkotlin/Lazy;
 
-    .line 50
+    .line 51
     new-instance p1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$listLayoutManager$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$listLayoutManager$2;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V
@@ -142,7 +142,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->listLayoutManager$delegate:Lkotlin/Lazy;
 
-    .line 51
+    .line 52
     new-instance p1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$listAdapter$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$listAdapter$2;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V
@@ -153,7 +153,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->listAdapter$delegate:Lkotlin/Lazy;
 
-    .line 52
+    .line 53
     new-instance p1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$listView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$listView$2;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V
@@ -164,14 +164,14 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->listView$delegate:Lkotlin/Lazy;
 
-    .line 53
+    .line 54
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templates:Ljava/util/List;
 
-    .line 66
+    .line 67
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getEmptyView()Landroid/widget/LinearLayout;
 
     move-result-object p1
@@ -184,7 +184,7 @@
 
     invoke-virtual {p0, p1, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 67
+    .line 68
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     move-result-object p1
@@ -195,16 +195,16 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 68
+    .line 69
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->setupListView()V
 
-    .line 69
+    .line 70
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateSortItem()V
 
-    .line 70
+    .line 71
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->loadTemplates()V
 
-    .line 71
+    .line 72
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getCurrentAccount()I
@@ -222,11 +222,11 @@
     return-void
 .end method
 
-.method public static final synthetic access$getEmptyRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
+.method public static final synthetic access$getBottomPaddingRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
     .locals 0
 
-    .line 40
-    iget p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->emptyRow:I
+    .line 41
+    iget p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->bottomPaddingRow:I
 
     return p0
 .end method
@@ -234,17 +234,8 @@
 .method public static final synthetic access$getHeaderRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
     .locals 0
 
-    .line 40
+    .line 41
     iget p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->headerRow:I
-
-    return p0
-.end method
-
-.method public static final synthetic access$getPaddingRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
-    .locals 0
-
-    .line 40
-    iget p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->paddingRow:I
 
     return p0
 .end method
@@ -252,7 +243,7 @@
 .method public static final synthetic access$getParentAlert$p$s-1709477308(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;
     .locals 0
 
-    .line 40
+    .line 41
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     return-object p0
@@ -261,7 +252,7 @@
 .method public static final synthetic access$getResourcesProvider$p$s-1709477308(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
-    .line 40
+    .line 41
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
@@ -270,7 +261,7 @@
 .method public static final synthetic access$getRowCount$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
     .locals 0
 
-    .line 40
+    .line 41
     iget p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->rowCount:I
 
     return p0
@@ -279,7 +270,7 @@
 .method public static final synthetic access$getTemplates$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Ljava/util/List;
     .locals 0
 
-    .line 40
+    .line 41
     iget-object p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templates:Ljava/util/List;
 
     return-object p0
@@ -288,7 +279,7 @@
 .method public static final synthetic access$getTemplatesStartRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
     .locals 0
 
-    .line 40
+    .line 41
     iget p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templatesStartRow:I
 
     return p0
@@ -297,8 +288,17 @@
 .method public static final synthetic access$getTopPadding$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
     .locals 0
 
-    .line 40
+    .line 41
     iget p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->topPadding:I
+
+    return p0
+.end method
+
+.method public static final synthetic access$getTopPaddingRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
+    .locals 0
+
+    .line 41
+    iget p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->topPaddingRow:I
 
     return p0
 .end method
@@ -306,7 +306,7 @@
 .method public static final synthetic access$initEmptyView(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Landroid/widget/LinearLayout;
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->initEmptyView()Landroid/widget/LinearLayout;
 
     move-result-object p0
@@ -317,7 +317,7 @@
 .method public static final synthetic access$initListLayoutManager(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1;
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->initListLayoutManager()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1;
 
     move-result-object p0
@@ -328,7 +328,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->initListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     move-result-object p0
@@ -339,7 +339,7 @@
 .method public static final synthetic access$initSortItem(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->initSortItem()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object p0
@@ -350,7 +350,7 @@
 .method public static final synthetic access$updateEmptyViewPosition(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateEmptyViewPosition()V
 
     return-void
@@ -359,7 +359,7 @@
 .method private final getEmptyView()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->emptyView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -374,7 +374,7 @@
 .method private final getListAdapter()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;
     .locals 1
 
-    .line 51
+    .line 52
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->listAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -389,7 +389,7 @@
 .method private final getListLayoutManager()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1;
     .locals 1
 
-    .line 50
+    .line 51
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->listLayoutManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -404,7 +404,7 @@
 .method private final getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
     .locals 1
 
-    .line 52
+    .line 53
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->listView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -419,7 +419,7 @@
 .method private final getSortItem()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
     .locals 1
 
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->sortItem$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -434,7 +434,7 @@
 .method private final initEmptyView()Landroid/widget/LinearLayout;
     .locals 12
 
-    .line 210
+    .line 211
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -443,109 +443,111 @@
 
     invoke-direct {v0, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 211
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v1, 0x0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
 
     .line 212
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    const/16 v2, 0x11
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 213
-    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    const/16 v3, 0x11
 
     .line 214
-    new-instance v3, Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->setGravity(I)V
 
     .line 215
-    new-instance v4, Landroid/graphics/PorterDuffColorFilter;
-
-    const-string v5, "dialogEmptyImage"
-
-    invoke-virtual {p0, v5}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v5
-
-    sget-object v6, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v4, v5, v6}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    .line 216
-    sget v4, Lorg/telegram/messenger/R$drawable;->stickers_empty:I
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    const/4 v4, -0x2
-
-    .line 218
-    invoke-static {v4, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 219
-    new-instance v3, Landroid/widget/TextView;
+    new-instance v4, Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v3, v4}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v5}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+
+    .line 216
+    new-instance v5, Landroid/graphics/PorterDuffColorFilter;
+
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogEmptyImage:I
+
+    invoke-virtual {p0, v6}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
+
+    move-result v6
+
+    sget-object v7, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v5, v6, v7}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 217
+    sget v5, Lorg/telegram/messenger/R$drawable;->stickers_empty:I
+
+    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const/4 v5, -0x2
+
+    .line 219
+    invoke-static {v5, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 220
-    invoke-static {v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
+    new-instance v4, Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-direct {v4, v5}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 221
-    sget v4, Lorg/telegram/messenger/R$string;->chat_templates_list_header:I
-
-    invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-static {v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     .line 222
-    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setGravity(I)V
+    sget v5, Lorg/telegram/messenger/R$string;->chat_templates_list_header:I
 
-    const-string v2, "dialogEmptyText"
+    invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 223
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    const/high16 v2, 0x41880000    # 17.0f
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 224
-    invoke-virtual {v3, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogEmptyText:I
 
-    const/16 v1, 0x28
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
+
+    move-result v3
+
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const/high16 v3, 0x41880000    # 17.0f
 
     .line 225
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {v4, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    const/16 v2, 0x28
+
+    .line 226
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v2, v4, v1, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v4, v3, v1, v2, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
     const/4 v5, -0x2
 
@@ -561,14 +563,14 @@
 
     const/4 v11, 0x0
 
-    .line 227
+    .line 228
     invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
-    invoke-virtual {v0, v3, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 228
+    .line 229
     sget-object v1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$$ExternalSyntheticLambda0;->INSTANCE:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$$ExternalSyntheticLambda0;
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
@@ -587,7 +589,7 @@
 .method private final initListLayoutManager()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1;
     .locals 4
 
-    .line 238
+    .line 239
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -606,7 +608,7 @@
 
     invoke-direct {v3, p0, v0, v1, v2}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;Landroid/content/Context;ILcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;)V
 
-    .line 266
+    .line 267
     invoke-virtual {v3}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->setSkipFirstItem()V
 
     return-object v3
@@ -615,7 +617,7 @@
 .method private final initListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
     .locals 2
 
-    .line 231
+    .line 232
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -630,7 +632,7 @@
 .method private final initSortItem()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
     .locals 3
 
-    .line 208
+    .line 209
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -657,13 +659,13 @@
 .method private final loadTemplates()V
     .locals 3
 
-    .line 311
+    .line 312
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templates:Ljava/util/List;
 
-    .line 312
+    .line 313
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 313
+    .line 314
     sget-object v1, Lcom/iMe/fork/controller/TemplatesController;->Companion:Lcom/iMe/fork/controller/TemplatesController$Companion;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -682,20 +684,20 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 315
+    .line 316
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateRows()V
 
-    .line 316
+    .line 317
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListAdapter()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 317
+    .line 318
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateEmptyView()V
 
-    .line 318
+    .line 319
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateSortItem()V
 
     return-void
@@ -704,53 +706,53 @@
 .method private final setupListView()V
     .locals 2
 
-    .line 270
+    .line 271
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 271
+    .line 272
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 272
+    .line 273
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
     const/4 v1, 0x1
 
-    .line 273
+    .line 274
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setPreserveFocusAfterLayout(Z)V
 
-    .line 274
+    .line 275
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListAdapter()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 275
+    .line 276
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListLayoutManager()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 276
+    .line 277
     new-instance v1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 281
+    .line 282
     new-instance v1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemLongClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;)V
 
-    .line 287
+    .line 288
     new-instance v1, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;
 
     invoke-direct {v1, p0, v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;)V
@@ -771,12 +773,12 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 277
+    .line 278
     instance-of p2, p1, Lcom/iMe/fork/ui/view/TemplateCell;
 
     if-eqz p2, :cond_0
 
-    .line 278
+    .line 279
     iget-object p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->delegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
     check-cast p1, Lcom/iMe/fork/ui/view/TemplateCell;
@@ -804,14 +806,14 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 282
+    .line 283
     instance-of p2, p1, Lcom/iMe/fork/ui/view/TemplateCell;
 
     const/4 v0, 0x1
 
     if-eqz p2, :cond_0
 
-    .line 283
+    .line 284
     iget-object p0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->delegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
     check-cast p1, Lcom/iMe/fork/ui/view/TemplateCell;
@@ -829,7 +831,7 @@
 .method private final updateEmptyView()V
     .locals 2
 
-    .line 343
+    .line 344
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getEmptyView()Landroid/widget/LinearLayout;
 
     move-result-object v0
@@ -853,7 +855,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 344
+    .line 345
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateEmptyViewPosition()V
 
     return-void
@@ -862,7 +864,7 @@
 .method private final updateEmptyViewPosition()V
     .locals 4
 
-    .line 335
+    .line 336
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getEmptyView()Landroid/widget/LinearLayout;
 
     move-result-object v0
@@ -888,7 +890,7 @@
 
     return-void
 
-    .line 338
+    .line 339
     :cond_1
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
@@ -902,7 +904,7 @@
 
     return-void
 
-    .line 339
+    .line 340
     :cond_2
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getEmptyView()Landroid/widget/LinearLayout;
 
@@ -954,26 +956,26 @@
 
     const/4 v0, 0x0
 
-    .line 348
+    .line 349
     iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->rowCount:I
 
     const/4 v1, 0x0
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 349
+    .line 350
     iput v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->rowCount:I
 
-    iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->paddingRow:I
+    iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->topPaddingRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 350
+    .line 351
     iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->rowCount:I
 
     iput v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->headerRow:I
 
-    .line 351
+    .line 352
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templates:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -984,18 +986,18 @@
 
     const/4 v0, -0x1
 
-    .line 352
+    .line 353
     iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templatesStartRow:I
 
     goto :goto_0
 
-    .line 354
+    .line 355
     :cond_0
     iget v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->rowCount:I
 
     iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templatesStartRow:I
 
-    .line 355
+    .line 356
     iget-object v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templates:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -1006,7 +1008,7 @@
 
     iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->rowCount:I
 
-    .line 357
+    .line 358
     :goto_0
     iget v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->rowCount:I
 
@@ -1014,7 +1016,7 @@
 
     iput v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->rowCount:I
 
-    iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->emptyRow:I
+    iput v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->bottomPaddingRow:I
 
     return-void
 .end method
@@ -1022,14 +1024,14 @@
 .method private final updateSortItem()V
     .locals 10
 
-    .line 322
+    .line 323
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getSortItem()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v0
 
     const-string v1, "updateSortItem$lambda$14"
 
-    .line 323
+    .line 324
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->templates:Ljava/util/List;
@@ -1065,10 +1067,10 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 324
+    .line 325
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->removeAllSubItems()V
 
-    .line 325
+    .line 326
     invoke-static {}, Lcom/iMe/fork/enums/TemplatesSortingType;->values()[Lcom/iMe/fork/enums/TemplatesSortingType;
 
     move-result-object v1
@@ -1083,7 +1085,7 @@
 
     aget-object v6, v1, v5
 
-    .line 326
+    .line 327
     sget-object v7, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesSortingType:Lcom/iMe/fork/enums/TemplatesSortingType;
 
     if-ne v7, v6, :cond_2
@@ -1095,7 +1097,7 @@
     :cond_2
     move v7, v3
 
-    .line 327
+    .line 328
     :goto_3
     sget v8, Lcom/iMe/common/IdFabric$Menu;->SORT:I
 
@@ -1129,7 +1131,7 @@
 
     move-result-object v6
 
-    .line 328
+    .line 329
     invoke-virtual {v6, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
     add-int/lit8 v5, v5, 0x1
@@ -1149,12 +1151,12 @@
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 189
+    .line 190
     sget p2, Lorg/telegram/messenger/NotificationCenter;->templatesDidChanged:I
 
     if-ne p1, p2, :cond_0
 
-    .line 190
+    .line 191
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->loadTemplates()V
 
     :cond_0
@@ -1166,7 +1168,7 @@
 
     const/16 v0, 0x46
 
-    .line 138
+    .line 139
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1177,7 +1179,7 @@
 .method public getCurrentItemTop()I
     .locals 5
 
-    .line 90
+    .line 91
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     move-result-object v0
@@ -1194,7 +1196,7 @@
 
     return v1
 
-    .line 93
+    .line 94
     :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
@@ -1208,7 +1210,7 @@
 
     return v1
 
-    .line 94
+    .line 95
     :cond_1
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
@@ -1218,7 +1220,7 @@
 
     move-result-object v1
 
-    .line 95
+    .line 96
     invoke-virtual {v0}, Landroid/view/View;->getY()F
 
     move-result v0
@@ -1239,7 +1241,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 96
+    .line 97
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v4
@@ -1268,7 +1270,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 97
+    .line 98
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v1
@@ -1291,7 +1293,7 @@
     :goto_3
     const/16 v1, 0xd
 
-    .line 100
+    .line 101
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1304,7 +1306,7 @@
 .method public final getDelegate()Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
     .locals 1
 
-    .line 44
+    .line 45
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->delegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
     return-object v0
@@ -1313,7 +1315,7 @@
 .method public getFirstOffset()I
     .locals 2
 
-    .line 103
+    .line 104
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListTopPadding()I
 
     move-result v0
@@ -1342,7 +1344,7 @@
 .method public getListTopPadding()I
     .locals 1
 
-    .line 110
+    .line 111
     iget v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->topPadding:I
 
     return v0
@@ -1380,7 +1382,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 195
+    .line 196
     new-instance v9, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
@@ -1388,6 +1390,8 @@
     move-result-object v2
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
+
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
 
     const/4 v4, 0x0
 
@@ -1397,17 +1401,15 @@
 
     const/4 v7, 0x0
 
-    const-string v8, "dialogScrollGlow"
-
     move-object v1, v9
 
-    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v1, 0x0
 
     aput-object v9, v0, v1
 
-    .line 196
+    .line 197
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
@@ -1420,9 +1422,11 @@
 
     new-array v13, v3, [Ljava/lang/Class;
 
-    const-class v4, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$EmptyView;
+    const-class v4, Landroid/widget/Space;
 
     aput-object v4, v13, v1
+
+    sget v17, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     const/4 v14, 0x0
 
@@ -1430,15 +1434,13 @@
 
     const/16 v16, 0x0
 
-    const-string v17, "windowBackgroundGray"
-
     move-object v10, v2
 
-    invoke-direct/range {v10 .. v17}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v10 .. v17}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     aput-object v2, v0, v3
 
-    .line 197
+    .line 198
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
@@ -1457,6 +1459,8 @@
 
     move-result-object v22
 
+    sget v26, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
     const/16 v20, 0x0
 
     const/16 v23, 0x0
@@ -1465,19 +1469,17 @@
 
     const/16 v25, 0x0
 
-    const-string v26, "windowBackgroundWhiteBlueHeader"
-
     move-object/from16 v18, v2
 
     move-object/from16 v21, v4
 
-    invoke-direct/range {v18 .. v26}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v18 .. v26}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v4, 0x2
 
     aput-object v2, v0, v4
 
-    .line 198
+    .line 199
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
@@ -1498,23 +1500,23 @@
 
     move-result-object v9
 
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
     const/4 v10, 0x0
 
     const/4 v11, 0x0
 
     const/4 v12, 0x0
 
-    const-string v13, "windowBackgroundWhiteRedText5"
-
     move-object v5, v2
 
-    invoke-direct/range {v5 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v5 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v5, 0x3
 
     aput-object v2, v0, v5
 
-    .line 199
+    .line 200
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
@@ -1533,19 +1535,19 @@
 
     move-result-object v10
 
-    const/4 v13, 0x0
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText3:I
 
-    const-string v14, "windowBackgroundWhiteGrayText3"
+    const/4 v13, 0x0
 
     move-object v6, v2
 
-    invoke-direct/range {v6 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v6 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v4, 0x4
 
     aput-object v2, v0, v4
 
-    .line 200
+    .line 201
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
@@ -1554,23 +1556,23 @@
 
     sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
 
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
     const/4 v8, 0x0
 
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const-string v12, "listSelectorSDK21"
-
     move-object v5, v2
 
-    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v4, 0x5
 
     aput-object v2, v0, v4
 
-    .line 201
+    .line 202
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
@@ -1585,19 +1587,19 @@
 
     sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
-    const/4 v7, 0x0
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    const-string v12, "divider"
+    const/4 v7, 0x0
 
     move-object v5, v2
 
-    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v1, 0x6
 
     aput-object v2, v0, v1
 
-    .line 194
+    .line 195
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -1616,13 +1618,13 @@
 .method public onContainerTranslationUpdated(F)V
     .locals 0
 
-    .line 183
+    .line 184
     iput p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->currentPanTranslationProgress:F
 
-    .line 184
+    .line 185
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->onContainerTranslationUpdated(F)V
 
-    .line 185
+    .line 186
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateEmptyViewPosition()V
 
     return-void
@@ -1631,7 +1633,7 @@
 .method public onDestroy()V
     .locals 2
 
-    .line 148
+    .line 149
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getCurrentAccount()I
@@ -1646,7 +1648,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 149
+    .line 150
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1665,12 +1667,12 @@
 .end method
 
 .method public onHide()V
-    .locals 3
-
-    .line 170
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
+    .locals 5
 
     .line 171
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
+
+    .line 172
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
@@ -1681,25 +1683,29 @@
 
     invoke-virtual {v1, v2, v2, v2, v2}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 172
+    .line 173
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v1, "doneItem"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
+    const/4 v1, 0x1
 
-    .line 174
+    const/4 v3, 0x0
+
+    invoke-static {v0, v2, v1, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 175
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getSortItem()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v0
 
-    const-string v1, "sortItem"
+    const-string v4, "sortItem"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v0, v2, v1, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     return-void
 .end method
@@ -1707,10 +1713,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 178
+    .line 179
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 179
+    .line 180
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateEmptyViewPosition()V
 
     return-void
@@ -1723,7 +1729,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 80
+    .line 81
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->delegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
     const/4 v0, 0x1
@@ -1732,7 +1738,7 @@
 
     goto :goto_0
 
-    .line 81
+    .line 82
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$Menu;->SORT:I
 
@@ -1748,7 +1754,7 @@
 
     if-ge p1, v1, :cond_1
 
-    .line 82
+    .line 83
     invoke-static {}, Lcom/iMe/fork/enums/TemplatesSortingType;->values()[Lcom/iMe/fork/enums/TemplatesSortingType;
 
     move-result-object v1
@@ -1757,10 +1763,10 @@
 
     aget-object p1, v1, p1
 
-    .line 83
+    .line 84
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setSelectedTemplatesSortingType(Lcom/iMe/fork/enums/TemplatesSortingType;)V
 
-    .line 84
+    .line 85
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getSortItem()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v0
@@ -1771,7 +1777,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
-    .line 85
+    .line 86
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateSortItem()V
 
     :cond_1
@@ -1782,7 +1788,7 @@
 .method public onPreMeasure(II)V
     .locals 3
 
-    .line 114
+    .line 115
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -1805,19 +1811,19 @@
 
     const/16 p1, 0x34
 
-    .line 115
+    .line 116
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 116
+    .line 117
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/ChatAttachAlert;->setAllowNestedScroll(Z)V
 
     goto :goto_1
 
-    .line 118
+    .line 119
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
@@ -1843,7 +1849,7 @@
 
     goto :goto_0
 
-    .line 121
+    .line 122
     :cond_1
     div-int/lit8 p2, p2, 0x5
 
@@ -1852,7 +1858,7 @@
     :goto_0
     const/16 p2, 0xd
 
-    .line 123
+    .line 124
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -1863,25 +1869,25 @@
 
     move p1, v2
 
-    .line 127
+    .line 128
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->setAllowNestedScroll(Z)V
 
-    .line 129
+    .line 130
     :goto_1
     iput-boolean v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->ignoreLayout:Z
 
-    .line 130
+    .line 131
     iget p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->topPadding:I
 
     if-eq p2, p1, :cond_3
 
-    .line 131
+    .line 132
     iput p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->topPadding:I
 
-    .line 132
+    .line 133
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     move-result-object p1
@@ -1890,16 +1896,16 @@
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 133
+    .line 134
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListAdapter()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;
 
     move-result-object p1
 
-    iget p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->paddingRow:I
+    iget p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->topPaddingRow:I
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 135
+    .line 136
     :cond_3
     iput-boolean v2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->ignoreLayout:Z
 
@@ -1909,13 +1915,13 @@
 .method public onShow(Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;)V
     .locals 3
 
-    .line 157
+    .line 158
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    .line 158
+    .line 159
     iget-object v0, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 159
+    .line 160
     sget v1, Lorg/telegram/messenger/R$string;->chat_templates:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1924,7 +1930,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 160
+    .line 161
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v0
@@ -1947,26 +1953,30 @@
 
     invoke-virtual {v0, v2, v2, v1, v2}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 162
+    .line 163
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v0, "doneItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v0, 0x1
 
-    .line 164
+    const/4 v1, 0x0
+
+    invoke-static {p1, v2, v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 165
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListLayoutManager()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1;
 
     move-result-object p1
 
     invoke-virtual {p1, v2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 165
+    .line 166
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateEmptyView()V
 
-    .line 166
+    .line 167
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->updateSortItem()V
 
     return-void
@@ -1975,14 +1985,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 141
+    .line 142
     iget-boolean v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 144
+    .line 145
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
@@ -1992,7 +2002,7 @@
 .method public scrollToTop()V
     .locals 2
 
-    .line 153
+    .line 154
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->getListView()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     move-result-object v0
@@ -2007,10 +2017,10 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 106
+    .line 107
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 107
+    .line 108
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getSheetContainer()Landroid/view/ViewGroup;

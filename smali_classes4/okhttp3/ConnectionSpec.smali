@@ -379,7 +379,7 @@
 
     move-result-object v0
 
-    const-string v1, "sslSocket.enabledCipherSuites"
+    const-string/jumbo v1, "sslSocket.enabledCipherSuites"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -414,7 +414,7 @@
 
     move-result-object v1
 
-    const-string v2, "sslSocket.enabledProtocols"
+    const-string/jumbo v2, "sslSocket.enabledProtocols"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -442,7 +442,7 @@
 
     move-result-object p1
 
-    const-string v2, "supportedCipherSuites"
+    const-string/jumbo v2, "supportedCipherSuites"
 
     .line 124
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -475,7 +475,7 @@
     .line 128
     aget-object p1, p1, v2
 
-    const-string p2, "supportedCipherSuites[indexOfFallbackScsv]"
+    const-string/jumbo p2, "supportedCipherSuites[indexOfFallbackScsv]"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -535,7 +535,7 @@
 .method public final apply$okhttp(Ljavax/net/ssl/SSLSocket;Z)V
     .locals 1
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -772,7 +772,7 @@
 .method public final isCompatible(Ljavax/net/ssl/SSLSocket;)Z
     .locals 4
 
-    const-string v0, "socket"
+    const-string/jumbo v0, "socket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -977,7 +977,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "supportsTlsExtensions="
+    const-string/jumbo v1, "supportsTlsExtensions="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

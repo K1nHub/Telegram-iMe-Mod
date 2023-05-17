@@ -468,10 +468,12 @@
 .end method
 
 .method private synthetic lambda$new$0()V
-    .locals 0
+    .locals 1
+
+    const/4 v0, 0x0
 
     .line 53
-    invoke-virtual {p0}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loadUserRingtones()V
+    invoke-virtual {p0, v0}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loadUserRingtones(Z)V
 
     return-void
 .end method
@@ -1253,78 +1255,84 @@
     return v0
 .end method
 
-.method public loadUserRingtones()V
+.method public loadUserRingtones(Z)V
     .locals 5
+
+    const/4 v0, 0x1
+
+    if-nez p1, :cond_1
 
     .line 58
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    sget-wide v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->lastReloadTimeMs:J
+    sget-wide v3, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->lastReloadTimeMs:J
 
-    sub-long/2addr v0, v2
+    sub-long/2addr v1, v3
 
-    const-wide/32 v2, 0x5265c00
+    const-wide/32 v3, 0x5265c00
 
-    cmp-long v0, v0, v2
+    cmp-long p1, v1, v3
 
-    const/4 v1, 0x1
-
-    if-lez v0, :cond_0
-
-    move v0, v1
+    if-lez p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
-
-    .line 59
-    :goto_0
-    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;
-
-    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;-><init>()V
-
-    .line 60
-    sget-wide v3, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->queryHash:J
-
-    iput-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;->hash:J
-
-    if-eqz v0, :cond_1
-
-    .line 62
-    iget v0, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->currentAccount:I
-
-    invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
-
-    move-result-object v0
-
-    new-instance v1, Lorg/telegram/messenger/ringtone/RingtoneDataStore$$ExternalSyntheticLambda5;
-
-    invoke-direct {v1, p0}, Lorg/telegram/messenger/ringtone/RingtoneDataStore$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/ringtone/RingtoneDataStore;)V
-
-    invoke-virtual {v0, v2, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    const/4 p1, 0x0
 
     goto :goto_1
 
-    .line 78
     :cond_1
-    iget-boolean v0, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loaded:Z
+    :goto_0
+    move p1, v0
 
-    if-nez v0, :cond_2
+    .line 59
+    :goto_1
+    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;
+
+    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;-><init>()V
+
+    .line 60
+    sget-wide v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->queryHash:J
+
+    iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;->hash:J
+
+    if-eqz p1, :cond_2
+
+    .line 62
+    iget p1, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->currentAccount:I
+
+    invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object p1
+
+    new-instance v0, Lorg/telegram/messenger/ringtone/RingtoneDataStore$$ExternalSyntheticLambda5;
+
+    invoke-direct {v0, p0}, Lorg/telegram/messenger/ringtone/RingtoneDataStore$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/ringtone/RingtoneDataStore;)V
+
+    invoke-virtual {p1, v1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+
+    goto :goto_2
+
+    .line 78
+    :cond_2
+    iget-boolean p1, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loaded:Z
+
+    if-nez p1, :cond_3
 
     .line 79
-    invoke-direct {p0, v1}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loadFromPrefs(Z)V
+    invoke-direct {p0, v0}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loadFromPrefs(Z)V
 
     .line 80
-    iput-boolean v1, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loaded:Z
+    iput-boolean v0, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loaded:Z
 
     .line 82
-    :cond_2
+    :cond_3
     invoke-virtual {p0}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->checkRingtoneSoundsLoaded()V
 
-    :goto_1
+    :goto_2
     return-void
 .end method
 

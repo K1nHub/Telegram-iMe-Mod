@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 import p034j$.util.Iterator;
 import p034j$.util.function.Consumer;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class zzgx implements Iterator<Object>, p034j$.util.Iterator {
     @Override // p034j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {

@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/topics/TopicsBar$initListView$1$3;->$this_apply:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 178
+    .line 190
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 180
+    .line 192
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsBar$initListView$1$3;->$this_apply:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V

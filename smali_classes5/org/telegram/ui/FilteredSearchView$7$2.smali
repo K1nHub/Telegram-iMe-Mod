@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView$7;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
     .locals 0
 
-    .line 804
+    .line 822
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$7$2;->this$1:Lorg/telegram/ui/FilteredSearchView$7;
 
     iput-object p2, p0, Lorg/telegram/ui/FilteredSearchView$7$2;->val$layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 807
+    .line 825
     iget-object p1, p0, Lorg/telegram/ui/FilteredSearchView$7$2;->this$1:Lorg/telegram/ui/FilteredSearchView$7;
 
     iget-object p1, p1, Lorg/telegram/ui/FilteredSearchView$7;->val$finalProgressView:Landroid/view/View;
@@ -48,7 +48,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 808
+    .line 826
     iget-object p1, p0, Lorg/telegram/ui/FilteredSearchView$7$2;->val$layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$7$2;->this$1:Lorg/telegram/ui/FilteredSearchView$7;
@@ -57,7 +57,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->stopIgnoringView(Landroid/view/View;)V
 
-    .line 809
+    .line 827
     iget-object p1, p0, Lorg/telegram/ui/FilteredSearchView$7$2;->this$1:Lorg/telegram/ui/FilteredSearchView$7;
 
     iget-object v0, p1, Lorg/telegram/ui/FilteredSearchView$7;->this$0:Lorg/telegram/ui/FilteredSearchView;

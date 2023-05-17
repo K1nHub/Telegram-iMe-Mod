@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Reserved({1})
 /* loaded from: classes3.dex */
 public final class StreetViewSource extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getType", m775id = 2)
+    @SafeParcelable.Field(getter = "getType", m779id = 2)
     private final int zzb;
     private static final String zza = StreetViewSource.class.getSimpleName();
     public static final Parcelable.Creator<StreetViewSource> CREATOR = new zzt();
@@ -19,7 +19,7 @@ public final class StreetViewSource extends AbstractSafeParcelable {
     public static final StreetViewSource OUTDOOR = new StreetViewSource(1);
 
     @SafeParcelable.Constructor
-    public StreetViewSource(@SafeParcelable.Param(m774id = 2) int i) {
+    public StreetViewSource(@SafeParcelable.Param(m778id = 2) int i) {
         this.zzb = i;
     }
 

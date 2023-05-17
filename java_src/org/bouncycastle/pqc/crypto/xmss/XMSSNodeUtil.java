@@ -80,7 +80,7 @@ class XMSSNodeUtil {
             for (int i2 = 0; i2 < treeDigestSize; i2++) {
                 bArr[i2 + treeDigestSize] = (byte) (xMSSNode2.getValue()[i2] ^ PRF3[i2]);
             }
-            return new XMSSNode(xMSSNode.getHeight(), wOTSPlus.getKhf().m57H(PRF, bArr));
+            return new XMSSNode(xMSSNode.getHeight(), wOTSPlus.getKhf().m61H(PRF, bArr));
         }
         throw new IllegalStateException("height of both nodes must be equal");
     }

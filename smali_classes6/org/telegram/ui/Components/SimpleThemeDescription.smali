@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public static varargs add(Ljava/util/ArrayList;Ljava/lang/Runnable;[Ljava/lang/String;)V
+.method public static varargs add(Ljava/util/ArrayList;Ljava/lang/Runnable;[I)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -13,9 +13,7 @@
             "Lorg/telegram/ui/ActionBar/ThemeDescription;",
             ">;",
             "Ljava/lang/Runnable;",
-            "[",
-            "Ljava/lang/String;",
-            ")V"
+            "[I)V"
         }
     .end annotation
 
@@ -26,7 +24,7 @@
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/SimpleThemeDescription$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Runnable;)V
 
-    invoke-static {v0, p2}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {v0, p2}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[I)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -35,7 +33,7 @@
     return-void
 .end method
 
-.method public static createThemeDescription(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)Lorg/telegram/ui/ActionBar/ThemeDescription;
+.method public static createThemeDescription(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)Lorg/telegram/ui/ActionBar/ThemeDescription;
     .locals 9
 
     .line 11
@@ -55,22 +53,20 @@
 
     move-object v6, p0
 
-    move-object v7, p1
+    move v7, p1
 
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     return-object v8
 .end method
 
-.method public static varargs createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[Ljava/lang/String;)Ljava/util/ArrayList;
+.method public static varargs createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[I)Ljava/util/ArrayList;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;",
-            "[",
-            "Ljava/lang/String;",
-            ")",
+            "[I)",
             "Ljava/util/ArrayList<",
             "Lorg/telegram/ui/ActionBar/ThemeDescription;",
             ">;"
@@ -92,10 +88,10 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    aget-object v3, p1, v2
+    aget v3, p1, v2
 
     .line 17
-    invoke-static {p0, v3}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescription(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)Lorg/telegram/ui/ActionBar/ThemeDescription;
+    invoke-static {p0, v3}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescription(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     move-result-object v3
 

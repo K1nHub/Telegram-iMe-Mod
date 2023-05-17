@@ -127,10 +127,10 @@ public class GifHeaderParser {
     }
 
     private void readBitmap() {
-        this.header.currentFrame.f73ix = readShort();
-        this.header.currentFrame.f74iy = readShort();
-        this.header.currentFrame.f72iw = readShort();
-        this.header.currentFrame.f71ih = readShort();
+        this.header.currentFrame.f76ix = readShort();
+        this.header.currentFrame.f77iy = readShort();
+        this.header.currentFrame.f75iw = readShort();
+        this.header.currentFrame.f74ih = readShort();
         int read = read();
         boolean z = (read & 128) != 0;
         int pow = (int) Math.pow(2.0d, (read & 7) + 1);

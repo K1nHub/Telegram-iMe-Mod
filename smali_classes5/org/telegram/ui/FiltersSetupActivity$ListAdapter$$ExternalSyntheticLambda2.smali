@@ -8,14 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
 
+.field public final synthetic f$1:Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
+
+    iput-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda2;->f$1:Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->$r8$lambda$Q0o7kJacwt4zX96cGbGmmjen6aw(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Landroid/view/View;)V
+    iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda2;->f$1:Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->$r8$lambda$5eRgMBIZLwi7q5EtCOpTVi8wl7Q(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;Landroid/view/View;)V
 
     return-void
 .end method

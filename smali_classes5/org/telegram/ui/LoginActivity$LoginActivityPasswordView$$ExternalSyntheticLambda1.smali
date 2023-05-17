@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/tgnet/TLRPC$TL_auth_passwordRecovery;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->$r8$lambda$NMaMgGeycbTvMxsl2CkKUepfGCM(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Lorg/telegram/tgnet/TLRPC$TL_auth_passwordRecovery;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->$r8$lambda$CwzNf2zhx26GXJCEpbIUm6stEw0(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Lorg/telegram/tgnet/TLRPC$TL_auth_passwordRecovery;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -277,15 +277,15 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "dialogTextBlack"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     :goto_0
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

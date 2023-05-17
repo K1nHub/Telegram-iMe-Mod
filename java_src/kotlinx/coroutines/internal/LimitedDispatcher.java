@@ -1,6 +1,8 @@
 package kotlinx.coroutines.internal;
 
+import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
+import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.DefaultExecutorKt;
 import kotlinx.coroutines.Delay;
@@ -13,6 +15,12 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
     private final LockFreeTaskQueue<Runnable> queue;
     private volatile int runningWorkers;
     private final Object workerAllocationLock;
+
+    @Override // kotlinx.coroutines.Delay
+    /* renamed from: scheduleResumeAfterDelay */
+    public void mo1605scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+        this.$$delegate_0.mo1605scheduleResumeAfterDelay(j, cancellableContinuation);
+    }
 
     public LimitedDispatcher(CoroutineDispatcher coroutineDispatcher, int i) {
         this.dispatcher = coroutineDispatcher;
@@ -75,7 +83,7 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
             boolean r2 = r2.isDispatchNeeded(r4)
             if (r2 == 0) goto L2
             kotlinx.coroutines.CoroutineDispatcher r0 = r4.dispatcher
-            r0.mo1566dispatch(r4, r4)
+            r0.mo1604dispatch(r4, r4)
             return
         L2a:
             java.lang.Object r1 = r4.workerAllocationLock
@@ -105,11 +113,11 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1566dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo1604dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         if (addAndTryDispatching(runnable) || !tryAllocateWorker()) {
             return;
         }
-        this.dispatcher.mo1566dispatch(this, this);
+        this.dispatcher.mo1604dispatch(this, this);
     }
 
     private final boolean tryAllocateWorker() {

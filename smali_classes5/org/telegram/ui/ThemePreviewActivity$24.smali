@@ -3,7 +3,7 @@
 .source "ThemePreviewActivity.java"
 
 # interfaces
-.implements Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;
+.implements Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;
 
 
 # annotations
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 1947
+    .line 2183
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$24;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,29 +35,44 @@
 
 
 # virtual methods
-.method public onPageScrollStateChanged(I)V
-    .locals 0
+.method public synthetic getContentDescription()Ljava/lang/CharSequence;
+    .locals 1
 
-    return-void
+    invoke-static {p0}, Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate$-CC;->$default$getContentDescription(Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public onPageScrolled(IFI)V
-    .locals 0
+.method public synthetic getStepsCount()I
+    .locals 1
 
-    return-void
+    invoke-static {p0}, Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate$-CC;->$default$getStepsCount(Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;)I
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public onPageSelected(I)V
+.method public onSeekBarDrag(ZF)V
     .locals 0
 
-    .line 1955
+    .line 2186
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$24;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$6600(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/view/View;
+    invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$2602(Lorg/telegram/ui/ThemePreviewActivity;F)F
 
-    move-result-object p1
+    .line 2187
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$24;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$6600(Lorg/telegram/ui/ThemePreviewActivity;)V
+
+    return-void
+.end method
+
+.method public onSeekBarPressed(Z)V
+    .locals 0
 
     return-void
 .end method

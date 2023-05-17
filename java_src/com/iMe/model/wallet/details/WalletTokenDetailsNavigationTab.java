@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class WalletTokenDetailsNavigationTab extends NavigationTab<MvpFragment> {
 
     /* renamed from: id */
-    private final int f275id;
+    private final int f279id;
     private final TabbedFragmentPage<MvpFragment> page;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +57,7 @@ public final class WalletTokenDetailsNavigationTab extends NavigationTab<MvpFrag
 
     @Override // com.iMe.model.common.NavigationTab
     public int getId() {
-        return this.f275id;
+        return this.f279id;
     }
 
     public final TabbedFragmentPage<MvpFragment> getPage() {
@@ -68,7 +68,7 @@ public final class WalletTokenDetailsNavigationTab extends NavigationTab<MvpFrag
     public WalletTokenDetailsNavigationTab(int i, TabbedFragmentPage<MvpFragment> page) {
         super(i, page.getFragment());
         Intrinsics.checkNotNullParameter(page, "page");
-        this.f275id = i;
+        this.f279id = i;
         this.page = page;
     }
 }

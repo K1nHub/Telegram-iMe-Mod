@@ -27,7 +27,7 @@ import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.ActionBar.DrawerLayoutContainer */
@@ -42,6 +42,7 @@ public class DrawerLayoutContainer extends FrameLayout {
     private AnimatorSet currentAnimation;
     private boolean drawCurrentPreviewFragmentAbove;
     private FrameLayout drawerLayout;
+    private View drawerListView;
     private boolean drawerOpened;
     private float drawerPosition;
     private boolean firstLayout;
@@ -95,7 +96,7 @@ public class DrawerLayoutContainer extends FrameLayout {
             });
             setSystemUiVisibility(1280);
         }
-        this.shadowLeft = getResources().getDrawable(C3242R.C3244drawable.menu_shadow);
+        this.shadowLeft = getResources().getDrawable(C3290R.C3292drawable.menu_shadow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -159,13 +160,21 @@ public class DrawerLayoutContainer extends FrameLayout {
         marginLayoutParams.bottomMargin = windowInsets.getSystemWindowInsetBottom();
     }
 
-    public void setDrawerLayout(FrameLayout frameLayout) {
+    public void setDrawerLayout(FrameLayout frameLayout, final View view) {
         this.drawerLayout = frameLayout;
+        this.drawerListView = view;
         addView(frameLayout);
         this.drawerLayout.setVisibility(4);
+        view.setVisibility(8);
         if (Build.VERSION.SDK_INT >= 21) {
             this.drawerLayout.setFitsSystemWindows(true);
         }
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                view.setVisibility(0);
+            }
+        }, 2500L);
     }
 
     public void moveDrawerByX(float f) {
@@ -174,6 +183,7 @@ public class DrawerLayoutContainer extends FrameLayout {
 
     @Keep
     public void setDrawerPosition(float f) {
+        View view;
         FrameLayout frameLayout = this.drawerLayout;
         if (frameLayout == null) {
             return;
@@ -185,6 +195,9 @@ public class DrawerLayoutContainer extends FrameLayout {
             this.drawerPosition = BitmapDescriptorFactory.HUE_RED;
         }
         this.drawerLayout.setTranslationX(this.drawerPosition);
+        if (this.drawerPosition > BitmapDescriptorFactory.HUE_RED && (view = this.drawerListView) != null && view.getVisibility() != 0) {
+            this.drawerListView.setVisibility(0);
+        }
         int i = this.drawerPosition > BitmapDescriptorFactory.HUE_RED ? 0 : 4;
         if (this.drawerLayout.getVisibility() != i) {
             this.drawerLayout.setVisibility(i);
@@ -517,7 +530,7 @@ public class DrawerLayoutContainer extends FrameLayout {
                             childAt.layout(-childAt.getMeasuredWidth(), layoutParams.topMargin + getPaddingTop(), 0, layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
                         }
                     } catch (Exception e) {
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                     }
                 }
             }
@@ -628,7 +641,7 @@ public class DrawerLayoutContainer extends FrameLayout {
                     }
                 }
                 if (i != 0) {
-                    canvas.clipRect(i - AndroidUtilities.m50dp(1), 0, width, getHeight());
+                    canvas.clipRect(i - AndroidUtilities.m54dp(1), 0, width, getHeight());
                 }
                 i2 = i3;
             } else {
@@ -642,7 +655,7 @@ public class DrawerLayoutContainer extends FrameLayout {
                     canvas.drawRect(i, BitmapDescriptorFactory.HUE_RED, width, getHeight(), this.scrimPaint);
                 }
             } else if (this.shadowLeft != null) {
-                float max = Math.max((float) BitmapDescriptorFactory.HUE_RED, Math.min(this.drawerPosition / AndroidUtilities.m50dp(20), 1.0f));
+                float max = Math.max((float) BitmapDescriptorFactory.HUE_RED, Math.min(this.drawerPosition / AndroidUtilities.m54dp(20), 1.0f));
                 if (max != BitmapDescriptorFactory.HUE_RED) {
                     this.shadowLeft.setBounds((int) this.drawerPosition, view.getTop(), ((int) this.drawerPosition) + this.shadowLeft.getIntrinsicWidth(), view.getBottom());
                     this.shadowLeft.setAlpha((int) (max * 255.0f));
@@ -706,12 +719,12 @@ public class DrawerLayoutContainer extends FrameLayout {
         public PreviewForegroundDrawable() {
             GradientDrawable gradientDrawable = new GradientDrawable();
             this.topDrawable = gradientDrawable;
-            gradientDrawable.setStroke(AndroidUtilities.m50dp(1), Theme.getColor("actionBarDefault"));
-            gradientDrawable.setCornerRadius(AndroidUtilities.m50dp(6));
+            gradientDrawable.setStroke(AndroidUtilities.m54dp(1), Theme.getColor(Theme.key_actionBarDefault));
+            gradientDrawable.setCornerRadius(AndroidUtilities.m54dp(6));
             GradientDrawable gradientDrawable2 = new GradientDrawable();
             this.bottomDrawable = gradientDrawable2;
-            gradientDrawable2.setStroke(1, Theme.getColor("divider"));
-            gradientDrawable2.setCornerRadius(AndroidUtilities.m50dp(6));
+            gradientDrawable2.setStroke(1, Theme.getColor(Theme.key_divider));
+            gradientDrawable2.setCornerRadius(AndroidUtilities.m54dp(6));
         }
 
         @Override // android.graphics.drawable.Drawable
@@ -720,11 +733,11 @@ public class DrawerLayoutContainer extends FrameLayout {
             canvas.save();
             int i = bounds.left;
             int i2 = bounds.top;
-            canvas.clipRect(i, i2, bounds.right, C3306ActionBar.getCurrentActionBarHeight() + i2);
+            canvas.clipRect(i, i2, bounds.right, C3356ActionBar.getCurrentActionBarHeight() + i2);
             this.topDrawable.draw(canvas);
             canvas.restore();
             canvas.save();
-            canvas.clipRect(bounds.left, bounds.top + C3306ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
+            canvas.clipRect(bounds.left, bounds.top + C3356ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
             this.bottomDrawable.draw(canvas);
             canvas.restore();
         }

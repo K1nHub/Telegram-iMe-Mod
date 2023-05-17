@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;)V
     .locals 0
 
-    .line 3505
+    .line 3514
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$25;->val$tooltip:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 3508
+    .line 3517
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$25;->val$tooltip:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -44,7 +44,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3509
+    .line 3518
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$25;->val$tooltip:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;

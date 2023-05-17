@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ClearHistoryAlert;Landroidx/core/widget/NestedScrollView;)V
     .locals 0
 
-    .line 341
+    .line 340
     iput-object p1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$3;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$3;->val$scrollView:Landroidx/core/widget/NestedScrollView;
@@ -42,12 +42,12 @@
 .method public onOptionSelected(I)V
     .locals 1
 
-    .line 344
+    .line 343
     iget-object v0, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$3;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ClearHistoryAlert;->access$802(Lorg/telegram/ui/Components/ClearHistoryAlert;I)I
 
-    .line 345
+    .line 344
     iget-object p1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$3;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;
 
     const/4 v0, 0x1
@@ -60,7 +60,7 @@
 .method public onTouchEnd()V
     .locals 3
 
-    .line 350
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$3;->val$scrollView:Landroidx/core/widget/NestedScrollView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ClearHistoryAlert$3;->this$0:Lorg/telegram/ui/Components/ClearHistoryAlert;

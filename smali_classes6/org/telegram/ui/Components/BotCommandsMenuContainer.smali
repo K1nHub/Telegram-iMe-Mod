@@ -736,9 +736,9 @@
     .line 243
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuContainer;->topBackground:Landroid/graphics/Paint;
 
-    const-string v1, "key_sheet_scrollUp"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -747,9 +747,9 @@
     .line 244
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuContainer;->backgroundPaint:Landroid/graphics/Paint;
 
-    const-string v1, "windowBackgroundWhite"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -760,7 +760,7 @@
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

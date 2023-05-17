@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -28,6 +28,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.AlertsCreator;
 import org.telegram.p044ui.Components.AnimatedPhoneNumberEditText;
@@ -99,20 +100,20 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         this.classGuid = ConnectionsManager.generateClassGuid();
         this.parentFragment = baseFragment;
         setCustomView(createView(getContext()));
-        setTitle(LocaleController.getString("NewContactTitle", C3242R.string.NewContactTitle), true);
+        setTitle(LocaleController.getString("NewContactTitle", C3290R.string.NewContactTitle), true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x03ea  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x040a  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0419  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0407 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x03e8  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0408  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0417  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0405 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public android.view.View createView(android.content.Context r28) {
         /*
-            Method dump skipped, instructions count: 1280
+            Method dump skipped, instructions count: 1278
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.NewContactBottomSheet.createView(android.content.Context):android.view.View");
@@ -142,15 +143,15 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.NewContactBottomSheet$1 */
     /* loaded from: classes5.dex */
-    public class C59371 extends TextView {
+    public class C60311 extends TextView {
         final NotificationCenter.NotificationCenterDelegate delegate;
 
-        C59371(NewContactBottomSheet newContactBottomSheet, Context context) {
+        C60311(NewContactBottomSheet newContactBottomSheet, Context context) {
             super(context);
             this.delegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.NewContactBottomSheet$1$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
                 public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                    NewContactBottomSheet.C59371.this.lambda$$0(i, i2, objArr);
+                    NewContactBottomSheet.C60311.this.lambda$$0(i, i2, objArr);
                 }
             };
         }
@@ -176,8 +177,8 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.NewContactBottomSheet$2 */
     /* loaded from: classes5.dex */
-    public class C59382 implements CountrySelectActivity.CountrySelectActivityDelegate {
-        C59382() {
+    public class C60322 implements CountrySelectActivity.CountrySelectActivityDelegate {
+        C60322() {
         }
 
         @Override // org.telegram.p044ui.CountrySelectActivity.CountrySelectActivityDelegate
@@ -186,7 +187,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NewContactBottomSheet$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NewContactBottomSheet.C59382.this.lambda$didSelectCountry$0();
+                    NewContactBottomSheet.C60322.this.lambda$didSelectCountry$0();
                 }
             }, 300L);
             NewContactBottomSheet.this.phoneField.requestFocus();
@@ -202,7 +203,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
         CountrySelectActivity countrySelectActivity = new CountrySelectActivity(true);
-        countrySelectActivity.setCountrySelectActivityDelegate(new C59382());
+        countrySelectActivity.setCountrySelectActivityDelegate(new C60322());
         this.parentFragment.showAsSheet(countrySelectActivity);
     }
 
@@ -340,7 +341,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             }
             bufferedReader.close();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         if (str.startsWith("+")) {
             return str;
@@ -400,7 +401,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         if (languageFlag != null) {
             spannableStringBuilder.append((CharSequence) languageFlag);
         }
-        setCountryButtonText(Emoji.replaceEmoji(spannableStringBuilder, this.countryFlag.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(20), false));
+        setCountryButtonText(Emoji.replaceEmoji(spannableStringBuilder, this.countryFlag.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false));
         this.countryCodeForHint = str;
         this.wasCountryHintIndex = -1;
         invalidateCountryHint();
@@ -411,9 +412,9 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         if (TextUtils.isEmpty(charSequence)) {
             ViewPropertyAnimator animate = this.countryFlag.animate();
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
-            animate.setInterpolator(cubicBezierInterpolator).translationY(AndroidUtilities.m50dp(30)).setDuration(150L);
-            this.plusTextView.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.m50dp(30)).setDuration(150L);
-            this.codeField.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.m50dp(30)).setDuration(150L);
+            animate.setInterpolator(cubicBezierInterpolator).translationY(AndroidUtilities.m54dp(30)).setDuration(150L);
+            this.plusTextView.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.m54dp(30)).setDuration(150L);
+            this.codeField.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.m54dp(30)).setDuration(150L);
             return;
         }
         this.countryFlag.animate().setInterpolator(AndroidUtilities.overshootInterpolator).translationY(BitmapDescriptorFactory.HUE_RED).setDuration(350L).start();
@@ -569,23 +570,33 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     @Override // org.telegram.p044ui.ActionBar.BottomSheet
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.firstNameField, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.firstNameField, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, "windowBackgroundWhiteHintText"));
-        arrayList.add(new ThemeDescription(this.firstNameField, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "windowBackgroundWhiteInputField"));
-        arrayList.add(new ThemeDescription(this.firstNameField, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, "windowBackgroundWhiteInputFieldActivated"));
-        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, "windowBackgroundWhiteHintText"));
-        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "windowBackgroundWhiteInputField"));
-        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, "windowBackgroundWhiteInputFieldActivated"));
-        arrayList.add(new ThemeDescription(this.codeField, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.codeField, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "windowBackgroundWhiteInputField"));
-        arrayList.add(new ThemeDescription(this.codeField, ThemeDescription.FLAG_DRAWABLESELECTEDSTATE | ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "windowBackgroundWhiteInputFieldActivated"));
-        arrayList.add(new ThemeDescription(this.phoneField, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.phoneField, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, "windowBackgroundWhiteHintText"));
-        arrayList.add(new ThemeDescription(this.phoneField, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "windowBackgroundWhiteInputField"));
-        arrayList.add(new ThemeDescription(this.phoneField, ThemeDescription.FLAG_DRAWABLESELECTEDSTATE | ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "windowBackgroundWhiteInputFieldActivated"));
-        arrayList.add(new ThemeDescription(this.editDoneItemProgress, 0, null, null, null, null, "contextProgressInner2"));
-        arrayList.add(new ThemeDescription(this.editDoneItemProgress, 0, null, null, null, null, "contextProgressOuter2"));
+        OutlineEditText outlineEditText = this.firstNameField;
+        int i = ThemeDescription.FLAG_TEXTCOLOR;
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        arrayList.add(new ThemeDescription(outlineEditText, i, null, null, null, null, i2));
+        OutlineEditText outlineEditText2 = this.firstNameField;
+        int i3 = ThemeDescription.FLAG_HINTTEXTCOLOR;
+        int i4 = Theme.key_windowBackgroundWhiteHintText;
+        arrayList.add(new ThemeDescription(outlineEditText2, i3, null, null, null, null, i4));
+        OutlineEditText outlineEditText3 = this.firstNameField;
+        int i5 = ThemeDescription.FLAG_BACKGROUNDFILTER;
+        int i6 = Theme.key_windowBackgroundWhiteInputField;
+        arrayList.add(new ThemeDescription(outlineEditText3, i5, null, null, null, null, i6));
+        int i7 = Theme.key_windowBackgroundWhiteInputFieldActivated;
+        arrayList.add(new ThemeDescription(this.firstNameField, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, i7));
+        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, i4));
+        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i6));
+        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_DRAWABLESELECTEDSTATE | ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i7));
+        arrayList.add(new ThemeDescription(this.codeField, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.codeField, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i6));
+        arrayList.add(new ThemeDescription(this.codeField, ThemeDescription.FLAG_DRAWABLESELECTEDSTATE | ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i7));
+        arrayList.add(new ThemeDescription(this.phoneField, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.phoneField, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, i4));
+        arrayList.add(new ThemeDescription(this.phoneField, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i6));
+        arrayList.add(new ThemeDescription(this.phoneField, ThemeDescription.FLAG_DRAWABLESELECTEDSTATE | ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i7));
+        arrayList.add(new ThemeDescription(this.editDoneItemProgress, 0, null, null, null, null, Theme.key_contextProgressInner2));
+        arrayList.add(new ThemeDescription(this.editDoneItemProgress, 0, null, null, null, null, Theme.key_contextProgressOuter2));
         return arrayList;
     }
 

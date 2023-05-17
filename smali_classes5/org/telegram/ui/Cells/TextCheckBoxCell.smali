@@ -66,26 +66,20 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Cells/TextCheckBoxCell;->textView:Landroid/widget/TextView;
 
-    const-string v1, "dialogTextBlack"
-
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     if-eqz p4, :cond_2
 
     if-eqz p2, :cond_1
 
+    .line 61
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
     goto :goto_0
 
     :cond_1
-    move-object v1, v2
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 61
     :goto_0
-    invoke-interface {p4, v1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-interface {p4, v1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result v1
 
@@ -96,14 +90,16 @@
     :cond_2
     if-eqz p2, :cond_3
 
+    .line 63
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
     goto :goto_1
 
     :cond_3
-    move-object v1, v2
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 63
     :goto_1
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

@@ -25,10 +25,10 @@
 
     iput-object v0, p0, Lcom/iMe/ui/shop/view/custom/BotCategoryTitleView;->title:Landroid/widget/TextView;
 
-    const-string p1, "windowBackgroundWhiteBlackText"
-
     .line 16
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

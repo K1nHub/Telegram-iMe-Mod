@@ -46,25 +46,25 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;)V
     .locals 10
 
-    .line 2161
+    .line 2183
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    .line 2162
+    .line 2184
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x0
 
-    .line 2163
+    .line 2185
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2164
+    .line 2186
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "listSelectorSDK21"
-
-    invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
@@ -74,7 +74,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2166
+    .line 2188
     new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton$1;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton$1;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;Landroid/content/Context;Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
@@ -95,37 +95,37 @@
 
     const/4 v7, 0x0
 
-    .line 2186
+    .line 2208
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2188
+    .line 2210
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
-    .line 2189
+    .line 2211
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 2190
+    .line 2212
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
-    const-string v1, "actionBarDefaultSubmenuItem"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 2191
+    .line 2213
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imagesView:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageView:Landroid/widget/ImageView;
@@ -140,35 +140,35 @@
 
     invoke-virtual {v0, v2, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2192
+    .line 2214
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
-    .line 2193
+    .line 2215
     sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 2194
+    .line 2216
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 2195
+    .line 2217
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2196
+    .line 2218
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imagesView:Landroid/widget/FrameLayout;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->image2View:Landroid/widget/ImageView;
@@ -179,21 +179,21 @@
 
     invoke-virtual {v0, v5, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2198
+    .line 2220
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->textView:Landroid/widget/TextView;
 
-    .line 2199
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/String;)I
+    .line 2221
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2200
+    .line 2222
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->textView:Landroid/widget/TextView;
 
     const/4 v1, 0x1
@@ -202,7 +202,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2201
+    .line 2223
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->textView:Landroid/widget/TextView;
 
     const/4 v3, -0x2
@@ -223,33 +223,33 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2203
+    .line 2225
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
-    .line 2204
+    .line 2226
     sget p2, Lorg/telegram/messenger/R$drawable;->msg_text_check:I
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2205
+    .line 2227
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 2206
+    .line 2228
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "radioBackgroundChecked"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackgroundChecked:I
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)I
 
     move-result p1
 
@@ -259,12 +259,12 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2207
+    .line 2229
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2208
+    .line 2230
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     const/16 p2, 0x32
@@ -283,7 +283,7 @@
 .method private synthetic lambda$setIcon$0(ZLandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2237
+    .line 2259
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -298,7 +298,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2239
+    .line 2261
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -307,7 +307,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 2241
+    .line 2263
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imagesView:Landroid/widget/FrameLayout;
 
@@ -329,7 +329,7 @@
 .method public performClick()Z
     .locals 2
 
-    .line 2265
+    .line 2287
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -350,7 +350,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2266
+    .line 2288
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -361,7 +361,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss(Z)V
 
-    .line 2268
+    .line 2290
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->performClick()Z
 
@@ -377,7 +377,7 @@
 
     const/4 v1, 0x0
 
-    .line 2220
+    .line 2242
     invoke-virtual {p0, p1, v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->setIcon(IZZ)V
 
     return-void
@@ -388,41 +388,41 @@
 
     if-eqz p3, :cond_1
 
-    .line 2225
+    .line 2247
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v0, 0x0
 
     if-eqz p3, :cond_0
 
-    .line 2226
+    .line 2248
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 p2, 0x0
 
-    .line 2227
+    .line 2249
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
-    .line 2228
+    .line 2250
     invoke-virtual {p0, p1, v0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->setIcon(IZZ)V
 
     return-void
 
-    .line 2231
+    .line 2253
     :cond_0
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageSwitchFill:Z
 
-    .line 2232
+    .line 2254
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2233
+    .line 2255
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2234
+    .line 2256
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     const/high16 p3, 0x3f800000    # 1.0f
@@ -433,7 +433,7 @@
 
     new-array p1, p1, [F
 
-    .line 2235
+    .line 2257
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -442,14 +442,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
-    .line 2236
+    .line 2258
     new-instance p3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;Z)V
 
     invoke-virtual {p1, p3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2243
+    .line 2265
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton$2;
@@ -458,28 +458,28 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2255
+    .line 2277
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2256
+    .line 2278
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0x1a4
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2257
+    .line 2279
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 2259
+    .line 2281
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
@@ -498,7 +498,7 @@
 .method public setSelected(Z)V
     .locals 1
 
-    .line 2212
+    .line 2234
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_0
@@ -519,7 +519,7 @@
 .method public setText(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 2216
+    .line 2238
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V

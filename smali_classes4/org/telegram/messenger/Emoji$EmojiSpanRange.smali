@@ -26,16 +26,16 @@
 .method public constructor <init>(IILjava/lang/CharSequence;)V
     .locals 0
 
-    .line 336
+    .line 354
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 337
+    .line 355
     iput p1, p0, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->start:I
 
-    .line 338
+    .line 356
     iput p2, p0, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->end:I
 
-    .line 339
+    .line 357
     iput-object p3, p0, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->code:Ljava/lang/CharSequence;
 
     return-void

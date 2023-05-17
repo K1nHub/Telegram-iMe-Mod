@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ArchivedStickerSetCell;)V
     .locals 0
 
-    .line 223
+    .line 243
     iput-object p1, p0, Lorg/telegram/ui/Cells/ArchivedStickerSetCell$1;->this$0:Lorg/telegram/ui/Cells/ArchivedStickerSetCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 226
+    .line 246
     iget-object p1, p0, Lorg/telegram/ui/Cells/ArchivedStickerSetCell$1;->this$0:Lorg/telegram/ui/Cells/ArchivedStickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ArchivedStickerSetCell;->access$000(Lorg/telegram/ui/Cells/ArchivedStickerSetCell;)Landroid/widget/Button;
@@ -52,7 +52,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 227
+    .line 247
     iget-object p1, p0, Lorg/telegram/ui/Cells/ArchivedStickerSetCell$1;->this$0:Lorg/telegram/ui/Cells/ArchivedStickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ArchivedStickerSetCell;->access$200(Lorg/telegram/ui/Cells/ArchivedStickerSetCell;)Landroid/widget/Button;
@@ -63,7 +63,7 @@
 
     goto :goto_0
 
-    .line 229
+    .line 249
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/ArchivedStickerSetCell$1;->this$0:Lorg/telegram/ui/Cells/ArchivedStickerSetCell;
 

@@ -29,11 +29,12 @@ public class PaymentInfoCell extends FrameLayout {
         super(context);
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.getImageReceiver().setRoundRadius(AndroidUtilities.m50dp(8));
+        backupImageView.getImageReceiver().setRoundRadius(AndroidUtilities.m54dp(8));
         addView(this.imageView, LayoutHelper.createFrame(100, 100, LocaleController.isRTL ? 5 : 3, 10, 10, 10, 0));
         TextView textView = new TextView(context);
         this.nameTextView = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        int i = Theme.key_windowBackgroundWhiteBlackText;
+        textView.setTextColor(Theme.getColor(i));
         this.nameTextView.setTextSize(1, 16.0f);
         this.nameTextView.setLines(1);
         this.nameTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -46,7 +47,7 @@ public class PaymentInfoCell extends FrameLayout {
         addView(textView2, LayoutHelper.createFrame(-1, -2, (z ? 5 : 3) | 48, z ? 10 : 123, 9, z ? 123 : 10, 0));
         TextView textView3 = new TextView(context);
         this.detailTextView = textView3;
-        textView3.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView3.setTextColor(Theme.getColor(i));
         this.detailTextView.setTextSize(1, 14.0f);
         this.detailTextView.setMaxLines(3);
         this.detailTextView.setEllipsize(TextUtils.TruncateAt.END);
@@ -56,7 +57,7 @@ public class PaymentInfoCell extends FrameLayout {
         addView(textView4, LayoutHelper.createFrame(-1, -2, (z2 ? 5 : 3) | 48, z2 ? 10 : 123, 33, z2 ? 123 : 10, 0));
         TextView textView5 = new TextView(context);
         this.detailExTextView = textView5;
-        textView5.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        textView5.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         this.detailExTextView.setTextSize(1, 14.0f);
         this.detailExTextView.setLines(1);
         this.detailExTextView.setMaxLines(1);
@@ -72,11 +73,11 @@ public class PaymentInfoCell extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         int i3;
         if (this.imageView.getVisibility() != 8) {
-            i3 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(120), 1073741824);
+            i3 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(120), 1073741824);
         } else {
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
             measureChildWithMargins(this.detailTextView, i, 0, i2, 0);
-            ((FrameLayout.LayoutParams) this.detailExTextView.getLayoutParams()).topMargin = AndroidUtilities.m50dp(33) + this.detailTextView.getMeasuredHeight() + AndroidUtilities.m50dp(3);
+            ((FrameLayout.LayoutParams) this.detailExTextView.getLayoutParams()).topMargin = AndroidUtilities.m54dp(33) + this.detailTextView.getMeasuredHeight() + AndroidUtilities.m54dp(3);
             i3 = makeMeasureSpec;
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), i3);
@@ -94,9 +95,9 @@ public class PaymentInfoCell extends FrameLayout {
             min = Math.min(point.x, point.y);
         }
         float f = 640;
-        float m50dp = f / (((int) (min * 0.7f)) - AndroidUtilities.m50dp(2));
-        int i = (int) (f / m50dp);
-        int i2 = (int) (360 / m50dp);
+        float m54dp = f / (((int) (min * 0.7f)) - AndroidUtilities.m54dp(2));
+        int i = (int) (f / m54dp);
+        int i2 = (int) (360 / m54dp);
         if (tLRPC$WebDocument != null && tLRPC$WebDocument.mime_type.startsWith("image/")) {
             TextView textView = this.nameTextView;
             boolean z = LocaleController.isRTL;

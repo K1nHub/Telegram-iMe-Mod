@@ -24,12 +24,12 @@ public final class StakingWrappedActionMapperKt {
             StakingTransactionGas stakingTransactionGas = (StakingTransactionGas) jwt.getClaim("gas").asObject(StakingTransactionGas.class);
             if (stakingTransactionGas != null) {
                 Intrinsics.checkNotNullExpressionValue(stakingTransactionGas, "jwt.getClaim(GAS_KEY).as…     ?: throw Throwable()");
-                return TuplesKt.m80to(stakingWrappedActionResponse.getWrappedAction(), new StakingTransactionAction(stakingTransactionArgs, stakingTransactionGas));
+                return TuplesKt.m85to(stakingWrappedActionResponse.getWrappedAction(), new StakingTransactionAction(stakingTransactionArgs, stakingTransactionGas));
             }
             throw new Throwable();
         } catch (Exception e) {
-            Timber.m4e(e);
-            return TuplesKt.m80to(stakingWrappedActionResponse.getWrappedAction(), null);
+            Timber.m6e(e);
+            return TuplesKt.m85to(stakingWrappedActionResponse.getWrappedAction(), null);
         }
     }
 }

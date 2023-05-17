@@ -88,7 +88,7 @@ public class StatsController extends BaseController {
         return statsController;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x018c  */
     /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -96,7 +96,7 @@ public class StatsController extends BaseController {
     */
     private StatsController(int r15) {
         /*
-            Method dump skipped, instructions count: 680
+            Method dump skipped, instructions count: 682
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.StatsController.<init>(int):void");

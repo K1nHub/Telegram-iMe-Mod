@@ -18,13 +18,16 @@
 .method public abstract applyServiceShaderMatrix(IIFF)V
 .end method
 
-.method public abstract getColor(Ljava/lang/String;)Ljava/lang/Integer;
+.method public abstract contains(I)Z
 .end method
 
-.method public abstract getColorOrDefault(Ljava/lang/String;)I
+.method public abstract getColor(I)I
 .end method
 
-.method public abstract getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
+.method public abstract getColorOrDefault(I)I
+.end method
+
+.method public abstract getCurrentColor(I)I
 .end method
 
 .method public abstract getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
@@ -36,5 +39,5 @@
 .method public abstract hasGradientService()Z
 .end method
 
-.method public abstract setAnimatedColor(Ljava/lang/String;I)V
+.method public abstract setAnimatedColor(II)V
 .end method

@@ -25,7 +25,7 @@
 
     const/4 v0, 0x0
 
-    .line 105
+    .line 106
     invoke-direct {p0, p1, v0, v0}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;II)V
 
     return-void
@@ -34,18 +34,18 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;II)V
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
-    .line 113
+    .line 114
     iput-object p1, p0, Lorg/telegram/ui/Components/TextStyleSpan;->style:Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     if-lez p2, :cond_0
 
-    .line 115
+    .line 116
     iput p2, p0, Lorg/telegram/ui/Components/TextStyleSpan;->textSize:I
 
-    .line 117
+    .line 118
     :cond_0
     iput p3, p0, Lorg/telegram/ui/Components/TextStyleSpan;->color:I
 
@@ -57,7 +57,7 @@
 .method public getStyleFlags()I
     .locals 1
 
-    .line 121
+    .line 122
     iget-object v0, p0, Lorg/telegram/ui/Components/TextStyleSpan;->style:Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     iget v0, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
@@ -68,7 +68,7 @@
 .method public getTextStyleRun()Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
     .locals 1
 
-    .line 125
+    .line 126
     iget-object v0, p0, Lorg/telegram/ui/Components/TextStyleSpan;->style:Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     return-object v0
@@ -77,7 +77,7 @@
 .method public isSpoiler()Z
     .locals 1
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lorg/telegram/ui/Components/TextStyleSpan;->style:Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     iget v0, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
@@ -102,7 +102,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 146
+    .line 147
     iget-object p1, p0, Lorg/telegram/ui/Components/TextStyleSpan;->style:Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     iget v0, p1, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
@@ -113,7 +113,7 @@
 
     goto :goto_0
 
-    .line 147
+    .line 148
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/TextStyleSpan;->style:Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
@@ -130,26 +130,26 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 177
+    .line 178
     iget v0, p0, Lorg/telegram/ui/Components/TextStyleSpan;->textSize:I
 
     if-eqz v0, :cond_0
 
     int-to-float v0, v0
 
-    .line 178
+    .line 179
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 180
+    .line 181
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/TextStyleSpan;->color:I
 
     if-eqz v0, :cond_1
 
-    .line 181
+    .line 182
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 183
+    .line 184
     :cond_1
     invoke-virtual {p1}, Landroid/text/TextPaint;->getFlags()I
 
@@ -159,7 +159,7 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setFlags(I)V
 
-    .line 184
+    .line 185
     iget-object v0, p0, Lorg/telegram/ui/Components/TextStyleSpan;->style:Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->applyStyle(Landroid/text/TextPaint;)V
@@ -170,17 +170,17 @@
 .method public updateMeasureState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 168
+    .line 169
     iget v0, p0, Lorg/telegram/ui/Components/TextStyleSpan;->textSize:I
 
     if-eqz v0, :cond_0
 
     int-to-float v0, v0
 
-    .line 169
+    .line 170
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 171
+    .line 172
     :cond_0
     invoke-virtual {p1}, Landroid/text/TextPaint;->getFlags()I
 
@@ -190,7 +190,7 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setFlags(I)V
 
-    .line 172
+    .line 173
     iget-object v0, p0, Lorg/telegram/ui/Components/TextStyleSpan;->style:Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->applyStyle(Landroid/text/TextPaint;)V

@@ -14,21 +14,21 @@
 
 
 # static fields
-.field public static final TextAppearance_Compat_Notification:I = 0x7f110179
+.field public static final TextAppearance_Compat_Notification:I = 0x7f12017a
 
-.field public static final TextAppearance_Compat_Notification_Info:I = 0x7f11017a
+.field public static final TextAppearance_Compat_Notification_Info:I = 0x7f12017b
 
-.field public static final TextAppearance_Compat_Notification_Line2:I = 0x7f11017b
+.field public static final TextAppearance_Compat_Notification_Line2:I = 0x7f12017c
 
-.field public static final TextAppearance_Compat_Notification_Time:I = 0x7f11017c
+.field public static final TextAppearance_Compat_Notification_Time:I = 0x7f12017d
 
-.field public static final TextAppearance_Compat_Notification_Title:I = 0x7f11017d
+.field public static final TextAppearance_Compat_Notification_Title:I = 0x7f12017e
 
-.field public static final Widget_Compat_NotificationActionContainer:I = 0x7f110281
+.field public static final Widget_Compat_NotificationActionContainer:I = 0x7f120282
 
-.field public static final Widget_Compat_NotificationActionText:I = 0x7f110282
+.field public static final Widget_Compat_NotificationActionText:I = 0x7f120283
 
-.field public static final Widget_Support_CoordinatorLayout:I = 0x7f110309
+.field public static final Widget_Support_CoordinatorLayout:I = 0x7f12030a
 
 
 # direct methods

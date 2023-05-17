@@ -26,10 +26,10 @@
 .method constructor <init>(Lorg/telegram/ui/Components/TranslateButton;Landroid/content/Context;)V
     .locals 2
 
-    .line 116
+    .line 123
     invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 118
+    .line 125
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -48,10 +48,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 133
+    .line 140
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 135
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/Components/TranslateButton$1;->alphaFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v1, -0x1
@@ -84,12 +84,12 @@
 
     if-lez v1, :cond_2
 
-    .line 137
+    .line 144
     iget-object v1, p0, Lorg/telegram/ui/Components/TranslateButton$1;->topShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v1, :cond_1
 
-    .line 138
+    .line 145
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -106,13 +106,13 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/TranslateButton$1;->topShadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 140
+    .line 147
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/TranslateButton$1;->topShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     const/4 v2, 0x0
 
-    .line 141
+    .line 148
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getScrollY()I
 
     move-result v3
@@ -133,10 +133,10 @@
 
     add-int/2addr v5, v6
 
-    .line 140
+    .line 147
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 143
+    .line 150
     iget-object v1, p0, Lorg/telegram/ui/Components/TranslateButton$1;->topShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     const/high16 v2, 0x437f0000    # 255.0f
@@ -147,7 +147,7 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 144
+    .line 151
     iget-object v0, p0, Lorg/telegram/ui/Components/TranslateButton$1;->topShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -159,25 +159,25 @@
 .method public onNestedScroll(Landroid/view/View;IIII)V
     .locals 0
 
-    .line 123
+    .line 130
     invoke-super/range {p0 .. p5}, Landroid/widget/ScrollView;->onNestedScroll(Landroid/view/View;IIII)V
 
     const/4 p1, -0x1
 
-    .line 124
+    .line 131
     invoke-virtual {p0, p1}, Landroid/widget/ScrollView;->canScrollVertically(I)Z
 
     move-result p1
 
-    .line 125
+    .line 132
     iget-boolean p2, p0, Lorg/telegram/ui/Components/TranslateButton$1;->wasCanScrollVertically:Z
 
     if-eq p2, p1, :cond_0
 
-    .line 126
+    .line 133
     invoke-virtual {p0}, Landroid/widget/ScrollView;->invalidate()V
 
-    .line 127
+    .line 134
     iput-boolean p1, p0, Lorg/telegram/ui/Components/TranslateButton$1;->wasCanScrollVertically:Z
 
     :cond_0

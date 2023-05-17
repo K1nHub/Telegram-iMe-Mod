@@ -9,31 +9,31 @@
 # instance fields
 .field private color:I
 
-.field private colorKey:Ljava/lang/String;
+.field private colorKey:I
 
 .field private final resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(I)V
     .locals 1
 
     const/4 v0, 0x0
 
     .line 18
-    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public constructor <init>(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
     .line 21
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
     .line 22
-    iput-object p1, p0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;->colorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;->colorKey:I
 
     .line 23
     iput-object p2, p0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -47,11 +47,11 @@
     .locals 2
 
     .line 28
-    iget-object v0, p0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;->colorKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;->colorKey:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 

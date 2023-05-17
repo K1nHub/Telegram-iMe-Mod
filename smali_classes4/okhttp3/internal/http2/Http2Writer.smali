@@ -65,7 +65,7 @@
 .method public constructor <init>(Lokio/BufferedSink;Z)V
     .locals 7
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1278,7 +1278,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "settings"
+    const-string/jumbo v0, "settings"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

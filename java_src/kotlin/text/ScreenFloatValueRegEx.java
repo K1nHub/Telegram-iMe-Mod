@@ -1,7 +1,8 @@
 package kotlin.text;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StringNumberConversionsJVM.kt */
 /* loaded from: classes4.dex */
-final class ScreenFloatValueRegEx {
+public final class ScreenFloatValueRegEx {
     public static final ScreenFloatValueRegEx INSTANCE = new ScreenFloatValueRegEx();
     public static final Regex value;
 

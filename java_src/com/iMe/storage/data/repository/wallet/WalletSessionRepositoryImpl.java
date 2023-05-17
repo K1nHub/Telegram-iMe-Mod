@@ -51,28 +51,26 @@ public final class WalletSessionRepositoryImpl implements WalletSessionRepositor
         return just;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void logout$lambda$0(WalletSessionRepositoryImpl this$0) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.authManager.logout();
-    }
-
     @Override // com.iMe.storage.domain.repository.wallet.WalletSessionRepository
     public Completable logout() {
+        final AuthManager authManager = this.authManager;
         Completable fromAction = Completable.fromAction(new Action() { // from class: com.iMe.storage.data.repository.wallet.WalletSessionRepositoryImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
-                WalletSessionRepositoryImpl.logout$lambda$0(WalletSessionRepositoryImpl.this);
+                AuthManager.this.logout();
             }
         });
-        Intrinsics.checkNotNullExpressionValue(fromAction, "fromAction { authManager.logout() }");
+        Intrinsics.checkNotNullExpressionValue(fromAction, "fromAction(authManager::logout)");
         return fromAction;
     }
 
     @Override // com.iMe.storage.domain.repository.wallet.WalletSessionRepository
-    public Observable<Result<SessionTokens>> refreshToken(String token) {
-        Intrinsics.checkNotNullParameter(token, "token");
-        Observable<R> map = this.walletApi.refreshToken(new RefreshTokenRequest(token, null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
+    public Observable<Result<SessionTokens>> refreshToken() {
+        String refreshToken = this.authManager.getRefreshToken();
+        if (refreshToken == null) {
+            refreshToken = "";
+        }
+        Observable<R> map = this.walletApi.refreshToken(new RefreshTokenRequest(refreshToken, null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         Observable<Result<SessionTokens>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");

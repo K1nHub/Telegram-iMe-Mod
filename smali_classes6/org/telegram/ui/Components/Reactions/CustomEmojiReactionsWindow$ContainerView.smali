@@ -41,20 +41,20 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Landroid/content/Context;)V
     .locals 3
 
-    .line 501
+    .line 503
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
-    .line 502
+    .line 504
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 496
+    .line 498
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->shadowPad:Landroid/graphics/Rect;
 
-    .line 497
+    .line 499
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -67,17 +67,17 @@
 
     new-array v0, v0, [I
 
-    .line 498
+    .line 500
     iput-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->radiusTmp:[I
 
-    .line 523
+    .line 525
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->transitionReactions:Ljava/util/HashMap;
 
-    .line 503
+    .line 505
     sget v0, Lorg/telegram/messenger/R$drawable;->reactions_bubble_shadow:I
 
     invoke-static {p2, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -90,7 +90,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->shadow:Landroid/graphics/drawable/Drawable;
 
-    .line 504
+    .line 506
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->shadowPad:Landroid/graphics/Rect;
 
     const/4 v0, 0x7
@@ -107,16 +107,16 @@
 
     iput v0, p2, Landroid/graphics/Rect;->left:I
 
-    .line 505
+    .line 507
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->shadow:Landroid/graphics/drawable/Drawable;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    iget-object v1, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelShadow:I
 
-    const-string v2, "chat_messagePanelShadow"
+    iget-object v2, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
@@ -126,14 +126,14 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 506
+    .line 508
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->backgroundPaint:Landroid/graphics/Paint;
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    const-string v0, "actionBarDefaultSubmenuBackground"
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
@@ -151,7 +151,7 @@
 
     move-object/from16 v8, p1
 
-    .line 527
+    .line 529
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->isShowing:Z
@@ -160,7 +160,7 @@
 
     return-void
 
-    .line 530
+    .line 532
     :cond_0
     iget v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
 
@@ -172,7 +172,7 @@
 
     move-result v11
 
-    .line 531
+    .line 533
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -189,7 +189,7 @@
 
     invoke-virtual {v1, v10, v10, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 532
+    .line 534
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v3, v2, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->fromRect:Landroid/graphics/RectF;
@@ -200,7 +200,7 @@
 
     invoke-static {v3, v1, v4, v2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 533
+    .line 535
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->fromRadius:F
@@ -221,7 +221,7 @@
 
     move-result v13
 
-    .line 535
+    .line 537
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->shadow:Landroid/graphics/drawable/Drawable;
 
     const v2, 0x3d4ccccd    # 0.05f
@@ -240,7 +240,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 536
+    .line 538
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->shadow:Landroid/graphics/drawable/Drawable;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
@@ -283,17 +283,17 @@
 
     invoke-virtual {v1, v4, v6, v7, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 537
+    .line 539
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->shadow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 539
+    .line 541
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->transitionReactions:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 540
+    .line 542
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->drawingRect:Landroid/graphics/RectF;
@@ -302,7 +302,7 @@
 
     invoke-virtual {v8, v1, v13, v13, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 542
+    .line 544
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v3, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->drawingRect:Landroid/graphics/RectF;
@@ -335,7 +335,7 @@
 
     add-float/2addr v4, v1
 
-    .line 544
+    .line 546
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
@@ -344,10 +344,10 @@
 
     if-lez v1, :cond_1
 
-    .line 545
+    .line 547
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 546
+    .line 548
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->drawingRect:Landroid/graphics/RectF;
@@ -382,17 +382,17 @@
 
     invoke-virtual {v8, v4, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 547
+    .line 549
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {v1, v8}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->drawBubbles(Landroid/graphics/Canvas;)V
 
-    .line 548
+    .line 550
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 556
+    .line 558
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -404,7 +404,7 @@
 
     const/4 v1, 0x0
 
-    .line 557
+    .line 559
     :goto_0
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -418,7 +418,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 558
+    .line 560
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -433,7 +433,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 559
+    .line 561
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -446,12 +446,12 @@
 
     check-cast v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
-    .line 560
+    .line 562
     iget-object v3, v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->reaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     if-eqz v3, :cond_2
 
-    .line 561
+    .line 563
     iget-object v4, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->transitionReactions:Ljava/util/HashMap;
 
     invoke-virtual {v4, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -461,13 +461,13 @@
 
     goto :goto_0
 
-    .line 566
+    .line 568
     :cond_3
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v6
 
-    .line 568
+    .line 570
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->drawingRect:Landroid/graphics/RectF;
@@ -494,7 +494,7 @@
 
     invoke-virtual {v8, v3, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 570
+    .line 572
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -523,7 +523,7 @@
 
     const/4 v3, 0x0
 
-    .line 572
+    .line 574
     iget-object v4, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->drawingRect:Landroid/graphics/RectF;
@@ -567,7 +567,7 @@
 
     move/from16 v17, v7
 
-    .line 574
+    .line 576
     :goto_1
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -591,7 +591,7 @@
 
     float-to-int v1, v1
 
-    .line 575
+    .line 577
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -620,7 +620,7 @@
 
     const/16 v5, 0x24
 
-    .line 576
+    .line 578
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -677,7 +677,7 @@
 
     move/from16 v22, v21
 
-    .line 577
+    .line 579
     :goto_2
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -691,7 +691,7 @@
 
     if-ge v6, v1, :cond_18
 
-    .line 579
+    .line 581
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v2, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
@@ -721,14 +721,14 @@
     :cond_6
     if-ne v6, v7, :cond_7
 
-    .line 583
+    .line 585
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     goto :goto_4
 
-    .line 585
+    .line 587
     :cond_7
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -741,7 +741,7 @@
     :goto_4
     move-object v5, v1
 
-    .line 587
+    .line 589
     invoke-virtual {v5}, Landroid/view/View;->getLeft()I
 
     move-result v1
@@ -756,21 +756,21 @@
 
     goto :goto_3
 
-    .line 590
+    .line 592
     :cond_8
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 592
+    .line 594
     instance-of v1, v5, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     if-eqz v1, :cond_17
 
-    .line 593
+    .line 595
     move-object v1, v5
 
     check-cast v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
-    .line 594
+    .line 596
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->transitionReactions:Ljava/util/HashMap;
 
     iget-object v3, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
@@ -785,19 +785,19 @@
 
     if-eqz v2, :cond_e
 
-    .line 607
+    .line 609
     invoke-virtual {v5}, Landroid/view/View;->getX()F
 
     move-result v4
 
-    .line 608
+    .line 610
     invoke-virtual {v5}, Landroid/view/View;->getY()F
 
     move-result v5
 
     if-ne v6, v7, :cond_9
 
-    .line 610
+    .line 612
     iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -810,7 +810,7 @@
 
     sub-float/2addr v4, v7
 
-    .line 611
+    .line 613
     iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -823,7 +823,7 @@
 
     sub-float/2addr v5, v7
 
-    .line 613
+    .line 615
     :cond_9
     invoke-virtual {v2}, Landroid/view/View;->getX()F
 
@@ -867,7 +867,7 @@
 
     sub-float/2addr v7, v12
 
-    .line 614
+    .line 616
     invoke-virtual {v2}, Landroid/view/View;->getY()F
 
     move-result v12
@@ -914,14 +914,14 @@
 
     sub-float/2addr v12, v14
 
-    .line 615
+    .line 617
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v14
 
     int-to-float v14, v14
 
-    .line 616
+    .line 618
     iget-boolean v15, v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selected:Z
 
     if-eqz v15, :cond_a
@@ -940,7 +940,7 @@
 
     move v14, v15
 
-    .line 623
+    .line 625
     :cond_a
     iget-object v15, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -950,7 +950,7 @@
 
     move-result v15
 
-    .line 624
+    .line 626
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v3, v3, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
@@ -959,7 +959,7 @@
 
     move-result v3
 
-    .line 626
+    .line 628
     iget-object v10, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v10}, Landroid/view/View;->getMeasuredWidth()I
@@ -970,7 +970,7 @@
 
     div-float/2addr v14, v10
 
-    .line 627
+    .line 629
     iget-object v10, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v10, v10, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
@@ -979,14 +979,14 @@
 
     move-result v10
 
-    .line 628
+    .line 630
     iget v9, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->position:I
 
     const/16 v24, 0x6
 
     if-nez v9, :cond_b
 
-    .line 629
+    .line 631
     invoke-static/range {v24 .. v24}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -997,13 +997,13 @@
 
     goto :goto_5
 
-    .line 631
+    .line 633
     :cond_b
     iget-boolean v9, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->selected:Z
 
     if-eqz v9, :cond_c
 
-    .line 632
+    .line 634
     invoke-static/range {v24 .. v24}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -1028,11 +1028,11 @@
 
     const/16 v26, 0x0
 
-    .line 635
+    .line 637
     :goto_6
     invoke-virtual {v8, v15, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 636
+    .line 638
     invoke-virtual {v8, v10, v10}, Landroid/graphics/Canvas;->scale(FF)V
 
     const/4 v3, 0x0
@@ -1045,7 +1045,7 @@
 
     if-nez v15, :cond_d
 
-    .line 639
+    .line 641
     iget-object v15, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v3, v15, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->fromRect:Landroid/graphics/RectF;
@@ -1064,7 +1064,7 @@
 
     move-result v16
 
-    .line 640
+    .line 642
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v4, v3, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->fromRect:Landroid/graphics/RectF;
@@ -1085,7 +1085,7 @@
 
     div-float v4, v3, v14
 
-    .line 641
+    .line 643
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v5, v5, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
@@ -1107,7 +1107,7 @@
 
     goto :goto_7
 
-    .line 646
+    .line 648
     :cond_e
     invoke-virtual {v5}, Landroid/view/View;->getX()F
 
@@ -1148,12 +1148,12 @@
     :goto_7
     if-eqz v2, :cond_13
 
-    .line 650
+    .line 652
     iget-boolean v7, v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selected:Z
 
     if-eqz v7, :cond_f
 
-    .line 651
+    .line 653
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v7
@@ -1164,7 +1164,7 @@
 
     div-float/2addr v7, v14
 
-    .line 652
+    .line 654
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v15
@@ -1173,7 +1173,7 @@
 
     div-float/2addr v15, v14
 
-    .line 653
+    .line 655
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v14
@@ -1188,7 +1188,7 @@
 
     int-to-float v14, v14
 
-    .line 654
+    .line 656
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v25
@@ -1203,7 +1203,7 @@
 
     div-float/2addr v12, v10
 
-    .line 655
+    .line 657
     iget-object v10, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v10, v10, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
@@ -1212,7 +1212,7 @@
 
     move-result v10
 
-    .line 656
+    .line 658
     sget-object v12, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/high16 v23, 0x40000000    # 2.0f
@@ -1237,7 +1237,7 @@
 
     const/4 v6, 0x4
 
-    .line 657
+    .line 659
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1252,7 +1252,7 @@
 
     move-result v6
 
-    .line 658
+    .line 660
     iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -1271,7 +1271,7 @@
     :goto_8
     const/4 v6, 0x0
 
-    .line 660
+    .line 662
     iput-boolean v6, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->drawSelected:Z
 
     const/4 v6, 0x0
@@ -1280,7 +1280,7 @@
 
     if-nez v7, :cond_10
 
-    .line 679
+    .line 681
     invoke-virtual {v1, v8}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
     move/from16 v9, v17
@@ -1289,7 +1289,7 @@
 
     goto :goto_a
 
-    .line 662
+    .line 664
     :cond_10
     iget-object v6, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1297,7 +1297,7 @@
 
     move-result-object v6
 
-    .line 663
+    .line 665
     iget-object v7, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v7, v7, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -1310,7 +1310,7 @@
 
     if-eqz v7, :cond_11
 
-    .line 664
+    .line 666
     iget-object v6, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -1319,7 +1319,7 @@
 
     move-result-object v6
 
-    .line 666
+    .line 668
     :cond_11
     invoke-virtual {v6}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
@@ -1332,7 +1332,7 @@
     :goto_9
     if-ge v10, v12, :cond_12
 
-    .line 668
+    .line 670
     iget-object v13, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->radiusTmp:[I
 
     aget v14, v7, v10
@@ -1343,7 +1343,7 @@
 
     goto :goto_9
 
-    .line 670
+    .line 672
     :cond_12
     iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -1351,7 +1351,7 @@
 
     const/4 v10, 0x0
 
-    .line 671
+    .line 673
     invoke-static {v3, v10, v7}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v3
@@ -1362,7 +1362,7 @@
 
     iget v7, v7, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
 
-    .line 672
+    .line 674
     invoke-static {v4, v10, v7}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v4
@@ -1373,7 +1373,7 @@
 
     iget v7, v7, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
 
-    .line 673
+    .line 675
     invoke-static {v5, v10, v7}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v5
@@ -1384,39 +1384,39 @@
 
     iget v7, v7, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
 
-    .line 674
+    .line 676
     invoke-static {v9, v10, v7}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v7
 
     float-to-int v7, v7
 
-    .line 670
+    .line 672
     invoke-virtual {v6, v3, v4, v5, v7}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(IIII)V
 
-    .line 676
+    .line 678
     invoke-virtual {v1, v8}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 677
+    .line 679
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->radiusTmp:[I
 
     invoke-virtual {v6, v3}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius([I)V
 
     move/from16 v9, v17
 
-    .line 681
+    .line 683
     :goto_a
     iput-boolean v9, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->drawSelected:Z
 
-    .line 682
+    .line 684
     iget-boolean v1, v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->notDraw:Z
 
     if-nez v1, :cond_16
 
-    .line 683
+    .line 685
     iput-boolean v9, v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->notDraw:Z
 
-    .line 684
+    .line 686
     invoke-virtual {v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->invalidate()V
 
     goto :goto_b
@@ -1430,7 +1430,7 @@
 
     const/4 v10, 0x0
 
-    .line 687
+    .line 689
     iget-boolean v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->hasEnterAnimation:Z
 
     if-eqz v2, :cond_14
@@ -1447,7 +1447,7 @@
 
     if-nez v2, :cond_14
 
-    .line 688
+    .line 690
     iget-object v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1458,7 +1458,7 @@
 
     move-result v2
 
-    .line 689
+    .line 691
     iget-object v3, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1473,12 +1473,12 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 690
+    .line 692
     iget-object v3, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v3, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 691
+    .line 693
     iget-object v1, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1489,7 +1489,7 @@
 
     goto :goto_b
 
-    .line 693
+    .line 695
     :cond_14
     iget-object v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1497,7 +1497,7 @@
 
     move-result-object v2
 
-    .line 694
+    .line 696
     iget-object v3, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -1510,7 +1510,7 @@
 
     if-eqz v3, :cond_15
 
-    .line 695
+    .line 697
     iget-object v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -1519,7 +1519,7 @@
 
     move-result-object v2
 
-    .line 697
+    .line 699
     :cond_15
     invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->getAlpha()F
 
@@ -1531,15 +1531,15 @@
 
     mul-float/2addr v5, v3
 
-    .line 698
+    .line 700
     invoke-virtual {v2, v5}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 699
+    .line 701
     iget-object v1, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 700
+    .line 702
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
     :cond_16
@@ -1561,7 +1561,7 @@
 
     move/from16 v9, v17
 
-    .line 704
+    .line 706
     invoke-virtual {v5}, Landroid/view/View;->getX()F
 
     move-result v1
@@ -1612,7 +1612,7 @@
 
     const/4 v3, 0x0
 
-    .line 705
+    .line 707
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -1653,7 +1653,7 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 706
+    .line 708
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionProgress:F
@@ -1682,13 +1682,13 @@
 
     invoke-virtual {v8, v3, v1, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 707
+    .line 709
     invoke-virtual {v14, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 708
+    .line 710
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 710
+    .line 712
     :goto_c
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1716,7 +1716,7 @@
 
     move/from16 v1, v18
 
-    .line 712
+    .line 714
     invoke-virtual {v8, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     move/from16 v1, v19
@@ -1744,7 +1744,7 @@
 
     move/from16 v16, v4
 
-    .line 715
+    .line 717
     :goto_e
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -1754,21 +1754,21 @@
 
     if-eqz v5, :cond_1a
 
-    .line 716
+    .line 718
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     const/4 v6, 0x0
 
     invoke-static {v5, v6}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$602(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)Z
 
-    .line 717
+    .line 719
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->pathToClip:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->rewind()V
 
-    .line 718
+    .line 720
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v6, v5, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->pathToClip:Landroid/graphics/Path;
@@ -1781,18 +1781,18 @@
 
     invoke-virtual {v6, v5, v11, v11, v7}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 720
+    .line 722
     :cond_1a
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 721
+    .line 723
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->pathToClip:Landroid/graphics/Path;
 
     invoke-virtual {v8, v5}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 722
+    .line 724
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$700(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Z
@@ -1809,10 +1809,10 @@
     :goto_f
     invoke-virtual {v8, v10, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 723
+    .line 725
     invoke-virtual {v8, v2, v2, v3, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 724
+    .line 726
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$700(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Z
@@ -1821,7 +1821,7 @@
 
     if-nez v1, :cond_1c
 
-    .line 725
+    .line 727
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -1830,14 +1830,14 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 727
+    .line 729
     :cond_1c
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 728
+    .line 730
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 730
+    .line 732
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$800(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)I
@@ -1848,7 +1848,7 @@
 
     if-ge v1, v2, :cond_1e
 
-    .line 731
+    .line 733
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$800(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)I
@@ -1859,20 +1859,20 @@
 
     if-ne v1, v2, :cond_1d
 
-    .line 732
+    .line 734
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setSkipDraw(Z)V
 
-    .line 734
+    .line 736
     :cond_1d
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$808(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)I
 
-    .line 737
+    .line 739
     :cond_1e
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -1880,7 +1880,7 @@
 
     invoke-virtual {v1, v8, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->drawBigReaction(Landroid/graphics/Canvas;Landroid/view/View;)V
 
-    .line 738
+    .line 740
     iget-object v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$ContainerView;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$900(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Landroid/animation/ValueAnimator;
@@ -1889,7 +1889,7 @@
 
     if-eqz v1, :cond_1f
 
-    .line 739
+    .line 741
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_1f
@@ -1899,7 +1899,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 511
+    .line 513
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1914,7 +1914,7 @@
 
     const/16 p2, 0x24
 
-    .line 512
+    .line 514
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -1936,7 +1936,7 @@
     :cond_0
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 520
+    .line 522
     invoke-static {p1, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0

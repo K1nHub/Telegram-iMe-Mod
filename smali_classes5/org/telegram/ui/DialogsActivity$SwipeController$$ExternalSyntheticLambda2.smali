@@ -8,22 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity$SwipeController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Dialog;
-
-.field public final synthetic f$2:I
+.field public final synthetic f$1:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity$SwipeController;Lorg/telegram/tgnet/TLRPC$Dialog;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity$SwipeController;Ljava/util/List;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/DialogsActivity$SwipeController;
 
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda2;->f$1:Lorg/telegram/tgnet/TLRPC$Dialog;
-
-    iput p3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda2;->f$2:I
+    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda2;->f$1:Ljava/util/List;
 
     return-void
 .end method
@@ -31,15 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/DialogsActivity$SwipeController;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda2;->f$1:Lorg/telegram/tgnet/TLRPC$Dialog;
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda2;->f$1:Ljava/util/List;
 
-    iget v2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda2;->f$2:I
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/DialogsActivity$SwipeController;->$r8$lambda$e4V4vz0806GWdhw1hZ0rhzynB98(Lorg/telegram/ui/DialogsActivity$SwipeController;Lorg/telegram/tgnet/TLRPC$Dialog;I)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity$SwipeController;->$r8$lambda$yfoH4OgYlzHi18_ItN3C0h3E2Cc(Lorg/telegram/ui/DialogsActivity$SwipeController;Ljava/util/List;)V
 
     return-void
 .end method

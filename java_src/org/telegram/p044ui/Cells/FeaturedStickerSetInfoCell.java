@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
@@ -65,7 +65,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
         this.resourcesProvider = resourcesProvider;
         TextView textView = new TextView(context);
         this.nameTextView = textView;
-        textView.setTextColor(getThemedColor("chat_emojiPanelTrendingTitle"));
+        textView.setTextColor(getThemedColor(Theme.key_chat_emojiPanelTrendingTitle));
         this.nameTextView.setTextSize(1, 17.0f);
         this.nameTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.nameTextView.setEllipsize(TextUtils.TruncateAt.END);
@@ -78,7 +78,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
         addView(this.nameTextView, createFrame);
         TextView textView2 = new TextView(context);
         this.infoTextView = textView2;
-        textView2.setTextColor(getThemedColor("chat_emojiPanelTrendingDescription"));
+        textView2.setTextColor(getThemedColor(Theme.key_chat_emojiPanelTrendingDescription));
         this.infoTextView.setTextSize(1, 13.0f);
         this.infoTextView.setEllipsize(TextUtils.TruncateAt.END);
         this.infoTextView.setSingleLine(true);
@@ -91,8 +91,8 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
         if (z2) {
             ProgressButton progressButton = new ProgressButton(context);
             this.addButton = progressButton;
-            progressButton.setTextColor(getThemedColor("featuredStickers_buttonText"));
-            this.addButton.setText(LocaleController.getString("Add", C3242R.string.Add));
+            progressButton.setTextColor(getThemedColor(Theme.key_featuredStickers_buttonText));
+            this.addButton.setText(LocaleController.getString("Add", C3290R.string.Add));
             if (z) {
                 createFrame3 = LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED);
             } else {
@@ -102,10 +102,10 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
             TextView textView3 = new TextView(context);
             this.delButton = textView3;
             textView3.setGravity(17);
-            this.delButton.setTextColor(getThemedColor("featuredStickers_removeButtonText"));
+            this.delButton.setTextColor(getThemedColor(Theme.key_featuredStickers_removeButtonText));
             this.delButton.setTextSize(1, 14.0f);
             this.delButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.delButton.setText(LocaleController.getString("StickersRemove", C3242R.string.StickersRemove));
+            this.delButton.setText(LocaleController.getString("StickersRemove", C3290R.string.StickersRemove));
             if (z) {
                 createFrame4 = LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED);
             } else {
@@ -119,15 +119,15 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(60), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(60), 1073741824));
         if (this.canAddRemove) {
             int measuredWidth = this.addButton.getMeasuredWidth();
             int measuredWidth2 = this.delButton.getMeasuredWidth();
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.delButton.getLayoutParams();
             if (measuredWidth2 < measuredWidth) {
-                layoutParams.rightMargin = AndroidUtilities.m50dp(14) + ((measuredWidth - measuredWidth2) / 2);
+                layoutParams.rightMargin = AndroidUtilities.m54dp(14) + ((measuredWidth - measuredWidth2) / 2);
             } else {
-                layoutParams.rightMargin = AndroidUtilities.m50dp(14);
+                layoutParams.rightMargin = AndroidUtilities.m54dp(14);
             }
             measureChildWithMargins(this.nameTextView, i, measuredWidth, i2, 0);
         }
@@ -178,7 +178,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
         if (this.canAddRemove) {
             if (this.hasOnClick) {
                 this.addButton.setVisibility(0);
-                boolean z4 = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1460id);
+                boolean z4 = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1466id);
                 this.isInstalled = z4;
                 if (!z2) {
                     if (z4) {
@@ -265,7 +265,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
         if (this.stickerSetNameSearchLength != 0) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.set.set.title);
             try {
-                ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(getThemedColor("windowBackgroundWhiteBlueText4"));
+                ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(getThemedColor(Theme.key_windowBackgroundWhiteBlueText4));
                 int i = this.stickerSetNameSearchIndex;
                 spannableStringBuilder.setSpan(foregroundColorSpan, i, this.stickerSetNameSearchLength + i, 33);
             } catch (Exception unused) {
@@ -284,8 +284,8 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
         if (this.url != null) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.url);
             try {
-                spannableStringBuilder.setSpan(new ColorSpanUnderline(getThemedColor("windowBackgroundWhiteBlueText4")), 0, this.urlSearchLength, 33);
-                spannableStringBuilder.setSpan(new ColorSpanUnderline(getThemedColor("chat_emojiPanelTrendingDescription")), this.urlSearchLength, this.url.length(), 33);
+                spannableStringBuilder.setSpan(new ColorSpanUnderline(getThemedColor(Theme.key_windowBackgroundWhiteBlueText4)), 0, this.urlSearchLength, 33);
+                spannableStringBuilder.setSpan(new ColorSpanUnderline(getThemedColor(Theme.key_chat_emojiPanelTrendingDescription)), this.urlSearchLength, this.url.length(), 33);
             } catch (Exception unused) {
             }
             this.infoTextView.setText(spannableStringBuilder);
@@ -318,8 +318,8 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
                     } else {
                         invalidate();
                     }
-                    this.paint.setColor(getThemedColor("featuredStickers_unread"));
-                    canvas.drawCircle(this.nameTextView.getRight() + AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(4) * this.unreadProgress, this.paint);
+                    this.paint.setColor(getThemedColor(Theme.key_featuredStickers_unread));
+                    canvas.drawCircle(this.nameTextView.getRight() + AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(4) * this.unreadProgress, this.paint);
                 }
             }
             if (!z) {
@@ -334,8 +334,8 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
                     }
                 }
             }
-            this.paint.setColor(getThemedColor("featuredStickers_unread"));
-            canvas.drawCircle(this.nameTextView.getRight() + AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(4) * this.unreadProgress, this.paint);
+            this.paint.setColor(getThemedColor(Theme.key_featuredStickers_unread));
+            canvas.drawCircle(this.nameTextView.getRight() + AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(4) * this.unreadProgress, this.paint);
         }
         if (this.needDivider) {
             canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), BitmapDescriptorFactory.HUE_RED, Theme.dividerPaint);
@@ -344,30 +344,29 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
 
     public void updateColors() {
         if (this.canAddRemove) {
-            this.addButton.setProgressColor(getThemedColor("featuredStickers_buttonProgress"));
-            this.addButton.setBackgroundRoundRect(getThemedColor("featuredStickers_addButton"), getThemedColor("featuredStickers_addButtonPressed"));
+            this.addButton.setProgressColor(getThemedColor(Theme.key_featuredStickers_buttonProgress));
+            this.addButton.setBackgroundRoundRect(getThemedColor(Theme.key_featuredStickers_addButton), getThemedColor(Theme.key_featuredStickers_addButtonPressed));
         }
         updateStickerSetNameSearchSpan();
         updateUrlSearchSpan();
     }
 
     public static void createThemeDescriptions(List<ThemeDescription> list, RecyclerListView recyclerListView, ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate) {
-        list.add(new ThemeDescription(recyclerListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{FeaturedStickerSetInfoCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "chat_emojiPanelTrendingTitle"));
-        list.add(new ThemeDescription(recyclerListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{FeaturedStickerSetInfoCell.class}, new String[]{"infoTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "chat_emojiPanelTrendingDescription"));
-        list.add(new ThemeDescription(recyclerListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{FeaturedStickerSetInfoCell.class}, new String[]{"addButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_buttonText"));
-        list.add(new ThemeDescription(recyclerListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{FeaturedStickerSetInfoCell.class}, new String[]{"delButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_removeButtonText"));
-        list.add(new ThemeDescription(recyclerListView, 0, new Class[]{FeaturedStickerSetInfoCell.class}, null, null, null, "featuredStickers_unread"));
-        list.add(new ThemeDescription(recyclerListView, 0, new Class[]{FeaturedStickerSetInfoCell.class}, Theme.dividerPaint, null, null, "divider"));
-        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "featuredStickers_buttonProgress"));
-        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "featuredStickers_addButton"));
-        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "featuredStickers_addButtonPressed"));
-        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "windowBackgroundWhiteBlueText4"));
-        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "chat_emojiPanelTrendingDescription"));
+        list.add(new ThemeDescription(recyclerListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{FeaturedStickerSetInfoCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chat_emojiPanelTrendingTitle));
+        int i = Theme.key_chat_emojiPanelTrendingDescription;
+        list.add(new ThemeDescription(recyclerListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{FeaturedStickerSetInfoCell.class}, new String[]{"infoTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i));
+        list.add(new ThemeDescription(recyclerListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{FeaturedStickerSetInfoCell.class}, new String[]{"addButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_featuredStickers_buttonText));
+        list.add(new ThemeDescription(recyclerListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{FeaturedStickerSetInfoCell.class}, new String[]{"delButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_featuredStickers_removeButtonText));
+        list.add(new ThemeDescription(recyclerListView, 0, new Class[]{FeaturedStickerSetInfoCell.class}, null, null, null, Theme.key_featuredStickers_unread));
+        list.add(new ThemeDescription(recyclerListView, 0, new Class[]{FeaturedStickerSetInfoCell.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_buttonProgress));
+        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_addButton));
+        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_addButtonPressed));
+        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_windowBackgroundWhiteBlueText4));
+        list.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, i));
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

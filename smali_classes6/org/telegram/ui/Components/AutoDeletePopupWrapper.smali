@@ -309,14 +309,14 @@
 
     if-eq p5, p4, :cond_3
 
-    const-string p3, "dialogTextRed"
-
     .line 75
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 
@@ -330,10 +330,10 @@
 
     invoke-direct {p2, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string p3, "actionBarDefaultSubmenuSeparator"
-
     .line 80
-    invoke-static {p3, p6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuSeparator:I
+
+    invoke-static {p3, p6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p3
 
@@ -347,9 +347,9 @@
     .line 82
     sget p5, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    const-string v0, "windowBackgroundGrayShadow"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p1, p5, v0, p6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, p5, v0, p6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p5
 
@@ -427,9 +427,9 @@
     .line 91
     iget-object p1, p0, Lorg/telegram/ui/Components/AutoDeletePopupWrapper;->textView:Landroid/widget/TextView;
 
-    const-string p2, "actionBarDefaultSubmenuItem"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -447,9 +447,9 @@
     .line 93
     iget-object p1, p0, Lorg/telegram/ui/Components/AutoDeletePopupWrapper;->textView:Landroid/widget/TextView;
 
-    const-string p2, "windowBackgroundWhiteLinkText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

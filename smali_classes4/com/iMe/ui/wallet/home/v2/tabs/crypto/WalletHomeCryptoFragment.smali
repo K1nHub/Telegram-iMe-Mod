@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomeCryptoFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoFragment.kt\ncom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,363:1\n13#2,4:364\n56#3,6:368\n341#4:374\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoFragment.kt\ncom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment\n*L\n63#1:364,4\n64#1:368,6\n84#1:374\n*E\n"
+    value = "SMAP\nWalletHomeCryptoFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoFragment.kt\ncom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,360:1\n13#2,4:361\n56#3,6:365\n341#4:371\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoFragment.kt\ncom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment\n*L\n62#1:361,4\n63#1:365,6\n83#1:371\n*E\n"
 .end annotation
 
 
@@ -161,7 +161,7 @@
 
     new-array v1, v1, [Lkotlin/reflect/KProperty;
 
-    .line 63
+    .line 62
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "presenter"
@@ -178,7 +178,7 @@
 
     aput-object v2, v1, v5
 
-    .line 67
+    .line 66
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "binding"
@@ -195,7 +195,7 @@
 
     aput-object v2, v1, v3
 
-    .line 68
+    .line 67
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "mediaEditManager"
@@ -228,10 +228,10 @@
 .method public constructor <init>()V
     .locals 5
 
-    .line 60
+    .line 59
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;-><init>()V
 
-    .line 63
+    .line 62
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$presenter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$presenter$2;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
@@ -273,7 +273,7 @@
 
     invoke-direct {v1, v2, v3, v0}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
-    .line 63
+    .line 62
     iput-object v1, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     .line 58
@@ -294,10 +294,10 @@
 
     move-result-object v0
 
-    .line 64
+    .line 63
     iput-object v0, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->balancesRecycleAdapter$delegate:Lkotlin/Lazy;
 
-    .line 67
+    .line 66
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$binding$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$binding$2;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
@@ -310,7 +310,7 @@
 
     iput-object v0, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 68
+    .line 67
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$mediaEditManager$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$mediaEditManager$2;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
@@ -327,7 +327,7 @@
 .method public static final synthetic access$getCurrentAccount$p$s-561464087(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)I
     .locals 0
 
-    .line 60
+    .line 59
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -336,7 +336,7 @@
 .method public static final synthetic access$getPresenter(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
     .locals 0
 
-    .line 60
+    .line 59
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     move-result-object p0
@@ -347,7 +347,7 @@
 .method private final getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
     .locals 1
 
-    .line 64
+    .line 63
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->balancesRecycleAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -362,7 +362,7 @@
 .method private final getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
     .locals 3
 
-    .line 67
+    .line 66
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -383,7 +383,7 @@
 .method private final getMediaEditManager()Lcom/iMe/manager/common/MediaEditManager;
     .locals 3
 
-    .line 68
+    .line 67
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->mediaEditManager$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -404,7 +404,7 @@
 .method private final getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
     .locals 3
 
-    .line 63
+    .line 62
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     sget-object v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -425,18 +425,18 @@
 .method private static final getThemeDescriptions$lambda$0(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 3
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 83
+    .line 82
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 84
+    .line 83
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
     move-result-object v0
@@ -460,7 +460,7 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 85
+    .line 84
     :cond_0
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
@@ -476,9 +476,9 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "chats_actionBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -492,7 +492,7 @@
 .method private final onSubItemClick(I)V
     .locals 1
 
-    .line 332
+    .line 329
     sget v0, Lcom/iMe/common/IdFabric$Menu;->SCAN_ADDRESS:I
 
     if-ne p1, v0, :cond_0
@@ -510,7 +510,7 @@
 .method private final openNftDetails(Landroid/view/View;)V
     .locals 4
 
-    .line 307
+    .line 304
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getMediaEditManager()Lcom/iMe/manager/common/MediaEditManager;
 
     move-result-object v0
@@ -519,7 +519,7 @@
 
     move-result-object v0
 
-    .line 308
+    .line 305
     new-instance v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$openNftDetails$1;
 
     invoke-direct {v1}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$openNftDetails$1;-><init>()V
@@ -536,7 +536,7 @@
 .method private final setupColors()V
     .locals 4
 
-    .line 251
+    .line 248
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
     move-result-object v0
@@ -549,10 +549,10 @@
 
     new-array v1, v1, [I
 
-    const-string v2, "chats_actionBackground"
+    .line 249
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    .line 252
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -562,10 +562,10 @@
 
     invoke-virtual {v0, v1}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->setColorSchemeColors([I)V
 
-    const-string/jumbo v1, "windowBackgroundGray"
+    .line 250
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 253
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -577,12 +577,12 @@
 .method private final setupListeners()V
     .locals 3
 
-    .line 258
+    .line 255
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v0
 
-    .line 259
+    .line 256
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;->getCryptoAccountProvider()Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;
 
     move-result-object v1
@@ -593,7 +593,7 @@
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;->setActionBarMenuItemDelegate(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;)V
 
-    .line 260
+    .line 257
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;->getBannerProvider()Lcom/iMe/ui/adapter/provider/BannerProvider;
 
     move-result-object v1
@@ -604,14 +604,14 @@
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/adapter/provider/BannerProvider;->setBannerOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 264
+    .line 261
     new-instance v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda5;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda5;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 280
+    .line 277
     new-instance v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
@@ -624,11 +624,11 @@
 .method private static final setupListeners$lambda$15$lambda$10(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;I)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 259
+    .line 256
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->onSubItemClick(I)V
 
     return-void
@@ -637,7 +637,7 @@
 .method private static final setupListeners$lambda$15$lambda$11(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 7
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -649,7 +649,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 261
+    .line 258
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object p1
@@ -668,7 +668,7 @@
 
     check-cast p1, Lcom/iMe/model/wallet/home/SlideItem;
 
-    .line 262
+    .line 259
     new-instance p2, Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/SlideItem;->getSlide()Lcom/iMe/model/wallet/home/BannerSlide;
@@ -697,7 +697,7 @@
 .method private static final setupListeners$lambda$15$lambda$12(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 7
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -709,7 +709,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 265
+    .line 262
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v0
@@ -720,12 +720,12 @@
 
     check-cast v0, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 266
+    .line 263
     instance-of v1, v0, Lcom/iMe/model/wallet/home/AccountItem$Token;
 
     if-eqz v1, :cond_0
 
-    .line 267
+    .line 264
     sget-object p1, Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->Companion:Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsFragment$Companion;
 
     new-instance p2, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
@@ -742,16 +742,16 @@
 
     goto :goto_0
 
-    .line 268
+    .line 265
     :cond_0
     instance-of v1, v0, Lcom/iMe/model/wallet/home/CryptoSelectTokensItem;
 
     if-eqz v1, :cond_1
 
-    .line 269
+    .line 266
     sget-object p1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->Companion:Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;
 
-    .line 270
+    .line 267
     new-instance p2, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
@@ -764,7 +764,7 @@
 
     invoke-direct {p2, p3}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;-><init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
 
-    .line 269
+    .line 266
     invoke-virtual {p1, p2}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;->newInstance(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;)Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
 
     move-result-object p1
@@ -773,18 +773,18 @@
 
     goto :goto_0
 
-    .line 272
+    .line 269
     :cond_1
     instance-of v1, v0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
     if-eqz v1, :cond_2
 
-    .line 273
+    .line 270
     instance-of p0, p1, Lcom/chad/library/adapter/base/BaseNodeAdapter;
 
     if-eqz p0, :cond_3
 
-    .line 274
+    .line 271
     move-object v0, p1
 
     check-cast v0, Lcom/chad/library/adapter/base/BaseNodeAdapter;
@@ -805,7 +805,7 @@
 
     goto :goto_0
 
-    .line 277
+    .line 274
     :cond_2
     instance-of p1, v0, Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
@@ -821,7 +821,7 @@
 .method private static final setupListeners$lambda$15$lambda$14(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -833,12 +833,12 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 281
+    .line 278
     invoke-virtual {p2}, Landroid/view/View;->getId()I
 
     move-result p1
 
-    .line 282
+    .line 279
     sget p2, Lorg/telegram/messenger/R$id;->image_wallet_crypto_eye:I
 
     if-ne p1, p2, :cond_0
@@ -851,16 +851,16 @@
 
     goto :goto_0
 
-    .line 283
+    .line 280
     :cond_0
     sget p2, Lorg/telegram/messenger/R$id;->image_wallet_crypto_tokens_settings:I
 
     if-ne p1, p2, :cond_1
 
-    .line 284
+    .line 281
     sget-object p1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->Companion:Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;
 
-    .line 285
+    .line 282
     new-instance p2, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
@@ -873,7 +873,7 @@
 
     invoke-direct {p2, p3}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;-><init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
 
-    .line 284
+    .line 281
     invoke-virtual {p1, p2}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;->newInstance(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;)Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
 
     move-result-object p1
@@ -882,18 +882,18 @@
 
     goto :goto_0
 
-    .line 287
+    .line 284
     :cond_1
     sget p2, Lorg/telegram/messenger/R$id;->image_wallet_order_tokens:I
 
     if-ne p1, p2, :cond_2
 
-    .line 289
+    .line 286
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object p1
 
-    .line 290
+    .line 287
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     move-result-object p2
@@ -902,7 +902,7 @@
 
     move-result-object p2
 
-    .line 288
+    .line 285
     new-instance p3, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda6;
 
     invoke-direct {p3, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda6;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
@@ -911,12 +911,12 @@
 
     move-result-object p1
 
-    .line 287
+    .line 284
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     goto :goto_0
 
-    .line 293
+    .line 290
     :cond_2
     sget p2, Lorg/telegram/messenger/R$id;->frame_network_type:I
 
@@ -930,13 +930,13 @@
 
     goto :goto_0
 
-    .line 294
+    .line 291
     :cond_3
     sget p2, Lorg/telegram/messenger/R$id;->image_copy:I
 
     if-ne p1, p2, :cond_4
 
-    .line 295
+    .line 292
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object p0
@@ -947,12 +947,12 @@
 
     check-cast p0, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 296
+    .line 293
     instance-of p1, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
     if-eqz p1, :cond_4
 
-    .line 297
+    .line 294
     check-cast p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
     invoke-virtual {p0}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->getAddress()Ljava/lang/String;
@@ -973,11 +973,11 @@
 .method private static final setupListeners$lambda$15$lambda$14$lambda$13(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 291
+    .line 288
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     move-result-object p0
@@ -994,7 +994,7 @@
 .method private final setupSwipeRefresh()V
     .locals 2
 
-    .line 350
+    .line 347
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
     move-result-object v0
@@ -1015,11 +1015,11 @@
 .method private static final setupSwipeRefresh$lambda$20(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 7
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 350
+    .line 347
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     move-result-object v1
@@ -1040,14 +1040,14 @@
 .method private final setupWalletRecycleView()V
     .locals 4
 
-    .line 337
+    .line 334
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->recycleWalletHomeCryptoDashboard:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 338
+    .line 335
     new-instance v1, Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1060,43 +1060,43 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 339
+    .line 336
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v1
 
-    .line 340
+    .line 337
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;->getNftTokenProvider()Lcom/iMe/ui/adapter/provider/NftTokenProvider;
 
     move-result-object v2
 
     invoke-virtual {v2, v3}, Lcom/iMe/ui/adapter/provider/NftTokenProvider;->setSpanCount(I)V
 
-    .line 341
+    .line 338
     new-instance v2, Lcom/iMe/ui/wallet/home/v2/adapter/diff/BalanceDiffCallback;
 
     invoke-direct {v2}, Lcom/iMe/ui/wallet/home/v2/adapter/diff/BalanceDiffCallback;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 342
+    .line 339
     sget-object v2, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda2;->INSTANCE:Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda2;
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setGridSpanSizeLookup(Lcom/chad/library/adapter/base/listener/GridSpanSizeLookup;)V
 
-    .line 343
+    .line 340
     new-instance v2, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda9;
 
     invoke-direct {v2, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda9;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;->setOnNetworkViewLayoutAction(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 339
+    .line 336
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    const-string v1, "setupWalletRecycleView$lambda$19"
+    const-string/jumbo v1, "setupWalletRecycleView$lambda$19"
 
-    .line 345
+    .line 342
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->disableDefaultAnimation(Landroidx/recyclerview/widget/RecyclerView;)V
@@ -1119,11 +1119,11 @@
 .method private static final setupWalletRecycleView$lambda$19$lambda$18$lambda$17(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 343
+    .line 340
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     move-result-object p0
@@ -1136,11 +1136,11 @@
 .method private static final showAddressMismatchScreen$lambda$3(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 154
+    .line 153
     sget-object v0, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->Companion:Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchFragment$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchFragment$Companion;->newInstance()Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;
@@ -1159,7 +1159,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 103
+    .line 102
     invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     return-void
@@ -1172,7 +1172,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 225
+    .line 222
     invoke-virtual {p0}, Lcom/iMe/utils/hints/HintUtils;->hideHint()V
 
     const/4 p0, 0x0
@@ -1189,7 +1189,7 @@
 
     const-string v0, "selectedNetworkType"
 
-    .line 177
+    .line 176
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1214,7 +1214,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 82
+    .line 81
     new-instance v9, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
@@ -1227,10 +1227,13 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 81
+    .line 80
     new-instance v7, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda12;
 
     invoke-direct {v7, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda12;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+
+    .line 85
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     const/4 v4, 0x0
 
@@ -1238,18 +1241,16 @@
 
     const/4 v6, 0x0
 
-    const-string/jumbo v8, "windowBackgroundGray"
-
     move-object v1, v9
 
-    .line 82
-    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    .line 81
+    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v1, 0x0
 
     aput-object v9, v0, v1
 
-    .line 81
+    .line 80
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -1260,14 +1261,14 @@
 .method public handleBottomPadding(I)V
     .locals 4
 
-    .line 167
+    .line 166
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->recycleWalletHomeCryptoDashboard:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 168
+    .line 167
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingLeft()I
 
     move-result v1
@@ -1288,7 +1289,7 @@
 .method public loadBalances()V
     .locals 6
 
-    .line 163
+    .line 162
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     move-result-object v0
@@ -1309,7 +1310,7 @@
 .method public loadTabInfo()V
     .locals 4
 
-    .line 159
+    .line 158
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
 
     move-result-object v0
@@ -1326,7 +1327,7 @@
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 149
+    .line 148
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v0
@@ -1343,19 +1344,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 73
+    .line 72
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupColors()V
 
-    .line 74
+    .line 73
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners()V
 
-    .line 75
+    .line 74
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupWalletRecycleView()V
 
-    .line 76
+    .line 75
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupSwipeRefresh()V
 
-    .line 78
+    .line 77
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
     move-result-object p1
@@ -1374,14 +1375,14 @@
 .method public onFragmentDestroy()V
     .locals 1
 
-    .line 242
+    .line 239
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getMediaEditManager()Lcom/iMe/manager/common/MediaEditManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/manager/common/MediaEditManager;->finishLoading()V
 
-    .line 243
+    .line 240
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
     return-void
@@ -1390,10 +1391,10 @@
 .method public onPause()V
     .locals 1
 
-    .line 237
+    .line 234
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
-    .line 238
+    .line 235
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v0
@@ -1414,10 +1415,10 @@
 .method public onResume()V
     .locals 1
 
-    .line 232
+    .line 229
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
-    .line 233
+    .line 230
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v0
@@ -1446,7 +1447,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
+    .line 130
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -1465,28 +1466,28 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 132
+    .line 131
     sget-object v0, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->Companion:Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$Companion;
 
-    .line 133
+    .line 132
     new-instance v1, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$Backup;
 
-    .line 132
+    .line 131
     new-instance v2, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$openCreateWalletScreen$1;
 
     invoke-direct {v2, p2, p1}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$openCreateWalletScreen$1;-><init>(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Wallet;)V
 
-    .line 133
+    .line 132
     invoke-direct {v1, v2}, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$Backup;-><init>(Lkotlin/jvm/functions/Function0;)V
 
-    .line 132
+    .line 131
     invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$Companion;->newInstance(Lcom/iMe/model/wallet/crypto/tutorial/TutorialType;)Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;
 
     move-result-object p1
 
     goto :goto_1
 
-    .line 143
+    .line 142
     :cond_1
     sget-object p1, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->Companion:Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$Companion;
 
@@ -1496,7 +1497,7 @@
 
     move-result-object p1
 
-    .line 130
+    .line 129
     :goto_1
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -1506,7 +1507,7 @@
 .method public openHistoryScreen()V
     .locals 4
 
-    .line 217
+    .line 214
     sget-object v0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->Companion:Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;
 
     sget-object v1, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$Fullscreen;->INSTANCE:Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$Fullscreen;
@@ -1531,10 +1532,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 120
+    .line 119
     sget-object v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->Companion:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$Companion;
 
-    .line 121
+    .line 120
     new-instance v1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
     if-nez p2, :cond_0
@@ -1544,12 +1545,12 @@
     :cond_0
     invoke-direct {v1, p2, p1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 120
+    .line 119
     invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object p1
 
-    .line 119
+    .line 118
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -1558,7 +1559,7 @@
 .method public openSendScreen()V
     .locals 9
 
-    .line 213
+    .line 210
     new-instance v8, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
@@ -1610,7 +1611,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 90
+    .line 89
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v0
@@ -1639,7 +1640,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 115
+    .line 114
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1670,7 +1671,7 @@
 .method public showAddressMismatchScreen()V
     .locals 3
 
-    .line 153
+    .line 152
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda10;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda10;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
@@ -1697,7 +1698,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 107
+    .line 106
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -1720,7 +1721,7 @@
 
     move-result-object v6
 
-    .line 108
+    .line 107
     new-instance v3, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showAlreadyCreatedWalletWarningDialog$1$1;
 
     invoke-direct {v3, p2}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showAlreadyCreatedWalletWarningDialog$1$1;-><init>(Ljava/lang/String;)V
@@ -1737,7 +1738,7 @@
 
     invoke-static/range {v0 .. v5}, Lcom/iMe/utils/dialogs/DialogExtKt;->makeClickableDescription$default(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/widget/TextView;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 107
+    .line 106
     invoke-virtual {p0, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -1754,7 +1755,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 103
+    .line 102
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda8;
 
     invoke-direct {v0, p2}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda8;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
@@ -1771,19 +1772,19 @@
 .method public showChangeNetworkHint()V
     .locals 3
 
-    .line 221
+    .line 218
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBalancesRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;->resetOnNetworkViewLayoutAction()V
 
-    .line 222
+    .line 219
     invoke-virtual {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->getHintUtils()Lcom/iMe/utils/hints/HintUtils;
 
     move-result-object v0
 
-    .line 223
+    .line 220
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     const-string v2, "parentLayout"
@@ -1792,7 +1793,7 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/utils/hints/HintUtils;->showChangeNetworkHint(Lorg/telegram/ui/ActionBar/INavigationLayout;)V
 
-    .line 224
+    .line 221
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
     move-result-object v1
@@ -1830,7 +1831,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 174
+    .line 173
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1839,7 +1840,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 173
+    .line 172
     new-instance v4, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda7;
 
     invoke-direct {v4, p2}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function1;)V
@@ -1862,7 +1863,7 @@
 .end method
 
 .method public showQrReceiveDialog(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
-    .locals 9
+    .locals 3
 
     const-string v0, "address"
 
@@ -1872,57 +1873,48 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 191
+    .line 190
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 193
+    .line 192
     invoke-static {p1, p2}, Lcom/iMe/utils/helper/wallet/CryptoHelper;->formatAddressQR(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p2
 
-    .line 190
-    new-instance v8, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;
+    .line 189
+    new-instance v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;
 
-    invoke-direct {v8, p1, p0, v0, v1}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;-><init>(Ljava/lang/String;Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Landroid/app/Activity;Ljava/lang/String;)V
+    invoke-direct {v1, p1, p0, v0, p2}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;-><init>(Ljava/lang/String;Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Landroid/app/Activity;Ljava/lang/String;)V
+
+    .line 201
+    invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    move-result-object p2
+
+    sget v0, Lorg/telegram/messenger/R$string;->wallet_receive_dialog_title:I
+
+    invoke-interface {p2, v0}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
 
     .line 202
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v0
 
-    sget v1, Lorg/telegram/messenger/R$string;->wallet_receive_dialog_title:I
+    sget v2, Lorg/telegram/messenger/R$string;->wallet_receive_dialog_btn_text:I
 
-    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 203
-    invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-interface {v0, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    sget v1, Lorg/telegram/messenger/R$string;->wallet_receive_dialog_btn_text:I
+    .line 200
+    invoke-virtual {v1, p2, v0, p1}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->setupWalletTypeReceive(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 205
-    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-object v2, v8
-
-    move-object v5, p1
-
-    move-object v7, p2
-
-    .line 201
-    invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->setupWalletTypeReceive(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
-
-    .line 189
-    invoke-virtual {p0, v8}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+    .line 188
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
 .end method
@@ -1930,7 +1922,7 @@
 .method public showRefreshing(Z)V
     .locals 1
 
-    .line 99
+    .line 98
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
     move-result-object v0
@@ -1959,12 +1951,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 183
+    .line 182
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 184
+    .line 183
     sget-object v1, Lcom/iMe/storage/common/AppConfiguration$Crypto;->INSTANCE:Lcom/iMe/storage/common/AppConfiguration$Crypto;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
@@ -1979,7 +1971,7 @@
 
     move-result-object p1
 
-    .line 182
+    .line 181
     invoke-static {v0, p1}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
 
     return-void

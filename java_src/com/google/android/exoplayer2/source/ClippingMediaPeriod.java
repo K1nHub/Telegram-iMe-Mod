@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.SeekParameters;
@@ -33,7 +33,7 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
 
     public ClippingMediaPeriod(MediaPeriod mediaPeriod, boolean z, long j, long j2) {
         this.mediaPeriod = mediaPeriod;
-        this.pendingInitialDiscontinuityPositionUs = z ? j : C0470C.TIME_UNSET;
+        this.pendingInitialDiscontinuityPositionUs = z ? j : C0475C.TIME_UNSET;
         this.startUs = j;
         this.endUs = j2;
     }
@@ -193,13 +193,13 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
     public long readDiscontinuity() {
         if (isPendingInitialDiscontinuity()) {
             long j = this.pendingInitialDiscontinuityPositionUs;
-            this.pendingInitialDiscontinuityPositionUs = C0470C.TIME_UNSET;
+            this.pendingInitialDiscontinuityPositionUs = C0475C.TIME_UNSET;
             long readDiscontinuity = readDiscontinuity();
-            return readDiscontinuity != C0470C.TIME_UNSET ? readDiscontinuity : j;
+            return readDiscontinuity != C0475C.TIME_UNSET ? readDiscontinuity : j;
         }
         long readDiscontinuity2 = this.mediaPeriod.readDiscontinuity();
-        if (readDiscontinuity2 == C0470C.TIME_UNSET) {
-            return C0470C.TIME_UNSET;
+        if (readDiscontinuity2 == C0475C.TIME_UNSET) {
+            return C0475C.TIME_UNSET;
         }
         boolean z = true;
         Assertions.checkState(readDiscontinuity2 >= this.startUs);
@@ -316,7 +316,7 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
     }
 
     boolean isPendingInitialDiscontinuity() {
-        return this.pendingInitialDiscontinuityPositionUs != C0470C.TIME_UNSET;
+        return this.pendingInitialDiscontinuityPositionUs != C0475C.TIME_UNSET;
     }
 
     private SeekParameters clipSeekParameters(long j, SeekParameters seekParameters) {

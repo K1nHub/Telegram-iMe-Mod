@@ -262,7 +262,7 @@
 
     if-eqz p1, :cond_1
 
-    const-string p1, "start import service"
+    const-string/jumbo p1, "start import service"
 
     .line 84
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

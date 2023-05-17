@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert$SearchField;Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 347
+    .line 494
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/CloseProgressDrawable2;-><init>()V
@@ -35,26 +35,26 @@
 .method protected getCurrentColor()I
     .locals 2
 
-    .line 350
+    .line 497
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$000(Lorg/telegram/ui/Components/ShareAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$200(Lorg/telegram/ui/Components/ShareAlert;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    const-string v1, "voipgroup_searchPlaceholder"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchPlaceholder:I
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "dialogSearchIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchIcon:I
 
     :goto_0
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ShareAlert;->access$1100(Lorg/telegram/ui/Components/ShareAlert;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ShareAlert;->access$1300(Lorg/telegram/ui/Components/ShareAlert;I)I
 
     move-result v0
 

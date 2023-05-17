@@ -14,6 +14,11 @@ public class LockFreeLinkedListNode {
     volatile /* synthetic */ Object _prev = this;
     private volatile /* synthetic */ Object _removedRef = null;
 
+    /* compiled from: LockFreeLinkedList.kt */
+    /* loaded from: classes4.dex */
+    public static final class PrepareOp extends OpDescriptor {
+    }
+
     private final Removed removed() {
         Removed removed = (Removed) this._removedRef;
         if (removed == null) {
@@ -79,6 +84,22 @@ public class LockFreeLinkedListNode {
         return false;
     }
 
+    public final void addLast(LockFreeLinkedListNode lockFreeLinkedListNode) {
+        do {
+        } while (!getPrevNode().addNext(lockFreeLinkedListNode, this));
+    }
+
+    public final boolean addNext(LockFreeLinkedListNode lockFreeLinkedListNode, LockFreeLinkedListNode lockFreeLinkedListNode2) {
+        _prev$FU.lazySet(lockFreeLinkedListNode, this);
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _next$FU;
+        atomicReferenceFieldUpdater.lazySet(lockFreeLinkedListNode, lockFreeLinkedListNode2);
+        if (atomicReferenceFieldUpdater.compareAndSet(this, lockFreeLinkedListNode2, lockFreeLinkedListNode)) {
+            lockFreeLinkedListNode.finishAdd(lockFreeLinkedListNode2);
+            return true;
+        }
+        return false;
+    }
+
     public final int tryCondAddNext(LockFreeLinkedListNode lockFreeLinkedListNode, LockFreeLinkedListNode lockFreeLinkedListNode2, CondAddOp condAddOp) {
         _prev$FU.lazySet(lockFreeLinkedListNode, this);
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _next$FU;
@@ -90,7 +111,8 @@ public class LockFreeLinkedListNode {
         return 0;
     }
 
-    public boolean remove() {
+    /* renamed from: remove */
+    public boolean mo1603remove() {
         return removeOrNext() == null;
     }
 
@@ -109,6 +131,36 @@ public class LockFreeLinkedListNode {
         } while (!_next$FU.compareAndSet(this, next, lockFreeLinkedListNode.removed()));
         lockFreeLinkedListNode.correctPrev(null);
         return null;
+    }
+
+    public final void helpRemove() {
+        ((Removed) getNext()).ref.helpRemovePrev();
+    }
+
+    public final void helpRemovePrev() {
+        LockFreeLinkedListNode lockFreeLinkedListNode = this;
+        while (true) {
+            Object next = lockFreeLinkedListNode.getNext();
+            if (next instanceof Removed) {
+                lockFreeLinkedListNode = ((Removed) next).ref;
+            } else {
+                lockFreeLinkedListNode.correctPrev(null);
+                return;
+            }
+        }
+    }
+
+    public final LockFreeLinkedListNode removeFirstOrNull() {
+        while (true) {
+            LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) getNext();
+            if (lockFreeLinkedListNode == this) {
+                return null;
+            }
+            if (lockFreeLinkedListNode.mo1603remove()) {
+                return lockFreeLinkedListNode;
+            }
+            lockFreeLinkedListNode.helpRemove();
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0048, code lost:

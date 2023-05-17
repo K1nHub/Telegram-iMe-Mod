@@ -33,10 +33,10 @@ import com.iMe.p031ui.adapter.provider.TotalBalanceProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: BalancesRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.adapter.BalancesRecycleAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BalancesRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     private final BannerProvider bannerProvider;
     private final CryptoAccountProvider cryptoAccountProvider;
@@ -75,7 +75,7 @@ public final class BalancesRecycleAdapter extends BaseNodeAdapter<BaseNode> {
         this.cryptoAccountProvider = cryptoAccountProvider;
         this.headerWithNetworkSwitcherProvider = headerWithNetworkSwitcherProvider;
         this.nftTokenProvider = nftTokenProvider;
-        addChildClickViewIds(C3242R.C3245id.image_wallet_crypto_eye, C3242R.C3245id.image_wallet_crypto_tokens_settings, C3242R.C3245id.image_wallet_order_tokens, C3242R.C3245id.frame_network_type, C3242R.C3245id.image_copy);
+        addChildClickViewIds(C3290R.C3293id.image_wallet_crypto_eye, C3290R.C3293id.image_wallet_crypto_tokens_settings, C3290R.C3293id.image_wallet_order_tokens, C3290R.C3293id.frame_network_type, C3290R.C3293id.image_copy);
         addFullSpanNodeProvider(BaseQuickAdapterExtKt.asNode(bannerProvider));
         addFullSpanNodeProvider(BaseQuickAdapterExtKt.asNode(cryptoAccountProvider));
         addFullSpanNodeProvider(BaseQuickAdapterExtKt.asNode(createAccountProvider));
@@ -111,6 +111,6 @@ public final class BalancesRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     protected int getItemType(List<? extends BaseNode> data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         BaseNode baseNode = data.get(i);
-        return baseNode instanceof BannerItem ? IdFabric$ViewTypes.BANNERS : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER : baseNode instanceof AccountItem.Token ? IdFabric$ViewTypes.TOKEN_BALANCE : baseNode instanceof ServicesBasicItem ? IdFabric$ViewTypes.SERVICES_BASIC : baseNode instanceof TotalBalanceItem ? IdFabric$ViewTypes.TOTAL_BALANCE : baseNode instanceof AccountItem.Create ? IdFabric$ViewTypes.CREATE_ACCOUNT : baseNode instanceof SelectableHeaderItem ? IdFabric$ViewTypes.SELECTABLE_HEADER : baseNode instanceof HeaderItemWithNetworkSwitcher ? IdFabric$ViewTypes.HEADER_WITH_NETWORK_SWITCHER : baseNode instanceof CryptoSelectTokensItem ? IdFabric$ViewTypes.SELECT_TOKENS : baseNode instanceof CryptoAccountItem ? IdFabric$ViewTypes.CRYPTO_ACCOUNT : baseNode instanceof NftCollectionItem ? IdFabric$ViewTypes.NFT_COLLECTION : baseNode instanceof NftTokenItem ? IdFabric$ViewTypes.NFT_AVATAR : baseNode instanceof GlobalStateItem ? IdFabric$ViewTypes.GLOBAL_STATE : IdFabric$ViewTypes.TOKEN_BALANCE;
+        return baseNode instanceof BannerItem ? IdFabric$ViewTypes.BANNERS : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER_CELL : baseNode instanceof AccountItem.Token ? IdFabric$ViewTypes.TOKEN_BALANCE : baseNode instanceof ServicesBasicItem ? IdFabric$ViewTypes.SERVICES_BASIC : baseNode instanceof TotalBalanceItem ? IdFabric$ViewTypes.TOTAL_BALANCE : baseNode instanceof AccountItem.Create ? IdFabric$ViewTypes.CREATE_ACCOUNT : baseNode instanceof SelectableHeaderItem ? IdFabric$ViewTypes.SELECTABLE_HEADER : baseNode instanceof HeaderItemWithNetworkSwitcher ? IdFabric$ViewTypes.HEADER_CELL_WITH_NETWORK : baseNode instanceof CryptoSelectTokensItem ? IdFabric$ViewTypes.SELECT_TOKENS : baseNode instanceof CryptoAccountItem ? IdFabric$ViewTypes.CRYPTO_ACCOUNT : baseNode instanceof NftCollectionItem ? IdFabric$ViewTypes.NFT_COLLECTION : baseNode instanceof NftTokenItem ? IdFabric$ViewTypes.NFT_AVATAR : baseNode instanceof GlobalStateItem ? IdFabric$ViewTypes.GLOBAL_STATE : IdFabric$ViewTypes.TOKEN_BALANCE;
     }
 }

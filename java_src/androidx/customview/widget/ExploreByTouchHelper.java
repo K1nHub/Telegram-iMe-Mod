@@ -11,7 +11,6 @@ import android.view.accessibility.AccessibilityManager;
 import androidx.collection.SparseArrayCompat;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
-import androidx.core.view.ViewParentCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
 import androidx.core.view.accessibility.AccessibilityRecordCompat;
@@ -218,7 +217,7 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         getVisibleVirtualViews(arrayList);
         SparseArrayCompat<AccessibilityNodeInfoCompat> sparseArrayCompat = new SparseArrayCompat<>();
         for (int i = 0; i < arrayList.size(); i++) {
-            sparseArrayCompat.put(i, createNodeForChild(i));
+            sparseArrayCompat.put(arrayList.get(i).intValue(), createNodeForChild(arrayList.get(i).intValue()));
         }
         return sparseArrayCompat;
     }
@@ -250,7 +249,7 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         if (i == Integer.MIN_VALUE || !this.mManager.isEnabled() || (parent = this.mHost.getParent()) == null) {
             return false;
         }
-        return ViewParentCompat.requestSendAccessibilityEvent(parent, this.mHost, createEvent(i, i2));
+        return parent.requestSendAccessibilityEvent(this.mHost, createEvent(i, i2));
     }
 
     private void updateHoveredVirtualView(int i) {
@@ -471,6 +470,9 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         if ((this.mHost.isFocused() || this.mHost.requestFocus()) && (i2 = this.mKeyboardFocusedVirtualViewId) != i) {
             if (i2 != Integer.MIN_VALUE) {
                 clearKeyboardFocusForVirtualView(i2);
+            }
+            if (i == Integer.MIN_VALUE) {
+                return false;
             }
             this.mKeyboardFocusedVirtualViewId = i;
             onVirtualViewKeyboardFocusChanged(i, true);

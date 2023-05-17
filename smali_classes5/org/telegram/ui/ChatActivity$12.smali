@@ -14,17 +14,11 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 2958
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$12;->this$0:Lorg/telegram/ui/ChatActivity;
-
+    .line 2901
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -35,10 +29,12 @@
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 2968
-    invoke-static {}, Lorg/telegram/ui/ChatActivity;->access$2400()F
+    .line 2909
+    invoke-static {}, Lorg/telegram/ui/ChatActivity;->access$2400()I
 
     move-result p1
+
+    int-to-float p1, p1
 
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -48,38 +44,12 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;F)V
-    .locals 1
+    .locals 0
 
-    .line 2961
-    invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$2402(F)F
+    float-to-int p1, p2
 
-    .line 2962
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$12;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$2500(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/ColorMatrix;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Landroid/graphics/ColorMatrix;->setSaturation(F)V
-
-    .line 2963
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$12;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$2600(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Paint;
-
-    move-result-object p1
-
-    new-instance p2, Landroid/graphics/ColorMatrixColorFilter;
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$12;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$2500(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/ColorMatrix;
-
-    move-result-object v0
-
-    invoke-direct {p2, v0}, Landroid/graphics/ColorMatrixColorFilter;-><init>(Landroid/graphics/ColorMatrix;)V
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
+    .line 2904
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$2402(I)I
 
     return-void
 .end method

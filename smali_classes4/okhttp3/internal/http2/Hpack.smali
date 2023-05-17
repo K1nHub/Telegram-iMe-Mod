@@ -664,7 +664,7 @@
     .line 114
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "strict-transport-security"
+    const-string/jumbo v3, "strict-transport-security"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

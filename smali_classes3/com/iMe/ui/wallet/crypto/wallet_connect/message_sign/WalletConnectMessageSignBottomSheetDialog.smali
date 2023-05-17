@@ -397,10 +397,10 @@
     .line 84
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    const-string v2, "windowBackgroundWhiteGrayIcon"
-
     .line 85
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v2
 
@@ -416,10 +416,10 @@
     .line 88
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "windowBackgroundWhiteBlueHeader"
-
     .line 89
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v2
 
@@ -435,10 +435,10 @@
     .line 92
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->textMessage:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 93
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v1
 

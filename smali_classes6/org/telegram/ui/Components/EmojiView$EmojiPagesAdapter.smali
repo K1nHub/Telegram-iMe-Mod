@@ -25,7 +25,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 8503
+    .line 8224
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Landroidx/viewpager/widget/PagerAdapter;-><init>()V
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/Components/EmojiView$1;)V
     .locals 0
 
-    .line 8503
+    .line 8224
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;-><init>(Lorg/telegram/ui/Components/EmojiView;)V
 
     return-void
@@ -53,10 +53,10 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 8511
+    .line 8232
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView;->access$20100(Lorg/telegram/ui/Components/EmojiView;)Z
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView;->access$19300(Lorg/telegram/ui/Components/EmojiView;)Z
 
     move-result v2
 
@@ -76,7 +76,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 8512
+    .line 8233
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -97,14 +97,14 @@
     :cond_4
     if-nez p1, :cond_5
 
-    .line 8515
+    .line 8236
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget-boolean v2, p1, Lorg/telegram/ui/Components/EmojiView;->emojiBanned:Z
 
     if-eqz v2, :cond_5
 
-    .line 8516
+    .line 8237
     invoke-virtual {p1, v1, v1, v0}, Lorg/telegram/ui/Components/EmojiView;->showStickerBanHint(ZZZ)V
 
     return v0
@@ -122,7 +122,7 @@
 .method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
     .locals 0
 
-    .line 8506
+    .line 8227
     check-cast p3, Landroid/view/View;
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
@@ -133,10 +133,10 @@
 .method public getCount()I
     .locals 1
 
-    .line 8523
+    .line 8244
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$20200(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$19400(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -162,7 +162,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 8534
+    .line 8255
     sget p1, Lorg/telegram/messenger/R$string;->kikliko_name:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -186,7 +186,7 @@
 
     return-object p1
 
-    .line 8543
+    .line 8264
     :cond_1
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrStickers:I
 
@@ -198,7 +198,7 @@
 
     return-object p1
 
-    .line 8541
+    .line 8262
     :cond_2
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrGIFs:I
 
@@ -210,7 +210,7 @@
 
     return-object p1
 
-    .line 8539
+    .line 8260
     :cond_3
     sget p1, Lorg/telegram/messenger/R$string;->Emoji:I
 
@@ -230,7 +230,7 @@
 
     const/16 p1, 0xc
 
-    .line 8556
+    .line 8277
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -240,7 +240,7 @@
     :cond_0
     const/16 p1, 0x12
 
-    .line 8552
+    .line 8273
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -251,10 +251,10 @@
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
     .locals 1
 
-    .line 8570
+    .line 8291
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPagesAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$20200(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$19400(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -266,7 +266,7 @@
 
     iget-object p2, p2, Lorg/telegram/ui/Components/EmojiView$Tab;->view:Landroid/view/View;
 
-    .line 8571
+    .line 8292
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     return-object p2

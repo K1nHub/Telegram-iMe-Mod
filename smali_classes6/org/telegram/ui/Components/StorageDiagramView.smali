@@ -147,9 +147,9 @@
 
     move-result p3
 
-    const-string p4, "chats_archiveBackground"
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archiveBackground:I
 
-    invoke-static {p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p4
 
@@ -799,9 +799,9 @@
 
     aget-object v1, v1, v11
 
-    iget-object v1, v1, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    iget v1, v1, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->colorKey:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1077,9 +1077,9 @@
 
     aget-object v1, v1, v11
 
-    iget-object v1, v1, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    iget v1, v1, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->colorKey:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1322,12 +1322,12 @@
 
     const/16 v2, 0x94
 
-    const-string v3, "dialogTextBlack"
-
     if-eqz v1, :cond_15
 
     .line 331
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -1336,11 +1336,11 @@
     .line 332
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
     .line 333
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogId:Ljava/lang/Long;
@@ -1354,90 +1354,90 @@
 
     move-result v1
 
-    const/4 v4, 0x4
+    const/4 v3, 0x4
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    add-float/2addr v1, v4
+    add-float/2addr v1, v3
 
-    iget-object v4, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    iget-object v3, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
 
-    move-result v4
+    move-result v3
 
-    add-float/2addr v1, v4
+    add-float/2addr v1, v3
 
     .line 335
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    sub-float/2addr v4, v1
+    sub-float/2addr v3, v1
 
-    div-float v4, v4, v21
+    div-float v3, v3, v21
 
     .line 336
-    iget-object v5, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    iget-object v4, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    const/16 v6, 0x73
+    const/16 v5, 0x73
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v5
+
+    iget-object v6, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    invoke-virtual {v6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
 
     move-result v6
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text1:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    add-float/2addr v6, v3
 
-    invoke-virtual {v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
+    float-to-int v6, v6
+
+    const/16 v8, 0x91
+
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
 
-    add-float/2addr v8, v4
-
-    float-to-int v8, v8
-
-    const/16 v9, 0x91
-
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-virtual {v5, v10, v6, v8, v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
+    invoke-virtual {v4, v10, v5, v6, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
     .line 337
-    iget-object v5, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    iget-object v4, v0, Lorg/telegram/ui/Components/StorageDiagramView;->text2:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    add-float/2addr v4, v1
+    add-float/2addr v3, v1
 
-    invoke-virtual {v5}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
+    invoke-virtual {v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
 
     move-result v1
 
-    sub-float/2addr v4, v1
+    sub-float/2addr v3, v1
 
-    float-to-int v1, v4
+    float-to-int v1, v3
 
-    const/16 v4, 0x76
+    const/16 v3, 0x76
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v3
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
-    move-result v6
+    move-result v5
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v8
+    move-result v6
 
-    invoke-virtual {v5, v1, v4, v6, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
+    invoke-virtual {v4, v1, v3, v5, v6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
     .line 339
     :cond_14
@@ -1474,32 +1474,34 @@
 
     int-to-float v2, v2
 
-    iget-object v4, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextLayout:Landroid/text/StaticLayout;
+    iget-object v3, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextLayout:Landroid/text/StaticLayout;
 
-    invoke-virtual {v4}, Landroid/text/StaticLayout;->getHeight()I
+    invoke-virtual {v3}, Landroid/text/StaticLayout;->getHeight()I
+
+    move-result v3
+
+    const/16 v4, 0xd
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    const/16 v5, 0xd
+    sub-int/2addr v3, v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    int-to-float v3, v3
 
-    move-result v5
+    div-float v3, v3, v21
 
-    sub-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    div-float v4, v4, v21
-
-    sub-float/2addr v2, v4
+    sub-float/2addr v2, v3
 
     invoke-virtual {v7, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 346
     iget-object v1, v0, Lorg/telegram/ui/Components/StorageDiagramView;->dialogTextPaint:Landroid/text/TextPaint;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

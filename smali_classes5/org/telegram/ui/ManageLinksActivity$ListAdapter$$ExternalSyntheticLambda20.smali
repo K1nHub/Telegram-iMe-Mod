@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$RniB6RGcfFbnZN_s4Zh81mgBdos(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$TPbRqSWIxO2GNQusdjZZRsMhtNA(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
     return-void
 .end method

@@ -12,7 +12,7 @@ import java.util.List;
 public final class CueGroup implements Bundleable {
     public final ImmutableList<Cue> cues;
     public final long presentationTimeUs;
-    public static final CueGroup EMPTY_TIME_ZERO = new CueGroup(ImmutableList.m740of(), 0);
+    public static final CueGroup EMPTY_TIME_ZERO = new CueGroup(ImmutableList.m744of(), 0);
     private static final String FIELD_CUES = Util.intToStringMaxRadix(0);
     private static final String FIELD_PRESENTATION_TIME_US = Util.intToStringMaxRadix(1);
     public static final Bundleable.Creator<CueGroup> CREATOR = CueGroup$$ExternalSyntheticLambda0.INSTANCE;
@@ -35,7 +35,7 @@ public final class CueGroup implements Bundleable {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_CUES);
         if (parcelableArrayList == null) {
-            fromBundleList = ImmutableList.m740of();
+            fromBundleList = ImmutableList.m744of();
         } else {
             fromBundleList = BundleableUtil.fromBundleList(Cue.CREATOR, parcelableArrayList);
         }

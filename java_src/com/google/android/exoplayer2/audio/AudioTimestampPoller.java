@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.audio;
 
 import android.media.AudioTimestamp;
 import android.media.AudioTrack;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.util.Util;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -111,7 +111,7 @@ final class AudioTimestampPoller {
 
     public long getTimestampSystemTimeUs() {
         AudioTimestampV19 audioTimestampV19 = this.audioTimestamp;
-        return audioTimestampV19 != null ? audioTimestampV19.getTimestampSystemTimeUs() : C0470C.TIME_UNSET;
+        return audioTimestampV19 != null ? audioTimestampV19.getTimestampSystemTimeUs() : C0475C.TIME_UNSET;
     }
 
     public long getTimestampPositionFrames() {

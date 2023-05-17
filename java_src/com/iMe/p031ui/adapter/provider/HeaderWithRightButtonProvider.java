@@ -7,14 +7,15 @@ import com.iMe.model.wallet.home.HeaderItemWithRightButton;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: HeaderWithRightButtonProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.HeaderWithRightButtonProvider */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class HeaderWithRightButtonProvider extends BaseNodeProvider<HeaderItemWithRightButton> {
     private boolean isInfoButtonVisible;
-    private final int itemViewType = IdFabric$ViewTypes.HEADER_WITH_RIGHT_BUTTON;
-    private final int layoutId = C3242R.layout.fork_recycle_item_header_with_right_button;
+    private final int itemViewType = IdFabric$ViewTypes.HEADER_ITEM_WITH_RIGHT_BUTTON;
+    private final int layoutId = C3290R.layout.fork_recycle_item_header_with_right_button;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, Object obj, List list) {
@@ -39,18 +40,19 @@ public final class HeaderWithRightButtonProvider extends BaseNodeProvider<Header
     public void convert(BaseViewHolder helper, HeaderItemWithRightButton item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3242R.C3245id.image_info;
-        BaseViewHolder visibleElseGone = BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(helper, i, "chats_actionBackground"), i), i, this.isInfoButtonVisible);
-        int i2 = C3242R.C3245id.text_wallet_header;
-        BaseViewHolder text = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(visibleElseGone, i2, "windowBackgroundWhiteGrayText2"), i2).setText(i2, item.getTitle());
-        int i3 = C3242R.C3245id.image_header_right_button;
-        BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(text, i3, "windowBackgroundWhiteGrayText2").setImageResource(i3, item.getIconRes()), i3);
+        int i = C3290R.C3293id.image_info;
+        BaseViewHolder visibleElseGone = BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(helper, i, Theme.key_chats_actionBackground), i), i, this.isInfoButtonVisible);
+        int i2 = C3290R.C3293id.text_wallet_header;
+        int i3 = Theme.key_windowBackgroundWhiteGrayText2;
+        BaseViewHolder text = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(visibleElseGone, i2, i3), i2).setText(i2, item.getTitle());
+        int i4 = C3290R.C3293id.image_header_right_button;
+        BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(text, i4, i3).setImageResource(i4, item.getIconRes()), i4);
     }
 
     public void convert(BaseViewHolder helper, HeaderItemWithRightButton item, List<? extends Object> payloads) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        helper.setText(C3242R.C3245id.text_wallet_header, item.getTitle());
+        helper.setText(C3290R.C3293id.text_wallet_header, item.getTitle());
     }
 }

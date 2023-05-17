@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: ChannelDetailsPresenter.kt */
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1 extends Lambda implements Function1<TLRPC$Chat, Boolean> {
     final /* synthetic */ boolean $isNotSubscribed;
 

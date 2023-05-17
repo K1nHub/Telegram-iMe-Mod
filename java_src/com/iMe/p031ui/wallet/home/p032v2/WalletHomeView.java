@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: WalletHomeView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.home.v2.WalletHomeView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletHomeView extends BaseView {
     void loadBalances();
 

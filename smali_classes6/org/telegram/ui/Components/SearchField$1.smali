@@ -38,9 +38,9 @@
     .line 65
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchField$1;->this$0:Lorg/telegram/ui/Components/SearchField;
 
-    const-string v1, "dialogSearchIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchIcon:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SearchField;->access$000(Lorg/telegram/ui/Components/SearchField;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SearchField;->access$000(Lorg/telegram/ui/Components/SearchField;I)I
 
     move-result v0
 

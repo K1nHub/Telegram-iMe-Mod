@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ThemePreviewActivity;->updatePlayAnimationView(Z)V
+    value = Lorg/telegram/ui/ThemePreviewActivity;->selectPattern(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 3479
+    .line 2795
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$31;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,37 +35,39 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 3482
+    .line 2798
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    .line 2800
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$31;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4800(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$100(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ThemePreviewActivity$BackgroundView;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    .line 3483
+    .line 2801
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$31;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4800(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$8000(Lorg/telegram/ui/ThemePreviewActivity;)[Lorg/telegram/ui/ThemePreviewActivity$BackgroundView;
 
     move-result-object p1
 
-    const/4 v0, 0x4
+    const/4 v0, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    aget-object p1, p1, v0
 
-    .line 3485
-    :cond_0
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 2802
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$31;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$7202(Lorg/telegram/ui/ThemePreviewActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    invoke-static {p1, v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$8102(Lorg/telegram/ui/ThemePreviewActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
     return-void
 .end method

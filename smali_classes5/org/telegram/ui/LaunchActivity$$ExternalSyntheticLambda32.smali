@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Landroid/view/View;
+.field public final synthetic f$0:Lorg/telegram/messenger/browser/Browser$Progress;
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/view/View;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda32;->f$0:Landroid/view/View;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/messenger/browser/Browser$Progress;
+
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda32;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda32;->f$0:Landroid/view/View;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/messenger/browser/Browser$Progress;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Ry6vgg2ktMJS2OTubrb3js6RjuY(Landroid/view/View;)V
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda32;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$ijFt5BCnkawFv9WDmuzCPzAzCQw(Lorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method

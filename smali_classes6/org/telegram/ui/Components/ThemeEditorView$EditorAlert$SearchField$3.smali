@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)V
     .locals 0
 
-    .line 222
+    .line 223
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 5
 
-    .line 235
+    .line 236
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->access$200(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -62,7 +62,7 @@
     :cond_0
     move p1, v1
 
-    .line 236
+    .line 237
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
@@ -88,7 +88,7 @@
     :goto_1
     if-eq p1, v0, :cond_5
 
-    .line 238
+    .line 239
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->access$300(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;)Landroid/widget/ImageView;
@@ -105,7 +105,7 @@
 
     move v3, v2
 
-    .line 239
+    .line 240
     :cond_2
     invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -113,7 +113,7 @@
 
     const-wide/16 v3, 0x96
 
-    .line 240
+    .line 241
     invoke-virtual {v0, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -129,7 +129,7 @@
     :cond_3
     move v4, v3
 
-    .line 241
+    .line 242
     :goto_2
     invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
@@ -142,16 +142,16 @@
     :cond_4
     move v2, v3
 
-    .line 242
+    .line 243
     :goto_3
     invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 243
+    .line 244
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 245
+    .line 246
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
@@ -167,14 +167,14 @@
 
     move-result-object p1
 
-    .line 246
+    .line 247
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 247
+    .line 248
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -185,7 +185,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 248
+    .line 249
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -206,7 +206,7 @@
 
     goto :goto_4
 
-    .line 251
+    .line 252
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
@@ -230,7 +230,7 @@
 
     if-eq v0, v2, :cond_7
 
-    .line 252
+    .line 253
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -239,7 +239,7 @@
 
     move-result v0
 
-    .line 253
+    .line 254
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -258,7 +258,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/EmptyTextProgressView;->setText(Ljava/lang/String;)V
 
-    .line 254
+    .line 255
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -269,7 +269,7 @@
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showTextView()V
 
-    .line 255
+    .line 256
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -288,7 +288,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 256
+    .line 257
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -301,7 +301,7 @@
 
     if-lez v0, :cond_7
 
-    .line 258
+    .line 259
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -314,7 +314,7 @@
 
     invoke-virtual {v2, v1, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 262
+    .line 263
     :cond_7
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
@@ -327,7 +327,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 263
+    .line 264
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField$3;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchField;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;

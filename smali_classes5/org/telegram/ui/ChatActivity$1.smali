@@ -49,7 +49,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 507
+    .line 503
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$1;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .method private getCloseDelay(Z)J
     .locals 2
 
-    .line 524
+    .line 520
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$1;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -73,7 +73,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 525
+    .line 521
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$1;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -87,7 +87,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 528
+    .line 524
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$1;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -100,7 +100,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 529
+    .line 525
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$1;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -120,7 +120,7 @@
 .method private synthetic lambda$didPressGoToMessage$1(I)V
     .locals 3
 
-    .line 515
+    .line 511
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$1;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$000(Lorg/telegram/ui/ChatActivity;)I
@@ -149,7 +149,7 @@
 .method private synthetic lambda$didPressOpenTemplates$0(Z)V
     .locals 1
 
-    .line 510
+    .line 506
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$1;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ChatActivity;->openTemplatesChannel(Z)V
@@ -160,7 +160,7 @@
 .method private synthetic lambda$didPressSendMessage$2(Lcom/iMe/storage/domain/model/templates/TemplateModel;Z)V
     .locals 1
 
-    .line 520
+    .line 516
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$1;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->sendTemplate(Lcom/iMe/storage/domain/model/templates/TemplateModel;Z)V
@@ -173,7 +173,7 @@
 .method public didPressGoToMessage(I)V
     .locals 3
 
-    .line 515
+    .line 511
     new-instance v0, Lorg/telegram/ui/ChatActivity$1$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ChatActivity$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$1;I)V
@@ -192,7 +192,7 @@
 .method public didPressOpenTemplates(Z)V
     .locals 3
 
-    .line 510
+    .line 506
     new-instance v0, Lorg/telegram/ui/ChatActivity$1$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ChatActivity$1$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ChatActivity$1;Z)V
@@ -211,7 +211,7 @@
 .method public didPressSendMessage(Lcom/iMe/storage/domain/model/templates/TemplateModel;Z)V
     .locals 1
 
-    .line 520
+    .line 516
     new-instance v0, Lorg/telegram/ui/ChatActivity$1$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/ChatActivity$1$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ChatActivity$1;Lcom/iMe/storage/domain/model/templates/TemplateModel;Z)V

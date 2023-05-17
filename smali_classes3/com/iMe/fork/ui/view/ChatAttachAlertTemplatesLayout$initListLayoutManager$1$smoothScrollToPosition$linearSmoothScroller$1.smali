@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1$smoothScrollToPosition$linearSmoothScroller$1;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
-    .line 240
+    .line 241
     invoke-direct {p0, p2}, Landroidx/recyclerview/widget/LinearSmoothScroller;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -39,12 +39,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 242
+    .line 243
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateDyToMakeVisible(Landroid/view/View;I)I
 
     move-result p1
 
-    .line 243
+    .line 244
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListLayoutManager$1$smoothScrollToPosition$linearSmoothScroller$1;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getTopPadding$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
@@ -67,7 +67,7 @@
 .method protected calculateTimeForDeceleration(I)I
     .locals 0
 
-    .line 247
+    .line 248
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateTimeForDeceleration(I)I
 
     move-result p1

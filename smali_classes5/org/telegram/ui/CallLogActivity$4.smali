@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/CallLogActivity;Landroid/view/View;I)V
     .locals 0
 
-    .line 1146
+    .line 1145
     iput-object p1, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/CallLogActivity$4;->val$finalProgressView:Landroid/view/View;
@@ -46,7 +46,7 @@
 .method public onPreDraw()Z
     .locals 11
 
-    .line 1149
+    .line 1148
     iget-object v0, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CallLogActivity;->access$2700(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1150
+    .line 1149
     iget-object v0, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CallLogActivity;->access$2700(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -70,7 +70,7 @@
 
     move-result v0
 
-    .line 1151
+    .line 1150
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -88,7 +88,7 @@
 
     if-ge v3, v0, :cond_2
 
-    .line 1153
+    .line 1152
     iget-object v7, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {v7}, Lorg/telegram/ui/CallLogActivity;->access$2700(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -99,7 +99,7 @@
 
     move-result-object v7
 
-    .line 1154
+    .line 1153
     iget-object v8, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {v8}, Lorg/telegram/ui/CallLogActivity;->access$2700(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -110,7 +110,7 @@
 
     move-result-object v8
 
-    .line 1155
+    .line 1154
     iget-object v9, p0, Lorg/telegram/ui/CallLogActivity$4;->val$finalProgressView:Landroid/view/View;
 
     if-eq v7, v9, :cond_1
@@ -155,11 +155,11 @@
 
     goto :goto_1
 
-    .line 1158
+    .line 1157
     :cond_0
     invoke-virtual {v7, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1159
+    .line 1158
     iget-object v4, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/CallLogActivity;->access$2700(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -184,7 +184,7 @@
 
     int-to-float v4, v4
 
-    .line 1160
+    .line 1159
     iget-object v8, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {v8}, Lorg/telegram/ui/CallLogActivity;->access$2700(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -205,7 +205,7 @@
 
     float-to-int v4, v4
 
-    .line 1161
+    .line 1160
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v5, v5, [F
@@ -218,19 +218,19 @@
 
     int-to-long v7, v4
 
-    .line 1162
+    .line 1161
     invoke-virtual {v5, v7, v8}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
     const-wide/16 v7, 0xc8
 
-    .line 1163
+    .line 1162
     invoke-virtual {v5, v7, v8}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     new-array v4, v6, [Landroid/animation/Animator;
 
     aput-object v5, v4, v2
 
-    .line 1164
+    .line 1163
     invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     :cond_1
@@ -239,7 +239,7 @@
 
     goto/16 :goto_0
 
-    .line 1167
+    .line 1166
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/CallLogActivity$4;->val$finalProgressView:Landroid/view/View;
 
@@ -251,7 +251,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1168
+    .line 1167
     iget-object v0, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CallLogActivity;->access$2700(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -262,7 +262,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1169
+    .line 1168
     iget-object v0, p0, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CallLogActivity;->access$2700(Lorg/telegram/ui/CallLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -275,12 +275,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 1171
+    .line 1170
     iget-object v3, p0, Lorg/telegram/ui/CallLogActivity$4;->val$finalProgressView:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->ignoreView(Landroid/view/View;)V
 
-    .line 1172
+    .line 1171
     iget-object v3, p0, Lorg/telegram/ui/CallLogActivity$4;->val$finalProgressView:Landroid/view/View;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -299,17 +299,17 @@
 
     move-result-object v2
 
-    .line 1173
+    .line 1172
     new-instance v3, Lorg/telegram/ui/CallLogActivity$4$1;
 
     invoke-direct {v3, p0, v0}, Lorg/telegram/ui/CallLogActivity$4$1;-><init>(Lorg/telegram/ui/CallLogActivity$4;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     invoke-virtual {v2, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1181
+    .line 1180
     invoke-virtual {v2}, Landroid/animation/Animator;->start()V
 
-    .line 1185
+    .line 1184
     :cond_3
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 

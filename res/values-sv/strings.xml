@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Byt till att välja en dag genom att trycka</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Byt till text som inmatningsläge</string>
     <string name="mtrl_picker_toggle_to_year_selection">Byt till att välja ett år genom att trycka</string>
+    <string name="nav_app_bar_navigate_up_description">Navigera uppåt</string>
+    <string name="nav_app_bar_open_drawer_description">Öppna navigeringspanelen</string>
     <string name="password_toggle_content_description">Visa lösenord</string>
     <string name="search_menu_title">Sök</string>
     <string name="status_bar_notification_info_overflow">999+</string>

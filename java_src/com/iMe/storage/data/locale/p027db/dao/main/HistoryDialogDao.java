@@ -3,6 +3,7 @@ package com.iMe.storage.data.locale.p027db.dao.main;
 import com.iMe.storage.data.locale.p027db.dao.base.BaseDao;
 import com.iMe.storage.data.locale.p027db.model.recent_chats.HistoryDialogDb;
 import java.util.List;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HistoryDialogDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.HistoryDialogDao */
 /* loaded from: classes3.dex */
@@ -12,6 +13,8 @@ public abstract class HistoryDialogDao implements BaseDao<HistoryDialogDb> {
     public abstract int deleteByIdList(List<Long> list, long j);
 
     public abstract List<HistoryDialogDb> getHistoryDialog(long j);
+
+    public abstract void removeAllRecentChatHistory(long j);
 
     public abstract void removeRecentChatHistory(long j, long j2);
 
@@ -25,5 +28,11 @@ public abstract class HistoryDialogDao implements BaseDao<HistoryDialogDb> {
             z = false;
         }
         historyDialogDao.clearRecentChatHistory(z);
+    }
+
+    public void restoreBackup(long j, List<HistoryDialogDb> pinnedRecentChats) {
+        Intrinsics.checkNotNullParameter(pinnedRecentChats, "pinnedRecentChats");
+        removeAllRecentChatHistory(j);
+        insert((List) pinnedRecentChats);
     }
 }

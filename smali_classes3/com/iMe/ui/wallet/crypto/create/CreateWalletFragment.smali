@@ -1582,10 +1582,10 @@
     .line 704
     invoke-virtual {v6, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string v0, "featuredStickers_buttonText"
-
     .line 705
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v0
 
@@ -1608,17 +1608,17 @@
 
     move-result v0
 
-    const-string v1, "featuredStickers_addButton"
-
     .line 710
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
-    const-string v2, "featuredStickers_addButtonPressed"
-
     .line 711
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
@@ -1712,8 +1712,6 @@
     instance-of v2, v1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$TooBad;
 
     :goto_0
-    const-string v4, "windowBackgroundWhiteBlueText2"
-
     if-eqz v2, :cond_2
 
     .line 298
@@ -1747,7 +1745,9 @@
     invoke-virtual {v1, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 302
-    invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText2:I
+
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
@@ -1856,11 +1856,13 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText2:I
 
-    move-result v2
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setLinkTextColor(I)V
+    move-result v4
+
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
     .line 374
     iget-object v1, v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->currentType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
@@ -1875,7 +1877,7 @@
     move-result-object v1
 
     .line 376
-    invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
@@ -2219,10 +2221,10 @@
     .line 427
     invoke-virtual {v11, v3, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v13, "windowBackgroundWhiteBlackText"
-
     .line 428
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v13
 
@@ -2534,10 +2536,10 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundWhiteGrayText6"
-
     .line 686
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
@@ -2590,10 +2592,10 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundWhiteGrayText6"
-
     .line 694
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
@@ -3147,10 +3149,10 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 679
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
@@ -4350,28 +4352,28 @@
     .line 845
     invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 846
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    const-string v1, "windowBackgroundWhiteGrayText2"
-
     .line 847
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    const-string v1, "actionBarWhiteSelector"
-
     .line 848
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarWhiteSelector:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
@@ -5191,7 +5193,7 @@
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 19
+    .locals 28
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -5214,6 +5216,8 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -5222,11 +5226,11 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundWhite"
-
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v9, v18
+
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v2, 0x0
 
@@ -5235,23 +5239,27 @@
     .line 268
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
+    sget v21, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    const/4 v14, 0x0
+    sget v27, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    const/4 v15, 0x0
+    const/16 v22, 0x0
 
-    const/16 v16, 0x0
+    const/16 v23, 0x0
 
-    const/16 v17, 0x0
+    const/16 v24, 0x0
 
-    const-string v18, "windowBackgroundWhiteBlackText"
+    const/16 v25, 0x0
 
-    move-object v11, v3
+    move-object/from16 v19, v3
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v20, v4
+
+    move/from16 v26, v27
+
+    invoke-direct/range {v19 .. v26}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v4, 0x1
 
@@ -5264,17 +5272,17 @@
 
     sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
     const/4 v11, 0x0
 
-    const-string v12, "windowBackgroundWhiteGrayText2"
-
     move-object v5, v3
 
-    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v5, 0x2
 
@@ -5287,13 +5295,13 @@
 
     sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const/4 v12, 0x0
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarWhiteSelector:I
 
-    const-string v13, "actionBarWhiteSelector"
+    const/4 v12, 0x0
 
     move-object v6, v3
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v5, 0x3
 
@@ -5304,15 +5312,21 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getActionBarBackground()Landroid/view/View;
 
-    move-result-object v7
+    move-result-object v12
 
-    const/4 v8, 0x0
+    const/4 v13, 0x0
 
-    const-string v13, "windowBackgroundWhite"
+    const/4 v14, 0x0
 
-    move-object v6, v3
+    const/4 v15, 0x0
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    move-object v11, v3
+
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v5, 0x4
 
@@ -5333,11 +5347,15 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "actionBarDefaultSubmenuItem"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
 
     move-object v6, v3
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v5, 0x5
 
@@ -5348,60 +5366,54 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getEditTextContainer()Landroid/widget/LinearLayout;
 
-    move-result-object v7
+    move-result-object v6
 
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v8, v4, [Ljava/lang/Class;
 
     const-class v5, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    aput-object v5, v9, v2
+    aput-object v5, v8, v2
 
-    const-string v5, "editText"
+    const-string v14, "editText"
 
-    filled-new-array {v5}, [Ljava/lang/String;
+    filled-new-array {v14}, [Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
-    const/4 v13, 0x0
+    move-object v5, v3
 
-    const-string v14, "windowBackgroundWhiteBlackText"
+    move/from16 v13, v27
 
-    move-object v6, v3
+    invoke-direct/range {v5 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    invoke-direct/range {v6 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/4 v5, 0x6
 
-    const/4 v6, 0x6
-
-    aput-object v3, v1, v6
+    aput-object v3, v1, v5
 
     .line 274
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getEditTextContainer()Landroid/widget/LinearLayout;
 
-    move-result-object v8
+    move-result-object v6
 
-    sget v9, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CURSORCOLOR:I
+    sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CURSORCOLOR:I
 
-    new-array v10, v4, [Ljava/lang/Class;
+    new-array v8, v4, [Ljava/lang/Class;
 
-    const-class v6, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
+    const-class v5, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    aput-object v6, v10, v2
+    aput-object v5, v8, v2
 
-    filled-new-array {v5}, [Ljava/lang/String;
+    filled-new-array {v14}, [Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v9
 
-    const/4 v14, 0x0
+    move-object v5, v3
 
-    const-string v15, "windowBackgroundWhiteBlackText"
-
-    move-object v7, v3
-
-    invoke-direct/range {v7 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v5 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v5, 0x7
 
@@ -5428,13 +5440,13 @@
 
     move-result-object v10
 
-    const/4 v11, 0x0
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText7:I
 
-    const-string v14, "windowBackgroundWhiteGrayText7"
+    const/4 v13, 0x0
 
     move-object v6, v3
 
-    invoke-direct/range {v6 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v6 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v5, 0x8
 
@@ -5447,17 +5459,19 @@
 
     move-result-object v7
 
+    sget v16, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
     const/4 v8, 0x0
 
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const-string v13, "windowBackgroundWhiteHintText"
-
     move-object v6, v3
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v13, v16
+
+    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v5, 0x9
 
@@ -5468,21 +5482,21 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getLeftColumn()Landroid/widget/LinearLayout;
 
-    move-result-object v7
+    move-result-object v6
 
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v8, v4, [Ljava/lang/Class;
 
     const-class v5, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;
 
-    aput-object v5, v9, v2
+    aput-object v5, v8, v2
 
-    const-string v13, "windowBackgroundWhiteBlackText"
+    move-object v5, v3
 
-    move-object v6, v3
+    move/from16 v12, v27
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v5, 0xa
 
@@ -5493,21 +5507,19 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getRightColumn()Landroid/widget/LinearLayout;
 
-    move-result-object v7
+    move-result-object v6
 
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
+    sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v8, v4, [Ljava/lang/Class;
 
     const-class v5, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;
 
-    aput-object v5, v9, v2
+    aput-object v5, v8, v2
 
-    const-string v13, "windowBackgroundWhiteBlackText"
+    move-object v5, v3
 
-    move-object v6, v3
-
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v5, 0xb
 
@@ -5518,21 +5530,27 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getLeftColumn()Landroid/widget/LinearLayout;
 
-    move-result-object v7
+    move-result-object v9
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v11, v4, [Ljava/lang/Class;
 
     const-class v5, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;
 
-    aput-object v5, v9, v2
+    aput-object v5, v11, v2
 
-    const/4 v8, 0x0
+    const/4 v10, 0x0
 
-    const-string v13, "windowBackgroundWhiteHintText"
+    const/4 v12, 0x0
 
-    move-object v6, v3
+    const/4 v13, 0x0
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/4 v14, 0x0
+
+    move-object v8, v3
+
+    move/from16 v15, v16
+
+    invoke-direct/range {v8 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v5, 0xc
 
@@ -5543,19 +5561,17 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getRightColumn()Landroid/widget/LinearLayout;
 
-    move-result-object v7
+    move-result-object v9
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v11, v4, [Ljava/lang/Class;
 
     const-class v4, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericTextView;
 
-    aput-object v4, v9, v2
+    aput-object v4, v11, v2
 
-    const-string v13, "windowBackgroundWhiteHintText"
+    move-object v8, v3
 
-    move-object v6, v3
-
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v8 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v2, 0xd
 
@@ -5566,21 +5582,23 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->getTitleTextView()Landroid/widget/TextView;
 
-    move-result-object v5
+    move-result-object v6
 
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
-
-    const/4 v7, 0x0
+    sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
     const/4 v8, 0x0
 
     const/4 v9, 0x0
 
-    const-string v11, "windowBackgroundWhiteBlackText"
+    const/4 v10, 0x0
 
-    move-object v4, v2
+    const/4 v11, 0x0
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object v5, v2
+
+    move/from16 v12, v27
+
+    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v3, 0xe
 
@@ -5595,11 +5613,13 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v11, "windowBackgroundWhiteGrayText6"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
+
+    const/4 v7, 0x0
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v3, 0xf
 
@@ -5614,11 +5634,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LINKCOLOR:I
 
-    const-string v11, "windowBackgroundWhiteBlueText2"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText2:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v3, 0x10
 
@@ -5633,11 +5653,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v11, "featuredStickers_buttonText"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v3, 0x11
 
@@ -5652,11 +5672,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_USEBACKGROUNDDRAWABLE:I
 
-    const-string v11, "featuredStickers_addButton"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v3, 0x12
 
@@ -5675,11 +5695,11 @@
 
     or-int v6, v3, v4
 
-    const-string v11, "featuredStickers_addButtonPressed"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v3, 0x13
 
@@ -5741,10 +5761,10 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setKeepScreenOn(Z)V
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 160
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v0
 

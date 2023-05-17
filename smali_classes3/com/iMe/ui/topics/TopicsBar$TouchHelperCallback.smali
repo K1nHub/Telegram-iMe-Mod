@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 201
+    .line 215
     iput-object p1, p0, Lcom/iMe/ui/topics/TopicsBar$TouchHelperCallback;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;-><init>()V
@@ -48,7 +48,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 208
+    .line 222
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsBar$TouchHelperCallback;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-static {p1}, Lcom/iMe/ui/topics/TopicsBar;->access$isEditing$p(Lcom/iMe/ui/topics/TopicsBar;)Z
@@ -82,6 +82,7 @@
     :cond_0
     move p1, v0
 
+    .line 221
     :goto_0
     invoke-static {p1, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
@@ -93,7 +94,7 @@
 .method public isLongPressDragEnabled()Z
     .locals 1
 
-    .line 204
+    .line 219
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$TouchHelperCallback;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsBar;->access$isEditing$p(Lcom/iMe/ui/topics/TopicsBar;)Z
@@ -118,7 +119,7 @@
 
     invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 212
+    .line 227
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsBar$TouchHelperCallback;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-static {p1}, Lcom/iMe/ui/topics/TopicsBar;->access$getListAdapter(Lcom/iMe/ui/topics/TopicsBar;)Lcom/iMe/ui/topics/TopicsBar$ListAdapter;
@@ -153,7 +154,7 @@
 
     goto :goto_0
 
-    .line 215
+    .line 230
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsBar$TouchHelperCallback;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
@@ -187,7 +188,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 221
+    .line 236
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$TouchHelperCallback;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-virtual {v0}, Lcom/iMe/ui/topics/TopicsBar;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -198,7 +199,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
 
-    .line 223
+    .line 238
     :cond_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onSelectedChanged(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 

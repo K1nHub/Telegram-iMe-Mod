@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PrivacyUsersActivity;)V
     .locals 0
 
-    .line 253
+    .line 261
     iput-object p1, p0, Lorg/telegram/ui/PrivacyUsersActivity$2;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 256
+    .line 264
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$2;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -48,7 +48,7 @@
 
     return-void
 
-    .line 259
+    .line 267
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$2;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -60,7 +60,7 @@
 
     move-result p2
 
-    .line 260
+    .line 268
     iget-object p3, p0, Lorg/telegram/ui/PrivacyUsersActivity$2;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/PrivacyUsersActivity;->access$000(Lorg/telegram/ui/PrivacyUsersActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -79,7 +79,7 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    .line 261
+    .line 269
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object p1
@@ -90,7 +90,7 @@
 
     if-lez p2, :cond_1
 
-    .line 263
+    .line 271
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$2;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PrivacyUsersActivity;->access$000(Lorg/telegram/ui/PrivacyUsersActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -105,7 +105,7 @@
 
     if-lt p2, p1, :cond_1
 
-    .line 264
+    .line 272
     iget-object p1, p0, Lorg/telegram/ui/PrivacyUsersActivity$2;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;

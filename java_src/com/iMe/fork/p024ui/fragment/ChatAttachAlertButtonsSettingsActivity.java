@@ -28,10 +28,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -152,6 +153,10 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        int i3 = Theme.key_windowBackgroundWhiteBlackText;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
@@ -162,17 +167,17 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, ChatAttachAlertButtonCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, "windowBackgroundChecked"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, "windowBackgroundUnchecked"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundCheckText"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlue"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueChecked"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueThumb"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueThumbChecked"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueSelector"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueSelectorChecked"), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"), new ThemeDescription(getListView(), 0, new Class[]{ChatAttachAlertButtonCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrack"), new ThemeDescription(getListView(), 0, new Class[]{ChatAttachAlertButtonCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"), new ThemeDescription(getListView(), 0, new Class[]{ChatAttachAlertButtonCell.class}, new String[]{"titleView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), 0, new Class[]{ChatAttachAlertButtonCell.class}, new String[]{"iconView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "chats_actionBackground"), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
+        }, Theme.key_windowBackgroundGray), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, ChatAttachAlertButtonCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{ChatAttachAlertButtonCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{ChatAttachAlertButtonCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{ChatAttachAlertButtonCell.class}, new String[]{"titleView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{ChatAttachAlertButtonCell.class}, new String[]{"iconView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chats_actionBackground), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setTitle(LocaleController.getInternalString(C3242R.string.settings_interface_chat_attach_alert_buttons));
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setTitle(LocaleController.getInternalString(C3290R.string.settings_interface_chat_attach_alert_buttons));
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     ChatAttachAlertButtonsSettingsActivity.this.finishFragment();
@@ -184,7 +189,7 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initRootView() {
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         return frameLayout;
     }
 
@@ -244,7 +249,7 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean isClickableViewType(int i) {
-        return i == IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON || i == IdFabric$ViewTypes.TEXT_CHECK;
+        return i == IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON || i == IdFabric$ViewTypes.TEXT_CHECK_CELL;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -289,7 +294,7 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == ChatAttachAlertButtonsSettingsActivity.this.dialogTypeTopicsBarRow ? IdFabric$ViewTypes.TOPICS_BAR : i == ChatAttachAlertButtonsSettingsActivity.this.buttonsSectionRow ? IdFabric$ViewTypes.SHADOW_SECTION : i == ChatAttachAlertButtonsSettingsActivity.this.enableBotsRow ? IdFabric$ViewTypes.TEXT_CHECK : IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON;
+            return i == ChatAttachAlertButtonsSettingsActivity.this.dialogTypeTopicsBarRow ? IdFabric$ViewTypes.TOPICS_BAR : i == ChatAttachAlertButtonsSettingsActivity.this.buttonsSectionRow ? IdFabric$ViewTypes.SHADOW_SECTION : i == ChatAttachAlertButtonsSettingsActivity.this.enableBotsRow ? IdFabric$ViewTypes.TEXT_CHECK_CELL : IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON;
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
@@ -303,27 +308,28 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
             DialogTypeTopicsBar dialogTypeTopicsBar;
             List list;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.TOPICS_BAR) {
+            int i2 = IdFabric$ViewTypes.TOPICS_BAR;
+            if (i == i2) {
                 Activity parentActivity = ChatAttachAlertButtonsSettingsActivity.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 list = ArraysKt___ArraysKt.toList(DialogType.values());
-                DialogTypeTopicsBar dialogTypeTopicsBar2 = new DialogTypeTopicsBar(parentActivity, list, ChatAttachAlertButtonsSettingsActivity.this.getCurrentDialogType(), new C1443xcb29bd9c(ChatAttachAlertButtonsSettingsActivity.this, this));
+                DialogTypeTopicsBar dialogTypeTopicsBar2 = new DialogTypeTopicsBar(parentActivity, list, ChatAttachAlertButtonsSettingsActivity.this.getCurrentDialogType(), new C1512xcb29bd9c(ChatAttachAlertButtonsSettingsActivity.this, this));
                 ChatAttachAlertButtonsSettingsActivity.this.topicsBar = dialogTypeTopicsBar2;
                 dialogTypeTopicsBar = dialogTypeTopicsBar2;
             } else if (i == IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON) {
                 Activity parentActivity2 = ChatAttachAlertButtonsSettingsActivity.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity2, "parentActivity");
                 ChatAttachAlertButtonCell chatAttachAlertButtonCell = new ChatAttachAlertButtonCell(parentActivity2);
-                chatAttachAlertButtonCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                chatAttachAlertButtonCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 dialogTypeTopicsBar = chatAttachAlertButtonCell;
             } else if (i == IdFabric$ViewTypes.SHADOW_SECTION) {
                 dialogTypeTopicsBar = new ShadowSectionCell(ChatAttachAlertButtonsSettingsActivity.this.getParentActivity());
             } else {
                 View textCheckCell = new TextCheckCell(ChatAttachAlertButtonsSettingsActivity.this.getParentActivity());
-                textCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                textCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 dialogTypeTopicsBar = textCheckCell;
             }
-            dialogTypeTopicsBar.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+            dialogTypeTopicsBar.setLayoutParams(new RecyclerView.LayoutParams(-1, i == i2 ? AndroidUtilities.m54dp(36) : -2));
             return new RecyclerListView.Holder(dialogTypeTopicsBar);
         }
 
@@ -340,8 +346,8 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
                 ChatAttachAlertButton chatAttachAlertButton = chatAttachAlertButtonsSettingsActivity.getCurrentDialogType().getChatAttachAlertButtons().get(i - chatAttachAlertButtonsSettingsActivity.buttonsStartRow);
                 Set<ChatAttachAlertButton> set = chatAttachAlertButtonsSettingsActivity.getToolsController().getSelectedChatAttachAlertButtons().get(chatAttachAlertButtonsSettingsActivity.getCurrentDialogType());
                 chatAttachAlertButtonCell.setButton(chatAttachAlertButton, set != null ? set.contains(chatAttachAlertButton) : false, needDivider);
-            } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3242R.string.chat_attach_alert_bot_buttons), ChatAttachAlertButtonsSettingsActivity.this.newSuggest, needDivider);
+            } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3290R.string.chat_attach_alert_bot_buttons), ChatAttachAlertButtonsSettingsActivity.this.newSuggest, needDivider);
             }
         }
     }

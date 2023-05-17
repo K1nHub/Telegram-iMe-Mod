@@ -71,9 +71,9 @@ public final class TwitterUserResponse {
     }
 
     public int hashCode() {
-        int m702m = ((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.twitterUserId) * 31) + this.twitterUserName.hashCode()) * 31;
+        int m706m = ((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.twitterUserId) * 31) + this.twitterUserName.hashCode()) * 31;
         Long l = this.telegramUserId;
-        int hashCode = (m702m + (l == null ? 0 : l.hashCode())) * 31;
+        int hashCode = (m706m + (l == null ? 0 : l.hashCode())) * 31;
         String str = this.avatarUrl;
         int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.userFullName;

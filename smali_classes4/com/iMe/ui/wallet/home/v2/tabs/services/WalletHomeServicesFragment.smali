@@ -271,7 +271,7 @@
 .method private static final getThemeDescriptions$lambda$0(Lcom/iMe/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -297,10 +297,10 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "windowBackgroundGray"
-
     .line 88
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -330,7 +330,7 @@
 .method private static final setupListeners$lambda$5$lambda$4(Lcom/iMe/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -492,7 +492,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    const-string v1, "setupWalletRecycleView$lambda$7"
+    const-string/jumbo v1, "setupWalletRecycleView$lambda$7"
 
     .line 115
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -505,7 +505,7 @@
 .method private static final showRequiredWalletCreatedDialog$lambda$2(Lcom/iMe/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -577,18 +577,19 @@
 
     invoke-direct {v7, p0}, Lcom/iMe/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/ui/wallet/home/v2/tabs/services/WalletHomeServicesFragment;)V
 
+    .line 49
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const-string/jumbo v8, "windowBackgroundGray"
-
     move-object v1, v9
 
     .line 47
-    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v1, 0x0
 

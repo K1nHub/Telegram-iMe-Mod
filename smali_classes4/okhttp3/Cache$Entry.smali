@@ -832,7 +832,7 @@
 .method public final response(Lokhttp3/internal/cache/DiskLruCache$Snapshot;)Lokhttp3/Response;
     .locals 5
 
-    const-string v0, "snapshot"
+    const-string/jumbo v0, "snapshot"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

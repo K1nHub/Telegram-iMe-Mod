@@ -69,7 +69,7 @@ public final class ObservableDistinctUntilChanged<T, K> extends AbstractObservab
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public T poll() throws Exception {
             while (true) {
-                T poll = this.f444qd.poll();
+                T poll = this.f447qd.poll();
                 if (poll == null) {
                     return null;
                 }

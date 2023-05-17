@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;Landroid/content/Context;)V
     .locals 0
 
-    .line 205
+    .line 206
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$3;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -35,17 +35,17 @@
 .method public invalidate()V
     .locals 1
 
-    .line 208
+    .line 209
     invoke-super {p0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 209
+    .line 210
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$3;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->pinContainer:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 210
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$3;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -56,7 +56,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 215
+    .line 216
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p2

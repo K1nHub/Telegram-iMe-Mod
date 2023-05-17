@@ -2,34 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/FlagSecureReason$FlagSecureCondition;
+.implements Lj$/util/function/ToIntFunction;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda278;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda278;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda278;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda278;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda278;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda278;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()Z
-    .locals 1
+.method public final applyAsInt(Ljava/lang/Object;)I
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda278;->f$0:Lorg/telegram/ui/ChatActivity;
+    check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$VPFb5zOfYGJOVQAMe-mGNcvRJNI(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
-    move-result v0
+    move-result p1
 
-    return v0
+    return p1
 .end method

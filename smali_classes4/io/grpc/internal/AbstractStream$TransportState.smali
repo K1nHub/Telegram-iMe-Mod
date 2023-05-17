@@ -46,7 +46,7 @@
 
     iput-object v0, p0, Lio/grpc/internal/AbstractStream$TransportState;->onReadyLock:Ljava/lang/Object;
 
-    const-string v0, "statsTraceCtx"
+    const-string/jumbo v0, "statsTraceCtx"
 
     .line 139
     invoke-static {p2, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

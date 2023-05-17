@@ -33,7 +33,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -41,7 +41,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.DividerCell;
@@ -98,27 +98,29 @@ public class CountrySelectActivity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public boolean isLightStatusBar() {
-        return ColorUtils.calculateLuminance(Theme.getColor("windowBackgroundWhite", null, true)) > 0.699999988079071d;
+        return ColorUtils.calculateLuminance(Theme.getColor(Theme.key_windowBackgroundWhite, null, true)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
-        this.actionBar.setTitle(LocaleController.getString("ChooseCountry", C3242R.string.ChooseCountry));
-        this.actionBar.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        this.actionBar.setItemsColor(Theme.getColor("windowBackgroundWhiteBlackText"), false);
-        this.actionBar.setItemsBackgroundColor(Theme.getColor("actionBarWhiteSelector"), false);
-        this.actionBar.setTitleColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CountrySelectActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i) {
-                if (i == -1) {
+        this.actionBar.setTitle(LocaleController.getString("ChooseCountry", C3290R.string.ChooseCountry));
+        this.actionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = Theme.key_windowBackgroundWhiteBlackText;
+        c3356ActionBar.setItemsColor(Theme.getColor(i), false);
+        this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_actionBarWhiteSelector), false);
+        this.actionBar.setTitleColor(Theme.getColor(i));
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CountrySelectActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+            public void onItemClick(int i2) {
+                if (i2 == -1) {
                     CountrySelectActivity.this.finishFragment();
                 }
             }
         });
-        this.actionBar.createMenu().addItem(0, C3242R.C3244drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.CountrySelectActivity.2
+        this.actionBar.createMenu().addItem(0, C3290R.C3292drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.CountrySelectActivity.2
             @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 CountrySelectActivity.this.searching = true;
@@ -148,10 +150,10 @@ public class CountrySelectActivity extends BaseFragment {
                     CountrySelectActivity.this.searchWas = true;
                 }
             }
-        }).setSearchFieldHint(LocaleController.getString("Search", C3242R.string.Search));
-        this.actionBar.setSearchTextColor(Theme.getColor("windowBackgroundWhiteGrayText"), true);
-        this.actionBar.setSearchTextColor(Theme.getColor("windowBackgroundWhiteBlackText"), false);
-        this.actionBar.setSearchCursorColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        }).setSearchFieldHint(LocaleController.getString("Search", C3290R.string.Search));
+        this.actionBar.setSearchTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText), true);
+        this.actionBar.setSearchTextColor(Theme.getColor(i), false);
+        this.actionBar.setSearchCursorColor(Theme.getColor(i));
         this.searching = false;
         this.searchWas = false;
         CountryAdapter countryAdapter = new CountryAdapter(context, this.existingCountries, this.disableAnonymousNumbers);
@@ -164,7 +166,7 @@ public class CountrySelectActivity extends BaseFragment {
         this.emptyView = emptyTextProgressView;
         emptyTextProgressView.showTextView();
         this.emptyView.setShowAtCenter(true);
-        this.emptyView.setText(LocaleController.getString("NoResult", C3242R.string.NoResult));
+        this.emptyView.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
@@ -179,14 +181,14 @@ public class CountrySelectActivity extends BaseFragment {
         frameLayout2.addView(this.listView, LayoutHelper.createFrame(-1, -1));
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.CountrySelectActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i) {
-                CountrySelectActivity.this.lambda$createView$0(view, i);
+            public final void onItemClick(View view, int i2) {
+                CountrySelectActivity.this.lambda$createView$0(view, i2);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.CountrySelectActivity.3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i) {
-                if (i == 1) {
+            public void onScrollStateChanged(RecyclerView recyclerView, int i2) {
+                if (i2 == 1) {
                     AndroidUtilities.hideKeyboard(CountrySelectActivity.this.getParentActivity().getCurrentFocus());
                 }
             }
@@ -311,7 +313,7 @@ public class CountrySelectActivity extends BaseFragment {
                     bufferedReader.close();
                     open.close();
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
             }
             if (Build.VERSION.SDK_INT >= 24) {
@@ -382,7 +384,7 @@ public class CountrySelectActivity extends BaseFragment {
                 createSettingsCell = CountrySelectActivity.createSettingsCell(this.mContext);
             } else {
                 createSettingsCell = new DividerCell(this.mContext);
-                createSettingsCell.setPadding(AndroidUtilities.m50dp(24), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(24), AndroidUtilities.m50dp(8));
+                createSettingsCell.setPadding(AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(8));
             }
             return new RecyclerListView.Holder(createSettingsCell);
         }
@@ -393,7 +395,7 @@ public class CountrySelectActivity extends BaseFragment {
             if (viewHolder.getItemViewType() == 0) {
                 Country country = this.countries.get(this.sortedCountries.get(i)).get(i2);
                 TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;
-                CharSequence replaceEmoji = Emoji.replaceEmoji(CountrySelectActivity.getCountryNameWithFlag(country), textSettingsCell.getTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(20), false);
+                CharSequence replaceEmoji = Emoji.replaceEmoji(CountrySelectActivity.getCountryNameWithFlag(country), textSettingsCell.getTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false);
                 if (CountrySelectActivity.this.needPhoneCode) {
                     str = "+" + country.code;
                 } else {
@@ -469,7 +471,7 @@ public class CountrySelectActivity extends BaseFragment {
                     timer.cancel();
                 }
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
             Timer timer2 = new Timer();
             this.searchTimer = timer2;
@@ -480,7 +482,7 @@ public class CountrySelectActivity extends BaseFragment {
                         CountrySearchAdapter.this.searchTimer.cancel();
                         CountrySearchAdapter.this.searchTimer = null;
                     } catch (Exception e2) {
-                        FileLog.m45e(e2);
+                        FileLog.m49e(e2);
                     }
                     CountrySearchAdapter.this.processSearch(str);
                 }
@@ -569,7 +571,7 @@ public class CountrySelectActivity extends BaseFragment {
             String str;
             Country country = this.searchResult.get(i);
             TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;
-            CharSequence replaceEmoji = Emoji.replaceEmoji(CountrySelectActivity.getCountryNameWithFlag(country), textSettingsCell.getTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(20), false);
+            CharSequence replaceEmoji = Emoji.replaceEmoji(CountrySelectActivity.getCountryNameWithFlag(country), textSettingsCell.getTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false);
             if (CountrySelectActivity.this.needPhoneCode) {
                 str = "+" + country.code;
             } else {
@@ -582,24 +584,24 @@ public class CountrySelectActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static TextSettingsCell createSettingsCell(Context context) {
         TextSettingsCell textSettingsCell = new TextSettingsCell(context);
-        textSettingsCell.setPadding(AndroidUtilities.m50dp(LocaleController.isRTL ? 16 : 12), 0, AndroidUtilities.m50dp(LocaleController.isRTL ? 12 : 16), 0);
-        textSettingsCell.addOnAttachStateChangeListener(new View$OnAttachStateChangeListenerC53894(textSettingsCell));
+        textSettingsCell.setPadding(AndroidUtilities.m54dp(LocaleController.isRTL ? 16 : 12), 0, AndroidUtilities.m54dp(LocaleController.isRTL ? 12 : 16), 0);
+        textSettingsCell.addOnAttachStateChangeListener(new View$OnAttachStateChangeListenerC54654(textSettingsCell));
         return textSettingsCell;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.CountrySelectActivity$4 */
     /* loaded from: classes5.dex */
-    public class View$OnAttachStateChangeListenerC53894 implements View.OnAttachStateChangeListener {
+    public class View$OnAttachStateChangeListenerC54654 implements View.OnAttachStateChangeListener {
         private NotificationCenter.NotificationCenterDelegate listener;
         final /* synthetic */ TextSettingsCell val$view;
 
-        View$OnAttachStateChangeListenerC53894(final TextSettingsCell textSettingsCell) {
+        View$OnAttachStateChangeListenerC54654(final TextSettingsCell textSettingsCell) {
             this.val$view = textSettingsCell;
             this.listener = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.CountrySelectActivity$4$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
                 public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                    CountrySelectActivity.View$OnAttachStateChangeListenerC53894.lambda$$0(TextSettingsCell.this, i, i2, objArr);
+                    CountrySelectActivity.View$OnAttachStateChangeListenerC54654.lambda$$0(TextSettingsCell.this, i, i2, objArr);
                 }
             };
         }
@@ -635,7 +637,7 @@ public class CountrySelectActivity extends BaseFragment {
 
                 @Override // android.text.style.ReplacementSpan
                 public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-                    return AndroidUtilities.m50dp(16);
+                    return AndroidUtilities.m54dp(16);
                 }
             }, languageFlag.length(), languageFlag.length() + 1, 0);
         }
@@ -646,23 +648,26 @@ public class CountrySelectActivity extends BaseFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCH, null, null, null, null, "actionBarDefaultSearch"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCHPLACEHOLDER, null, null, null, null, "actionBarDefaultSearchPlaceholder"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, "fastScrollActive"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, "fastScrollInactive"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, "fastScrollText"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "emptyListPlaceholder"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteValueText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SECTIONS, new Class[]{LetterSectionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"));
+        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundWhite));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCH, null, null, null, null, Theme.key_actionBarDefaultSearch));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCHPLACEHOLDER, null, null, null, null, Theme.key_actionBarDefaultSearchPlaceholder));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, Theme.key_fastScrollActive));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, Theme.key_fastScrollInactive));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_FASTSCROLL, null, null, null, null, Theme.key_fastScrollText));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_emptyListPlaceholder));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SECTIONS, new Class[]{LetterSectionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
         return arrayList;
     }
 }

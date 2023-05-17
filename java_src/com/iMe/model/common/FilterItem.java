@@ -7,13 +7,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class FilterItem {
 
     /* renamed from: id */
-    private final long f262id;
+    private final long f266id;
     private final boolean isSelected;
     private final String title;
 
     public static /* synthetic */ FilterItem copy$default(FilterItem filterItem, long j, String str, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = filterItem.f262id;
+            j = filterItem.f266id;
         }
         if ((i & 2) != 0) {
             str = filterItem.title;
@@ -25,7 +25,7 @@ public final class FilterItem {
     }
 
     public final long component1() {
-        return this.f262id;
+        return this.f266id;
     }
 
     public final String component2() {
@@ -47,35 +47,35 @@ public final class FilterItem {
         }
         if (obj instanceof FilterItem) {
             FilterItem filterItem = (FilterItem) obj;
-            return this.f262id == filterItem.f262id && Intrinsics.areEqual(this.title, filterItem.title) && this.isSelected == filterItem.isSelected;
+            return this.f266id == filterItem.f266id && Intrinsics.areEqual(this.title, filterItem.title) && this.isSelected == filterItem.isSelected;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m702m = ((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f262id) * 31) + this.title.hashCode()) * 31;
+        int m706m = ((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f266id) * 31) + this.title.hashCode()) * 31;
         boolean z = this.isSelected;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m702m + i;
+        return m706m + i;
     }
 
     public String toString() {
-        return "FilterItem(id=" + this.f262id + ", title=" + this.title + ", isSelected=" + this.isSelected + ')';
+        return "FilterItem(id=" + this.f266id + ", title=" + this.title + ", isSelected=" + this.isSelected + ')';
     }
 
     public FilterItem(long j, String title, boolean z) {
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f262id = j;
+        this.f266id = j;
         this.title = title;
         this.isSelected = z;
     }
 
     public final long getId() {
-        return this.f262id;
+        return this.f266id;
     }
 
     public final String getTitle() {

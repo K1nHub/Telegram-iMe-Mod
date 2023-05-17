@@ -46,10 +46,10 @@
     .line 24
     invoke-virtual {v1, v0, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v3, "windowBackgroundWhiteBlackText"
-
     .line 25
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -87,7 +87,7 @@
     invoke-virtual {v1, v0, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 32
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -140,7 +140,7 @@
     invoke-virtual {v1, v0, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 38
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

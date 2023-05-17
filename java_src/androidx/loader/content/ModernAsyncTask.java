@@ -139,7 +139,7 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
 
     /* renamed from: androidx.loader.content.ModernAsyncTask$4 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C02304 {
+    static /* synthetic */ class C02314 {
         static final /* synthetic */ int[] $SwitchMap$androidx$loader$content$ModernAsyncTask$Status;
 
         static {
@@ -158,7 +158,7 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
 
     public final ModernAsyncTask<Params, Progress, Result> executeOnExecutor(Executor executor, Params... paramsArr) {
         if (this.mStatus != Status.PENDING) {
-            int i = C02304.$SwitchMap$androidx$loader$content$ModernAsyncTask$Status[this.mStatus.ordinal()];
+            int i = C02314.$SwitchMap$androidx$loader$content$ModernAsyncTask$Status[this.mStatus.ordinal()];
             if (i != 1) {
                 if (i == 2) {
                     throw new IllegalStateException("Cannot execute task: the task has already been executed (a task can be executed only once)");

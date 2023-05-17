@@ -34,9 +34,9 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentWalletSelectTokenBinding;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 /* compiled from: WalletSelectTokenFragment.kt */
@@ -117,7 +117,7 @@ public final class WalletSelectTokenFragment extends WalletAuthFragment implemen
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$$ExternalSyntheticLambda1
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$$ExternalSyntheticLambda1
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletSelectTokenFragment.getThemeDescriptions$lambda$0(WalletSelectTokenFragment.this);
@@ -127,7 +127,7 @@ public final class WalletSelectTokenFragment extends WalletAuthFragment implemen
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundWhite"));
+        }, Theme.key_windowBackgroundWhite));
         return arrayListOf;
     }
 
@@ -159,12 +159,12 @@ public final class WalletSelectTokenFragment extends WalletAuthFragment implemen
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.wallet_swap_process_select_token_header));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_swap_process_select_token_header));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSelectTokenFragment.this.finishFragment();
@@ -174,7 +174,7 @@ public final class WalletSelectTokenFragment extends WalletAuthFragment implemen
     }
 
     private final void setupColors() {
-        getBinding().globalStateLayout.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        getBinding().globalStateLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
     }
 
     private final void setupRecycleView() {

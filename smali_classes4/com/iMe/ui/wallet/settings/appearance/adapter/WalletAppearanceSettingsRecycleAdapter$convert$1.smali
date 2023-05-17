@@ -77,14 +77,14 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
 
-    const-string v0, "switchTrack"
-
-    const-string v1, "switchTrackChecked"
-
-    const-string/jumbo v2, "windowBackgroundWhite"
-
     .line 32
-    invoke-virtual {p1, v0, v1, v2, v2}, Lorg/telegram/ui/Components/Switch;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-virtual {p1, v0, v1, v2, v2}, Lorg/telegram/ui/Components/Switch;->setColors(IIII)V
 
     return-void
 .end method

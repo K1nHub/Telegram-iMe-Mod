@@ -170,9 +170,9 @@
     .line 67
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionTabHolderView;->counterView:Landroid/widget/TextView;
 
-    const-string v0, "avatar_nameInMessageBlue"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_nameInMessageBlue:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -487,11 +487,11 @@
     .line 115
     iget-object p1, v9, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    const-string v1, "windowBackgroundGray"
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-static {p1, v1, p2}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {p1, p2, v1}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v8
 
@@ -557,15 +557,15 @@
     .line 80
     iput p1, p0, Lorg/telegram/ui/Components/ReactionTabHolderView;->outlineProgress:F
 
-    const-string v0, "chat_inReactionButtonBackground"
-
     .line 81
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonBackground:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     .line 82
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -575,17 +575,17 @@
 
     move-result v0
 
-    const-string v2, "chat_inReactionButtonTextSelected"
-
     .line 84
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonTextSelected:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
-    const-string v4, "chat_inReactionButtonText"
-
     .line 85
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonText:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -636,7 +636,7 @@
 
     float-to-int v0, v0
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

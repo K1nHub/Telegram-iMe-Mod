@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1545
+    .line 1553
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$19;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 1570
+    .line 1578
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1571
+    .line 1579
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$19;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3800(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/graphics/Path;
@@ -59,10 +59,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 1548
+    .line 1556
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 1549
+    .line 1557
     iget-object p3, p0, Lorg/telegram/ui/ChannelAdminLogActivity$19;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3800(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/graphics/Path;
@@ -71,7 +71,7 @@
 
     invoke-virtual {p3}, Landroid/graphics/Path;->reset()V
 
-    .line 1550
+    .line 1558
     iget-object p3, p0, Lorg/telegram/ui/ChannelAdminLogActivity$19;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3800(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/graphics/Path;
@@ -90,7 +90,7 @@
 
     invoke-virtual {p3, p1, p2, p1, p4}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 1551
+    .line 1559
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$19;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3800(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/graphics/Path;
@@ -105,10 +105,10 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 1556
+    .line 1564
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1557
+    .line 1565
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$19;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3700(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -123,7 +123,7 @@
 .method public setVisibility(I)V
     .locals 1
 
-    .line 1562
+    .line 1570
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     if-nez p1, :cond_0
@@ -132,7 +132,7 @@
 
     const/4 v0, 0x0
 
-    .line 1564
+    .line 1572
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->setLayerType(ILandroid/graphics/Paint;)V
 
     :cond_0

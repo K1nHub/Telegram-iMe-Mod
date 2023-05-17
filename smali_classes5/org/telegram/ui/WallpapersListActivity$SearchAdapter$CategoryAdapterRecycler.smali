@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;)V
     .locals 0
 
-    .line 1425
+    .line 1472
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter$CategoryAdapterRecycler;->this$1:Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;Lorg/telegram/ui/WallpapersListActivity$1;)V
     .locals 0
 
-    .line 1425
+    .line 1472
     invoke-direct {p0, p1}, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter$CategoryAdapterRecycler;-><init>(Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;)V
 
     return-void
@@ -44,8 +44,8 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1445
-    invoke-static {}, Lorg/telegram/ui/WallpapersListActivity;->access$3200()[I
+    .line 1492
+    invoke-static {}, Lorg/telegram/ui/WallpapersListActivity;->access$3300()[I
 
     move-result-object v0
 
@@ -65,13 +65,13 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 1
 
-    .line 1439
+    .line 1486
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/WallpapersListActivity$ColorCell;
 
-    .line 1440
-    invoke-static {}, Lorg/telegram/ui/WallpapersListActivity;->access$3200()[I
+    .line 1487
+    invoke-static {}, Lorg/telegram/ui/WallpapersListActivity;->access$3300()[I
 
     move-result-object v0
 
@@ -85,20 +85,20 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 1
 
-    .line 1428
+    .line 1475
     new-instance p1, Lorg/telegram/ui/WallpapersListActivity$ColorCell;
 
     iget-object p2, p0, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter$CategoryAdapterRecycler;->this$1:Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;
 
     iget-object v0, p2, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;->access$3100(Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;)Landroid/content/Context;
+    invoke-static {p2}, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;->access$3200(Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;)Landroid/content/Context;
 
     move-result-object p2
 
     invoke-direct {p1, v0, p2}, Lorg/telegram/ui/WallpapersListActivity$ColorCell;-><init>(Lorg/telegram/ui/WallpapersListActivity;Landroid/content/Context;)V
 
-    .line 1429
+    .line 1476
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

@@ -231,6 +231,6 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
     }
 
     private void logD(String str) {
-        Logging.m18d(TAG, this.resourceName + ": " + str);
+        Logging.m20d(TAG, this.resourceName + ": " + str);
     }
 }

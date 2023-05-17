@@ -36,7 +36,7 @@
         }
     .end annotation
 
-    .line 63
+    .line 65
     invoke-direct {p0, p2}, Landroidx/room/EntityDeletionOrUpdateAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
@@ -57,7 +57,7 @@
         }
     .end annotation
 
-    .line 71
+    .line 73
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getUserId()J
 
     move-result-wide v0
@@ -66,7 +66,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 72
+    .line 74
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getDialogId()J
 
     move-result-wide v0
@@ -91,7 +91,7 @@
         }
     .end annotation
 
-    .line 63
+    .line 65
     check-cast p2, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$2;->bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;)V

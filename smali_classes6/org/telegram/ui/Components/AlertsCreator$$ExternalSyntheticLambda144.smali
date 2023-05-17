@@ -5,27 +5,25 @@
 .implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;
+# instance fields
+.field public final synthetic f$0:J
+
+.field public final synthetic f$1:Ljava/util/Calendar;
+
+.field public final synthetic f$2:I
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(JLjava/util/Calendar;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;->f$0:J
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;->f$1:Ljava/util/Calendar;
+
+    iput p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;->f$2:I
 
     return-void
 .end method
@@ -33,9 +31,15 @@
 
 # virtual methods
 .method public final format(I)Ljava/lang/String;
-    .locals 0
+    .locals 4
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$FzHSNiYHDMWZue1Ejai3dDdwFRY(I)Ljava/lang/String;
+    iget-wide v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;->f$0:J
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;->f$1:Ljava/util/Calendar;
+
+    iget v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;->f$2:I
+
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$fn4GOQvEx-jbdDutxkiwaWez9Vw(JLjava/util/Calendar;II)Ljava/lang/String;
 
     move-result-object p1
 

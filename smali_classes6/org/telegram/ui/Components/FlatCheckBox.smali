@@ -927,10 +927,10 @@
 .method public recolor(I)V
     .locals 1
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 59
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

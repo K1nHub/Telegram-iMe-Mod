@@ -152,24 +152,24 @@
     .line 547
     iget-object v0, p0, Lorg/telegram/ui/Cells/AboutLinkCell$3;->thisLoading:Lorg/telegram/ui/Components/LoadingDrawable;
 
-    iget-object v1, p0, Lorg/telegram/ui/Cells/AboutLinkCell$3;->this$0:Lorg/telegram/ui/Cells/AboutLinkCell;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_linkSelectBackground:I
+
+    iget-object v2, p0, Lorg/telegram/ui/Cells/AboutLinkCell$3;->this$0:Lorg/telegram/ui/Cells/AboutLinkCell;
 
     .line 548
-    invoke-static {v1}, Lorg/telegram/ui/Cells/AboutLinkCell;->access$800(Lorg/telegram/ui/Cells/AboutLinkCell;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/AboutLinkCell;->access$800(Lorg/telegram/ui/Cells/AboutLinkCell;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "chat_linkSelectBackground"
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result v1
+    move-result v2
 
     const v3, 0x3f4ccccd    # 0.8f
 
-    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
-    move-result v1
+    move-result v2
 
     iget-object v3, p0, Lorg/telegram/ui/Cells/AboutLinkCell$3;->this$0:Lorg/telegram/ui/Cells/AboutLinkCell;
 
@@ -178,7 +178,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -195,7 +195,7 @@
 
     move-result-object v4
 
-    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v4
 
@@ -212,18 +212,18 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v2
+    move-result v1
 
     const/high16 v5, 0x40800000    # 4.0f
 
-    invoke-static {v2, v5}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+    invoke-static {v1, v5}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
-    move-result v2
+    move-result v1
 
     .line 547
-    invoke-virtual {v0, v1, v3, v4, v2}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(IIII)V
+    invoke-virtual {v0, v2, v3, v4, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(IIII)V
 
     .line 553
     iget-object v0, p0, Lorg/telegram/ui/Cells/AboutLinkCell$3;->thisLoading:Lorg/telegram/ui/Components/LoadingDrawable;

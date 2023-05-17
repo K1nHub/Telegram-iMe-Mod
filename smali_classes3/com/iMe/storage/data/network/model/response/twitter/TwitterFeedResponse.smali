@@ -31,10 +31,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3
+    .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4
+    .line 6
     iput-object p1, p0, Lcom/iMe/storage/data/network/model/response/twitter/TwitterFeedResponse;->tweets:Ljava/util/List;
 
     return-void
@@ -146,7 +146,7 @@
         }
     .end annotation
 
-    .line 4
+    .line 6
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/twitter/TwitterFeedResponse;->tweets:Ljava/util/List;
 
     return-object v0

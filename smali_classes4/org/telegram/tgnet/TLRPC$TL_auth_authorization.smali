@@ -31,7 +31,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2853
+    .line 3273
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$auth_Authorization;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 3
 
-    .line 2864
+    .line 3284
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -62,7 +62,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 2865
+    .line 3285
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->setup_password_required:Z
 
@@ -70,14 +70,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 2867
+    .line 3287
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->otherwise_relogin_days:I
 
-    .line 2869
+    .line 3289
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->flags:I
 
@@ -85,14 +85,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 2870
+    .line 3290
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->tmp_sessions:I
 
-    .line 2872
+    .line 3292
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->flags:I
 
@@ -100,14 +100,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 2873
+    .line 3293
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->future_auth_token:[B
 
-    .line 2875
+    .line 3295
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -125,12 +125,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 2879
+    .line 3299
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2880
+    .line 3300
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->setup_password_required:Z
 
     if-eqz v0, :cond_0
@@ -149,22 +149,22 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->flags:I
 
-    .line 2881
+    .line 3301
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2882
+    .line 3302
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 2883
+    .line 3303
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->otherwise_relogin_days:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2885
+    .line 3305
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->flags:I
 
@@ -172,12 +172,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 2886
+    .line 3306
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->tmp_sessions:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2888
+    .line 3308
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->flags:I
 
@@ -185,12 +185,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 2889
+    .line 3309
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->future_auth_token:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V
 
-    .line 2891
+    .line 3311
     :cond_3
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->user:Lorg/telegram/tgnet/TLRPC$User;
 

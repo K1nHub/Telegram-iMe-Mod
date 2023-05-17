@@ -17,7 +17,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlertView> implements WalletAttachAlertView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -221,7 +221,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowBalancesCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowBalancesCommand extends ViewCommand<WalletAttachAlertView> {
         public final List<TokenBalance> balances;
 
@@ -238,7 +238,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowTransactionsCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowTransactionsCommand extends ViewCommand<WalletAttachAlertView> {
         public final List<BaseNode> transactions;
 
@@ -255,7 +255,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<WalletAttachAlertView> {
         public final Function1<? super NetworkType, Unit> action;
         public final List<? extends NetworkType> availableNetworks;
@@ -276,7 +276,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowToastCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<WalletAttachAlertView> {
         public final String text;
 
@@ -293,7 +293,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletAttachAlertView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -314,7 +314,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowErrorToastCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletAttachAlertView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -333,30 +333,30 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$OnRecipientSelectedCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class OnRecipientSelectedCommand extends ViewCommand<WalletAttachAlertView> {
         public final String address;
         public final boolean contactSelected;
 
         /* renamed from: id */
-        public final String f380id;
+        public final String f383id;
 
         OnRecipientSelectedCommand(WalletAttachAlertView$$State walletAttachAlertView$$State, String str, String str2, boolean z) {
             super("onRecipientSelected", OneExecutionStateStrategy.class);
-            this.f380id = str;
+            this.f383id = str;
             this.address = str2;
             this.contactSelected = z;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletAttachAlertView walletAttachAlertView) {
-            walletAttachAlertView.onRecipientSelected(this.f380id, this.address, this.contactSelected);
+            walletAttachAlertView.onRecipientSelected(this.f383id, this.address, this.contactSelected);
         }
     }
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowRequestPermissionDialogCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowRequestPermissionDialogCommand extends ViewCommand<WalletAttachAlertView> {
         public final Callbacks$Callback action;
         public final DialogModel model;
@@ -377,7 +377,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowErrorDialogCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorDialogCommand extends ViewCommand<WalletAttachAlertView> {
         public final String buttonText;
         public final String description;
@@ -398,7 +398,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$ShowRequestPermissionSuccessDialogCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class ShowRequestPermissionSuccessDialogCommand extends ViewCommand<WalletAttachAlertView> {
         public final Callbacks$Callback action;
         public final String message;
@@ -419,7 +419,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$OpenChatScreenCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class OpenChatScreenCommand extends ViewCommand<WalletAttachAlertView> {
         public final long userId;
 
@@ -436,7 +436,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$OnNoInternetErrorStateCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class OnNoInternetErrorStateCommand extends ViewCommand<WalletAttachAlertView> {
         OnNoInternetErrorStateCommand(WalletAttachAlertView$$State walletAttachAlertView$$State) {
             super("onNoInternetErrorState", AddToEndSingleStrategy.class);
@@ -450,7 +450,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$OnUnexpectedErrorStateCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class OnUnexpectedErrorStateCommand extends ViewCommand<WalletAttachAlertView> {
         OnUnexpectedErrorStateCommand(WalletAttachAlertView$$State walletAttachAlertView$$State) {
             super("onUnexpectedErrorState", AddToEndSingleStrategy.class);
@@ -464,7 +464,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$OnLoadingStateCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadingStateCommand extends ViewCommand<WalletAttachAlertView> {
         OnLoadingStateCommand(WalletAttachAlertView$$State walletAttachAlertView$$State) {
             super("onLoadingState", AddToEndSingleStrategy.class);
@@ -478,7 +478,7 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
 
     /* compiled from: WalletAttachAlertView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertView$$State$OnEmptyStateCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class OnEmptyStateCommand extends ViewCommand<WalletAttachAlertView> {
         OnEmptyStateCommand(WalletAttachAlertView$$State walletAttachAlertView$$State) {
             super("onEmptyState", AddToEndSingleStrategy.class);

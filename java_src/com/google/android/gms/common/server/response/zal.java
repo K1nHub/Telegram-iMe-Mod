@@ -15,16 +15,16 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public final class zal extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zal> CREATOR = new zap();
-    @SafeParcelable.VersionField(m772id = 1)
+    @SafeParcelable.VersionField(m776id = 1)
     final int zaa;
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     final String zab;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     final ArrayList zac;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zal(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) ArrayList arrayList) {
+    public zal(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) ArrayList arrayList) {
         this.zaa = i;
         this.zab = str;
         this.zac = arrayList;

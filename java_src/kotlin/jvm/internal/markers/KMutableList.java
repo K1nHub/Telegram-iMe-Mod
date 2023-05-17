@@ -1,5 +1,5 @@
 package kotlin.jvm.internal.markers;
 /* compiled from: KMarkers.kt */
 /* loaded from: classes4.dex */
-public interface KMutableList extends KMutableIterable {
+public interface KMutableList extends KMutableCollection {
 }

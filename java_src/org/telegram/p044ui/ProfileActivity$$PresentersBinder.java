@@ -1,7 +1,7 @@
 package org.telegram.p044ui;
 
+import com.iMe.feature.profile.ProfilePresenter;
 import com.iMe.p031ui.debug.DebugPresenter;
-import com.iMe.p031ui.profile.ProfilePresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

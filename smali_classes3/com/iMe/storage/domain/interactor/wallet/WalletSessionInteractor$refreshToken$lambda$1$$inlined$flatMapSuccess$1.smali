@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->refreshToken(Ljava/lang/String;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->refreshToken()Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n1#1,80:1\n33#2:81\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n1#1,80:1\n31#2:81\n*E\n"
 .end annotation
 
 
@@ -115,13 +115,7 @@
 
     move-result-object p1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$lambda$1$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
-
-    invoke-static {v0}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->access$getSchedulersProvider$p(Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
+    invoke-static {}, Lio/reactivex/schedulers/Schedulers;->io()Lio/reactivex/Scheduler;
 
     move-result-object v0
 
@@ -129,7 +123,7 @@
 
     move-result-object p1
 
-    const-string v0, "notificationRepository.s\u2026(schedulersProvider.io())"
+    const-string v0, "notificationRepository.s\u2026scribeOn(Schedulers.io())"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

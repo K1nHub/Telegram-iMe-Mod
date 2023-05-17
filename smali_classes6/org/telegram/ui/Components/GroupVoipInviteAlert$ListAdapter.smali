@@ -670,33 +670,27 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 5
+    .locals 3
 
-    const-string p1, "voipgroup_actionBar"
+    const/4 p1, 0x6
 
-    const/4 v0, 0x6
-
-    const/4 v1, 0x2
-
-    const-string v2, "voipgroup_listeningText"
+    const/4 v0, 0x2
 
     if-eqz p2, :cond_4
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    if-eq p2, v3, :cond_3
+    if-eq p2, v1, :cond_3
 
-    const-string p1, "voipgroup_actionBarUnscrolled"
+    if-eq p2, v0, :cond_2
 
-    if-eq p2, v1, :cond_2
+    const/4 v0, 0x3
 
-    const/4 v1, 0x3
+    if-eq p2, v0, :cond_1
 
-    if-eq p2, v1, :cond_1
+    const/4 v0, 0x5
 
-    const/4 v1, 0x5
-
-    if-eq p2, v1, :cond_0
+    if-eq p2, v0, :cond_0
 
     .line 857
     new-instance p1, Landroid/view/View;
@@ -711,22 +705,24 @@
     :cond_0
     new-instance p2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
 
     .line 850
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
     .line 851
-    invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
-
-    const-string v0, "voipgroup_inviteMembersBackground"
-
-    const-string v1, "voipgroup_searchBackground"
+    invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
     .line 852
-    invoke-virtual {p2, v0, v1, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_inviteMembersBackground:I
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchBackground:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarUnscrolled:I
+
+    invoke-virtual {p2, p1, v0, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(III)V
 
     goto :goto_0
 
@@ -757,81 +753,91 @@
 
     .line 839
     :cond_2
-    new-instance p2, Lorg/telegram/ui/Cells/GraySectionCell;
+    new-instance p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/GraySectionCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/GraySectionCell;-><init>(Landroid/content/Context;)V
 
     .line 840
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarUnscrolled:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+    move-result p2
 
-    const-string p1, "voipgroup_searchPlaceholder"
+    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     .line 841
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/GraySectionCell;->setTextColor(Ljava/lang/String;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchPlaceholder:I
 
-    goto :goto_0
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/GraySectionCell;->setTextColor(I)V
+
+    goto :goto_1
 
     .line 833
     :cond_3
-    new-instance p2, Lorg/telegram/ui/Cells/ManageChatTextCell;
+    new-instance p1, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
 
     .line 834
-    invoke-virtual {p2, v2, v2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
+
+    invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
     .line 835
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setDividerColor(Ljava/lang/String;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBar:I
 
-    goto :goto_0
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setDividerColor(I)V
+
+    goto :goto_1
 
     .line 825
     :cond_4
     new-instance p2, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert$ListAdapter;->mContext:Landroid/content/Context;
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {p2, v3, v0, v1, v4}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
+    invoke-direct {p2, v1, p1, v0, v2}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
 
     .line 826
-    sget v0, Lorg/telegram/messenger/R$drawable;->msg_invited:I
+    sget p1, Lorg/telegram/messenger/R$drawable;->msg_invited:I
 
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setCustomRightImage(I)V
-
-    const-string v0, "voipgroup_nameText"
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setCustomRightImage(I)V
 
     .line 827
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
-    move-result v0
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setNameColor(I)V
+    move-result p1
 
-    const-string v0, "voipgroup_lastSeenTextUnscrolled"
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setNameColor(I)V
 
     .line 828
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_lastSeenTextUnscrolled:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result p1
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {p2, v0, v1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setStatusColors(II)V
+    invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setStatusColors(II)V
 
     .line 829
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setDividerColor(Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBar:I
+
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setDividerColor(I)V
 
     :goto_0
     move-object p1, p2

@@ -48,7 +48,7 @@
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 9
+    .locals 8
 
     .line 411
     iget-object v0, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
@@ -182,8 +182,6 @@
 
     cmpl-float v1, v3, v4
 
-    const-string v4, "dialogBackground"
-
     if-eqz v1, :cond_2
 
     .line 430
@@ -193,56 +191,58 @@
 
     move-result-object v1
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
+    iget-object v4, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
-    invoke-static {v5, v4}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2600(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    move-result v5
+    invoke-static {v4, v5}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2600(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
 
-    invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setColor(I)V
+    move-result v4
+
+    invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 431
     iget-object v1, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->rect:Landroid/graphics/RectF;
 
+    iget-object v4, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
+
+    invoke-static {v4}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2800(Lorg/telegram/ui/Components/PhonebookShareAlert;)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
     iget-object v5, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2800(Lorg/telegram/ui/Components/PhonebookShareAlert;)I
+    invoke-static {v5}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2900(Lorg/telegram/ui/Components/PhonebookShareAlert;)I
 
     move-result v5
 
+    add-int/2addr v5, v0
+
     int-to-float v5, v5
-
-    iget-object v6, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
-
-    invoke-static {v6}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2900(Lorg/telegram/ui/Components/PhonebookShareAlert;)I
-
-    move-result v6
-
-    add-int/2addr v6, v0
-
-    int-to-float v6, v6
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
+    move-result v6
+
+    iget-object v7, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
+
+    invoke-static {v7}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$3000(Lorg/telegram/ui/Components/PhonebookShareAlert;)I
+
     move-result v7
 
-    iget-object v8, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
+    sub-int/2addr v6, v7
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$3000(Lorg/telegram/ui/Components/PhonebookShareAlert;)I
+    int-to-float v6, v6
 
-    move-result v8
+    iget-object v7, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
-    sub-int/2addr v7, v8
+    invoke-static {v7}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$3100(Lorg/telegram/ui/Components/PhonebookShareAlert;)I
 
-    int-to-float v7, v7
+    move-result v7
 
-    iget-object v8, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
-
-    invoke-static {v8}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$3100(Lorg/telegram/ui/Components/PhonebookShareAlert;)I
-
-    move-result v8
-
-    add-int/2addr v8, v0
+    add-int/2addr v7, v0
 
     const/16 v0, 0x18
 
@@ -250,11 +250,11 @@
 
     move-result v0
 
-    add-int/2addr v8, v0
+    add-int/2addr v7, v0
 
-    int-to-float v0, v8
+    int-to-float v0, v7
 
-    invoke-virtual {v1, v5, v6, v7, v0}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v1, v4, v5, v6, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 432
     iget-object v0, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->rect:Landroid/graphics/RectF;
@@ -273,7 +273,9 @@
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
-    invoke-static {v0, v4}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$3200(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$3200(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
 
     move-result v0
 

@@ -161,7 +161,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "sun.reflect"
+    const-string/jumbo v9, "sun.reflect"
 
     invoke-static {v6, v9, v3, v7, v8}, Lkotlin/text/StringsKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZILjava/lang/Object;)Z
 

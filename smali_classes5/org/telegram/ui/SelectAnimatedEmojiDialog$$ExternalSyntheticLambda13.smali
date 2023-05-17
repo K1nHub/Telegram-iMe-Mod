@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$M5Hg61h_RVpJSbUiRpl4e2GN0PM(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$M581htUX9dZalKD079x_-JQY6qQ(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
 
     return-void
 .end method

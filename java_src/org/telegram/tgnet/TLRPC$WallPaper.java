@@ -1,4 +1,6 @@
 package org.telegram.tgnet;
+
+import android.graphics.Bitmap;
 /* loaded from: classes4.dex */
 public abstract class TLRPC$WallPaper extends TLObject {
     public long access_hash;
@@ -8,11 +10,13 @@ public abstract class TLRPC$WallPaper extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public long f1575id;
+    public long f1582id;
     public boolean isDefault;
     public boolean pattern;
     public TLRPC$WallPaperSettings settings;
     public String slug;
+    public Bitmap stripedThumb;
+    public String uploadingImage;
 
     public static TLRPC$WallPaper TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$WallPaper tLRPC$WallPaper;
@@ -58,7 +62,7 @@ public abstract class TLRPC$WallPaper extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_wallPaper, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1575id = abstractSerializedData2.readInt64(z2);
+                        this.f1582id = abstractSerializedData2.readInt64(z2);
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.creator = (readInt32 & 1) != 0;
@@ -71,7 +75,7 @@ public abstract class TLRPC$WallPaper extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_wallPaper, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1575id);
+                        abstractSerializedData2.writeInt64(this.f1582id);
                         int i2 = this.creator ? this.flags | 1 : this.flags & (-2);
                         this.flags = i2;
                         int i3 = this.isDefault ? i2 | 2 : i2 & (-3);

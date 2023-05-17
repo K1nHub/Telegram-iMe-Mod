@@ -659,7 +659,7 @@
     return-void
 
     :cond_0
-    const-string v0, "stream"
+    const-string/jumbo v0, "stream"
 
     .line 129
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

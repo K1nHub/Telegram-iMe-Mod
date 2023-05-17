@@ -205,9 +205,9 @@
     .line 56
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->chevronView:Landroid/widget/ImageView;
 
-    const-string v0, "windowBackgroundWhiteGrayText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -249,7 +249,7 @@
 .method public height()I
     .locals 1
 
-    .line 96
+    .line 95
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result v0
@@ -260,7 +260,7 @@
 
     return v0
 
-    .line 99
+    .line 98
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->height:I
 
@@ -268,7 +268,7 @@
 
     const/16 v0, 0x48
 
-    .line 100
+    .line 99
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -277,7 +277,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->height:I
 
-    .line 102
+    .line 101
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->height:I
 
@@ -287,10 +287,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 75
+    .line 74
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 76
+    .line 75
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v0
@@ -327,23 +327,23 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 83
+    .line 82
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
     if-gtz p2, :cond_0
 
-    .line 85
+    .line 84
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p2, p2, Landroid/graphics/Point;->x:I
 
-    .line 87
+    .line 86
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->contentView:Landroid/widget/LinearLayout;
 
-    .line 88
+    .line 87
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v1
@@ -368,15 +368,15 @@
 
     const/high16 v3, -0x80000000
 
-    .line 89
+    .line 88
     invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    .line 87
+    .line 86
     invoke-virtual {v0, p2, v2}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 91
+    .line 90
     iget-object p2, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->contentView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
@@ -399,7 +399,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->height:I
 
-    .line 92
+    .line 91
     invoke-static {p2, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -412,12 +412,12 @@
 .method public setText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 69
+    .line 68
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 70
+    .line 69
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->messageView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -431,9 +431,9 @@
     .line 63
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->titleView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -442,20 +442,13 @@
     .line 64
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->messageView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteGrayText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 65
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method

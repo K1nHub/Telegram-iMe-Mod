@@ -38,7 +38,7 @@ public class ArchiveHintCell extends FrameLayout {
             }
         };
         this.viewPager = viewPager;
-        AndroidUtilities.setViewPagerEdgeEffectColor(viewPager, Theme.getColor("actionBarDefaultArchived"));
+        AndroidUtilities.setViewPagerEdgeEffectColor(viewPager, Theme.getColor(Theme.key_actionBarDefaultArchived));
         this.viewPager.setAdapter(new Adapter());
         this.viewPager.setPageMargin(0);
         this.viewPager.setOffscreenPageLimit(1);
@@ -59,7 +59,7 @@ public class ArchiveHintCell extends FrameLayout {
         });
         BottomPagesView bottomPagesView = new BottomPagesView(context, this.viewPager, 3);
         this.bottomPages = bottomPagesView;
-        bottomPagesView.setColor("chats_unreadCounterMuted", "chats_actionBackground");
+        bottomPagesView.setColor(Theme.key_chats_unreadCounterMuted, Theme.key_chats_actionBackground);
         addView(this.bottomPages, LayoutHelper.createFrame(33, 5, 81, 0, 0, 0, 19));
     }
 
@@ -75,7 +75,7 @@ public class ArchiveHintCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(204), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(204), 1073741824));
     }
 
     /* renamed from: org.telegram.ui.Cells.ArchiveHintCell$Adapter */

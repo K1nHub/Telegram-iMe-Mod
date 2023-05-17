@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Cells/SharedAudioCell;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Cells/SharedAudioCell;->$r8$lambda$0h3N3HpWuvwQX3k7CxN7_T88vvQ(Lorg/telegram/ui/Cells/SharedAudioCell;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Cells/SharedAudioCell;->$r8$lambda$az-Hx2Md1VPvSvcjhutwV81lxZg(Lorg/telegram/ui/Cells/SharedAudioCell;Landroid/view/View;)V
 
     return-void
 .end method

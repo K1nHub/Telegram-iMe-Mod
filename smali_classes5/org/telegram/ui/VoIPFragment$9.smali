@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 1028
+    .line 1029
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment$9;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1031
+    .line 1032
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$9;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     const/4 v0, 0x0
@@ -44,20 +44,20 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1032
+    .line 1033
     iput v0, p1, Lorg/telegram/ui/VoIPFragment;->pinchScale:F
 
     const/4 v0, 0x0
 
-    .line 1033
+    .line 1034
     invoke-static {p1, v0}, Lorg/telegram/ui/VoIPFragment;->access$1802(Lorg/telegram/ui/VoIPFragment;F)F
 
-    .line 1034
+    .line 1035
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$9;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/VoIPFragment;->access$1902(Lorg/telegram/ui/VoIPFragment;F)F
 
-    .line 1035
+    .line 1036
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$9;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$2100(Lorg/telegram/ui/VoIPFragment;)Landroid/view/ViewGroup;

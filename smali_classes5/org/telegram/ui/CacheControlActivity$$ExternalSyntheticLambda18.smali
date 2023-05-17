@@ -8,22 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/CacheControlActivity;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/Utilities$Callback2;
+.field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:Ljava/lang/Runnable;
+.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/CacheControlActivity;Lorg/telegram/messenger/Utilities$Callback2;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/CacheControlActivity;Ljava/util/ArrayList;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$1:Lorg/telegram/messenger/Utilities$Callback2;
+    iput-object p2, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$1:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$2:Ljava/lang/Runnable;
+    iput-object p3, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
@@ -35,11 +35,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$1:Lorg/telegram/messenger/Utilities$Callback2;
+    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$1:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$2:Ljava/lang/Runnable;
+    iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda18;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$xRneOFA_3xOs15iaiRvJKgs2Q8E(Lorg/telegram/ui/CacheControlActivity;Lorg/telegram/messenger/Utilities$Callback2;Ljava/lang/Runnable;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$H-nykRRvTcJj5z49ZzBruNUAWIM(Lorg/telegram/ui/CacheControlActivity;Ljava/util/ArrayList;Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method

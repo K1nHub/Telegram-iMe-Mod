@@ -366,7 +366,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    const-wide/32 v1, -0x7ffffff9
+    const-wide v1, -0x7ffffffffffffff9L    # -3.5E-323
 
     .line 157
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
@@ -388,7 +388,7 @@
 
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    const-wide/32 v1, -0x7ffffffa
+    const-wide v1, -0x7ffffffffffffffaL    # -3.0E-323
 
     .line 151
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
@@ -412,7 +412,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    const-wide/32 v1, -0x7ffffffb
+    const-wide v1, -0x7ffffffffffffffbL    # -2.5E-323
 
     .line 146
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
@@ -434,7 +434,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    const-wide/32 v1, -0x7ffffffc
+    const-wide v1, -0x7ffffffffffffffcL    # -2.0E-323
 
     .line 141
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
@@ -456,7 +456,7 @@
 
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    const-wide/32 v1, -0x7ffffffd
+    const-wide v1, -0x7ffffffffffffffdL    # -1.5E-323
 
     .line 136
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
@@ -478,7 +478,7 @@
 
     invoke-virtual {v1, v12}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    const-wide/32 v1, -0x7ffffffe
+    const-wide v1, -0x7ffffffffffffffeL    # -1.0E-323
 
     .line 131
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
@@ -500,7 +500,7 @@
 
     invoke-virtual {v1, v13}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    const-wide/32 v1, -0x7fffffff
+    const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 126
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
@@ -522,7 +522,7 @@
 
     invoke-virtual {v1, v14}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    const-wide/32 v1, -0x80000000
+    const-wide/high16 v1, -0x8000000000000000L
 
     .line 121
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
@@ -955,8 +955,6 @@
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -1493,17 +1491,17 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const-string v0, "groupcreate_spanText"
-
     .line 339
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    const-string v1, "avatar_text"
-
     .line 340
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_text:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1646,17 +1644,17 @@
 
     move-result v0
 
-    const-string v1, "groupcreate_spanBackground"
-
     .line 244
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const-string v2, "groupcreate_spanDelete"
-
     .line 245
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanDelete:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

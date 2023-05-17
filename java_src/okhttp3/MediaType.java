@@ -6,13 +6,9 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.IntProgression;
-import kotlin.ranges.IntRange;
-import kotlin.ranges.RangesKt___RangesKt;
-import kotlin.text.StringsKt;
+import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: MediaType.kt */
 /* loaded from: classes4.dex */
 public final class MediaType {
@@ -70,29 +66,47 @@ public final class MediaType {
         return charset;
     }
 
-    public final String parameter(String name) {
-        IntRange indices;
-        IntProgression step;
-        Intrinsics.checkNotNullParameter(name, "name");
-        indices = ArraysKt___ArraysKt.getIndices(this.parameterNamesAndValues);
-        step = RangesKt___RangesKt.step(indices, 2);
-        int first = step.getFirst();
-        int last = step.getLast();
-        int step2 = step.getStep();
-        if (step2 >= 0) {
-            if (first > last) {
-                return null;
-            }
-        } else if (first < last) {
-            return null;
-        }
-        while (!StringsKt.equals(this.parameterNamesAndValues[first], name, true)) {
-            if (first == last) {
-                return null;
-            }
-            first += step2;
-        }
-        return this.parameterNamesAndValues[first + 1];
+    /* JADX WARN: Incorrect condition in loop: B:8:0x002c */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public final java.lang.String parameter(java.lang.String r6) {
+        /*
+            r5 = this;
+            java.lang.String r0 = "name"
+            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, r0)
+            java.lang.String[] r0 = r5.parameterNamesAndValues
+            kotlin.ranges.IntRange r0 = kotlin.collections.ArraysKt.getIndices(r0)
+            r1 = 2
+            kotlin.ranges.IntProgression r0 = kotlin.ranges.RangesKt.step(r0, r1)
+            int r1 = r0.getFirst()
+            int r2 = r0.getLast()
+            int r0 = r0.getStep()
+            if (r0 < 0) goto L21
+            if (r1 > r2) goto L38
+            goto L23
+        L21:
+            if (r1 < r2) goto L38
+        L23:
+            java.lang.String[] r3 = r5.parameterNamesAndValues
+            r3 = r3[r1]
+            r4 = 1
+            boolean r3 = kotlin.text.StringsKt.equals(r3, r6, r4)
+            if (r3 == 0) goto L34
+            java.lang.String[] r6 = r5.parameterNamesAndValues
+            int r1 = r1 + r4
+            r6 = r6[r1]
+            return r6
+        L34:
+            if (r1 == r2) goto L38
+            int r1 = r1 + r0
+            goto L23
+        L38:
+            r6 = 0
+            return r6
+        */
+        throw new UnsupportedOperationException("Method not decompiled: okhttp3.MediaType.parameter(java.lang.String):java.lang.String");
     }
 
     public String toString() {
@@ -118,6 +132,8 @@ public final class MediaType {
         }
 
         public final MediaType get(String toMediaType) {
+            boolean startsWith$default;
+            boolean endsWith$default;
             Intrinsics.checkNotNullParameter(toMediaType, "$this$toMediaType");
             Matcher matcher = MediaType.TYPE_SUBTYPE.matcher(toMediaType);
             if (!matcher.lookingAt()) {
@@ -159,9 +175,15 @@ public final class MediaType {
                     String group4 = matcher2.group(2);
                     if (group4 == null) {
                         group4 = matcher2.group(3);
-                    } else if (StringsKt.startsWith$default(group4, "'", false, 2, (Object) null) && StringsKt.endsWith$default(group4, "'", false, 2, (Object) null) && group4.length() > 2) {
-                        group4 = group4.substring(1, group4.length() - 1);
-                        Intrinsics.checkNotNullExpressionValue(group4, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+                    } else {
+                        startsWith$default = StringsKt__StringsJVMKt.startsWith$default(group4, "'", false, 2, null);
+                        if (startsWith$default) {
+                            endsWith$default = StringsKt__StringsJVMKt.endsWith$default(group4, "'", false, 2, null);
+                            if (endsWith$default && group4.length() > 2) {
+                                group4 = group4.substring(1, group4.length() - 1);
+                                Intrinsics.checkNotNullExpressionValue(group4, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+                            }
+                        }
                     }
                     arrayList.add(group3);
                     arrayList.add(group4);

@@ -88,7 +88,7 @@ public final class TextNetworkSwitcherCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m51dp(50.0f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m55dp(50.0f), 1073741824));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -101,7 +101,7 @@ public final class TextNetworkSwitcherCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initTextView() {
         TextView textView = new TextView(getContext());
-        textView.setTextColor(Theme.getColor(this.dialog ? "dialogTextBlack" : "windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(this.dialog ? Theme.key_dialogTextBlack : Theme.key_windowBackgroundWhiteBlackText));
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);

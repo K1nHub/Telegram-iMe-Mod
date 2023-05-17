@@ -6,7 +6,7 @@ import org.telegram.p044ui.ActionBar.AlertDialog;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MvpBaseDelegate.kt */
 /* renamed from: com.iMe.ui.base.mvp.base.MvpBaseDelegate$progressDialog$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class MvpBaseDelegate$progressDialog$2 extends Lambda implements Function0<AlertDialog> {
     final /* synthetic */ MvpBaseDelegate<T> this$0;
 

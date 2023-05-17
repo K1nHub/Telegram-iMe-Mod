@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroidx/recyclerview/widget/ItemTouchHelper$Callback;)V
     .locals 0
 
-    .line 1106
+    .line 1108
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$12;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0, p2}, Landroidx/recyclerview/widget/ItemTouchHelper;-><init>(Landroidx/recyclerview/widget/ItemTouchHelper$Callback;)V
@@ -35,7 +35,7 @@
 .method protected shouldSwipeBack()Z
     .locals 1
 
-    .line 1109
+    .line 1111
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$12;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1500(Lorg/telegram/ui/TopicsFragment;)I

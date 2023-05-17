@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
@@ -32,10 +32,10 @@ public class ContactsEmptyView extends LinearLayout implements NotificationCente
         this.textViews = new ArrayList<>();
         this.imageViews = new ArrayList<>();
         this.currentAccount = UserConfig.selectedAccount;
-        setPadding(0, AndroidUtilities.m50dp(12), 0, AndroidUtilities.m50dp(12));
+        setPadding(0, AndroidUtilities.m54dp(12), 0, AndroidUtilities.m54dp(12));
         setOrientation(1);
         this.stickerView = new BackupImageView(context);
-        LoadingStickerDrawable loadingStickerDrawable = new LoadingStickerDrawable(this.stickerView, "m418 282.6c13.4-21.1 20.2-44.9 20.2-70.8 0-88.3-79.8-175.3-178.9-175.3-100.1 0-178.9 88-178.9 175.3 0 46.6 16.9 73.1 29.1 86.1-19.3 23.4-30.9 52.3-34.6 86.1-2.5 22.7 3.2 41.4 17.4 57.3 14.3 16 51.7 35 148.1 35 41.2 0 119.9-5.3 156.7-18.3 49.5-17.4 59.2-41.1 59.2-76.2 0-41.5-12.9-74.8-38.3-99.2z", AndroidUtilities.m50dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS), AndroidUtilities.m50dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS));
+        LoadingStickerDrawable loadingStickerDrawable = new LoadingStickerDrawable(this.stickerView, "m418 282.6c13.4-21.1 20.2-44.9 20.2-70.8 0-88.3-79.8-175.3-178.9-175.3-100.1 0-178.9 88-178.9 175.3 0 46.6 16.9 73.1 29.1 86.1-19.3 23.4-30.9 52.3-34.6 86.1-2.5 22.7 3.2 41.4 17.4 57.3 14.3 16 51.7 35 148.1 35 41.2 0 119.9-5.3 156.7-18.3 49.5-17.4 59.2-41.1 59.2-76.2 0-41.5-12.9-74.8-38.3-99.2z", AndroidUtilities.m54dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS), AndroidUtilities.m54dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS));
         this.drawable = loadingStickerDrawable;
         this.stickerView.setImageDrawable(loadingStickerDrawable);
         if (!AndroidUtilities.isTablet()) {
@@ -44,11 +44,11 @@ public class ContactsEmptyView extends LinearLayout implements NotificationCente
         TextView textView = new TextView(context);
         this.titleTextView = textView;
         textView.setTextSize(1, 20.0f);
-        this.titleTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.titleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.titleTextView.setGravity(1);
-        this.titleTextView.setText(LocaleController.getString("NoContactsYet", C3242R.string.NoContactsYet));
+        this.titleTextView.setText(LocaleController.getString("NoContactsYet", C3290R.string.NoContactsYet));
         this.titleTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.titleTextView.setMaxWidth(AndroidUtilities.m50dp(260));
+        this.titleTextView.setMaxWidth(AndroidUtilities.m54dp(260));
         addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 49, 0, 18, 0, 14));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -62,21 +62,22 @@ public class ContactsEmptyView extends LinearLayout implements NotificationCente
             linearLayout2.setOrientation(0);
             linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
             ImageView imageView = new ImageView(context);
-            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayText"), PorterDuff.Mode.MULTIPLY));
-            imageView.setImageResource(C3242R.C3244drawable.list_circle);
+            int i2 = Theme.key_windowBackgroundWhiteGrayText;
+            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
+            imageView.setImageResource(C3290R.C3292drawable.list_circle);
             this.imageViews.add(imageView);
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 15.0f);
-            textView2.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
-            textView2.setMaxWidth(AndroidUtilities.m50dp(260));
+            textView2.setTextColor(Theme.getColor(i2));
+            textView2.setMaxWidth(AndroidUtilities.m54dp(260));
             this.textViews.add(textView2);
             textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             if (i == 0) {
-                textView2.setText(LocaleController.getString("NoContactsYetLine1", C3242R.string.NoContactsYetLine1));
+                textView2.setText(LocaleController.getString("NoContactsYetLine1", C3290R.string.NoContactsYetLine1));
             } else if (i == 1) {
-                textView2.setText(LocaleController.getString("NoContactsYetLine2", C3242R.string.NoContactsYetLine2));
+                textView2.setText(LocaleController.getString("NoContactsYetLine2", C3290R.string.NoContactsYetLine2));
             } else if (i == 2) {
-                textView2.setText(LocaleController.getString("NoContactsYetLine3", C3242R.string.NoContactsYetLine3));
+                textView2.setText(LocaleController.getString("NoContactsYetLine3", C3290R.string.NoContactsYetLine3));
             }
             if (LocaleController.isRTL) {
                 linearLayout2.addView(textView2, LayoutHelper.createLinear(-2, -2));

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Landroid/content/Context;)V
     .locals 0
 
-    .line 91
+    .line 93
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 3
 
-    .line 94
+    .line 96
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
@@ -52,20 +52,20 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 95
+    .line 97
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-boolean v0, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionFinished:Z
 
     if-eqz v0, :cond_0
 
-    .line 96
+    .line 98
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismiss()V
 
     :cond_0
     return v1
 
-    .line 100
+    .line 102
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -83,7 +83,7 @@
 .method protected fitSystemWindows(Landroid/graphics/Rect;)Z
     .locals 3
 
-    .line 110
+    .line 112
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->keyboardHeight:F
@@ -102,7 +102,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 113
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v1, p1, Landroid/graphics/Rect;->bottom:I
@@ -111,10 +111,10 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->keyboardHeight:F
 
-    .line 112
+    .line 114
     invoke-static {v0}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$100(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
 
-    .line 114
+    .line 116
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->fitSystemWindows(Landroid/graphics/Rect;)Z
 

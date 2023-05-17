@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProxyListActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 559
+    .line 568
     iput-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ProxyListActivity$3;->val$context:Landroid/content/Context;
@@ -45,7 +45,7 @@
 .method private synthetic lambda$onItemClick$0(Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 576
+    .line 585
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -69,12 +69,12 @@
 
     check-cast p2, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    .line 577
+    .line 586
     invoke-static {p2}, Lorg/telegram/messenger/SharedConfig;->deleteProxy(Lorg/telegram/messenger/SharedConfig$ProxyInfo;)V
 
     goto :goto_0
 
-    .line 579
+    .line 588
     :cond_0
     sget-object p1, Lorg/telegram/messenger/SharedConfig;->currentProxy:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
@@ -82,17 +82,17 @@
 
     if-nez p1, :cond_1
 
-    .line 580
+    .line 589
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ProxyListActivity;->access$802(Lorg/telegram/ui/ProxyListActivity;Z)Z
 
-    .line 581
+    .line 590
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ProxyListActivity;->access$002(Lorg/telegram/ui/ProxyListActivity;Z)Z
 
-    .line 583
+    .line 592
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -104,7 +104,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 584
+    .line 593
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -113,7 +113,7 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 585
+    .line 594
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -122,14 +122,14 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 586
+    .line 595
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ProxyListActivity;->access$900(Lorg/telegram/ui/ProxyListActivity;Z)V
 
-    .line 587
+    .line 596
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$700(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/ProxyListActivity$ListAdapter;
@@ -138,12 +138,12 @@
 
     if-eqz p1, :cond_3
 
-    .line 588
+    .line 597
     sget-object p1, Lorg/telegram/messenger/SharedConfig;->currentProxy:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     if-nez p1, :cond_2
 
-    .line 589
+    .line 598
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$700(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/ProxyListActivity$ListAdapter;
@@ -162,7 +162,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(ILjava/lang/Object;)V
 
-    .line 590
+    .line 599
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$700(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/ProxyListActivity$ListAdapter;
@@ -181,7 +181,7 @@
 
     invoke-virtual {p1, v0, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(ILjava/lang/Object;)V
 
-    .line 592
+    .line 601
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -212,13 +212,13 @@
 
     goto/16 :goto_3
 
-    .line 603
+    .line 612
     :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 604
+    .line 613
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -242,7 +242,7 @@
 
     check-cast v2, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    .line 605
+    .line 614
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -251,10 +251,10 @@
 
     const-string v3, "\n\n"
 
-    .line 606
+    .line 615
     invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 608
+    .line 617
     :cond_1
     invoke-virtual {v2}, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->getLink()Ljava/lang/String;
 
@@ -264,7 +264,7 @@
 
     goto :goto_0
 
-    .line 611
+    .line 620
     :cond_2
     new-instance v0, Landroid/content/Intent;
 
@@ -274,10 +274,10 @@
 
     const-string v2, "text/plain"
 
-    .line 612
+    .line 621
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 613
+    .line 622
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -286,7 +286,7 @@
 
     invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 614
+    .line 623
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -317,15 +317,15 @@
 
     const/high16 v0, 0x10000000
 
-    .line 615
+    .line 624
     invoke-virtual {p1, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 616
+    .line 625
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$3;->val$context:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 618
+    .line 627
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$700(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/ProxyListActivity$ListAdapter;
@@ -334,7 +334,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 619
+    .line 628
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxyListActivity;->access$700(Lorg/telegram/ui/ProxyListActivity;)Lorg/telegram/ui/ProxyListActivity$ListAdapter;
@@ -345,7 +345,7 @@
 
     goto/16 :goto_3
 
-    .line 571
+    .line 580
     :cond_4
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -357,7 +357,7 @@
 
     invoke-direct {p1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 572
+    .line 581
     iget-object v2, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProxyListActivity;->access$600(Lorg/telegram/ui/ProxyListActivity;)Ljava/util/List;
@@ -384,7 +384,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 573
+    .line 582
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -397,7 +397,7 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 574
+    .line 583
     sget v1, Lorg/telegram/messenger/R$string;->DeleteProxyTitle:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -406,7 +406,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 575
+    .line 584
     sget v1, Lorg/telegram/messenger/R$string;->Delete:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -419,17 +419,17 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 595
+    .line 604
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 596
+    .line 605
     iget-object v1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 597
+    .line 606
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
@@ -438,10 +438,10 @@
 
     if-eqz p1, :cond_8
 
-    const-string v0, "dialogTextRed"
+    .line 608
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
-    .line 599
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -449,7 +449,7 @@
 
     goto :goto_3
 
-    .line 564
+    .line 573
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
@@ -463,14 +463,14 @@
 
     if-eqz p1, :cond_7
 
-    .line 565
+    .line 574
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_3
 
-    .line 567
+    .line 576
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/ProxyListActivity$3;->this$0:Lorg/telegram/ui/ProxyListActivity;
 

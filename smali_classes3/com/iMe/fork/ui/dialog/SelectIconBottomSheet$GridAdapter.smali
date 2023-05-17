@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 107
+    .line 114
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$GridAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 111
+    .line 118
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$GridAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->access$getIcons(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Ljava/util/List;
@@ -73,24 +73,24 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 116
+    .line 123
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 117
+    .line 124
     instance-of v0, p1, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;
 
     if-eqz v0, :cond_3
 
     const-string v0, "holder.itemView"
 
-    .line 118
+    .line 125
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$GridAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;
 
     check-cast p1, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;
 
-    .line 119
+    .line 126
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->access$getIcons(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Ljava/util/List;
 
     move-result-object v1
@@ -101,7 +101,7 @@
 
     check-cast p2, Ljava/lang/Enum;
 
-    .line 121
+    .line 128
     invoke-virtual {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getType()Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object v1
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 122
+    .line 129
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getType()Lcom/iMe/fork/enums/FilterActivityType;
 
@@ -154,7 +154,7 @@
 
     move-result v1
 
-    .line 125
+    .line 132
     :goto_0
     invoke-virtual {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getCurrentFilterIcon()Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
@@ -191,7 +191,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 107
+    .line 114
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$GridAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -206,7 +206,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 113
+    .line 120
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     new-instance p2, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;

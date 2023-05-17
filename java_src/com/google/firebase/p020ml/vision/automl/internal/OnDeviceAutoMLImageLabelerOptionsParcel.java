@@ -10,15 +10,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class OnDeviceAutoMLImageLabelerOptionsParcel extends AbstractSafeParcelable {
     public static final Parcelable.Creator<OnDeviceAutoMLImageLabelerOptionsParcel> CREATOR = new zzi();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     public final String zzaxi;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     public final String zzaxj;
-    @SafeParcelable.Field(m775id = 1)
+    @SafeParcelable.Field(m779id = 1)
     public final float zzazi;
 
     @SafeParcelable.Constructor
-    public OnDeviceAutoMLImageLabelerOptionsParcel(@SafeParcelable.Param(m774id = 1) float f, @SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2) {
+    public OnDeviceAutoMLImageLabelerOptionsParcel(@SafeParcelable.Param(m778id = 1) float f, @SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2) {
         this.zzazi = f;
         this.zzaxi = str;
         this.zzaxj = str2;

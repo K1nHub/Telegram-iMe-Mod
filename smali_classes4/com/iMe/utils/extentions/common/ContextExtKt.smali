@@ -13,7 +13,7 @@
 .method public static final copyToClipboard(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -84,7 +84,7 @@
 .method public static final longToast(Ljava/lang/CharSequence;)V
     .locals 2
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -121,7 +121,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -133,7 +133,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "text/plain"
+    const-string/jumbo v1, "text/plain"
 
     .line 32
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
@@ -177,7 +177,7 @@
 .method public static final toast(Ljava/lang/CharSequence;)V
     .locals 2
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

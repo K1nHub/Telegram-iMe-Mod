@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Dodirnite da prebacite na odabir dana</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Prebacivanje na način unosa teksta</string>
     <string name="mtrl_picker_toggle_to_year_selection">Dodirnite da prebacite na odabir godine</string>
+    <string name="nav_app_bar_navigate_up_description">Idi gore</string>
+    <string name="nav_app_bar_open_drawer_description">Otvaranje ladice za navigaciju</string>
     <string name="password_toggle_content_description">Prikaži lozinku</string>
     <string name="search_menu_title">Pretražite</string>
     <string name="status_bar_notification_info_overflow">999+</string>

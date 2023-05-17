@@ -51,10 +51,10 @@
     .line 32
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string v7, "dialogTextBlack"
-
     .line 33
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -109,7 +109,7 @@
     invoke-virtual {v9, v4, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 42
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -149,10 +149,10 @@
     .line 47
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string v7, "featuredStickers_buttonText"
-
     .line 48
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -170,16 +170,16 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
+    .line 51
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
     new-array v4, v4, [F
 
-    const/high16 v7, 0x41000000    # 8.0f
+    const/high16 v8, 0x41000000    # 8.0f
 
-    aput v7, v4, v2
+    aput v8, v4, v2
 
-    const-string v2, "featuredStickers_addButton"
-
-    .line 51
-    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v7, v4}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -225,10 +225,10 @@
 
     invoke-virtual {v2, v6, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const-string v4, "dialogBackground"
-
     .line 63
-    invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v4
 

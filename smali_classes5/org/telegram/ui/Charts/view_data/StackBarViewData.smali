@@ -67,10 +67,10 @@
     .line 17
     invoke-super {p0}, Lorg/telegram/ui/Charts/view_data/LineViewData;->updateColors()V
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 18
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

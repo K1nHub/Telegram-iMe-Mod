@@ -66,12 +66,12 @@
     :goto_0
     sput-boolean v0, Lorg/telegram/messenger/BuildVars;->NO_SCOPED_STORAGE:Z
 
-    const/16 v0, 0xcb4
+    const/16 v0, 0xd1c
 
     .line 31
     sput v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    const-string v0, "9.5.8"
+    const-string v0, "9.6.5"
 
     .line 32
     sput-object v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION_STRING:Ljava/lang/String;
@@ -143,7 +143,7 @@
     .line 49
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v3, "systemConfig"
+    const-string/jumbo v3, "systemConfig"
 
     invoke-virtual {v0, v3, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 

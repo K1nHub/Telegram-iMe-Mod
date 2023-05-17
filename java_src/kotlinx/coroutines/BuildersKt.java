@@ -10,6 +10,10 @@ public final class BuildersKt {
         return BuildersKt__Builders_commonKt.launch(coroutineScope, coroutineContext, coroutineStart, function2);
     }
 
+    public static final <T> T runBlocking(CoroutineContext coroutineContext, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2) throws InterruptedException {
+        return (T) BuildersKt__BuildersKt.runBlocking(coroutineContext, function2);
+    }
+
     public static final <T> Object withContext(CoroutineContext coroutineContext, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
         return BuildersKt__Builders_commonKt.withContext(coroutineContext, function2, continuation);
     }

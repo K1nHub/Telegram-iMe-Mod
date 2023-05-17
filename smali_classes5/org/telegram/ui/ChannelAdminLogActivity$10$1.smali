@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity$10;)V
     .locals 0
 
-    .line 964
+    .line 972
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$10;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 967
+    .line 975
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$10;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -50,7 +50,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 968
+    .line 976
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$10;
 
     iget-object p1, p1, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;

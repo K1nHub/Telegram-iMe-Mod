@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->refreshToken(Ljava/lang/String;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->refreshToken()Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -85,7 +85,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 32
     iget-object p1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$1$2;->$result:Lcom/iMe/storage/domain/model/Result;
 
     return-object p1
@@ -94,7 +94,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 34
+    .line 32
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$1$2;->invoke(Lcom/iMe/storage/domain/model/Result;)Lcom/iMe/storage/domain/model/Result;

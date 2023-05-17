@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final fragment_fast_out_extra_slow_in:I = 0x7f01001e
+.field public static final fragment_fast_out_extra_slow_in:I = 0x7f010021
 
 
 # direct methods

@@ -46,17 +46,17 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 609
+    .line 608
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;-><init>()V
 
-    .line 606
+    .line 605
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->currentAccount:I
 
-    .line 610
+    .line 609
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -65,7 +65,7 @@
 .method private static synthetic lambda$onBindViewHolder$0(Lorg/telegram/messenger/ContactsController$Contact;)Ljava/lang/CharSequence;
     .locals 2
 
-    .line 700
+    .line 699
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$Contact;->phones:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -104,7 +104,7 @@
 .method private static synthetic lambda$onBindViewHolder$1(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/CharSequence;
     .locals 3
 
-    .line 707
+    .line 706
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
     move-result-object v0
@@ -141,7 +141,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 648
+    .line 647
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->getSectionCount()I
 
     move-result v1
@@ -155,7 +155,7 @@
     :cond_0
     add-int/lit8 p1, p1, -0x1
 
-    .line 652
+    .line 651
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -164,7 +164,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/ContactsController;->phoneBookSectionsDict:Ljava/util/HashMap;
 
-    .line 653
+    .line 652
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -173,14 +173,14 @@
 
     iget-object v1, v1, Lorg/telegram/messenger/ContactsController;->phoneBookSectionsArray:Ljava/util/ArrayList;
 
-    .line 654
+    .line 653
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
     if-ge p1, v2, :cond_1
 
-    .line 655
+    .line 654
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -219,7 +219,7 @@
     :cond_0
     add-int/lit8 p1, p1, -0x1
 
-    .line 618
+    .line 617
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -228,7 +228,7 @@
 
     iget-object v1, v1, Lorg/telegram/messenger/ContactsController;->phoneBookSectionsDict:Ljava/util/HashMap;
 
-    .line 619
+    .line 618
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -237,14 +237,14 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/ContactsController;->phoneBookSectionsArray:Ljava/util/ArrayList;
 
-    .line 620
+    .line 619
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
     if-ge p1, v3, :cond_1
 
-    .line 621
+    .line 620
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -255,14 +255,14 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    .line 622
+    .line 621
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     if-ge p2, v1, :cond_1
 
-    .line 623
+    .line 622
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -282,7 +282,7 @@
 
     return p2
 
-    .line 716
+    .line 715
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->getSectionCount()I
 
@@ -315,12 +315,12 @@
 
     const/4 p1, 0x0
 
-    .line 729
+    .line 728
     aput p1, p3, p1
 
     const/4 p2, 0x1
 
-    .line 730
+    .line 729
     aput p1, p3, p2
 
     return-void
@@ -329,7 +329,7 @@
 .method public getSectionCount()I
     .locals 1
 
-    .line 642
+    .line 641
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -338,7 +338,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/ContactsController;->phoneBookSectionsArray:Ljava/util/ArrayList;
 
-    .line 643
+    .line 642
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -363,7 +363,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 631
+    .line 630
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->getSectionCount()I
 
     move-result v0
@@ -379,7 +379,7 @@
     :cond_0
     add-int/lit8 p2, p2, -0x1
 
-    .line 635
+    .line 634
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -388,7 +388,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/ContactsController;->phoneBookSectionsDict:Ljava/util/HashMap;
 
-    .line 636
+    .line 635
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -397,7 +397,7 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/ContactsController;->phoneBookSectionsArray:Ljava/util/ArrayList;
 
-    .line 637
+    .line 636
     invoke-virtual {v2, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
@@ -424,10 +424,10 @@
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 735
+    .line 734
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->notifyDataSetChanged()V
 
-    .line 736
+    .line 735
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$900(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)V
@@ -438,24 +438,24 @@
 .method public onBindViewHolder(IILandroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 3
 
-    .line 689
+    .line 688
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 690
+    .line 689
     iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p3, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;
 
-    .line 691
+    .line 690
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->getItem(II)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 693
+    .line 692
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->getSectionCount()I
 
     move-result v1
@@ -479,7 +479,7 @@
     :cond_0
     const/4 v2, 0x0
 
-    .line 694
+    .line 693
     :cond_1
     :goto_0
     instance-of p1, v0, Lorg/telegram/messenger/ContactsController$Contact;
@@ -488,23 +488,23 @@
 
     if-eqz p1, :cond_3
 
-    .line 695
+    .line 694
     check-cast v0, Lorg/telegram/messenger/ContactsController$Contact;
 
-    .line 696
+    .line 695
     iget-object p1, v0, Lorg/telegram/messenger/ContactsController$Contact;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz p1, :cond_2
 
     goto :goto_1
 
-    .line 699
+    .line 698
     :cond_2
     iget p1, v0, Lorg/telegram/messenger/ContactsController$Contact;->contact_id:I
 
     invoke-virtual {p3, p1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;->setCurrentId(I)V
 
-    .line 700
+    .line 699
     iget-object p1, v0, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
 
     iget-object v1, v0, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;
@@ -523,7 +523,7 @@
 
     goto :goto_1
 
-    .line 703
+    .line 702
     :cond_3
     move-object p1, v0
 
@@ -532,7 +532,7 @@
     :goto_1
     if-eqz p1, :cond_4
 
-    .line 707
+    .line 706
     new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/tgnet/TLRPC$User;)V
@@ -552,7 +552,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 680
+    .line 679
     new-instance p1, Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;->mContext:Landroid/content/Context;
@@ -561,7 +561,7 @@
 
     goto :goto_0
 
-    .line 674
+    .line 673
     :cond_0
     new-instance p1, Landroid/view/View;
 
@@ -569,7 +569,7 @@
 
     invoke-direct {p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 675
+    .line 674
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -586,7 +586,7 @@
 
     goto :goto_0
 
-    .line 670
+    .line 669
     :cond_1
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;
 
@@ -598,7 +598,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$UserCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 684
+    .line 683
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

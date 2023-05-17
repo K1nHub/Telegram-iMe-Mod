@@ -2,42 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/view/View$OnClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda25;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatEditActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda25;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda25;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda25;->INSTANCE:Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda25;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda25;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 0
+.method public final onClick(Landroid/view/View;)V
+    .locals 1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$DZ9c_Xtx6di58wVsbEUk-T4s0j8(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda25;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
-    move-result p1
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$pv80jZ3Z-sf0K3frKkpKZsziKg0(Lorg/telegram/ui/ChatEditActivity;Landroid/view/View;)V
 
-    return p1
+    return-void
 .end method

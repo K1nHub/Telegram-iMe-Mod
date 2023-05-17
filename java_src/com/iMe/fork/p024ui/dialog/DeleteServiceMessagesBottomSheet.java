@@ -40,7 +40,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BottomSheet;
@@ -237,10 +237,10 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         ViewExtKt.singleLine(textView);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        textView.setText(LocaleController.getInternalString(C3242R.string.service_messages));
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setText(LocaleController.getInternalString(C3290R.string.service_messages));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
-        textView.setLinkTextColor(Theme.getColor("dialogTextLink"));
+        textView.setLinkTextColor(Theme.getColor(Theme.key_dialogTextLink));
         ViewExtKt.setHorizontalPadding(textView, 18);
         return textView;
     }
@@ -248,13 +248,14 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final View[] initShadows() {
         View view = new View(getContext());
-        ViewExtKt.invisible(view);
+        ViewExtKt.invisible$default(view, false, 1, null);
         view.setTag(1);
         view.setAlpha(BitmapDescriptorFactory.HUE_RED);
-        view.setBackgroundColor(Theme.getColor("dialogShadowLine"));
+        int i = Theme.key_dialogShadowLine;
+        view.setBackgroundColor(Theme.getColor(i));
         Unit unit = Unit.INSTANCE;
         View view2 = new View(getContext());
-        view2.setBackgroundColor(Theme.getColor("dialogShadowLine"));
+        view2.setBackgroundColor(Theme.getColor(i));
         return new View[]{view, view2};
     }
 
@@ -271,14 +272,14 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                 super.requestLayout();
             }
         };
-        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(r1, AndroidUtilities.m50dp(10));
+        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(r1, AndroidUtilities.m54dp(10));
         r1.setLayoutManager(new LinearLayoutManager(r1.getContext()));
         r1.setAdapter(getListAdapter());
         r1.setVerticalScrollBarEnabled(false);
         r1.setClipToPadding(false);
         r1.setEnabled(true);
-        r1.getRecycledViewPool().setMaxRecycledViews(IdFabric$ViewTypes.TEXT_CHECK_BOX, 0);
-        r1.setGlowColor(Theme.getColor("dialogScrollGlow"));
+        r1.getRecycledViewPool().setMaxRecycledViews(IdFabric$ViewTypes.TEXT_CHECK_BOX_CELL, 0);
+        r1.setGlowColor(Theme.getColor(Theme.key_dialogScrollGlow));
         r1.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.iMe.fork.ui.dialog.DeleteServiceMessagesBottomSheet$initListView$2$1
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
@@ -302,7 +303,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullParameter(view, "view");
         if (view instanceof TextCheckCell) {
             TextCheckCell textCheckCell = (TextCheckCell) view;
-            textCheckCell.toggleCheckbox();
+            textCheckCell.toggleCheckBox();
             this$0.selectedFiltersCodes.clear();
             if (textCheckCell.isChecked()) {
                 this$0.selectedFiltersCodes.add(Integer.valueOf(ServiceMessageType.ALL.getCode(this$0.isChannel)));
@@ -342,8 +343,8 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
     public final FrameLayout initButtonsLayout() {
         TextView[] bottomButtons;
         final FrameLayout frameLayout = new FrameLayout(getContext());
-        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(frameLayout, AndroidUtilities.m50dp(8));
-        frameLayout.setBackgroundColor(Theme.getColor("dialogBackground"));
+        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(frameLayout, AndroidUtilities.m54dp(8));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
         for (TextView textView : getBottomButtons()) {
             Intrinsics.checkNotNull(textView);
             Object tag = textView.getTag();
@@ -401,7 +402,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         }
         getShadows()[0].setTag(z ? null : 1);
         if (z) {
-            ViewExtKt.visible(getShadows()[0]);
+            ViewExtKt.visible$default(getShadows()[0], false, 1, null);
         }
         AnimatorSet animatorSet = this.shadowAnimation[0];
         if (animatorSet != null) {
@@ -429,7 +430,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                     animatorSetArr3 = DeleteServiceMessagesBottomSheet.this.shadowAnimation;
                     if (Intrinsics.areEqual(animatorSetArr3[0], animation)) {
                         if (!z) {
-                            ViewExtKt.invisible(DeleteServiceMessagesBottomSheet.this.getShadows()[0]);
+                            ViewExtKt.invisible$default(DeleteServiceMessagesBottomSheet.this.getShadows()[0], false, 1, null);
                         }
                         animatorSetArr4 = DeleteServiceMessagesBottomSheet.this.shadowAnimation;
                         animatorSetArr4[0] = null;
@@ -461,7 +462,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final void showPeriodSelectionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(LocaleController.getInternalString(C3242R.string.erasing_period));
+        builder.setTitle(LocaleController.getInternalString(C3290R.string.erasing_period));
         ErasingPeriod[] values = ErasingPeriod.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (ErasingPeriod erasingPeriod : values) {
@@ -473,7 +474,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                 DeleteServiceMessagesBottomSheet.showPeriodSelectionDialog$lambda$10(DeleteServiceMessagesBottomSheet.this, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
         builder.create().show();
     }
 
@@ -494,9 +495,9 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView[] getBottomDialogButtons(final Runnable runnable) {
         String string;
-        int m50dp = AndroidUtilities.m50dp(64);
-        int m50dp2 = AndroidUtilities.m50dp(10);
-        int color = Theme.getColor("dialogButton");
+        int m54dp = AndroidUtilities.m54dp(64);
+        int m54dp2 = AndroidUtilities.m54dp(10);
+        int color = Theme.getColor(Theme.key_dialogButton);
         Typeface typeface = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
         TextView[] textViewArr = new TextView[2];
         for (int i = 0; i < 2; i++) {
@@ -514,7 +515,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                     setBackground(Theme.getRoundRectSelectorDrawable(i2));
                 }
             };
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(appCompatTextView, m50dp2);
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(appCompatTextView, m54dp2);
             appCompatTextView.setTag(Integer.valueOf(i));
             appCompatTextView.setGravity(17);
             appCompatTextView.setTypeface(typeface);
@@ -522,9 +523,9 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             appCompatTextView.setSingleLine(true);
             appCompatTextView.setBackground(Theme.getRoundRectSelectorDrawable(color));
             if (i == 0) {
-                string = LocaleController.getString("Cancel", C3242R.string.Cancel);
+                string = LocaleController.getString("Cancel", C3290R.string.Cancel);
             } else {
-                string = LocaleController.getString("Delete", C3242R.string.Delete);
+                string = LocaleController.getString("Delete", C3290R.string.Delete);
             }
             Intrinsics.checkNotNullExpressionValue(string, "when (i) {\n             …Delete)\n                }");
             Locale locale = Locale.getDefault();
@@ -532,7 +533,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             String upperCase = string.toUpperCase(locale);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(locale)");
             appCompatTextView.setText(upperCase);
-            appCompatTextView.setMinWidth(m50dp);
+            appCompatTextView.setMinWidth(m54dp);
             appCompatTextView.setTextSize(1, 14);
             appCompatTextView.setTextColor(color);
             appCompatTextView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda1
@@ -553,7 +554,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(v, "v");
         if (AndroidUtilities.isServiceRunning(ServiceMessagesRemovingService.class)) {
-            String internalString = LocaleController.getInternalString(C3242R.string.already_removing);
+            String internalString = LocaleController.getInternalString(C3290R.string.already_removing);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.already_removing)");
             ContextExtKt.toast(internalString);
             return;
@@ -573,79 +574,79 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         String text;
         switch (WhenMappings.$EnumSwitchMapping$0[ServiceMessageType.Companion.getByCode(i, this.isChannel).ordinal()]) {
             case 1:
-                string = LocaleController.getString("ActionCreateGroup", C3242R.string.ActionCreateGroup);
+                string = LocaleController.getString("ActionCreateGroup", C3290R.string.ActionCreateGroup);
                 break;
             case 2:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelChangedTitle", C3242R.string.ActionChannelChangedTitle);
+                    string = LocaleController.getString("ActionChannelChangedTitle", C3290R.string.ActionChannelChangedTitle);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionChangedTitle", C3242R.string.ActionChangedTitle);
+                    string = LocaleController.getString("ActionChangedTitle", C3290R.string.ActionChangedTitle);
                     break;
                 }
             case 3:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelChangedPhoto", C3242R.string.ActionChannelChangedPhoto);
+                    string = LocaleController.getString("ActionChannelChangedPhoto", C3290R.string.ActionChannelChangedPhoto);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionChangedPhoto", C3242R.string.ActionChangedPhoto);
+                    string = LocaleController.getString("ActionChangedPhoto", C3290R.string.ActionChangedPhoto);
                     break;
                 }
             case 4:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelRemovedPhoto", C3242R.string.ActionChannelRemovedPhoto);
+                    string = LocaleController.getString("ActionChannelRemovedPhoto", C3290R.string.ActionChannelRemovedPhoto);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionRemovedPhoto", C3242R.string.ActionRemovedPhoto);
+                    string = LocaleController.getString("ActionRemovedPhoto", C3290R.string.ActionRemovedPhoto);
                     break;
                 }
             case 5:
-                string = LocaleController.formatStringInternal(C3242R.string.service_messages_variants, LocaleController.getString("ActionAddUserSelfMega", C3242R.string.ActionAddUserSelfMega), LocaleController.getString("ActionAddUser", C3242R.string.ActionAddUser));
+                string = LocaleController.formatStringInternal(C3290R.string.service_messages_variants, LocaleController.getString("ActionAddUserSelfMega", C3290R.string.ActionAddUserSelfMega), LocaleController.getString("ActionAddUser", C3290R.string.ActionAddUser));
                 break;
             case 6:
-                string = LocaleController.getString("ActionLeftUser", C3242R.string.ActionLeftUser);
+                string = LocaleController.getString("ActionLeftUser", C3290R.string.ActionLeftUser);
                 break;
             case 7:
-                string = LocaleController.getString("ActionInviteUser", C3242R.string.ActionInviteUser);
+                string = LocaleController.getString("ActionInviteUser", C3290R.string.ActionInviteUser);
                 break;
             case 8:
-                string = LocaleController.getString("ActionPinnedNoText", C3242R.string.ActionPinnedNoText);
+                string = LocaleController.getString("ActionPinnedNoText", C3290R.string.ActionPinnedNoText);
                 break;
             case 9:
-                string = LocaleController.formatString("ActionUserScored", C3242R.string.ActionUserScored, "...");
+                string = LocaleController.formatString("ActionUserScored", C3290R.string.ActionUserScored, "...");
                 break;
             case 10:
-                string = LocaleController.formatString("PaymentSuccessfullyPaid", C3242R.string.PaymentSuccessfullyPaid, "...", "...", "...");
+                string = LocaleController.formatString("PaymentSuccessfullyPaid", C3290R.string.PaymentSuccessfullyPaid, "...", "...", "...");
                 break;
             case 11:
-                string = LocaleController.getString("ActionTakeScreenshoot", C3242R.string.ActionTakeScreenshoot);
+                string = LocaleController.getString("ActionTakeScreenshoot", C3290R.string.ActionTakeScreenshoot);
                 break;
             case 12:
-                string = LocaleController.formatString("ActionUserWithinRadius", C3242R.string.ActionUserWithinRadius, "...");
+                string = LocaleController.formatString("ActionUserWithinRadius", C3290R.string.ActionUserWithinRadius, "...");
                 break;
             case 13:
                 if (this.isChannel) {
-                    string = LocaleController.formatStringInternal(C3242R.string.service_messages_variants, LocaleController.getString("ActionGroupCallJustStarted", C3242R.string.ActionGroupCallStarted), LocaleController.formatString("ActionChannelCallEnded", C3242R.string.ActionChannelCallEnded, "..."));
+                    string = LocaleController.formatStringInternal(C3290R.string.service_messages_variants, LocaleController.getString("ActionGroupCallJustStarted", C3290R.string.ActionGroupCallStarted), LocaleController.formatString("ActionChannelCallEnded", C3290R.string.ActionChannelCallEnded, "..."));
                     break;
                 } else {
-                    string = LocaleController.formatStringInternal(C3242R.string.service_messages_variants, LocaleController.getString("ActionGroupCallStarted", C3242R.string.ActionGroupCallStarted), LocaleController.formatString("ActionGroupCallEndedBy", C3242R.string.ActionGroupCallEndedBy, "..."));
+                    string = LocaleController.formatStringInternal(C3290R.string.service_messages_variants, LocaleController.getString("ActionGroupCallStarted", C3290R.string.ActionGroupCallStarted), LocaleController.formatString("ActionGroupCallEndedBy", C3290R.string.ActionGroupCallEndedBy, "..."));
                     break;
                 }
             case 14:
-                string = LocaleController.formatString("ActionGroupCallScheduled", C3242R.string.ActionGroupCallScheduled, "...");
+                string = LocaleController.formatString("ActionGroupCallScheduled", C3290R.string.ActionGroupCallScheduled, "...");
                 break;
             case 15:
-                string = LocaleController.getString("ActionGroupCallInvited", C3242R.string.ActionGroupCallInvited);
+                string = LocaleController.getString("ActionGroupCallInvited", C3290R.string.ActionGroupCallInvited);
                 break;
             case 16:
-                string = LocaleController.formatString("MessageLifetimeChanged", C3242R.string.MessageLifetimeChanged, "...", "...");
+                string = LocaleController.formatString("MessageLifetimeChanged", C3290R.string.MessageLifetimeChanged, "...", "...");
                 break;
             case 17:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionTTLChannelChanged", C3242R.string.ActionTTLChannelChanged);
+                    string = LocaleController.getString("ActionTTLChannelChanged", C3290R.string.ActionTTLChannelChanged);
                     break;
                 } else {
-                    string = LocaleController.formatString("ActionTTLChanged", C3242R.string.ActionTTLChanged, "...");
+                    string = LocaleController.formatString("ActionTTLChanged", C3290R.string.ActionTTLChanged, "...");
                     break;
                 }
             default:
@@ -727,7 +728,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         private final int code;
         private final int period;
         private final int stringRes;
-        public static final ErasingPeriod ALL_TIME = new ErasingPeriod("ALL_TIME", 4, 4, 0, C3242R.string.period_all_time);
+        public static final ErasingPeriod ALL_TIME = new ErasingPeriod("ALL_TIME", 4, 4, 0, C3290R.string.period_all_time);
         private static final /* synthetic */ ErasingPeriod[] $VALUES = $values();
         public static final Companion Companion = new Companion(null);
 
@@ -759,10 +760,10 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
 
         static {
             long j = 1000;
-            DAY = new ErasingPeriod("DAY", 0, 0, (int) (ChronoUnit.DAYS.getDuration().toMillis() / j), C3242R.string.period_last_day);
-            WEEK = new ErasingPeriod("WEEK", 1, 1, (int) (ChronoUnit.WEEKS.getDuration().toMillis() / j), C3242R.string.period_last_week);
-            MONTH = new ErasingPeriod("MONTH", 2, 2, (int) (ChronoUnit.MONTHS.getDuration().toMillis() / j), C3242R.string.period_last_month);
-            YEAR = new ErasingPeriod("YEAR", 3, 3, (int) (ChronoUnit.YEARS.getDuration().toMillis() / j), C3242R.string.period_last_year);
+            DAY = new ErasingPeriod("DAY", 0, 0, (int) (ChronoUnit.DAYS.getDuration().toMillis() / j), C3290R.string.period_last_day);
+            WEEK = new ErasingPeriod("WEEK", 1, 1, (int) (ChronoUnit.WEEKS.getDuration().toMillis() / j), C3290R.string.period_last_week);
+            MONTH = new ErasingPeriod("MONTH", 2, 2, (int) (ChronoUnit.MONTHS.getDuration().toMillis() / j), C3290R.string.period_last_month);
+            YEAR = new ErasingPeriod("YEAR", 3, 3, (int) (ChronoUnit.YEARS.getDuration().toMillis() / j), C3290R.string.period_last_year);
         }
 
         /* compiled from: DeleteServiceMessagesBottomSheet.kt */
@@ -817,16 +818,16 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
             if (i == 0) {
-                return IdFabric$ViewTypes.TEXT_CHECK;
+                return IdFabric$ViewTypes.TEXT_CHECK_CELL;
             }
-            return IdFabric$ViewTypes.TEXT_CHECK_BOX;
+            return IdFabric$ViewTypes.TEXT_CHECK_BOX_CELL;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             View view;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.TEXT_CHECK) {
+            if (i == IdFabric$ViewTypes.TEXT_CHECK_CELL) {
                 final Context context = this.context;
                 final DeleteServiceMessagesBottomSheet deleteServiceMessagesBottomSheet = this.this$0;
                 view = new TextCheckCell(context) { // from class: com.iMe.fork.ui.dialog.DeleteServiceMessagesBottomSheet$ServiceMessagesTypesAdapter$onCreateViewHolder$1
@@ -834,7 +835,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                     public void onMeasure(int i2, int i3) {
                         int i4;
                         i4 = DeleteServiceMessagesBottomSheet.this.itemWidth;
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(100), 1073741824));
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(100), 1073741824));
                     }
                 };
             } else {
@@ -845,7 +846,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                     public void onMeasure(int i2, int i3) {
                         int i4;
                         i4 = DeleteServiceMessagesBottomSheet.this.itemWidth;
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(100), 1073741824));
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(100), 1073741824));
                     }
                 };
             }
@@ -859,9 +860,9 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             int itemViewType = holder.getItemViewType();
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-            if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3242R.string.service_messages_all), this.this$0.selectedFiltersCodes.contains(Integer.valueOf(ServiceMessageType.ALL.getCode(this.this$0.isChannel))), true);
-            } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_BOX && (view instanceof TextCheckBoxCell)) {
+            if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3290R.string.service_messages_all), this.this$0.selectedFiltersCodes.contains(Integer.valueOf(ServiceMessageType.ALL.getCode(this.this$0.isChannel))), true);
+            } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_BOX_CELL && (view instanceof TextCheckBoxCell)) {
                 TextCheckBoxCell textCheckBoxCell = (TextCheckBoxCell) view;
                 int i2 = i - 1;
                 String serviceMessageTypeStringByCode = this.this$0.getServiceMessageTypeStringByCode(i2);
@@ -913,11 +914,11 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             this.this$0.ignoreLayout = true;
             setPadding(((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) this.this$0).backgroundPaddingLeft, 0);
             this.this$0.ignoreLayout = false;
-            this.this$0.itemWidth = View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(16);
-            int m50dp = AndroidUtilities.m50dp(118) + (ServiceMessageType.Companion.getValues(this.this$0.isChannel).length * AndroidUtilities.m50dp(100)) + ((BottomSheet) this.this$0).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
-            int i3 = ((double) m50dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
-            if (i3 != 0 && m50dp < size) {
-                i3 -= size - m50dp;
+            this.this$0.itemWidth = View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(16);
+            int m54dp = AndroidUtilities.m54dp(118) + (ServiceMessageType.Companion.getValues(this.this$0.isChannel).length * AndroidUtilities.m54dp(100)) + ((BottomSheet) this.this$0).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            int i3 = ((double) m54dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
+            if (i3 != 0 && m54dp < size) {
+                i3 -= size - m54dp;
             }
             if (i3 == 0) {
                 i3 = ((BottomSheet) this.this$0).backgroundPaddingTop;
@@ -927,8 +928,8 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                 this.this$0.getListView().setPadding(0, i3, 0, 14);
                 this.this$0.ignoreLayout = false;
             }
-            this.fullHeight = m50dp >= size;
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m50dp, size), 1073741824));
+            this.fullHeight = m54dp >= size;
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m54dp, size), 1073741824));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -955,12 +956,12 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m50dp = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) + AndroidUtilities.m50dp(6);
-            int m50dp2 = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) - AndroidUtilities.m50dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m50dp(15) + ((BottomSheet) this.this$0).backgroundPaddingTop;
+            int m54dp = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) + AndroidUtilities.m54dp(6);
+            int m54dp2 = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) - AndroidUtilities.m54dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(15) + ((BottomSheet) this.this$0).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m50dp2 + i2;
-            int i4 = m50dp + i2;
+            int i3 = m54dp2 + i2;
+            int i4 = m54dp + i2;
             int i5 = measuredHeight - i2;
             if (this.fullHeight) {
                 int i6 = ((BottomSheet) this.this$0).backgroundPaddingTop + i3;
@@ -983,16 +984,16 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             ((BottomSheet) this.this$0).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), i5);
             ((BottomSheet) this.this$0).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
-                Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor("dialogBackground"));
-                this.rect.set(((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3 + AndroidUtilities.m50dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(12) * f, AndroidUtilities.m50dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
+                this.rect.set(((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3 + AndroidUtilities.m54dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m50dp3 = AndroidUtilities.m50dp(36);
-            this.rect.set((getMeasuredWidth() - m50dp3) / 2.0f, i4, (getMeasuredWidth() + m50dp3) / 2.0f, i4 + AndroidUtilities.m50dp(4));
-            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor("key_sheet_scrollUp"));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), Theme.dialogs_onlineCirclePaint);
+            int m54dp3 = AndroidUtilities.m54dp(36);
+            this.rect.set((getMeasuredWidth() - m54dp3) / 2.0f, i4, (getMeasuredWidth() + m54dp3) / 2.0f, i4 + AndroidUtilities.m54dp(4));
+            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_sheet_scrollUp));
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
-                int color = Theme.getColor("dialogBackground");
+                int color = Theme.getColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(color) * 0.8f), (int) (Color.green(color) * 0.8f), (int) (Color.blue(color) * 0.8f)));
                 canvas.drawRect(((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i, getMeasuredWidth() - ((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
             }

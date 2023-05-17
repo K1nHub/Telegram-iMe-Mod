@@ -91,7 +91,7 @@
 .method private static final onCreateViewHolder$lambda$3$lambda$0(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
     .locals 0
 
-    const-string p2, "this$0"
+    const-string/jumbo p2, "this$0"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -125,7 +125,7 @@
 .method private static final onCreateViewHolder$lambda$3$lambda$2(Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
     .locals 3
 
-    const-string p2, "this$0"
+    const-string/jumbo p2, "this$0"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -187,7 +187,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -237,13 +237,13 @@
 
     if-ne p1, v0, :cond_0
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     goto :goto_0
 
     .line 156
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK_CELL:I
 
     :goto_0
     return p1
@@ -261,7 +261,7 @@
 
     move-result p1
 
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK_CELL:I
 
     if-ne p1, v0, :cond_0
 
@@ -289,7 +289,7 @@
     move-result v0
 
     .line 195
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     const/4 v2, 0x0
 
@@ -320,10 +320,10 @@
     .line 198
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;->onlyPositiveCheckboxText:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
-
     .line 199
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -382,7 +382,7 @@
 
     .line 208
     :cond_1
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK_CELL:I
 
     if-ne v0, v1, :cond_5
 
@@ -510,15 +510,15 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    const/4 v5, -0x1
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x6
+    const/4 v7, 0x4
 
     const/4 v8, 0x0
 
-    invoke-static/range {v3 .. v8}, Lcom/iMe/fork/ui/view/MovingCheckCell;->setIcon$default(Lcom/iMe/fork/ui/view/MovingCheckCell;ILjava/lang/String;Landroid/graphics/PorterDuff$Mode;ILjava/lang/Object;)V
+    invoke-static/range {v3 .. v8}, Lcom/iMe/fork/ui/view/MovingCheckCell;->setIcon$default(Lcom/iMe/fork/ui/view/MovingCheckCell;IILandroid/graphics/PorterDuff$Mode;ILjava/lang/Object;)V
 
     :cond_5
     :goto_2
@@ -544,7 +544,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 160
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, p1, :cond_0
 
@@ -605,10 +605,10 @@
 
     invoke-direct {p1, p2}, Lcom/iMe/fork/ui/view/MovingCheckCell;-><init>(Landroid/content/Context;)V
 
-    const-string/jumbo p2, "windowBackgroundWhite"
-
     .line 179
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

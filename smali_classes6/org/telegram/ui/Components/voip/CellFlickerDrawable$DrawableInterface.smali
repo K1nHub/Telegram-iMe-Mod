@@ -26,12 +26,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/voip/CellFlickerDrawable;Lorg/telegram/messenger/SvgHelper$SvgDrawable;)V
     .locals 0
 
-    .line 189
+    .line 184
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 190
+    .line 185
     iput-object p2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     return-void
@@ -42,7 +42,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 195
+    .line 190
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setParentWidth(I)V
 
-    .line 196
+    .line 191
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 197
+    .line 192
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     iget v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->radius:F
@@ -73,12 +73,12 @@
 
     invoke-virtual {v1, p1, v0, v2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
 
-    .line 198
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 199
+    .line 194
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->access$000(Lorg/telegram/ui/Components/voip/CellFlickerDrawable;)Landroid/graphics/Paint;
@@ -87,7 +87,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setPaint(Landroid/graphics/Paint;)V
 
-    .line 200
+    .line 195
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     iget v1, v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->parentWidth:I
@@ -116,7 +116,7 @@
 
     float-to-int v0, v0
 
-    .line 202
+    .line 197
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -139,14 +139,14 @@
 
     move-result v1
 
-    .line 203
+    .line 198
     iget-object v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
 
-    .line 204
+    .line 199
     iget-object v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     iget-object v4, v2, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->matrix:Landroid/graphics/Matrix;
@@ -167,7 +167,7 @@
 
     invoke-virtual {v4, v5, v6, v2, v6}, Landroid/graphics/Matrix;->setScale(FFFF)V
 
-    .line 205
+    .line 200
     iget-object v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->matrix:Landroid/graphics/Matrix;
@@ -196,7 +196,7 @@
 
     invoke-virtual {v2, v3, v6}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 207
+    .line 202
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->access$100(Lorg/telegram/ui/Components/voip/CellFlickerDrawable;)Landroid/graphics/Shader;
@@ -209,10 +209,10 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 208
+    .line 203
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
-    .line 209
+    .line 204
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
@@ -235,7 +235,7 @@
 
     sub-int/2addr v3, v0
 
-    .line 210
+    .line 205
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v4
@@ -256,15 +256,15 @@
 
     add-int/2addr v5, v0
 
-    .line 208
+    .line 203
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 212
+    .line 207
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->svgDrawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 214
+    .line 209
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
@@ -286,7 +286,7 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 219
+    .line 214
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->access$000(Lorg/telegram/ui/Components/voip/CellFlickerDrawable;)Landroid/graphics/Paint;
@@ -295,7 +295,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 220
+    .line 215
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable$DrawableInterface;->this$0:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->access$200(Lorg/telegram/ui/Components/voip/CellFlickerDrawable;)Landroid/graphics/Paint;

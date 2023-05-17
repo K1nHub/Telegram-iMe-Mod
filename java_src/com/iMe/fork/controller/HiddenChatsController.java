@@ -1,9 +1,9 @@
 package com.iMe.fork.controller;
 
 import android.content.SharedPreferences;
-import com.iMe.common.IdFabric$CustomType;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.HiddenChatsController;
+import com.iMe.fork.models.backup.Backup;
 import com.iMe.storage.data.locale.p027db.dao.main.HiddenChatsDao;
 import com.iMe.storage.data.locale.p027db.model.hidden_chats.HiddenChatsDb;
 import java.util.ArrayList;
@@ -19,11 +19,11 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.p044ui.Components.UndoView;
 import p034j$.util.concurrent.ConcurrentHashMap;
 import p034j$.util.concurrent.ConcurrentMap$EL;
 import p034j$.util.function.Function;
@@ -67,7 +67,7 @@ public final class HiddenChatsController extends BaseController implements KoinC
     }
 
     private final void insertHiddenChats(final List<Long> list) {
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.HiddenChatsController$$ExternalSyntheticLambda0
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.HiddenChatsController$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 HiddenChatsController.insertHiddenChats$lambda$1(HiddenChatsController.this, list);
@@ -91,7 +91,7 @@ public final class HiddenChatsController extends BaseController implements KoinC
     }
 
     private final void removeHiddenChats(final List<Long> list) {
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.HiddenChatsController$$ExternalSyntheticLambda1
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.HiddenChatsController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 HiddenChatsController.removeHiddenChats$lambda$2(HiddenChatsController.this, list);
@@ -111,7 +111,7 @@ public final class HiddenChatsController extends BaseController implements KoinC
         this.isHiddenChatsHidden = preferences.getBoolean(TelegramPreferenceKeys.User.isHiddenChatsHidden(), TelegramPreferenceKeys.User.Default.isHiddenChatsHidden());
     }
 
-    public final void toggleVisibleHiddenChats() {
+    public final void toggleHiddenChatsHidden() {
         this.isHiddenChatsHidden = !this.isHiddenChatsHidden;
         saveConfig();
     }
@@ -124,39 +124,51 @@ public final class HiddenChatsController extends BaseController implements KoinC
         this.hiddenChatDialogs = getDao().getHiddenChats(getUserConfig().clientUserId);
     }
 
-    public final boolean addOrRemoveHiddenChats(List<Long> dialogIds, boolean z, UndoView undoView) {
+    public final void restoreBackup(final Backup backup) {
+        Intrinsics.checkNotNullParameter(backup, "backup");
+        if (backup.getHiddenChatDialogs() != null) {
+            getDao().restoreBackup(getUserConfig().clientUserId, backup.getHiddenChatDialogs());
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.HiddenChatsController$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    HiddenChatsController.restoreBackup$lambda$7(HiddenChatsController.this, backup);
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void restoreBackup$lambda$7(HiddenChatsController this$0, Backup backup) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(backup, "$backup");
+        List<Long> list = this$0.hiddenChatDialogs;
+        list.clear();
+        list.addAll(backup.getHiddenChatDialogs());
+        this$0.removeRecentChatsAndPeer(this$0.hiddenChatDialogs);
+        this$0.getMessagesController().sortDialogs(null);
+        this$0.getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
+    }
+
+    public final boolean hideChats(List<Long> dialogIds, boolean z) {
         Intrinsics.checkNotNullParameter(dialogIds, "dialogIds");
-        if (z) {
-            this.hiddenChatDialogs.removeAll(dialogIds);
-        } else {
-            this.hiddenChatDialogs.addAll(dialogIds);
-            for (Number number : dialogIds) {
-                long longValue = number.longValue();
-                getMediaDataController().removePeer(longValue);
-                getRecentChatsController().removeRecentChat(longValue);
-                getNotificationsController().setDialogNotificationsSettings(longValue, 0, 3);
-            }
-        }
-        if (z) {
-            removeHiddenChats(dialogIds);
-        } else {
-            if (undoView != null) {
-                undoView.showWithAction(0L, dialogIds.size() > 1 ? IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_FEW_HINT : IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_HINT, (Runnable) null);
-            }
-            insertHiddenChats(dialogIds);
-        }
-        if (this.hiddenChatDialogs.isEmpty()) {
-            getMessagesController().dialogs_dict.remove(DialogObject.makeFolderDialogId(2));
-            getMessagesController().getAllDialogs().remove(getMessagesController().getDialogs(1).get(0));
-            getMessagesStorage().checkIfFolderEmpty(1);
-        } else {
-            getMessagesController().ensureFolderDialogExists(1);
-        }
         this.isHiddenChatsHidden = true;
         saveConfig();
+        if (z) {
+            this.hiddenChatDialogs.addAll(dialogIds);
+            removeRecentChatsAndPeer(dialogIds);
+            insertHiddenChats(dialogIds);
+        } else {
+            this.hiddenChatDialogs.removeAll(dialogIds);
+            removeHiddenChats(dialogIds);
+        }
+        getMessagesStorage().checkIfFolderEmpty(2);
+        getMessagesStorage().checkIfFolderEmpty(1);
+        if (!this.hiddenChatDialogs.isEmpty()) {
+            getMessagesController().ensureFolderDialogExists(1);
+            getMessagesController().sortDialogs(null);
+            getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
+        }
         getMessagesStorage().resetAllUnreadCounters(false);
-        getMessagesController().sortDialogs(null);
-        getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
         getNotificationCenter().postNotificationName(NotificationCenter.recentChatsDidLoad, new Object[0]);
         return this.hiddenChatDialogs.isEmpty();
     }
@@ -205,6 +217,26 @@ public final class HiddenChatsController extends BaseController implements KoinC
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (HiddenChatsController) computeIfAbsent;
+        }
+    }
+
+    public final List<Long> filterAddHiddenChats(List<Long> list) {
+        Intrinsics.checkNotNullParameter(list, "list");
+        ArrayList arrayList = new ArrayList();
+        for (Object obj : list) {
+            if (!DialogObject.isEncryptedDialog(((Number) obj).longValue())) {
+                arrayList.add(obj);
+            }
+        }
+        return arrayList;
+    }
+
+    private final void removeRecentChatsAndPeer(List<Long> list) {
+        for (Number number : list) {
+            long longValue = number.longValue();
+            getMediaDataController().removePeer(longValue);
+            getRecentChatsController().removeRecentChat(longValue);
+            getNotificationsController().setDialogNotificationsSettings(longValue, 0, 3);
         }
     }
 }

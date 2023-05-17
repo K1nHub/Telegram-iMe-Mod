@@ -18,52 +18,67 @@
 
 
 # instance fields
-.field colors:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field colors:Landroid/util/SparseIntArray;
 
-.field keysToSave:[Ljava/lang/String;
+.field keysToSave:[I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 7
+    .locals 3
 
-    .line 376
+    .line 404
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 377
-    new-instance v0, Ljava/util/HashMap;
+    .line 405
+    new-instance v0, Landroid/util/SparseIntArray;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
+    iput-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
-    const-string v1, "chat_outBubble"
+    const/4 v0, 0x6
 
-    const-string v2, "chat_outBubbleGradient"
+    new-array v0, v0, [I
 
-    const-string v3, "chat_outBubbleGradient2"
+    .line 406
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
 
-    const-string v4, "chat_outBubbleGradient3"
+    const/4 v2, 0x0
 
-    const-string v5, "chat_outBubbleGradientAnimated"
+    aput v1, v0, v2
 
-    const-string v6, "chat_outBubbleShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient1:I
 
-    .line 378
-    filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    aput v1, v0, v2
 
-    iput-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->keysToSave:[Ljava/lang/String;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient2:I
+
+    const/4 v2, 0x2
+
+    aput v1, v0, v2
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient3:I
+
+    const/4 v2, 0x3
+
+    aput v1, v0, v2
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradientAnimated:I
+
+    const/4 v2, 0x4
+
+    aput v1, v0, v2
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleShadow:I
+
+    const/4 v2, 0x5
+
+    aput v1, v0, v2
+
+    iput-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->keysToSave:[I
 
     return-void
 .end method
@@ -78,44 +93,63 @@
     return-void
 .end method
 
-.method public getColor(Ljava/lang/String;)Ljava/lang/Integer;
+.method public contains(I)Z
     .locals 1
 
-    .line 389
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
+    .line 422
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
-    move-result-object p1
+    move-result p1
 
-    check-cast p1, Ljava/lang/Integer;
+    if-ltz p1, :cond_0
 
-    return-object p1
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
 .end method
 
-.method public synthetic getColorOrDefault(Ljava/lang/String;)I
-    .locals 0
+.method public getColor(I)I
+    .locals 1
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)I
+    .line 417
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result p1
 
     return p1
 .end method
 
-.method public getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
+.method public synthetic getColorOrDefault(I)I
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getCurrentColor(I)I
     .locals 1
 
-    .line 394
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
+    .line 427
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
 
-    move-result-object p1
+    move-result p1
 
-    check-cast p1, Ljava/lang/Integer;
-
-    return-object p1
+    return p1
 .end method
 
 .method public synthetic getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
@@ -151,13 +185,13 @@
 .method public saveColors(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 6
 
-    .line 398
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
+    .line 431
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+    invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 399
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->keysToSave:[Ljava/lang/String;
+    .line 432
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->keysToSave:[I
 
     array-length v1, v0
 
@@ -166,16 +200,16 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    aget-object v3, v0, v2
+    aget v3, v0, v2
 
-    .line 400
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
+    .line 433
+    iget-object v4, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
-    invoke-interface {p1, v3}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-interface {p1, v3}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getCurrentColor(I)I
 
-    move-result-object v5
+    move-result v5
 
-    invoke-virtual {v4, v3, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v3, v5}, Landroid/util/SparseIntArray;->put(II)V
 
     add-int/lit8 v2, v2, 0x1
 
@@ -185,10 +219,10 @@
     return-void
 .end method
 
-.method public synthetic setAnimatedColor(Ljava/lang/String;I)V
+.method public synthetic setAnimatedColor(II)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;I)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 
     return-void
 .end method

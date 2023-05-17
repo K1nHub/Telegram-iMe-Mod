@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$wzycttcalhOdG6mYrNQIxC7UOf0(Lorg/telegram/ui/ChatActivity;Ljava/lang/Boolean;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$8RCTkVdYHVi3llzu_nWCd2kQneE(Lorg/telegram/ui/ChatActivity;Ljava/lang/Boolean;)V
 
     return-void
 .end method

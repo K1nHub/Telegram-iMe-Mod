@@ -58,44 +58,44 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenu;IILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;ILjava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 1
 
-    .line 181
+    .line 182
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 174
+    .line 175
     iput v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->alpha:F
 
     const/16 v0, 0x8
 
-    .line 193
+    .line 194
     iput v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->visibility:I
 
-    .line 182
+    .line 183
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->parent:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    .line 183
+    .line 184
     iput p2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->id:I
 
-    .line 184
+    .line 185
     iput p3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->icon:I
 
-    .line 185
+    .line 186
     iput-object p4, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->text:Ljava/lang/CharSequence;
 
-    .line 186
+    .line 187
     iput p5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->backgroundColor:I
 
-    .line 187
+    .line 188
     iput-object p6, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 188
+    .line 189
     iput p7, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->width:I
 
-    .line 189
+    .line 190
     iput-object p8, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->title:Ljava/lang/CharSequence;
 
-    .line 190
+    .line 191
     iput-object p9, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
@@ -106,14 +106,14 @@
 .method public add()V
     .locals 13
 
-    .line 280
+    .line 281
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 284
+    .line 285
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->parent:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
@@ -121,7 +121,7 @@
 
     move-result v0
 
-    .line 285
+    .line 286
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->parent:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->access$000(Lorg/telegram/ui/ActionBar/ActionBarMenu;)Ljava/util/ArrayList;
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 286
+    .line 287
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->parent:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->access$000(Lorg/telegram/ui/ActionBar/ActionBarMenu;)Ljava/util/ArrayList;
@@ -149,7 +149,7 @@
 
     const/4 v2, 0x0
 
-    .line 287
+    .line 288
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->parent:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
@@ -159,31 +159,31 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 288
+    .line 289
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->parent:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     invoke-virtual {v3, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 289
+    .line 290
     invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 290
+    .line 291
     instance-of v4, v3, Ljava/lang/Integer;
 
     if-eqz v4, :cond_1
 
-    .line 291
+    .line 292
     check-cast v3, Ljava/lang/Integer;
 
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    .line 292
+    .line 293
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->parent:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->access$000(Lorg/telegram/ui/ActionBar/ActionBarMenu;)Ljava/util/ArrayList;
@@ -212,7 +212,7 @@
     :cond_2
     move v4, v0
 
-    .line 300
+    .line 301
     :goto_1
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->parent:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
@@ -238,28 +238,28 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 301
+    .line 302
     iget v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->visibility:I
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 302
+    .line 303
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->contentDescription:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_3
 
-    .line 303
+    .line 304
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 305
+    .line 306
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->allowCloseAnimation:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_4
 
-    .line 306
+    .line 307
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -268,13 +268,13 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setAllowCloseAnimation(Z)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 308
+    .line 309
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->overrideMenuClick:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_5
 
-    .line 309
+    .line 310
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -283,13 +283,13 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setOverrideMenuClick(Z)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 311
+    .line 312
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->isSearchField:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_6
 
-    .line 312
+    .line 313
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -298,29 +298,29 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIsSearchField(Z)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 314
+    .line 315
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->searchListener:Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;
 
     if-eqz v0, :cond_7
 
-    .line 315
+    .line 316
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setActionBarMenuItemSearchListener(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 317
+    .line 318
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->searchFieldHint:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_8
 
-    .line 318
+    .line 319
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSearchFieldHint(Ljava/lang/CharSequence;)V
 
-    .line 320
+    .line 321
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
@@ -334,10 +334,10 @@
 .method public createView()Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
     .locals 1
 
-    .line 226
+    .line 227
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->add()V
 
-    .line 227
+    .line 228
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     return-object v0
@@ -346,7 +346,7 @@
 .method public getTag()Ljava/lang/Object;
     .locals 1
 
-    .line 214
+    .line 215
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->tag:Ljava/lang/Object;
 
     return-object v0
@@ -355,7 +355,7 @@
 .method public getVisibility()I
     .locals 1
 
-    .line 209
+    .line 210
     iget v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->visibility:I
 
     return v0
@@ -364,19 +364,19 @@
 .method public setAllowCloseAnimation(Z)V
     .locals 1
 
-    .line 245
+    .line 246
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->allowCloseAnimation:Ljava/lang/Boolean;
 
-    .line 246
+    .line 247
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 248
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
@@ -390,15 +390,15 @@
 .method public setAlpha(F)V
     .locals 1
 
-    .line 273
+    .line 274
     iput p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->alpha:F
 
-    .line 274
+    .line 275
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v0, :cond_0
 
-    .line 275
+    .line 276
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     :cond_0
@@ -408,15 +408,15 @@
 .method public setContentDescription(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 231
+    .line 232
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 232
+    .line 233
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v0, :cond_0
 
-    .line 233
+    .line 234
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
     :cond_0
@@ -426,19 +426,19 @@
 .method public setOverrideMenuClick(Z)V
     .locals 1
 
-    .line 238
+    .line 239
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->overrideMenuClick:Ljava/lang/Boolean;
 
-    .line 239
+    .line 240
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v0, :cond_0
 
-    .line 240
+    .line 241
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setOverrideMenuClick(Z)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     :cond_0
@@ -448,7 +448,7 @@
 .method public setTag(Ljava/lang/Object;)V
     .locals 0
 
-    .line 217
+    .line 218
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->tag:Ljava/lang/Object;
 
     return-void
@@ -457,26 +457,26 @@
 .method public setVisibility(I)V
     .locals 1
 
-    .line 197
+    .line 198
     iget v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->visibility:I
 
     if-eq v0, p1, :cond_1
 
-    .line 198
+    .line 199
     iput p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->visibility:I
 
     if-nez p1, :cond_0
 
-    .line 200
+    .line 201
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->add()V
 
-    .line 202
+    .line 203
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->cell:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v0, :cond_1
 
-    .line 203
+    .line 204
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     :cond_1

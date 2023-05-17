@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$9;
-.super Landroidx/recyclerview/widget/DefaultItemAnimator;
+.super Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 .source "ThemePreviewActivity.java"
 
 
@@ -19,30 +19,37 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
+.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/ActionBarMenu;II)V
     .locals 0
 
-    .line 961
+    .line 1041
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$9;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
+    invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/ActionBarMenu;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onMoveAnimationUpdate(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
-    .locals 0
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
 
-    .line 964
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$9;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    .line 1044
+    invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    .line 1045
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$9;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    move-result-object p1
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$1300(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/TextView;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

@@ -274,13 +274,11 @@
     .line 132
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const/4 p2, 0x0
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_sharedMedia_photoPlaceholder:I
 
-    const-string v1, "sharedMedia_photoPlaceholder"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    const-string v2, "checkboxCheck"
-
-    invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v2, p2, v1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 133
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;

@@ -2,56 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Landroid/content/SharedPreferences;
-
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_help_support;
-
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$3:I
-
-.field public final synthetic f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/SharedPreferences;Lorg/telegram/tgnet/TLRPC$TL_help_support;Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$0:Landroid/content/SharedPreferences;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$1:Lorg/telegram/tgnet/TLRPC$TL_help_support;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$3:I
-
-    iput-object p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$0:Landroid/content/SharedPreferences;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$v0Lk1PNEbSehAHthltKDCQGiuKI(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$1:Lorg/telegram/tgnet/TLRPC$TL_help_support;
+    move-result p1
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iget v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$3:I
-
-    iget-object v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$NcSAJ57emxkXshBfVdCZwvb9iM4(Landroid/content/SharedPreferences;Lorg/telegram/tgnet/TLRPC$TL_help_support;Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
-
-    return-void
+    return p1
 .end method

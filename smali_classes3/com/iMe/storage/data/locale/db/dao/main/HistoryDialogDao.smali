@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 8
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 
     const/4 p1, 0x0
 
-    .line 20
+    .line 21
     :cond_0
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;->clearRecentChatHistory(Z)V
 
@@ -81,7 +81,34 @@
     .end annotation
 .end method
 
+.method public abstract removeAllRecentChatHistory(J)V
+.end method
+
 .method public abstract removeRecentChatHistory(JJ)V
+.end method
+
+.method public restoreBackup(JLjava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "pinnedRecentChats"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 37
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;->removeAllRecentChatHistory(J)V
+
+    .line 38
+    invoke-interface {p0, p3}, Lcom/iMe/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/util/List;)V
+
+    return-void
 .end method
 
 .method public abstract updatePinned(JJZ)V

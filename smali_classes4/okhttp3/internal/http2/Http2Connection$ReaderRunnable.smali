@@ -78,7 +78,7 @@
 
     move-object/from16 v0, p2
 
-    const-string v1, "settings"
+    const-string/jumbo v1, "settings"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -450,7 +450,7 @@
         }
     .end annotation
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1235,7 +1235,7 @@
 .method public settings(ZLokhttp3/internal/http2/Settings;)V
     .locals 11
 
-    const-string v0, "settings"
+    const-string/jumbo v0, "settings"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

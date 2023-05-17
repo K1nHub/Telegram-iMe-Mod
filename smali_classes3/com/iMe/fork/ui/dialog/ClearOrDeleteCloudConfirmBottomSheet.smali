@@ -500,26 +500,26 @@
     .line 86
     invoke-virtual {v0, v2, v3}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    const-string v2, "windowBackgroundWhiteHintText"
-
     .line 87
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     .line 88
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 89
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

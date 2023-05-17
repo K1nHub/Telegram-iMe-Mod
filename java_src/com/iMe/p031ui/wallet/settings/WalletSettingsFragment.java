@@ -144,7 +144,7 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
@@ -155,7 +155,7 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
     }
 
     private final void setupColors() {
-        getBinding().getRoot().setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        getBinding().getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
     }
 
     private final void setupListeners() {
@@ -166,9 +166,9 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
             }
         });
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo693ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2284x3106d7dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2285x3106d7de(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2323x3106d7dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2324x3106d7de(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

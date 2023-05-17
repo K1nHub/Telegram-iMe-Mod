@@ -880,7 +880,7 @@
         }
     .end annotation
 
-    const-string v0, "timeout"
+    const-string/jumbo v0, "timeout"
 
     .line 225
     invoke-static {p0, v0}, Lio/grpc/internal/JsonUtil;->getStringAsDuration(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/Long;

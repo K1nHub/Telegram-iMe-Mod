@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;Landroid/content/Context;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;)V
     .locals 0
 
-    .line 7258
+    .line 7265
     iput-object p3, p0, Lorg/telegram/ui/GroupCallActivity$54;->val$buttonsLayout:Landroid/widget/LinearLayout;
 
     iput-object p4, p0, Lorg/telegram/ui/GroupCallActivity$54;->val$volumeLayout:Landroid/widget/LinearLayout;
@@ -39,12 +39,12 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 7261
+    .line 7268
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 7262
+    .line 7269
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$54;->val$buttonsLayout:Landroid/widget/LinearLayout;
 
     const/high16 v0, -0x80000000
@@ -61,12 +61,12 @@
 
     invoke-virtual {p2, p1, v1}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 7263
+    .line 7270
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$54;->val$volumeLayout:Landroid/widget/LinearLayout;
 
     if-eqz p1, :cond_0
 
-    .line 7264
+    .line 7271
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$54;->val$buttonsLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
@@ -85,7 +85,7 @@
 
     invoke-virtual {p1, p2, v0}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 7265
+    .line 7272
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$54;->val$buttonsLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
@@ -110,7 +110,7 @@
 
     goto :goto_0
 
-    .line 7267
+    .line 7274
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$54;->val$buttonsLayout:Landroid/widget/LinearLayout;
 

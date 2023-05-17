@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public final run()V
     .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/ChatUsersActivity;
@@ -39,7 +39,7 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda18;->f$2:Z
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ChatUsersActivity;->$r8$lambda$Bzkz5varA3wN12n9j3x1POG6yc0(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/ui/Cells/TextCell;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ChatUsersActivity;->$r8$lambda$JiqnBp2GZ4JRmhuamjw6j-b9kag(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/ui/Cells/TextCell;Z)V
 
     return-void
 .end method

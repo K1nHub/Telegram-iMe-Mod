@@ -35,7 +35,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BringAppForegroundService;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -165,18 +165,18 @@ public class PhotoViewerWebView extends FrameLayout {
                 });
             }
             if (i == 2) {
-                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3242R.string.YouTubeVideoErrorInvalid));
+                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3290R.string.YouTubeVideoErrorInvalid));
             } else if (i != 5) {
                 if (i != 150) {
                     if (i == 100) {
-                        PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3242R.string.YouTubeVideoErrorNotFound));
+                        PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3290R.string.YouTubeVideoErrorNotFound));
                         return;
                     } else if (i != 101) {
                         return;
                     }
                 }
-                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3242R.string.YouTubeVideoErrorNotAvailableInApp));
-                PhotoViewerWebView.this.errorButton.setText(LocaleController.getString(C3242R.string.YouTubeVideoErrorOpenExternal));
+                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3290R.string.YouTubeVideoErrorNotAvailableInApp));
+                PhotoViewerWebView.this.errorButton.setText(LocaleController.getString(C3290R.string.YouTubeVideoErrorOpenExternal));
                 PhotoViewerWebView.this.errorButton.setVisibility(0);
                 PhotoViewerWebView.this.errorButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoViewerWebView$YoutubeProxy$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
@@ -185,7 +185,7 @@ public class PhotoViewerWebView extends FrameLayout {
                     }
                 });
             } else {
-                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3242R.string.YouTubeVideoErrorHTML));
+                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3290R.string.YouTubeVideoErrorHTML));
             }
         }
 
@@ -301,7 +301,7 @@ public class PhotoViewerWebView extends FrameLayout {
             this.webView.getSettings().setMixedContentMode(0);
             CookieManager.getInstance().setAcceptThirdPartyCookies(this.webView, true);
         }
-        this.webView.setWebViewClient(new C48122());
+        this.webView.setWebViewClient(new C48852());
         addView(this.webView, LayoutHelper.createFrame(-1, -1, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         this.errorLayout = linearLayout;
@@ -312,15 +312,17 @@ public class PhotoViewerWebView extends FrameLayout {
         TextView textView = new TextView(context);
         this.errorMessage = textView;
         textView.setTextSize(1, 16.0f);
-        this.errorMessage.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+        this.errorMessage.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
         this.errorMessage.setGravity(17);
         this.errorLayout.addView(this.errorMessage, LayoutHelper.createLinear(-2, -2, 1));
         TextView textView2 = new TextView(context);
         this.errorButton = textView2;
         textView2.setTextSize(1, 16.0f);
-        this.errorButton.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText"));
-        this.errorButton.setPadding(AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(8));
-        this.errorButton.setBackground(Theme.AdaptiveRipple.rect("windowBackgroundWhiteBlueText", 12.0f));
+        TextView textView3 = this.errorButton;
+        int i2 = Theme.key_windowBackgroundWhiteBlueText;
+        textView3.setTextColor(Theme.getColor(i2));
+        this.errorButton.setPadding(AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(8));
+        this.errorButton.setBackground(Theme.AdaptiveRipple.rectByKey(i2, 12.0f));
         this.errorButton.setVisibility(8);
         this.errorLayout.addView(this.errorButton, LayoutHelper.createLinear(-2, -2, 1, 0, 8, 0, 0));
         View view2 = new View(context) { // from class: org.telegram.ui.Components.PhotoViewerWebView.3
@@ -343,8 +345,8 @@ public class PhotoViewerWebView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.PhotoViewerWebView$2 */
     /* loaded from: classes6.dex */
-    public class C48122 extends WebViewClient {
-        C48122() {
+    public class C48852 extends WebViewClient {
+        C48852() {
         }
 
         @Override // android.webkit.WebViewClient
@@ -365,7 +367,7 @@ public class PhotoViewerWebView extends FrameLayout {
                 Utilities.externalNetworkQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PhotoViewerWebView.C48122.this.lambda$shouldInterceptRequest$0(uri, webResourceRequest);
+                        PhotoViewerWebView.C48852.this.lambda$shouldInterceptRequest$0(uri, webResourceRequest);
                     }
                 });
                 return null;
@@ -412,7 +414,7 @@ public class PhotoViewerWebView extends FrameLayout {
                     PhotoViewerWebView.this.processYoutubeStoryboards(optString);
                 }
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
 
@@ -654,7 +656,7 @@ public class PhotoViewerWebView extends FrameLayout {
             WebView webView = this.webView;
             webView.loadUrl("javascript:" + str);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -787,7 +789,7 @@ public class PhotoViewerWebView extends FrameLayout {
             try {
                 getContext().startService(new Intent(ApplicationLoader.applicationContext, BringAppForegroundService.class));
             } catch (Throwable th) {
-                FileLog.m45e(th);
+                FileLog.m49e(th);
             }
         }
         this.progressBarBlackBackground.setVisibility(0);

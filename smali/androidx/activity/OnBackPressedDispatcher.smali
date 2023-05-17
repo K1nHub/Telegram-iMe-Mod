@@ -132,6 +132,15 @@
 
 
 # virtual methods
+.method public addCallback(Landroidx/activity/OnBackPressedCallback;)V
+    .locals 0
+
+    .line 150
+    invoke-virtual {p0, p1}, Landroidx/activity/OnBackPressedDispatcher;->addCancellableCallback(Landroidx/activity/OnBackPressedCallback;)Landroidx/activity/Cancellable;
+
+    return-void
+.end method
+
 .method public addCallback(Landroidx/lifecycle/LifecycleOwner;Landroidx/activity/OnBackPressedCallback;)V
     .locals 2
 

@@ -36,7 +36,7 @@ final class DecodedBitStreamParser {
                     forBits = Mode.forBits(bitSource.readBits(4));
                 }
                 Mode mode2 = forBits;
-                int[] iArr = C12231.$SwitchMap$com$google$zxing$qrcode$decoder$Mode;
+                int[] iArr = C12281.$SwitchMap$com$google$zxing$qrcode$decoder$Mode;
                 switch (iArr[mode2.ordinal()]) {
                     case 5:
                         mode = mode2;
@@ -106,7 +106,7 @@ final class DecodedBitStreamParser {
 
     /* renamed from: com.google.zxing.qrcode.decoder.DecodedBitStreamParser$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C12231 {
+    static /* synthetic */ class C12281 {
         static final /* synthetic */ int[] $SwitchMap$com$google$zxing$qrcode$decoder$Mode;
 
         static {

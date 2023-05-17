@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">நாளைத் தேர்வுசெய்வதற்கு மாற்ற தட்டவும்</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">உரை உள்ளீட்டு முறைக்கு மாற்றும்</string>
     <string name="mtrl_picker_toggle_to_year_selection">ஆண்டைத் தேர்வுசெய்வதற்கு மாற்ற தட்டவும்</string>
+    <string name="nav_app_bar_navigate_up_description">மேலே செல்லும்</string>
+    <string name="nav_app_bar_open_drawer_description">வழிசெலுத்தல் டிராயரைத் திறக்கும்</string>
     <string name="password_toggle_content_description">கடவுச்சொல்லைக் காட்டு</string>
     <string name="search_menu_title">தேடல்</string>
     <string name="status_bar_notification_info_overflow">999+</string>

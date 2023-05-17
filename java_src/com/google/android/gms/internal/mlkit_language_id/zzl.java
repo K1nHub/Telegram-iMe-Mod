@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class zzl<E> extends AbstractCollection<E> implements Serializable {
     private static final Object[] zza = new Object[0];
 

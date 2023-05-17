@@ -34,7 +34,7 @@ public class FingerprintController {
             cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding");
             return true;
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
             return false;
         }
     }
@@ -48,7 +48,7 @@ public class FingerprintController {
             initEncodeCipher();
             return Base64.encodeToString(cipher.doFinal(str.getBytes()), 2);
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
             return null;
         }
     }
@@ -57,7 +57,7 @@ public class FingerprintController {
         try {
             return new String(cipher2.doFinal(Base64.decode(str, 2)));
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
             return null;
         }
     }
@@ -66,7 +66,7 @@ public class FingerprintController {
         try {
             cipher.init(2, keyStore.getKey(KEY_ALIAS, null));
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -75,7 +75,7 @@ public class FingerprintController {
             PublicKey publicKey = keyStore.getCertificate(KEY_ALIAS).getPublicKey();
             cipher.init(1, KeyFactory.getInstance(publicKey.getAlgorithm()).generatePublic(new X509EncodedKeySpec(publicKey.getEncoded())), new OAEPParameterSpec("SHA-256", "MGF1", MGF1ParameterSpec.SHA1, PSource.PSpecified.DEFAULT));
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -90,7 +90,7 @@ public class FingerprintController {
             keyStore3.load(null);
             return keyStore;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return null;
         }
     }
@@ -105,7 +105,7 @@ public class FingerprintController {
             keyPairGenerator = keyPairGenerator3;
             return keyPairGenerator3;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return null;
         }
     }
@@ -127,12 +127,12 @@ public class FingerprintController {
                     }
                 });
             } catch (InvalidAlgorithmParameterException e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             } catch (Exception e2) {
                 if (e2.getClass().getName().equals("android.security.KeyStoreException")) {
                     return;
                 }
-                FileLog.m45e(e2);
+                FileLog.m49e(e2);
             }
         }
     }
@@ -146,7 +146,7 @@ public class FingerprintController {
         try {
             getKeyStore().deleteEntry(KEY_ALIAS);
         } catch (KeyStoreException e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         hasChangedFingerprints = null;
         checkKeyReady(false);
@@ -171,7 +171,7 @@ public class FingerprintController {
         try {
             return getKeyStore().containsAlias(KEY_ALIAS);
         } catch (KeyStoreException e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return false;
         }
     }
@@ -189,7 +189,7 @@ public class FingerprintController {
             hasChangedFingerprints = Boolean.TRUE;
             return true;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             hasChangedFingerprints = Boolean.FALSE;
             return false;
         }

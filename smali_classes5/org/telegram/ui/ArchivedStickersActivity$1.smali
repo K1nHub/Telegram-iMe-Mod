@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArchivedStickersActivity;)V
     .locals 0
 
-    .line 99
+    .line 101
     iput-object p1, p0, Lorg/telegram/ui/ArchivedStickersActivity$1;->this$0:Lorg/telegram/ui/ArchivedStickersActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 103
+    .line 105
     iget-object p1, p0, Lorg/telegram/ui/ArchivedStickersActivity$1;->this$0:Lorg/telegram/ui/ArchivedStickersActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

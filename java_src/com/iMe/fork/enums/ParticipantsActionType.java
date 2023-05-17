@@ -1,7 +1,7 @@
 package com.iMe.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum DELETE uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -59,11 +59,11 @@ public final class ParticipantsActionType {
     }
 
     static {
-        int i = C3242R.string.profile_group_filter_confirm_remove_message;
-        int i2 = C3242R.string.Delete;
+        int i = C3290R.string.profile_group_filter_confirm_remove_message;
+        int i2 = C3290R.string.Delete;
         DELETE = new ParticipantsActionType("DELETE", 0, i, "Delete", i2);
-        UNBLOCK = new ParticipantsActionType("UNBLOCK", 1, C3242R.string.profile_group_filter_confirm_unban_message, "Delete", i2);
-        ParticipantsActionType participantsActionType = new ParticipantsActionType("RETURN", 2, C3242R.string.profile_group_filter_confirm_return_message, "UserRestrictionsInviteUsers", C3242R.string.UserRestrictionsInviteUsers);
+        UNBLOCK = new ParticipantsActionType("UNBLOCK", 1, C3290R.string.profile_group_filter_confirm_unban_message, "Delete", i2);
+        ParticipantsActionType participantsActionType = new ParticipantsActionType("RETURN", 2, C3290R.string.profile_group_filter_confirm_return_message, "UserRestrictionsInviteUsers", C3290R.string.UserRestrictionsInviteUsers);
         RETURN = participantsActionType;
         $VALUES = $values();
         Companion = new Companion(null);

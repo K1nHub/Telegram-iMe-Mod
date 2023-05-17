@@ -25,7 +25,7 @@ public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implemen
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<LatLng, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C12141 c12141) {
+        /* synthetic */ Builder(C12191 c12191) {
             this();
         }
 
@@ -36,40 +36,40 @@ public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implemen
 
     /* renamed from: com.google.type.LatLng$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C12141 {
+    static /* synthetic */ class C12191 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f226xa1df5c61;
+        static final /* synthetic */ int[] f229xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f226xa1df5c61 = iArr;
+            f229xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f226xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f229xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f226xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f229xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f226xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f229xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f226xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f229xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f226xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f229xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f226xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f229xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -77,7 +77,7 @@ public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implemen
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C12141.f226xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C12191.f229xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new LatLng();
             case 2:

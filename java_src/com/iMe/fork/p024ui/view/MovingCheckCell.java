@@ -19,7 +19,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.CheckBoxSquare;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -84,7 +84,7 @@ public final class MovingCheckCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(text, "text");
         this.titleView.setText(text);
         setFullHeightTitleView(true);
-        ViewExtKt.gone(this.subtitleView);
+        ViewExtKt.gone$default(this.subtitleView, false, 1, null);
         this.checkBox.setChecked(z, false);
         this.needDivider = z2;
         setWillNotDraw(true ^ z2);
@@ -96,7 +96,7 @@ public final class MovingCheckCell extends FrameLayout {
         this.titleView.setText(text);
         setFullHeightTitleView(false);
         this.subtitleView.setText(value);
-        ViewExtKt.visible(this.subtitleView);
+        ViewExtKt.visible$default(this.subtitleView, false, 1, null);
         this.checkBox.setChecked(z, false);
         this.needDivider = z2;
         setWillNotDraw(!z2);
@@ -110,25 +110,22 @@ public final class MovingCheckCell extends FrameLayout {
     public final void setImage(Bitmap image) {
         Intrinsics.checkNotNullParameter(image, "image");
         AppCompatImageView appCompatImageView = this.iconView;
-        ViewExtKt.visible(appCompatImageView);
+        ViewExtKt.visible$default(appCompatImageView, false, 1, null);
         appCompatImageView.setImageBitmap(image);
         updateLeftMargins();
     }
 
-    public static /* synthetic */ void setIcon$default(MovingCheckCell movingCheckCell, int i, String str, PorterDuff.Mode mode, int i2, Object obj) {
-        if ((i2 & 2) != 0) {
-            str = null;
-        }
-        if ((i2 & 4) != 0) {
+    public static /* synthetic */ void setIcon$default(MovingCheckCell movingCheckCell, int i, int i2, PorterDuff.Mode mode, int i3, Object obj) {
+        if ((i3 & 4) != 0) {
             mode = null;
         }
-        movingCheckCell.setIcon(i, str, mode);
+        movingCheckCell.setIcon(i, i2, mode);
     }
 
-    public final void setIcon(int i, String str, PorterDuff.Mode mode) {
-        ViewExtKt.visible(this.iconView);
-        if (str != null && mode != null) {
-            this.iconView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(str), mode));
+    public final void setIcon(int i, int i2, PorterDuff.Mode mode) {
+        ViewExtKt.visible$default(this.iconView, false, 1, null);
+        if (i2 != -1 && mode != null) {
+            this.iconView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), mode));
         } else {
             this.iconView.clearColorFilter();
         }
@@ -143,14 +140,14 @@ public final class MovingCheckCell extends FrameLayout {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
-            layoutParams2.leftMargin = AndroidUtilities.m50dp(108);
+            layoutParams2.leftMargin = AndroidUtilities.m54dp(108);
             view.setLayoutParams(layoutParams2);
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(this.subtitleView.getVisibility() == 0 ? 64 : 48) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.subtitleView.getVisibility() == 0 ? 64 : 48) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     @Override // android.view.View
@@ -158,7 +155,7 @@ public final class MovingCheckCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         if (this.needDivider) {
             float measuredHeight = getMeasuredHeight() - 1.0f;
-            canvas.drawLine(AndroidUtilities.m50dp(60), measuredHeight, getMeasuredWidth(), measuredHeight, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m54dp(60), measuredHeight, getMeasuredWidth(), measuredHeight, Theme.dividerPaint);
         }
     }
 
@@ -166,9 +163,9 @@ public final class MovingCheckCell extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3242R.C3244drawable.list_reorder);
+        imageView.setImageResource(C3290R.C3292drawable.list_reorder);
         return imageView;
     }
 
@@ -189,7 +186,7 @@ public final class MovingCheckCell extends FrameLayout {
         textView.setSingleLine(true);
         textView.setGravity(8388627);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         return textView;
@@ -201,7 +198,7 @@ public final class MovingCheckCell extends FrameLayout {
         textView.setSingleLine(true);
         textView.setGravity(8388627);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         return textView;
@@ -213,7 +210,7 @@ public final class MovingCheckCell extends FrameLayout {
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         textView.setTextSize(1, 13.0f);
         textView.setLines(1);
         return textView;
@@ -229,7 +226,7 @@ public final class MovingCheckCell extends FrameLayout {
         Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
         layoutParams2.height = z ? -1 : -2;
-        layoutParams2.topMargin = z ? 0 : AndroidUtilities.m50dp(10);
+        layoutParams2.topMargin = z ? 0 : AndroidUtilities.m54dp(10);
         linearLayout.setLayoutParams(layoutParams2);
     }
 

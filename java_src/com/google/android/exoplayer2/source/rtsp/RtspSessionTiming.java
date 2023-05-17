@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.util.Util;
 import java.util.regex.Matcher;
@@ -11,7 +11,7 @@ final class RtspSessionTiming {
     public final long startTimeMs;
     public final long stopTimeMs;
     private static final long LIVE_START_TIME = 0;
-    public static final RtspSessionTiming DEFAULT = new RtspSessionTiming(LIVE_START_TIME, C0470C.TIME_UNSET);
+    public static final RtspSessionTiming DEFAULT = new RtspSessionTiming(LIVE_START_TIME, C0475C.TIME_UNSET);
     private static final Pattern NPT_RANGE_PATTERN = Pattern.compile("npt[:=]([.\\d]+|now)\\s?-\\s?([.\\d]+)?");
 
     public static RtspSessionTiming parseTiming(String str) throws ParserException {
@@ -30,7 +30,7 @@ final class RtspSessionTiming {
                 throw ParserException.createForMalformedManifest(group2, e);
             }
         } else {
-            parseFloat = C0470C.TIME_UNSET;
+            parseFloat = C0475C.TIME_UNSET;
         }
         return new RtspSessionTiming(parseFloat2, parseFloat);
     }
@@ -45,7 +45,7 @@ final class RtspSessionTiming {
     }
 
     public boolean isLive() {
-        return this.stopTimeMs == C0470C.TIME_UNSET;
+        return this.stopTimeMs == C0475C.TIME_UNSET;
     }
 
     public long getDurationMs() {

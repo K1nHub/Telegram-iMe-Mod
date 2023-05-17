@@ -18,12 +18,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PaintingOverlay;Landroid/content/Context;)V
     .locals 0
 
-    .line 193
+    .line 194
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;-><init>(Landroid/content/Context;)V
 
     const/16 p1, 0x8
 
-    .line 194
+    .line 195
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1

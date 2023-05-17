@@ -269,7 +269,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "swapInteractor"
+    const-string/jumbo v0, "swapInteractor"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2549,7 +2549,7 @@
 .method private static final loadApproveTokensInfo$lambda$28(ZLcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;)V
     .locals 6
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3451,7 +3451,7 @@
 
     move-result-object p1
 
-    const-string p2, "swapInteractor\n         \u2026(schedulersProvider.ui())"
+    const-string/jumbo p2, "swapInteractor\n         \u2026(schedulersProvider.ui())"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4649,7 +4649,7 @@
 .method private static final selectToken$lambda$0(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4808,7 +4808,7 @@
 .method private static final startSelectTokenDialog$lambda$2(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/model/wallet/swap/SwapSide;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4825,7 +4825,7 @@
 .method private static final startSelectTokenDialog$lambda$4(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/model/wallet/swap/SwapSide;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4842,7 +4842,7 @@
 .method private static final startSelectTokenDialog$lambda$5(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/model/wallet/swap/SwapSide;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4859,7 +4859,7 @@
 .method private static final startSwapFlow$lambda$7(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -5119,7 +5119,7 @@
 
     move-result-object v0
 
-    const-string v1, "swapInteractor\n         \u2026(schedulersProvider.ui())"
+    const-string/jumbo v1, "swapInteractor\n         \u2026(schedulersProvider.ui())"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -5231,7 +5231,7 @@
 
     move-result-object v0
 
-    const-string v1, "swapInteractor\n         \u2026(schedulersProvider.ui())"
+    const-string/jumbo v1, "swapInteractor\n         \u2026(schedulersProvider.ui())"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -5707,7 +5707,7 @@
 .method public final selectToken(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/model/wallet/select/SelectableToken;)V
     .locals 13
 
-    const-string v0, "side"
+    const-string/jumbo v0, "side"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -6016,7 +6016,7 @@
 .method public final startChooseNetworkDialog(Lcom/iMe/model/wallet/swap/SwapSide;)V
     .locals 4
 
-    const-string v0, "side"
+    const-string/jumbo v0, "side"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -6046,7 +6046,7 @@
 .method public final startSelectTokenDialog(Lcom/iMe/model/wallet/swap/SwapSide;)V
     .locals 10
 
-    const-string v0, "side"
+    const-string/jumbo v0, "side"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

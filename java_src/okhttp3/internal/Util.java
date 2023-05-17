@@ -62,7 +62,7 @@ import p034j$.util.DesugarTimeZone;
 /* loaded from: classes4.dex */
 public final class Util {
     public static final byte[] EMPTY_BYTE_ARRAY;
-    public static final Headers EMPTY_HEADERS = Headers.Companion.m71of(new String[0]);
+    public static final Headers EMPTY_HEADERS = Headers.Companion.m75of(new String[0]);
     public static final ResponseBody EMPTY_RESPONSE;
     private static final Options UNICODE_BOMS;
     public static final TimeZone UTC;
@@ -105,7 +105,7 @@ public final class Util {
         RequestBody.Companion.create$default(RequestBody.Companion, bArr, (MediaType) null, 0, 0, 7, (Object) null);
         Options.Companion companion = Options.Companion;
         ByteString.Companion companion2 = ByteString.Companion;
-        UNICODE_BOMS = companion.m67of(companion2.decodeHex("efbbbf"), companion2.decodeHex("feff"), companion2.decodeHex("fffe"), companion2.decodeHex("0000ffff"), companion2.decodeHex("ffff0000"));
+        UNICODE_BOMS = companion.m71of(companion2.decodeHex("efbbbf"), companion2.decodeHex("feff"), companion2.decodeHex("fffe"), companion2.decodeHex("0000ffff"), companion2.decodeHex("ffff0000"));
         TimeZone timeZone = DesugarTimeZone.getTimeZone("GMT");
         Intrinsics.checkNotNull(timeZone);
         UTC = timeZone;
@@ -470,19 +470,19 @@ public final class Util {
         return and(readMedium.readByte(), 255) | (and(readMedium.readByte(), 255) << 16) | (and(readMedium.readByte(), 255) << 8);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0051, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0052, code lost:
         if (r5 == Long.MAX_VALUE) goto L13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0053, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0054, code lost:
         r11.timeout().clearDeadline();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x005b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x005c, code lost:
         r11.timeout().deadlineNanoTime(r0 + r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x007d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x007e, code lost:
         if (r5 != Long.MAX_VALUE) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0080, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0081, code lost:
         return r12;
      */
     /*
@@ -499,62 +499,62 @@ public final class Util {
             okio.Timeout r2 = r11.timeout()
             boolean r2 = r2.hasDeadline()
             r3 = 9223372036854775807(0x7fffffffffffffff, double:NaN)
-            if (r2 == 0) goto L27
+            if (r2 == 0) goto L28
             okio.Timeout r2 = r11.timeout()
             long r5 = r2.deadlineNanoTime()
             long r5 = r5 - r0
-            goto L28
-        L27:
-            r5 = r3
+            goto L29
         L28:
+            r5 = r3
+        L29:
             okio.Timeout r2 = r11.timeout()
             long r7 = (long) r12
             long r12 = r13.toNanos(r7)
             long r12 = java.lang.Math.min(r5, r12)
             long r12 = r12 + r0
             r2.deadlineNanoTime(r12)
-            okio.Buffer r12 = new okio.Buffer     // Catch: java.lang.Throwable -> L64 java.io.InterruptedIOException -> L7a
-            r12.<init>()     // Catch: java.lang.Throwable -> L64 java.io.InterruptedIOException -> L7a
-        L3e:
+            okio.Buffer r12 = new okio.Buffer     // Catch: java.lang.Throwable -> L65 java.io.InterruptedIOException -> L7b
+            r12.<init>()     // Catch: java.lang.Throwable -> L65 java.io.InterruptedIOException -> L7b
+        L3f:
             r7 = 8192(0x2000, double:4.0474E-320)
-            long r7 = r11.read(r12, r7)     // Catch: java.lang.Throwable -> L64 java.io.InterruptedIOException -> L7a
+            long r7 = r11.read(r12, r7)     // Catch: java.lang.Throwable -> L65 java.io.InterruptedIOException -> L7b
             r9 = -1
             int r13 = (r7 > r9 ? 1 : (r7 == r9 ? 0 : -1))
-            if (r13 == 0) goto L4e
-            r12.clear()     // Catch: java.lang.Throwable -> L64 java.io.InterruptedIOException -> L7a
-            goto L3e
-        L4e:
+            if (r13 == 0) goto L4f
+            r12.clear()     // Catch: java.lang.Throwable -> L65 java.io.InterruptedIOException -> L7b
+            goto L3f
+        L4f:
             r12 = 1
             int r13 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
-            if (r13 != 0) goto L5b
-        L53:
+            if (r13 != 0) goto L5c
+        L54:
             okio.Timeout r11 = r11.timeout()
             r11.clearDeadline()
-            goto L80
-        L5b:
+            goto L81
+        L5c:
             okio.Timeout r11 = r11.timeout()
             long r0 = r0 + r5
             r11.deadlineNanoTime(r0)
-            goto L80
-        L64:
+            goto L81
+        L65:
             r12 = move-exception
             int r13 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
-            if (r13 != 0) goto L71
+            if (r13 != 0) goto L72
             okio.Timeout r11 = r11.timeout()
             r11.clearDeadline()
-            goto L79
-        L71:
+            goto L7a
+        L72:
             okio.Timeout r11 = r11.timeout()
             long r0 = r0 + r5
             r11.deadlineNanoTime(r0)
-        L79:
-            throw r12
         L7a:
+            throw r12
+        L7b:
             r12 = 0
             int r13 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
-            if (r13 != 0) goto L5b
-            goto L53
-        L80:
+            if (r13 != 0) goto L5c
+            goto L54
+        L81:
             return r12
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.Util.skipAll(okio.Source, int, java.util.concurrent.TimeUnit):boolean");

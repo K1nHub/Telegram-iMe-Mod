@@ -338,9 +338,9 @@
 
     sget v4, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    const-string v7, "windowBackgroundGrayShadow"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -351,9 +351,9 @@
     .line 1153
     new-instance v4, Landroid/graphics/drawable/ColorDrawable;
 
-    const-string v7, "windowBackgroundGray"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -917,8 +917,6 @@
 
     const/4 v1, 0x2
 
-    const-string v2, "windowBackgroundGray"
-
     if-eq p2, v1, :cond_3
 
     const/4 v0, 0x4
@@ -947,7 +945,9 @@
     invoke-direct {p2, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     .line 1122
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -977,7 +977,9 @@
 
     const/16 v1, 0xc
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -986,9 +988,9 @@
     .line 1110
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v3, "windowBackgroundGrayShadow"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -999,7 +1001,7 @@
     .line 1111
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

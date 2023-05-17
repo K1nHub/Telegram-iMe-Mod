@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda12;->f$3:Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$4Z-EvLHvASUA9emxSiqXiMGTa2U(Lorg/telegram/ui/Components/ShareAlert;Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$WgoQ_w3Oez7WcsqxoLa4YF-jOVA(Lorg/telegram/ui/Components/ShareAlert;Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
 
     return-void
 .end method

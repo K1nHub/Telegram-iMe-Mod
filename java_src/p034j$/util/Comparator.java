@@ -9,6 +9,20 @@ import p034j$.util.function.ToLongFunction;
 /* renamed from: j$.util.Comparator */
 /* loaded from: classes2.dex */
 public interface Comparator<T> {
+
+    /* renamed from: j$.util.Comparator$-EL  reason: invalid class name */
+    /* loaded from: classes2.dex */
+    public final /* synthetic */ class EL {
+        /* renamed from: a */
+        public static /* synthetic */ java.util.Comparator m632a(java.util.Comparator comparator, java.util.Comparator comparator2) {
+            return comparator instanceof Comparator ? ((Comparator) comparator).thenComparing(comparator2) : CC.$default$thenComparing(comparator, comparator2);
+        }
+
+        public static java.util.Comparator reversed(java.util.Comparator comparator) {
+            return comparator instanceof Comparator ? ((Comparator) comparator).reversed() : Collections.reverseOrder(comparator);
+        }
+    }
+
     int compare(T t, T t2);
 
     boolean equals(Object obj);
@@ -27,28 +41,28 @@ public interface Comparator<T> {
 
     java.util.Comparator<T> thenComparingLong(ToLongFunction<? super T> toLongFunction);
 
-    /* renamed from: j$.util.Comparator$-CC */
+    /* renamed from: j$.util.Comparator$-CC  reason: invalid class name */
     /* loaded from: classes2.dex */
     public final /* synthetic */ class CC {
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, Function function, java.util.Comparator comparator2) {
             Objects.requireNonNull(function);
             Objects.requireNonNull(comparator2);
-            return AbstractC2615a.m584w(comparator, new C2617c(comparator2, function));
+            return EL.m632a(comparator, new C2656c(comparator2, function));
         }
 
         /* renamed from: a */
-        public static java.util.Comparator m628a() {
-            return EnumC2648e.INSTANCE;
+        public static java.util.Comparator m633a() {
+            return EnumC2687e.INSTANCE;
         }
 
         public static <T, U extends Comparable<? super U>> java.util.Comparator<T> comparing(Function<? super T, ? extends U> function) {
             Objects.requireNonNull(function);
-            return new C2647d(function);
+            return new C2686d(function);
         }
 
         public static <T> java.util.Comparator<T> comparingInt(ToIntFunction<? super T> toIntFunction) {
             Objects.requireNonNull(toIntFunction);
-            return new C2647d(toIntFunction);
+            return new C2686d(toIntFunction);
         }
 
         public static <T extends Comparable<? super T>> java.util.Comparator<T> reverseOrder() {
@@ -57,7 +71,7 @@ public interface Comparator<T> {
 
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, java.util.Comparator comparator2) {
             Objects.requireNonNull(comparator2);
-            return new C2617c(comparator, comparator2);
+            return new C2656c(comparator, comparator2);
         }
     }
 }

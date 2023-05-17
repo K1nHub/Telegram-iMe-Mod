@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/ShareAlert$4;
-.super Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;
+.super Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 .source "ShareAlert.java"
 
 
@@ -19,26 +19,81 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 970
+    .line 1108
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$4;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(I)V
-    .locals 0
+.method protected onTabSwitch(I)V
+    .locals 2
 
-    .line 973
+    .line 1111
+    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$4;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$4100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    .line 1115
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$4;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/ShareAlert;->onBackPressed()V
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$4100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/TextView;
 
+    move-result-object p1
+
+    sget v0, Lorg/telegram/messenger/R$string;->VoipGroupCopySpeakerLink:I
+
+    const-string v1, "VoipGroupCopySpeakerLink"
+
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_0
+
+    .line 1117
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$4;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$4100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/TextView;
+
+    move-result-object p1
+
+    sget v0, Lorg/telegram/messenger/R$string;->VoipGroupCopyListenLink:I
+
+    const-string v1, "VoipGroupCopyListenLink"
+
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :goto_0
     return-void
 .end method

@@ -55,8 +55,8 @@ public class ShapePath {
 
     public void lineTo(float f, float f2) {
         PathLineOperation pathLineOperation = new PathLineOperation();
-        pathLineOperation.f152x = f;
-        pathLineOperation.f153y = f2;
+        pathLineOperation.f155x = f;
+        pathLineOperation.f156y = f2;
         this.operations.add(pathLineOperation);
         LineShadowOperation lineShadowOperation = new LineShadowOperation(pathLineOperation, getEndX(), getEndY());
         addShadowCompatOperation(lineShadowOperation, lineShadowOperation.getAngle() + 270.0f, lineShadowOperation.getAngle() + 270.0f);
@@ -210,7 +210,7 @@ public class ShapePath {
 
         @Override // com.google.android.material.shape.ShapePath.ShadowCompatOperation
         public void draw(Matrix matrix, ShadowRenderer shadowRenderer, int i, Canvas canvas) {
-            RectF rectF = new RectF(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (float) Math.hypot(this.operation.f153y - this.startY, this.operation.f152x - this.startX), BitmapDescriptorFactory.HUE_RED);
+            RectF rectF = new RectF(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (float) Math.hypot(this.operation.f156y - this.startY, this.operation.f155x - this.startX), BitmapDescriptorFactory.HUE_RED);
             Matrix matrix2 = new Matrix(matrix);
             matrix2.preTranslate(this.startX, this.startY);
             matrix2.preRotate(getAngle());
@@ -218,7 +218,7 @@ public class ShapePath {
         }
 
         float getAngle() {
-            return (float) Math.toDegrees(Math.atan((this.operation.f153y - this.startY) / (this.operation.f152x - this.startX)));
+            return (float) Math.toDegrees(Math.atan((this.operation.f156y - this.startY) / (this.operation.f155x - this.startX)));
         }
     }
 
@@ -241,17 +241,17 @@ public class ShapePath {
     public static class PathLineOperation extends PathOperation {
 
         /* renamed from: x */
-        private float f152x;
+        private float f155x;
 
         /* renamed from: y */
-        private float f153y;
+        private float f156y;
 
         @Override // com.google.android.material.shape.ShapePath.PathOperation
         public void applyToPath(Matrix matrix, Path path) {
             Matrix matrix2 = this.matrix;
             matrix.invert(matrix2);
             path.transform(matrix2);
-            path.lineTo(this.f152x, this.f153y);
+            path.lineTo(this.f155x, this.f156y);
             path.transform(matrix);
         }
     }

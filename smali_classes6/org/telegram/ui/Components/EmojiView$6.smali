@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 2035
+    .line 1805
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 6
 
-    .line 2039
+    .line 1809
     invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v1

@@ -55,10 +55,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/TopicExceptionCell;->title:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 32
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -119,10 +119,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/TopicExceptionCell;->subtitle:Landroid/widget/TextView;
 
-    const-string p1, "windowBackgroundWhiteGrayText"
-
     .line 40
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -282,9 +282,9 @@
 
     check-cast v0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
 
-    const-string v1, "chats_archiveBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archiveBackground:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

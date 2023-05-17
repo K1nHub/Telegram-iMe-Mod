@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/PhotoViewer$68;
-.super Landroid/transition/Fade;
+.super Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;
 .source "PhotoViewer.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PhotoViewer;->setCurrentCaption(Lorg/telegram/messenger/MessageObject;Ljava/lang/CharSequence;Z)V
+    value = Lorg/telegram/ui/PhotoViewer;->lambda$openCurrentPhotoInPaintModeForSelect$82(Ljava/io/File;ZLorg/telegram/messenger/MessageObject;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,114 +17,564 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/PhotoViewer;
 
-.field final synthetic val$isCaptionEmpty:Z
+.field private final thumbHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-.field final synthetic val$isCurrentCaptionEmpty:Z
+.field final synthetic val$chatPhotoProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
+
+.field final synthetic val$finalCanReplace:Z
+
+.field final synthetic val$finalMessageObject:Lorg/telegram/messenger/MessageObject;
+
+.field final synthetic val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
 
 # direct methods
-.method public static synthetic $r8$lambda$TRwbXSzdmB_fMZCkeJsExE-oVns(Lorg/telegram/ui/PhotoViewer$68;Landroid/animation/ValueAnimator;)V
+.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MediaController$PhotoEntry;Z)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoViewer$68;->lambda$onAppear$0(Landroid/animation/ValueAnimator;)V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/PhotoViewer;IZZ)V
-    .locals 0
-
-    .line 13006
+    .line 14399
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    iput-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$68;->val$isCurrentCaptionEmpty:Z
+    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$68;->val$chatPhotoProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
-    iput-boolean p4, p0, Lorg/telegram/ui/PhotoViewer$68;->val$isCaptionEmpty:Z
+    iput-object p3, p0, Lorg/telegram/ui/PhotoViewer$68;->val$finalMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    invoke-direct {p0, p2}, Landroid/transition/Fade;-><init>(I)V
+    iput-object p4, p0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iput-boolean p5, p0, Lorg/telegram/ui/PhotoViewer$68;->val$finalCanReplace:Z
+
+    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
+
+    .line 14401
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$10200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->thumbHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     return-void
 .end method
 
-.method private synthetic lambda$onAppear$0(Landroid/animation/ValueAnimator;)V
-    .locals 1
+.method private sendMedia(Lorg/telegram/messenger/VideoEditedInfo;ZIZZLjava/lang/String;)V
+    .locals 21
 
-    .line 13018
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+    move-object/from16 v0, p0
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
+    .line 14441
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    move-result-object v0
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object p1
+    if-eqz v1, :cond_5
 
-    check-cast p1, Ljava/lang/Float;
+    if-eqz p4, :cond_0
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    .line 14442
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$finalMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    move-result p1
+    goto :goto_0
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->access$27802(Lorg/telegram/ui/PhotoViewer$CaptionScrollView;F)F
+    :cond_0
+    const/4 v1, 0x0
 
-    .line 13019
-    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+    :goto_0
+    move-object v15, v1
 
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
+    if-eqz v15, :cond_1
 
-    move-result-object p1
+    .line 14443
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->invalidate()V
+    iget-object v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 14444
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
+
+    iput-object v2, v15, Lorg/telegram/messenger/MessageObject;->editingMessage:Ljava/lang/CharSequence;
+
+    .line 14445
+    iget-object v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+
+    iput-object v1, v15, Lorg/telegram/messenger/MessageObject;->editingMessageEntities:Ljava/util/ArrayList;
+
+    .line 14447
+    :cond_1
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-boolean v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
+
+    if-eqz v2, :cond_3
+
+    if-eqz p1, :cond_2
+
+    .line 14449
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
+
+    move-result-object v2
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v3, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
+
+    move-result-wide v5
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getReplyMessage()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v7
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getThreadMessage()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v8
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v9, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
+
+    iget-object v10, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+
+    iget v11, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
+
+    iget-boolean v1, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
+
+    move-object/from16 v4, p1
+
+    move-object v12, v15
+
+    move/from16 v13, p2
+
+    move/from16 v14, p3
+
+    move/from16 v15, p5
+
+    move/from16 v16, v1
+
+    move-object/from16 v17, p6
+
+    invoke-static/range {v2 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingVideo(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Lorg/telegram/messenger/VideoEditedInfo;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Ljava/lang/CharSequence;Ljava/util/ArrayList;ILorg/telegram/messenger/MessageObject;ZIZZLjava/lang/String;)V
+
+    goto/16 :goto_1
+
+    .line 14451
+    :cond_2
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
+
+    move-result-object v2
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v3, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
+
+    const/4 v4, 0x0
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
+
+    move-result-wide v5
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getReplyMessage()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v7
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getThreadMessage()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v8
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v9, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
+
+    iget-object v10, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+
+    iget v11, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
+
+    iget-boolean v1, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
+
+    move-object v12, v15
+
+    move/from16 v13, p2
+
+    move/from16 v14, p3
+
+    move/from16 v15, p5
+
+    move/from16 v16, v1
+
+    move-object/from16 v17, p6
+
+    invoke-static/range {v2 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingVideo(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Lorg/telegram/messenger/VideoEditedInfo;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Ljava/lang/CharSequence;Ljava/util/ArrayList;ILorg/telegram/messenger/MessageObject;ZIZZLjava/lang/String;)V
+
+    goto/16 :goto_1
+
+    .line 14454
+    :cond_3
+    iget-object v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
+
+    if-eqz v2, :cond_4
+
+    .line 14455
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
+
+    move-result-object v2
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
+
+    iget-object v4, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
+
+    move-result-wide v6
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getReplyMessage()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v8
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getThreadMessage()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v9
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v10, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
+
+    iget-object v11, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+
+    iget-object v12, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
+
+    const/4 v13, 0x0
+
+    iget v14, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
+
+    move-object/from16 v16, p1
+
+    move/from16 v17, p2
+
+    move/from16 v18, p3
+
+    move/from16 v19, p5
+
+    move-object/from16 v20, p6
+
+    invoke-static/range {v2 .. v20}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingPhoto(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Ljava/lang/CharSequence;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/core/view/inputmethod/InputContentInfoCompat;ILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
+
+    goto :goto_1
+
+    .line 14456
+    :cond_4
+    iget-object v1, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
+
+    if-eqz v1, :cond_5
+
+    .line 14457
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
+
+    move-result-object v2
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v3, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
+
+    iget-object v4, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
+
+    move-result-wide v6
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getReplyMessage()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v8
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getThreadMessage()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v9
+
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-object v10, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
+
+    iget-object v11, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+
+    iget-object v12, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
+
+    const/4 v13, 0x0
+
+    iget v14, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
+
+    move-object/from16 v16, p1
+
+    move/from16 v17, p2
+
+    move/from16 v18, p3
+
+    move/from16 v19, p5
+
+    move-object/from16 v20, p6
+
+    invoke-static/range {v2 .. v20}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingPhoto(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Ljava/lang/CharSequence;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/core/view/inputmethod/InputContentInfoCompat;ILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
+
+    :cond_5
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
-.method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
+.method public canCaptureMorePhotos()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public canReplace(I)Z
     .locals 0
 
-    .line 13009
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/transition/Fade;->onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
+    .line 14427
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->val$chatPhotoProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
-    move-result-object p1
+    if-eqz p1, :cond_0
 
-    .line 13010
-    iget-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$68;->val$isCurrentCaptionEmpty:Z
+    iget-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$68;->val$finalCanReplace:Z
 
-    if-eqz p3, :cond_0
+    if-eqz p1, :cond_0
 
-    iget-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$68;->val$isCaptionEmpty:Z
+    const/4 p1, 0x1
 
-    if-nez p3, :cond_0
-
-    iget-object p3, p0, Lorg/telegram/ui/PhotoViewer$68;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {p3}, Lorg/telegram/ui/PhotoViewer;->access$9200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
-
-    move-result-object p3
-
-    if-ne p2, p3, :cond_0
-
-    .line 13011
-    new-instance p2, Lorg/telegram/ui/PhotoViewer$68$1;
-
-    invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$68$1;-><init>(Lorg/telegram/ui/PhotoViewer$68;)V
-
-    invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    .line 13017
-    move-object p2, p1
-
-    check-cast p2, Landroid/animation/ObjectAnimator;
-
-    new-instance p3, Lorg/telegram/ui/PhotoViewer$68$$ExternalSyntheticLambda0;
-
-    invoke-direct {p3, p0}, Lorg/telegram/ui/PhotoViewer$68$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PhotoViewer$68;)V
-
-    invoke-virtual {p2, p3}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    goto :goto_0
 
     :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public getEditingMessageObject()Lorg/telegram/messenger/MessageObject;
+    .locals 1
+
+    .line 14432
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$68;->val$finalMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    return-object v0
+.end method
+
+.method public getPlaceForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;IZ)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
+    .locals 1
+
+    .line 14405
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->val$chatPhotoProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
+
+    const/4 p2, 0x0
+
+    if-eqz p1, :cond_0
+
+    iget-object p3, p0, Lorg/telegram/ui/PhotoViewer$68;->val$finalMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, p3, p2, v0, p4}, Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;->getPlaceForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;IZ)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
+
+    move-result-object p2
+
+    :cond_0
+    return-object p2
+.end method
+
+.method public getThumbForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;I)Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
+    .locals 0
+
+    .line 14410
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->thumbHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
+
     return-object p1
+.end method
+
+.method public replaceButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;)V
+    .locals 7
+
+    .line 14420
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$68;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
+
+    iget-boolean v0, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->isCropped:Z
+
+    if-nez v0, :cond_0
+
+    iget-boolean v0, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->isPainted:Z
+
+    if-nez v0, :cond_0
+
+    iget-boolean v0, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->isFiltered:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p2, :cond_0
+
+    iget-object p1, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    :cond_0
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    .line 14421
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/PhotoViewer$68;->sendMedia(Lorg/telegram/messenger/VideoEditedInfo;ZIZZLjava/lang/String;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public sendButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;Z)V
+    .locals 7
+
+    const/4 v4, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move v2, p3
+
+    move v3, p4
+
+    move v5, p5
+
+    move-object v6, p6
+
+    .line 14415
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/PhotoViewer$68;->sendMedia(Lorg/telegram/messenger/VideoEditedInfo;ZIZZLjava/lang/String;)V
+
+    return-void
 .end method

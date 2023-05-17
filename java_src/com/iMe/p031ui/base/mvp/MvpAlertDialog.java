@@ -18,7 +18,7 @@ import org.koin.core.component.KoinComponent;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 /* compiled from: MvpAlertDialog.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpAlertDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class MvpAlertDialog extends AlertDialog implements MvpDelegateHolder, KoinComponent, BaseView {
     private final MvpBaseDelegate<MvpAlertDialog> mvpBaseDelegate;
 

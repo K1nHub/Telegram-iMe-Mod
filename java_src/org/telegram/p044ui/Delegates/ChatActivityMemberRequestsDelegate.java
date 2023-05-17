@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -61,8 +61,8 @@ public class ChatActivityMemberRequestsDelegate {
         if (this.root == null) {
             FrameLayout frameLayout = new FrameLayout(this.fragment.getParentActivity());
             this.root = frameLayout;
-            frameLayout.setBackgroundResource(C3242R.C3244drawable.blockpanel);
-            this.root.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor("chat_topPanelBackground"), PorterDuff.Mode.MULTIPLY));
+            frameLayout.setBackgroundResource(C3290R.C3292drawable.blockpanel);
+            this.root.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor(Theme.key_chat_topPanelBackground), PorterDuff.Mode.MULTIPLY));
             this.root.setVisibility(8);
             this.pendingRequestsEnterOffset = -getViewHeight();
             View view = new View(this.fragment.getParentActivity());
@@ -82,7 +82,7 @@ public class ChatActivityMemberRequestsDelegate {
                 @Override // org.telegram.p044ui.Components.AvatarsImageView, android.view.View
                 public void onMeasure(int i, int i2) {
                     int i3 = this.avatarsDrawable.count;
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(i3 == 0 ? 0 : ((i3 - 1) * 20) + 24), 1073741824), i2);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(i3 == 0 ? 0 : ((i3 - 1) * 20) + 24), 1073741824), i2);
                 }
             };
             this.avatarsView = avatarsImageView;
@@ -94,17 +94,17 @@ public class ChatActivityMemberRequestsDelegate {
             this.requestsCountTextView.setGravity(16);
             this.requestsCountTextView.setSingleLine();
             this.requestsCountTextView.setText((CharSequence) null);
-            this.requestsCountTextView.setTextColor(this.fragment.getThemedColor("chat_topPanelTitle"));
+            this.requestsCountTextView.setTextColor(this.fragment.getThemedColor(Theme.key_chat_topPanelTitle));
             this.requestsCountTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             linearLayout.addView(this.requestsCountTextView, LayoutHelper.createFrame(-1, -1, 48, 0, 0, 0, 0));
             ImageView imageView = new ImageView(this.fragment.getParentActivity());
             this.closeView = imageView;
             if (Build.VERSION.SDK_INT >= 21) {
-                imageView.setBackground(Theme.createSelectorDrawable(this.fragment.getThemedColor("inappPlayerClose") & 436207615, 1, AndroidUtilities.m50dp(14)));
+                imageView.setBackground(Theme.createSelectorDrawable(this.fragment.getThemedColor(Theme.key_inappPlayerClose) & 436207615, 1, AndroidUtilities.m54dp(14)));
             }
-            this.closeView.setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor("chat_topPanelClose"), PorterDuff.Mode.MULTIPLY));
-            this.closeView.setContentDescription(LocaleController.getString("Close", C3242R.string.Close));
-            this.closeView.setImageResource(C3242R.C3244drawable.miniplayer_close);
+            this.closeView.setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor(Theme.key_chat_topPanelClose), PorterDuff.Mode.MULTIPLY));
+            this.closeView.setContentDescription(LocaleController.getString("Close", C3290R.string.Close));
+            this.closeView.setImageResource(C3290R.C3292drawable.miniplayer_close);
             this.closeView.setScaleType(ImageView.ScaleType.CENTER);
             this.closeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -128,7 +128,7 @@ public class ChatActivityMemberRequestsDelegate {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getView$1(View view) {
-        this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1427id, this.pendingRequestsCount);
+        this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1433id, this.pendingRequestsCount);
         this.closePendingRequestsCount = this.pendingRequestsCount;
         animatePendingRequests(false, true);
     }
@@ -141,7 +141,7 @@ public class ChatActivityMemberRequestsDelegate {
     }
 
     public int getViewHeight() {
-        return AndroidUtilities.m50dp(40);
+        return AndroidUtilities.m54dp(40);
     }
 
     public float getViewEnterOffset() {
@@ -158,7 +158,7 @@ public class ChatActivityMemberRequestsDelegate {
 
     private void showBottomSheet() {
         if (this.bottomSheet == null) {
-            this.bottomSheet = new MemberRequestsBottomSheet(this.fragment, this.currentChat.f1427id) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.2
+            this.bottomSheet = new MemberRequestsBottomSheet(this.fragment, this.currentChat.f1433id) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.2
                 @Override // org.telegram.p044ui.Components.UsersAlertBase, org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
                 public void dismiss() {
                     if (ChatActivityMemberRequestsDelegate.this.bottomSheet != null && !ChatActivityMemberRequestsDelegate.this.bottomSheet.isNeedRestoreDialog()) {
@@ -177,7 +177,7 @@ public class ChatActivityMemberRequestsDelegate {
         }
         if (i <= 0) {
             if (this.currentChat != null) {
-                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1427id, 0);
+                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1433id, 0);
                 this.closePendingRequestsCount = 0;
             }
             animatePendingRequests(false, z);
@@ -207,7 +207,7 @@ public class ChatActivityMemberRequestsDelegate {
         }
         if (z) {
             if (this.closePendingRequestsCount == -1 && this.currentChat != null) {
-                this.closePendingRequestsCount = this.fragment.getMessagesController().getChatPendingRequestsOnClosed(this.currentChat.f1427id);
+                this.closePendingRequestsCount = this.fragment.getMessagesController().getChatPendingRequestsOnClosed(this.currentChat.f1433id);
             }
             int i = this.pendingRequestsCount;
             int i2 = this.closePendingRequestsCount;
@@ -215,7 +215,7 @@ public class ChatActivityMemberRequestsDelegate {
                 return;
             }
             if (i2 != 0 && this.currentChat != null) {
-                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1427id, 0);
+                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1433id, 0);
             }
         }
         ValueAnimator valueAnimator = this.pendingRequestsAnimator;
@@ -281,8 +281,8 @@ public class ChatActivityMemberRequestsDelegate {
     }
 
     public void fillThemeDescriptions(List<ThemeDescription> list) {
-        list.add(new ThemeDescription(this.root, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "chat_topPanelBackground"));
-        list.add(new ThemeDescription(this.requestsCountTextView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "chat_topPanelTitle"));
-        list.add(new ThemeDescription(this.closeView, ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, "chat_topPanelClose"));
+        list.add(new ThemeDescription(this.root, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_chat_topPanelBackground));
+        list.add(new ThemeDescription(this.requestsCountTextView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_chat_topPanelTitle));
+        list.add(new ThemeDescription(this.closeView, ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, Theme.key_chat_topPanelClose));
     }
 }

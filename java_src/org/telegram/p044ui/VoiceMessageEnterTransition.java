@@ -56,7 +56,7 @@ public class VoiceMessageEnterTransition implements MessageEnterTransitionContai
         Paint paint = new Paint(1);
         this.gradientPaint = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(12), (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, 0, -16777216, Shader.TileMode.CLAMP);
+        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(12), (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, 0, -16777216, Shader.TileMode.CLAMP);
         this.gradientShader = linearGradient;
         paint.setShader(linearGradient);
         this.messageId = chatMessageCell.getMessageObject().stableId;
@@ -123,7 +123,7 @@ public class VoiceMessageEnterTransition implements MessageEnterTransitionContai
         float height = this.messageView.getRadialProgress().getProgressRect().height() / 2.0f;
         float f6 = (this.fromRadius * f4) + (height * interpolation);
         int measuredHeight = this.container.getMeasuredHeight() > 0 ? (int) ((this.container.getMeasuredHeight() * f4) + (((this.listView.getY() - this.container.getY()) + this.listView.getMeasuredHeight()) * interpolation)) : 0;
-        this.circlePaint.setColor(ColorUtils.blendARGB(getThemedColor("chat_messagePanelVoiceBackground"), getThemedColor(this.messageView.getRadialProgress().getCircleColorKey()), interpolation));
+        this.circlePaint.setColor(ColorUtils.blendARGB(getThemedColor(Theme.key_chat_messagePanelVoiceBackground), getThemedColor(this.messageView.getRadialProgress().getCircleColorKey()), interpolation));
         ChatActivityEnterView.RecordCircle recordCircle3 = this.recordCircle;
         if (recordCircle3 != null) {
             recordCircle3.drawWaves(canvas, f3, f5, 1.0f - f2);
@@ -149,9 +149,7 @@ public class VoiceMessageEnterTransition implements MessageEnterTransitionContai
         }
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

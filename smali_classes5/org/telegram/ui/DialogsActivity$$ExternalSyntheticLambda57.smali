@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/view/View$OnLongClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda57;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda57;
-
-    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda57;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda57;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda57;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda57;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 0
+.method public final onLongClick(Landroid/view/View;)Z
+    .locals 1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$ZKzAiu4MLa70RncyBzna6wYKS74(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda57;->f$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$y71UnFby78X7x9xvy9W_qHRBRd4(Lorg/telegram/ui/DialogsActivity;Landroid/view/View;)Z
 
     move-result p1
 

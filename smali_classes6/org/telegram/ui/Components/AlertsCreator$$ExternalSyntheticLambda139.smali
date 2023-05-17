@@ -2,34 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# instance fields
-.field public final synthetic f$0:[I
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda139;
 
 
 # direct methods
-.method public synthetic constructor <init>([I)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda139;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda139;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda139;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda139;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda139;->f$0:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final format(I)Ljava/lang/String;
-    .locals 1
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda139;->f$0:[I
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$XbO_mM7xYg8i0X7BV-S_KUIp7Z8(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$NhcgTbw2t58IdKy9WLgtv6MuUHU([II)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

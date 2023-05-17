@@ -55,15 +55,15 @@
     .line 266
     new-instance v2, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    const-string v3, "premiumGradient1"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
-    const-string v4, "premiumGradient2"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient2:I
 
-    const-string v5, "premiumGradient3"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient3:I
 
-    const-string v6, "premiumGradient4"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient4:I
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIII)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
@@ -890,10 +890,10 @@
     .line 367
     invoke-virtual {v4, v1, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 368
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

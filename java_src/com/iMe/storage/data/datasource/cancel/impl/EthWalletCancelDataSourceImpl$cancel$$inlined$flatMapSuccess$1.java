@@ -47,7 +47,7 @@ public final class EthWalletCancelDataSourceImpl$cancel$$inlined$flatMapSuccess$
         }
         Observable<ApiBaseResponse<TransactionResponse>> sendEthereumCancelTransaction = cancelApi.sendEthereumCancelTransaction(new SendEthereumCancelOrBoostTransactionRequest(data, ((CancelArgs.Ethereum) this.$args$inlined).getOldTxHash()));
         firebaseFunctionsErrorHandler = this.this$0.firebaseErrorHandler;
-        ObservableSource map = sendEthereumCancelTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1542x7e294538(firebaseFunctionsErrorHandler)));
+        ObservableSource map = sendEthereumCancelTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1611x7e294538(firebaseFunctionsErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

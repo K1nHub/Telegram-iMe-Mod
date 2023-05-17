@@ -2,9 +2,9 @@ package com.iMe.storage.domain.interactor.wallet;
 
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.repository.notification.PushNotificationRepository;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
+import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function1;
@@ -25,17 +25,14 @@ public final class WalletSessionInteractor$login$lambda$4$$inlined$flatMapSucces
     public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends String> result) {
         PushNotificationRepository pushNotificationRepository;
         List<String> mutableListOf;
-        SchedulersProvider schedulersProvider;
         Intrinsics.checkNotNullParameter(result, "result");
         if (result instanceof Result.Success) {
             pushNotificationRepository = this.this$0.notificationRepository;
             String data = result.getData();
             Intrinsics.checkNotNull(data);
             mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(data);
-            Observable<Result<Boolean>> savePushToken = pushNotificationRepository.savePushToken(mutableListOf);
-            schedulersProvider = this.this$0.schedulersProvider;
-            Observable<Result<Boolean>> subscribeOn = savePushToken.subscribeOn(schedulersProvider.mo694io());
-            Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository.s…(schedulersProvider.io())");
+            Observable<Result<Boolean>> subscribeOn = pushNotificationRepository.savePushToken(mutableListOf).subscribeOn(Schedulers.m679io());
+            Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository.s…scribeOn(Schedulers.io())");
             return subscribeOn;
         } else if (result instanceof Result.Error) {
             Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);

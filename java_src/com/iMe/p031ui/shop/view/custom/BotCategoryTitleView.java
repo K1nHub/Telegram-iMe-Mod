@@ -19,7 +19,7 @@ public final class BotCategoryTitleView extends FrameLayout {
         Intrinsics.checkNotNullParameter(context, "context");
         TextView textView = new TextView(context);
         this.title = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.title.setTextSize(2, 16.0f);
         addView(this.title, LayoutHelper.createFrame(-1, -2.0f, 17, 16.0f, (float) BitmapDescriptorFactory.HUE_RED, 16.0f, (float) BitmapDescriptorFactory.HUE_RED));
     }

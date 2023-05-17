@@ -3,9 +3,12 @@ package kotlinx.coroutines.android;
 import android.os.Handler;
 import android.os.Looper;
 import java.util.concurrent.CancellationException;
+import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt___RangesKt;
+import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.JobKt;
 /* compiled from: HandlerDispatcher.kt */
@@ -16,6 +19,25 @@ public final class HandlerContext extends HandlerDispatcher {
     private final HandlerContext immediate;
     private final boolean invokeImmediately;
     private final String name;
+
+    @Override // kotlinx.coroutines.Delay
+    /* renamed from: scheduleResumeAfterDelay */
+    public void mo1605scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
+        long coerceAtMost;
+        Runnable runnable = new Runnable() { // from class: kotlinx.coroutines.android.HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1
+            @Override // java.lang.Runnable
+            public final void run() {
+                CancellableContinuation.this.resumeUndispatched(this, Unit.INSTANCE);
+            }
+        };
+        Handler handler = this.handler;
+        coerceAtMost = RangesKt___RangesKt.coerceAtMost(j, 4611686018427387903L);
+        if (handler.postDelayed(runnable, coerceAtMost)) {
+            cancellableContinuation.invokeOnCancellation(new HandlerContext$scheduleResumeAfterDelay$1(this, runnable));
+        } else {
+            cancelOnRejection(cancellableContinuation.getContext(), runnable);
+        }
+    }
 
     private HandlerContext(Handler handler, String str, boolean z) {
         super(null);
@@ -51,7 +73,7 @@ public final class HandlerContext extends HandlerDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1566dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo1604dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         if (this.handler.post(runnable)) {
             return;
         }
@@ -60,7 +82,7 @@ public final class HandlerContext extends HandlerDispatcher {
 
     private final void cancelOnRejection(CoroutineContext coroutineContext, Runnable runnable) {
         JobKt.cancel(coroutineContext, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
-        Dispatchers.getIO().mo1566dispatch(coroutineContext, runnable);
+        Dispatchers.getIO().mo1604dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.MainCoroutineDispatcher, kotlinx.coroutines.CoroutineDispatcher

@@ -10,7 +10,7 @@ import org.telegram.p044ui.Cells.UserCell;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TwitterUserProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TwitterUserProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class TwitterUserProvider$convert$1 extends Lambda implements Function1<FrameLayout, Unit> {
     final /* synthetic */ TwitterUserItem $item;
     final /* synthetic */ TwitterUserProvider this$0;

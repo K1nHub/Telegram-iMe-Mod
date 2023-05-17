@@ -328,9 +328,6 @@ Sozlamalar > Asboblar > Chatlar > Shablonlar"</string>
     <string name="collection_tab_all">Barcha</string>
     <string name="collection_tab_categories">Toifalar</string>
     <string name="collection_tab_my">Mening</string>
-    <string name="combine_messages_alert_message">"Siz xabarlarni ketma-ket yuborasiz va bu boshqa foydalanuvchilarni bezovta qilishi mumkin.
-
-30 soniya ichida ketma-ket yuborilgan xabarlaringiz bitta xabarga birlashtirilishi uchun optsiya yoqilsinmi?"</string>
     <string name="combine_messages_disable">Xabarlarni birlashtirmang</string>
     <string name="combine_messages_enable">Xabarlarni birlashtirish</string>
     <string name="combine_messages_send_without_combine">Birlashtiruvchisiz yuborish</string>
@@ -419,15 +416,11 @@ Sozlamalar > Asboblar > Chatlar > Shablonlar"</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">Ishonchingiz komilmi?</string>
     <string name="deleting_messages">"Xabarlar o'chirilmoqda… %2$d dan %1$d qayta ishlandi"</string>
     <string name="deleting_messages_success">"Xizmat xabarlari o'chirildi"</string>
-    <string name="dialog_message_enable_archive_in_drawer">"Agar siz Barcha chatlar yorlig'ini o'chirib qo'ysangiz, siz Arxivga kira olmaysiz.
-
-Arxivga kirish tugmachasini yon panelga joylashtirasizmi?"</string>
     <string name="dialog_promo_discussion_group_description">Guruh</string>
     <string name="dialog_promo_en_news_channel_description">Ingliz tili</string>
     <string name="dialog_promo_ru_news_channel_description">Rus tili</string>
     <string name="dialog_promo_subscribe_subtitle">"Unda bizning kanalga qo'shiling"</string>
     <string name="dialog_promo_subscribe_title">iMe yangiliklarini kuzatishni xohlaysizmi?</string>
-    <string name="dialog_title_enable_archive_in_drawer">Arxivga kirish</string>
     <string name="dialogs_activity_move_to_folder">"Jildga ko'chirish"</string>
     <string name="dialogs_albums_sort_alphabetically">Alifbo tartibida saralash</string>
     <string name="dialogs_albums_sort_date">"Sana bo'yicha saralash"</string>
@@ -665,6 +658,8 @@ Buning uchun dasturning qurilmaga kirishiga ruxsat berishingiz kerak."</string>
 Pleylistga musiqa qo'shing"</string>
     <string name="music_playlists_tab">Pleylistlar</string>
     <string name="music_tab_playlist">Pleylist</string>
+    <string name="nav_app_bar_navigate_up_description">Tepaga</string>
+    <string name="nav_app_bar_open_drawer_description">Navigatsiya panelini ochish</string>
     <string name="neurobots_enable_dialog_description">"Neyrobotlarni yoqish va sozlash uchun sozlamalarga o'ting"</string>
     <string name="neurobots_enable_dialog_positive_btn_text">"BO'LISH"</string>
     <string name="neurobots_enable_dialog_title">"Neyrobotlar o'chirilgan"</string>
@@ -882,7 +877,6 @@ Ularni qayta qo'shish uchun siz ularning Telegram kontaktlarida bo'lishingiz ker
     <string name="settings_neurobots_item_title">Neyrobot sozlamalari</string>
     <string name="settings_proxy_button_in_toolbar">Proksi tugmasi</string>
     <string name="settings_reactions_enable_hint">"Chatlarda reaktsiyalar funksiyasini ko'rsatishni yoqing"</string>
-    <string name="settings_revoke_by_default">"Suhbatdoshdan o'chirish"</string>
     <string name="settings_tools">Asboblar</string>
     <string name="settings_tools_base_toolbar">Asosiy asboblar paneli</string>
     <string name="settings_tools_bot_help_translate">Tabriknomalarning botlarda tarjimasi</string>
@@ -900,8 +894,6 @@ Agar siz Bot API opsiyasini tanlasangiz, guruh identifikatorlarining boshiga \"-
     <string name="settings_tools_combine_messages_hint">"Agar siz tez-tez xabarlarni ketma-ket yuborsangiz, boshqa foydalanuvchilarni bezovta qilishingiz mumkin.
 
 Xabarlaringizni 30 soniya ichida bitta xabarga birlashtirish uchun ushbu parametrni yoqing."</string>
-    <string name="settings_tools_custom_sharing">Multi-almashish</string>
-    <string name="settings_tools_custom_sharing_hint">"Tashqaridan almashish paytida chat va arxiv chat ro'yxatining saralash varaqlarini ko'rsatish. Masalan, iMe-dagi qurilma galereyasidagi rasmni baham ko'rganingizda."</string>
     <string name="settings_tools_customization">Xususiylashtirish</string>
     <string name="settings_tools_design_icon">Piktogramma dizayni</string>
     <string name="settings_tools_message_popup_reactions">Kontekst menyusida</string>

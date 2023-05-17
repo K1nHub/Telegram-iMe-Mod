@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBar;Landroid/content/Context;)V
     .locals 0
 
-    .line 416
+    .line 418
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 419
+    .line 421
     invoke-super {p0, p1}, Landroid/view/View;->setAlpha(F)V
 
     return-void

@@ -22,7 +22,7 @@ public final class AuthTokensMetadata {
 
     public int hashCode() {
         SessionTokens sessionTokens = this.authTokens;
-        return ((sessionTokens == null ? 0 : sessionTokens.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.updateTimestamp);
+        return ((sessionTokens == null ? 0 : sessionTokens.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.updateTimestamp);
     }
 
     public String toString() {

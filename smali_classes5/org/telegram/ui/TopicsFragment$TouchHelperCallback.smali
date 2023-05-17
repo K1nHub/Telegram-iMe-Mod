@@ -28,7 +28,7 @@
 .method public constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 2278
+    .line 2280
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;-><init>()V
@@ -39,7 +39,7 @@
 .method static synthetic access$5400(Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;)Z
     .locals 0
 
-    .line 2278
+    .line 2280
     iget-boolean p0, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->swipingFolder:Z
 
     return p0
@@ -48,7 +48,7 @@
 .method static synthetic access$5502(Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;Z)Z
     .locals 0
 
-    .line 2278
+    .line 2280
     iput-boolean p1, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->swipeFolderBack:Z
 
     return p1
@@ -57,7 +57,7 @@
 .method static synthetic access$5600(Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 2278
+    .line 2280
     iget-object p0, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->currentItemViewHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     return-object p0
@@ -68,10 +68,10 @@
 .method public clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
 
-    .line 2356
+    .line 2358
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 2357
+    .line 2359
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 p2, 0x0
@@ -84,7 +84,7 @@
 .method public getMovementFlags(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
     .locals 3
 
-    .line 2291
+    .line 2293
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
@@ -93,7 +93,7 @@
 
     if-ltz p1, :cond_3
 
-    .line 2292
+    .line 2294
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 2295
+    .line 2297
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -146,7 +146,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/TopicsFragment$Item;->topic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
-    .line 2296
+    .line 2298
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/TopicsFragment;->selectedTopics:Ljava/util/HashSet;
@@ -169,31 +169,31 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 2297
+    .line 2299
     check-cast p2, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;
 
-    .line 2299
+    .line 2301
     iput-boolean v2, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->swipingFolder:Z
 
-    .line 2300
+    .line 2302
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Cells/DialogCell;->setSliding(Z)V
 
     const/4 p1, 0x4
 
-    .line 2301
+    .line 2303
     invoke-static {v0, p1}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
     move-result p1
 
     return p1
 
-    .line 2303
+    .line 2305
     :cond_1
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->pinned:Z
 
     if-nez p1, :cond_2
 
-    .line 2304
+    .line 2306
     invoke-static {v0, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
     move-result p1
@@ -203,14 +203,14 @@
     :cond_2
     const/4 p1, 0x3
 
-    .line 2306
+    .line 2308
     invoke-static {p1, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
     move-result p1
 
     return p1
 
-    .line 2293
+    .line 2295
     :cond_3
     :goto_0
     invoke-static {v0, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
@@ -223,7 +223,7 @@
 .method public isLongPressDragEnabled()Z
     .locals 1
 
-    .line 2286
+    .line 2288
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/TopicsFragment;->selectedTopics:Ljava/util/HashSet;
@@ -240,7 +240,7 @@
 .method public onChildDraw(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;FFIZ)V
     .locals 0
 
-    .line 2324
+    .line 2326
     invoke-super/range {p0 .. p7}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onChildDraw(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;FFIZ)V
 
     return-void
@@ -249,7 +249,7 @@
 .method public onMove(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    .line 2311
+    .line 2313
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -264,7 +264,7 @@
 
     return v1
 
-    .line 2314
+    .line 2316
     :cond_0
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
@@ -272,7 +272,7 @@
 
     if-ltz p1, :cond_2
 
-    .line 2315
+    .line 2317
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -315,7 +315,7 @@
 
     goto :goto_0
 
-    .line 2318
+    .line 2320
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -345,14 +345,14 @@
 
     if-nez p2, :cond_0
 
-    .line 2330
+    .line 2332
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/TopicsFragment;->sendReorder()V
 
     goto :goto_0
 
-    .line 2332
+    .line 2334
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -364,14 +364,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
 
-    .line 2333
+    .line 2335
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2335
+    .line 2337
     :goto_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onSelectedChanged(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
@@ -383,17 +383,17 @@
 
     if-eqz p1, :cond_1
 
-    .line 2341
+    .line 2343
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;
 
-    .line 2342
+    .line 2344
     iget-object p2, p1, Lorg/telegram/ui/Cells/DialogCell;->forumTopic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     if-eqz p2, :cond_0
 
-    .line 2343
+    .line 2345
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -416,13 +416,13 @@
 
     invoke-virtual {p2, v0, v1, v3, v2}, Lorg/telegram/messenger/TopicsController;->toggleShowTopic(JIZ)V
 
-    .line 2345
+    .line 2347
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/TopicsFragment;->access$1802(Lorg/telegram/ui/TopicsFragment;Landroid/view/View;)Landroid/view/View;
 
-    .line 2346
+    .line 2348
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p2}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -439,19 +439,19 @@
 
     invoke-static {p2, v0, p1}, Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;->access$1900(Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;ZLorg/telegram/ui/Cells/DialogCell;)V
 
-    .line 2347
+    .line 2349
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$TouchHelperCallback;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p2, v1, v1}, Lorg/telegram/ui/TopicsFragment;->access$2000(Lorg/telegram/ui/TopicsFragment;ZZ)V
 
-    .line 2348
+    .line 2350
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->access$2100(Lorg/telegram/ui/TopicsFragment$TopicDialogCell;)Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     move-result-object p2
 
     if-eqz p2, :cond_1
 
-    .line 2349
+    .line 2351
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->access$2100(Lorg/telegram/ui/TopicsFragment$TopicDialogCell;)Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     move-result-object p2

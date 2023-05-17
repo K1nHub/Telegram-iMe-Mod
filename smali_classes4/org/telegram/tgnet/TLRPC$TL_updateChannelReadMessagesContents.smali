@@ -35,10 +35,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 32780
+    .line 33629
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 32786
+    .line 33635
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -53,21 +53,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 32789
+    .line 33638
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->flags:I
 
-    .line 32790
+    .line 33639
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->channel_id:J
 
-    .line 32791
+    .line 33640
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->flags:I
 
     const/4 v1, 0x1
@@ -76,14 +76,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 32792
+    .line 33641
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->top_msg_id:I
 
-    .line 32794
+    .line 33643
     :cond_0
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -99,7 +99,7 @@
 
     return-void
 
-    .line 32797
+    .line 33646
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -121,7 +121,7 @@
 
     throw p1
 
-    .line 32801
+    .line 33650
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -130,7 +130,7 @@
     :goto_0
     if-ge v3, v0, :cond_3
 
-    .line 32803
+    .line 33652
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -154,29 +154,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 32808
+    .line 33657
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32809
+    .line 33658
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32810
+    .line 33659
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->channel_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 32811
+    .line 33660
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 32812
+    .line 33661
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->top_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
@@ -184,17 +184,17 @@
     :cond_0
     const v0, 0x1cb5c415
 
-    .line 32814
+    .line 33663
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32815
+    .line 33664
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 32816
+    .line 33665
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -202,7 +202,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 32818
+    .line 33667
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

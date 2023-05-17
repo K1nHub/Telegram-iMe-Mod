@@ -65,22 +65,22 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dLQHLYCafXJJUfzp3Jh8QSoTljQ(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 0
-
-    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static synthetic $r8$lambda$fJ6sQtgzRlNOsFyaQdOPXnZo-3E(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->lambda$showPopupFor$5(Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
 
     return-void
+.end method
+
+.method public static synthetic $r8$lambda$g2jhzF13Nz1zc1ZHR4bffNBalGw(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 0
+
+    invoke-direct/range {p0 .. p7}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public static synthetic $r8$lambda$n4emcA3KDzQBOg1fJQ72n-X8Q84(Lorg/telegram/ui/CacheChatsExceptionsFragment;)V
@@ -114,117 +114,127 @@
     return-void
 .end method
 
-.method private synthetic lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+.method private synthetic lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
     .locals 4
 
-    .line 93
+    const/4 p2, 0x0
+
+    const/4 p4, 0x1
+
+    if-eqz p7, :cond_0
+
+    .line 95
+    invoke-interface {p7, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+
+    return p4
+
+    .line 99
+    :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
 
     const/4 p1, 0x0
 
-    const/4 p2, 0x0
+    move p5, p1
 
-    move p4, p1
-
-    .line 95
+    .line 101
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
-    move-result p5
+    move-result p6
 
-    const/4 p6, 0x1
+    if-ge p5, p6, :cond_5
 
-    if-ge p4, p5, :cond_4
+    move p6, p1
 
-    move p5, p1
-
-    .line 97
+    .line 103
     :goto_1
-    iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
+    iget-object p7, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p7}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result p7
 
-    if-ge p5, v0, :cond_1
+    if-ge p6, p7, :cond_2
 
-    .line 98
-    iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
+    .line 104
+    iget-object p7, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p7, p6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p7
 
-    check-cast v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
+    check-cast p7, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    iget-wide v0, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
+    iget-wide v0, p7, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
 
-    invoke-virtual {p3, p4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p3, p5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p7
 
-    check-cast v2, Lorg/telegram/messenger/MessagesStorage$TopicKey;
+    check-cast p7, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    iget-wide v2, v2, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+    iget-wide v2, p7, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    cmp-long v0, v0, v2
+    cmp-long p7, v0, v2
 
-    if-nez v0, :cond_0
+    if-nez p7, :cond_1
 
-    .line 99
+    .line 105
     iget-object p2, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
-    invoke-virtual {p2, p5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p2, p6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
+    move p6, p4
+
     goto :goto_2
 
-    :cond_0
-    add-int/lit8 p5, p5, 0x1
+    :cond_1
+    add-int/lit8 p6, p6, 0x1
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     move p6, p1
 
     :goto_2
-    if-nez p6, :cond_3
+    if-nez p6, :cond_4
 
-    .line 105
+    .line 111
     sget p2, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
 
-    .line 106
+    .line 112
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object p5
+    move-result-object p6
 
-    invoke-virtual {p5}, Lorg/telegram/messenger/MessagesController;->getCacheByChatsController()Lorg/telegram/messenger/CacheByChatsController;
+    invoke-virtual {p6}, Lorg/telegram/messenger/MessagesController;->getCacheByChatsController()Lorg/telegram/messenger/CacheByChatsController;
 
-    move-result-object p5
+    move-result-object p6
 
-    iget p6, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->currentType:I
+    iget p7, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->currentType:I
 
-    invoke-virtual {p5, p6}, Lorg/telegram/messenger/CacheByChatsController;->getKeepMedia(I)I
+    invoke-virtual {p6, p7}, Lorg/telegram/messenger/CacheByChatsController;->getKeepMedia(I)I
 
-    move-result p5
+    move-result p6
 
-    sget p6, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
+    sget p7, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
 
-    if-ne p5, p6, :cond_2
+    if-ne p6, p7, :cond_3
 
-    .line 107
+    .line 113
     sget p2, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_DAY:I
 
-    .line 109
-    :cond_2
-    iget-object p5, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
+    .line 115
+    :cond_3
+    iget-object p6, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
-    new-instance p6, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
+    new-instance p7, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    invoke-virtual {p3, p4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p3, p5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -232,19 +242,19 @@
 
     iget-wide v0, v0, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    invoke-direct {p6, v0, v1, p2}, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;-><init>(JI)V
+    invoke-direct {p7, v0, v1, p2}, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;-><init>(JI)V
 
-    invoke-virtual {p5, p6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p6, p7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-object p2, p6
+    move-object p2, p7
 
-    :cond_3
-    add-int/lit8 p4, p4, 0x1
+    :cond_4
+    add-int/lit8 p5, p5, 0x1
 
     goto :goto_0
 
-    .line 112
-    :cond_4
+    .line 118
+    :cond_5
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p3
@@ -253,111 +263,111 @@
 
     move-result-object p3
 
-    iget p4, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->currentType:I
+    iget p5, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->currentType:I
 
-    iget-object p5, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
+    iget-object p6, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
-    invoke-virtual {p3, p4, p5}, Lorg/telegram/messenger/CacheByChatsController;->saveKeepMediaExceptions(ILjava/util/ArrayList;)V
+    invoke-virtual {p3, p5, p6}, Lorg/telegram/messenger/CacheByChatsController;->saveKeepMediaExceptions(ILjava/util/ArrayList;)V
 
-    .line 113
+    .line 119
     invoke-direct {p0}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->updateRows()V
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_8
 
     move p3, p1
 
-    .line 116
+    .line 122
     :goto_3
-    iget-object p4, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
+    iget-object p5, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
-    invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p5}, Ljava/util/ArrayList;->size()I
 
-    move-result p4
+    move-result p5
 
-    if-ge p3, p4, :cond_6
+    if-ge p3, p5, :cond_7
 
-    .line 117
-    iget-object p4, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
+    .line 123
+    iget-object p5, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
-    invoke-virtual {p4, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p5, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p4
+    move-result-object p5
 
-    check-cast p4, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
+    check-cast p5, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
 
-    iget-object p4, p4, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;->exception:Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
+    iget-object p5, p5, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;->exception:Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    if-eqz p4, :cond_5
+    if-eqz p5, :cond_6
 
-    iget-object p4, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
+    iget-object p5, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
-    invoke-virtual {p4, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p5, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p4
+    move-result-object p5
 
-    check-cast p4, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
+    check-cast p5, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
 
-    iget-object p4, p4, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;->exception:Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
+    iget-object p5, p5, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;->exception:Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    iget-wide p4, p4, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
+    iget-wide p5, p5, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
 
     iget-wide v0, p2, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
 
-    cmp-long p4, p4, v0
+    cmp-long p5, p5, v0
 
-    if-nez p4, :cond_5
+    if-nez p5, :cond_6
 
     move p1, p3
 
     goto :goto_4
 
-    :cond_5
+    :cond_6
     add-int/lit8 p3, p3, 0x1
 
     goto :goto_3
 
-    .line 122
-    :cond_6
+    .line 128
+    :cond_7
     :goto_4
     iget-object p3, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p3, p1}, Landroidx/recyclerview/widget/RecyclerView;->scrollToPosition(I)V
 
-    .line 124
+    .line 130
     invoke-virtual {p0, p2}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->showPopupFor(Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
 
-    :cond_7
-    return p6
+    :cond_8
+    return p4
 .end method
 
 .method private synthetic lambda$createView$1(Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;II)V
     .locals 0
 
-    .line 136
+    .line 142
     sget p2, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_DELETE:I
 
     if-ne p3, p2, :cond_0
 
-    .line 137
+    .line 143
     iget-object p2, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 138
+    .line 144
     invoke-direct {p0}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->updateRows()V
 
     goto :goto_0
 
-    .line 140
+    .line 146
     :cond_0
     iput p3, p1, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->keepMedia:I
 
-    .line 141
+    .line 147
     iget-object p1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->updateVisibleRows(Lorg/telegram/ui/Components/RecyclerListView;)V
 
-    .line 144
+    .line 150
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -379,12 +389,12 @@
 .method private synthetic lambda$createView$2()V
     .locals 3
 
-    .line 153
+    .line 159
     iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 154
+    .line 160
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -399,10 +409,10 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/CacheByChatsController;->saveKeepMediaExceptions(ILjava/util/ArrayList;)V
 
-    .line 155
+    .line 161
     invoke-direct {p0}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->updateRows()V
 
-    .line 156
+    .line 162
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
@@ -493,12 +503,12 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/DialogsActivity;->setDelegate(Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;)V
 
-    .line 128
+    .line 134
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_1
 
-    .line 129
+    .line 135
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
@@ -512,7 +522,7 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 130
+    .line 136
     iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -523,7 +533,7 @@
 
     iget-object p2, p2, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;->exception:Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    .line 131
+    .line 137
     new-instance v0, Lorg/telegram/ui/KeepMediaPopupView;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -532,18 +542,18 @@
 
     invoke-direct {v0, p0, v1}, Lorg/telegram/ui/KeepMediaPopupView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;)V
 
-    .line 132
+    .line 138
     invoke-virtual {v0, v3}, Lorg/telegram/ui/KeepMediaPopupView;->updateForDialog(Z)V
 
-    .line 133
+    .line 139
     invoke-static {p0, v0, p1, p3, p4}, Lorg/telegram/ui/Components/AlertsCreator;->createSimplePopup(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;Landroid/view/View;FF)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
-    .line 134
+    .line 140
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setParentWindow(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
 
-    .line 135
+    .line 141
     new-instance p1, Lorg/telegram/ui/CacheChatsExceptionsFragment$$ExternalSyntheticLambda4;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/CacheChatsExceptionsFragment$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
@@ -552,7 +562,7 @@
 
     goto :goto_1
 
-    .line 147
+    .line 153
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
@@ -566,7 +576,7 @@
 
     if-ne p1, v1, :cond_4
 
-    .line 148
+    .line 154
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -575,7 +585,7 @@
 
     const-string p2, "NotificationsDeleteAllExceptionTitle"
 
-    .line 149
+    .line 155
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -584,7 +594,7 @@
 
     const-string p2, "NotificationsDeleteAllExceptionAlert"
 
-    .line 150
+    .line 156
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -593,7 +603,7 @@
 
     const-string p2, "Delete"
 
-    .line 151
+    .line 157
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -604,20 +614,20 @@
 
     const/4 v7, 0x0
 
-    .line 148
+    .line 154
     invoke-static/range {v2 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->createSimpleAlert(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p1
 
-    .line 157
+    .line 163
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 158
+    .line 164
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 159
+    .line 165
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->redPositive()V
 
     :cond_4
@@ -628,10 +638,10 @@
 .method private synthetic lambda$showPopupFor$4(Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;II)V
     .locals 0
 
-    .line 184
+    .line 190
     iput p3, p1, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->keepMedia:I
 
-    .line 185
+    .line 191
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -646,7 +656,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/CacheByChatsController;->saveKeepMediaExceptions(ILjava/util/ArrayList;)V
 
-    .line 186
+    .line 192
     iget-object p1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->updateVisibleRows(Lorg/telegram/ui/Components/RecyclerListView;)V
@@ -661,7 +671,7 @@
 
     move v1, v0
 
-    .line 171
+    .line 177
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
@@ -671,7 +681,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 172
+    .line 178
     iget-object v2, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -711,7 +721,7 @@
 
     goto :goto_0
 
-    .line 177
+    .line 183
     :cond_1
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -722,7 +732,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 179
+    .line 185
     new-instance v1, Lorg/telegram/ui/KeepMediaPopupView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -733,10 +743,10 @@
 
     const/4 v2, 0x1
 
-    .line 180
+    .line 186
     invoke-virtual {v1, v2}, Lorg/telegram/ui/KeepMediaPopupView;->updateForDialog(Z)V
 
-    .line 181
+    .line 187
     iget-object v2, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
@@ -763,10 +773,10 @@
 
     move-result-object v0
 
-    .line 182
+    .line 188
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setParentWindow(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
 
-    .line 183
+    .line 189
     new-instance v0, Lorg/telegram/ui/CacheChatsExceptionsFragment$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/CacheChatsExceptionsFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
@@ -780,7 +790,7 @@
 .method private updateRows()V
     .locals 8
 
-    .line 200
+    .line 206
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->isPaused:Z
 
     const/4 v1, 0x0
@@ -805,12 +815,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 203
+    .line 209
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 204
+    .line 210
     iget-object v4, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -820,13 +830,13 @@
     :cond_1
     move-object v0, v3
 
-    .line 207
+    .line 213
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 208
+    .line 214
     iget-object v4, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
@@ -835,7 +845,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 210
+    .line 216
     iget-object v4, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -855,7 +865,7 @@
 
     check-cast v1, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    .line 211
+    .line 217
     iget-object v5, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     new-instance v6, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
@@ -875,7 +885,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 216
+    .line 222
     iget-object v1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     new-instance v4, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
@@ -884,7 +894,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 217
+    .line 223
     iget-object v1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     new-instance v4, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
@@ -895,7 +905,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 219
+    .line 225
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
@@ -905,21 +915,21 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 221
+    .line 227
     iget-object v1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->adapter:Lorg/telegram/ui/CacheChatsExceptionsFragment$Adapter;
 
     if-eqz v1, :cond_5
 
     if-eqz v0, :cond_4
 
-    .line 223
+    .line 229
     iget-object v2, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;->setItems(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     goto :goto_3
 
-    .line 225
+    .line 231
     :cond_4
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
@@ -1026,24 +1036,24 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;)V
 
-    .line 162
+    .line 168
     iget-object p1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    const-string p1, "windowBackgroundGray"
+    .line 169
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 163
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 164
+    .line 170
     invoke-direct {p0}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->updateRows()V
 
-    .line 165
+    .line 171
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p1
@@ -1052,7 +1062,7 @@
 .method public onFragmentCreate()Z
     .locals 2
 
-    .line 194
+    .line 200
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -1065,10 +1075,10 @@
 
     iput v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->currentType:I
 
-    .line 195
+    .line 201
     invoke-direct {p0}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->updateRows()V
 
-    .line 196
+    .line 202
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
     move-result v0
@@ -1087,10 +1097,10 @@
         }
     .end annotation
 
-    .line 231
+    .line 237
     iput-object p1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
 
-    .line 232
+    .line 238
     invoke-direct {p0}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->updateRows()V
 
     return-void
@@ -1099,7 +1109,7 @@
 .method public showPopupFor(Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
     .locals 3
 
-    .line 169
+    .line 175
     new-instance v0, Lorg/telegram/ui/CacheChatsExceptionsFragment$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/CacheChatsExceptionsFragment$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V

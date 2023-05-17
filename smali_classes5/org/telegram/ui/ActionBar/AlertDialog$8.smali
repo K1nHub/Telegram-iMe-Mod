@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ActionBar/AlertDialog$8;
-.super Landroid/widget/TextView;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "AlertDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ActionBar/AlertDialog;->onCreate(Landroid/os/Bundle;)V
+    value = Lorg/telegram/ui/ActionBar/AlertDialog;->runShadowAnimation(IZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,58 +14,122 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field final synthetic val$num:I
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;I)V
     .locals 0
 
-    .line 1037
-    invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    .line 1229
+    iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->val$num:I
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public setEnabled(Z)V
-    .locals 0
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 2
 
-    .line 1040
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setEnabled(Z)V
+    .line 1239
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    iget v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->val$num:I
+
+    aget-object v0, v0, v1
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    iget v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->val$num:I
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
 
     if-eqz p1, :cond_0
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    .line 1240
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    goto :goto_0
-
-    :cond_0
-    const/high16 p1, 0x3f000000    # 0.5f
-
-    .line 1041
-    :goto_0
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setAlpha(F)V
-
-    return-void
-.end method
-
-.method public setTextColor(I)V
-    .locals 1
-
-    .line 1046
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    const/4 v0, 0x6
-
-    .line 1047
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->getRoundRectSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    iget v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->val$num:I
 
+    const/4 v1, 0x0
+
+    aput-object v1, p1, v0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
+
+    .line 1232
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    iget v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->val$num:I
+
+    aget-object v0, v0, v1
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    iget v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->val$num:I
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 1233
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
+
+    move-result-object p1
+
+    iget v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->val$num:I
+
+    const/4 v1, 0x0
+
+    aput-object v1, p1, v0
+
+    :cond_0
     return-void
 .end method

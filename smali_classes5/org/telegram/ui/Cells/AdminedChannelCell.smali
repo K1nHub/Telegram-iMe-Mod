@@ -136,14 +136,14 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Cells/AdminedChannelCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const/4 v5, 0x0
-
-    const-string v9, "windowBackgroundWhite"
-
-    const-string v10, "checkboxCheck"
+    const/4 v5, -0x1
 
     .line 57
-    invoke-virtual {v3, v5, v9, v10}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
+
+    invoke-virtual {v3, v5, v9, v10}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 58
     iget-object v3, v0, Lorg/telegram/ui/Cells/AdminedChannelCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -224,10 +224,10 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Cells/AdminedChannelCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v5, "windowBackgroundWhiteBlackText"
-
     .line 65
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -331,9 +331,9 @@
     .line 72
     iget-object v3, v0, Lorg/telegram/ui/Cells/AdminedChannelCell;->statusTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v5, "windowBackgroundWhiteGrayText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -342,9 +342,9 @@
     .line 73
     iget-object v3, v0, Lorg/telegram/ui/Cells/AdminedChannelCell;->statusTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v9, "windowBackgroundWhiteLinkText"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -456,9 +456,9 @@
     .line 82
     iget-object v1, v0, Lorg/telegram/ui/Cells/AdminedChannelCell;->deleteButton:Landroid/widget/ImageView;
 
-    const-string v2, "listSelectorSDK21"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -473,7 +473,7 @@
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

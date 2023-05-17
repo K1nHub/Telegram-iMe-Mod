@@ -187,7 +187,7 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     .line 73
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -198,7 +198,7 @@
 
     iput-object p1, p0, Lio/grpc/okhttp/AsyncSink;->sink:Lokio/Sink;
 
-    const-string p1, "socket"
+    const-string/jumbo p1, "socket"
 
     .line 74
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -367,7 +367,7 @@
         }
     .end annotation
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     .line 79
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

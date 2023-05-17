@@ -128,7 +128,7 @@
 .method public constructor <init>(Lokhttp3/internal/concurrent/TaskRunner;Lokhttp3/Request;Lokhttp3/WebSocketListener;Ljava/util/Random;JLokhttp3/internal/ws/WebSocketExtensions;J)V
     .locals 1
 
-    const-string v0, "taskRunner"
+    const-string/jumbo v0, "taskRunner"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1207,7 +1207,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "streams"
+    const-string/jumbo v1, "streams"
 
     invoke-static {v11, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1638,7 +1638,7 @@
         }
     .end annotation
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1777,7 +1777,7 @@
 .method public send(Ljava/lang/String;)Z
     .locals 1
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

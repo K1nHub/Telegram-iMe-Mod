@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class zzfn extends zzdi<Long> implements zzew<Long>, zzgi {
     private static final zzfn zza;
     private long[] zzb;
@@ -231,6 +231,6 @@ final class zzfn extends zzdi<Long> implements zzew<Long>, zzgi {
     static {
         zzfn zzfnVar = new zzfn(new long[0], 0);
         zza = zzfnVar;
-        zzfnVar.mo758b_();
+        zzfnVar.mo762b_();
     }
 }

@@ -723,8 +723,6 @@
 
     move-result v3
 
-    const-string v6, "windowBackgroundWhiteBlackText"
-
     if-ne v2, v3, :cond_3
 
     .line 765
@@ -736,7 +734,9 @@
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Cells/TextSettingsCell;->setCanDisable(Z)V
 
     .line 767
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -759,11 +759,11 @@
 
     move-result v3
 
-    const/4 v7, -0x1
+    const/4 v6, -0x1
 
-    const/4 v8, 0x2
+    const/4 v7, 0x2
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     packed-switch v3, :pswitch_data_0
 
@@ -793,36 +793,36 @@
 
     const/16 v3, 0x2d
 
-    const-string v6, "color_lightblue"
-
-    const-string v7, "StorageUsage"
+    const-string v6, "StorageUsage"
 
     if-eqz v2, :cond_4
 
     .line 783
     sget v2, Lorg/telegram/messenger/R$string;->StorageUsage:I
 
-    invoke-static {v7, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
-    sget v13, Lorg/telegram/messenger/R$drawable;->msg_filled_storageusage:I
+    sget v12, Lorg/telegram/messenger/R$drawable;->msg_filled_storageusage:I
 
     iget-object v2, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
 
-    invoke-virtual {v2, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_color_lightblue:I
 
-    move-result v14
+    invoke-virtual {v2, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
-    const/4 v15, 0x1
+    move-result v13
 
-    const-string v11, ""
+    const/4 v14, 0x1
 
-    move-object v9, v1
+    const-string v10, ""
 
-    invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    move-object v8, v1
+
+    invoke-virtual/range {v8 .. v14}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
 
     .line 784
     iget-object v2, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
@@ -839,19 +839,19 @@
     :cond_4
     sget v2, Lorg/telegram/messenger/R$string;->StorageUsage:I
 
-    invoke-static {v7, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
     iget-object v2, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/DataSettingsActivity;->access$900(Lorg/telegram/ui/DataSettingsActivity;)J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    const-wide/16 v11, 0x0
+    const-wide/16 v10, 0x0
 
-    cmp-long v2, v7, v11
+    cmp-long v2, v6, v10
 
     if-gtz v2, :cond_5
 
@@ -864,30 +864,32 @@
 
     invoke-static {v2}, Lorg/telegram/ui/DataSettingsActivity;->access$900(Lorg/telegram/ui/DataSettingsActivity;)J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    invoke-static {v7, v8}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
+    invoke-static {v6, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
     move-result-object v2
 
     :goto_0
-    move-object v11, v2
+    move-object v10, v2
 
-    const/4 v12, 0x1
+    const/4 v11, 0x1
 
-    sget v13, Lorg/telegram/messenger/R$drawable;->msg_filled_storageusage:I
+    sget v12, Lorg/telegram/messenger/R$drawable;->msg_filled_storageusage:I
 
     iget-object v2, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
 
-    invoke-virtual {v2, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_color_lightblue:I
 
-    move-result v14
+    invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
-    const/4 v15, 0x1
+    move-result v13
 
-    move-object v9, v1
+    const/4 v14, 0x1
 
-    invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    move-object v8, v1
+
+    invoke-virtual/range {v8 .. v14}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
 
     .line 787
     iget-object v2, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
@@ -932,42 +934,42 @@
     .line 793
     invoke-virtual {v2, v5, v3}, Lorg/telegram/messenger/StatsController;->getReceivedBytesCount(II)J
 
-    move-result-wide v9
+    move-result-wide v8
 
     .line 794
     invoke-virtual {v2, v4, v3}, Lorg/telegram/messenger/StatsController;->getReceivedBytesCount(II)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    add-long/2addr v9, v11
+    add-long/2addr v8, v10
 
     .line 795
-    invoke-virtual {v2, v8, v3}, Lorg/telegram/messenger/StatsController;->getReceivedBytesCount(II)J
+    invoke-virtual {v2, v7, v3}, Lorg/telegram/messenger/StatsController;->getReceivedBytesCount(II)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    add-long/2addr v9, v11
+    add-long/2addr v8, v10
 
     .line 796
     invoke-virtual {v2, v5, v3}, Lorg/telegram/messenger/StatsController;->getSentBytesCount(II)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    add-long/2addr v9, v11
+    add-long/2addr v8, v10
 
     .line 797
     invoke-virtual {v2, v4, v3}, Lorg/telegram/messenger/StatsController;->getSentBytesCount(II)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    add-long/2addr v9, v11
+    add-long/2addr v8, v10
 
     .line 798
-    invoke-virtual {v2, v8, v3}, Lorg/telegram/messenger/StatsController;->getSentBytesCount(II)J
+    invoke-virtual {v2, v7, v3}, Lorg/telegram/messenger/StatsController;->getSentBytesCount(II)J
 
     move-result-wide v2
 
-    add-long/2addr v9, v2
+    add-long/2addr v8, v2
 
     .line 800
     sget v2, Lorg/telegram/messenger/R$string;->NetworkUsage:I
@@ -978,21 +980,21 @@
 
     move-result-object v2
 
-    invoke-static {v9, v10}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
+    invoke-static {v8, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    const/4 v12, 0x1
+    const/4 v11, 0x1
 
-    sget v13, Lorg/telegram/messenger/R$drawable;->msg_filled_datausage:I
+    sget v12, Lorg/telegram/messenger/R$drawable;->msg_filled_datausage:I
 
     iget-object v3, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
 
-    const-string v6, "color_green"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_color_green:I
 
-    invoke-virtual {v3, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v3, v7}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
-    move-result v14
+    move-result v13
 
     iget-object v3, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
 
@@ -1000,21 +1002,21 @@
 
     move-result v3
 
-    if-eq v3, v7, :cond_7
+    if-eq v3, v6, :cond_7
 
-    move v15, v4
+    move v14, v4
 
     goto :goto_2
 
     :cond_7
-    move v15, v5
+    move v14, v5
 
     :goto_2
-    move-object v9, v1
+    move-object v8, v1
 
-    move-object v10, v2
+    move-object v9, v2
 
-    invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    invoke-virtual/range {v8 .. v14}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
 
     goto/16 :goto_12
 
@@ -1136,7 +1138,7 @@
 
     move-result-object v2
 
-    move-object v11, v2
+    move-object v10, v2
 
     .line 813
     sget v2, Lorg/telegram/messenger/R$string;->StoragePath:I
@@ -1145,25 +1147,25 @@
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
-    const/4 v12, 0x1
+    const/4 v11, 0x1
 
-    sget v13, Lorg/telegram/messenger/R$drawable;->msg_filled_sdcard:I
+    sget v12, Lorg/telegram/messenger/R$drawable;->msg_filled_sdcard:I
 
     iget-object v2, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
 
-    const-string v3, "color_yellow"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_color_yellow:I
 
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
-    move-result v14
+    move-result v13
 
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
-    move-object v9, v1
+    move-object v8, v1
 
-    invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
+    invoke-virtual/range {v8 .. v14}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
 
     .line 814
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/TextCell;->setNeedDivider(Z)V
@@ -1174,9 +1176,9 @@
     :pswitch_1
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    move-object v10, v1
+    move-object v9, v1
 
-    check-cast v10, Lorg/telegram/ui/Cells/NotificationsCheckCell;
+    check-cast v9, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
     .line 913
     iget-object v1, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
@@ -1217,9 +1219,9 @@
     move-result v3
 
     :goto_7
-    move-object v11, v1
+    move-object v10, v1
 
-    move/from16 v16, v4
+    move v15, v4
 
     goto/16 :goto_b
 
@@ -1303,9 +1305,9 @@
 
     move-result v3
 
-    move-object v11, v1
+    move-object v10, v1
 
-    move/from16 v16, v5
+    move v15, v5
 
     goto/16 :goto_b
 
@@ -1359,14 +1361,14 @@
     move-result-object v2
 
     :goto_8
-    move-object v11, v1
+    move-object v10, v1
 
-    move/from16 v16, v4
+    move v15, v4
 
     :goto_9
-    move-object/from16 v18, v9
+    move-object/from16 v18, v8
 
-    move-object v9, v2
+    move-object v8, v2
 
     move-object/from16 v2, v18
 
@@ -1480,14 +1482,14 @@
     move v6, v5
 
     :goto_a
-    move-object v11, v1
+    move-object v10, v1
 
-    move/from16 v16, v6
+    move v15, v6
 
     goto :goto_9
 
     :goto_b
-    if-eqz v9, :cond_1f
+    if-eqz v8, :cond_1f
 
     .line 942
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1500,17 +1502,17 @@
 
     move v7, v6
 
-    move v8, v7
+    move v11, v7
 
-    move v12, v8
+    move v12, v11
 
     .line 947
     :goto_c
-    iget-object v13, v9, Lorg/telegram/messenger/DownloadController$Preset;->mask:[I
+    iget-object v13, v8, Lorg/telegram/messenger/DownloadController$Preset;->mask:[I
 
     array-length v14, v13
 
-    const/16 v15, 0x8
+    const/16 v16, 0x8
 
     const/16 v17, 0x4
 
@@ -1530,7 +1532,7 @@
     move v6, v4
 
     :cond_13
-    if-nez v8, :cond_14
+    if-nez v11, :cond_14
 
     .line 952
     aget v14, v13, v2
@@ -1541,7 +1543,7 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    move v8, v4
+    move v11, v4
 
     :cond_14
     if-nez v12, :cond_15
@@ -1549,7 +1551,7 @@
     .line 956
     aget v13, v13, v2
 
-    and-int/2addr v13, v15
+    and-int/lit8 v13, v13, 0x8
 
     if-eqz v13, :cond_15
 
@@ -1564,7 +1566,7 @@
 
     .line 961
     :cond_16
-    iget-boolean v2, v9, Lorg/telegram/messenger/DownloadController$Preset;->enabled:Z
+    iget-boolean v2, v8, Lorg/telegram/messenger/DownloadController$Preset;->enabled:Z
 
     if-eqz v2, :cond_1b
 
@@ -1588,7 +1590,7 @@
 
     const-string v7, " (%1$s)"
 
-    if-eqz v8, :cond_19
+    if-eqz v11, :cond_19
 
     .line 966
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
@@ -1615,36 +1617,36 @@
     new-array v13, v4, [Ljava/lang/Object;
 
     .line 970
-    iget-object v14, v9, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
+    iget-object v14, v8, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
 
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/DownloadController;->typeToIndex(I)I
 
     move-result v17
 
-    move-object/from16 p1, v10
+    move-object/from16 p1, v9
 
-    move-object/from16 p2, v11
+    move-object/from16 p2, v10
 
-    aget-wide v10, v14, v17
+    aget-wide v9, v14, v17
 
-    invoke-static {v10, v11, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
+    invoke-static {v9, v10, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
-    aput-object v10, v13, v5
+    aput-object v9, v13, v5
 
     invoke-static {v7, v13}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_d
 
     :cond_19
-    move-object/from16 p1, v10
+    move-object/from16 p1, v9
 
-    move-object/from16 p2, v11
+    move-object/from16 p2, v10
 
     :goto_d
     if-eqz v12, :cond_1c
@@ -1652,9 +1654,9 @@
     .line 973
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v10
+    move-result v9
 
-    if-lez v10, :cond_1a
+    if-lez v9, :cond_1a
 
     .line 974
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1663,9 +1665,9 @@
     :cond_1a
     sget v2, Lorg/telegram/messenger/R$string;->AutoDownloadFilesOn:I
 
-    const-string v10, "AutoDownloadFilesOn"
+    const-string v9, "AutoDownloadFilesOn"
 
-    invoke-static {v10, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v9, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1674,19 +1676,19 @@
     new-array v2, v4, [Ljava/lang/Object;
 
     .line 977
-    iget-object v9, v9, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
+    iget-object v8, v8, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
 
-    invoke-static {v15}, Lorg/telegram/messenger/DownloadController;->typeToIndex(I)I
+    invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/DownloadController;->typeToIndex(I)I
 
-    move-result v10
+    move-result v9
 
-    aget-wide v10, v9, v10
+    aget-wide v9, v8, v9
 
-    invoke-static {v10, v11, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
+    invoke-static {v9, v10, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    aput-object v9, v2, v5
+    aput-object v8, v2, v5
 
     invoke-static {v7, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1697,9 +1699,9 @@
     goto :goto_e
 
     :cond_1b
-    move-object/from16 p1, v10
+    move-object/from16 p1, v9
 
-    move-object/from16 p2, v11
+    move-object/from16 p2, v10
 
     .line 980
     sget v2, Lorg/telegram/messenger/R$string;->NoMediaAutoDownload:I
@@ -1716,7 +1718,7 @@
     :goto_e
     if-nez v6, :cond_1d
 
-    if-nez v8, :cond_1d
+    if-nez v11, :cond_1d
 
     if-eqz v12, :cond_1e
 
@@ -1726,37 +1728,37 @@
     move v5, v4
 
     :cond_1e
-    move-object v12, v1
+    move-object v11, v1
 
-    move v13, v5
+    move v12, v5
 
     move-object/from16 v1, p1
 
     goto :goto_f
 
     :cond_1f
-    move-object/from16 p2, v11
+    move-object/from16 p2, v10
 
-    move-object v12, v2
+    move-object v11, v2
 
-    move v13, v3
+    move v12, v3
 
-    move-object v1, v10
+    move-object v1, v9
 
     .line 987
     :goto_f
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setAnimationsEnabled(Z)V
 
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
-    const/4 v15, 0x1
+    const/4 v14, 0x1
 
-    move-object v10, v1
+    move-object v9, v1
 
-    move-object/from16 v11, p2
+    move-object/from16 v10, p2
 
     .line 988
-    invoke-virtual/range {v10 .. v16}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/CharSequence;ZIZZ)V
+    invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/CharSequence;ZIZZ)V
 
     goto/16 :goto_12
 
@@ -1837,13 +1839,13 @@
 
     sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->streamMedia:Z
 
-    iget-object v6, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
+    iget-object v7, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
 
-    invoke-static {v6}, Lorg/telegram/ui/DataSettingsActivity;->access$2800(Lorg/telegram/ui/DataSettingsActivity;)I
+    invoke-static {v7}, Lorg/telegram/ui/DataSettingsActivity;->access$2800(Lorg/telegram/ui/DataSettingsActivity;)I
 
-    move-result v6
+    move-result v7
 
-    if-eq v6, v7, :cond_21
+    if-eq v7, v6, :cond_21
 
     goto :goto_10
 
@@ -2135,7 +2137,9 @@
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Cells/TextSettingsCell;->setCanDisable(Z)V
 
     .line 821
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -2173,7 +2177,7 @@
 
     if-eq v2, v4, :cond_2f
 
-    if-eq v2, v8, :cond_2e
+    if-eq v2, v7, :cond_2e
 
     const/4 v3, 0x3
 
@@ -2189,7 +2193,7 @@
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     goto :goto_11
 
@@ -2201,7 +2205,7 @@
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     goto :goto_11
 
@@ -2213,7 +2217,7 @@
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     goto :goto_11
 
@@ -2225,7 +2229,7 @@
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     .line 840
     :goto_11
@@ -2243,7 +2247,7 @@
 
     move-result v3
 
-    invoke-virtual {v1, v2, v9, v3, v4}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
+    invoke-virtual {v1, v2, v8, v3, v4}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
 
     .line 841
     iget-object v1, v0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataSettingsActivity;
@@ -2294,10 +2298,10 @@
     .line 847
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/TextSettingsCell;->setCanDisable(Z)V
 
-    const-string v2, "windowBackgroundWhiteRedText"
-
     .line 848
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -2376,8 +2380,6 @@
 
     move-result v3
 
-    const-string v4, "windowBackgroundGrayShadow"
-
     if-ne v2, v3, :cond_35
 
     .line 773
@@ -2387,7 +2389,9 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -2403,7 +2407,9 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -2412,8 +2418,6 @@
     :cond_36
     :goto_12
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2433,8 +2437,6 @@
     if-eqz p2, :cond_5
 
     const/4 p1, 0x1
-
-    const-string v0, "windowBackgroundWhite"
 
     if-eq p2, p1, :cond_4
 
@@ -2462,7 +2464,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
     .line 1062
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2479,7 +2483,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;-><init>(Landroid/content/Context;)V
 
     .line 1057
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2500,9 +2506,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    const-string v1, "windowBackgroundGrayShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -2519,7 +2525,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
     .line 1049
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2533,12 +2541,14 @@
 
     iget-object p2, p0, Lorg/telegram/ui/DataSettingsActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    const/16 v1, 0x16
+    const/16 v0, 0x16
 
-    invoke-direct {p1, p2, v1}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;I)V
+    invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;I)V
 
     .line 1045
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2555,7 +2565,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 1041
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

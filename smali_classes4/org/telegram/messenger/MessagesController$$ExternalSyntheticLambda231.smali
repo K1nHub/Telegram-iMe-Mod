@@ -10,13 +10,13 @@
 
 .field public final synthetic f$1:Z
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:J
 
-.field public final synthetic f$3:J
+.field public final synthetic f$3:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZZJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZJLjava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +25,9 @@
 
     iput-boolean p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$1:Z
 
-    iput-boolean p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$2:Z
+    iput-wide p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$2:J
 
-    iput-wide p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$3:J
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$3:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -41,11 +41,11 @@
 
     iget-boolean v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$1:Z
 
-    iget-boolean v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$2:Z
+    iget-wide v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$2:J
 
-    iget-wide v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$3:J
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$3:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$M2exw7FdLJaxcFjWajBH8AYbzcw(Lorg/telegram/messenger/MessagesController;ZZJ)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$yJqd21_8-dOqg-vElZRCSJhaMTo(Lorg/telegram/messenger/MessagesController;ZJLjava/util/ArrayList;)V
 
     return-void
 .end method

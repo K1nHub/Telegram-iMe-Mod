@@ -1769,12 +1769,12 @@
 
     if-eqz v1, :cond_28
 
-    const-string v1, "chat_outReactionButtonBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReactionButtonBackground:I
 
     goto :goto_1c
 
     :cond_28
-    const-string v1, "chat_inReactionButtonBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonBackground:I
 
     goto :goto_1c
 
@@ -1790,12 +1790,12 @@
 
     if-eqz v1, :cond_2a
 
-    const-string v1, "chat_outReactionButtonTextSelected"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReactionButtonTextSelected:I
 
     goto :goto_1c
 
     :cond_2a
-    const-string v1, "chat_inReactionButtonTextSelected"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonTextSelected:I
 
     .line 562
     :goto_1c
@@ -1804,7 +1804,7 @@
     move-result-object v3
 
     .line 558
-    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 

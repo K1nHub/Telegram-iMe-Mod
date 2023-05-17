@@ -54,16 +54,6 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1sqtMmQEKo8Cz4wu7qUz6grd4bI(Lorg/telegram/ui/SaveToGallerySettingsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static synthetic $r8$lambda$55xBOiXD-Sgqhj8-3ED-6oee55w(Lorg/telegram/ui/SaveToGallerySettingsActivity;Landroid/view/View;IFF)Z
     .locals 0
 
@@ -112,6 +102,16 @@
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->lambda$createView$4(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;Landroid/view/View;)V
 
     return-void
+.end method
+
+.method public static synthetic $r8$lambda$r3vHCg09XfzwcfGulKXJpY1x6ds(Lorg/telegram/ui/SaveToGallerySettingsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 0
+
+    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public constructor <init>(Landroid/os/Bundle;)V
@@ -173,44 +173,54 @@
     return p0
 .end method
 
-.method private synthetic lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+.method private synthetic lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
     .locals 0
 
-    .line 183
-    new-instance p1, Landroid/os/Bundle;
+    const/4 p1, 0x1
 
-    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
+    if-eqz p6, :cond_0
 
-    const/4 p3, 0x0
+    const/4 p2, 0x0
 
-    .line 184
-    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 185
+    invoke-interface {p6, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+
+    return p1
+
+    .line 189
+    :cond_0
+    new-instance p3, Landroid/os/Bundle;
+
+    invoke-direct {p3}, Landroid/os/Bundle;-><init>()V
+
+    const/4 p4, 0x0
+
+    .line 190
+    invoke-virtual {p2, p4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    iget-wide p2, p2, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+    iget-wide p4, p2, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    const-string p4, "dialog_id"
+    const-string p2, "dialog_id"
 
-    invoke-virtual {p1, p4, p2, p3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {p3, p2, p4, p5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 185
+    .line 191
     iget p2, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->type:I
 
-    const-string p3, "type"
+    const-string p4, "type"
 
-    invoke-virtual {p1, p3, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p3, p4, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 186
+    .line 192
     new-instance p2, Lorg/telegram/ui/SaveToGallerySettingsActivity;
 
-    invoke-direct {p2, p1}, Lorg/telegram/ui/SaveToGallerySettingsActivity;-><init>(Landroid/os/Bundle;)V
+    invoke-direct {p2, p3}, Lorg/telegram/ui/SaveToGallerySettingsActivity;-><init>(Landroid/os/Bundle;)V
 
-    const/4 p1, 0x1
-
-    .line 187
+    .line 193
     invoke-virtual {p0, p2, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
     return p1
@@ -219,12 +229,12 @@
 .method private synthetic lambda$createView$1()V
     .locals 3
 
-    .line 203
+    .line 209
     iget-object v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->exceptionsDialogs:Landroid/util/LongSparseArray;
 
     invoke-virtual {v0}, Landroid/util/LongSparseArray;->clear()V
 
-    .line 204
+    .line 210
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -235,7 +245,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/UserConfig;->updateSaveGalleryExceptions(ILandroid/util/LongSparseArray;)V
 
-    .line 205
+    .line 211
     invoke-direct {p0}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->updateRows()V
 
     return-void
@@ -378,12 +388,12 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/DialogsActivity;->setDelegate(Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;)V
 
-    .line 190
+    .line 196
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_1
 
-    .line 191
+    .line 197
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
@@ -397,12 +407,12 @@
 
     if-ne p1, p4, :cond_5
 
-    .line 192
+    .line 198
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 193
+    .line 199
     iget-object p3, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -419,24 +429,24 @@
 
     invoke-virtual {p1, p4, p2, p3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 194
+    .line 200
     iget p2, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->type:I
 
     const-string p3, "type"
 
     invoke-virtual {p1, p3, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 195
+    .line 201
     new-instance p2, Lorg/telegram/ui/SaveToGallerySettingsActivity;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/SaveToGallerySettingsActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 196
+    .line 202
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_1
 
-    .line 197
+    .line 203
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
@@ -450,7 +460,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 198
+    .line 204
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -459,7 +469,7 @@
 
     const-string p2, "NotificationsDeleteAllExceptionTitle"
 
-    .line 199
+    .line 205
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -468,7 +478,7 @@
 
     const-string p2, "NotificationsDeleteAllExceptionAlert"
 
-    .line 200
+    .line 206
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -477,7 +487,7 @@
 
     const-string p2, "Delete"
 
-    .line 201
+    .line 207
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -488,20 +498,20 @@
 
     const/4 v6, 0x0
 
-    .line 198
+    .line 204
     invoke-static/range {v1 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->createSimpleAlert(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p1
 
-    .line 206
+    .line 212
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 207
+    .line 213
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 208
+    .line 214
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->redPositive()V
 
     :cond_6
@@ -512,15 +522,15 @@
 .method private synthetic lambda$createView$3(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;ILandroid/view/View;)V
     .locals 1
 
-    .line 223
+    .line 229
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 224
+    .line 230
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 225
+    .line 231
     iget-object p3, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -537,19 +547,19 @@
 
     invoke-virtual {p1, v0, p2, p3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 226
+    .line 232
     iget p2, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->type:I
 
     const-string p3, "type"
 
     invoke-virtual {p1, p3, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 227
+    .line 233
     new-instance p2, Lorg/telegram/ui/SaveToGallerySettingsActivity;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/SaveToGallerySettingsActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 228
+    .line 234
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -558,10 +568,10 @@
 .method private synthetic lambda$createView$4(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;Landroid/view/View;)V
     .locals 0
 
-    .line 231
+    .line 237
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 232
+    .line 238
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object p1
@@ -572,12 +582,12 @@
 
     move-result-object p1
 
-    .line 233
+    .line 239
     iget-wide p2, p2, Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;->dialogId:J
 
     invoke-virtual {p1, p2, p3}, Landroid/util/LongSparseArray;->remove(J)V
 
-    .line 234
+    .line 240
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object p2
@@ -586,7 +596,7 @@
 
     invoke-virtual {p2, p3, p1}, Lorg/telegram/messenger/UserConfig;->updateSaveGalleryExceptions(ILandroid/util/LongSparseArray;)V
 
-    .line 235
+    .line 241
     invoke-direct {p0}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->updateRows()V
 
     return-void
@@ -595,7 +605,7 @@
 .method private synthetic lambda$createView$5(Landroid/view/View;IFF)Z
     .locals 8
 
-    .line 212
+    .line 218
     iget-object v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -612,7 +622,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 214
+    .line 220
     iget-object v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -623,7 +633,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;->exception:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
-    .line 215
+    .line 221
     new-instance v2, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -632,7 +642,7 @@
 
     invoke-direct {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;)V
 
-    .line 216
+    .line 222
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_customize:I
 
     sget v4, Lorg/telegram/messenger/R$string;->EditException:I
@@ -649,7 +659,7 @@
 
     move-result-object v3
 
-    .line 217
+    .line 223
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     sget v6, Lorg/telegram/messenger/R$string;->DeleteException:I
@@ -664,35 +674,35 @@
 
     move-result-object v1
 
-    const-string v4, "windowBackgroundWhiteRedText"
+    .line 224
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    .line 218
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     invoke-virtual {v1, v5, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 219
+    .line 225
     invoke-static {p0, v2, p1, p3, p4}, Lorg/telegram/ui/Components/AlertsCreator;->createSimplePopup(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;Landroid/view/View;FF)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
-    .line 220
+    .line 226
     invoke-virtual {v2, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setParentWindow(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
 
-    .line 222
+    .line 228
     new-instance p3, Lorg/telegram/ui/SaveToGallerySettingsActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/SaveToGallerySettingsActivity$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;I)V
 
     invoke-virtual {v3, p3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 230
+    .line 236
     new-instance p2, Lorg/telegram/ui/SaveToGallerySettingsActivity$$ExternalSyntheticLambda2;
 
     invoke-direct {p2, p0, p1, v0}, Lorg/telegram/ui/SaveToGallerySettingsActivity$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;)V
@@ -710,12 +720,12 @@
 .method private synthetic lambda$createView$6(Landroid/view/View;)V
     .locals 3
 
-    .line 258
+    .line 264
     iget-boolean p1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->isNewException:Z
 
     if-eqz p1, :cond_0
 
-    .line 259
+    .line 265
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object p1
@@ -726,14 +736,14 @@
 
     move-result-object p1
 
-    .line 260
+    .line 266
     iget-object v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->dialogException:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     iget-wide v1, v0, Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;->dialogId:J
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 261
+    .line 267
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -742,7 +752,7 @@
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/messenger/UserConfig;->updateSaveGalleryExceptions(ILandroid/util/LongSparseArray;)V
 
-    .line 263
+    .line 269
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
@@ -752,20 +762,20 @@
 .method private onSettingsUpdated()V
     .locals 4
 
-    .line 625
+    .line 631
     iget-boolean v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->isNewException:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 628
+    .line 634
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->dialogException:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     if-eqz v0, :cond_1
 
-    .line 629
+    .line 635
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -776,14 +786,14 @@
 
     move-result-object v0
 
-    .line 630
+    .line 636
     iget-object v1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->dialogException:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     iget-wide v2, v1, Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;->dialogId:J
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 631
+    .line 637
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v1
@@ -794,7 +804,7 @@
 
     return-void
 
-    .line 634
+    .line 640
     :cond_1
     iget v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->type:I
 
@@ -806,7 +816,7 @@
 .method private updateRows()V
     .locals 13
 
-    .line 273
+    .line 279
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->isPaused:Z
 
     const/4 v1, 0x0
@@ -831,12 +841,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 276
+    .line 282
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 277
+    .line 283
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -846,20 +856,20 @@
     :cond_1
     move-object v0, v3
 
-    .line 280
+    .line 286
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 282
+    .line 288
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->dialogException:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     const/4 v5, 0x3
 
     if-eqz v4, :cond_2
 
-    .line 283
+    .line 289
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v6, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -870,7 +880,7 @@
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 284
+    .line 290
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v6, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -879,7 +889,7 @@
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 286
+    .line 292
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
@@ -899,7 +909,7 @@
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 287
+    .line 293
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -908,7 +918,7 @@
 
     iput v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->savePhotosRow:I
 
-    .line 288
+    .line 294
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v6, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -919,7 +929,7 @@
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 289
+    .line 295
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -928,7 +938,7 @@
 
     iput v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->saveVideosRow:I
 
-    .line 290
+    .line 296
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v6, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -937,7 +947,7 @@
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 292
+    .line 298
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->dialogException:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     const/4 v6, 0x2
@@ -946,7 +956,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 293
+    .line 299
     sget v4, Lorg/telegram/messenger/R$string;->SaveToGalleryHintCurrent:I
 
     const-string v9, "SaveToGalleryHintCurrent"
@@ -957,13 +967,13 @@
 
     goto :goto_2
 
-    .line 294
+    .line 300
     :cond_3
     iget v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->type:I
 
     if-ne v4, v2, :cond_4
 
-    .line 295
+    .line 301
     sget v4, Lorg/telegram/messenger/R$string;->SaveToGalleryHintUser:I
 
     const-string v9, "SaveToGalleryHintUser"
@@ -977,7 +987,7 @@
     :cond_4
     if-ne v4, v7, :cond_5
 
-    .line 297
+    .line 303
     sget v4, Lorg/telegram/messenger/R$string;->SaveToGalleryHintChannels:I
 
     const-string v9, "SaveToGalleryHintChannels"
@@ -991,7 +1001,7 @@
     :cond_5
     if-ne v4, v6, :cond_6
 
-    .line 299
+    .line 305
     sget v4, Lorg/telegram/messenger/R$string;->SaveToGalleryHintGroup:I
 
     const-string v9, "SaveToGalleryHintGroup"
@@ -1005,7 +1015,7 @@
     :cond_6
     move-object v4, v3
 
-    .line 301
+    .line 307
     :goto_2
     iget-object v9, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
@@ -1017,7 +1027,7 @@
 
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 303
+    .line 309
     invoke-virtual {p0}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->getSettings()Lorg/telegram/messenger/SaveToGallerySettingsHelper$Settings;
 
     move-result-object v4
@@ -1026,7 +1036,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 304
+    .line 310
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -1043,7 +1053,7 @@
 
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 305
+    .line 311
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v8, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -1054,7 +1064,7 @@
 
     invoke-virtual {v4, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 306
+    .line 312
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -1063,7 +1073,7 @@
 
     iput v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->videoDividerRow:I
 
-    .line 307
+    .line 313
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v8, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -1077,16 +1087,16 @@
     :cond_7
     const/4 v4, -0x1
 
-    .line 309
+    .line 315
     iput v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->videoDividerRow:I
 
-    .line 312
+    .line 318
     :goto_3
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->dialogException:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     if-nez v4, :cond_a
 
-    .line 313
+    .line 319
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v4
@@ -1099,7 +1109,7 @@
 
     iput-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->exceptionsDialogs:Landroid/util/LongSparseArray;
 
-    .line 314
+    .line 320
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v8, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -1110,7 +1120,7 @@
 
     move v4, v1
 
-    .line 316
+    .line 322
     :goto_4
     iget-object v8, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->exceptionsDialogs:Landroid/util/LongSparseArray;
 
@@ -1120,7 +1130,7 @@
 
     if-ge v1, v8, :cond_8
 
-    .line 317
+    .line 323
     iget-object v4, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v8, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -1146,7 +1156,7 @@
     :cond_8
     if-eqz v4, :cond_9
 
-    .line 322
+    .line 328
     iget-object v1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -1155,7 +1165,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 323
+    .line 329
     iget-object v1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/SaveToGallerySettingsActivity$Item;
@@ -1164,7 +1174,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 325
+    .line 331
     :cond_9
     iget-object v1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
@@ -1176,7 +1186,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 328
+    .line 334
     :cond_a
     iget-object v1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->adapter:Lorg/telegram/ui/SaveToGallerySettingsActivity$Adapter;
 
@@ -1184,14 +1194,14 @@
 
     if-eqz v0, :cond_b
 
-    .line 330
+    .line 336
     iget-object v2, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;->setItems(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     goto :goto_5
 
-    .line 332
+    .line 338
     :cond_b
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
@@ -1386,7 +1396,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;)V
 
-    .line 211
+    .line 217
     iget-object p1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/SaveToGallerySettingsActivity$$ExternalSyntheticLambda5;
@@ -1395,26 +1405,26 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemLongClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended;)V
 
-    .line 241
+    .line 247
     iget-object p1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    const-string p1, "windowBackgroundGray"
+    .line 248
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 242
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 244
+    .line 250
     iget-object p1, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->dialogException:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     if-eqz p1, :cond_5
 
-    .line 247
+    .line 253
     new-instance p1, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -1423,22 +1433,22 @@
 
     invoke-direct {p1, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    new-array v1, v2, [F
+    .line 254
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    const/high16 v4, 0x41000000    # 8.0f
+    new-array v4, v2, [F
 
-    aput v4, v1, v3
+    const/high16 v5, 0x41000000    # 8.0f
 
-    const-string v3, "featuredStickers_addButton"
+    aput v5, v4, v3
 
-    .line 248
-    invoke-static {v3, v1}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 250
+    .line 256
     new-instance v1, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -1449,10 +1459,10 @@
 
     const/high16 v3, 0x41600000    # 14.0f
 
-    .line 251
+    .line 257
     invoke-virtual {v1, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 252
+    .line 258
     iget-boolean v2, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->isNewException:Z
 
     if-eqz v2, :cond_4
@@ -1477,22 +1487,22 @@
 
     const/16 v2, 0x11
 
-    .line 253
+    .line 259
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
     const-string v3, "fonts/rmedium.ttf"
 
-    .line 254
+    .line 260
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    const-string v3, "featuredStickers_buttonText"
+    .line 261
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    .line 255
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1500,14 +1510,14 @@
 
     const/4 v3, -0x2
 
-    .line 256
+    .line 262
     invoke-static {v3, v3, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {p1, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 257
+    .line 263
     new-instance v1, Lorg/telegram/ui/SaveToGallerySettingsActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/SaveToGallerySettingsActivity$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/SaveToGallerySettingsActivity;)V
@@ -1528,18 +1538,18 @@
 
     const/16 v8, 0x10
 
-    .line 265
+    .line 271
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 268
+    .line 274
     :cond_5
     invoke-direct {p0}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->updateRows()V
 
-    .line 269
+    .line 275
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p1
@@ -1548,14 +1558,14 @@
 .method getSettings()Lorg/telegram/messenger/SaveToGallerySettingsHelper$Settings;
     .locals 1
 
-    .line 612
+    .line 618
     iget-object v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->dialogException:Lorg/telegram/messenger/SaveToGallerySettingsHelper$DialogException;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 615
+    .line 621
     :cond_0
     iget v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity;->type:I
 
@@ -1692,10 +1702,10 @@
 .method public onResume()V
     .locals 0
 
-    .line 620
+    .line 626
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 621
+    .line 627
     invoke-direct {p0}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->updateRows()V
 
     return-void

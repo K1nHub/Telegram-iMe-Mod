@@ -63,7 +63,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 127
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/HistoryDialogModel;->isPinned()Z
 
     move-result p1
@@ -80,7 +80,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 122
+    .line 127
     check-cast p1, Lcom/iMe/storage/domain/model/HistoryDialogModel;
 
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/RecentChatsController$clearRecentChatsHistory$1;->invoke(Lcom/iMe/storage/domain/model/HistoryDialogModel;)Ljava/lang/Boolean;

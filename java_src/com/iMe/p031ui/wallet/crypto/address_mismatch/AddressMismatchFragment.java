@@ -28,11 +28,11 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthAddressMismatchBinding;
 import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -93,7 +93,10 @@ public final class AddressMismatchFragment extends WalletAuthFragment implements
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getBinding().textTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "chat_messagePanelText"), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteGrayText2"), new ThemeDescription(getBinding().buttonDelete, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda2
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_windowBackgroundWhite;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2), new ThemeDescription(getBinding().textTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_chat_messagePanelText), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getBinding().buttonDelete, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda2
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 AddressMismatchFragment.getThemeDescriptions$lambda$0(AddressMismatchFragment.this);
@@ -103,7 +106,7 @@ public final class AddressMismatchFragment extends WalletAuthFragment implements
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "dialogTextRed"));
+        }, Theme.key_text_RedRegular));
         return arrayListOf;
     }
 
@@ -130,37 +133,37 @@ public final class AddressMismatchFragment extends WalletAuthFragment implements
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        c3306ActionBar.setCastShadows(false);
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        c3356ActionBar.setCastShadows(false);
     }
 
     private final void setupTexts() {
         ForkFragmentWalletEthAddressMismatchBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3242R.string.wallet_eth_address_mismatch_title));
-        binding.buttonDelete.setText(getResourceManager().getString(C3242R.string.wallet_eth_address_mismatch_btn_delete));
-        binding.buttonBackup.setText(getResourceManager().getString(C3242R.string.wallet_eth_address_mismatch_btn_backup));
+        binding.textTitle.setText(getResourceManager().getString(C3290R.string.wallet_eth_address_mismatch_title));
+        binding.buttonDelete.setText(getResourceManager().getString(C3290R.string.wallet_eth_address_mismatch_btn_delete));
+        binding.buttonBackup.setText(getResourceManager().getString(C3290R.string.wallet_eth_address_mismatch_btn_backup));
         AppCompatTextView appCompatTextView = binding.textDescription;
-        appCompatTextView.setText(getResourceManager().getString(C3242R.string.wallet_eth_address_mismatch_description));
+        appCompatTextView.setText(getResourceManager().getString(C3290R.string.wallet_eth_address_mismatch_description));
         appCompatTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     private final void setupImage() {
         RLottieImageView rLottieImageView = getBinding().imageLogo;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3242R.raw.fork_address_mismatch, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3290R.raw.fork_address_mismatch, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
     }
 
     private final void setupColors() {
         ForkFragmentWalletEthAddressMismatchBinding binding = getBinding();
-        binding.getRoot().setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        binding.getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         AppCompatButton setupColors$lambda$7$lambda$6 = binding.buttonDelete;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$7$lambda$6, "setupColors$lambda$7$lambda$6");
         ViewExtKt.withMediumTypeface(setupColors$lambda$7$lambda$6);
-        setupColors$lambda$7$lambda$6.setTextColor(Theme.getColor("dialogTextRed"));
-        binding.textTitle.setTextColor(Theme.getColor("chat_messagePanelText"));
-        binding.textDescription.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        setupColors$lambda$7$lambda$6.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
+        binding.textTitle.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
+        binding.textDescription.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
     }
 
     private final void setupListeners() {

@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/WallpapersListActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1385
+    .line 1432
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorCell;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    .line 1386
+    .line 1433
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -38,10 +38,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 1400
+    .line 1447
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$ColorCell;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/WallpapersListActivity;->access$2900(Lorg/telegram/ui/WallpapersListActivity;)Landroid/graphics/Paint;
+    invoke-static {v0}, Lorg/telegram/ui/WallpapersListActivity;->access$3000(Lorg/telegram/ui/WallpapersListActivity;)Landroid/graphics/Paint;
 
     move-result-object v0
 
@@ -51,7 +51,7 @@
 
     const/16 v0, 0x19
 
-    .line 1401
+    .line 1448
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -76,24 +76,24 @@
 
     iget-object v6, p0, Lorg/telegram/ui/WallpapersListActivity$ColorCell;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v6}, Lorg/telegram/ui/WallpapersListActivity;->access$2900(Lorg/telegram/ui/WallpapersListActivity;)Landroid/graphics/Paint;
+    invoke-static {v6}, Lorg/telegram/ui/WallpapersListActivity;->access$3000(Lorg/telegram/ui/WallpapersListActivity;)Landroid/graphics/Paint;
 
     move-result-object v6
 
     invoke-virtual {p1, v1, v3, v5, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1402
+    .line 1449
     iget v1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorCell;->color:I
 
-    const-string v3, "windowBackgroundWhite"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     if-ne v1, v3, :cond_0
 
-    .line 1403
+    .line 1450
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -114,7 +114,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/WallpapersListActivity$ColorCell;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v3}, Lorg/telegram/ui/WallpapersListActivity;->access$3000(Lorg/telegram/ui/WallpapersListActivity;)Landroid/graphics/Paint;
+    invoke-static {v3}, Lorg/telegram/ui/WallpapersListActivity;->access$3100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/graphics/Paint;
 
     move-result-object v3
 
@@ -129,7 +129,7 @@
 
     const/16 p1, 0x32
 
-    .line 1391
+    .line 1438
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -148,7 +148,7 @@
 .method public setColor(I)V
     .locals 0
 
-    .line 1395
+    .line 1442
     iput p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorCell;->color:I
 
     return-void

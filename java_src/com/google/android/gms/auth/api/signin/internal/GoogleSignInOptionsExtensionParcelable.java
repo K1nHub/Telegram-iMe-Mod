@@ -13,16 +13,16 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class GoogleSignInOptionsExtensionParcelable extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GoogleSignInOptionsExtensionParcelable> CREATOR = new zaa();
-    @SafeParcelable.VersionField(m772id = 1)
+    @SafeParcelable.VersionField(m776id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getType", m775id = 2)
+    @SafeParcelable.Field(getter = "getType", m779id = 2)
     private int zab;
-    @SafeParcelable.Field(getter = "getBundle", m775id = 3)
+    @SafeParcelable.Field(getter = "getBundle", m779id = 3)
     private Bundle zac;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GoogleSignInOptionsExtensionParcelable(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) int i2, @SafeParcelable.Param(m774id = 3) Bundle bundle) {
+    public GoogleSignInOptionsExtensionParcelable(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) int i2, @SafeParcelable.Param(m778id = 3) Bundle bundle) {
         this.zaa = i;
         this.zab = i2;
         this.zac = bundle;

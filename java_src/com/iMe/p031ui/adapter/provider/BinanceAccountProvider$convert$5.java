@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: BinanceAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BinanceAccountProvider$convert$5 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class BinanceAccountProvider$convert$5 extends Lambda implements Function1<HorizontalActionButtonsView, Unit> {
     final /* synthetic */ BinanceAccountItem $item;
 

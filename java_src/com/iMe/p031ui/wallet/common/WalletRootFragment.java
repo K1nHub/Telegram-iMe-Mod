@@ -12,6 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.fxn.BubbleTabBar;
 import com.fxn.OnBubbleClickListener;
 import com.fxn.parser.MenuItem;
+import com.github.mmin18.widget.RealtimeBlurView;
 import com.iMe.common.IdFabric$Menu;
 import com.iMe.model.common.ScreenType;
 import com.iMe.model.wallet.navigation.WalletBottomNavigationTab;
@@ -52,12 +53,12 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentWalletGlobalBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenu;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 /* compiled from: WalletRootFragment.kt */
@@ -209,7 +210,10 @@ public final class WalletRootFragment extends WalletAuthFragment implements Bott
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$$ExternalSyntheticLambda0
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_AB_SELECTORCOLOR;
+        int i2 = Theme.key_actionBarDefaultSelector;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$$ExternalSyntheticLambda0
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletRootFragment.getThemeDescriptions$lambda$4(WalletRootFragment.this);
@@ -219,7 +223,7 @@ public final class WalletRootFragment extends WalletAuthFragment implements Bott
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "chats_actionBackground"));
+        }, Theme.key_chats_actionBackground));
         for (WalletTabFragment walletTabFragment : getBottomNavigationRouter().getScreenStack()) {
             Collection<? extends ThemeDescription> themeDescriptions = walletTabFragment.getThemeDescriptions();
             if (themeDescriptions == null) {
@@ -234,8 +238,8 @@ public final class WalletRootFragment extends WalletAuthFragment implements Bott
     public static final void getThemeDescriptions$lambda$4(WalletRootFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ForkFragmentWalletGlobalBinding binding = this$0.getBinding();
-        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m51dp(30.0f));
-        binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor("chats_actionBackground"), 55));
+        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m55dp(30.0f));
+        binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor(Theme.key_chats_actionBackground), 55));
     }
 
     @Override // com.iMe.p031ui.wallet.common.WalletRootView
@@ -289,15 +293,15 @@ public final class WalletRootFragment extends WalletAuthFragment implements Bott
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.drawer_wallet_item_title));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        ActionBarMenu createMenu = c3306ActionBar.createMenu();
-        this.notificationMenuItem = createMenu.addItem(IdFabric$Menu.NOTIFICATIONS, C3242R.C3244drawable.msg_notifications);
-        this.walletConnectMenuItem = createMenu.addItem(IdFabric$Menu.WALLET_CONNECT, C3242R.C3244drawable.fork_ic_wallet_connect);
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$setupActionBar$1$2
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.drawer_wallet_item_title));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        ActionBarMenu createMenu = c3356ActionBar.createMenu();
+        this.notificationMenuItem = createMenu.addItem(IdFabric$Menu.NOTIFICATIONS, C3290R.C3292drawable.msg_notifications);
+        this.walletConnectMenuItem = createMenu.addItem(IdFabric$Menu.WALLET_CONNECT, C3290R.C3292drawable.fork_ic_wallet_connect);
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$setupActionBar$1$2
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletRootFragment.this.backAction();
@@ -315,21 +319,23 @@ public final class WalletRootFragment extends WalletAuthFragment implements Bott
         if (getBottomNavigationRouter().getCurrentScreen() instanceof WalletHomeFragment) {
             finishFragment();
         } else {
-            getPresenter().selectTab(C3242R.C3245id.wallet_root_bottom_navigation_home);
+            getPresenter().selectTab(C3290R.C3293id.wallet_root_bottom_navigation_home);
         }
     }
 
     private final void setupColors() {
         ForkFragmentWalletGlobalBinding binding = getBinding();
-        binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor("chats_actionBackground"), 55));
+        RealtimeBlurView realtimeBlurView = binding.realtimeBlur;
+        int i = Theme.key_chats_actionBackground;
+        realtimeBlurView.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor(i), 55));
         BubbleTabBar bubbleTabBar = binding.bottomNavigationWallet;
         Context applicationContext = ApplicationLoader.applicationContext;
         Intrinsics.checkNotNullExpressionValue(applicationContext, "applicationContext");
-        bubbleTabBar.setDisableIconColor(applicationContext, Theme.getColor("chats_actionBackground"));
+        bubbleTabBar.setDisableIconColor(applicationContext, Theme.getColor(i));
         BubbleTabBar bubbleTabBar2 = binding.bottomNavigationWallet;
         Context applicationContext2 = ApplicationLoader.applicationContext;
         Intrinsics.checkNotNullExpressionValue(applicationContext2, "applicationContext");
-        bubbleTabBar2.setTabContainerBackground(applicationContext2, Theme.getColor("chats_actionBackground"));
+        bubbleTabBar2.setTabContainerBackground(applicationContext2, Theme.getColor(i));
     }
 
     private final void setupNavigationRouter() {
@@ -338,7 +344,7 @@ public final class WalletRootFragment extends WalletAuthFragment implements Bott
 
     private final List<WalletBottomNavigationTab> getTabs() {
         List<WalletBottomNavigationTab> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletBottomNavigationTab(C3242R.C3245id.wallet_root_bottom_navigation_home, WalletHomeFragment.Companion.newInstance(), getResourceManager().getString(C3242R.string.drawer_wallet_item_title)), new WalletBottomNavigationTab(C3242R.C3245id.wallet_root_bottom_navigation_exchange, WalletSwapProtocolsFragment.Companion.newInstance$default(WalletSwapProtocolsFragment.Companion, ScreenType.TAB, null, 2, null), getResourceManager().getString(C3242R.string.wallet_navigation_exchange)), new WalletBottomNavigationTab(C3242R.C3245id.wallet_root_bottom_navigation_settings, WalletSettingsFragment.Companion.newInstance(), getResourceManager().getString(C3242R.string.wallet_settings_toolbar_title)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletBottomNavigationTab(C3290R.C3293id.wallet_root_bottom_navigation_home, WalletHomeFragment.Companion.newInstance(), getResourceManager().getString(C3290R.string.drawer_wallet_item_title)), new WalletBottomNavigationTab(C3290R.C3293id.wallet_root_bottom_navigation_exchange, WalletSwapProtocolsFragment.Companion.newInstance$default(WalletSwapProtocolsFragment.Companion, ScreenType.TAB, null, 2, null), getResourceManager().getString(C3290R.string.wallet_navigation_exchange)), new WalletBottomNavigationTab(C3290R.C3293id.wallet_root_bottom_navigation_settings, WalletSettingsFragment.Companion.newInstance(), getResourceManager().getString(C3290R.string.wallet_settings_toolbar_title)));
         for (WalletBottomNavigationTab walletBottomNavigationTab : mutableListOf) {
             walletBottomNavigationTab.getFragment().setBottomNavigationDelegate(this);
         }
@@ -357,7 +363,7 @@ public final class WalletRootFragment extends WalletAuthFragment implements Bott
                 return true;
             }
         });
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3242R.C3245id.wallet_root_bottom_navigation_home, getResourceManager().getString(C3242R.string.wallet_navigation_wallet), C3242R.C3244drawable.fork_ic_nav_wallet_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3242R.C3245id.wallet_root_bottom_navigation_exchange, getResourceManager().getString(C3242R.string.wallet_navigation_exchange), C3242R.C3244drawable.fork_ic_exchange_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3242R.C3245id.wallet_root_bottom_navigation_settings, getResourceManager().getString(C3242R.string.wallet_navigation_settings), C3242R.C3244drawable.msg_settings, true, getResourceManager().getColor(17170443), false, 32, null));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3290R.C3293id.wallet_root_bottom_navigation_home, getResourceManager().getString(C3290R.string.wallet_navigation_wallet), C3290R.C3292drawable.fork_ic_nav_wallet_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3290R.C3293id.wallet_root_bottom_navigation_exchange, getResourceManager().getString(C3290R.string.wallet_navigation_exchange), C3290R.C3292drawable.fork_ic_exchange_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3290R.C3293id.wallet_root_bottom_navigation_settings, getResourceManager().getString(C3290R.string.wallet_navigation_settings), C3290R.C3292drawable.msg_settings, true, getResourceManager().getColor(17170443), false, 32, null));
         bubbleTabBar.setMenu(mutableListOf);
     }
 

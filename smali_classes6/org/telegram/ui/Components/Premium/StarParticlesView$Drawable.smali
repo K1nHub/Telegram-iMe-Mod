@@ -31,7 +31,7 @@
 
 .field public checkTime:Z
 
-.field public colorKey:Ljava/lang/String;
+.field public colorKey:I
 
 .field public final count:I
 
@@ -276,10 +276,10 @@
     .line 143
     iput v2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
-    const-string v2, "premiumStartSmallStarsColor"
-
     .line 144
-    iput-object v2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor:I
+
+    iput v2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
     .line 156
     iput p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->count:I
@@ -407,9 +407,9 @@
     :goto_3
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -465,9 +465,9 @@
     :goto_4
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -514,9 +514,9 @@
     :goto_5
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -545,9 +545,9 @@
 
     sget v3, Lorg/telegram/messenger/R$raw;->premium_object_fire:I
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -576,9 +576,9 @@
 
     sget v3, Lorg/telegram/messenger/R$raw;->premium_object_star2:I
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -641,9 +641,9 @@
     .line 262
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -864,9 +864,9 @@
     if-ne v5, v6, :cond_15
 
     .line 304
-    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -882,9 +882,9 @@
 
     .line 306
     :cond_15
-    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -953,9 +953,9 @@
     :goto_b
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -1426,9 +1426,9 @@
     .locals 2
 
     .line 175
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

@@ -32,15 +32,15 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 175
+    .line 176
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-string v0, ""
 
-    .line 178
+    .line 179
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$ListItem;->subtitle:Ljava/lang/String;
 
-    .line 179
+    .line 180
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$ListItem;->ext:Ljava/lang/String;
 
     return-void
@@ -49,7 +49,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$1;)V
     .locals 0
 
-    .line 175
+    .line 176
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$ListItem;-><init>()V
 
     return-void

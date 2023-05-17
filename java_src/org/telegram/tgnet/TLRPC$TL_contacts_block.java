@@ -4,7 +4,7 @@ public class TLRPC$TL_contacts_block extends TLObject {
     public static int constructor = 1758204945;
 
     /* renamed from: id */
-    public TLRPC$InputPeer f1474id;
+    public TLRPC$InputPeer f1480id;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -14,6 +14,6 @@ public class TLRPC$TL_contacts_block extends TLObject {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        this.f1474id.serializeToStream(abstractSerializedData);
+        this.f1480id.serializeToStream(abstractSerializedData);
     }
 }

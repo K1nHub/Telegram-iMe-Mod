@@ -42,10 +42,10 @@ public class MentionCell extends LinearLayout {
         setOrientation(0);
         AvatarDrawable avatarDrawable = new AvatarDrawable();
         this.avatarDrawable = avatarDrawable;
-        avatarDrawable.setTextSize(AndroidUtilities.m50dp(18));
+        avatarDrawable.setTextSize(AndroidUtilities.m54dp(18));
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(14));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(14));
         addView(this.imageView, LayoutHelper.createLinear(28, 28, 12, 4, 0, 0));
         TextView textView = new TextView(this, context) { // from class: org.telegram.ui.Cells.MentionCell.1
             @Override // android.widget.TextView
@@ -55,7 +55,7 @@ public class MentionCell extends LinearLayout {
         };
         this.nameTextView = textView;
         NotificationCenter.listenEmojiLoading(textView);
-        this.nameTextView.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+        this.nameTextView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
         this.nameTextView.setTextSize(1, 15.0f);
         this.nameTextView.setSingleLine(true);
         this.nameTextView.setGravity(3);
@@ -63,7 +63,7 @@ public class MentionCell extends LinearLayout {
         addView(this.nameTextView, LayoutHelper.createLinear(-2, -2, 16, 12, 0, 0, 0));
         TextView textView2 = new TextView(context);
         this.usernameTextView = textView2;
-        textView2.setTextColor(getThemedColor("windowBackgroundWhiteGrayText3"));
+        textView2.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText3));
         this.usernameTextView.setTextSize(1, 15.0f);
         this.usernameTextView.setSingleLine(true);
         this.usernameTextView.setGravity(3);
@@ -73,7 +73,7 @@ public class MentionCell extends LinearLayout {
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(36), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(36), 1073741824));
     }
 
     public void setUser(TLRPC$User tLRPC$User) {
@@ -114,7 +114,7 @@ public class MentionCell extends LinearLayout {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.needsDivider) {
-            canvas.drawLine(AndroidUtilities.m50dp(52), getHeight() - 1, getWidth() - AndroidUtilities.m50dp(8), getHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m54dp(52), getHeight() - 1, getWidth() - AndroidUtilities.m54dp(8), getHeight() - 1, Theme.dividerPaint);
         }
     }
 
@@ -202,7 +202,7 @@ public class MentionCell extends LinearLayout {
             textView.setText(sb);
             return;
         }
-        this.nameTextView.setPadding(AndroidUtilities.m50dp(22), 0, 0, 0);
+        this.nameTextView.setPadding(AndroidUtilities.m54dp(22), 0, 0, 0);
         TextView textView2 = this.nameTextView;
         StringBuilder sb2 = new StringBuilder();
         sb2.append(":  ");
@@ -215,9 +215,9 @@ public class MentionCell extends LinearLayout {
         super.dispatchDraw(canvas);
         Drawable drawable = this.emojiDrawable;
         if (drawable != null) {
-            int m50dp = AndroidUtilities.m50dp(drawable instanceof AnimatedEmojiDrawable ? 24 : 20);
-            int m50dp2 = AndroidUtilities.m50dp(this.emojiDrawable instanceof AnimatedEmojiDrawable ? -2 : 0);
-            this.emojiDrawable.setBounds(this.nameTextView.getLeft() + m50dp2, ((this.nameTextView.getTop() + this.nameTextView.getBottom()) - m50dp) / 2, this.nameTextView.getLeft() + m50dp2 + m50dp, ((this.nameTextView.getTop() + this.nameTextView.getBottom()) + m50dp) / 2);
+            int m54dp = AndroidUtilities.m54dp(drawable instanceof AnimatedEmojiDrawable ? 24 : 20);
+            int m54dp2 = AndroidUtilities.m54dp(this.emojiDrawable instanceof AnimatedEmojiDrawable ? -2 : 0);
+            this.emojiDrawable.setBounds(this.nameTextView.getLeft() + m54dp2, ((this.nameTextView.getTop() + this.nameTextView.getBottom()) - m54dp) / 2, this.nameTextView.getLeft() + m54dp2 + m54dp, ((this.nameTextView.getTop() + this.nameTextView.getBottom()) + m54dp) / 2);
             Drawable drawable2 = this.emojiDrawable;
             if (drawable2 instanceof AnimatedEmojiDrawable) {
                 ((AnimatedEmojiDrawable) drawable2).setTime(System.currentTimeMillis());
@@ -243,7 +243,7 @@ public class MentionCell extends LinearLayout {
         this.usernameTextView.setVisibility(0);
         this.nameTextView.setText(str);
         TextView textView = this.usernameTextView;
-        textView.setText(Emoji.replaceEmoji(str2, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(20), false));
+        textView.setText(Emoji.replaceEmoji(str2, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false));
     }
 
     public void setIsDarkTheme(boolean z) {
@@ -252,14 +252,12 @@ public class MentionCell extends LinearLayout {
             this.usernameTextView.setTextColor(-4473925);
             return;
         }
-        this.nameTextView.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        this.usernameTextView.setTextColor(getThemedColor("windowBackgroundWhiteGrayText3"));
+        this.nameTextView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
+        this.usernameTextView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText3));
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 
     @Override // android.view.ViewGroup, android.view.View

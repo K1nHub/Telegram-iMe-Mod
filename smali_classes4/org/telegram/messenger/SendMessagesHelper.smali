@@ -9821,7 +9821,7 @@
 
     const-string v10, "gif"
 
-    const-string v15, "sticker"
+    const-string/jumbo v15, "sticker"
 
     const/16 v20, 0x2
 
@@ -10786,7 +10786,7 @@
 
     invoke-virtual {v10, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string v9, "sticker.webp"
+    const-string/jumbo v9, "sticker.webp"
 
     .line 7312
     iput-object v9, v13, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->file_name:Ljava/lang/String;
@@ -19298,6 +19298,8 @@
     :cond_18
     if-eqz v3, :cond_2a
 
+    if-eqz v6, :cond_2a
+
     .line 3249
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -19305,7 +19307,7 @@
 
     if-nez v0, :cond_19
 
-    return-void
+    goto/16 :goto_f
 
     .line 3252
     :cond_19
@@ -19569,10 +19571,10 @@
 
     invoke-direct {v4, v5}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v5, "dialogTextBlack"
-
     .line 3278
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -19719,7 +19721,7 @@
     .line 3291
     new-instance v11, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -19739,7 +19741,7 @@
     invoke-direct {v11, v13}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 3294
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -19916,7 +19918,7 @@
     .line 3313
     new-instance v10, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v11
 
@@ -19936,7 +19938,7 @@
     invoke-direct {v10, v11}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 3316
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v11
 
@@ -20078,7 +20080,7 @@
     invoke-direct {v1, v3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 3333
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -20168,6 +20170,8 @@
     move-result-object v0
 
     invoke-virtual {v6, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+
+    nop
 
     :cond_2a
     :goto_f
@@ -24310,7 +24314,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "stickerset_"
+    const-string/jumbo v3, "stickerset_"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -30818,7 +30822,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "silent_"
+    const-string/jumbo v7, "silent_"
 
     invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -32262,7 +32266,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v14, "silent_"
+    const-string/jumbo v14, "silent_"
 
     invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -38713,7 +38717,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "stripped"
+    const-string/jumbo v11, "stripped"
 
     invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -38754,7 +38758,7 @@
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v12, "strippedmessage"
+    const-string/jumbo v12, "strippedmessage"
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -49538,21 +49542,21 @@
 
     const-string v3, "bg_color"
 
-    const-string/jumbo v4, "windowBackgroundWhite"
-
     .line 3380
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     invoke-virtual {v0, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    const-string v3, "text_color"
-
-    const-string/jumbo v4, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v3, "text_color"
 
     .line 3381
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -49560,10 +49564,10 @@
 
     const-string v3, "hint_color"
 
-    const-string/jumbo v4, "windowBackgroundWhiteHintText"
-
     .line 3382
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -49571,10 +49575,10 @@
 
     const-string v3, "link_color"
 
-    const-string/jumbo v4, "windowBackgroundWhiteLinkText"
-
     .line 3383
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -49582,10 +49586,10 @@
 
     const-string v3, "button_color"
 
-    const-string v4, "featuredStickers_addButton"
-
     .line 3384
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -49593,10 +49597,10 @@
 
     const-string v3, "button_text_color"
 
-    const-string v4, "featuredStickers_buttonText"
-
     .line 3385
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -49897,7 +49901,7 @@
 
     const/4 v2, 0x0
 
-    const-string v3, "silent_"
+    const-string/jumbo v3, "silent_"
 
     if-eqz v1, :cond_1
 
@@ -53555,7 +53559,7 @@
 
     move-object/from16 p6, v1
 
-    const-string v1, "silent_"
+    const-string/jumbo v1, "silent_"
 
     invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

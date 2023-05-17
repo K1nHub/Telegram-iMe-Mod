@@ -88,7 +88,7 @@
 .end method
 
 .method public setSelected(Z)V
-    .locals 6
+    .locals 5
 
     .line 198
     invoke-super {p0, p1}, Landroid/widget/TextView;->setSelected(Z)V
@@ -101,11 +101,9 @@
     .line 200
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const-string v2, "chat_emojiPanelIconSelected"
+    const/16 v2, 0x15
 
-    const/16 v3, 0x15
-
-    if-lt v1, v3, :cond_1
+    if-lt v1, v2, :cond_1
 
     if-eqz v0, :cond_1
 
@@ -114,40 +112,40 @@
 
     if-eqz p1, :cond_0
 
-    move-object v3, v2
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIconSelected:I
 
     goto :goto_0
 
     :cond_0
-    const-string v3, "chat_emojiBottomPanelIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiBottomPanelIcon:I
 
     :goto_0
-    invoke-static {v1, v3}, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->access$400(Lorg/telegram/ui/Components/PagerSlidingTabStrip;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->access$400(Lorg/telegram/ui/Components/PagerSlidingTabStrip;I)I
 
     move-result v1
 
-    const/16 v3, 0x1e
+    const/16 v2, 0x1e
 
     .line 202
     invoke-static {v1}, Landroid/graphics/Color;->red(I)I
 
-    move-result v4
+    move-result v3
 
     invoke-static {v1}, Landroid/graphics/Color;->green(I)I
 
-    move-result v5
+    move-result v4
 
     invoke-static {v1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v1
 
-    invoke-static {v3, v4, v5, v1}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v2, v3, v4, v1}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-static {v0, v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 204
     :cond_1
@@ -155,13 +153,15 @@
 
     if-eqz p1, :cond_2
 
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIconSelected:I
+
     goto :goto_1
 
     :cond_2
-    const-string v2, "chat_emojiPanelBackspace"
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackspace:I
 
     :goto_1
-    invoke-static {v0, v2}, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->access$400(Lorg/telegram/ui/Components/PagerSlidingTabStrip;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->access$400(Lorg/telegram/ui/Components/PagerSlidingTabStrip;I)I
 
     move-result p1
 

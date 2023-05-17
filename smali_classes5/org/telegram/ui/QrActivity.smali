@@ -229,7 +229,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 107
+    .line 108
     new-instance v0, Landroidx/collection/ArrayMap;
 
     invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
@@ -240,7 +240,7 @@
 
     new-array v2, v1, [I
 
-    .line 111
+    .line 112
     fill-array-data v2, :array_0
 
     const-string v3, "\ud83c\udfe0d"
@@ -249,7 +249,7 @@
 
     new-array v2, v1, [I
 
-    .line 112
+    .line 113
     fill-array-data v2, :array_1
 
     const-string v3, "\ud83d\udc25d"
@@ -258,7 +258,7 @@
 
     new-array v2, v1, [I
 
-    .line 113
+    .line 114
     fill-array-data v2, :array_2
 
     const-string v3, "\u26c4d"
@@ -267,7 +267,7 @@
 
     new-array v2, v1, [I
 
-    .line 114
+    .line 115
     fill-array-data v2, :array_3
 
     const-string v3, "\ud83d\udc8ed"
@@ -276,7 +276,7 @@
 
     new-array v2, v1, [I
 
-    .line 115
+    .line 116
     fill-array-data v2, :array_4
 
     const-string v3, "\ud83d\udc68\u200d\ud83c\udfebd"
@@ -285,7 +285,7 @@
 
     new-array v2, v1, [I
 
-    .line 116
+    .line 117
     fill-array-data v2, :array_5
 
     const-string v3, "\ud83c\udf37d"
@@ -294,7 +294,7 @@
 
     new-array v2, v1, [I
 
-    .line 117
+    .line 118
     fill-array-data v2, :array_6
 
     const-string v3, "\ud83d\udc9cd"
@@ -303,7 +303,7 @@
 
     new-array v2, v1, [I
 
-    .line 118
+    .line 119
     fill-array-data v2, :array_7
 
     const-string v3, "\ud83c\udf84d"
@@ -312,7 +312,7 @@
 
     new-array v2, v1, [I
 
-    .line 119
+    .line 120
     fill-array-data v2, :array_8
 
     const-string v3, "\ud83c\udfaed"
@@ -321,7 +321,7 @@
 
     new-array v2, v1, [I
 
-    .line 120
+    .line 121
     fill-array-data v2, :array_9
 
     const-string v3, "\ud83c\udfe0n"
@@ -330,7 +330,7 @@
 
     new-array v2, v1, [I
 
-    .line 121
+    .line 122
     fill-array-data v2, :array_a
 
     const-string v3, "\ud83d\udc25n"
@@ -339,7 +339,7 @@
 
     new-array v2, v1, [I
 
-    .line 122
+    .line 123
     fill-array-data v2, :array_b
 
     const-string v3, "\u26c4n"
@@ -348,7 +348,7 @@
 
     new-array v2, v1, [I
 
-    .line 123
+    .line 124
     fill-array-data v2, :array_c
 
     const-string v3, "\ud83d\udc8en"
@@ -357,7 +357,7 @@
 
     new-array v2, v1, [I
 
-    .line 124
+    .line 125
     fill-array-data v2, :array_d
 
     const-string v3, "\ud83d\udc68\u200d\ud83c\udfebn"
@@ -366,7 +366,7 @@
 
     new-array v2, v1, [I
 
-    .line 125
+    .line 126
     fill-array-data v2, :array_e
 
     const-string v3, "\ud83c\udf37n"
@@ -375,7 +375,7 @@
 
     new-array v2, v1, [I
 
-    .line 126
+    .line 127
     fill-array-data v2, :array_f
 
     const-string v3, "\ud83d\udc9cn"
@@ -384,7 +384,7 @@
 
     new-array v2, v1, [I
 
-    .line 127
+    .line 128
     fill-array-data v2, :array_10
 
     const-string v3, "\ud83c\udf84n"
@@ -393,7 +393,7 @@
 
     new-array v1, v1, [I
 
-    .line 128
+    .line 129
     fill-array-data v1, :array_11
 
     const-string v2, "\ud83c\udfaen"
@@ -402,7 +402,7 @@
 
     const/4 v0, 0x1
 
-    .line 159
+    .line 160
     sput-boolean v0, Lorg/telegram/ui/QrActivity;->firstOpen:Z
 
     return-void
@@ -555,10 +555,10 @@
 .method public constructor <init>(Landroid/os/Bundle;)V
     .locals 2
 
-    .line 162
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>(Landroid/os/Bundle;)V
 
-    .line 131
+    .line 132
     new-instance p1, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;
 
     const/4 v0, 0x0
@@ -567,43 +567,43 @@
 
     iput-object p1, p0, Lorg/telegram/ui/QrActivity;->resourcesProvider:Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;
 
-    .line 132
+    .line 133
     invoke-static {}, Lorg/telegram/ui/ActionBar/EmojiThemes;->createHomeQrTheme()Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/QrActivity;->homeTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 133
+    .line 134
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/QrActivity;->logoRect:Landroid/graphics/Rect;
 
-    .line 134
+    .line 135
     new-instance v1, Landroidx/collection/ArrayMap;
 
     invoke-direct {v1}, Landroidx/collection/ArrayMap;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/QrActivity;->emojiThemeDarkIcons:Landroidx/collection/ArrayMap;
 
-    .line 135
+    .line 136
     iput-object v0, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
-    .line 138
+    .line 139
     new-instance v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 152
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     const/4 p1, -0x1
 
-    .line 157
+    .line 158
     iput p1, p0, Lorg/telegram/ui/QrActivity;->selectedPosition:I
 
     return-void
@@ -612,7 +612,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/Components/BackupImageView;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object p0
@@ -621,7 +621,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/Components/MotionBackgroundDrawable;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     return-object p0
@@ -630,7 +630,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/ActionBar/EmojiThemes;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     return-object p0
@@ -639,7 +639,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/QrActivity;)I
     .locals 0
 
-    .line 105
+    .line 106
     iget p0, p0, Lorg/telegram/ui/QrActivity;->selectedPosition:I
 
     return p0
@@ -648,7 +648,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/ActionBar/EmojiThemes;IZ)V
     .locals 0
 
-    .line 105
+    .line 106
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/QrActivity;->onItemSelected(Lorg/telegram/ui/ActionBar/EmojiThemes;IZ)V
 
     return-void
@@ -657,7 +657,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/QrActivity;)[I
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
     return-object p0
@@ -666,7 +666,7 @@
 .method static synthetic access$1502(Lorg/telegram/ui/QrActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 105
+    .line 106
     iput-object p1, p0, Lorg/telegram/ui/QrActivity;->patternAlphaAnimator:Landroid/animation/ValueAnimator;
 
     return-object p1
@@ -675,7 +675,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/QrActivity;)I
     .locals 0
 
-    .line 105
+    .line 106
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -684,7 +684,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/QrActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->themeLayout:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -693,7 +693,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/QrActivity;)I
     .locals 0
 
-    .line 105
+    .line 106
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -702,7 +702,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->resourcesProvider:Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;
 
     return-object p0
@@ -711,7 +711,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/QrActivity$QrView;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     return-object p0
@@ -720,7 +720,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/ActionBar/EmojiThemes;Z)Landroid/graphics/Bitmap;
     .locals 0
 
-    .line 105
+    .line 106
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/QrActivity;->getEmojiThemeIcon(Lorg/telegram/ui/ActionBar/EmojiThemes;Z)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -731,7 +731,7 @@
 .method static synthetic access$3702(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/Components/MotionBackgroundDrawable;)Lorg/telegram/ui/Components/MotionBackgroundDrawable;
     .locals 0
 
-    .line 105
+    .line 106
     iput-object p1, p0, Lorg/telegram/ui/QrActivity;->tempMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     return-object p1
@@ -740,7 +740,7 @@
 .method static synthetic access$3800(Lorg/telegram/ui/QrActivity;Ljava/util/List;)V
     .locals 0
 
-    .line 105
+    .line 106
     invoke-direct {p0, p1}, Lorg/telegram/ui/QrActivity;->onDataLoaded(Ljava/util/List;)V
 
     return-void
@@ -749,7 +749,7 @@
 .method static synthetic access$3902(Ljava/util/List;)Ljava/util/List;
     .locals 0
 
-    .line 105
+    .line 106
     sput-object p0, Lorg/telegram/ui/QrActivity;->cachedThemes:Ljava/util/List;
 
     return-object p0
@@ -758,7 +758,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/QrActivity;)Landroid/view/View;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->backgroundView:Landroid/view/View;
 
     return-object p0
@@ -767,7 +767,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/QrActivity;)Landroid/graphics/Rect;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->logoRect:Landroid/graphics/Rect;
 
     return-object p0
@@ -776,7 +776,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/Components/RLottieImageView;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     return-object p0
@@ -785,7 +785,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/QrActivity;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->closeImageView:Landroid/widget/ImageView;
 
     return-object p0
@@ -794,7 +794,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/QrActivity;)Z
     .locals 0
 
-    .line 105
+    .line 106
     iget-boolean p0, p0, Lorg/telegram/ui/QrActivity;->isCurrentThemeDark:Z
 
     return p0
@@ -803,7 +803,7 @@
 .method static synthetic access$802(Lorg/telegram/ui/QrActivity;Z)Z
     .locals 0
 
-    .line 105
+    .line 106
     iput-boolean p1, p0, Lorg/telegram/ui/QrActivity;->isCurrentThemeDark:Z
 
     return p1
@@ -812,7 +812,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/Components/MotionBackgroundDrawable;
     .locals 0
 
-    .line 105
+    .line 106
     iget-object p0, p0, Lorg/telegram/ui/QrActivity;->prevMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     return-object p0
@@ -821,7 +821,7 @@
 .method static synthetic access$902(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/Components/MotionBackgroundDrawable;)Lorg/telegram/ui/Components/MotionBackgroundDrawable;
     .locals 0
 
-    .line 105
+    .line 106
     iput-object p1, p0, Lorg/telegram/ui/QrActivity;->prevMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     return-object p1
@@ -830,14 +830,14 @@
 .method private applyScreenSettings()V
     .locals 2
 
-    .line 479
+    .line 480
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 480
+    .line 481
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -867,7 +867,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 533
+    .line 534
     iget-object p2, p0, Lorg/telegram/ui/QrActivity;->emojiThemeDarkIcons:Landroidx/collection/ArrayMap;
 
     iget-object v0, p1, Lorg/telegram/ui/ActionBar/EmojiThemes;->emoji:Ljava/lang/String;
@@ -880,7 +880,7 @@
 
     if-nez p2, :cond_2
 
-    .line 535
+    .line 536
     iget-object p2, p0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
@@ -899,12 +899,12 @@
 
     move-result-object p2
 
-    .line 536
+    .line 537
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, p2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 537
+    .line 538
     sget-object v1, Lorg/telegram/ui/QrActivity;->qrColorsMap:Landroidx/collection/ArrayMap;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -931,12 +931,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 539
+    .line 540
     iget-object v2, p0, Lorg/telegram/ui/QrActivity;->tempMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     if-nez v2, :cond_0
 
-    .line 540
+    .line 541
     new-instance v2, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/4 v4, 0x0
@@ -955,7 +955,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/QrActivity;->tempMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 542
+    .line 543
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/QrActivity;->tempMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -977,7 +977,7 @@
 
     invoke-virtual {v2, v3, v4, v5, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setColors(IIII)V
 
-    .line 543
+    .line 544
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->tempMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/4 v2, 0x6
@@ -1012,12 +1012,12 @@
 
     invoke-virtual {v1, v3, v4, v5, v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setBounds(IIII)V
 
-    .line 544
+    .line 545
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->tempMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 546
+    .line 547
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
@@ -1027,10 +1027,10 @@
 
     invoke-virtual {v0, v1, v2, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 547
+    .line 548
     invoke-virtual {v0, v3}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 548
+    .line 549
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->emojiThemeDarkIcons:Landroidx/collection/ArrayMap;
 
     iget-object p1, p1, Lorg/telegram/ui/ActionBar/EmojiThemes;->emoji:Ljava/lang/String;
@@ -1040,7 +1040,7 @@
     :cond_2
     return-object p2
 
-    .line 552
+    .line 553
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
@@ -1050,12 +1050,12 @@
 .method private synthetic lambda$createView$0(IIII)V
     .locals 1
 
-    .line 317
+    .line 318
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->logoRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 318
+    .line 319
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
@@ -1066,7 +1066,7 @@
 .method private synthetic lambda$createView$1(Landroid/view/View;)V
     .locals 0
 
-    .line 338
+    .line 339
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
@@ -1077,7 +1077,7 @@
 
     const/4 v0, 0x1
 
-    .line 363
+    .line 364
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/QrActivity;->onItemSelected(Lorg/telegram/ui/ActionBar/EmojiThemes;IZ)V
 
     return-void
@@ -1086,7 +1086,7 @@
 .method private synthetic lambda$createView$3(Landroid/view/View;)V
     .locals 1
 
-    .line 367
+    .line 368
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     iget-object p1, p1, Lorg/telegram/ui/QrActivity$ThemeListViewController;->shareButton:Landroid/widget/TextView;
@@ -1095,7 +1095,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setClickable(Z)V
 
-    .line 368
+    .line 369
     invoke-direct {p0}, Lorg/telegram/ui/QrActivity;->performShare()V
 
     return-void
@@ -1104,7 +1104,7 @@
 .method private synthetic lambda$createView$4()V
     .locals 3
 
-    .line 381
+    .line 382
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     const/4 v1, 0x0
@@ -1119,21 +1119,21 @@
 .method private synthetic lambda$createView$5()V
     .locals 4
 
-    .line 376
+    .line 377
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->homeTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->loadPreviewColors(I)V
 
-    .line 377
+    .line 378
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 380
+    .line 381
     :cond_0
     new-instance v1, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda5;
 
@@ -1151,10 +1151,10 @@
 
     const/4 v0, 0x0
 
-    .line 386
+    .line 387
     sput-boolean v0, Lorg/telegram/ui/QrActivity;->firstOpen:Z
 
-    .line 387
+    .line 388
     sget-object v0, Lorg/telegram/ui/QrActivity;->cachedThemes:Ljava/util/List;
 
     if-eqz v0, :cond_1
@@ -1167,7 +1167,7 @@
 
     goto :goto_0
 
-    .line 400
+    .line 401
     :cond_0
     sget-object v0, Lorg/telegram/ui/QrActivity;->cachedThemes:Ljava/util/List;
 
@@ -1175,7 +1175,7 @@
 
     goto :goto_1
 
-    .line 388
+    .line 389
     :cond_1
     :goto_0
     new-instance v0, Lorg/telegram/ui/QrActivity$4;
@@ -1193,10 +1193,10 @@
 .method private synthetic lambda$getThemeDescriptions$15()V
     .locals 1
 
-    const-string v0, "windowBackgroundGray"
+    .line 774
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 773
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v0
 
@@ -1208,7 +1208,7 @@
 .method private synthetic lambda$onItemSelected$10()V
     .locals 4
 
-    .line 617
+    .line 618
     sget v0, Lorg/telegram/messenger/R$raw;->default_pattern:I
 
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->backgroundView:Landroid/view/View;
@@ -1229,7 +1229,7 @@
 
     move-result-object v0
 
-    .line 618
+    .line 619
     new-instance v1, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda10;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/QrActivity;Landroid/graphics/Bitmap;)V
@@ -1242,7 +1242,7 @@
 .method private synthetic lambda$onItemSelected$11([ILandroid/animation/ValueAnimator;)V
     .locals 5
 
-    .line 635
+    .line 636
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -1253,37 +1253,37 @@
 
     move-result p2
 
-    .line 636
+    .line 637
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->prevMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     if-eqz v0, :cond_0
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 637
+    .line 638
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setBackgroundAlpha(F)V
 
-    .line 638
+    .line 639
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->prevMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     sub-float/2addr v1, p2
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternAlpha(F)V
 
-    .line 640
+    .line 641
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setBackgroundAlpha(F)V
 
-    .line 641
+    .line 642
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternAlpha(F)V
 
     if-eqz p1, :cond_1
 
-    .line 644
+    .line 645
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
     const/4 v1, 0x0
@@ -1296,7 +1296,7 @@
 
     move-result v0
 
-    .line 645
+    .line 646
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
     const/4 v2, 0x1
@@ -1309,7 +1309,7 @@
 
     move-result v1
 
-    .line 646
+    .line 647
     iget-object v2, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
     const/4 v3, 0x2
@@ -1322,7 +1322,7 @@
 
     move-result v2
 
-    .line 647
+    .line 648
     iget-object v3, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
     const/4 v4, 0x3
@@ -1335,12 +1335,12 @@
 
     move-result p1
 
-    .line 648
+    .line 649
     iget-object p2, p0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     invoke-virtual {p2, v0, v1, v2, p1}, Lorg/telegram/ui/QrActivity$QrView;->setColors(IIII)V
 
-    .line 650
+    .line 651
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->backgroundView:Landroid/view/View;
 
@@ -1352,7 +1352,7 @@
 .method private synthetic lambda$onItemSelected$12()V
     .locals 3
 
-    .line 703
+    .line 704
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->resourcesProvider:Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;
 
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
@@ -1369,7 +1369,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 698
+    .line 699
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->resourcesProvider:Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;
 
     iget-boolean v0, p0, Lorg/telegram/ui/QrActivity;->isCurrentThemeDark:Z
@@ -1378,7 +1378,7 @@
 
     goto :goto_0
 
-    .line 700
+    .line 701
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->resourcesProvider:Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;
 
@@ -1388,7 +1388,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;->initColors(Lorg/telegram/ui/ActionBar/EmojiThemes;Z)V
 
-    .line 702
+    .line 703
     :goto_0
     new-instance p1, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda6;
 
@@ -1396,14 +1396,14 @@
 
     iput-object p1, p3, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->afterStartDescriptionsAddedRunnable:Ljava/lang/Runnable;
 
-    .line 707
+    .line 708
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     if-eqz p1, :cond_1
 
     const/4 p2, 0x0
 
-    .line 708
+    .line 709
     invoke-interface {p1, p3, p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->animateThemedValues(Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;Ljava/lang/Runnable;)V
 
     :cond_1
@@ -1415,7 +1415,7 @@
 
     if-eqz p4, :cond_1
 
-    .line 606
+    .line 607
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getTlTheme(I)Lorg/telegram/tgnet/TLRPC$TL_theme;
@@ -1424,7 +1424,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 607
+    .line 608
     iget-object v0, p4, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Long;
@@ -1433,12 +1433,12 @@
 
     move-result-wide v0
 
-    .line 608
+    .line 609
     iget-object p4, p4, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast p4, Landroid/graphics/Bitmap;
 
-    .line 609
+    .line 610
     iget-object v2, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getTlTheme(I)Lorg/telegram/tgnet/TLRPC$TL_theme;
@@ -1453,14 +1453,14 @@
 
     if-eqz p4, :cond_1
 
-    .line 610
+    .line 611
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     sub-long/2addr v0, p2
 
-    .line 611
+    .line 612
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getIntensity()I
@@ -1494,7 +1494,7 @@
 
     const/4 v1, 0x1
 
-    .line 619
+    .line 620
     invoke-direct {p0, p1, v0, v1}, Lorg/telegram/ui/QrActivity;->onPatternLoaded(Landroid/graphics/Bitmap;IZ)V
 
     return-void
@@ -1503,7 +1503,7 @@
 .method private synthetic lambda$onPatternLoaded$7(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 564
+    .line 565
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -1524,14 +1524,14 @@
 .method private synthetic lambda$performShare$14()V
     .locals 2
 
-    .line 762
+    .line 763
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 765
+    .line 766
     :cond_0
     iget-object v0, v0, Lorg/telegram/ui/QrActivity$ThemeListViewController;->shareButton:Landroid/widget/TextView;
 
@@ -1555,7 +1555,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 501
+    .line 502
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1568,7 +1568,7 @@
 
     goto/16 :goto_3
 
-    .line 504
+    .line 505
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->homeTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
@@ -1576,7 +1576,7 @@
 
     invoke-interface {p1, v1, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 505
+    .line 506
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -1587,7 +1587,7 @@
 
     move v2, v1
 
-    .line 506
+    .line 507
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -1595,43 +1595,43 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 507
+    .line 508
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 508
+    .line 509
     iget v4, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/EmojiThemes;->loadPreviewColors(I)V
 
-    .line 509
+    .line 510
     new-instance v4, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     invoke-direct {v4, v3}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;-><init>(Lorg/telegram/ui/ActionBar/EmojiThemes;)V
 
-    .line 510
+    .line 511
     iget-boolean v5, p0, Lorg/telegram/ui/QrActivity;->isCurrentThemeDark:Z
 
     iput v5, v4, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->themeIndex:I
 
-    .line 511
+    .line 512
     invoke-direct {p0, v3, v5}, Lorg/telegram/ui/QrActivity;->getEmojiThemeIcon(Lorg/telegram/ui/ActionBar/EmojiThemes;Z)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
     iput-object v3, v4, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->icon:Landroid/graphics/Bitmap;
 
-    .line 512
+    .line 513
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 514
+    .line 515
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
@@ -1639,7 +1639,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->setItems(Ljava/util/List;)V
 
-    .line 517
+    .line 518
     :goto_1
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1649,7 +1649,7 @@
 
     if-eq v1, p1, :cond_3
 
-    .line 518
+    .line 519
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -1674,7 +1674,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 519
+    .line 520
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1698,12 +1698,12 @@
     :goto_2
     if-eq v1, v2, :cond_4
 
-    .line 525
+    .line 526
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->setSelectedPosition(I)V
 
-    .line 528
+    .line 529
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
@@ -1717,24 +1717,24 @@
 .method private onItemSelected(Lorg/telegram/ui/ActionBar/EmojiThemes;IZ)V
     .locals 11
 
-    .line 574
+    .line 575
     iput p2, p0, Lorg/telegram/ui/QrActivity;->selectedPosition:I
 
-    .line 575
+    .line 576
     iget-object p2, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 576
+    .line 577
     iget-boolean v0, p0, Lorg/telegram/ui/QrActivity;->isCurrentThemeDark:Z
 
-    .line 577
+    .line 578
     iput-object p1, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 578
+    .line 579
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getThemeItem(I)Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;
 
     move-result-object v1
 
-    .line 581
+    .line 582
     iget-object v2, p0, Lorg/telegram/ui/QrActivity;->patternAlphaAnimator:Landroid/animation/ValueAnimator;
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -1743,7 +1743,7 @@
 
     const/high16 v4, 0x3f000000    # 0.5f
 
-    .line 583
+    .line 584
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -1762,7 +1762,7 @@
 
     mul-float/2addr v2, v3
 
-    .line 584
+    .line 585
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->patternAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v4}, Landroid/animation/ValueAnimator;->cancel()V
@@ -1772,7 +1772,7 @@
     :cond_0
     move v2, v3
 
-    .line 587
+    .line 588
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -1780,29 +1780,29 @@
 
     const/4 v5, 0x0
 
-    .line 588
+    .line 589
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setIndeterminateAnimation(Z)V
 
-    .line 589
+    .line 590
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->prevMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/16 v6, 0xff
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setAlpha(I)V
 
-    .line 591
+    .line 592
     new-instance v4, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-direct {v4}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>()V
 
     iput-object v4, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 592
+    .line 593
     iget-object v7, p0, Lorg/telegram/ui/QrActivity;->backgroundView:Landroid/view/View;
 
     invoke-virtual {v4, v7}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 593
+    .line 594
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     iget v7, v1, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->patternBgColor:I
@@ -1815,38 +1815,38 @@
 
     invoke-virtual {v4, v7, v8, v9, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setColors(IIII)V
 
-    .line 594
+    .line 595
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->backgroundView:Landroid/view/View;
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setParentView(Landroid/view/View;)V
 
-    .line 595
+    .line 596
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternAlpha(F)V
 
-    .line 596
+    .line 597
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/4 v3, 0x1
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setIndeterminateAnimation(Z)V
 
-    .line 597
+    .line 598
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->prevMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     if-eqz v1, :cond_1
 
-    .line 598
+    .line 599
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     iget v1, v1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F
 
     iput v1, v4, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F
 
-    .line 599
+    .line 600
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
@@ -1856,7 +1856,7 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/QrActivity$QrView;->setPosAnimationProgress(F)V
 
-    .line 601
+    .line 602
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getWallpaper(I)Lorg/telegram/tgnet/TLRPC$WallPaper;
@@ -1865,7 +1865,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 603
+    .line 604
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
@@ -1874,12 +1874,12 @@
 
     invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(I)V
 
-    .line 604
+    .line 605
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v7
 
-    .line 605
+    .line 606
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     new-instance v4, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda12;
@@ -1890,7 +1890,7 @@
 
     goto :goto_1
 
-    .line 616
+    .line 617
     :cond_2
     sget-object v1, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -1902,7 +1902,7 @@
 
     invoke-virtual {v1, v4, v7, v8}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;J)Z
 
-    .line 623
+    .line 624
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -1912,7 +1912,7 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternColorFilter(I)V
 
-    .line 625
+    .line 626
     sget-object v1, Lorg/telegram/ui/QrActivity;->qrColorsMap:Landroidx/collection/ArrayMap;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1955,26 +1955,26 @@
 
     if-eqz p3, :cond_5
 
-    .line 627
+    .line 628
     iget-object v8, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
     if-nez v8, :cond_4
 
     new-array v8, v7, [I
 
-    .line 628
+    .line 629
     iput-object v8, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
-    .line 629
+    .line 630
     invoke-static {p1, v5, v8, v5, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 631
+    .line 632
     :cond_4
     iget-object v7, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v7, v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setAlpha(I)V
 
-    .line 632
+    .line 633
     iget-object v6, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/4 v7, 0x0
@@ -1983,7 +1983,7 @@
 
     new-array v1, v1, [F
 
-    .line 633
+    .line 634
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1992,14 +1992,14 @@
 
     iput-object v1, p0, Lorg/telegram/ui/QrActivity;->patternAlphaAnimator:Landroid/animation/ValueAnimator;
 
-    .line 634
+    .line 635
     new-instance v6, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {v6, p0, p1}, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/QrActivity;[I)V
 
     invoke-virtual {v1, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 652
+    .line 653
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->patternAlphaAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v6, Lorg/telegram/ui/QrActivity$5;
@@ -2008,7 +2008,7 @@
 
     invoke-virtual {v1, v6}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 679
+    .line 680
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->patternAlphaAnimator:Landroid/animation/ValueAnimator;
 
     mul-float v1, v2, v0
@@ -2019,7 +2019,7 @@
 
     invoke-virtual {p1, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 680
+    .line 681
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->patternAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -2029,7 +2029,7 @@
     :cond_5
     if-eqz p1, :cond_6
 
-    .line 683
+    .line 684
     iget-object v6, p0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     aget v8, p1, v5
@@ -2044,21 +2044,21 @@
 
     invoke-virtual {v6, v8, v9, v1, v10}, Lorg/telegram/ui/QrActivity$QrView;->setColors(IIII)V
 
-    .line 684
+    .line 685
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->prevQrColors:[I
 
     invoke-static {p1, v5, v1, v5, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 686
+    .line 687
     :cond_6
     iput-object v4, p0, Lorg/telegram/ui/QrActivity;->prevMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 687
+    .line 688
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->backgroundView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 690
+    .line 691
     :goto_3
     iget-boolean p1, p0, Lorg/telegram/ui/QrActivity;->isCurrentThemeDark:Z
 
@@ -2075,7 +2075,7 @@
 
     move-result-object p1
 
-    .line 691
+    .line 692
     :goto_4
     new-instance v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;
 
@@ -2087,13 +2087,13 @@
 
     invoke-direct {v1, v4, p1, v6, v7}, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;-><init>(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;IZZ)V
 
-    .line 692
+    .line 693
     iput-boolean v5, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->applyTheme:Z
 
-    .line 693
+    .line 694
     iput-boolean v3, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->onlyTopFragment:Z
 
-    .line 694
+    .line 695
     invoke-virtual {p0}, Lorg/telegram/ui/QrActivity;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object p1
@@ -2106,10 +2106,10 @@
 
     int-to-long v2, p1
 
-    .line 695
+    .line 696
     iput-wide v2, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->duration:J
 
-    .line 696
+    .line 697
     new-instance p1, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda11;
 
     invoke-direct {p1, p0, p3, p2, v1}, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/QrActivity;ZLorg/telegram/ui/ActionBar/EmojiThemes;Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;)V
@@ -2132,19 +2132,19 @@
 
     if-eqz p1, :cond_2
 
-    .line 558
+    .line 559
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p2, p1, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;Z)V
 
-    .line 559
+    .line 560
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->patternIntensityAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_0
 
-    .line 560
+    .line 561
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
@@ -2154,7 +2154,7 @@
 
     new-array p1, p1, [F
 
-    .line 563
+    .line 564
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -2163,28 +2163,28 @@
 
     iput-object p1, p0, Lorg/telegram/ui/QrActivity;->patternIntensityAnimator:Landroid/animation/ValueAnimator;
 
-    .line 564
+    .line 565
     new-instance p2, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/QrActivity;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 565
+    .line 566
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->patternIntensityAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0xfa
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 566
+    .line 567
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->patternIntensityAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 568
+    .line 569
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -2206,7 +2206,7 @@
 .method private performShare()V
     .locals 10
 
-    .line 713
+    .line 714
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -2217,7 +2217,7 @@
 
     move-result v0
 
-    .line 714
+    .line 715
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v2, v1, Landroid/graphics/Point;->x:I
@@ -2248,7 +2248,7 @@
 
     float-to-int v1, v3
 
-    .line 718
+    .line 719
     :cond_0
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -2256,36 +2256,36 @@
 
     move-result-object v2
 
-    .line 719
+    .line 720
     new-instance v3, Landroid/graphics/Canvas;
 
     invoke-direct {v3, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 721
+    .line 722
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->themeLayout:Landroid/widget/FrameLayout;
 
     const/16 v5, 0x8
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 722
+    .line 723
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->closeImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 723
+    .line 724
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/RLottieImageView;->stopAnimation()V
 
-    .line 724
+    .line 725
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object v4
 
-    .line 725
+    .line 726
     invoke-virtual {v4}, Lorg/telegram/ui/Components/RLottieDrawable;->getCurrentFrame()I
 
     move-result v5
@@ -2294,20 +2294,20 @@
 
     const/4 v7, 0x0
 
-    .line 726
+    .line 727
     invoke-virtual {v4, v6, v7}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 728
+    .line 729
     iget-object v6, p0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     if-eqz v6, :cond_1
 
     const/4 v8, 0x1
 
-    .line 729
+    .line 730
     invoke-virtual {v6, v8}, Lorg/telegram/ui/QrActivity$QrView;->setForShare(Z)V
 
-    .line 732
+    .line 733
     :cond_1
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
@@ -2323,40 +2323,40 @@
 
     invoke-virtual {v6, v9, v8}, Landroid/view/View;->measure(II)V
 
-    .line 733
+    .line 734
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v6, v7, v7, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 734
+    .line 735
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     const/4 v0, 0x0
 
-    .line 735
+    .line 736
     invoke-virtual {v3, v0}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 737
+    .line 738
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->themeLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v7}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 738
+    .line 739
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->closeImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 739
+    .line 740
     invoke-virtual {v4, v5, v7}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 740
+    .line 741
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 742
+    .line 743
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -2365,7 +2365,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 743
+    .line 744
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getWidth()I
@@ -2378,15 +2378,15 @@
 
     invoke-virtual {v1, v7, v7, v3, v0}, Landroid/view/View;->layout(IIII)V
 
-    .line 745
+    .line 746
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     if-eqz v0, :cond_2
 
-    .line 746
+    .line 747
     invoke-virtual {v0, v7}, Lorg/telegram/ui/QrActivity$QrView;->setForShare(Z)V
 
-    .line 749
+    .line 750
     :cond_2
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -2398,7 +2398,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 751
+    .line 752
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.SEND"
@@ -2407,14 +2407,14 @@
 
     const-string v2, "image/*"
 
-    .line 752
+    .line 753
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v1
 
     const-string v2, "android.intent.extra.STREAM"
 
-    .line 753
+    .line 754
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     move-result-object v0
@@ -2422,7 +2422,7 @@
     :try_start_0
     const-string v1, "InviteByQRCode"
 
-    .line 755
+    .line 756
     sget v2, Lorg/telegram/messenger/R$string;->InviteByQRCode:I
 
     invoke-static {v1, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -2433,7 +2433,7 @@
 
     move-result-object v0
 
-    .line 756
+    .line 757
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -2449,10 +2449,10 @@
     :catch_0
     move-exception v0
 
-    .line 758
+    .line 759
     invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 
-    .line 761
+    .line 762
     :cond_3
     :goto_0
     new-instance v0, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda9;
@@ -2469,7 +2469,7 @@
 .method private phoneIsPublic()Z
     .locals 7
 
-    .line 410
+    .line 411
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -2491,7 +2491,7 @@
     :cond_0
     move v2, v1
 
-    .line 415
+    .line 416
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2503,14 +2503,14 @@
 
     if-ge v2, v3, :cond_4
 
-    .line 416
+    .line 417
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$PrivacyRule;
 
-    .line 417
+    .line 418
     instance-of v6, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
     if-eqz v6, :cond_1
@@ -2519,7 +2519,7 @@
 
     goto :goto_2
 
-    .line 420
+    .line 421
     :cond_1
     instance-of v6, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowAll;
 
@@ -2527,7 +2527,7 @@
 
     goto :goto_1
 
-    .line 423
+    .line 424
     :cond_2
     instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
@@ -2549,7 +2549,7 @@
     :goto_2
     if-ne v0, v4, :cond_a
 
-    .line 429
+    .line 430
     iget v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -2564,7 +2564,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 430
+    .line 431
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -2576,7 +2576,7 @@
     :cond_5
     move v3, v1
 
-    .line 433
+    .line 434
     :goto_3
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -2584,21 +2584,21 @@
 
     if-ge v3, v4, :cond_a
 
-    .line 434
+    .line 435
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$PrivacyRule;
 
-    .line 435
+    .line 436
     instance-of v6, v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
     if-eqz v6, :cond_6
 
     return v5
 
-    .line 437
+    .line 438
     :cond_6
     instance-of v6, v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowAll;
 
@@ -2606,7 +2606,7 @@
 
     return v1
 
-    .line 439
+    .line 440
     :cond_7
     instance-of v4, v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
@@ -2638,14 +2638,14 @@
 .method private restoreScreenSettings()V
     .locals 2
 
-    .line 485
+    .line 486
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 486
+    .line 487
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -2675,7 +2675,7 @@
 
     move-object/from16 v1, p1
 
-    .line 174
+    .line 175
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v2
@@ -2686,43 +2686,43 @@
 
     iput-boolean v2, v0, Lorg/telegram/ui/QrActivity;->isCurrentThemeDark:Z
 
-    .line 175
+    .line 176
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setAddToContainer(Z)V
 
-    .line 176
+    .line 177
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 177
+    .line 178
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v5, -0x1
 
     invoke-virtual {v2, v5, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 179
+    .line 180
     new-instance v2, Lorg/telegram/ui/QrActivity$1;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/QrActivity$1;-><init>(Lorg/telegram/ui/QrActivity;Landroid/content/Context;)V
 
-    .line 252
+    .line 253
     new-instance v6, Lorg/telegram/ui/QrActivity$2;
 
     invoke-direct {v6, v0, v1}, Lorg/telegram/ui/QrActivity$2;-><init>(Lorg/telegram/ui/QrActivity;Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/QrActivity;->backgroundView:Landroid/view/View;
 
-    .line 270
+    .line 271
     invoke-virtual {v2, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 280
+    .line 281
     iget-wide v6, v0, Lorg/telegram/ui/QrActivity;->userId:J
 
     const-wide/16 v8, 0x0
@@ -2733,7 +2733,7 @@
 
     if-eqz v6, :cond_4
 
-    .line 281
+    .line 282
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v6
@@ -2750,40 +2750,40 @@
 
     if-eqz v6, :cond_3
 
-    .line 283
+    .line 284
     invoke-static {v6}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v10
 
     if-nez v10, :cond_2
 
-    .line 285
+    .line 286
     invoke-static {v6}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 286
+    .line 287
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/QrActivity;->phoneIsPublic()Z
 
     move-result v12
 
     if-eqz v12, :cond_1
 
-    .line 287
+    .line 288
     iget-object v10, v6, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     if-eqz v10, :cond_0
 
     const-string v12, "+"
 
-    .line 288
+    .line 289
     invoke-virtual {v10, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v13
 
     if-nez v13, :cond_0
 
-    .line 289
+    .line 290
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
@@ -2817,18 +2817,18 @@
 
     move-object v11, v4
 
-    .line 296
+    .line 297
     :goto_0
     new-instance v14, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v14, v6}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 297
+    .line 298
     invoke-static {v6, v7}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v15
 
-    .line 298
+    .line 299
     invoke-static {v6, v3}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v3
@@ -2861,7 +2861,7 @@
 
     goto :goto_2
 
-    .line 300
+    .line 301
     :cond_4
     iget-wide v10, v0, Lorg/telegram/ui/QrActivity;->chatId:J
 
@@ -2869,7 +2869,7 @@
 
     if-eqz v6, :cond_5
 
-    .line 301
+    .line 302
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v6
@@ -2886,22 +2886,22 @@
 
     if-eqz v6, :cond_5
 
-    .line 303
+    .line 304
     invoke-static {v6}, Lorg/telegram/messenger/ChatObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 304
+    .line 305
     new-instance v14, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v14, v6}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 305
+    .line 306
     invoke-static {v6, v7}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v15
 
-    .line 306
+    .line 307
     invoke-static {v6, v3}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v6
@@ -2925,7 +2925,7 @@
 
     move-object/from16 v19, v17
 
-    .line 310
+    .line 311
     :goto_2
     new-instance v6, Lorg/telegram/ui/QrActivity$QrView;
 
@@ -2941,12 +2941,12 @@
 
     const v9, -0x974aa2
 
-    .line 311
+    .line 312
     invoke-virtual {v6, v12, v14, v8, v9}, Lorg/telegram/ui/QrActivity$QrView;->setColors(IIII)V
 
     if-eqz v10, :cond_6
 
-    .line 313
+    .line 314
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -2980,7 +2980,7 @@
     :cond_6
     move-object v6, v4
 
-    .line 315
+    .line 316
     :goto_3
     iget-object v8, v0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
@@ -2991,7 +2991,7 @@
     :cond_7
     invoke-virtual {v8, v6, v10, v3, v13}, Lorg/telegram/ui/QrActivity$QrView;->setData(Ljava/lang/String;Ljava/lang/String;ZZ)V
 
-    .line 316
+    .line 317
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     new-instance v6, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda15;
@@ -3000,22 +3000,22 @@
 
     invoke-virtual {v3, v6}, Lorg/telegram/ui/QrActivity$QrView;->setCenterChangedListener(Lorg/telegram/ui/QrActivity$QrView$QrCenterChangedListener;)V
 
-    .line 320
+    .line 321
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 322
+    .line 323
     new-instance v3, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 323
+    .line 324
     invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 324
+    .line 325
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v6, Lorg/telegram/messenger/R$raw;->qr_code_logo_2:I
@@ -3024,17 +3024,17 @@
 
     invoke-virtual {v3, v6, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 325
+    .line 326
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 326
+    .line 327
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 328
+    .line 329
     new-instance v3, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -3043,14 +3043,14 @@
 
     const/16 v6, 0x2a
 
-    .line 329
+    .line 330
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 330
+    .line 331
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v6, 0x54
@@ -3065,7 +3065,7 @@
 
     invoke-virtual {v3, v8, v9}, Lorg/telegram/ui/Components/BackupImageView;->setSize(II)V
 
-    .line 331
+    .line 332
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v8, 0x33
@@ -3076,7 +3076,7 @@
 
     invoke-virtual {v2, v3, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 332
+    .line 333
     iget-object v14, v0, Lorg/telegram/ui/QrActivity;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v20, 0x0
@@ -3093,7 +3093,7 @@
 
     invoke-virtual/range {v14 .. v23}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Ljava/lang/String;ILjava/lang/Object;)V
 
-    .line 334
+    .line 335
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -3102,7 +3102,7 @@
 
     const/16 v1, 0x22
 
-    .line 335
+    .line 336
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -3117,21 +3117,21 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 336
+    .line 337
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->closeImageView:Landroid/widget/ImageView;
 
     sget v6, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 337
+    .line 338
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->closeImageView:Landroid/widget/ImageView;
 
     sget-object v6, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 338
+    .line 339
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->closeImageView:Landroid/widget/ImageView;
 
     new-instance v6, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda2;
@@ -3140,7 +3140,7 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 339
+    .line 340
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->closeImageView:Landroid/widget/ImageView;
 
     invoke-static {v1, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -3151,7 +3151,7 @@
 
     const/16 v1, 0x20
 
-    .line 341
+    .line 342
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -3168,14 +3168,14 @@
 
     iput-object v1, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
-    .line 342
+    .line 343
     new-instance v1, Landroid/graphics/Canvas;
 
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
     invoke-direct {v1, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 343
+    .line 344
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v6, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
@@ -3198,17 +3198,17 @@
 
     invoke-virtual {v3, v9, v9, v6, v8}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 344
+    .line 345
     new-instance v6, Landroid/graphics/Paint;
 
     invoke-direct {v6, v7}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 345
+    .line 346
     invoke-virtual {v6, v5}, Landroid/graphics/Paint;->setColor(I)V
 
     const/4 v8, 0x5
 
-    .line 346
+    .line 347
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -3223,7 +3223,7 @@
 
     invoke-virtual {v1, v3, v9, v8, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 347
+    .line 348
     new-instance v3, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v8, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
@@ -3232,7 +3232,7 @@
 
     invoke-virtual {v6, v3}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 348
+    .line 349
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3245,7 +3245,7 @@
 
     move-result-object v3
 
-    .line 349
+    .line 350
     iget-object v8, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {v8}, Landroid/graphics/Bitmap;->getWidth()I
@@ -3282,10 +3282,10 @@
 
     invoke-virtual {v1, v3, v8, v10, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 350
+    .line 351
     invoke-virtual {v1, v4}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 352
+    .line 353
     new-instance v1, Lorg/telegram/ui/QrActivity$3;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3300,15 +3300,15 @@
 
     iput-object v1, v0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
-    .line 360
+    .line 361
     iget-object v3, v1, Lorg/telegram/ui/QrActivity$ThemeListViewController;->rootLayout:Landroid/widget/FrameLayout;
 
     iput-object v3, v0, Lorg/telegram/ui/QrActivity;->themeLayout:Landroid/widget/FrameLayout;
 
-    .line 362
+    .line 363
     invoke-virtual {v1}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->onCreate()V
 
-    .line 363
+    .line 364
     iget-object v1, v0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     new-instance v3, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda14;
@@ -3317,7 +3317,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->setItemSelectedListener(Lorg/telegram/ui/QrActivity$OnItemSelectedListener;)V
 
-    .line 364
+    .line 365
     iget-object v1, v0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     iget-object v1, v1, Lorg/telegram/ui/QrActivity$ThemeListViewController;->titleView:Landroid/widget/TextView;
@@ -3332,7 +3332,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 365
+    .line 366
     iget-object v1, v0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     iget-object v1, v1, Lorg/telegram/ui/QrActivity$ThemeListViewController;->progressView:Lorg/telegram/ui/Components/FlickerLoadingView;
@@ -3341,7 +3341,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 366
+    .line 367
     iget-object v1, v0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     iget-object v1, v1, Lorg/telegram/ui/QrActivity$ThemeListViewController;->shareButton:Landroid/widget/TextView;
@@ -3352,7 +3352,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 370
+    .line 371
     iget-object v1, v0, Lorg/telegram/ui/QrActivity;->themeLayout:Landroid/widget/FrameLayout;
 
     const/4 v3, -0x2
@@ -3365,15 +3365,15 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 372
+    .line 373
     iget-object v1, v0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setIndeterminateAnimation(Z)V
 
-    .line 374
+    .line 375
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    .line 375
+    .line 376
     sget-object v1, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda7;
@@ -3384,14 +3384,14 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;J)Z
 
-    .line 385
+    .line 386
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     new-instance v2, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda8;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/QrActivity;)V
 
-    .line 402
+    .line 403
     sget-boolean v3, Lorg/telegram/ui/QrActivity;->firstOpen:Z
 
     if-eqz v3, :cond_8
@@ -3403,11 +3403,11 @@
     :cond_8
     const-wide/16 v8, 0x0
 
-    .line 385
+    .line 386
     :goto_4
     invoke-virtual {v1, v2, v8, v9}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 404
+    .line 405
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -3426,10 +3426,10 @@
 
     iput v1, v0, Lorg/telegram/ui/QrActivity;->prevSystemUiVisibility:I
 
-    .line 405
+    .line 406
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/QrActivity;->applyScreenSettings()V
 
-    .line 406
+    .line 407
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object v1
@@ -3438,10 +3438,10 @@
 .method public getNavigationBarColor()I
     .locals 1
 
-    const-string v0, "windowBackgroundGray"
+    .line 493
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 492
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v0
 
@@ -3451,7 +3451,7 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 497
+    .line 498
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->resourcesProvider:Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;
 
     return-object v0
@@ -3470,12 +3470,12 @@
 
     move-object/from16 v0, p0
 
-    .line 771
+    .line 772
     invoke-super/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemeDescriptions()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 772
+    .line 773
     iget-object v2, v0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-virtual {v2}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->getThemeDescriptions()Ljava/util/ArrayList;
@@ -3484,12 +3484,12 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 773
+    .line 774
     new-instance v9, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda13;
 
     invoke-direct {v9, v0}, Lorg/telegram/ui/QrActivity$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/QrActivity;)V
 
-    .line 774
+    .line 775
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
@@ -3498,21 +3498,21 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    const-string v10, "featuredStickers_addButton"
-
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 775
+    .line 776
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
@@ -3525,6 +3525,8 @@
 
     or-int v13, v3, v4
 
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
@@ -3533,15 +3535,13 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "featuredStickers_addButtonPressed"
-
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 776
+    .line 777
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -3559,7 +3559,7 @@
 
     check-cast v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 777
+    .line 778
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/QrActivity;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v4
@@ -3575,7 +3575,7 @@
 .method public onFragmentCreate()Z
     .locals 2
 
-    .line 167
+    .line 168
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     const-string v1, "user_id"
@@ -3586,7 +3586,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/QrActivity;->userId:J
 
-    .line 168
+    .line 169
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     const-string v1, "chat_id"
@@ -3597,7 +3597,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/QrActivity;->chatId:J
 
-    .line 169
+    .line 170
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
     move-result v0
@@ -3608,27 +3608,27 @@
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 463
+    .line 464
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-virtual {v0}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->onDestroy()V
 
     const/4 v0, 0x0
 
-    .line 464
+    .line 465
     iput-object v0, p0, Lorg/telegram/ui/QrActivity;->themesViewController:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
-    .line 465
+    .line 466
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 466
+    .line 467
     iput-object v0, p0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
     const/4 v0, 0x0
 
-    .line 467
+    .line 468
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->emojiThemeDarkIcons:Landroidx/collection/ArrayMap;
 
@@ -3638,7 +3638,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 468
+    .line 469
     iget-object v1, p0, Lorg/telegram/ui/QrActivity;->emojiThemeDarkIcons:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v1, v0}, Landroidx/collection/SimpleArrayMap;->valueAt(I)Ljava/lang/Object;
@@ -3649,7 +3649,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 470
+    .line 471
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_0
@@ -3657,16 +3657,16 @@
 
     goto :goto_0
 
-    .line 473
+    .line 474
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/QrActivity;->emojiThemeDarkIcons:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->clear()V
 
-    .line 474
+    .line 475
     invoke-direct {p0}, Lorg/telegram/ui/QrActivity;->restoreScreenSettings()V
 
-    .line 475
+    .line 476
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
     return-void
@@ -3675,10 +3675,10 @@
 .method public onPause()V
     .locals 0
 
-    .line 457
+    .line 458
     invoke-direct {p0}, Lorg/telegram/ui/QrActivity;->restoreScreenSettings()V
 
-    .line 458
+    .line 459
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPause()V
 
     return-void
@@ -3687,10 +3687,10 @@
 .method public onResume()V
     .locals 0
 
-    .line 451
+    .line 452
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 452
+    .line 453
     invoke-direct {p0}, Lorg/telegram/ui/QrActivity;->applyScreenSettings()V
 
     return-void

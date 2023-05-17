@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
     .locals 0
 
-    .line 625
+    .line 746
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +38,16 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
 
-    .line 638
+    .line 759
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1100(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/AvatarDrawable;
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$600(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/AvatarDrawable;
 
     move-result-object p1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$800(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/EditTextEmoji;
+    invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->access$1300(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/EditTextEmoji;
 
     move-result-object v0
 
@@ -65,19 +65,19 @@
 
     invoke-virtual {p1, v1, v2, v0, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;)V
 
-    .line 639
+    .line 760
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$100(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/BackupImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$300(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 640
+    .line 761
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$100(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/BackupImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$300(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
 

@@ -18,7 +18,7 @@ import java.util.List;
 public class EmuDetector {
 
     /* renamed from: IP */
-    private static final String f1354IP = "10.0.2.15";
+    private static final String f1360IP = "10.0.2.15";
     private static final int MIN_PROPERTIES_THRESHOLD = 5;
     private static EmuDetector mEmulatorDetector;
     private boolean detectResult;
@@ -386,7 +386,7 @@ public class EmuDetector {
                 return false;
             }
             for (String str : sb2.split("\n")) {
-                if ((str.contains("wlan0") || str.contains("tunl0") || str.contains("eth0")) && str.contains(f1354IP)) {
+                if ((str.contains("wlan0") || str.contains("tunl0") || str.contains("eth0")) && str.contains(f1360IP)) {
                     return true;
                 }
             }

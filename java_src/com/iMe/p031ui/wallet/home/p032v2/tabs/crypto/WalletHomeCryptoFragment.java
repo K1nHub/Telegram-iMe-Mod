@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.iMe.common.IdFabric$CustomType;
 import com.iMe.common.IdFabric$Menu;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.fork.utils.Callbacks$Callback1;
@@ -44,7 +45,6 @@ import com.iMe.storage.common.AppConfiguration$Crypto;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.Wallet;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.model.wallet.token.TokenOrderType;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
@@ -73,7 +73,7 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeCryptoBinding;
@@ -159,7 +159,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
@@ -173,7 +173,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
         }
-        this$0.getBinding().getRoot().setColorSchemeColors(Theme.getColor("chats_actionBackground"));
+        this$0.getBinding().getRoot().setColorSchemeColors(Theme.getColor(Theme.key_chats_actionBackground));
     }
 
     @Override // com.iMe.p031ui.wallet.home.p032v2.tabs.crypto.WalletHomeCryptoView
@@ -216,7 +216,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, dialogModel, action, null, 8, null);
-        DialogExtKt.makeClickableDescription$default(createDialog$default, null, walletAddress, new C2248xea8f105d(walletAddress), 1, null);
+        DialogExtKt.makeClickableDescription$default(createDialog$default, null, walletAddress, new C2287xea8f105d(walletAddress), 1, null);
         showDialog(createDialog$default);
     }
 
@@ -324,18 +324,18 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         final String formatAddressQR = CryptoHelper.formatAddressQR(address, blockchainType);
         QRCodeBottomSheet qRCodeBottomSheet = new QRCodeBottomSheet(address, parentActivity, formatAddressQR) { // from class: com.iMe.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoFragment$showQrReceiveDialog$1
             @Override // org.telegram.p044ui.Components.QRCodeBottomSheet
-            public int getType() {
-                return 1;
-            }
-
-            @Override // org.telegram.p044ui.Components.QRCodeBottomSheet
             public int getCustomQrCenterImageRes() {
                 WalletHomeCryptoPresenter presenter;
                 presenter = this.getPresenter();
                 return presenter.getCurrentNetworkType().getLogo();
             }
+
+            @Override // org.telegram.p044ui.Components.QRCodeBottomSheet
+            public int getType() {
+                return IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_RECEIVE;
+            }
         };
-        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3242R.string.wallet_receive_dialog_title), getResourceManager().getString(C3242R.string.wallet_receive_dialog_btn_text), address, TokenCode.UNKNOWN, blockchainType);
+        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3290R.string.wallet_receive_dialog_title), getResourceManager().getString(C3290R.string.wallet_receive_dialog_btn_text), address);
         showDialog(qRCodeBottomSheet);
     }
 
@@ -393,8 +393,8 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
 
     private final void setupColors() {
         SlopSwipeRefreshLayout root = getBinding().getRoot();
-        root.setColorSchemeColors(Theme.getColor("chats_actionBackground"));
-        root.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        root.setColorSchemeColors(Theme.getColor(Theme.key_chats_actionBackground));
+        root.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
     }
 
     private final void setupListeners() {
@@ -464,20 +464,20 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3242R.C3245id.image_wallet_crypto_eye) {
+        if (id == C3290R.C3293id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
-        } else if (id == C3242R.C3245id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3290R.C3293id.image_wallet_crypto_tokens_settings) {
             this$0.presentFragment(WalletHomeCryptoTokensSettingsFragment.Companion.newInstance(new WalletHomeCryptoTokensSettingsFragment.ScreenType.Crypto(this$0.getPresenter().getCurrentNetworkType())));
-        } else if (id == C3242R.C3245id.image_wallet_order_tokens) {
+        } else if (id == C3290R.C3293id.image_wallet_order_tokens) {
             this$0.showDialog(DialogsFactoryKt.createSelectTokensOrderTypeDialog(this$0, this$0.getResourceManager(), this$0.getPresenter().getSelectedTokensOrderType(), new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda6
                 @Override // com.iMe.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
                     WalletHomeCryptoFragment.setupListeners$lambda$15$lambda$14$lambda$13(WalletHomeCryptoFragment.this, (TokenOrderType) obj);
                 }
             }));
-        } else if (id == C3242R.C3245id.frame_network_type) {
+        } else if (id == C3290R.C3293id.frame_network_type) {
             this$0.getPresenter().startChooseNetworkDialog();
-        } else if (id == C3242R.C3245id.image_copy) {
+        } else if (id == C3290R.C3293id.image_copy) {
             BaseNode baseNode = (BaseNode) this$0.getBalancesRecycleAdapter().getItem(i);
             if (baseNode instanceof CryptoAccountItem) {
                 ContextExtKt.copyToClipboard$default(((CryptoAccountItem) baseNode).getAddress(), null, 2, null);

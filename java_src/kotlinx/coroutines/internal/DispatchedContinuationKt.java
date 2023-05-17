@@ -20,10 +20,6 @@ public final class DispatchedContinuationKt {
     private static final Symbol UNDEFINED = new Symbol("UNDEFINED");
     public static final Symbol REUSABLE_CLAIMED = new Symbol("REUSABLE_CLAIMED");
 
-    public static final /* synthetic */ Symbol access$getUNDEFINED$p() {
-        return UNDEFINED;
-    }
-
     public static /* synthetic */ void resumeCancellableWith$default(Continuation continuation, Object obj, Function1 function1, int i, Object obj2) {
         if ((i & 2) != 0) {
             function1 = null;
@@ -39,7 +35,7 @@ public final class DispatchedContinuationKt {
             if (dispatchedContinuation.dispatcher.isDispatchNeeded(dispatchedContinuation.getContext())) {
                 dispatchedContinuation._state = state;
                 dispatchedContinuation.resumeMode = 1;
-                dispatchedContinuation.dispatcher.mo1566dispatch(dispatchedContinuation.getContext(), dispatchedContinuation);
+                dispatchedContinuation.dispatcher.mo1604dispatch(dispatchedContinuation.getContext(), dispatchedContinuation);
                 return;
             }
             DebugKt.getASSERTIONS_ENABLED();
@@ -54,7 +50,7 @@ public final class DispatchedContinuationKt {
                         CancellationException cancellationException = job.getCancellationException();
                         dispatchedContinuation.cancelCompletedResult$kotlinx_coroutines_core(state, cancellationException);
                         Result.Companion companion = Result.Companion;
-                        dispatchedContinuation.resumeWith(Result.m1555constructorimpl(ResultKt.createFailure(cancellationException)));
+                        dispatchedContinuation.resumeWith(Result.m1574constructorimpl(ResultKt.createFailure(cancellationException)));
                         z = true;
                     }
                     if (!z) {

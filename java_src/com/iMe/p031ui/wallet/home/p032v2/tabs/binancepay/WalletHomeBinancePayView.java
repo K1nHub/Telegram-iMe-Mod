@@ -16,7 +16,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletHomeBinancePayView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletHomeBinancePayView extends BaseView, SwipeRefreshView, BinancePayProcessView, AdapterNotifyView {
     void openConvertScreen();
 

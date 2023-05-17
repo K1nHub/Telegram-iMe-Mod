@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity$InputCell;Lorg/telegram/ui/ChangeUsernameActivity;)V
     .locals 0
 
-    .line 733
+    .line 795
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,12 +36,12 @@
 .method private updateUsernameCell(Ljava/lang/String;)V
     .locals 1
 
-    .line 772
+    .line 834
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object v0, v0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1200(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
+    invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1400(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
 
     move-result-object v0
 
@@ -49,12 +49,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 773
+    .line 835
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1200(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1400(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
 
     move-result-object p1
 
@@ -62,7 +62,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -77,12 +77,12 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
 
-    .line 754
+    .line 816
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -96,12 +96,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 755
+    .line 817
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -109,15 +109,15 @@
 
     move-result-object v1
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$902(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1102(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 757
+    .line 819
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -127,7 +127,7 @@
 
     if-lez p1, :cond_1
 
-    .line 758
+    .line 820
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -140,7 +140,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1700(Lorg/telegram/ui/ChangeUsernameActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1900(Lorg/telegram/ui/ChangeUsernameActivity;)I
 
     move-result v1
 
@@ -160,7 +160,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -170,7 +170,7 @@
 
     move-result-object p1
 
-    .line 759
+    .line 821
     sget v1, Lorg/telegram/messenger/R$string;->UsernameHelpLink:I
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -185,19 +185,19 @@
 
     move-result-object v0
 
-    .line 760
+    .line 822
     invoke-virtual {v0, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 761
+    .line 823
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     if-ltz v1, :cond_1
 
-    .line 763
+    .line 825
     new-instance v0, Lorg/telegram/ui/ChangeUsernameActivity$LinkSpan;
 
     iget-object v3, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
@@ -223,16 +223,16 @@
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 736
+    .line 798
     iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p2, p2, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {p2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 737
+    .line 799
     iget-object p3, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p3, p3, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
@@ -249,9 +249,9 @@
     move-result-object p1
 
     :goto_0
-    invoke-static {p3, p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$902(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1102(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 738
+    .line 800
     invoke-direct {p0, p2}, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->updateUsernameCell(Ljava/lang/String;)V
 
     return-void
@@ -260,16 +260,16 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 743
+    .line 805
     iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p2, p2, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {p2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 744
+    .line 806
     iget-object p3, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p3, p3, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
@@ -286,17 +286,17 @@
     move-result-object p1
 
     :goto_0
-    invoke-static {p3, p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$902(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1102(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 745
+    .line 807
     invoke-direct {p0, p2}, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->updateUsernameCell(Ljava/lang/String;)V
 
-    .line 746
+    .line 808
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1000(Lorg/telegram/ui/ChangeUsernameActivity;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1200(Lorg/telegram/ui/ChangeUsernameActivity;)Z
 
     move-result p1
 
@@ -304,19 +304,19 @@
 
     return-void
 
-    .line 749
+    .line 811
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell$1;->this$1:Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object p2
 
     const/4 p3, 0x0
 
-    invoke-static {p1, p2, p3}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1600(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;Z)Z
+    invoke-static {p1, p2, p3}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1800(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;Z)Z
 
     return-void
 .end method

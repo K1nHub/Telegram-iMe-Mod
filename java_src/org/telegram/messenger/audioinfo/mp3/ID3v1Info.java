@@ -1,6 +1,6 @@
 package org.telegram.messenger.audioinfo.mp3;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -63,7 +63,7 @@ public class ID3v1Info extends AudioInfo {
 
     String extractString(byte[] bArr, int i, int i2) {
         try {
-            String str = new String(bArr, i, i2, C0470C.ISO88591_NAME);
+            String str = new String(bArr, i, i2, C0475C.ISO88591_NAME);
             int indexOf = str.indexOf(0);
             return indexOf < 0 ? str : str.substring(0, indexOf);
         } catch (Exception unused) {

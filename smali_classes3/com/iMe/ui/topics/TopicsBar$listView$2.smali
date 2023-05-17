@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/topics/TopicsBar;-><init>(Landroid/content/Context;)V
+    value = Lcom/iMe/ui/topics/TopicsBar;-><init>(Landroid/content/Context;Lcom/iMe/ui/topics/TopicsBar$Delegate;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 31
+    .line 35
     invoke-virtual {p0}, Lcom/iMe/ui/topics/TopicsBar$listView$2;->invoke()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 31
+    .line 35
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$listView$2;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsBar;->access$initListView(Lcom/iMe/ui/topics/TopicsBar;)Lorg/telegram/ui/Components/RecyclerListView;

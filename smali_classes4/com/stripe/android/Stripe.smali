@@ -183,7 +183,7 @@
 
     if-eqz v2, :cond_1
 
-    const-string v2, "sk_"
+    const-string/jumbo v2, "sk_"
 
     .line 227
     invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z

@@ -21,7 +21,7 @@ public final class UserExtKt {
             return first_name;
         }
         String str = tLRPC$User.username;
-        String valueOf = str == null || str.length() == 0 ? String.valueOf(tLRPC$User.f1567id) : tLRPC$User.username;
+        String valueOf = str == null || str.length() == 0 ? String.valueOf(tLRPC$User.f1574id) : tLRPC$User.username;
         Intrinsics.checkNotNullExpressionValue(valueOf, "if (username.isNullOrEmpty()) \"$id\" else username");
         return valueOf;
     }

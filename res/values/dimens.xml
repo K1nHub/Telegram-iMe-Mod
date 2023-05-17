@@ -114,6 +114,7 @@
     <dimen name="compat_notification_large_icon_max_height">320.0dip</dimen>
     <dimen name="compat_notification_large_icon_max_width">320.0dip</dimen>
     <dimen name="custom_notification_corner_radius">2.0dip</dimen>
+    <dimen name="def_drawer_elevation">10.0dip</dimen>
     <dimen name="default_dimension">100.0dip</dimen>
     <dimen name="design_appbar_elevation">4.0dip</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168.0dip</dimen>
@@ -458,6 +459,7 @@
     <dimen name="shop_button_corner_radius">4.0dip</dimen>
     <dimen name="shop_button_height">26.0dip</dimen>
     <dimen name="shop_button_width">105.0dip</dimen>
+    <dimen name="sliding_pane_detail_pane_width">300.0dip</dimen>
     <dimen name="square_checkbox_size">19.0dip</dimen>
     <dimen name="telegram_action_button_height">42.0dip</dimen>
     <dimen name="telegram_avatar_size_medium">46.0dip</dimen>

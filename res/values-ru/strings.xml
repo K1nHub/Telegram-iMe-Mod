@@ -442,9 +442,6 @@
     <string name="collection_tab_all">Все</string>
     <string name="collection_tab_categories">Категории</string>
     <string name="collection_tab_my">Мои</string>
-    <string name="combine_messages_alert_message">"Вы отправляете сообщения подряд, и это может раздражать других пользователей.
-
-Включить опцию, чтобы ваши сообщения, отправленные подряд в течение 30 секунд, объединялись в одно сообщение?"</string>
     <string name="combine_messages_disable">Не объединять сообщения</string>
     <string name="combine_messages_enable">Объединять сообщения</string>
     <string name="combine_messages_send_without_combine">Отправить без объединения</string>
@@ -539,15 +536,11 @@
     <string name="debug_option_choose_wallet_environment_dialog_title">Вы уверены?</string>
     <string name="deleting_messages">Удаление сообщений... Обработано %1$d из %2$d</string>
     <string name="deleting_messages_success">Служебные сообщения удалены</string>
-    <string name="dialog_message_enable_archive_in_drawer">"При отключении вкладки Все чаты вы не сможете войти в архив.
-
-Разместить кнопку доступа к архиву в боковом меню?"</string>
     <string name="dialog_promo_discussion_group_description">Группа</string>
     <string name="dialog_promo_en_news_channel_description">Англоязычный</string>
     <string name="dialog_promo_ru_news_channel_description">Русскоязычный</string>
     <string name="dialog_promo_subscribe_subtitle">Тогда подписывайтесь на наш канал</string>
     <string name="dialog_promo_subscribe_title">Хотите следить за новостями iMe?</string>
-    <string name="dialog_title_enable_archive_in_drawer">Доступ к архиву</string>
     <string name="dialogs_activity_move_to_folder">Переместить в папку</string>
     <string name="dialogs_albums_sort_alphabetically">Сортировать по алфавиту</string>
     <string name="dialogs_albums_sort_date">Сортировать по дате</string>
@@ -598,6 +591,7 @@
     <string name="enter_archive_passcode">Введите код-пароль для архива</string>
     <string name="enter_cloud_passcode">Введите код-пароль для облака</string>
     <string name="erasing_period">Период стирания</string>
+    <string name="error_block_failed_to_load_media">Не удалось загрузить медиа</string>
     <string name="error_icon_content_description">Ошибка</string>
     <string name="error_while_image_recognition">Изображение не распознаётся</string>
     <string name="error_while_text_recognition">Текст не распознаётся</string>
@@ -657,13 +651,19 @@
     <string name="google_assistant_verification_notification_title">Google Ассистент отправляет сообщение…</string>
     <string name="hidden_chats_empty">Нет скрытых чатов</string>
     <string name="hidden_chats_empty_title">У вас нет скрытых чатов</string>
-    <string name="hidden_chats_hide_chats">Скрыть</string>
+    <string name="hidden_chats_hide_chats">Скрыть в Субархив</string>
+    <string name="hidden_chats_info_search_chats">Скрытые чаты отправляются в Субархив с выключенными уведомлениями. Потяните список чатов в Архиве вниз, чтобы получить доступ к скрытому разделу.</string>
+    <string name="hidden_chats_info_unhide">Вы можете вернуть чат обратно на список чатов.</string>
     <string name="hidden_chats_pinned">Скрытые чаты закреплены</string>
     <string name="hidden_chats_release_for_hidden_chats">Отпустите для вывода скрытых чатов</string>
     <string name="hidden_chats_swipe_for_hidden_chats">Тяните для вывода скрытых чатов</string>
     <string name="hidden_chats_title">Скрытые чаты</string>
-    <string name="hidden_chats_undo_chat_hidden">Чат скрыт.</string>
-    <string name="hidden_chats_undo_chats_hidden">Чаты скрыты.</string>
+    <string name="hidden_chats_undo_chat_hidden">Чат скрыт в Субархив.</string>
+    <string name="hidden_chats_undo_chat_unhidden_subtitle">При возвращении чата из скрытого раздела, уведомления чата будут отключены.</string>
+    <string name="hidden_chats_undo_chat_unhidden_title">Чат возвращен</string>
+    <string name="hidden_chats_undo_chats_hidden">Чаты скрыты в Субархив.</string>
+    <string name="hidden_chats_undo_chats_unhidden_subtitle">При возвращении чата из скрытого раздела, уведомления чата будут отключены.</string>
+    <string name="hidden_chats_undo_chats_unhidden_title">Чаты возвращены</string>
     <string name="hidden_chats_unhide_chats">Вернуть</string>
     <string name="hidden_chats_unpinned">Скрытые чаты откреплены</string>
     <string name="icon_content_description">Значок диалогового окна</string>
@@ -806,6 +806,8 @@
 Добавьте музыку в плейлист"</string>
     <string name="music_playlists_tab">Плейлисты</string>
     <string name="music_tab_playlist">Плейлист</string>
+    <string name="nav_app_bar_navigate_up_description">Перейти вверх</string>
+    <string name="nav_app_bar_open_drawer_description">Открыть панель навигации</string>
     <string name="neurobots_enable_dialog_description">Для включения и конфигурации нейроботов перейдите в настройки</string>
     <string name="neurobots_enable_dialog_positive_btn_text">ПЕРЕЙТИ</string>
     <string name="neurobots_enable_dialog_title">Нейроботы отключены</string>
@@ -955,6 +957,7 @@
     <string name="release_to_go_to_unread_archived_bots">Отпустите для перехода к ботам в архиве</string>
     <string name="release_to_go_to_unread_archived_groups">Отпустите для перехода к группам в архиве</string>
     <string name="release_to_go_to_unread_archived_personal_chats">Отпустите для перехода к личным чатам в архиве</string>
+    <string name="remember_choice">Запомнить выбор</string>
     <string name="search_menu_title">Поиск</string>
     <string name="section_is_locked">Раздел заблокирован, предварительный просмотр недоступен</string>
     <string name="section_passcode">Код-пароль</string>
@@ -1058,7 +1061,7 @@
     <string name="settings_interface_wide_posts_in_channel">Широкие посты в каналах</string>
     <string name="settings_multi_panel_item_title">Мультипанель в чатах</string>
     <string name="settings_neurobots_item_title">Настройки нейроботов</string>
-    <string name="settings_proxy_button_in_toolbar">Кнопка прокси</string>
+    <string name="settings_proxy_button_in_toolbar">Кнопка в тулбаре</string>
     <string name="settings_reactions_enable_hint">Включите, чтобы функционал реакций отображался в чатах</string>
     <string name="settings_revoke_by_default">Удалить у собеседника</string>
     <string name="settings_section_passcode_archive">Пароль в архиве</string>
@@ -1081,7 +1084,7 @@
 
 Включите эту опцию, чтобы ваши сообщения, отправленные в течение 30 секунд, были объединены в одно сообщение."</string>
     <string name="settings_tools_custom_sharing">Мультишаринг</string>
-    <string name="settings_tools_custom_sharing_hint">Отображение вкладок сортировки основного и архивного списка чатов при шаринге извне. Например, когда вы делитесь фото в iMe из галереи устройства.</string>
+    <string name="settings_tools_custom_sharing_hint">Отображение табов сортировки с основного списка чатов и архива при шаринга извне. Например, когда вы отправляете фото из галереи устройства в iMe.</string>
     <string name="settings_tools_customization">Кастомизация</string>
     <string name="settings_tools_design_icon">Дизайн иконок</string>
     <string name="settings_tools_message_popup_reactions">В контекстном меню</string>
@@ -1104,6 +1107,28 @@
     <string name="short_number_k"> тыс.</string>
     <string name="short_number_m"> млн.</string>
     <string name="short_number_t"> трлн.</string>
+    <string name="social_access_error">Ошибка доступа</string>
+    <string name="social_cell_add_button">Добавить</string>
+    <string name="social_cell_not_connected">Нет соединения</string>
+    <string name="social_cell_social_networks">Социальные сети</string>
+    <string name="social_clear_cache_menu_item">Очистить кеш</string>
+    <string name="social_connect_account_message">Вы хотите отменить авторизацию?</string>
+    <string name="social_connect_account_negative_button">Нет</string>
+    <string name="social_connect_account_positive_button">Отменить</string>
+    <string name="social_connect_account_title">Привязать аккаунт %1$s</string>
+    <string name="social_dialog_select_social_networks">Выберите социальную сеть</string>
+    <string name="social_exit_confirmation_message">Вы точно хотите выйти из %1$s?</string>
+    <string name="social_exit_confirmation_title">Подтверждение выхода</string>
+    <string name="social_refresh_page_menu_item">Обновить страницу</string>
+    <string name="social_reset_account_message">Вы уверены, что хотите сбросить ваш %1$s аккаунт? После сброса вы сможете привязать новый аккаунт.</string>
+    <string name="social_reset_account_negative_button">Отменить</string>
+    <string name="social_reset_account_positive_button">Сбросить</string>
+    <string name="social_reset_account_title">Сбросить аккаунт %1$s</string>
+    <string name="social_reset_menu_item">Сброс</string>
+    <string name="social_social_open_in_menu_item">Открыть в %1$s</string>
+    <string name="social_unable_to_load_page">Не удалось загрузить страницу</string>
+    <string name="social_web_cancel_button">Остаться</string>
+    <string name="social_web_exit_button">Выйти</string>
     <string name="sort_by_usage">Недавние</string>
     <string name="sorting_enable_alert_message">"Хотите включить автоматическую сортировку чатов?
 
@@ -1391,6 +1416,9 @@
     <string name="twitter_search_subtitle">Введите Twitter username получателя в поле ввода</string>
     <string name="twitter_search_title">Поиск Twitter</string>
     <string name="twitter_title">Твиты</string>
+    <string name="undo_all_chats_tab_disabled">"Вкладка **Все Чаты** отключена.
+Кнопка доступа в архиву находится в боковом меню"</string>
+    <string name="undo_recent_chats_disabled">Недавние чаты отключены</string>
     <string name="unlock_premium_transcription_hint">Для транскрибации голоса более 1 мин требуется Telegram Premium.</string>
     <string name="user_restrictions_send_games">Игр</string>
     <string name="user_restrictions_send_gifs">GIF</string>

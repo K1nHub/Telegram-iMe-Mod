@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.p044ui.ActionBar.FloatingActionMode;
@@ -289,7 +289,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         this.activeLinePaint = new Paint();
         TextPaint textPaint = new TextPaint(1);
         this.errorPaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m50dp(11));
+        textPaint.setTextSize(AndroidUtilities.m54dp(11));
         int i = Build.VERSION.SDK_INT;
         if (i >= 26) {
             setImportantForAutofill(2);
@@ -308,12 +308,12 @@ public class EditTextBoldCursor extends EditTextEffects {
 
                 @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
                 public int getIntrinsicHeight() {
-                    return AndroidUtilities.m50dp(EditTextBoldCursor.this.cursorSize + 20);
+                    return AndroidUtilities.m54dp(EditTextBoldCursor.this.cursorSize + 20);
                 }
 
                 @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
                 public int getIntrinsicWidth() {
-                    return AndroidUtilities.m51dp(EditTextBoldCursor.this.cursorWidth);
+                    return AndroidUtilities.m55dp(EditTextBoldCursor.this.cursorWidth);
                 }
             };
             this.cursorDrawable = shapeDrawable;
@@ -354,7 +354,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 declaredMethod2.setAccessible(true);
             }
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
         }
         if (this.cursorDrawable == null) {
             try {
@@ -374,12 +374,12 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
                 Field field = mCursorDrawableResField;
                 if (field != null) {
-                    field.set(this, Integer.valueOf(C3242R.C3244drawable.field_carret_empty));
+                    field.set(this, Integer.valueOf(C3290R.C3292drawable.field_carret_empty));
                 }
             } catch (Throwable unused5) {
             }
         }
-        this.cursorSize = AndroidUtilities.m50dp(24);
+        this.cursorSize = AndroidUtilities.m54dp(24);
     }
 
     public void fixHandleView(boolean z) {
@@ -459,7 +459,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     public void setLineColors(int i, int i2, int i3) {
         this.lineVisible = true;
-        getContext().getResources().getDrawable(C3242R.C3244drawable.search_dark).getPadding(this.padding);
+        getContext().getResources().getDrawable(C3290R.C3292drawable.search_dark).getPadding(this.padding);
         Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
         this.lineColor = i;
@@ -548,9 +548,9 @@ public class EditTextBoldCursor extends EditTextEffects {
             if (this.lastSize != measuredHeight) {
                 setHintText(this.hint);
             }
-            this.lineY = ((getMeasuredHeight() - this.hintLayout.getHeight()) / 2.0f) + this.hintLayout.getHeight() + AndroidUtilities.m50dp(6);
+            this.lineY = ((getMeasuredHeight() - this.hintLayout.getHeight()) / 2.0f) + this.hintLayout.getHeight() + AndroidUtilities.m54dp(6);
         } else {
-            this.lineY = getMeasuredHeight() - AndroidUtilities.m50dp(2);
+            this.lineY = getMeasuredHeight() - AndroidUtilities.m54dp(2);
         }
         this.lastSize = measuredHeight;
     }
@@ -585,7 +585,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 return;
             }
         }
-        this.hintLayout = new StaticLayout(charSequence, getPaint(), AndroidUtilities.m50dp(1000), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+        this.hintLayout = new StaticLayout(charSequence, getPaint(), AndroidUtilities.m54dp(1000), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
     }
 
     public Layout getHintLayoutEx() {
@@ -598,7 +598,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         try {
             super.onFocusChanged(z, i, rect);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         checkHeaderVisibility(true);
     }
@@ -758,10 +758,10 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     private void updateCursorPosition(int i, int i2, float f) {
         int clampHorizontalPosition = clampHorizontalPosition(this.gradientDrawable, f);
-        int m51dp = AndroidUtilities.m51dp(this.cursorWidth);
+        int m55dp = AndroidUtilities.m55dp(this.cursorWidth);
         GradientDrawable gradientDrawable = this.gradientDrawable;
         Rect rect = this.mTempRect;
-        gradientDrawable.setBounds(clampHorizontalPosition, i - rect.top, m51dp + clampHorizontalPosition, i2 + rect.bottom);
+        gradientDrawable.setBounds(clampHorizontalPosition, i - rect.top, m55dp + clampHorizontalPosition, i2 + rect.bottom);
     }
 
     @Override // android.widget.TextView
@@ -787,7 +787,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         try {
             super.onAttachedToWindow();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         this.attachedToWindow = getRootView();
         AndroidUtilities.runOnUIThread(this.invalidateRunnable);
@@ -863,7 +863,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         try {
             super.setSelection(i, i2);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -872,7 +872,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         try {
             super.setSelection(i);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 

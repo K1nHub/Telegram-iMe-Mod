@@ -527,11 +527,11 @@
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotIcon;->icon:Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
 
-    const-string v4, "dialogTextGray2"
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    invoke-static {v0, v4, v3}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {v0, v3, v4}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v4
 

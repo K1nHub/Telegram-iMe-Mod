@@ -38,14 +38,14 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinding;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.ViewPagerFixed;
 /* compiled from: WalletHomeFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.WalletHomeFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletHomeFragment extends WalletTabFragment implements NavigationViewConfiguration, WalletHomeView, TabbedViewPagerDelegate<TabbedFragmentPage<WalletHomeTabFragment>> {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletHomeFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/home/v2/WalletHomePresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletHomeFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -131,7 +131,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
         arrayListOf.addAll(getBinding().walletHomeViewPager.getThemeDescription());
         for (WalletHomeTabFragment walletHomeTabFragment : getHomeNavigationRouter().getScreenStack()) {
             Collection<? extends ThemeDescription> themeDescriptions = walletHomeTabFragment.getThemeDescriptions();
@@ -210,8 +210,8 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         TabbedViewPager tabbedViewPager = getBinding().walletHomeViewPager;
         tabbedViewPager.init(this);
         ViewPagerFixed.TabsView tabsView = tabbedViewPager.getTabsView();
-        tabsView.setElevation(AndroidUtilities.m51dp(2.0f));
-        tabsView.setColors("actionBarTabLine", "actionBarTabActiveText", "actionBarTabUnactiveText", "actionBarTabSelector", "actionBarDefault");
+        tabsView.setElevation(AndroidUtilities.m55dp(2.0f));
+        tabsView.setColors(Theme.key_actionBarTabLine, Theme.key_actionBarTabActiveText, Theme.key_actionBarTabUnactiveText, Theme.key_actionBarTabSelector, Theme.key_actionBarDefault);
     }
 
     @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment
@@ -241,13 +241,13 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
     }
 
     private final void setupColors() {
-        getBinding().getRoot().setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        getBinding().getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final List<WalletHomeNavigationTab> initPageTabs() {
         List<WalletHomeNavigationTab> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletHomeNavigationTab(C3242R.C3245id.wallet_home_crypto, new TabbedFragmentPage(getResourceManager().getString(C3242R.string.wallet_home_navigation_crypto), C3242R.C3244drawable.fork_ic_crypto_24, WalletHomeCryptoFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3242R.C3245id.wallet_home_binance_pay, new TabbedFragmentPage(getResourceManager().getString(C3242R.string.wallet_home_navigation_binance_pay), C3242R.C3244drawable.fork_ic_binance_pay_24, WalletHomeBinancePayFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3242R.C3245id.wallet_home_internal_points, new TabbedFragmentPage(getResourceManager().getString(C3242R.string.wallet_home_navigation_services), C3242R.C3244drawable.fork_ic_points_24, WalletHomeServicesFragment.Companion.newInstance(), null, 8, null)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletHomeNavigationTab(C3290R.C3293id.wallet_home_crypto, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.wallet_home_navigation_crypto), C3290R.C3292drawable.fork_ic_crypto_24, WalletHomeCryptoFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3290R.C3293id.wallet_home_binance_pay, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.wallet_home_navigation_binance_pay), C3290R.C3292drawable.fork_ic_binance_pay_24, WalletHomeBinancePayFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3290R.C3293id.wallet_home_internal_points, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.wallet_home_navigation_services), C3290R.C3292drawable.fork_ic_points_24, WalletHomeServicesFragment.Companion.newInstance(), null, 8, null)));
         for (WalletHomeNavigationTab walletHomeNavigationTab : mutableListOf) {
             walletHomeNavigationTab.getPage().getFragment().setParentView(this);
         }
@@ -256,7 +256,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
 
     /* compiled from: WalletHomeFragment.kt */
     /* renamed from: com.iMe.ui.wallet.home.v2.WalletHomeFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -44,15 +44,15 @@ public final class CoinTickerView extends AppCompatTextView {
     }
 
     public final void setupColors() {
-        setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
     }
 
     private final void setupView() {
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m51dp(2.0f));
-        gradientDrawable.setStroke(AndroidUtilities.m51dp(1.0f), Theme.getColor("windowBackgroundWhiteGrayText2"));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m55dp(2.0f));
+        gradientDrawable.setStroke(AndroidUtilities.m55dp(1.0f), Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         setBackground(gradientDrawable);
         setTextSize(9.0f);
-        setPadding(AndroidUtilities.m51dp(6.0f), AndroidUtilities.m51dp(2.0f), AndroidUtilities.m51dp(6.0f), AndroidUtilities.m51dp(2.0f));
+        setPadding(AndroidUtilities.m55dp(6.0f), AndroidUtilities.m55dp(2.0f), AndroidUtilities.m55dp(6.0f), AndroidUtilities.m55dp(2.0f));
     }
 }

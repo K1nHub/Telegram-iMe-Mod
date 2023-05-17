@@ -1,6 +1,9 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$7;
-.super Landroid/util/Property;
+.super Ljava/lang/Object;
 .source "ChatActivityEnterView.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -13,78 +16,85 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/util/Property<",
-        "Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;",
-        "Ljava/lang/Float;",
-        ">;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Class;Ljava/lang/String;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 1053
-    invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    .line 1005
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$7;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public get(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;)Ljava/lang/Float;
-    .locals 0
+.method public run()V
+    .locals 4
 
-    .line 1056
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->getScale()F
+    .line 1008
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$7;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    move-result p1
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v0
 
-    move-result-object p1
+    if-eqz v0, :cond_2
 
-    return-object p1
-.end method
+    .line 1010
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    sget-object v1, Lcom/iMe/fork/enums/VideoVoiceCamera;->ASK:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    .line 1053
-    check-cast p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$7;->get(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;)Ljava/lang/Float;
+    .line 1011
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$7;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    move-result-object p1
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2100(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
-    return-object p1
-.end method
+    goto :goto_0
 
-.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
+    .line 1012
+    :cond_0
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    .line 1053
-    check-cast p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
+    sget-object v1, Lcom/iMe/fork/enums/VideoVoiceCamera;->BACK:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    check-cast p2, Ljava/lang/Float;
+    const/4 v2, 0x1
 
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$7;->set(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;Ljava/lang/Float;)V
+    const/4 v3, 0x0
 
-    return-void
-.end method
+    if-ne v0, v1, :cond_1
 
-.method public set(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;Ljava/lang/Float;)V
-    .locals 0
+    .line 1013
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$7;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    .line 1061
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
 
-    move-result p2
+    move-result-object v0
 
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->setScale(F)V
+    invoke-interface {v0, v3, v2, v3, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needStartRecordVideo(IZIZ)V
 
+    goto :goto_0
+
+    .line 1015
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$7;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
+
+    move-result-object v0
+
+    invoke-interface {v0, v3, v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needStartRecordVideo(IZI)V
+
+    :cond_2
+    :goto_0
     return-void
 .end method

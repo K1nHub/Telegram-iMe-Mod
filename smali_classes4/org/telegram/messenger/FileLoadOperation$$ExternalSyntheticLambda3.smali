@@ -57,7 +57,7 @@
 
     iget-boolean v5, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$5:Z
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$Egc0hvsUlFK7ewyQyXgWNWGsh_Q(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Z)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$b4y7uHCqY8-rCY9iYipBMyeiC_0(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Z)V
 
     return-void
 .end method

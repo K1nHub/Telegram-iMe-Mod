@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->refreshToken(Ljava/lang/String;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->refreshToken()Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

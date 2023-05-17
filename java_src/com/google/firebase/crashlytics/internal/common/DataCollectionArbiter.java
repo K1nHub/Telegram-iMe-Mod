@@ -77,7 +77,7 @@ public class DataCollectionArbiter {
         } else {
             str = this.setInManifest ? "firebase_crashlytics_collection_enabled manifest flag" : "API";
         }
-        Logger.getLogger().m724d(String.format("Crashlytics automatic data collection %s by %s.", str2, str));
+        Logger.getLogger().m728d(String.format("Crashlytics automatic data collection %s by %s.", str2, str));
     }
 
     private Boolean getDataCollectionValueFromSharedPreferences() {
@@ -108,7 +108,7 @@ public class DataCollectionArbiter {
             }
             return Boolean.valueOf(applicationInfo.metaData.getBoolean("firebase_crashlytics_collection_enabled"));
         } catch (PackageManager.NameNotFoundException e) {
-            Logger.getLogger().m721e("Could not read data collection permission from manifest", e);
+            Logger.getLogger().m725e("Could not read data collection permission from manifest", e);
             return null;
         }
     }

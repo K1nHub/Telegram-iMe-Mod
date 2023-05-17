@@ -283,7 +283,7 @@ public class EditTextEffects extends EditText {
             goto L5c
         L58:
             r4 = move-exception
-            org.telegram.messenger.FileLog.m45e(r4)
+            org.telegram.messenger.FileLog.m49e(r4)
         L5c:
             r4 = 1
             r3.updateAnimatedEmoji(r4)
@@ -372,9 +372,9 @@ public class EditTextEffects extends EditText {
             canvas.save();
             canvas.translate(this.animatedEmojiOffsetX, BitmapDescriptorFactory.HUE_RED);
             if (this.animatedEmojiRawDraw) {
-                AnimatedEmojiSpan.drawRawAnimatedEmojis(canvas, getLayout(), this.animatedEmojiDrawables, BitmapDescriptorFactory.HUE_RED, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.m50dp(6), computeVerticalScrollOffset() + computeVerticalScrollExtent(), BitmapDescriptorFactory.HUE_RED, 1.0f, this.animatedEmojiRawDrawFps);
+                AnimatedEmojiSpan.drawRawAnimatedEmojis(canvas, getLayout(), this.animatedEmojiDrawables, BitmapDescriptorFactory.HUE_RED, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.m54dp(6), computeVerticalScrollOffset() + computeVerticalScrollExtent(), BitmapDescriptorFactory.HUE_RED, 1.0f, this.animatedEmojiRawDrawFps);
             } else {
-                AnimatedEmojiSpan.drawAnimatedEmojis(canvas, getLayout(), this.animatedEmojiDrawables, BitmapDescriptorFactory.HUE_RED, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.m50dp(6), computeVerticalScrollOffset() + computeVerticalScrollExtent(), BitmapDescriptorFactory.HUE_RED, 1.0f);
+                AnimatedEmojiSpan.drawAnimatedEmojis(canvas, getLayout(), this.animatedEmojiDrawables, BitmapDescriptorFactory.HUE_RED, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.m54dp(6), computeVerticalScrollOffset() + computeVerticalScrollExtent(), BitmapDescriptorFactory.HUE_RED, 1.0f);
             }
             canvas.restore();
         }

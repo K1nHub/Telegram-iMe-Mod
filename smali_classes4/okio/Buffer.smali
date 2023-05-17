@@ -1110,7 +1110,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "size="
+    const-string/jumbo v0, "size="
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1150,7 +1150,7 @@
 .method public indexOfElement(Lokio/ByteString;)J
     .locals 2
 
-    const-string v0, "targetBytes"
+    const-string/jumbo v0, "targetBytes"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1167,7 +1167,7 @@
 .method public indexOfElement(Lokio/ByteString;J)J
     .locals 11
 
-    const-string v0, "targetBytes"
+    const-string/jumbo v0, "targetBytes"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1794,7 +1794,7 @@
         }
     .end annotation
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1868,7 +1868,7 @@
 .method public read([BII)I
     .locals 7
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1958,7 +1958,7 @@
 .method public read(Lokio/Buffer;J)J
     .locals 4
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2049,7 +2049,7 @@
         }
     .end annotation
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2702,7 +2702,7 @@
         }
     .end annotation
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2744,7 +2744,7 @@
         }
     .end annotation
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3962,7 +3962,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "size < "
+    const-string/jumbo v3, "size < "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4489,7 +4489,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "size > Int.MAX_VALUE: "
+    const-string/jumbo v1, "size > Int.MAX_VALUE: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4776,7 +4776,7 @@
         }
     .end annotation
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4860,7 +4860,7 @@
 .method public write([B)Lokio/Buffer;
     .locals 2
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4879,7 +4879,7 @@
 .method public write([BII)Lokio/Buffer;
     .locals 9
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4990,7 +4990,7 @@
 .method public write(Lokio/Buffer;J)V
     .locals 8
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -5227,7 +5227,7 @@
     :cond_7
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "source == this"
+    const-string/jumbo p2, "source == this"
 
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -5246,7 +5246,7 @@
         }
     .end annotation
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -6155,7 +6155,7 @@
 .method public writeString(Ljava/lang/String;IILjava/nio/charset/Charset;)Lokio/Buffer;
     .locals 3
 
-    const-string v0, "string"
+    const-string/jumbo v0, "string"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -6350,7 +6350,7 @@
 .method public writeString(Ljava/lang/String;Ljava/nio/charset/Charset;)Lokio/Buffer;
     .locals 2
 
-    const-string v0, "string"
+    const-string/jumbo v0, "string"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -6375,7 +6375,7 @@
 .method public writeUtf8(Ljava/lang/String;)Lokio/Buffer;
     .locals 2
 
-    const-string v0, "string"
+    const-string/jumbo v0, "string"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -6396,7 +6396,7 @@
 .method public writeUtf8(Ljava/lang/String;II)Lokio/Buffer;
     .locals 11
 
-    const-string v0, "string"
+    const-string/jumbo v0, "string"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

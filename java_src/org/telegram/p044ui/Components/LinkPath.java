@@ -25,7 +25,7 @@ public class LinkPath extends Path {
     private boolean allowReset = true;
 
     public static int getRadius() {
-        return AndroidUtilities.m50dp(5);
+        return AndroidUtilities.m54dp(5);
     }
 
     public static CornerPathEffect getRoundedEffect() {

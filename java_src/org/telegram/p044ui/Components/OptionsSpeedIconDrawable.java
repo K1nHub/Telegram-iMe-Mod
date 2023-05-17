@@ -60,7 +60,7 @@ public class OptionsSpeedIconDrawable extends Drawable {
             this.textDrawable.setAnimationProperties(0.3f, 0L, 165L, CubicBezierInterpolator.EASE_OUT_QUINT);
             this.textDrawable.setGravity(1);
             this.textDrawable.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.textDrawable.setTextSize(AndroidUtilities.m50dp(7));
+            this.textDrawable.setTextSize(AndroidUtilities.m54dp(7));
             this.textDrawable.setTextColor(-1);
             this.textDrawable.getPaint().setStyle(Paint.Style.FILL_AND_STROKE);
             this.textDrawable.getPaint().setStrokeWidth(AndroidUtilities.dpf2(0.1f));
@@ -98,20 +98,20 @@ public class OptionsSpeedIconDrawable extends Drawable {
         canvas.drawCircle(f, f2 + AndroidUtilities.dpf2(6.0f), AndroidUtilities.dpf2(2.0f), this.paint);
         if (this.textDrawable != null) {
             canvas.save();
-            int m51dp = centerX - AndroidUtilities.m51dp(11.6f);
-            int m50dp = centerY + AndroidUtilities.m50dp(4);
+            int m55dp = centerX - AndroidUtilities.m55dp(11.6f);
+            int m54dp = centerY + AndroidUtilities.m54dp(4);
             float f3 = this.textDrawableAlpha.set(this.textDrawableVisible ? 1.0f : BitmapDescriptorFactory.HUE_RED);
             int alpha = this.paint.getAlpha();
             if (f3 < 1.0f) {
                 this.paint.setAlpha((int) (f3 * 255.0f));
             }
             RectF rectF = AndroidUtilities.rectTmp;
-            float f4 = m51dp;
-            float f5 = m50dp;
+            float f4 = m55dp;
+            float f5 = m54dp;
             rectF.set((f4 - AndroidUtilities.dpf2(1.5f)) - (this.textDrawable.getCurrentWidth() / 2.0f), f5 - AndroidUtilities.dpf2(4.0f), f4 + AndroidUtilities.dpf2(1.5f) + (this.textDrawable.getCurrentWidth() / 2.0f), f5 + AndroidUtilities.dpf2(5.0f));
             canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(2.0f), AndroidUtilities.dpf2(2.0f), this.paint);
             canvas.save();
-            this.textDrawable.setBounds(m51dp, m50dp, m51dp, m50dp);
+            this.textDrawable.setBounds(m55dp, m54dp, m55dp, m54dp);
             this.textDrawable.draw(canvas);
             canvas.restore();
             this.paint.setAlpha(alpha);
@@ -131,11 +131,11 @@ public class OptionsSpeedIconDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(45);
+        return AndroidUtilities.m54dp(45);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(45);
+        return AndroidUtilities.m54dp(45);
     }
 }

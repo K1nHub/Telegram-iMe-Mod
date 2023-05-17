@@ -41,7 +41,7 @@ public final class LockFreeTaskQueueCore<E> {
 
     public final int getSize() {
         long j = this._state;
-        return (((int) ((j & 1152921503533105152L) >> 30)) - ((int) ((1073741823 & j) >> 0))) & IdFabric$RequestCode.file_saving_directory;
+        return (((int) ((j & 1152921503533105152L) >> 30)) - ((int) ((1073741823 & j) >> 0))) & IdFabric$RequestCode.FILE_SAVING_DIRECTORY;
     }
 
     private final LockFreeTaskQueueCore<E> fillPlaceholder(int i, E e) {
@@ -72,7 +72,7 @@ public final class LockFreeTaskQueueCore<E> {
                 lockFreeTaskQueueCore.array.set(lockFreeTaskQueueCore.mask & i, obj);
                 i++;
             } else {
-                lockFreeTaskQueueCore._state = Companion.m74wo(j, 1152921504606846976L);
+                lockFreeTaskQueueCore._state = Companion.m79wo(j, 1152921504606846976L);
                 return lockFreeTaskQueueCore;
             }
         }
@@ -100,7 +100,7 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         /* renamed from: wo */
-        public final long m74wo(long j, long j2) {
+        public final long m79wo(long j, long j2) {
             return j & (~j2);
         }
 
@@ -108,11 +108,11 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         public final long updateHead(long j, int i) {
-            return m74wo(j, 1073741823L) | (i << 0);
+            return m79wo(j, 1073741823L) | (i << 0);
         }
 
         public final long updateTail(long j, int i) {
-            return m74wo(j, 1152921503533105152L) | (i << 30);
+            return m79wo(j, 1152921503533105152L) | (i << 30);
         }
     }
 
@@ -236,7 +236,7 @@ public final class LockFreeTaskQueueCore<E> {
             } else if (obj instanceof Placeholder) {
                 return null;
             } else {
-                int i4 = (i + 1) & IdFabric$RequestCode.file_saving_directory;
+                int i4 = (i + 1) & IdFabric$RequestCode.FILE_SAVING_DIRECTORY;
                 if (_state$FU.compareAndSet(this, j, companion.updateHead(j, i4))) {
                     this.array.set(this.mask & i, null);
                     return obj;

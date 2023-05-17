@@ -206,9 +206,9 @@
 
     check-cast p1, Landroid/widget/FrameLayout;
 
-    const-string p2, "actionBarDefaultSubmenuSeparator"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuSeparator:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

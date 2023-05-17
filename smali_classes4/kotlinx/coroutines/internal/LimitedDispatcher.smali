@@ -308,3 +308,22 @@
 
     throw v0
 .end method
+
+.method public scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Lkotlinx/coroutines/Delay;
+
+    invoke-interface {v0, p1, p2, p3}, Lkotlinx/coroutines/Delay;->scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+
+    return-void
+.end method

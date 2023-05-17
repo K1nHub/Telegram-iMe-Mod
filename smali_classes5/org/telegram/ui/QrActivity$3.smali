@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/Window;)V
     .locals 0
 
-    .line 352
+    .line 353
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$3;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/QrActivity$ThemeListViewController;-><init>(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/Window;)V
@@ -35,15 +35,15 @@
 .method protected setDarkTheme(Z)V
     .locals 3
 
-    .line 355
+    .line 356
     invoke-super {p0, p1}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->setDarkTheme(Z)V
 
-    .line 356
+    .line 357
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$3;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/QrActivity;->access$802(Lorg/telegram/ui/QrActivity;Z)Z
 
-    .line 357
+    .line 358
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$3;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/QrActivity;->access$1100(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/ActionBar/EmojiThemes;

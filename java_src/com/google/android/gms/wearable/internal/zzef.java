@@ -12,13 +12,13 @@ import com.google.android.gms.wearable.ConnectionConfiguration;
 /* loaded from: classes3.dex */
 public final class zzef extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzef> CREATOR = new zzeg();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     public final int zza;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     public final ConnectionConfiguration[] zzb;
 
     @SafeParcelable.Constructor
-    public zzef(@SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) ConnectionConfiguration[] connectionConfigurationArr) {
+    public zzef(@SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) ConnectionConfiguration[] connectionConfigurationArr) {
         this.zza = i;
         this.zzb = connectionConfigurationArr;
     }

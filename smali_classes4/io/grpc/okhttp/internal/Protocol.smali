@@ -66,7 +66,7 @@
 
     const/4 v6, 0x2
 
-    const-string v7, "spdy/3.1"
+    const-string/jumbo v7, "spdy/3.1"
 
     invoke-direct {v3, v5, v6, v7}, Lio/grpc/okhttp/internal/Protocol;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 

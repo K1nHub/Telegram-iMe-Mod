@@ -370,9 +370,9 @@
     .line 129
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->backgroundPaint:Landroid/graphics/Paint;
 
-    const-string v0, "actionBarDefaultSubmenuBackground"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    invoke-static {v0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p2
 
@@ -875,8 +875,6 @@
     .line 389
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->blurIsInChat:Z
 
-    const-string v1, "windowBackgroundWhite"
-
     if-eqz v0, :cond_4
 
     .line 390
@@ -885,9 +883,9 @@
     move-result-object v0
 
     .line 391
-    instance-of v2, v0, Landroid/graphics/drawable/ColorDrawable;
+    instance-of v1, v0, Landroid/graphics/drawable/ColorDrawable;
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     .line 392
     check-cast v0, Landroid/graphics/drawable/ColorDrawable;
@@ -899,39 +897,39 @@
     goto :goto_1
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 395
-    instance-of v3, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
+    instance-of v2, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     .line 396
     check-cast v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
-    move-result-object v2
+    move-result-object v1
 
     goto :goto_0
 
     .line 397
     :cond_1
-    instance-of v3, v0, Landroid/graphics/drawable/BitmapDrawable;
+    instance-of v2, v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
     .line 398
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 401
     :cond_2
     :goto_0
-    invoke-direct {p0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->getBitmapGradientColors(Landroid/graphics/Bitmap;)Landroid/util/Pair;
+    invoke-direct {p0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->getBitmapGradientColors(Landroid/graphics/Bitmap;)Landroid/util/Pair;
 
     move-result-object v0
 
@@ -965,9 +963,11 @@
 
     .line 406
     :cond_3
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 
@@ -981,9 +981,11 @@
 
     .line 410
     :cond_4
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 

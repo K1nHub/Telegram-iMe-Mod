@@ -6,17 +6,17 @@ class GifFrame {
     int dispose;
 
     /* renamed from: ih */
-    int f71ih;
+    int f74ih;
     boolean interlace;
 
     /* renamed from: iw */
-    int f72iw;
+    int f75iw;
 
     /* renamed from: ix */
-    int f73ix;
+    int f76ix;
 
     /* renamed from: iy */
-    int f74iy;
+    int f77iy;
     int[] lct;
     int transIndex;
     boolean transparency;

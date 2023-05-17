@@ -36,7 +36,7 @@ final class MediaPeriodHolder {
         this.rendererPositionOffsetUs = j;
         this.trackSelector = trackSelector;
         this.mediaSourceList = mediaSourceList;
-        MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodInfo.f101id;
+        MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodInfo.f104id;
         this.uid = mediaPeriodId.periodUid;
         this.info = mediaPeriodInfo;
         this.trackGroups = TrackGroupArray.EMPTY;
@@ -92,7 +92,7 @@ final class MediaPeriodHolder {
         MediaPeriodInfo mediaPeriodInfo = this.info;
         long j = mediaPeriodInfo.startPositionUs;
         long j2 = mediaPeriodInfo.durationUs;
-        if (j2 != C0470C.TIME_UNSET && j >= j2) {
+        if (j2 != C0475C.TIME_UNSET && j >= j2) {
             j = Math.max(0L, j2 - 1);
         }
         long applyTrackSelection = applyTrackSelection(selectTracks, j, false);
@@ -116,7 +116,7 @@ final class MediaPeriodHolder {
 
     public TrackSelectorResult selectTracks(float f, Timeline timeline) throws ExoPlaybackException {
         ExoTrackSelection[] exoTrackSelectionArr;
-        TrackSelectorResult selectTracks = this.trackSelector.selectTracks(this.rendererCapabilities, getTrackGroups(), this.info.f101id, timeline);
+        TrackSelectorResult selectTracks = this.trackSelector.selectTracks(this.rendererCapabilities, getTrackGroups(), this.info.f104id, timeline);
         for (ExoTrackSelection exoTrackSelection : selectTracks.selections) {
             if (exoTrackSelection != null) {
                 exoTrackSelection.onPlaybackSpeed(f);
@@ -198,7 +198,7 @@ final class MediaPeriodHolder {
         MediaPeriod mediaPeriod = this.mediaPeriod;
         if (mediaPeriod instanceof ClippingMediaPeriod) {
             long j = this.info.endPositionUs;
-            if (j == C0470C.TIME_UNSET) {
+            if (j == C0475C.TIME_UNSET) {
                 j = Long.MIN_VALUE;
             }
             ((ClippingMediaPeriod) mediaPeriod).updateClipping(0L, j);
@@ -277,7 +277,7 @@ final class MediaPeriodHolder {
 
     private static MediaPeriod createMediaPeriod(MediaSource.MediaPeriodId mediaPeriodId, MediaSourceList mediaSourceList, Allocator allocator, long j, long j2) {
         MediaPeriod createPeriod = mediaSourceList.createPeriod(mediaPeriodId, allocator, j);
-        return j2 != C0470C.TIME_UNSET ? new ClippingMediaPeriod(createPeriod, true, 0L, j2) : createPeriod;
+        return j2 != C0475C.TIME_UNSET ? new ClippingMediaPeriod(createPeriod, true, 0L, j2) : createPeriod;
     }
 
     private static void releaseMediaPeriod(MediaSourceList mediaSourceList, MediaPeriod mediaPeriod) {
@@ -288,7 +288,7 @@ final class MediaPeriodHolder {
                 mediaSourceList.releasePeriod(mediaPeriod);
             }
         } catch (RuntimeException e) {
-            Log.m795e(TAG, "Period release failed.", e);
+            Log.m799e(TAG, "Period release failed.", e);
         }
     }
 }

@@ -31,7 +31,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -39,6 +39,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Cells.TextInfoPrivacyCell;
 import org.telegram.p044ui.ChatActivity;
 import org.telegram.p044ui.Components.AlertsCreator;
@@ -88,21 +89,23 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
         this.giftTiers = new ArrayList();
         this.selectedTierIndex = 0;
         this.user = tLRPC$User;
-        PremiumGradient.PremiumGradientTools premiumGradientTools = new PremiumGradient.PremiumGradientTools("premiumGradient1", "premiumGradient2", null, null);
+        int i = Theme.key_premiumGradient1;
+        int i2 = Theme.key_premiumGradient2;
+        PremiumGradient.PremiumGradientTools premiumGradientTools = new PremiumGradient.PremiumGradientTools(i, i2, -1, -1);
         this.gradientTools = premiumGradientTools;
         premiumGradientTools.exactly = true;
-        premiumGradientTools.f1702x1 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1704y1 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1703x2 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1705y2 = 1.0f;
-        premiumGradientTools.f1700cx = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1701cy = BitmapDescriptorFactory.HUE_RED;
-        PremiumGradient.PremiumGradientTools premiumGradientTools2 = new PremiumGradient.PremiumGradientTools("premiumGradient1", "premiumGradient2", "premiumGradient3", "premiumGradient4");
+        premiumGradientTools.f1709x1 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1711y1 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1710x2 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1712y2 = 1.0f;
+        premiumGradientTools.f1707cx = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1708cy = BitmapDescriptorFactory.HUE_RED;
+        PremiumGradient.PremiumGradientTools premiumGradientTools2 = new PremiumGradient.PremiumGradientTools(i, i2, Theme.key_premiumGradient3, Theme.key_premiumGradient4);
         this.outlineGradient = premiumGradientTools2;
         premiumGradientTools2.paint.setStyle(Paint.Style.STROKE);
-        this.outlineGradient.paint.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
+        this.outlineGradient.paint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
         this.dummyCell = new PremiumGiftTierCell(getContext());
-        TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(tLRPC$User.f1567id);
+        TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(tLRPC$User.f1574id);
         if (userFull != null) {
             ArrayList arrayList = new ArrayList();
             long j = 0;
@@ -136,23 +139,23 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
             this.selectedTierIndex = 0;
             updateButtonText(false);
         }
-        int i = this.rowsCount;
-        int i2 = i + 1;
-        this.rowsCount = i2;
-        this.headerRow = i;
-        this.tiersStartRow = i2;
-        int size = i2 + this.giftTiers.size();
+        int i3 = this.rowsCount;
+        int i4 = i3 + 1;
+        this.rowsCount = i4;
+        this.headerRow = i3;
+        this.tiersStartRow = i4;
+        int size = i4 + this.giftTiers.size();
         this.rowsCount = size;
         this.tiersEndRow = size;
-        int i3 = size + 1;
-        this.rowsCount = i3;
+        int i5 = size + 1;
+        this.rowsCount = i5;
         this.footerRow = size;
-        this.rowsCount = i3 + 1;
-        this.buttonRow = i3;
+        this.rowsCount = i5 + 1;
+        this.buttonRow = i5;
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda10
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i4) {
-                GiftPremiumBottomSheet.this.lambda$new$2(view, i4);
+            public final void onItemClick(View view, int i6) {
+                GiftPremiumBottomSheet.this.lambda$new$2(view, i6);
             }
         });
         this.recyclerListView.setOverScrollMode(2);
@@ -253,8 +256,8 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
         path.rewind();
         Rect selectorRect = this.recyclerListView.getSelectorRect();
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(selectorRect.left + AndroidUtilities.m50dp(20), selectorRect.top + AndroidUtilities.m50dp(3), selectorRect.right - AndroidUtilities.m50dp(20), selectorRect.bottom - AndroidUtilities.m50dp(3));
-        path.addRoundRect(rectF, AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(12), Path.Direction.CW);
+        rectF.set(selectorRect.left + AndroidUtilities.m54dp(20), selectorRect.top + AndroidUtilities.m54dp(3), selectorRect.right - AndroidUtilities.m54dp(20), selectorRect.bottom - AndroidUtilities.m54dp(3));
+        path.addRoundRect(rectF, AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(12), Path.Direction.CW);
         canvas.clipPath(path);
     }
 
@@ -263,11 +266,11 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
             z = false;
         }
         if (!BuildVars.useInvoiceBilling() && (!BillingController.getInstance().isReady() || this.giftTiers.get(this.selectedTierIndex).googlePlayProductDetails == null)) {
-            this.premiumButtonView.setButton(LocaleController.getString(C3242R.string.Loading), GiftPremiumBottomSheet$$ExternalSyntheticLambda1.INSTANCE, !LocaleController.isRTL);
+            this.premiumButtonView.setButton(LocaleController.getString(C3290R.string.Loading), GiftPremiumBottomSheet$$ExternalSyntheticLambda1.INSTANCE, !LocaleController.isRTL);
             this.premiumButtonView.setFlickerDisabled(true);
             return;
         }
-        this.premiumButtonView.setButton(LocaleController.formatString(C3242R.string.GiftSubscriptionFor, this.giftTiers.get(this.selectedTierIndex).getFormattedPrice()), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda0
+        this.premiumButtonView.setButton(LocaleController.formatString(C3290R.string.GiftSubscriptionFor, this.giftTiers.get(this.selectedTierIndex).getFormattedPrice()), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 GiftPremiumBottomSheet.this.lambda$updateButtonText$5(view);
@@ -282,11 +285,11 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
     }
 
     private void onGiftSuccess(boolean z) {
-        TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.user.f1567id);
+        TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.user.f1574id);
         if (userFull != null) {
             this.user.premium = true;
             MessagesController.getInstance(this.currentAccount).putUser(this.user, true);
-            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(this.user.f1567id), userFull);
+            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(this.user.f1574id), userFull);
         }
         if (getBaseFragment() != null) {
             ArrayList<BaseFragment> arrayList = new ArrayList(((LaunchActivity) getBaseFragment().getParentActivity()).getActionBarLayout().getFragmentStack());
@@ -295,7 +298,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
             for (BaseFragment baseFragment : arrayList) {
                 if (baseFragment instanceof ChatActivity) {
                     chatActivity = (ChatActivity) baseFragment;
-                    if (chatActivity.getDialogId() != this.user.f1567id) {
+                    if (chatActivity.getDialogId() != this.user.f1574id) {
                         baseFragment.removeSelfFromStack();
                     }
                 } else if (baseFragment instanceof ProfileActivity) {
@@ -306,9 +309,9 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                     }
                 }
             }
-            if (chatActivity == null || chatActivity.getDialogId() != this.user.f1567id) {
+            if (chatActivity == null || chatActivity.getDialogId() != this.user.f1574id) {
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", this.user.f1567id);
+                bundle.putLong("user_id", this.user.f1574id);
                 parentLayout.presentFragment(new ChatActivity(bundle), true);
             }
         }
@@ -332,6 +335,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                     }
                 }
                 Browser.openUrl(getBaseFragment().getParentActivity(), giftTier.giftOption.bot_url);
+                dismiss();
             }
         } else if (!BillingController.getInstance().isReady() || giftTier.googlePlayProductDetails == null) {
         } else {
@@ -404,7 +408,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
         this.premiumButtonView = new PremiumButtonView(getContext(), true);
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         frameLayout2.addView(this.premiumButtonView, LayoutHelper.createFrame(-1, 48, 16, 16, 0, 16, 0));
-        frameLayout2.setBackgroundColor(getThemedColor("dialogBackground"));
+        frameLayout2.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
         frameLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, 68, 80));
     }
 
@@ -428,14 +432,14 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.p044ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
-        return LocaleController.getString(C3242R.string.GiftTelegramPremiumTitle);
+        return LocaleController.getString(C3290R.string.GiftTelegramPremiumTitle);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$1 */
     /* loaded from: classes6.dex */
-    public class C48591 extends RecyclerListView.SelectionAdapter {
-        C48591() {
+    public class C49321 extends RecyclerListView.SelectionAdapter {
+        C49321() {
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
@@ -458,15 +462,15 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                             RectF rectF = AndroidUtilities.rectTmp;
                             rectF.set(this.discountView.getLeft(), this.discountView.getTop(), this.discountView.getRight(), this.discountView.getBottom());
                             GiftPremiumBottomSheet.this.gradientTools.gradientMatrix(0, 0, getMeasuredWidth(), GiftPremiumBottomSheet.this.totalGradientHeight, BitmapDescriptorFactory.HUE_RED, -this.tier.yOffset);
-                            canvas.drawRoundRect(rectF, AndroidUtilities.m50dp(6), AndroidUtilities.m50dp(6), GiftPremiumBottomSheet.this.gradientTools.paint);
+                            canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6), GiftPremiumBottomSheet.this.gradientTools.paint);
                         }
                         float floatValue = ((Float) atomicReference.get()).floatValue();
                         int alpha = GiftPremiumBottomSheet.this.outlineGradient.paint.getAlpha();
                         GiftPremiumBottomSheet.this.outlineGradient.paint.setAlpha((int) (floatValue * alpha));
                         RectF rectF2 = AndroidUtilities.rectTmp;
-                        rectF2.set(AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(3), getWidth() - AndroidUtilities.m50dp(20), getHeight() - AndroidUtilities.m50dp(3));
+                        rectF2.set(AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(3), getWidth() - AndroidUtilities.m54dp(20), getHeight() - AndroidUtilities.m54dp(3));
                         GiftPremiumBottomSheet.this.outlineGradient.gradientMatrix(0, 0, getMeasuredWidth(), getMeasuredHeight(), BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED);
-                        canvas.drawRoundRect(rectF2, AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(12), GiftPremiumBottomSheet.this.outlineGradient.paint);
+                        canvas.drawRoundRect(rectF2, AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(12), GiftPremiumBottomSheet.this.outlineGradient.paint);
                         GiftPremiumBottomSheet.this.outlineGradient.paint.setAlpha(alpha);
                         super.dispatchDraw(canvas);
                     }
@@ -475,14 +479,14 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                     @Override // org.telegram.messenger.GenericProvider
                     public final Object provide(Object obj) {
                         Paint lambda$onCreateViewHolder$0;
-                        lambda$onCreateViewHolder$0 = GiftPremiumBottomSheet.C48591.this.lambda$onCreateViewHolder$0(premiumGiftTierCell2, (Void) obj);
+                        lambda$onCreateViewHolder$0 = GiftPremiumBottomSheet.C49321.this.lambda$onCreateViewHolder$0(premiumGiftTierCell2, (Void) obj);
                         return lambda$onCreateViewHolder$0;
                     }
                 });
                 premiumGiftTierCell2.setProgressDelegate(new CheckBoxBase.ProgressDelegate() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$1$$ExternalSyntheticLambda1
                     @Override // org.telegram.p044ui.Components.CheckBoxBase.ProgressDelegate
                     public final void setProgress(float f) {
-                        GiftPremiumBottomSheet.C48591.lambda$onCreateViewHolder$1(atomicReference, premiumGiftTierCell2, f);
+                        GiftPremiumBottomSheet.C49321.lambda$onCreateViewHolder$1(atomicReference, premiumGiftTierCell2, f);
                     }
                 });
                 premiumGiftTierCell = premiumGiftTierCell2;
@@ -490,7 +494,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                 TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(GiftPremiumBottomSheet.this.getContext());
                 textInfoPrivacyCell.setTopPadding(28);
                 textInfoPrivacyCell.getTextView().setGravity(1);
-                String string = LocaleController.getString(C3242R.string.GiftPremiumListFeaturesAndTerms);
+                String string = LocaleController.getString(C3290R.string.GiftPremiumListFeaturesAndTerms);
                 int indexOf = string.indexOf(42);
                 int lastIndexOf = string.lastIndexOf(42);
                 if (indexOf != -1 && lastIndexOf != -1) {
@@ -500,7 +504,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                 } else {
                     textInfoPrivacyCell.setText(string);
                 }
-                textInfoPrivacyCell.setPadding(AndroidUtilities.m50dp(21), 0, AndroidUtilities.m50dp(21), 0);
+                textInfoPrivacyCell.setPadding(AndroidUtilities.m54dp(21), 0, AndroidUtilities.m54dp(21), 0);
                 premiumGiftTierCell = textInfoPrivacyCell;
             } else {
                 if (i != 3) {
@@ -509,7 +513,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                     view = new View(this, GiftPremiumBottomSheet.this.getContext()) { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet.1.2
                         @Override // android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(68), 1073741824));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(68), 1073741824));
                         }
                     };
                 }
@@ -565,7 +569,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.p044ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter() {
-        return new C48591();
+        return new C49321();
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$LinkSpan */
@@ -574,7 +578,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
         private LinkSpan() {
         }
 
-        /* synthetic */ LinkSpan(GiftPremiumBottomSheet giftPremiumBottomSheet, C48591 c48591) {
+        /* synthetic */ LinkSpan(GiftPremiumBottomSheet giftPremiumBottomSheet, C49321 c49321) {
             this();
         }
 

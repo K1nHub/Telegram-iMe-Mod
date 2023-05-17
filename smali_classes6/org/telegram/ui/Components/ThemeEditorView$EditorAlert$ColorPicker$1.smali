@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;I)V
     .locals 0
 
-    .line 366
+    .line 367
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
     iput p3, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->val$num:I
@@ -42,7 +42,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 6
 
-    .line 379
+    .line 380
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -55,7 +55,7 @@
 
     return-void
 
-    .line 382
+    .line 383
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
@@ -65,7 +65,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$902(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;Z)Z
 
-    .line 383
+    .line 384
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -86,7 +86,7 @@
 
     if-gez p1, :cond_1
 
-    .line 386
+    .line 387
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->access$1000(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -111,7 +111,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 387
+    .line 388
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->access$1000(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -145,7 +145,7 @@
     :cond_1
     if-le p1, v3, :cond_2
 
-    .line 390
+    .line 391
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->access$1000(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -170,7 +170,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 391
+    .line 392
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->access$1000(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -199,7 +199,7 @@
 
     move p1, v3
 
-    .line 393
+    .line 394
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
@@ -208,7 +208,7 @@
 
     move-result v0
 
-    .line 394
+    .line 395
     iget v4, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->val$num:I
 
     const/4 v5, 0x2
@@ -265,7 +265,7 @@
 
     goto :goto_1
 
-    .line 403
+    .line 404
     :cond_6
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
@@ -274,7 +274,7 @@
 
     move p1, v2
 
-    .line 404
+    .line 405
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
@@ -292,7 +292,7 @@
 
     if-ge p1, v0, :cond_7
 
-    .line 405
+    .line 406
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
@@ -321,7 +321,7 @@
 
     goto :goto_3
 
-    .line 408
+    .line 409
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker$1;->this$2:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;
 

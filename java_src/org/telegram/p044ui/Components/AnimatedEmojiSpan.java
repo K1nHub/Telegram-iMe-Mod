@@ -54,7 +54,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     public AnimatedEmojiSpan(TLRPC$Document tLRPC$Document, Paint.FontMetricsInt fontMetricsInt) {
-        this(tLRPC$Document.f1435id, 1.2f, fontMetricsInt);
+        this(tLRPC$Document.f1441id, 1.2f, fontMetricsInt);
         this.document = tLRPC$Document;
     }
 
@@ -65,7 +65,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     public AnimatedEmojiSpan(long j, float f, Paint.FontMetricsInt fontMetricsInt) {
         this.full = false;
         this.top = false;
-        this.size = AndroidUtilities.m50dp(20);
+        this.size = AndroidUtilities.m54dp(20);
         this.cacheType = -1;
         this.recordPositions = true;
         this.documentId = j;
@@ -75,7 +75,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             float abs = Math.abs(fontMetricsInt.descent) + Math.abs(fontMetricsInt.ascent);
             this.size = abs;
             if (abs == BitmapDescriptorFactory.HUE_RED) {
-                this.size = AndroidUtilities.m50dp(20);
+                this.size = AndroidUtilities.m54dp(20);
             }
         }
     }
@@ -93,7 +93,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
     public long getDocumentId() {
         TLRPC$Document tLRPC$Document = this.document;
-        return tLRPC$Document != null ? tLRPC$Document.f1435id : this.documentId;
+        return tLRPC$Document != null ? tLRPC$Document.f1441id : this.documentId;
     }
 
     public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt) {
@@ -102,7 +102,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             float abs = Math.abs(fontMetricsInt.descent) + Math.abs(this.fontMetrics.ascent);
             this.size = abs;
             if (abs == BitmapDescriptorFactory.HUE_RED) {
-                this.size = AndroidUtilities.m50dp(20);
+                this.size = AndroidUtilities.m54dp(20);
             }
         }
     }
@@ -132,13 +132,13 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
         Paint.FontMetricsInt fontMetricsInt2 = this.fontMetrics;
         if (fontMetricsInt2 == null) {
             int i5 = (int) this.size;
-            int m50dp = AndroidUtilities.m50dp(8);
-            int m50dp2 = AndroidUtilities.m50dp(10);
+            int m54dp = AndroidUtilities.m54dp(8);
+            int m54dp2 = AndroidUtilities.m54dp(10);
             if (fontMetricsInt != null) {
-                float f = (-m50dp2) - m50dp;
+                float f = (-m54dp2) - m54dp;
                 float f2 = this.scale;
                 fontMetricsInt.top = (int) (f * f2);
-                float f3 = m50dp2 - m50dp;
+                float f3 = m54dp2 - m54dp;
                 fontMetricsInt.bottom = (int) (f3 * f2);
                 fontMetricsInt.ascent = (int) (f * f2);
                 fontMetricsInt.descent = (int) (f3 * f2);
@@ -200,7 +200,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             z = false;
         } else {
             canvas.save();
-            canvas.translate(BitmapDescriptorFactory.HUE_RED, Emoji.emojiDrawingYOffset + AndroidUtilities.m51dp(20.0f * f));
+            canvas.translate(BitmapDescriptorFactory.HUE_RED, Emoji.emojiDrawingYOffset + AndroidUtilities.m55dp(20.0f * f));
             z = true;
         }
         long currentTimeMillis = System.currentTimeMillis();
@@ -230,7 +230,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             z = false;
         } else {
             canvas.save();
-            canvas.translate(BitmapDescriptorFactory.HUE_RED, Emoji.emojiDrawingYOffset + AndroidUtilities.m51dp(f * 20.0f));
+            canvas.translate(BitmapDescriptorFactory.HUE_RED, Emoji.emojiDrawingYOffset + AndroidUtilities.m55dp(f * 20.0f));
             z = true;
         }
         EmojiGroupedSpans.access$008(emojiGroupedSpans);
@@ -777,7 +777,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
                     }
                 };
                 this.backgroundThreadDrawable = drawingInBackgroundThreadDrawable2;
-                drawingInBackgroundThreadDrawable2.padding = AndroidUtilities.m50dp(3);
+                drawingInBackgroundThreadDrawable2.padding = AndroidUtilities.m54dp(3);
                 this.backgroundThreadDrawable.onAttachToWindow();
             } else if (this.holders.size() >= 10 || (drawingInBackgroundThreadDrawable = this.backgroundThreadDrawable) == null) {
             } else {
@@ -812,7 +812,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             }
             DrawingInBackgroundThreadDrawable drawingInBackgroundThreadDrawable = this.backgroundThreadDrawable;
             if (drawingInBackgroundThreadDrawable != null) {
-                drawingInBackgroundThreadDrawable.draw(canvas, j, this.layout.getWidth(), this.layout.getHeight() + AndroidUtilities.m50dp(2), f4);
+                drawingInBackgroundThreadDrawable.draw(canvas, j, this.layout.getWidth(), this.layout.getHeight() + AndroidUtilities.m54dp(2), f4);
             }
         }
     }

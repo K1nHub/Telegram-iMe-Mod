@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$12;
-.super Landroid/widget/FrameLayout;
+.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 .source "ThemePreviewActivity.java"
 
 
@@ -15,122 +15,57 @@
 
 
 # instance fields
-.field private rect:Landroid/graphics/RectF;
-
 .field final synthetic this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 1327
+    .line 1279
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    .line 1329
-    new-instance p1, Landroid/graphics/RectF;
-
-    invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->rect:Landroid/graphics/RectF;
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 4
+.method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
+    .locals 0
 
-    .line 1333
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->rect:Landroid/graphics/RectF;
+    if-nez p2, :cond_0
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    .line 1289
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    move-result v1
+    const/4 p2, 0x0
 
-    int-to-float v1, v1
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
-
-    .line 1334
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$4800(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/BackupImageView;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->applyServiceShaderMatrixForView(Landroid/view/View;Landroid/view/View;)V
-
-    .line 1335
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->rect:Landroid/graphics/RectF;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v1
-
-    div-int/lit8 v1, v1, 0x2
-
-    int-to-float v1, v1
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v2
-
-    div-int/lit8 v2, v2, 0x2
-
-    int-to-float v2, v2
-
-    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-
-    .line 1336
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasGradientService()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 1337
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->rect:Landroid/graphics/RectF;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v1
-
-    div-int/lit8 v1, v1, 0x2
-
-    int-to-float v1, v1
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v2
-
-    div-int/lit8 v2, v2, 0x2
-
-    int-to-float v2, v2
-
-    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$5802(Lorg/telegram/ui/ThemePreviewActivity;Z)Z
 
     :cond_0
+    return-void
+.end method
+
+.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .locals 0
+
+    .line 1282
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1500(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
+
+    .line 1283
+    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    const/4 p2, 0x1
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$5802(Lorg/telegram/ui/ThemePreviewActivity;Z)Z
+
     return-void
 .end method

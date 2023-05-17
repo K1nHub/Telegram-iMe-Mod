@@ -14,13 +14,15 @@
 
 .field public final synthetic f$3:I
 
-.field public final synthetic f$4:Ljava/lang/String;
+.field public final synthetic f$4:Lorg/telegram/ui/ActionBar/AlertDialog;
 
 .field public final synthetic f$5:Ljava/lang/Runnable;
 
+.field public final synthetic f$6:Ljava/lang/String;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILjava/lang/String;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,9 +35,11 @@
 
     iput p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$3:I
 
-    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$4:Ljava/lang/String;
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$4:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$5:Ljava/lang/Runnable;
+
+    iput-object p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$6:Ljava/lang/String;
 
     return-void
 .end method
@@ -43,7 +47,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -53,11 +57,13 @@
 
     iget v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$3:I
 
-    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$4:Ljava/lang/String;
+    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$4:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$5:Ljava/lang/Runnable;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Gwv_EqFXzQlAdveFjDnDzqBPMaY(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILjava/lang/String;Ljava/lang/Runnable;)V
+    iget-object v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda74;->f$6:Ljava/lang/String;
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$sRklxVCf10OGGDlUO_PfcTbomwc(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Ljava/lang/String;)V
 
     return-void
 .end method

@@ -69,7 +69,7 @@
 
     if-ne p1, v0, :cond_0
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     goto :goto_0
 
@@ -83,13 +83,13 @@
 
     if-ne p1, v0, :cond_1
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     goto :goto_0
 
     .line 180
     :cond_1
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATIONS_CHECK_CELL:I
 
     :goto_0
     return p1
@@ -107,7 +107,7 @@
 
     move-result p1
 
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATIONS_CHECK_CELL:I
 
     if-ne p1, v0, :cond_0
 
@@ -142,7 +142,7 @@
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 195
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne v0, v1, :cond_0
 
@@ -165,7 +165,7 @@
 
     .line 198
     :cond_0
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     const/4 v2, 0x0
 
@@ -198,7 +198,7 @@
 
     .line 201
     :cond_1
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATIONS_CHECK_CELL:I
 
     if-ne v0, v1, :cond_9
 
@@ -396,7 +396,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 184
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, p1, :cond_0
 
@@ -414,7 +414,7 @@
 
     .line 185
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p2, p1, :cond_1
 

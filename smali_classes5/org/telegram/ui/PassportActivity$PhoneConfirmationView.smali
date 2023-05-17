@@ -161,7 +161,7 @@
 .end method
 
 .method public constructor <init>(Lorg/telegram/ui/PassportActivity;Landroid/content/Context;I)V
-    .locals 24
+    .locals 23
 
     move-object/from16 v0, p0
 
@@ -219,10 +219,10 @@
 
     iput-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->confirmTextView:Landroid/widget/TextView;
 
-    const-string v5, "windowBackgroundWhiteGrayText6"
-
     .line 7260
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -257,10 +257,10 @@
 
     iput-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->titleTextView:Landroid/widget/TextView;
 
-    const-string v8, "windowBackgroundWhiteBlackText"
-
     .line 7265
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -516,8 +516,6 @@
     .line 7292
     iget v14, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->verificationType:I
 
-    const-string v15, "chats_actionBackground"
-
     if-ne v14, v3, :cond_7
 
     .line 7293
@@ -528,47 +526,47 @@
     iput-object v14, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blackImageView:Landroid/widget/ImageView;
 
     .line 7294
-    sget v11, Lorg/telegram/messenger/R$drawable;->sms_devices:I
+    sget v15, Lorg/telegram/messenger/R$drawable;->sms_devices:I
 
-    invoke-virtual {v14, v11}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v14, v15}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 7295
-    iget-object v11, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blackImageView:Landroid/widget/ImageView;
+    iget-object v14, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blackImageView:Landroid/widget/ImageView;
 
-    new-instance v14, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v15, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
-    sget-object v10, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    sget-object v11, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v14, v8, v10}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v15, v8, v11}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v11, v14}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v14, v15}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 7296
     iget-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blackImageView:Landroid/widget/ImageView;
 
-    const/16 v17, -0x2
+    const/4 v14, -0x2
 
-    const/16 v18, -0x2
+    const/4 v15, -0x2
 
-    const/16 v19, 0x33
+    const/16 v16, 0x33
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
 
     const/16 v20, 0x0
 
-    const/16 v21, 0x0
+    invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    const/16 v22, 0x0
+    move-result-object v11
 
-    const/16 v23, 0x0
-
-    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v10
-
-    invoke-virtual {v4, v8, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v8, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 7298
     new-instance v8, Landroid/widget/ImageView;
@@ -578,42 +576,48 @@
     iput-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blueImageView:Landroid/widget/ImageView;
 
     .line 7299
-    sget v10, Lorg/telegram/messenger/R$drawable;->sms_bubble:I
+    sget v11, Lorg/telegram/messenger/R$drawable;->sms_bubble:I
 
-    invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 7300
     iget-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blueImageView:Landroid/widget/ImageView;
 
-    new-instance v10, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v11, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    move-result v11
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    sget-object v14, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    move-result v14
 
-    invoke-direct {v10, v11, v14}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    sget-object v15, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-direct {v11, v14, v15}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 7301
     iget-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blueImageView:Landroid/widget/ImageView;
 
-    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/4 v14, -0x2
 
-    move-result-object v10
+    const/4 v15, -0x2
 
-    invoke-virtual {v4, v8, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v11
+
+    invoke-virtual {v4, v8, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 7303
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->titleTextView:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/messenger/R$string;->SentAppCodeTitle:I
 
-    const-string v10, "SentAppCodeTitle"
+    const-string v11, "SentAppCodeTitle"
 
-    invoke-static {v10, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v11, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v8
 
@@ -630,56 +634,58 @@
     iput-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blueImageView:Landroid/widget/ImageView;
 
     .line 7306
-    sget v10, Lorg/telegram/messenger/R$drawable;->sms_code:I
+    sget v11, Lorg/telegram/messenger/R$drawable;->sms_code:I
 
-    invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 7307
     iget-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blueImageView:Landroid/widget/ImageView;
 
-    new-instance v10, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v11, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    move-result v11
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    sget-object v14, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    move-result v14
 
-    invoke-direct {v10, v11, v14}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    sget-object v15, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-direct {v11, v14, v15}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 7308
     iget-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->blueImageView:Landroid/widget/ImageView;
 
-    const/16 v17, -0x2
+    const/4 v14, -0x2
 
-    const/16 v18, -0x2
+    const/4 v15, -0x2
 
-    const/16 v19, 0x33
+    const/16 v16, 0x33
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
 
     const/16 v20, 0x0
 
-    const/16 v21, 0x0
+    invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    const/16 v22, 0x0
+    move-result-object v11
 
-    const/16 v23, 0x0
-
-    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v10
-
-    invoke-virtual {v4, v8, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v8, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 7310
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->titleTextView:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/messenger/R$string;->SentSmsCodeTitle:I
 
-    const-string v10, "SentSmsCodeTitle"
+    const-string v11, "SentSmsCodeTitle"
 
-    invoke-static {v10, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v11, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v8
 
@@ -689,21 +695,21 @@
     :goto_5
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->titleTextView:Landroid/widget/TextView;
 
-    const/16 v17, -0x2
+    const/4 v14, -0x2
 
-    const/16 v18, -0x2
+    const/4 v15, -0x2
 
-    const/16 v19, 0x31
+    const/16 v16, 0x31
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x12
+
+    const/16 v19, 0x0
 
     const/16 v20, 0x0
 
-    const/16 v21, 0x12
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x0
-
-    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
@@ -712,9 +718,9 @@
     .line 7313
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->confirmTextView:Landroid/widget/TextView;
 
-    const/16 v21, 0x11
+    const/16 v18, 0x11
 
-    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
@@ -736,13 +742,13 @@
     .line 7318
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->codeFieldContainer:Landroid/widget/LinearLayout;
 
-    const/16 v10, 0x24
+    const/16 v11, 0x24
 
-    invoke-static {v13, v10, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v13, v11, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v0, v4, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 7319
     iget v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->verificationType:I
@@ -752,9 +758,9 @@
     .line 7320
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->codeFieldContainer:Landroid/widget/LinearLayout;
 
-    const/16 v10, 0x8
+    const/16 v11, 0x8
 
-    invoke-virtual {v4, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v4, v11}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 7323
     :cond_8
@@ -765,7 +771,7 @@
     iput-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->timeText:Landroid/widget/TextView;
 
     .line 7329
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -787,7 +793,7 @@
 
     const/high16 v5, 0x41700000    # 15.0f
 
-    const/16 v10, 0xa
+    const/16 v11, 0xa
 
     if-ne v4, v12, :cond_b
 
@@ -831,38 +837,33 @@
 
     if-eqz v6, :cond_a
 
-    const/4 v11, 0x5
-
-    goto :goto_8
+    const/4 v12, 0x5
 
     :cond_a
-    move v11, v12
-
-    :goto_8
-    invoke-virtual {v4, v11}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v4, v12}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 7337
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->progressView:Lorg/telegram/ui/PassportActivity$ProgressView;
 
-    const/16 v17, -0x1
+    const/4 v14, -0x1
 
-    const/16 v18, 0x3
+    const/4 v15, 0x3
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0xc
+
+    const/16 v18, 0x0
 
     const/16 v19, 0x0
 
-    const/16 v20, 0xc
-
-    const/16 v21, 0x0
-
-    const/16 v22, 0x0
-
-    invoke-static/range {v17 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v14 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v0, v4, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    goto :goto_9
+    goto :goto_8
 
     .line 7339
     :cond_b
@@ -872,11 +873,11 @@
 
     move-result v6
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v12
 
-    invoke-virtual {v4, v8, v6, v8, v11}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v4, v8, v6, v8, v12}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 7340
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->timeText:Landroid/widget/TextView;
@@ -886,31 +887,29 @@
     .line 7341
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->timeText:Landroid/widget/TextView;
 
-    const/16 v6, 0x31
-
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v4, v10}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 7342
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->timeText:Landroid/widget/TextView;
 
-    invoke-static {v13, v13, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v13, v13, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v6
 
-    invoke-virtual {v0, v4, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 7345
-    :goto_9
+    :goto_8
     new-instance v4, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView$2;
 
     invoke-direct {v4, v0, v2, v1}, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView$2;-><init>(Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;Landroid/content/Context;Lorg/telegram/ui/PassportActivity;)V
 
     iput-object v4, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->problemText:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlueText4"
-
     .line 7351
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -934,7 +933,7 @@
 
     move-result v2
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
@@ -948,9 +947,7 @@
     .line 7355
     iget-object v1, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->problemText:Landroid/widget/TextView;
 
-    const/16 v2, 0x31
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v1, v10}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 7356
     iget v1, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->verificationType:I
@@ -970,7 +967,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_a
+    goto :goto_9
 
     .line 7359
     :cond_c
@@ -987,12 +984,10 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 7361
-    :goto_a
+    :goto_9
     iget-object v1, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->problemText:Landroid/widget/TextView;
 
-    const/16 v2, 0x31
-
-    invoke-static {v13, v13, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v13, v13, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
@@ -3344,9 +3339,9 @@
 
     aget-object v8, v8, v1
 
-    const-string v9, "windowBackgroundWhiteBlackText"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -3357,7 +3352,7 @@
 
     aget-object v8, v8, v1
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -3403,9 +3398,9 @@
     .line 7502
     new-instance v9, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v10, "windowBackgroundWhiteInputFieldActivated"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 

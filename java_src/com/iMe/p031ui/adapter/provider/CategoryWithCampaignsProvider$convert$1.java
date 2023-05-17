@@ -26,7 +26,7 @@ import org.koin.p043mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CategoryWithCampaignsProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implements Function1<RecyclerView, Unit> {
     final /* synthetic */ BaseViewHolder $helper;
     final /* synthetic */ CategoryWithCampaignsItem $item;
@@ -61,7 +61,7 @@ public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implem
         map = categoryWithCampaignsProvider.channelsRecyclersScrollStates;
         RecycleViewExtKt.restoreScrollState(linearLayoutManager, (Parcelable) map.get(Integer.valueOf(baseViewHolder.getAdapterPosition())));
         applyForView.setLayoutManager(linearLayoutManager);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1914x81d5b2c4(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1985x81d5b2c4(this.this$0, null, null));
         CatalogAllChannelsRecycleAdapter invoke$lambda$1 = invoke$lambda$1(lazy);
         final CategoryWithCampaignsItem categoryWithCampaignsItem = this.$item;
         final CategoryWithCampaignsProvider categoryWithCampaignsProvider2 = this.this$0;

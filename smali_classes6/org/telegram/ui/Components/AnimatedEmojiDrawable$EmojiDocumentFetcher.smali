@@ -114,7 +114,7 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;)Ljava/util/HashMap;
+.method static synthetic access$100(Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;)Ljava/util/HashMap;
     .locals 0
 
     .line 159
@@ -875,12 +875,15 @@
 
     return-void
 
+    .line 321
     :cond_0
+    invoke-static {}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->access$000()V
+
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 321
+    .line 322
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -888,7 +891,7 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 322
+    .line 323
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -897,22 +900,22 @@
 
     if-eqz v2, :cond_3
 
-    .line 323
+    .line 324
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 324
+    .line 325
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->putDocument(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 325
+    .line 326
     iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->loadingDocuments:Ljava/util/HashMap;
 
     if-eqz v3, :cond_3
 
-    .line 326
+    .line 327
     iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -929,7 +932,7 @@
 
     move v4, v0
 
-    .line 328
+    .line 329
     :goto_1
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -937,7 +940,7 @@
 
     if-ge v4, v5, :cond_2
 
-    .line 329
+    .line 330
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -946,7 +949,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 331
+    .line 332
     invoke-interface {v5, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$ReceivedDocument;->run(Lorg/telegram/tgnet/TLRPC$Document;)V
 
     :cond_1
@@ -954,7 +957,7 @@
 
     goto :goto_1
 
-    .line 334
+    .line 335
     :cond_2
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
@@ -974,24 +977,24 @@
 
     return-void
 
-    .line 345
+    .line 346
     :cond_0
     monitor-enter p0
 
-    .line 346
+    .line 347
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->emojiDocumentsCache:Ljava/util/HashMap;
 
     if-nez v0, :cond_1
 
-    .line 347
+    .line 348
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->emojiDocumentsCache:Ljava/util/HashMap;
 
-    .line 349
+    .line 350
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->emojiDocumentsCache:Ljava/util/HashMap;
 
@@ -1003,7 +1006,7 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 350
+    .line 351
     monitor-exit p0
 
     return-void

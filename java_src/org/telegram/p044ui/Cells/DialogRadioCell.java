@@ -17,9 +17,9 @@ public class DialogRadioCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(50) + (this.needDivider ? 1 : 0));
-        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m50dp(34);
-        this.radioButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(22), 1073741824));
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m54dp(34);
+        this.radioButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(22), 1073741824));
         this.textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
     }
 
@@ -30,7 +30,7 @@ public class DialogRadioCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(AndroidUtilities.m50dp(LocaleController.isRTL ? 0 : 60), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.m50dp(LocaleController.isRTL ? 60 : 0), getHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m54dp(LocaleController.isRTL ? 0 : 60), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.m54dp(LocaleController.isRTL ? 60 : 0), getHeight() - 1, Theme.dividerPaint);
         }
     }
 }

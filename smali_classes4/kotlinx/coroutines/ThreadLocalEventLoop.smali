@@ -54,6 +54,21 @@
 
 
 # virtual methods
+.method public final currentOrNull$kotlinx_coroutines_core()Lkotlinx/coroutines/EventLoop;
+    .locals 1
+
+    .line 134
+    sget-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlinx/coroutines/EventLoop;
+
+    return-object v0
+.end method
+
 .method public final getEventLoop$kotlinx_coroutines_core()Lkotlinx/coroutines/EventLoop;
     .locals 2
 

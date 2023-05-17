@@ -41,10 +41,10 @@ import kotlin.math.MathKt__MathJVMKt;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.AnimationProperties;
@@ -183,7 +183,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundWhite"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getScrollSlidingTextTabStrip(), 0, new Class[]{ScrollSlidingTextTabStrip.class}, new String[]{"selectorDrawable"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "actionBarTabLine"), new ThemeDescription(getScrollSlidingTextTabStrip().getTabsContainer(), ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextView.class}, null, null, null, "actionBarTabActiveText"), new ThemeDescription(getScrollSlidingTextTabStrip().getTabsContainer(), ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextView.class}, null, null, null, "actionBarTabUnactiveText"), new ThemeDescription(getScrollSlidingTextTabStrip().getTabsContainer(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{TextView.class}, null, null, null, "actionBarTabSelector"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND | ThemeDescription.FLAG_CHECKTAG, new Class[]{FragmentContextView.class}, new String[]{"frameLayout"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "inappPlayerBackground"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{FragmentContextView.class}, new String[]{"playButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "inappPlayerPlayPause"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{FragmentContextView.class}, new String[]{"titleTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "inappPlayerTitle"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_FASTSCROLL, new Class[]{FragmentContextView.class}, new String[]{"titleTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "inappPlayerPerformer"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{FragmentContextView.class}, new String[]{"closeButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "inappPlayerClose"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND | ThemeDescription.FLAG_CHECKTAG, new Class[]{FragmentContextView.class}, new String[]{"frameLayout"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "returnToCallBackground"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{FragmentContextView.class}, new String[]{"titleTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "returnToCallText"));
+        }, Theme.key_windowBackgroundWhite), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getScrollSlidingTextTabStrip(), 0, new Class[]{ScrollSlidingTextTabStrip.class}, new String[]{"selectorDrawable"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_actionBarTabLine), new ThemeDescription(getScrollSlidingTextTabStrip().getTabsContainer(), ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarTabActiveText), new ThemeDescription(getScrollSlidingTextTabStrip().getTabsContainer(), ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarTabUnactiveText), new ThemeDescription(getScrollSlidingTextTabStrip().getTabsContainer(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarTabSelector), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND | ThemeDescription.FLAG_CHECKTAG, new Class[]{FragmentContextView.class}, new String[]{"frameLayout"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_inappPlayerBackground), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{FragmentContextView.class}, new String[]{"playButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_inappPlayerPlayPause), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{FragmentContextView.class}, new String[]{"titleTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_inappPlayerTitle), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_FASTSCROLL, new Class[]{FragmentContextView.class}, new String[]{"titleTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_inappPlayerPerformer), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{FragmentContextView.class}, new String[]{"closeButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_inappPlayerClose), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND | ThemeDescription.FLAG_CHECKTAG, new Class[]{FragmentContextView.class}, new String[]{"frameLayout"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_returnToCallBackground), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{FragmentContextView.class}, new String[]{"titleTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_returnToCallText));
         return arrayListOf;
     }
 
@@ -194,7 +194,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
         Activity parentActivity2 = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity2, "parentActivity");
         ViewPage viewPage = new ViewPage(this, parentActivity2);
-        ViewExtKt.gone(viewPage);
+        ViewExtKt.gone$default(viewPage, false, 1, null);
         Unit unit = Unit.INSTANCE;
         return new ViewPage[]{new ViewPage(this, parentActivity), viewPage};
     }
@@ -220,7 +220,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     return;
                 }
                 TelegramViewPagerFragment.this.getViewPages()[1].setSelectedType(i);
-                ViewExtKt.visible(TelegramViewPagerFragment.this.getViewPages()[1]);
+                ViewExtKt.visible$default(TelegramViewPagerFragment.this.getViewPages()[1], false, 1, null);
                 TelegramViewPagerFragment.this.switchToCurrentSelectedMode(true);
                 TelegramViewPagerFragment.this.animatingForward = z;
             }
@@ -244,7 +244,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     TelegramViewPagerFragment.ViewPage viewPage = TelegramViewPagerFragment.this.getViewPages()[0];
                     TelegramViewPagerFragment.this.getViewPages()[0] = TelegramViewPagerFragment.this.getViewPages()[1];
                     TelegramViewPagerFragment.this.getViewPages()[1] = viewPage;
-                    ViewExtKt.gone(TelegramViewPagerFragment.this.getViewPages()[1]);
+                    ViewExtKt.gone$default(TelegramViewPagerFragment.this.getViewPages()[1], false, 1, null);
                 }
             }
         });
@@ -272,16 +272,16 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getToolbarTitle());
-        c3306ActionBar.setExtraHeight(AndroidUtilities.m51dp(getAdditionalActionBarHeight() + 44.0f));
-        c3306ActionBar.setAllowOverlayTitle(false);
-        c3306ActionBar.setAddToContainer(false);
-        c3306ActionBar.setClipContent(true);
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getToolbarTitle());
+        c3356ActionBar.setExtraHeight(AndroidUtilities.m55dp(getAdditionalActionBarHeight() + 44.0f));
+        c3356ActionBar.setAllowOverlayTitle(false);
+        c3356ActionBar.setAddToContainer(false);
+        c3356ActionBar.setClipContent(true);
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TelegramViewPagerFragment.this.finishFragment();
@@ -290,11 +290,11 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                 }
             }
         });
-        ViewExtKt.visible(getScrollSlidingTextTabStrip());
-        ViewParent parent = c3306ActionBar.getParent();
+        ViewExtKt.visible$default(getScrollSlidingTextTabStrip(), false, 1, null);
+        ViewParent parent = c3356ActionBar.getParent();
         ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
         if (viewGroup != null) {
-            viewGroup.removeView(c3306ActionBar);
+            viewGroup.removeView(c3356ActionBar);
         }
     }
 
@@ -305,6 +305,39 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                 TelegramViewPagerFragment.setupListeners$lambda$7(TelegramViewPagerFragment.this, view);
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupListeners$lambda$7(TelegramViewPagerFragment this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.onFabClick(this$0.getViewPages()[0].getSelectedType());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void switchToCurrentSelectedMode(boolean z) {
+        int i = 0;
+        for (ViewPage viewPage : getViewPages()) {
+            viewPage.getListView().stopScroll();
+        }
+        ViewPage viewPage2 = getViewPages()[z ? 1 : 0];
+        viewPage2.getListView().setPinnedHeaderShadowDrawable(null);
+        ViewExtKt.visible$default(viewPage2.getListView(), false, 1, null);
+        if (!(this.actionBar.getTranslationY() == BitmapDescriptorFactory.HUE_RED)) {
+            viewPage2.getListViewLayoutManager().scrollToPositionWithOffset(0, (int) this.actionBar.getTranslationY());
+        }
+        RecyclerListView.SelectionAdapter selectionAdapter = (RecyclerListView.SelectionAdapter) viewPage2.getListView().getAdapter();
+        ViewPageData[] pagesData = getPagesData();
+        int length = pagesData.length;
+        int i2 = 0;
+        while (i < length) {
+            ViewPageData viewPageData = pagesData[i];
+            int i3 = i2 + 1;
+            if (viewPage2.getSelectedType() == i2 && selectionAdapter != viewPageData.getListAdapter()) {
+                viewPage2.getListView().setAdapter(viewPageData.getListAdapter());
+            }
+            i++;
+            i2 = i3;
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -323,39 +356,6 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             return;
         }
         resetScroll();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$7(TelegramViewPagerFragment this$0, View view) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.onFabClick(this$0.getViewPages()[0].getSelectedType());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void switchToCurrentSelectedMode(boolean z) {
-        int i = 0;
-        for (ViewPage viewPage : getViewPages()) {
-            viewPage.getListView().stopScroll();
-        }
-        ViewPage viewPage2 = getViewPages()[z ? 1 : 0];
-        viewPage2.getListView().setPinnedHeaderShadowDrawable(null);
-        ViewExtKt.visible(viewPage2.getListView());
-        if (!(this.actionBar.getTranslationY() == BitmapDescriptorFactory.HUE_RED)) {
-            viewPage2.getListViewLayoutManager().scrollToPositionWithOffset(0, (int) this.actionBar.getTranslationY());
-        }
-        RecyclerListView.SelectionAdapter selectionAdapter = (RecyclerListView.SelectionAdapter) viewPage2.getListView().getAdapter();
-        ViewPageData[] pagesData = getPagesData();
-        int length = pagesData.length;
-        int i2 = 0;
-        while (i < length) {
-            ViewPageData viewPageData = pagesData[i];
-            int i3 = i2 + 1;
-            if (viewPage2.getSelectedType() == i2 && selectionAdapter != viewPageData.getListAdapter()) {
-                viewPage2.getListView().setAdapter(viewPageData.getListAdapter());
-            }
-            i++;
-            i2 = i3;
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -458,7 +458,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
                     if (i != 1) {
                         int i2 = (int) (-((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY());
-                        int currentActionBarHeight = C3306ActionBar.getCurrentActionBarHeight();
+                        int currentActionBarHeight = C3356ActionBar.getCurrentActionBarHeight();
                         if (i2 == 0 || i2 == currentActionBarHeight) {
                             return;
                         }
@@ -476,8 +476,8 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     if (recyclerView == TelegramViewPagerFragment.this.getViewPages()[0].getListView()) {
                         float translationY = ((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY();
                         float f = translationY - i2;
-                        if (f < (-C3306ActionBar.getCurrentActionBarHeight())) {
-                            f = -C3306ActionBar.getCurrentActionBarHeight();
+                        if (f < (-C3356ActionBar.getCurrentActionBarHeight())) {
+                            f = -C3356ActionBar.getCurrentActionBarHeight();
                         } else if (f > BitmapDescriptorFactory.HUE_RED) {
                             f = 0.0f;
                         }
@@ -581,7 +581,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             int measuredHeight = ((BaseFragment) this.this$0).actionBar.getMeasuredHeight();
             this.globalIgnoreLayout = true;
             for (ViewPage viewPage : this.this$0.getViewPages()) {
-                viewPage.getListView().setPadding(0, this.this$0.additionalPadding + measuredHeight, 0, AndroidUtilities.m51dp(4.0f));
+                viewPage.getListView().setPadding(0, this.this$0.additionalPadding + measuredHeight, 0, AndroidUtilities.m55dp(4.0f));
             }
             this.globalIgnoreLayout = false;
             TelegramViewPagerFragment telegramViewPagerFragment = this.this$0;
@@ -614,7 +614,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             }
             int measuredHeight = ((BaseFragment) this.this$0).actionBar.getMeasuredHeight();
             for (ViewPage viewPage : this.this$0.getViewPages()) {
-                viewPage.getListView().setPadding(0, this.this$0.additionalPadding + measuredHeight, 0, AndroidUtilities.m51dp(4.0f));
+                viewPage.getListView().setPadding(0, this.this$0.additionalPadding + measuredHeight, 0, AndroidUtilities.m55dp(4.0f));
             }
             requestLayout();
         }
@@ -645,7 +645,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            this.this$0.backgroundPaint.setColor(Theme.getColor("windowBackgroundWhite"));
+            this.this$0.backgroundPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             canvas.drawRect(BitmapDescriptorFactory.HUE_RED, ((BaseFragment) this.this$0).actionBar.getMeasuredHeight() + ((BaseFragment) this.this$0).actionBar.getTranslationY(), getMeasuredWidth(), getMeasuredHeight(), this.this$0.backgroundPaint);
         }
 
@@ -829,7 +829,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                                     telegramViewPagerFragment.getViewPages()[1] = viewPage3;
                                     telegramViewPagerFragment.getScrollSlidingTextTabStrip().selectTabWithId(telegramViewPagerFragment.getViewPages()[0].getSelectedType(), 1.0f);
                                 }
-                                ViewExtKt.gone(telegramViewPagerFragment.getViewPages()[1]);
+                                ViewExtKt.gone$default(telegramViewPagerFragment.getViewPages()[1], false, 1, null);
                                 telegramViewPagerFragment.tabsAnimationInProgress = false;
                                 TelegramViewPagerFragment.ContentView.this.maybeStartTracking = false;
                                 ((BaseFragment) telegramViewPagerFragment).actionBar.setEnabled(true);
@@ -900,7 +900,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             ((BaseFragment) this.this$0).actionBar.setEnabled(false);
             this.this$0.getScrollSlidingTextTabStrip().setEnabled(false);
             this.this$0.getViewPages()[1].setSelectedType(nextPageId);
-            ViewExtKt.visible(this.this$0.getViewPages()[1]);
+            ViewExtKt.visible$default(this.this$0.getViewPages()[1], false, 1, null);
             this.this$0.animatingForward = z;
             this.this$0.switchToCurrentSelectedMode(true);
             if (z) {

@@ -31,10 +31,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ArchiveHintCell;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
-    const-string v1, "actionBarDefaultArchived"
-
     .line 43
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultArchived:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -96,12 +96,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ArchiveHintCell;->bottomPages:Lorg/telegram/ui/Components/BottomPagesView;
 
-    const-string p1, "chats_unreadCounterMuted"
-
-    const-string v1, "chats_actionBackground"
-
     .line 66
-    invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/BottomPagesView;->setColor(Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounterMuted:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/BottomPagesView;->setColor(II)V
 
     .line 67
     iget-object p1, p0, Lorg/telegram/ui/Cells/ArchiveHintCell;->bottomPages:Lorg/telegram/ui/Components/BottomPagesView;

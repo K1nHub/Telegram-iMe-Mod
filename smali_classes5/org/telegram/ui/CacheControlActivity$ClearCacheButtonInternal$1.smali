@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->lambda$new$5(Landroid/view/View;)V
+    value = Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->doClearCache()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 2063
+    .line 2078
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
 
     return-void

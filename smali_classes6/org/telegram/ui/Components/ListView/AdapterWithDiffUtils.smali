@@ -20,10 +20,10 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 9
+    .line 11
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 11
+    .line 13
     new-instance v0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;
 
     const/4 v1, 0x0
@@ -55,18 +55,18 @@
 
     if-nez p2, :cond_0
 
-    .line 15
+    .line 17
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 17
+    .line 19
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;->callback:Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;->setItems(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 18
+    .line 20
     iget-object p1, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;->callback:Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;
 
     invoke-static {p1}, Landroidx/recyclerview/widget/DiffUtil;->calculateDiff(Landroidx/recyclerview/widget/DiffUtil$Callback;)Landroidx/recyclerview/widget/DiffUtil$DiffResult;

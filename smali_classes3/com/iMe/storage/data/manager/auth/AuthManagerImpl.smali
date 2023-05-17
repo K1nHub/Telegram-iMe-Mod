@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAuthManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AuthManagerImpl.kt\ncom/iMe/storage/data/manager/auth/AuthManagerImpl\n+ 2 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n*L\n1#1,68:1\n6#2,6:69\n6#2,6:75\n*S KotlinDebug\n*F\n+ 1 AuthManagerImpl.kt\ncom/iMe/storage/data/manager/auth/AuthManagerImpl\n*L\n26#1:69,6\n41#1:75,6\n*E\n"
+    value = "SMAP\nAuthManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AuthManagerImpl.kt\ncom/iMe/storage/data/manager/auth/AuthManagerImpl\n+ 2 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n*L\n1#1,69:1\n6#2,6:70\n6#2,6:76\n*S KotlinDebug\n*F\n+ 1 AuthManagerImpl.kt\ncom/iMe/storage/data/manager/auth/AuthManagerImpl\n*L\n26#1:70,6\n42#1:76,6\n*E\n"
 .end annotation
 
 
@@ -65,7 +65,7 @@
 .method public getAccessToken()Ljava/lang/String;
     .locals 1
 
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/iMe/storage/data/manager/auth/AuthManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getAuthSession()Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;
@@ -94,7 +94,7 @@
 .method public getOldRefreshToken()Ljava/lang/String;
     .locals 1
 
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/iMe/storage/data/manager/auth/AuthManagerImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getWalletRefreshToken()Ljava/lang/String;
@@ -107,7 +107,7 @@
 .method public getRefreshToken()Ljava/lang/String;
     .locals 1
 
-    .line 37
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/data/manager/auth/AuthManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getAuthSession()Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;
@@ -126,7 +126,7 @@
 
     if-nez v0, :cond_1
 
-    .line 38
+    .line 39
     :cond_0
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/auth/AuthManagerImpl;->getOldRefreshToken()Ljava/lang/String;
 
@@ -297,7 +297,7 @@
 .method public logout()V
     .locals 4
 
-    .line 59
+    .line 60
     iget-object v0, p0, Lcom/iMe/storage/data/manager/auth/AuthManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     const-string v1, "auth_session"
@@ -322,22 +322,22 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 51
+    .line 52
     iget-object v0, p0, Lcom/iMe/storage/data/manager/auth/AuthManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     new-instance v1, Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;
 
-    .line 53
+    .line 54
     invoke-static {}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->now()J
 
     move-result-wide v2
 
-    .line 51
+    .line 52
     invoke-direct {v1, p1, v2, v3}, Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;-><init>(Lcom/iMe/storage/domain/model/wallet/SessionTokens;J)V
 
     invoke-interface {v0, v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setAuthSession(Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;)V
 
-    .line 55
+    .line 56
     iget-object p1, p0, Lcom/iMe/storage/data/manager/auth/AuthManagerImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     const/4 v0, 0x0

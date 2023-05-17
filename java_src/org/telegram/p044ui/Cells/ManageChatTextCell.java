@@ -15,29 +15,30 @@ import org.telegram.p044ui.ActionBar.Theme;
 /* loaded from: classes5.dex */
 public class ManageChatTextCell extends FrameLayout {
     private boolean divider;
-    private String dividerColor;
+    private int dividerColor;
     private ImageView imageView;
     private SimpleTextView textView;
     private SimpleTextView valueTextView;
 
     public ManageChatTextCell(Context context) {
         super(context);
+        this.dividerColor = 0;
         SimpleTextView simpleTextView = new SimpleTextView(context);
         this.textView = simpleTextView;
-        simpleTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        simpleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.textView.setTextSize(16);
         this.textView.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(this.textView);
         SimpleTextView simpleTextView2 = new SimpleTextView(context);
         this.valueTextView = simpleTextView2;
-        simpleTextView2.setTextColor(Theme.getColor("windowBackgroundWhiteValueText"));
+        simpleTextView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteValueText));
         this.valueTextView.setTextSize(16);
         this.valueTextView.setGravity(LocaleController.isRTL ? 3 : 5);
         addView(this.valueTextView);
         ImageView imageView = new ImageView(context);
         this.imageView = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayIcon"), PorterDuff.Mode.MULTIPLY));
+        this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon), PorterDuff.Mode.MULTIPLY));
         addView(this.imageView);
     }
 
@@ -49,18 +50,18 @@ public class ManageChatTextCell extends FrameLayout {
         return this.valueTextView;
     }
 
-    public void setDividerColor(String str) {
-        this.dividerColor = str;
+    public void setDividerColor(int i) {
+        this.dividerColor = i;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i);
-        int m50dp = AndroidUtilities.m50dp(48);
-        this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m50dp(24), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(20), 1073741824));
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m50dp(95), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(20), 1073741824));
-        this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m50dp, Integer.MIN_VALUE));
-        setMeasuredDimension(size, AndroidUtilities.m50dp(56) + (this.divider ? 1 : 0));
+        int m54dp = AndroidUtilities.m54dp(48);
+        this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m54dp(24), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(20), 1073741824));
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m54dp(95), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(20), 1073741824));
+        this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
+        setMeasuredDimension(size, AndroidUtilities.m54dp(56) + (this.divider ? 1 : 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -68,28 +69,28 @@ public class ManageChatTextCell extends FrameLayout {
         int i5 = i4 - i2;
         int i6 = i3 - i;
         int textHeight = (i5 - this.valueTextView.getTextHeight()) / 2;
-        int m50dp = LocaleController.isRTL ? AndroidUtilities.m50dp(24) : 0;
+        int m54dp = LocaleController.isRTL ? AndroidUtilities.m54dp(24) : 0;
         SimpleTextView simpleTextView = this.valueTextView;
-        simpleTextView.layout(m50dp, textHeight, simpleTextView.getMeasuredWidth() + m50dp, this.valueTextView.getMeasuredHeight() + textHeight);
+        simpleTextView.layout(m54dp, textHeight, simpleTextView.getMeasuredWidth() + m54dp, this.valueTextView.getMeasuredHeight() + textHeight);
         int textHeight2 = (i5 - this.textView.getTextHeight()) / 2;
-        int m50dp2 = !LocaleController.isRTL ? AndroidUtilities.m50dp(71) : AndroidUtilities.m50dp(24);
+        int m54dp2 = !LocaleController.isRTL ? AndroidUtilities.m54dp(71) : AndroidUtilities.m54dp(24);
         SimpleTextView simpleTextView2 = this.textView;
-        simpleTextView2.layout(m50dp2, textHeight2, simpleTextView2.getMeasuredWidth() + m50dp2, this.textView.getMeasuredHeight() + textHeight2);
-        int m50dp3 = AndroidUtilities.m50dp(9);
-        int m50dp4 = !LocaleController.isRTL ? AndroidUtilities.m50dp(21) : (i6 - this.imageView.getMeasuredWidth()) - AndroidUtilities.m50dp(21);
+        simpleTextView2.layout(m54dp2, textHeight2, simpleTextView2.getMeasuredWidth() + m54dp2, this.textView.getMeasuredHeight() + textHeight2);
+        int m54dp3 = AndroidUtilities.m54dp(9);
+        int m54dp4 = !LocaleController.isRTL ? AndroidUtilities.m54dp(21) : (i6 - this.imageView.getMeasuredWidth()) - AndroidUtilities.m54dp(21);
         ImageView imageView = this.imageView;
-        imageView.layout(m50dp4, m50dp3, imageView.getMeasuredWidth() + m50dp4, this.imageView.getMeasuredHeight() + m50dp3);
+        imageView.layout(m54dp4, m54dp3, imageView.getMeasuredWidth() + m54dp4, this.imageView.getMeasuredHeight() + m54dp3);
     }
 
     public void setTextColor(int i) {
         this.textView.setTextColor(i);
     }
 
-    public void setColors(String str, String str2) {
-        this.textView.setTextColor(Theme.getColor(str2));
-        this.textView.setTag(str2);
-        this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(str), PorterDuff.Mode.MULTIPLY));
-        this.imageView.setTag(str);
+    public void setColors(int i, int i2) {
+        this.textView.setTextColor(Theme.getColor(i2));
+        this.textView.setTag(Integer.valueOf(i2));
+        this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
+        this.imageView.setTag(Integer.valueOf(i));
     }
 
     public void setText(String str, String str2, int i, boolean z) {
@@ -104,7 +105,7 @@ public class ManageChatTextCell extends FrameLayout {
         } else {
             this.valueTextView.setVisibility(4);
         }
-        this.imageView.setPadding(0, AndroidUtilities.m50dp(i2), 0, 0);
+        this.imageView.setPadding(0, AndroidUtilities.m54dp(i2), 0, 0);
         this.imageView.setImageResource(i);
         this.divider = z;
         setWillNotDraw(!z);
@@ -113,11 +114,11 @@ public class ManageChatTextCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.divider) {
-            String str = this.dividerColor;
-            if (str != null) {
-                Theme.dividerExtraPaint.setColor(Theme.getColor(str));
+            int i = this.dividerColor;
+            if (i != 0) {
+                Theme.dividerExtraPaint.setColor(Theme.getColor(i));
             }
-            canvas.drawLine(AndroidUtilities.m50dp(71), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, this.dividerColor != null ? Theme.dividerExtraPaint : Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m54dp(71), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, this.dividerColor != 0 ? Theme.dividerExtraPaint : Theme.dividerPaint);
         }
     }
 }

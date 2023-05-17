@@ -17,7 +17,7 @@
 
 .field private baseSize:Lorg/telegram/ui/Components/Size;
 
-.field private centerImage:Lorg/telegram/messenger/ImageReceiver;
+.field public final centerImage:Lorg/telegram/messenger/ImageReceiver;
 
 .field private containerView:Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
 

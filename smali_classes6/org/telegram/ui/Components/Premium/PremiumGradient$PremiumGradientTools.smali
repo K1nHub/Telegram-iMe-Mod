@@ -15,15 +15,15 @@
 
 
 # instance fields
-.field final colorKey1:Ljava/lang/String;
+.field final colorKey1:I
 
-.field final colorKey2:Ljava/lang/String;
+.field final colorKey2:I
 
-.field final colorKey3:Ljava/lang/String;
+.field final colorKey3:I
 
-.field final colorKey4:Ljava/lang/String;
+.field final colorKey4:I
 
-.field final colorKey5:Ljava/lang/String;
+.field final colorKey5:I
 
 .field final colors:[I
 
@@ -49,28 +49,28 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(IIII)V
     .locals 6
 
-    const/4 v5, 0x0
+    const/4 v5, -0x1
 
     move-object v0, p0
 
-    move-object v1, p1
+    move v1, p1
 
-    move-object v2, p2
+    move v2, p2
 
-    move-object v3, p3
+    move v3, p3
 
-    move-object v4, p4
+    move v4, p4
 
     .line 167
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIIII)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(IIIII)V
     .locals 2
 
     .line 170
@@ -123,19 +123,19 @@
     iput v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->y2:F
 
     .line 171
-    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey1:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey1:I
 
     .line 172
-    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey2:Ljava/lang/String;
+    iput p2, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey2:I
 
     .line 173
-    iput-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey3:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey3:I
 
     .line 174
-    iput-object p4, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey4:Ljava/lang/String;
+    iput p4, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey4:I
 
     .line 175
-    iput-object p5, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey5:Ljava/lang/String;
+    iput p5, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey5:I
 
     return-void
 .end method
@@ -155,62 +155,62 @@
     move-object/from16 v0, p0
 
     .line 204
-    iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey1:Ljava/lang/String;
+    iget v1, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey1:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     .line 205
-    iget-object v2, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey2:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey2:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     .line 206
-    iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey3:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey3:I
 
     const/4 v4, 0x0
 
-    if-nez v3, :cond_0
+    if-gez v3, :cond_0
 
     move v3, v4
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     .line 207
     :goto_0
-    iget-object v5, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey4:Ljava/lang/String;
+    iget v5, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey4:I
 
-    if-nez v5, :cond_1
+    if-gez v5, :cond_1
 
     move v5, v4
 
     goto :goto_1
 
     :cond_1
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
     .line 208
     :goto_1
-    iget-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey5:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey5:I
 
-    if-nez v6, :cond_2
+    if-gez v6, :cond_2
 
     move v6, v4
 
     goto :goto_2
 
     :cond_2
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 

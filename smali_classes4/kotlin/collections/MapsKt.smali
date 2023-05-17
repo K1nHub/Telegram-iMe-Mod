@@ -3,6 +3,30 @@
 
 
 # direct methods
+.method public static bridge synthetic asSequence(Ljava/util/Map;)Lkotlin/sequences/Sequence;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Map<",
+            "+TK;+TV;>;)",
+            "Lkotlin/sequences/Sequence<",
+            "Ljava/util/Map$Entry<",
+            "TK;TV;>;>;"
+        }
+    .end annotation
+
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->asSequence(Ljava/util/Map;)Lkotlin/sequences/Sequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static bridge synthetic emptyMap()Ljava/util/Map;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

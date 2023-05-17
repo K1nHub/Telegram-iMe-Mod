@@ -5,27 +5,25 @@
 .implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZLorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iput-boolean p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;->f$2:Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;
 
     return-void
 .end method
@@ -33,9 +31,15 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
+    .locals 3
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$6JTflzh8LDtaCNsQsgvhC0S1Y5s(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iget-boolean v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;->f$1:Z
+
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda368;->f$2:Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;
+
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$OUjuazjAsfk-Wu_Yp2sm_ymnUYs(Lorg/telegram/messenger/MessagesController;ZLorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

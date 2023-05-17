@@ -35,7 +35,7 @@
 .method public constructor <init>(Lokhttp3/internal/concurrent/TaskRunner;Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "taskRunner"
+    const-string/jumbo v0, "taskRunner"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -335,7 +335,7 @@
 .method public final schedule(Lokhttp3/internal/concurrent/Task;J)V
     .locals 2
 
-    const-string v0, "task"
+    const-string/jumbo v0, "task"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -452,7 +452,7 @@
 .method public final scheduleAndDecide$okhttp(Lokhttp3/internal/concurrent/Task;JZ)Z
     .locals 9
 
-    const-string v0, "task"
+    const-string/jumbo v0, "task"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

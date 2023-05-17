@@ -10,6 +10,7 @@ import org.koin.core.scope.Scope;
 /* compiled from: BeanDefinition.kt */
 /* loaded from: classes4.dex */
 public final class BeanDefinition<T> {
+    private boolean _createdAtStart;
     private Callbacks<T> callbacks;
     private final Function2<Scope, ParametersHolder, T> definition;
     private final Kind kind;
@@ -61,6 +62,10 @@ public final class BeanDefinition<T> {
 
     public final Callbacks<T> getCallbacks() {
         return this.callbacks;
+    }
+
+    public final boolean get_createdAtStart() {
+        return this._createdAtStart;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0039, code lost:

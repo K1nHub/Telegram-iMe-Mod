@@ -15,7 +15,7 @@ public final class Any extends GeneratedMessageLite<Any, Builder> implements Mes
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Any, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C11811 c11811) {
+        /* synthetic */ Builder(C11861 c11861) {
             this();
         }
 
@@ -26,40 +26,40 @@ public final class Any extends GeneratedMessageLite<Any, Builder> implements Mes
 
     /* renamed from: com.google.protobuf.Any$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C11811 {
+    static /* synthetic */ class C11861 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f221xa1df5c61;
+        static final /* synthetic */ int[] f224xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f221xa1df5c61 = iArr;
+            f224xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f221xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f224xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f221xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f224xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f221xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f224xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f221xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f224xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f221xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f224xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f221xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f224xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -67,7 +67,7 @@ public final class Any extends GeneratedMessageLite<Any, Builder> implements Mes
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C11811.f221xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C11861.f224xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Any();
             case 2:

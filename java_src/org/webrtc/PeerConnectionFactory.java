@@ -299,7 +299,7 @@ public class PeerConnectionFactory {
             nativeInjectLoggable(new JNILogging(initializationOptions.loggable), initializationOptions.loggableSeverity.ordinal());
             return;
         }
-        Logging.m18d(TAG, "PeerConnectionFactory was initialized without an injected Loggable. Any existing Loggable will be deleted.");
+        Logging.m20d(TAG, "PeerConnectionFactory was initialized without an injected Loggable. Any existing Loggable will be deleted.");
         Logging.deleteInjectedLoggable();
         nativeDeleteLoggable();
     }
@@ -453,14 +453,14 @@ public class PeerConnectionFactory {
         String name = threadInfo.thread.getName();
         StackTraceElement[] stackTrace = threadInfo.thread.getStackTrace();
         if (stackTrace.length > 0) {
-            Logging.m14w(TAG, name + " stacktrace:");
+            Logging.m16w(TAG, name + " stacktrace:");
             for (StackTraceElement stackTraceElement : stackTrace) {
-                Logging.m14w(TAG, stackTraceElement.toString());
+                Logging.m16w(TAG, stackTraceElement.toString());
             }
         }
         if (z) {
-            Logging.m14w(TAG, "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***");
-            Logging.m14w(TAG, "pid: " + Process.myPid() + ", tid: " + threadInfo.tid + ", name: " + name + "  >>> WebRTC <<<");
+            Logging.m16w(TAG, "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***");
+            Logging.m16w(TAG, "pid: " + Process.myPid() + ", tid: " + threadInfo.tid + ", name: " + name + "  >>> WebRTC <<<");
             nativePrintStackTrace(threadInfo.tid);
         }
     }
@@ -485,20 +485,20 @@ public class PeerConnectionFactory {
     private void onNetworkThreadReady() {
         this.networkThread = ThreadInfo.getCurrent();
         staticNetworkThread = this.networkThread;
-        Logging.m18d(TAG, "onNetworkThreadReady");
+        Logging.m20d(TAG, "onNetworkThreadReady");
     }
 
     @CalledByNative
     private void onWorkerThreadReady() {
         this.workerThread = ThreadInfo.getCurrent();
         staticWorkerThread = this.workerThread;
-        Logging.m18d(TAG, "onWorkerThreadReady");
+        Logging.m20d(TAG, "onWorkerThreadReady");
     }
 
     @CalledByNative
     private void onSignalingThreadReady() {
         this.signalingThread = ThreadInfo.getCurrent();
         staticSignalingThread = this.signalingThread;
-        Logging.m18d(TAG, "onSignalingThreadReady");
+        Logging.m20d(TAG, "onSignalingThreadReady");
     }
 }

@@ -29,11 +29,11 @@
 .method public constructor <init>(ZLokio/BufferedSource;Lokio/BufferedSink;)V
     .locals 1
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

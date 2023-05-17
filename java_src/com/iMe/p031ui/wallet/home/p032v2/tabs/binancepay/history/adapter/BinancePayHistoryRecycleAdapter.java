@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayHistoryRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.adapter.BinancePayHistoryRecycleAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinancePayHistoryRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final BinanceTransactionProvider binanceTransactionProvider;
     private final HeaderProvider headerProvider;
@@ -33,6 +33,6 @@ public final class BinancePayHistoryRecycleAdapter extends BaseNodeAdapter<BaseN
     protected int getItemType(List<? extends BaseNode> data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         BaseNode baseNode = data.get(i);
-        return baseNode instanceof BinanceTransactionItem ? IdFabric$ViewTypes.TRANSACTION : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER : IdFabric$ViewTypes.TRANSACTION;
+        return baseNode instanceof BinanceTransactionItem ? IdFabric$ViewTypes.TRANSACTION : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER_CELL : IdFabric$ViewTypes.TRANSACTION;
     }
 }

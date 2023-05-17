@@ -86,6 +86,7 @@ public enum TokenCode {
     TRX,
     TUSD,
     HT,
+    BTCMT,
     INTERNAL,
     USD,
     UNKNOWN;
@@ -215,7 +216,7 @@ public enum TokenCode {
         }
 
         public final List<TokenCode> getBSCCodes() {
-            return CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.ETHER, TokenCode.LIME, TokenCode.USDT, TokenCode.BNB, TokenCode.BUSD, TokenCode.LINK, TokenCode.PCNT, TokenCode.UFI, TokenCode.FIL, TokenCode.LANC, TokenCode.DEGO, TokenCode.EQX, TokenCode.FLURRY, TokenCode.GFX, TokenCode.CTSI, TokenCode.CEEK, TokenCode.XEND, TokenCode.KONO, TokenCode.KFT, TokenCode.OM, TokenCode.SKILL, TokenCode.YAY, TokenCode.KABY, TokenCode.USDO, TokenCode.FUSE, TokenCode.TON, TokenCode.INF, TokenCode.PPM, TokenCode.SIN});
+            return CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.ETHER, TokenCode.LIME, TokenCode.USDT, TokenCode.BNB, TokenCode.BUSD, TokenCode.LINK, TokenCode.PCNT, TokenCode.UFI, TokenCode.FIL, TokenCode.LANC, TokenCode.DEGO, TokenCode.EQX, TokenCode.FLURRY, TokenCode.GFX, TokenCode.CTSI, TokenCode.CEEK, TokenCode.XEND, TokenCode.KONO, TokenCode.KFT, TokenCode.OM, TokenCode.SKILL, TokenCode.YAY, TokenCode.KABY, TokenCode.USDO, TokenCode.FUSE, TokenCode.TON, TokenCode.INF, TokenCode.PPM, TokenCode.SIN, TokenCode.BTCMT});
         }
 
         public final List<TokenCode> getPolygonCodes() {

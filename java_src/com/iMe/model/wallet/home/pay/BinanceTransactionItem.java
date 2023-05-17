@@ -8,12 +8,12 @@ import com.iMe.storage.domain.model.binancepay.BinanceTransactionType;
 import com.iMe.storage.domain.model.wallet.token.TokenInfo;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
-import com.iMe.utils.extentions.model.wallet.BinancePayExtKt;
+import com.iMe.utils.extentions.model.pay.BinancePayExtKt;
 import com.iMe.utils.formatter.BalanceFormatter;
 import com.iMe.utils.formatter.DateFormatter;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: BinanceTransactionItem.kt */
 /* loaded from: classes3.dex */
 public final class BinanceTransactionItem extends NoChildNode {
@@ -65,7 +65,7 @@ public final class BinanceTransactionItem extends NoChildNode {
             return BinancePayExtKt.icon(binanceTransaction.getDirection());
         }
         if (binanceTransaction instanceof BinanceTransaction.Convert) {
-            return C3242R.C3244drawable.fork_ic_transaction_binance_convert;
+            return C3290R.C3292drawable.fork_ic_transaction_binance_convert;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -77,7 +77,7 @@ public final class BinanceTransactionItem extends NoChildNode {
             return resourceManager.getString(binanceTransaction.getDirection().getTitle());
         }
         if (binanceTransaction instanceof BinanceTransaction.Convert) {
-            return resourceManager.getString(C3242R.string.binance_convert_toolbar_title);
+            return resourceManager.getString(C3290R.string.binance_convert_toolbar_title);
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -91,8 +91,8 @@ public final class BinanceTransactionItem extends NoChildNode {
         return resourceManager.getString(this.transaction.getStatus().getTitle());
     }
 
-    public final String getTransactionStatusColor() {
-        return BinancePayExtKt.color(this.transaction.getStatus());
+    public final int getTransactionStatusColor() {
+        return BinancePayExtKt.colorKey(this.transaction.getStatus());
     }
 
     public final boolean isUnsupported() {

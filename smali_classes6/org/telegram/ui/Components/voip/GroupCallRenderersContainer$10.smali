@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;)V
     .locals 0
 
-    .line 821
+    .line 822
     iput-object p2, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$10;->val$finalNewSmallTextureView:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 824
+    .line 825
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$10;->val$finalNewSmallTextureView:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;
 
     const/4 v0, 0x0

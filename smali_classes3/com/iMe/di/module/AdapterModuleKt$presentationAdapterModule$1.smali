@@ -561,7 +561,7 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/ui/twitter/adapter/TweetsRecycleAdapter;
+    const-class v2, Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -602,7 +602,7 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/ui/twitter/search/adapter/TwitterUsersRecycleAdapter;
+    const-class v2, Lcom/iMe/feature/twitter/search/adapter/TwitterUsersRecycleAdapter;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 

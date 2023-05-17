@@ -60,7 +60,7 @@ public class ClearHistoryAlert extends BottomSheet {
             this.resourcesProvider = resourcesProvider;
             View view = new View(context);
             this.background = view;
-            view.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(4), getThemedColor("featuredStickers_addButton"), getThemedColor("featuredStickers_addButtonPressed")));
+            view.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), getThemedColor(Theme.key_featuredStickers_addButton), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
             addView(this.background, LayoutHelper.createFrame(-1, -1, 0, 16, 16, 16, 16));
             TextView textView = new TextView(context);
             this.textView = textView;
@@ -69,7 +69,7 @@ public class ClearHistoryAlert extends BottomSheet {
             this.textView.setGravity(1);
             this.textView.setEllipsize(TextUtils.TruncateAt.END);
             this.textView.setGravity(17);
-            this.textView.setTextColor(getThemedColor("featuredStickers_buttonText"));
+            this.textView.setTextColor(getThemedColor(Theme.key_featuredStickers_buttonText));
             this.textView.setTextSize(1, 14.0f);
             this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             addView(this.textView, LayoutHelper.createFrame(-2, -2, 17));
@@ -77,33 +77,31 @@ public class ClearHistoryAlert extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(80), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(80), 1073741824));
         }
 
         public void setText(CharSequence charSequence) {
             this.textView.setText(charSequence);
         }
 
-        private int getThemedColor(String str) {
-            Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-            Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-            return color != null ? color.intValue() : Theme.getColor(str);
+        protected int getThemedColor(int i) {
+            return Theme.getColor(i, this.resourcesProvider);
         }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:132:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:133:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x02f3  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x045d  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x046b  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x02ec  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x045b  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x0469  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public ClearHistoryAlert(android.content.Context r28, org.telegram.tgnet.TLRPC$User r29, org.telegram.tgnet.TLRPC$Chat r30, boolean r31, org.telegram.p044ui.ActionBar.Theme.ResourcesProvider r32) {
+    public ClearHistoryAlert(android.content.Context r26, org.telegram.tgnet.TLRPC$User r27, org.telegram.tgnet.TLRPC$Chat r28, boolean r29, org.telegram.p044ui.ActionBar.Theme.ResourcesProvider r30) {
         /*
-            Method dump skipped, instructions count: 1188
+            Method dump skipped, instructions count: 1185
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.ClearHistoryAlert.<init>(android.content.Context, org.telegram.tgnet.TLRPC$User, org.telegram.tgnet.TLRPC$Chat, boolean, org.telegram.ui.ActionBar.Theme$ResourcesProvider):void");
@@ -175,7 +173,7 @@ public class ClearHistoryAlert extends BottomSheet {
 
     public void updateLayout() {
         this.linearLayout.getChildAt(0).getLocationInWindow(this.location);
-        int max = Math.max(this.location[1] - AndroidUtilities.m50dp(this.autoDeleteOnly ? 6 : 19), 0);
+        int max = Math.max(this.location[1] - AndroidUtilities.m54dp(this.autoDeleteOnly ? 6 : 19), 0);
         if (this.scrollOffsetY != max) {
             this.scrollOffsetY = max;
             this.containerView.invalidate();

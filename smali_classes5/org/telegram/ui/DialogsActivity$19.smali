@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/DialogsActivity$19;
-.super Lorg/telegram/ui/Components/DialogsItemAnimator;
+.super Lorg/telegram/ui/Components/PullForegroundDrawable;
 .source "DialogsActivity.java"
 
 
@@ -19,94 +19,32 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
     .locals 0
 
-    .line 5372
-    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+    .line 5581
+    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/DialogsItemAnimator;-><init>(Lorg/telegram/ui/Components/RecyclerListView;)V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/PullForegroundDrawable;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onRemoveStarting(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+.method protected getViewOffset()F
     .locals 1
 
-    .line 5375
-    invoke-super {p0, p1}, Landroidx/recyclerview/widget/SimpleItemAnimator;->onRemoveStarting(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+    .line 5584
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
-    .line 5376
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15800(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16100(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/LinearLayoutManager;
+    move-result-object v0
 
-    move-result-object p1
+    invoke-virtual {v0}, Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;->getViewOffset()F
 
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
+    move-result v0
 
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    .line 5377
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
-
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16100(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/LinearLayoutManager;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->findViewByPosition(I)Landroid/view/View;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    .line 5379
-    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
-
-    .line 5381
-    :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
-
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16400(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
-
-    move-result p1
-
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_1
-
-    .line 5382
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
-
-    const/4 v0, 0x1
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16402(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
-
-    .line 5384
-    :cond_1
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
-
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15600(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/PullForegroundDrawable;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    .line 5385
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$19;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
-
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15600(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/PullForegroundDrawable;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->doNotShow()V
-
-    :cond_2
-    return-void
+    return v0
 .end method

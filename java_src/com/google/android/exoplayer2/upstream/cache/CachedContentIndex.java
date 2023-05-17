@@ -49,14 +49,14 @@ public class CachedContentIndex {
     private final SparseArray<String> idToKey;
     private final HashMap<String, CachedContent> keyToContent;
     private final SparseBooleanArray newIds;
-    private InterfaceC0660Storage previousStorage;
+    private InterfaceC0665Storage previousStorage;
     private final SparseBooleanArray removedIds;
-    private InterfaceC0660Storage storage;
+    private InterfaceC0665Storage storage;
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: com.google.android.exoplayer2.upstream.cache.CachedContentIndex$Storage */
     /* loaded from: classes.dex */
-    public interface InterfaceC0660Storage {
+    public interface InterfaceC0665Storage {
         void delete() throws IOException;
 
         boolean exists() throws IOException;
@@ -95,7 +95,7 @@ public class CachedContentIndex {
         DatabaseStorage databaseStorage = databaseProvider != null ? new DatabaseStorage(databaseProvider) : null;
         LegacyStorage legacyStorage = file != null ? new LegacyStorage(new File(file, FILE_NAME_ATOMIC), bArr, z) : null;
         if (databaseStorage == null || (legacyStorage != null && z2)) {
-            this.storage = (InterfaceC0660Storage) Util.castNonNull(legacyStorage);
+            this.storage = (InterfaceC0665Storage) Util.castNonNull(legacyStorage);
             this.previousStorage = databaseStorage;
             return;
         }
@@ -104,21 +104,21 @@ public class CachedContentIndex {
     }
 
     public void initialize(long j) throws IOException {
-        InterfaceC0660Storage interfaceC0660Storage;
+        InterfaceC0665Storage interfaceC0665Storage;
         this.storage.initialize(j);
-        InterfaceC0660Storage interfaceC0660Storage2 = this.previousStorage;
-        if (interfaceC0660Storage2 != null) {
-            interfaceC0660Storage2.initialize(j);
+        InterfaceC0665Storage interfaceC0665Storage2 = this.previousStorage;
+        if (interfaceC0665Storage2 != null) {
+            interfaceC0665Storage2.initialize(j);
         }
-        if (!this.storage.exists() && (interfaceC0660Storage = this.previousStorage) != null && interfaceC0660Storage.exists()) {
+        if (!this.storage.exists() && (interfaceC0665Storage = this.previousStorage) != null && interfaceC0665Storage.exists()) {
             this.previousStorage.load(this.keyToContent, this.idToKey);
             this.storage.storeFully(this.keyToContent);
         } else {
             this.storage.load(this.keyToContent, this.idToKey);
         }
-        InterfaceC0660Storage interfaceC0660Storage3 = this.previousStorage;
-        if (interfaceC0660Storage3 != null) {
-            interfaceC0660Storage3.delete();
+        InterfaceC0665Storage interfaceC0665Storage3 = this.previousStorage;
+        if (interfaceC0665Storage3 != null) {
+            interfaceC0665Storage3.delete();
             this.previousStorage = null;
         }
     }
@@ -147,7 +147,7 @@ public class CachedContentIndex {
     }
 
     public int assignIdForKey(String str) {
-        return getOrAdd(str).f138id;
+        return getOrAdd(str).f141id;
     }
 
     public String getKeyForId(int i) {
@@ -158,7 +158,7 @@ public class CachedContentIndex {
         CachedContent cachedContent = this.keyToContent.get(str);
         if (cachedContent != null && cachedContent.isEmpty() && cachedContent.isFullyUnlocked()) {
             this.keyToContent.remove(str);
-            int i = cachedContent.f138id;
+            int i = cachedContent.f141id;
             boolean z = this.newIds.get(i);
             this.storage.onRemove(cachedContent, z);
             if (z) {
@@ -266,7 +266,7 @@ public class CachedContentIndex {
     }
 
     /* loaded from: classes.dex */
-    private static class LegacyStorage implements InterfaceC0660Storage {
+    private static class LegacyStorage implements InterfaceC0665Storage {
         private static final int FLAG_ENCRYPTED_INDEX = 1;
         private static final int VERSION = 2;
         private static final int VERSION_METADATA_INTRODUCED = 2;
@@ -278,7 +278,7 @@ public class CachedContentIndex {
         private final SecureRandom random;
         private final SecretKeySpec secretKeySpec;
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void initialize(long j) {
         }
 
@@ -306,17 +306,17 @@ public class CachedContentIndex {
             this.atomicFile = new AtomicFile(file);
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public boolean exists() {
             return this.atomicFile.exists();
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void delete() {
             this.atomicFile.delete();
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void load(HashMap<String, CachedContent> hashMap, SparseArray<String> sparseArray) {
             Assertions.checkState(!this.changed);
             if (readFile(hashMap, sparseArray)) {
@@ -327,25 +327,25 @@ public class CachedContentIndex {
             this.atomicFile.delete();
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void storeFully(HashMap<String, CachedContent> hashMap) throws IOException {
             writeFile(hashMap);
             this.changed = false;
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void storeIncremental(HashMap<String, CachedContent> hashMap) throws IOException {
             if (this.changed) {
                 storeFully(hashMap);
             }
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void onUpdate(CachedContent cachedContent) {
             this.changed = true;
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void onRemove(CachedContent cachedContent, boolean z) {
             this.changed = true;
         }
@@ -391,7 +391,7 @@ public class CachedContentIndex {
                         for (int i2 = 0; i2 < readInt2; i2++) {
                             CachedContent readCachedContent = readCachedContent(readInt, dataInputStream);
                             hashMap.put(readCachedContent.key, readCachedContent);
-                            sparseArray.put(readCachedContent.f138id, readCachedContent.key);
+                            sparseArray.put(readCachedContent.f141id, readCachedContent.key);
                             i += hashCachedContent(readCachedContent, readInt);
                         }
                         int readInt3 = dataInputStream.readInt();
@@ -477,7 +477,7 @@ public class CachedContentIndex {
         private int hashCachedContent(CachedContent cachedContent, int i) {
             int i2;
             int hashCode;
-            int hashCode2 = (cachedContent.f138id * 31) + cachedContent.key.hashCode();
+            int hashCode2 = (cachedContent.f141id * 31) + cachedContent.key.hashCode();
             if (i < 2) {
                 long contentLength = ContentMetadata.CC.getContentLength(cachedContent.getMetadata());
                 i2 = hashCode2 * 31;
@@ -505,14 +505,14 @@ public class CachedContentIndex {
         }
 
         private void writeCachedContent(CachedContent cachedContent, DataOutputStream dataOutputStream) throws IOException {
-            dataOutputStream.writeInt(cachedContent.f138id);
+            dataOutputStream.writeInt(cachedContent.f141id);
             dataOutputStream.writeUTF(cachedContent.key);
             CachedContentIndex.writeContentMetadata(cachedContent.getMetadata(), dataOutputStream);
         }
     }
 
     /* loaded from: classes.dex */
-    private static final class DatabaseStorage implements InterfaceC0660Storage {
+    private static final class DatabaseStorage implements InterfaceC0665Storage {
         private static final String COLUMN_ID = "id";
         private static final int COLUMN_INDEX_ID = 0;
         private static final int COLUMN_INDEX_KEY = 1;
@@ -537,24 +537,24 @@ public class CachedContentIndex {
             this.databaseProvider = databaseProvider;
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void initialize(long j) {
             String hexString = Long.toHexString(j);
             this.hexUid = hexString;
             this.tableName = getTableName(hexString);
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public boolean exists() throws DatabaseIOException {
             return VersionTable.getVersion(this.databaseProvider.getReadableDatabase(), 1, (String) Assertions.checkNotNull(this.hexUid)) != -1;
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void delete() throws DatabaseIOException {
             delete(this.databaseProvider, (String) Assertions.checkNotNull(this.hexUid));
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void load(HashMap<String, CachedContent> hashMap, SparseArray<String> sparseArray) throws IOException {
             Assertions.checkState(this.pendingUpdates.size() == 0);
             try {
@@ -569,7 +569,7 @@ public class CachedContentIndex {
                 while (cursor.moveToNext()) {
                     CachedContent cachedContent = new CachedContent(cursor.getInt(0), (String) Assertions.checkNotNull(cursor.getString(1)), CachedContentIndex.readContentMetadata(new DataInputStream(new ByteArrayInputStream(cursor.getBlob(2)))));
                     hashMap.put(cachedContent.key, cachedContent);
-                    sparseArray.put(cachedContent.f138id, cachedContent.key);
+                    sparseArray.put(cachedContent.f141id, cachedContent.key);
                 }
                 cursor.close();
             } catch (SQLiteException e) {
@@ -579,7 +579,7 @@ public class CachedContentIndex {
             }
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void storeFully(HashMap<String, CachedContent> hashMap) throws IOException {
             try {
                 SQLiteDatabase writableDatabase = this.databaseProvider.getWritableDatabase();
@@ -596,7 +596,7 @@ public class CachedContentIndex {
             }
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void storeIncremental(HashMap<String, CachedContent> hashMap) throws IOException {
             if (this.pendingUpdates.size() == 0) {
                 return;
@@ -620,17 +620,17 @@ public class CachedContentIndex {
             }
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void onUpdate(CachedContent cachedContent) {
-            this.pendingUpdates.put(cachedContent.f138id, cachedContent);
+            this.pendingUpdates.put(cachedContent.f141id, cachedContent);
         }
 
-        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0660Storage
+        @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0665Storage
         public void onRemove(CachedContent cachedContent, boolean z) {
             if (z) {
-                this.pendingUpdates.delete(cachedContent.f138id);
+                this.pendingUpdates.delete(cachedContent.f141id);
             } else {
-                this.pendingUpdates.put(cachedContent.f138id, null);
+                this.pendingUpdates.put(cachedContent.f141id, null);
             }
         }
 
@@ -653,7 +653,7 @@ public class CachedContentIndex {
             CachedContentIndex.writeContentMetadata(cachedContent.getMetadata(), new DataOutputStream(byteArrayOutputStream));
             byte[] byteArray = byteArrayOutputStream.toByteArray();
             ContentValues contentValues = new ContentValues();
-            contentValues.put("id", Integer.valueOf(cachedContent.f138id));
+            contentValues.put("id", Integer.valueOf(cachedContent.f141id));
             contentValues.put(COLUMN_KEY, cachedContent.key);
             contentValues.put("metadata", byteArray);
             sQLiteDatabase.replaceOrThrow((String) Assertions.checkNotNull(this.tableName), null, contentValues);

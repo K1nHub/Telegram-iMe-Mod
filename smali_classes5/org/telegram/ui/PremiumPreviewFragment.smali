@@ -348,28 +348,28 @@
     .line 213
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    const-string v2, "premiumGradientBackground1"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackground1:I
 
-    const-string v3, "premiumGradientBackground2"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackground2:I
 
-    const-string v4, "premiumGradientBackground3"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackground3:I
 
-    const-string v5, "premiumGradientBackground4"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackground4:I
 
-    invoke-direct {v0, v2, v3, v4, v5}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIII)V
 
     iput-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     .line 298
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    const-string v2, "premiumGradient1"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
-    const-string v3, "premiumGradient2"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient2:I
 
-    const/4 v4, 0x0
+    const/4 v4, -0x1
 
-    invoke-direct {v0, v2, v3, v4, v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v2, v3, v4, v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIII)V
 
     iput-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment;->tiersGradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
@@ -759,7 +759,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_a
 
     .line 788
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -769,7 +769,7 @@
     .line 789
     instance-of v2, v1, Lorg/telegram/ui/LaunchActivity;
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_a
 
     .line 790
     check-cast v1, Lorg/telegram/ui/LaunchActivity;
@@ -777,11 +777,74 @@
     .line 792
     iget-object p3, p1, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
 
+    if-eqz p3, :cond_7
+
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->bot_url:Ljava/lang/String;
 
-    if-nez p3, :cond_6
+    if-nez p3, :cond_5
+
+    goto :goto_0
+
+    .line 800
+    :cond_5
+    invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p0
+
+    .line 801
+    invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string p3, "t.me"
+
+    invoke-virtual {p2, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_6
+
+    .line 802
+    invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string p3, "/$"
+
+    invoke-virtual {p2, p3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_6
+
+    invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p2, "/invoice/"
+
+    invoke-virtual {p0, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_6
+
+    .line 803
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/LaunchActivity;->setNavigateToPremiumBot(Z)V
+
+    .line 806
+    :cond_6
+    iget-object p0, p1, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
+
+    iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->bot_url:Ljava/lang/String;
+
+    invoke-static {v1, p0}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto :goto_1
 
     .line 793
+    :cond_7
+    :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -794,7 +857,7 @@
 
     const-string p3, "android.intent.action.VIEW"
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_8
 
     .line 794
     invoke-virtual {v1, v0}, Lorg/telegram/ui/LaunchActivity;->setNavigateToPremiumBot(Z)V
@@ -836,10 +899,10 @@
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/LaunchActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    goto :goto_0
+    goto :goto_1
 
     .line 796
-    :cond_5
+    :cond_8
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -850,7 +913,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_9
 
     .line 797
     new-instance p1, Landroid/content/Intent;
@@ -883,77 +946,20 @@
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/LaunchActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    goto :goto_0
-
-    .line 800
-    :cond_6
-    invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object p0
-
-    .line 801
-    invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string p3, "t.me"
-
-    invoke-virtual {p2, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_7
-
-    .line 802
-    invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string p3, "/$"
-
-    invoke-virtual {p2, p3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_7
-
-    invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string p2, "/invoice/"
-
-    invoke-virtual {p0, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_7
-
-    .line 803
-    invoke-virtual {v1, v0}, Lorg/telegram/ui/LaunchActivity;->setNavigateToPremiumBot(Z)V
-
-    .line 806
-    :cond_7
-    iget-object p0, p1, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
-
-    iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->bot_url:Ljava/lang/String;
-
-    invoke-static {v1, p0}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
-
-    :cond_8
-    :goto_0
+    :cond_9
+    :goto_1
     return-void
 
     .line 812
-    :cond_9
+    :cond_a
     sget-object p2, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT_DETAILS:Lcom/android/billingclient/api/ProductDetails;
 
-    if-nez p2, :cond_a
+    if-nez p2, :cond_b
 
     return-void
 
     .line 816
-    :cond_a
+    :cond_b
     invoke-virtual {p2}, Lcom/android/billingclient/api/ProductDetails;->getSubscriptionOfferDetails()Ljava/util/List;
 
     move-result-object p2
@@ -963,17 +969,17 @@
 
     move-result p2
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_c
 
     return-void
 
     .line 821
-    :cond_b
+    :cond_c
     invoke-virtual {p1}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getGooglePlayProductDetails()Lcom/android/billingclient/api/ProductDetails;
 
     move-result-object p2
 
-    if-nez p2, :cond_c
+    if-nez p2, :cond_d
 
     .line 822
     sget-object p2, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT_DETAILS:Lcom/android/billingclient/api/ProductDetails;
@@ -981,17 +987,17 @@
     invoke-virtual {p1, p2}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->setGooglePlayProductDetails(Lcom/android/billingclient/api/ProductDetails;)V
 
     .line 825
-    :cond_c
+    :cond_d
     invoke-virtual {p1}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getOfferDetails()Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
     move-result-object p2
 
-    if-nez p2, :cond_d
+    if-nez p2, :cond_e
 
     return-void
 
     .line 830
-    :cond_d
+    :cond_e
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
     move-result-object p2
@@ -3799,11 +3805,11 @@
 
     goto :goto_0
 
-    :cond_0
-    const-string v1, "premiumGradientBackgroundOverlay"
-
     .line 1668
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_0
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackgroundOverlay:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -3814,7 +3820,7 @@
     .line 1669
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -3831,7 +3837,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->titleView:Landroid/widget/TextView;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -3844,7 +3850,7 @@
 
     move-result-object v0
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -4167,10 +4173,10 @@
 
     new-array v8, v3, [I
 
-    const-string v4, "premiumGradient4"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient4:I
 
     .line 320
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -4178,19 +4184,19 @@
 
     aput v4, v8, v12
 
-    const-string v4, "premiumGradient3"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient3:I
 
     .line 321
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     aput v4, v8, v2
 
-    const-string v4, "premiumGradient2"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient2:I
 
     .line 322
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -4198,10 +4204,10 @@
 
     aput v4, v8, v5
 
-    const-string v4, "premiumGradient1"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
     .line 323
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -4209,10 +4215,10 @@
 
     aput v4, v8, v5
 
-    const-string v4, "premiumGradient0"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient0:I
 
     .line 324
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -4303,9 +4309,9 @@
     .line 340
     new-instance v5, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v6, "dialogBackground"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v7
 
@@ -4502,10 +4508,10 @@
 
     iput-object v3, v0, Lorg/telegram/ui/PremiumPreviewFragment;->buttonDivider:Landroid/view/View;
 
-    const-string v1, "divider"
-
     .line 616
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -4566,7 +4572,7 @@
     .line 622
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment;->buttonContainer:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 
@@ -4765,7 +4771,7 @@
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 14
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -4780,37 +4786,89 @@
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PremiumPreviewFragment$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/PremiumPreviewFragment;)V
 
-    const-string v1, "premiumGradient1"
+    const/16 v1, 0xd
 
-    const-string v2, "premiumGradient2"
+    new-array v1, v1, [I
 
-    const-string v3, "premiumGradient3"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
-    const-string v4, "premiumGradient4"
+    const/4 v3, 0x0
 
-    const-string v5, "premiumGradientBackground1"
+    aput v2, v1, v3
 
-    const-string v6, "premiumGradientBackground2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient2:I
 
-    const-string v7, "premiumGradientBackground3"
+    const/4 v3, 0x1
 
-    const-string v8, "premiumGradientBackground4"
+    aput v2, v1, v3
 
-    const-string v9, "premiumGradientBackgroundOverlay"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient3:I
 
-    const-string v10, "premiumStarGradient1"
+    const/4 v3, 0x2
 
-    const-string v11, "premiumStarGradient2"
+    aput v2, v1, v3
 
-    const-string v12, "premiumStartSmallStarsColor"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient4:I
 
-    const-string v13, "premiumStartSmallStarsColor2"
+    const/4 v3, 0x3
 
-    filled-new-array/range {v1 .. v13}, [Ljava/lang/String;
+    aput v2, v1, v3
 
-    move-result-object v1
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackground1:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[Ljava/lang/String;)Ljava/util/ArrayList;
+    const/4 v3, 0x4
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackground2:I
+
+    const/4 v3, 0x5
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackground3:I
+
+    const/4 v3, 0x6
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackground4:I
+
+    const/4 v3, 0x7
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBackgroundOverlay:I
+
+    const/16 v3, 0x8
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartGradient1:I
+
+    const/16 v3, 0x9
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartGradient2:I
+
+    const/16 v3, 0xa
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor:I
+
+    const/16 v3, 0xb
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor2:I
+
+    const/16 v3, 0xc
+
+    aput v2, v1, v3
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[I)Ljava/util/ArrayList;
 
     move-result-object v0
 

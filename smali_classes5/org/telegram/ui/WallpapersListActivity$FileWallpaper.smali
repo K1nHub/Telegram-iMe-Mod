@@ -30,16 +30,16 @@
 .method public constructor <init>(Ljava/lang/String;II)V
     .locals 0
 
-    .line 401
+    .line 402
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 402
+    .line 403
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->slug:Ljava/lang/String;
 
-    .line 403
+    .line 404
     iput p2, p0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->resId:I
 
-    .line 404
+    .line 405
     iput p3, p0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->thumbResId:I
 
     return-void
@@ -48,16 +48,16 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/io/File;Ljava/io/File;)V
     .locals 0
 
-    .line 390
+    .line 391
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 391
+    .line 392
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->slug:Ljava/lang/String;
 
-    .line 392
+    .line 393
     iput-object p2, p0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->path:Ljava/io/File;
 
-    .line 393
+    .line 394
     iput-object p3, p0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->originalPath:Ljava/io/File;
 
     return-void

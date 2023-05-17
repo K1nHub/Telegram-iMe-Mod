@@ -91,7 +91,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     goto :goto_4
 
@@ -125,7 +125,7 @@
     :goto_3
     if-eqz v1, :cond_5
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     goto :goto_4
 
@@ -139,13 +139,13 @@
 
     if-ne p1, v0, :cond_6
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     goto :goto_4
 
     .line 199
     :cond_6
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX_CELL:I
 
     :goto_4
     return p1
@@ -205,7 +205,7 @@
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 222
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     const/4 v3, 0x0
 
@@ -264,7 +264,7 @@
 
     .line 233
     :cond_1
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-ne v1, v2, :cond_3
 
@@ -282,8 +282,6 @@
 
     move-result v1
 
-    const-string v2, "windowBackgroundGrayShadow"
-
     if-ne p2, v1, :cond_2
 
     sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->isExtendedAvatarPreviewerEnabled:Z
@@ -297,7 +295,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {p2, v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -325,7 +325,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {p2, v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -345,7 +347,7 @@
 
     .line 246
     :cond_3
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne v1, v2, :cond_4
 
@@ -377,7 +379,7 @@
 
     .line 251
     :cond_4
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX_CELL:I
 
     if-ne v1, v2, :cond_5
 
@@ -445,7 +447,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 205
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p2, p1, :cond_0
 
@@ -463,7 +465,7 @@
 
     .line 206
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-ne p2, p1, :cond_1
 
@@ -481,9 +483,7 @@
 
     .line 207
     :cond_1
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
-
-    const-string v0, "windowBackgroundWhite"
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, p1, :cond_2
 
@@ -498,7 +498,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
     .line 208
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -519,7 +521,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckBoxCell;-><init>(Landroid/content/Context;)V
 
     .line 211
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

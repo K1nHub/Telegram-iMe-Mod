@@ -557,7 +557,7 @@
     :cond_1
     new-instance v0, Ljava/io/InterruptedIOException;
 
-    const-string v1, "timeout"
+    const-string/jumbo v1, "timeout"
 
     invoke-direct {v0, v1}, Ljava/io/InterruptedIOException;-><init>(Ljava/lang/String;)V
 

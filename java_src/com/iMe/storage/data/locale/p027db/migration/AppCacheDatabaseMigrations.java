@@ -8,18 +8,28 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class AppCacheDatabaseMigrations {
     public static final AppCacheDatabaseMigrations INSTANCE = new AppCacheDatabaseMigrations();
-    private static final Migration MIGRATION_2_3;
-    private static final Migration MIGRATION_3_4;
-    private static final Migration MIGRATION_4_5;
-    private static final Migration MIGRATION_5_6;
-    private static final Migration MIGRATION_6_7;
+    private static final AppCacheDatabaseMigrations$MIGRATION_2_3$1 MIGRATION_2_3;
+    private static final AppCacheDatabaseMigrations$MIGRATION_3_4$1 MIGRATION_3_4;
+    private static final AppCacheDatabaseMigrations$MIGRATION_4_5$1 MIGRATION_4_5;
+    private static final AppCacheDatabaseMigrations$MIGRATION_5_6$1 MIGRATION_5_6;
+    private static final AppCacheDatabaseMigrations$MIGRATION_6_7$1 MIGRATION_6_7;
+    private static final AppCacheDatabaseMigrations$MIGRATION_7_9$1 MIGRATION_7_9;
+    private static final AppCacheDatabaseMigrations$MIGRATION_9_10$1 MIGRATION_9_10;
     private static final Migration[] migrations;
 
     private AppCacheDatabaseMigrations() {
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v1, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_2_3$1] */
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_3_4$1] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_4_5$1] */
+    /* JADX WARN: Type inference failed for: r3v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_5_6$1] */
+    /* JADX WARN: Type inference failed for: r4v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_6_7$1] */
+    /* JADX WARN: Type inference failed for: r5v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_7_9$1] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_9_10$1] */
     static {
-        Migration migration = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_2_3$1
+        ?? r0 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_2_3$1
             @Override // androidx.room.migration.Migration
             public void migrate(SupportSQLiteDatabase database) {
                 Intrinsics.checkNotNullParameter(database, "database");
@@ -27,16 +37,16 @@ public final class AppCacheDatabaseMigrations {
                 database.execSQL("CREATE TABLE IF NOT EXISTS WalletTokenBalanceDb (tgUserId INTEGER NOT NULL, coinCode TEXT NOT NULL, total REAL NOT NULL, totalInDollars REAL NOT NULL, PRIMARY KEY(tgUserId, coinCode))");
             }
         };
-        MIGRATION_2_3 = migration;
-        Migration migration2 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_3_4$1
+        MIGRATION_2_3 = r0;
+        ?? r1 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_3_4$1
             @Override // androidx.room.migration.Migration
             public void migrate(SupportSQLiteDatabase database) {
                 Intrinsics.checkNotNullParameter(database, "database");
                 database.execSQL("DROP TABLE WalletTransactionDb");
             }
         };
-        MIGRATION_3_4 = migration2;
-        Migration migration3 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_4_5$1
+        MIGRATION_3_4 = r1;
+        ?? r2 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_4_5$1
             @Override // androidx.room.migration.Migration
             public void migrate(SupportSQLiteDatabase database) {
                 Intrinsics.checkNotNullParameter(database, "database");
@@ -44,8 +54,8 @@ public final class AppCacheDatabaseMigrations {
                 database.execSQL("ALTER TABLE WalletTokenBalanceDb ADD COLUMN ratePercentageChange24h REAL DEFAULT 0 NOT NULL");
             }
         };
-        MIGRATION_4_5 = migration3;
-        Migration migration4 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_5_6$1
+        MIGRATION_4_5 = r2;
+        ?? r3 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_5_6$1
             @Override // androidx.room.migration.Migration
             public void migrate(SupportSQLiteDatabase database) {
                 Intrinsics.checkNotNullParameter(database, "database");
@@ -53,8 +63,8 @@ public final class AppCacheDatabaseMigrations {
                 database.execSQL("CREATE TABLE IF NOT EXISTS WalletTokenBalanceDb (tgUserId INTEGER NOT NULL, coinCode TEXT NOT NULL, total REAL NOT NULL, totalInDollars REAL NOT NULL, rateToDollars REAL NOT NULL, ratePercentageChange24h REAL NOT NULL, networkType TEXT NOT NULL, PRIMARY KEY(tgUserId, coinCode, networkType))");
             }
         };
-        MIGRATION_5_6 = migration4;
-        Migration migration5 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_6_7$1
+        MIGRATION_5_6 = r3;
+        ?? r4 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_6_7$1
             @Override // androidx.room.migration.Migration
             public void migrate(SupportSQLiteDatabase database) {
                 Intrinsics.checkNotNullParameter(database, "database");
@@ -64,8 +74,27 @@ public final class AppCacheDatabaseMigrations {
                 database.execSQL("CREATE TABLE IF NOT EXISTS CatalogLanguageDb (id INTEGER NOT NULL, nativeTitle TEXT NOT NULL, title TEXT NOT NULL, PRIMARY KEY(id))");
             }
         };
-        MIGRATION_6_7 = migration5;
-        migrations = new Migration[]{migration, migration2, migration3, migration4, migration5};
+        MIGRATION_6_7 = r4;
+        ?? r5 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_7_9$1
+            @Override // androidx.room.migration.Migration
+            public void migrate(SupportSQLiteDatabase database) {
+                Intrinsics.checkNotNullParameter(database, "database");
+                database.execSQL("CREATE TABLE social (profileId INTEGER NOT NULL, social TEXT NOT NULL, iconUrl TEXT NOT NULL, socialPosition INTEGER NOT NULL, socialElementId TEXT NOT NULL, socialElementAvatarUrl TEXT NOT NULL, socialUserName TEXT NOT NULL, socialWebUrl TEXT NOT NULL, isActive INTEGER NOT NULL, beforeConnectMessage TEXT NOT NULL, PRIMARY KEY(profileId, social))");
+            }
+        };
+        MIGRATION_7_9 = r5;
+        ?? r6 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_9_10$1
+            @Override // androidx.room.migration.Migration
+            public void migrate(SupportSQLiteDatabase database) {
+                Intrinsics.checkNotNullParameter(database, "database");
+                database.execSQL("CREATE TABLE CloudAlbumDb_copy (userId INTEGER NOT NULL, albumId INTEGER NOT NULL, PRIMARY KEY(userId, albumId))");
+                database.execSQL("INSERT INTO CloudAlbumDb_copy (userId, albumId) SELECT userId, albumId FROM CloudAlbumDb");
+                database.execSQL("DROP TABLE CloudAlbumDb");
+                database.execSQL("ALTER TABLE CloudAlbumDb_copy RENAME TO CloudAlbumDb");
+            }
+        };
+        MIGRATION_9_10 = r6;
+        migrations = new Migration[]{r0, r1, r2, r3, r4, r5, r6};
     }
 
     public final Migration[] getMigrations() {

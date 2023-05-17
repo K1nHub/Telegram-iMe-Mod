@@ -76,7 +76,7 @@
     .line 46
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
-    const-string v1, "statsSaveQueue"
+    const-string/jumbo v1, "statsSaveQueue"
 
     invoke-direct {v0, v1}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;)V
 
@@ -246,7 +246,7 @@
 
     new-instance v8, Ljava/io/File;
 
-    const-string v9, "stats2.dat"
+    const-string/jumbo v9, "stats2.dat"
 
     invoke-direct {v8, v1, v9}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -543,7 +543,7 @@
     :goto_4
     if-eqz v1, :cond_c
 
-    const-string v1, "stats"
+    const-string/jumbo v1, "stats"
 
     if-nez p1, :cond_8
 

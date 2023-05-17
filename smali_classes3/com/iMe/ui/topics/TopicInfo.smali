@@ -107,15 +107,6 @@
     return v0
 .end method
 
-.method public final getColorResId()I
-    .locals 1
-
-    .line 8
-    iget v0, p0, Lcom/iMe/ui/topics/TopicInfo;->colorResId:I
-
-    return v0
-.end method
-
 .method public final getIconResId()I
     .locals 1
 

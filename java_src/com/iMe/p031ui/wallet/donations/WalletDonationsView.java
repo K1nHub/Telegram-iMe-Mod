@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: WalletDonationsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletDonationsView extends BaseView {
     void onDonationsAddressLoaded(String str);
 

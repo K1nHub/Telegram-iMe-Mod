@@ -7464,7 +7464,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "PRAGMA user_version = 116"
+    const-string v0, "PRAGMA user_version = 117"
 
     .line 1254
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -7477,7 +7477,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0x74
+    const/16 v0, 0x75
 
     :cond_a1
     return v0
@@ -7573,7 +7573,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const-string v7, "start recover database"
+    const-string/jumbo v7, "start recover database"
 
     .line 1282
     invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -7698,7 +7698,7 @@
 
     move-result v10
 
-    const/16 v11, 0x74
+    const/16 v11, 0x75
 
     if-eq v10, v11, :cond_0
 

@@ -101,7 +101,7 @@
     iput-object v0, p0, Lcom/iMe/services/FilteredContactsProcessingService;->contactsIds:Ljava/util/List;
 
     .line 32
-    sget v0, Lcom/iMe/common/IdFabric$ServiceNotifications;->contacts_processing:I
+    sget v0, Lcom/iMe/common/IdFabric$ServiceNotifications;->CONTACTS_PROCESSING:I
 
     iput v0, p0, Lcom/iMe/services/FilteredContactsProcessingService;->notificationChannelId:I
 

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/fork/controller/HiddenChatsController$$ExternalSyntheticLambda1;->f$1:Ljava/util/List;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/controller/HiddenChatsController;->$r8$lambda$zuIUAb8RfMC-uPq5VmRUST_aEA8(Lcom/iMe/fork/controller/HiddenChatsController;Ljava/util/List;)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/controller/HiddenChatsController;->$r8$lambda$fFtleZAQCBIioJoloOkZXV--1kk(Lcom/iMe/fork/controller/HiddenChatsController;Ljava/util/List;)V
 
     return-void
 .end method

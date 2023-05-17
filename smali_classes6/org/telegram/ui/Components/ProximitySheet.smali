@@ -212,9 +212,9 @@
     .line 96
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v8, "dialogBackground"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -402,10 +402,10 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v9, "dialogTextBlack"
-
     .line 165
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -660,9 +660,9 @@
     .line 246
     iget-object v1, v0, Lorg/telegram/ui/Components/ProximitySheet;->buttonTextView:Landroid/widget/TextView;
 
-    const-string v10, "featuredStickers_buttonText"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -694,15 +694,15 @@
     .line 250
     iget-object v1, v0, Lorg/telegram/ui/Components/ProximitySheet;->buttonTextView:Landroid/widget/TextView;
 
-    new-array v9, v2, [F
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    const/high16 v12, 0x40800000    # 4.0f
+    new-array v12, v2, [F
 
-    aput v12, v9, v4
+    const/high16 v13, 0x40800000    # 4.0f
 
-    const-string v12, "featuredStickers_addButton"
+    aput v13, v12, v4
 
-    invoke-static {v12, v9}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v9, v12}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v9
 
@@ -751,9 +751,9 @@
     .line 264
     iget-object v1, v0, Lorg/telegram/ui/Components/ProximitySheet;->infoTextView:Landroid/widget/TextView;
 
-    const-string v4, "dialogTextGray2"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 

@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 207
+    .line 208
     check-cast p1, Ljava/lang/Double;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$1;->invoke(Ljava/lang/Double;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 208
+    .line 209
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$1;->this$0:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
     invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
@@ -75,7 +75,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->access$setSelectedAmount$p(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;D)V
 
-    .line 209
+    .line 210
     iget-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$1;->this$0:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->access$mapProfitPrognosis(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;)Lorg/telegram/ui/StatisticActivity$ChartViewData;

@@ -24,7 +24,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/StickerCategoriesListView;)V
     .locals 0
 
-    .line 502
+    .line 506
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/StickerCategoriesListView;Lorg/telegram/ui/Components/StickerCategoriesListView$1;)V
     .locals 0
 
-    .line 502
+    .line 506
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;)V
 
     return-void
@@ -46,7 +46,7 @@
 .method public getItemCount()I
     .locals 2
 
-    .line 570
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$900(Lorg/telegram/ui/Components/StickerCategoriesListView;)[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
@@ -71,12 +71,12 @@
     :goto_0
     add-int/lit8 v0, v0, 0x1
 
-    .line 571
+    .line 575
     iget v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->lastItemCount:I
 
     if-eq v0, v1, :cond_2
 
-    .line 572
+    .line 576
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$500(Lorg/telegram/ui/Components/StickerCategoriesListView;)Landroid/view/View;
@@ -85,7 +85,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 573
+    .line 577
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$500(Lorg/telegram/ui/Components/StickerCategoriesListView;)Landroid/view/View;
@@ -94,7 +94,7 @@
 
     invoke-virtual {v1}, Landroid/view/View;->requestLayout()V
 
-    .line 575
+    .line 579
     :cond_1
     iput v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->lastItemCount:I
 
@@ -121,7 +121,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 582
+    .line 586
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -142,7 +142,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 3
 
-    .line 540
+    .line 544
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -159,7 +159,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 541
+    .line 545
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$900(Lorg/telegram/ui/Components/StickerCategoriesListView;)[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
@@ -170,12 +170,12 @@
 
     aget-object v0, v0, p2
 
-    .line 542
+    .line 546
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
-    .line 543
+    .line 547
     iget-object v2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$1000(Lorg/telegram/ui/Components/StickerCategoriesListView;)I
@@ -192,7 +192,7 @@
     :goto_0
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->set(Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;IZ)V
 
-    .line 544
+    .line 548
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$1100(Lorg/telegram/ui/Components/StickerCategoriesListView;)F
@@ -201,7 +201,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 545
+    .line 549
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$1100(Lorg/telegram/ui/Components/StickerCategoriesListView;)F
@@ -210,7 +210,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 546
+    .line 550
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$1100(Lorg/telegram/ui/Components/StickerCategoriesListView;)F
@@ -219,7 +219,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 547
+    .line 551
     invoke-virtual {p1}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->play()V
 
     :cond_1
@@ -231,7 +231,7 @@
 
     if-nez p2, :cond_0
 
-    .line 512
+    .line 516
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     new-instance p2, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter$1;
@@ -250,7 +250,7 @@
 
     goto :goto_0
 
-    .line 533
+    .line 537
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
@@ -262,7 +262,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/content/Context;)V
 
-    .line 535
+    .line 539
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -274,7 +274,7 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 4
 
-    .line 553
+    .line 557
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -283,17 +283,17 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 554
+    .line 558
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
-    .line 555
+    .line 559
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 556
+    .line 560
     iget-object v2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$1000(Lorg/telegram/ui/Components/StickerCategoriesListView;)I
@@ -314,7 +314,7 @@
     :goto_0
     invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->setSelected(ZZ)V
 
-    .line 557
+    .line 561
     invoke-virtual {v0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->play()V
 
     :cond_1

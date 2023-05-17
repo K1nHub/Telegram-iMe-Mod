@@ -34,7 +34,7 @@ import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 /* compiled from: MvpFragment.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class MvpFragment extends BaseFragment implements MvpDelegateHolder, KoinComponent, BaseView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(MvpFragment.class, "hintUtils", "getHintUtils()Lcom/iMe/utils/hints/HintUtils;", 0))};
     private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new MvpFragment$mvpBaseDelegate$2(this));

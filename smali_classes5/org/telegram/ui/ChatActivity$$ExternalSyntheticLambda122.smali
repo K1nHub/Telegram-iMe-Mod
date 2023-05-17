@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda122;->f$3:Lorg/telegram/ui/ChatActivity$PinnedMessageButton;
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$wQwZ_Cg4WoBc8gbW09mIDJErO6M(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$KeyboardButton;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/ChatActivity$PinnedMessageButton;Landroid/view/View;)Z
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$YI5B14ZI-eZNEIN7qKiXAPLWvcQ(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$KeyboardButton;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/ChatActivity$PinnedMessageButton;Landroid/view/View;)Z
 
     move-result p1
 

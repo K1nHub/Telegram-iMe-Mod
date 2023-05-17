@@ -14,18 +14,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzd extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzd> CREATOR = new zze();
-    @SafeParcelable.Field(getter = "getListenerAsBinder", m775id = 2, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getListenerAsBinder", m779id = 2, type = "android.os.IBinder")
     public final zzfa zza;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     public final IntentFilter[] zzb;
-    @SafeParcelable.Field(m775id = 4)
+    @SafeParcelable.Field(m779id = 4)
     public final String zzc;
-    @SafeParcelable.Field(m775id = 5)
+    @SafeParcelable.Field(m779id = 5)
     public final String zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzd(@SafeParcelable.Param(m774id = 2) IBinder iBinder, @SafeParcelable.Param(m774id = 3) IntentFilter[] intentFilterArr, @SafeParcelable.Param(m774id = 4) String str, @SafeParcelable.Param(m774id = 5) String str2) {
+    public zzd(@SafeParcelable.Param(m778id = 2) IBinder iBinder, @SafeParcelable.Param(m778id = 3) IntentFilter[] intentFilterArr, @SafeParcelable.Param(m778id = 4) String str, @SafeParcelable.Param(m778id = 5) String str2) {
         if (iBinder != null) {
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableListener");
             this.zza = queryLocalInterface instanceof zzfa ? (zzfa) queryLocalInterface : new zzey(iBinder);

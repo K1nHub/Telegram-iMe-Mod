@@ -21,7 +21,9 @@ public abstract class WrappedNativeVideoEncoder implements VideoEncoder {
 
     @Override // org.webrtc.VideoEncoder
     public /* synthetic */ VideoCodecStatus setRates(VideoEncoder.RateControlParameters rateControlParameters) {
-        return VideoEncoder.CC.$default$setRates(this, rateControlParameters);
+        VideoCodecStatus rateAllocation;
+        rateAllocation = setRateAllocation(rateControlParameters.bitrate, (int) Math.ceil(rateControlParameters.framerateFps));
+        return rateAllocation;
     }
 
     @Override // org.webrtc.VideoEncoder

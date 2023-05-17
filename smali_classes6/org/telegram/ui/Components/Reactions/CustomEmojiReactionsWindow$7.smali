@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
     .locals 0
 
-    .line 480
+    .line 482
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$7;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 483
+    .line 485
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$7;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->removeView()V

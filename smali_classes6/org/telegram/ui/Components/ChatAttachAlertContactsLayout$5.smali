@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;Z)V
     .locals 0
 
-    .line 523
+    .line 522
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$5;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 536
+    .line 535
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$700(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Landroid/animation/AnimatorSet;
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 537
+    .line 536
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     const/4 v0, 0x0
@@ -74,7 +74,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 526
+    .line 525
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$700(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Landroid/animation/AnimatorSet;
@@ -95,12 +95,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 527
+    .line 526
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$5;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 528
+    .line 527
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$800(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Landroid/view/View;
@@ -111,7 +111,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 530
+    .line 529
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 

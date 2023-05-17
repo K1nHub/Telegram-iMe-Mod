@@ -1619,10 +1619,10 @@
     .line 614
     invoke-virtual {v6, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string v7, "dialogTextBlack"
-
     .line 615
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -1676,10 +1676,10 @@
     .line 622
     invoke-virtual {v6, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v7, "dialogTextHint"
-
     .line 623
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextHint:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -1761,10 +1761,10 @@
 
     invoke-virtual {v6, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v11, "featuredStickers_buttonText"
-
     .line 635
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v11
 
@@ -1777,15 +1777,15 @@
 
     move-result v12
 
-    const-string v13, "featuredStickers_addButton"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v14
 
-    const-string v15, "windowBackgroundWhite"
+    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v15
 
@@ -1863,7 +1863,7 @@
     invoke-virtual {v12, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 648
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -1876,7 +1876,7 @@
 
     move-result v7
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 

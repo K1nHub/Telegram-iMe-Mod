@@ -30,7 +30,7 @@ public class VoIPPermissionActivity extends Activity {
         try {
             requestPermissions((String[]) arrayList.toArray(new String[0]), z ? 102 : 101);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 

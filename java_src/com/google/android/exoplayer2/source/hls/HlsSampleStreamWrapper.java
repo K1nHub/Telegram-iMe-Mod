@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.source.hls;
 import android.net.Uri;
 import android.os.Handler;
 import android.util.SparseIntArray;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.ParserException;
@@ -330,7 +330,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
         LoadErrorHandlingPolicy.FallbackSelection fallbackSelectionFor;
         if (this.chunkSource.obtainsChunksForPlaylist(uri)) {
             long j = (z || (fallbackSelectionFor = this.loadErrorHandlingPolicy.getFallbackSelectionFor(TrackSelectionUtil.createFallbackOptions(this.chunkSource.getTrackSelection()), loadErrorInfo)) == null || fallbackSelectionFor.type != 2) ? -9223372036854775807L : fallbackSelectionFor.exclusionDurationMs;
-            return this.chunkSource.onPlaylistError(uri, j) && j != C0470C.TIME_UNSET;
+            return this.chunkSource.onPlaylistError(uri, j) && j != C0475C.TIME_UNSET;
         }
         return true;
     }
@@ -480,7 +480,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
         Chunk chunk = hlsChunkHolder.chunk;
         Uri uri = hlsChunkHolder.playlistUrl;
         if (z) {
-            this.pendingResetPositionUs = C0470C.TIME_UNSET;
+            this.pendingResetPositionUs = C0475C.TIME_UNSET;
             this.loadingFinished = true;
             return true;
         } else if (chunk == null) {
@@ -586,7 +586,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
             loadErrorAction = Loader.DONT_RETRY;
         } else {
             long retryDelayMsFor = this.loadErrorHandlingPolicy.getRetryDelayMsFor(loadErrorInfo);
-            if (retryDelayMsFor != C0470C.TIME_UNSET) {
+            if (retryDelayMsFor != C0475C.TIME_UNSET) {
                 loadErrorAction = Loader.createRetryAction(false, retryDelayMsFor);
             } else {
                 loadErrorAction = Loader.DONT_RETRY_FATAL;
@@ -613,7 +613,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
         HlsSampleQueue[] hlsSampleQueueArr;
         this.sourceChunk = hlsMediaChunk;
         this.upstreamTrackFormat = hlsMediaChunk.trackFormat;
-        this.pendingResetPositionUs = C0470C.TIME_UNSET;
+        this.pendingResetPositionUs = C0475C.TIME_UNSET;
         this.mediaChunks.add(hlsMediaChunk);
         ImmutableList.Builder builder = ImmutableList.builder();
         for (HlsSampleQueue hlsSampleQueue : this.sampleQueues) {
@@ -961,7 +961,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
                 Format format = trackGroup.getFormat(i2);
                 formatArr[i2] = format.copyWithCryptoType(this.drmSessionManager.getCryptoType(format));
             }
-            trackGroupArr[i] = new TrackGroup(trackGroup.f123id, formatArr);
+            trackGroupArr[i] = new TrackGroup(trackGroup.f126id, formatArr);
         }
         return new TrackGroupArray(trackGroupArr);
     }
@@ -972,7 +972,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
     }
 
     private boolean isPendingReset() {
-        return this.pendingResetPositionUs != C0470C.TIME_UNSET;
+        return this.pendingResetPositionUs != C0475C.TIME_UNSET;
     }
 
     private boolean seekInsideBufferUs(long j) {
@@ -1009,7 +1009,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
             codecsCorrespondingToMimeType = MimeTypes.getCodecsCorrespondingToMimeType(format.codecs, format2.sampleMimeType);
             str = format2.sampleMimeType;
         }
-        Format.Builder codecs = format2.buildUpon().setId(format.f97id).setLabel(format.label).setLanguage(format.language).setSelectionFlags(format.selectionFlags).setRoleFlags(format.roleFlags).setAverageBitrate(z ? format.averageBitrate : -1).setPeakBitrate(z ? format.peakBitrate : -1).setCodecs(codecsCorrespondingToMimeType);
+        Format.Builder codecs = format2.buildUpon().setId(format.f100id).setLabel(format.label).setLanguage(format.language).setSelectionFlags(format.selectionFlags).setRoleFlags(format.roleFlags).setAverageBitrate(z ? format.averageBitrate : -1).setPeakBitrate(z ? format.peakBitrate : -1).setCodecs(codecsCorrespondingToMimeType);
         if (trackType == 2) {
             codecs.setWidth(format.width).setHeight(format.height).setFrameRate(format.frameRate);
         }
@@ -1049,7 +1049,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
     }
 
     private static DummyTrackOutput createFakeTrackOutput(int i, int i2) {
-        Log.m792w(TAG, "Unmapped track with id " + i + " of type " + i2);
+        Log.m796w(TAG, "Unmapped track with id " + i + " of type " + i2);
         return new DummyTrackOutput();
     }
 
@@ -1201,12 +1201,12 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
                 if (MimeTypes.APPLICATION_EMSG.equals(this.format.sampleMimeType)) {
                     EventMessage decode = this.emsgDecoder.decode(sampleAndTrimBuffer);
                     if (!emsgContainsExpectedWrappedFormat(decode)) {
-                        Log.m792w(HlsSampleStreamWrapper.TAG, String.format("Ignoring EMSG. Expected it to contain wrapped %s but actual wrapped format: %s", this.delegateFormat.sampleMimeType, decode.getWrappedMetadataFormat()));
+                        Log.m796w(HlsSampleStreamWrapper.TAG, String.format("Ignoring EMSG. Expected it to contain wrapped %s but actual wrapped format: %s", this.delegateFormat.sampleMimeType, decode.getWrappedMetadataFormat()));
                         return;
                     }
                     sampleAndTrimBuffer = new ParsableByteArray((byte[]) Assertions.checkNotNull(decode.getWrappedMetadataBytes()));
                 } else {
-                    Log.m792w(HlsSampleStreamWrapper.TAG, "Ignoring sample for unsupported format: " + this.format.sampleMimeType);
+                    Log.m796w(HlsSampleStreamWrapper.TAG, "Ignoring sample for unsupported format: " + this.format.sampleMimeType);
                     return;
                 }
             }

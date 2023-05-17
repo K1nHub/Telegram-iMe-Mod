@@ -346,7 +346,7 @@ public abstract class ParameterHandler<T> {
                 if (value == null) {
                     throw new IllegalArgumentException("Part map contained null value for key '" + key + "'.");
                 }
-                requestBuilder.addPart(Headers.m72of("Content-Disposition", "form-data; name=\"" + key + "\"", "Content-Transfer-Encoding", this.transferEncoding), this.valueConverter.convert(value));
+                requestBuilder.addPart(Headers.m76of("Content-Disposition", "form-data; name=\"" + key + "\"", "Content-Transfer-Encoding", this.transferEncoding), this.valueConverter.convert(value));
             }
         }
     }

@@ -7,7 +7,7 @@ import org.telegram.messenger.databinding.ForkContentWalletConnectSessionDetails
 import org.telegram.p044ui.ActionBar.BaseFragment;
 /* compiled from: WalletConnectSessionDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletConnectSessionDetailsBottomSheetDialog$binding$2 extends Lambda implements Function0<ForkContentWalletConnectSessionDetailsBinding> {
     final /* synthetic */ BaseFragment $fragment;
 

@@ -179,7 +179,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "suffix"
+    const-string/jumbo v0, "suffix"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -660,7 +660,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "string"
+    const-string/jumbo v0, "string"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1135,7 +1135,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "string"
+    const-string/jumbo v0, "string"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1652,7 +1652,7 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String).substring(startIndex)"
+    const-string/jumbo p1, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1667,7 +1667,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "suffix"
+    const-string/jumbo v0, "suffix"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1699,7 +1699,7 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1737,7 +1737,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "suffix"
+    const-string/jumbo v0, "suffix"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1795,7 +1795,7 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2501,11 +2501,65 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
+.end method
+
+.method public static final substringAfter(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
+    .locals 7
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "missingDelimiterValue"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x6
+
+    const/4 v6, 0x0
+
+    move-object v1, p0
+
+    move v2, p1
+
+    .line 448
+    invoke-static/range {v1 .. v6}, Lkotlin/text/StringsKt;->indexOf$default(Ljava/lang/CharSequence;CIZILjava/lang/Object;)I
+
+    move-result p1
+
+    const/4 v0, -0x1
+
+    if-ne p1, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    add-int/lit8 p1, p1, 0x1
+
+    .line 449
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    invoke-virtual {p0, p1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string/jumbo p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+
+    invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_0
+    return-object p2
 .end method
 
 .method public static final substringAfter(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -2562,12 +2616,30 @@
 
     move-result-object p2
 
-    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
     return-object p2
+.end method
+
+.method public static synthetic substringAfter$default(Ljava/lang/String;CLjava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+    .locals 0
+
+    and-int/lit8 p3, p3, 0x2
+
+    if-eqz p3, :cond_0
+
+    move-object p2, p0
+
+    .line 447
+    :cond_0
+    invoke-static {p0, p1, p2}, Lkotlin/text/StringsKt__StringsKt;->substringAfter(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static synthetic substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
@@ -2634,7 +2706,7 @@
 
     move-result-object p2
 
-    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2702,7 +2774,7 @@
 
     move-result-object p2
 
-    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2756,7 +2828,7 @@
 
     move-result-object p2
 
-    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

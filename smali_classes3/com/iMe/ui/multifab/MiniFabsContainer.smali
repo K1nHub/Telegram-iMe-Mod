@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMiniFabsContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,99:1\n1855#2,2:100\n205#3,4:102\n205#3,4:106\n*S KotlinDebug\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n*L\n38#1:100,2\n47#1:102,4\n51#1:106,4\n*E\n"
+    value = "SMAP\nMiniFabsContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,99:1\n1855#2,2:100\n219#3,4:102\n219#3,4:106\n*S KotlinDebug\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n*L\n38#1:100,2\n47#1:102,4\n51#1:106,4\n*E\n"
 .end annotation
 
 
@@ -95,8 +95,12 @@
     .line 30
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
+    const/4 p2, 0x0
+
+    const/4 v0, 0x0
+
     .line 31
-    invoke-static {p0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {p0, p2, p1, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     return-void
 .end method
@@ -123,14 +127,22 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    const/16 v1, 0x2b
-
-    const-string v2, "chats_actionBackground"
-
-    const-string v3, "chats_actionPressedBackground"
-
     .line 71
-    invoke-static {v1, v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorCircleDrawable(ILjava/lang/String;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v1
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionPressedBackground:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
+
+    const/16 v3, 0x2b
+
+    invoke-static {v3, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorCircleDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -139,9 +151,9 @@
     .line 72
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chats_actionIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionIcon:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -266,7 +278,7 @@
 .end method
 
 .method private static final show$lambda$4$lambda$2(ZLcom/iMe/ui/multifab/MiniFabsContainer;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "this$0"
 
@@ -274,15 +286,21 @@
 
     if-eqz p0, :cond_0
 
+    const/4 p0, 0x0
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
     .line 57
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {p1, p0, v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     :cond_0
     return-void
 .end method
 
 .method private static final show$lambda$4$lambda$3(ZLcom/iMe/ui/multifab/MiniFabsContainer;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "this$0"
 
@@ -290,8 +308,14 @@
 
     if-nez p0, :cond_0
 
+    const/4 p0, 0x0
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
     .line 58
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {p1, p0, v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     :cond_0
     return-void
@@ -389,7 +413,7 @@
 .method public final setScale(F)V
     .locals 4
 
-    .line 205
+    .line 219
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -399,7 +423,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 206
+    .line 220
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -422,7 +446,7 @@
 .method public final show(Z)V
     .locals 5
 
-    .line 205
+    .line 219
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -432,7 +456,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 206
+    .line 220
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2

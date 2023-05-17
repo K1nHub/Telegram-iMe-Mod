@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.Premium.StarParticlesView;
@@ -57,7 +57,7 @@ public class PremiumLockIconView extends ImageView {
         this.shaderCrossfadeProgress = 1.0f;
         this.type = i;
         this.resourcesProvider = resourcesProvider;
-        setImageResource(i == TYPE_REACTIONS ? C3242R.C3244drawable.msg_premium_lock2 : C3242R.C3244drawable.msg_mini_premiumlock);
+        setImageResource(i == TYPE_REACTIONS ? C3290R.C3292drawable.msg_premium_lock2 : C3290R.C3292drawable.msg_mini_premiumlock);
         if (i == TYPE_REACTIONS) {
             StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(5);
             this.starParticles = drawable;
@@ -80,11 +80,11 @@ public class PremiumLockIconView extends ImageView {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
             this.path.addCircle(rectF.width() / 2.0f, rectF.centerY(), rectF.width() / 2.0f, Path.Direction.CW);
-            rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.m51dp(2.5f), (getMeasuredHeight() / 2.0f) + AndroidUtilities.dpf2(5.7f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
-            this.path.addRoundRect(rectF, AndroidUtilities.m51dp(2.0f), AndroidUtilities.m51dp(2.0f), Path.Direction.CW);
+            rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.m55dp(2.5f), (getMeasuredHeight() / 2.0f) + AndroidUtilities.dpf2(5.7f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
+            this.path.addRoundRect(rectF, AndroidUtilities.m55dp(2.0f), AndroidUtilities.m55dp(2.0f), Path.Direction.CW);
             this.path.close();
             this.starParticles.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-            this.starParticles.rect.inset(AndroidUtilities.m50dp(6), AndroidUtilities.m50dp(6));
+            this.starParticles.rect.inset(AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6));
             return;
         }
         updateGradient();
@@ -118,7 +118,7 @@ public class PremiumLockIconView extends ImageView {
             if (this.currentColor != 0) {
                 canvas.drawPath(this.path, this.paint);
             } else {
-                PremiumGradient.getInstance().updateMainGradientMatrix(0, 0, getMeasuredWidth(), getMeasuredHeight(), -AndroidUtilities.m50dp(24), BitmapDescriptorFactory.HUE_RED);
+                PremiumGradient.getInstance().updateMainGradientMatrix(0, 0, getMeasuredWidth(), getMeasuredHeight(), -AndroidUtilities.m54dp(24), BitmapDescriptorFactory.HUE_RED);
                 canvas.drawPath(this.path, PremiumGradient.getInstance().getMainGradientPaint());
             }
             if (this.cellFlickerDrawable == null) {
@@ -210,8 +210,9 @@ public class PremiumLockIconView extends ImageView {
             fArr[2] = 0.7f;
         }
         int HSVToColor = Color.HSVToColor(fArr);
-        int blendARGB = ColorUtils.blendARGB(HSVToColor, Theme.getColor("windowBackgroundWhite", this.resourcesProvider), 0.5f);
-        int blendARGB2 = ColorUtils.blendARGB(HSVToColor, Theme.getColor("windowBackgroundWhite", this.resourcesProvider), 0.4f);
+        int i = Theme.key_windowBackgroundWhite;
+        int blendARGB = ColorUtils.blendARGB(HSVToColor, Theme.getColor(i, this.resourcesProvider), 0.5f);
+        int blendARGB2 = ColorUtils.blendARGB(HSVToColor, Theme.getColor(i, this.resourcesProvider), 0.4f);
         if (this.shader != null && this.color1 == blendARGB2 && this.color2 == blendARGB) {
             return;
         }
@@ -257,7 +258,7 @@ public class PremiumLockIconView extends ImageView {
 
     public void setLocked(boolean z) {
         if (this.type != TYPE_REACTIONS) {
-            setImageResource(z ? C3242R.C3244drawable.msg_mini_premiumlock : C3242R.C3244drawable.msg_mini_stickerstar);
+            setImageResource(z ? C3290R.C3292drawable.msg_mini_premiumlock : C3290R.C3292drawable.msg_mini_stickerstar);
         }
     }
 }

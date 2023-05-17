@@ -12,11 +12,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzy extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzy> CREATOR = new zzz();
-    @SafeParcelable.Field(getter = "getSessionId", m775id = 1)
+    @SafeParcelable.Field(getter = "getSessionId", m779id = 1)
     private final long zza;
 
     @SafeParcelable.Constructor
-    public zzy(@SafeParcelable.Param(m774id = 1) long j) {
+    public zzy(@SafeParcelable.Param(m778id = 1) long j) {
         this.zza = ((Long) Preconditions.checkNotNull(Long.valueOf(j))).longValue();
     }
 

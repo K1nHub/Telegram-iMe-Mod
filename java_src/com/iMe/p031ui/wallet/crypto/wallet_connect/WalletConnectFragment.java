@@ -52,14 +52,14 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.databinding.ForkFragmentWalletConnectBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenu;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -204,10 +204,13 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
         };
-        NestedScrollView root = getBinding().getRoot();
+        LinearLayout linearLayout = getBinding().linearSessions;
         int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_windowBackgroundWhite;
+        NestedScrollView root = getBinding().getRoot();
+        int i3 = ThemeDescription.FLAG_BACKGROUND;
         final WalletConnectSessionsRecycleAdapter sessionsAdapter = getSessionsAdapter();
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().linearSessions, ThemeDescription.FLAG_BACKGROUND, null, null, null, themeDescriptionDelegate, "windowBackgroundWhite"), new ThemeDescription(getBinding().linearAddSession, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getBinding().buttonConnect, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, null, null, null, themeDescriptionDelegate, "featuredStickers_addButton"), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, themeDescriptionDelegate, "windowBackgroundWhiteBlackText"), new ThemeDescription(getBinding().textSessionsTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteBlueHeader"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(root, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$$ExternalSyntheticLambda4
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(linearLayout, i, null, null, null, themeDescriptionDelegate, i2), new ThemeDescription(getBinding().linearAddSession, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2), new ThemeDescription(getBinding().buttonConnect, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_addButton), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, themeDescriptionDelegate, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getBinding().textSessionsTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(root, i3, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$$ExternalSyntheticLambda4
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletConnectSessionsRecycleAdapter.this.notifyDataSetChanged();
@@ -217,18 +220,18 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.wallet_connect_title));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.createMenu();
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_connect_title));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.createMenu();
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletConnectPresenter presenter;
                 if (i == -1) {
@@ -239,27 +242,31 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
                 }
             }
         });
-        ActionBarMenu createMenu = c3306ActionBar.createMenu();
+        ActionBarMenu createMenu = c3356ActionBar.createMenu();
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
         ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = createMenu.addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3$lambda$2$lambda$1, "setupActionBar$lambda$3$lambda$2$lambda$1");
-        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$3$lambda$2$lambda$1, AndroidUtilities.m50dp(14));
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$3$lambda$2$lambda$1, AndroidUtilities.m54dp(14));
         setupActionBar$lambda$3$lambda$2$lambda$1.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
     private final void setupColors() {
         ForkFragmentWalletConnectBinding binding = getBinding();
-        binding.getRoot().setBackgroundColor(getThemedColor("windowBackgroundGray"));
-        binding.linearAddSession.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
-        binding.linearSessions.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
-        binding.textDescription.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        binding.buttonDisconnectAll.setColors("windowBackgroundWhiteRedText2", "windowBackgroundWhiteRedText2");
+        binding.getRoot().setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
+        LinearLayout linearLayout = binding.linearAddSession;
+        int i = Theme.key_windowBackgroundWhite;
+        linearLayout.setBackgroundColor(getThemedColor(i));
+        binding.linearSessions.setBackgroundColor(getThemedColor(i));
+        binding.textDescription.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
+        TextCell textCell = binding.buttonDisconnectAll;
+        int i2 = Theme.key_text_RedRegular;
+        textCell.setColors(i2, i2);
         AppCompatTextView setupColors$lambda$5$lambda$4 = binding.textSessionsTitle;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$4, "setupColors$lambda$5$lambda$4");
         com.iMe.utils.extentions.common.ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$4);
-        setupColors$lambda$5$lambda$4.setTextColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
+        setupColors$lambda$5$lambda$4.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlueHeader));
     }
 
     private final void setupListeners() {
@@ -319,7 +326,9 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void updateAnimationColors() {
-        this.colors = new int[]{3355443, getThemedColor("windowBackgroundWhiteBlackText"), 16777215, getThemedColor("windowBackgroundWhite"), 16776701, getThemedColor("windowBackgroundWhite"), 5285866, getThemedColor("featuredStickers_addButton"), 2170912, getThemedColor("windowBackgroundWhiteBlackText")};
+        int i = Theme.key_windowBackgroundWhiteBlackText;
+        int i2 = Theme.key_windowBackgroundWhite;
+        this.colors = new int[]{3355443, getThemedColor(i), 16777215, getThemedColor(i2), 16776701, getThemedColor(i2), 5285866, getThemedColor(Theme.key_featuredStickers_addButton), 2170912, getThemedColor(i)};
         getBinding().imageHeader.replaceColors(this.colors);
     }
 
@@ -336,22 +345,22 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         repeat = StringsKt__StringsJVMKt.repeat(" ", 2);
         spannableStringBuilder.append((CharSequence) repeat);
-        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3242R.C3244drawable.msg_mini_qr);
+        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3290R.C3292drawable.msg_mini_qr);
         Intrinsics.checkNotNull(drawable);
         spannableStringBuilder.setSpan(new ColoredImageSpan(drawable), 0, 1, 0);
-        spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m50dp(8)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3242R.string.wallet_connect_new_connection));
+        spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(8)), 1, 2, 0);
+        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3290R.string.wallet_connect_new_connection));
         bigActionButton.setText(spannableStringBuilder);
-        bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed")));
+        bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
         RLottieImageView rLottieImageView = binding.imageHeader;
         updateAnimationColors();
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3242R.raw.fork_wallet_connect, 300, 170, this.colors);
+        rLottieImageView.setAnimation(C3290R.raw.fork_wallet_connect, 300, 170, this.colors);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textSessionsTitle.setText(getResourceManager().getString(C3242R.string.wallet_connect_active_sessions));
-        binding.textDescription.setText(getResourceManager().getString(C3242R.string.wallet_connect_description));
-        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3242R.string.wallet_connect_terminate_all), C3242R.C3244drawable.msg_block2, false);
+        binding.textSessionsTitle.setText(getResourceManager().getString(C3290R.string.wallet_connect_active_sessions));
+        binding.textDescription.setText(getResourceManager().getString(C3290R.string.wallet_connect_description));
+        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3290R.string.wallet_connect_terminate_all), C3290R.C3292drawable.msg_block2, false);
     }
 
     private final void openQRScan() {

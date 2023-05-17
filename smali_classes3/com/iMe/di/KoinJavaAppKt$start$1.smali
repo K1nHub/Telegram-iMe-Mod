@@ -79,7 +79,15 @@
     invoke-static {p1, v0, v1, v0}, Lorg/koin/android/ext/koin/KoinExtKt;->androidLogger$default(Lorg/koin/core/KoinApplication;Lorg/koin/core/logger/Level;ILjava/lang/Object;)Lorg/koin/core/KoinApplication;
 
     .line 15
+    invoke-static {}, Lcom/iMe/di/FeaturesComponentKt;->getFeatureModules()Ljava/util/List;
+
+    move-result-object v0
+
     invoke-static {}, Lcom/iMe/storage/data/di/DataComponentKt;->getDataModules()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v0
 

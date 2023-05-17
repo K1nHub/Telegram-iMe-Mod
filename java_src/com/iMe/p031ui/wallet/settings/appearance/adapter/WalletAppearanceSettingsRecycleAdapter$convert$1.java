@@ -5,6 +5,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.Switch;
 /* compiled from: WalletAppearanceSettingsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.settings.appearance.adapter.WalletAppearanceSettingsRecycleAdapter$convert$1 */
@@ -29,6 +30,9 @@ final class WalletAppearanceSettingsRecycleAdapter$convert$1 extends Lambda impl
     public final void invoke2(Switch applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         applyForView.setChecked(this.$item.isEnabled(), false);
-        applyForView.setColors("switchTrack", "switchTrackChecked", "windowBackgroundWhite", "windowBackgroundWhite");
+        int i = Theme.key_switchTrack;
+        int i2 = Theme.key_switchTrackChecked;
+        int i3 = Theme.key_windowBackgroundWhite;
+        applyForView.setColors(i, i2, i3, i3);
     }
 }

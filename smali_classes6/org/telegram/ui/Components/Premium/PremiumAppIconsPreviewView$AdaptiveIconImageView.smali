@@ -79,11 +79,11 @@
     .line 138
     iput p2, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
-    :cond_1
-    const-string p2, "premiumStartSmallStarsColor2"
-
     .line 140
-    iput-object p2, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:Ljava/lang/String;
+    :cond_1
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor2:I
+
+    iput p2, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
     .line 141
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->init()V

@@ -129,7 +129,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
         this.type = i2;
         this.svgIcon = svgDrawable;
         this.phoneFrame1.setColor(-16777216);
-        this.phoneFrame2.setColor(ColorUtils.blendARGB(Theme.getColor("premiumGradient2"), -16777216, 0.5f));
+        this.phoneFrame2.setColor(ColorUtils.blendARGB(Theme.getColor(Theme.key_premiumGradient2), -16777216, 0.5f));
         this.imageReceiver.setLayerNum(Integer.MAX_VALUE);
         setVideo();
         if (i2 == 1) {
@@ -150,11 +150,11 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                 drawable.size2 = 16;
                 drawable.size3 = 15;
             }
-            drawable.f1715k3 = 0.98f;
-            drawable.f1714k2 = 0.98f;
-            drawable.f1713k1 = 0.98f;
+            drawable.f1722k3 = 0.98f;
+            drawable.f1721k2 = 0.98f;
+            drawable.f1720k1 = 0.98f;
             drawable.speedScale = 4.0f;
-            drawable.colorKey = "premiumStartSmallStarsColor2";
+            drawable.colorKey = Theme.key_premiumStartSmallStarsColor2;
             drawable.init();
         } else if (i2 == 2) {
             SpeedLineParticles$Drawable speedLineParticles$Drawable = new SpeedLineParticles$Drawable(200);
@@ -173,13 +173,13 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             }
             StarParticlesView.Drawable drawable3 = new StarParticlesView.Drawable(i3);
             this.starDrawable = drawable3;
-            drawable3.colorKey = "premiumStartSmallStarsColor2";
+            drawable3.colorKey = Theme.key_premiumStartSmallStarsColor2;
             drawable3.size1 = 8;
             drawable3.size1 = 6;
             drawable3.size1 = 4;
-            drawable3.f1715k3 = 0.98f;
-            drawable3.f1714k2 = 0.98f;
-            drawable3.f1713k1 = 0.98f;
+            drawable3.f1722k3 = 0.98f;
+            drawable3.f1721k2 = 0.98f;
+            drawable3.f1720k1 = 0.98f;
             drawable3.useRotate = true;
             drawable3.speedScale = 4.0f;
             drawable3.checkBounds = true;
@@ -205,8 +205,8 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                 } else {
                     AndroidUtilities.rectTmp.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), (int) (getMeasuredHeight() + VideoScreenPreview.this.roundRadius));
                 }
-                float m50dp = VideoScreenPreview.this.roundRadius - AndroidUtilities.m50dp(3);
-                this.clipPath.addRoundRect(AndroidUtilities.rectTmp, m50dp, m50dp, Path.Direction.CW);
+                float m54dp = VideoScreenPreview.this.roundRadius - AndroidUtilities.m54dp(3);
+                this.clipPath.addRoundRect(AndroidUtilities.rectTmp, m54dp, m54dp, Path.Direction.CW);
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -341,14 +341,14 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             if (matrixParticlesDrawable != null) {
                 matrixParticlesDrawable.drawingRect.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 this.matrixParticlesDrawable.excludeRect.set(AndroidUtilities.rectTmp);
-                this.matrixParticlesDrawable.excludeRect.inset(AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(16));
+                this.matrixParticlesDrawable.excludeRect.inset(AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(16));
             }
             StarParticlesView.Drawable drawable = this.starDrawable;
             if (drawable != null) {
                 int i5 = this.type;
                 if (i5 == 6 || i5 == 9 || i5 == 3 || i5 == 7 || i5 == 11 || i5 == 4) {
                     drawable.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-                    this.starDrawable.rect.inset(AndroidUtilities.m50dp(30), AndroidUtilities.m50dp(30));
+                    this.starDrawable.rect.inset(AndroidUtilities.m54dp(30), AndroidUtilities.m54dp(30));
                 } else {
                     RectF rectF = AndroidUtilities.rectTmp;
                     float width = (int) (rectF.width() * 0.4f);
@@ -357,13 +357,13 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                 }
                 this.starDrawable.resetPositions();
                 this.starDrawable.excludeRect.set(AndroidUtilities.rectTmp);
-                this.starDrawable.excludeRect.inset(AndroidUtilities.m50dp(10), AndroidUtilities.m50dp(10));
+                this.starDrawable.excludeRect.inset(AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10));
             }
             SpeedLineParticles$Drawable speedLineParticles$Drawable = this.speedLinesDrawable;
             if (speedLineParticles$Drawable != null) {
                 speedLineParticles$Drawable.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
                 this.speedLinesDrawable.screenRect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-                this.speedLinesDrawable.rect.inset(AndroidUtilities.m50dp(100), AndroidUtilities.m50dp(100));
+                this.speedLinesDrawable.rect.inset(AndroidUtilities.m54dp(100), AndroidUtilities.m54dp(100));
                 this.speedLinesDrawable.rect.offset(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() * 0.1f);
                 this.speedLinesDrawable.resetPositions();
             }
@@ -371,7 +371,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             if (drawable2 != null) {
                 drawable2.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
                 this.helloParticlesDrawable.screenRect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-                this.helloParticlesDrawable.rect.inset(AndroidUtilities.m50dp(0), getMeasuredHeight() * 0.1f);
+                this.helloParticlesDrawable.rect.inset(AndroidUtilities.m54dp(0), getMeasuredHeight() * 0.1f);
                 this.helloParticlesDrawable.resetPositions();
             }
         }
@@ -432,10 +432,10 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             AndroidUtilities.rectTmp.set(measuredWidth, getMeasuredHeight() - measuredHeight, getMeasuredWidth() - measuredWidth, getMeasuredHeight() + this.roundRadius);
         }
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.inset(-AndroidUtilities.m50dp(3), -AndroidUtilities.m50dp(3));
-        rectF.inset(-AndroidUtilities.m50dp(3), -AndroidUtilities.m50dp(3));
-        canvas.drawRoundRect(rectF, this.roundRadius + AndroidUtilities.m50dp(3), this.roundRadius + AndroidUtilities.m50dp(3), this.phoneFrame2);
-        rectF.inset(AndroidUtilities.m50dp(3), AndroidUtilities.m50dp(3));
+        rectF.inset(-AndroidUtilities.m54dp(3), -AndroidUtilities.m54dp(3));
+        rectF.inset(-AndroidUtilities.m54dp(3), -AndroidUtilities.m54dp(3));
+        canvas.drawRoundRect(rectF, this.roundRadius + AndroidUtilities.m54dp(3), this.roundRadius + AndroidUtilities.m54dp(3), this.phoneFrame2);
+        rectF.inset(AndroidUtilities.m54dp(3), AndroidUtilities.m54dp(3));
         float f5 = this.roundRadius;
         canvas.drawRoundRect(rectF, f5, f5, this.phoneFrame1);
         if (this.fromTop) {
@@ -443,11 +443,11 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
         } else {
             rectF.set(measuredWidth, getMeasuredHeight() - measuredHeight, getMeasuredWidth() - measuredWidth, getMeasuredHeight());
         }
-        float m50dp = this.roundRadius - AndroidUtilities.m50dp(3);
-        this.roundRadius = m50dp;
+        float m54dp = this.roundRadius - AndroidUtilities.m54dp(3);
+        this.roundRadius = m54dp;
         RoundedBitmapDrawable roundedBitmapDrawable = this.roundedBitmapDrawable;
         if (roundedBitmapDrawable != null) {
-            roundedBitmapDrawable.setCornerRadius(m50dp);
+            roundedBitmapDrawable.setCornerRadius(m54dp);
         }
         CellFlickerDrawable.DrawableInterface drawableInterface = this.cellFlickerDrawable;
         if (drawableInterface != null) {
@@ -470,7 +470,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
         if (this.fromTop) {
             return;
         }
-        canvas.drawCircle(this.imageReceiver.getCenterX(), this.imageReceiver.getImageY() + AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(6), this.phoneFrame1);
+        canvas.drawCircle(this.imageReceiver.getCenterX(), this.imageReceiver.getImageY() + AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(6), this.phoneFrame1);
     }
 
     @Override // org.telegram.p044ui.Components.Premium.PagerHeaderView
@@ -543,6 +543,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             drawable.recycle();
             this.helloParticlesDrawable = null;
         }
+        stopVideoPlayer();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -646,7 +647,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                     sb.append("?account=");
                     sb.append(this.currentAccount);
                     sb.append("&id=");
-                    sb.append(this.document.f1435id);
+                    sb.append(this.document.f1441id);
                     sb.append("&hash=");
                     sb.append(this.document.access_hash);
                     sb.append("&dc=");

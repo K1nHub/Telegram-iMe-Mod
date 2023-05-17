@@ -57,7 +57,7 @@
 
 # virtual methods
 .method protected convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;)V
-    .locals 6
+    .locals 4
 
     const-string v0, "holder"
 
@@ -76,56 +76,53 @@
 
     move-result-object p1
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [I
-
     .line 24
-    sget v2, Lorg/telegram/messenger/R$id;->text_name:I
+    sget v0, Lorg/telegram/messenger/R$id;->text_name:I
 
-    aput v2, v0, v1
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    sget v3, Lorg/telegram/messenger/R$id;->text_address:I
-
-    const/4 v4, 0x1
-
-    aput v3, v0, v4
-
-    const-string v5, "windowBackgroundWhiteBlackText"
-
-    invoke-static {p1, v5, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/String;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
-
-    new-array v0, v4, [I
-
-    aput v2, v0, v1
 
     .line 25
-    invoke-static {p1, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    sget v3, Lorg/telegram/messenger/R$id;->text_address:I
+
+    invoke-static {p1, v3, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
+    const/4 v2, 0x1
+
+    new-array v2, v2, [I
+
+    aput v0, v2, v1
+
     .line 26
-    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->getTitleResId()I
-
-    move-result v1
-
-    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v2, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 27
+    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/adapter/BlockchainsWalletsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->getTitleResId()I
+
+    move-result v2
+
+    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 28
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;->getAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -134,7 +131,7 @@
 
     move-result-object p1
 
-    .line 28
+    .line 29
     sget v0, Lorg/telegram/messenger/R$id;->image_icon:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/BlockchainWalletItem;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -149,26 +146,26 @@
 
     move-result-object p1
 
-    .line 29
+    .line 30
     sget p2, Lorg/telegram/messenger/R$id;->image_info:I
 
-    const-string v0, "actionBarActionModeDefaultIcon"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultIcon:I
 
-    invoke-static {p1, p2, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 30
-    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, p2, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 31
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 32
     sget p2, Lorg/telegram/messenger/R$id;->view_divider:I
 
-    const-string v0, "divider"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    invoke-static {p1, p2, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedBackgroundColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, p2, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedBackgroundColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
 .end method

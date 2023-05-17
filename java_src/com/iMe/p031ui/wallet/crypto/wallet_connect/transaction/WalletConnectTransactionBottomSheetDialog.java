@@ -22,14 +22,15 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectTransactionBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: WalletConnectTransactionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSheet implements WalletConnectTransactionView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletConnectTransactionBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletConnectTransactionBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -148,10 +149,10 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(peerUrl, "peerUrl");
         ForkContentWalletConnectTransactionBinding binding = getBinding();
-        binding.textNetwork.setTextAndValue(getResourceManager().getString(C3242R.string.wallet_connect_session_details_network), network, true);
-        binding.textFrom.setTextAndValue(getResourceManager().getString(C3242R.string.wallet_connect_transaction_from), from, true);
-        binding.textTo.setTextAndValue(getResourceManager().getString(C3242R.string.wallet_connect_transaction_to), to, true);
-        binding.textPeerUrl.setTextAndValue(getResourceManager().getString(C3242R.string.wallet_connect_transaction_dapp), peerUrl, true);
+        binding.textNetwork.setTextAndValue(getResourceManager().getString(C3290R.string.wallet_connect_session_details_network), network, true);
+        binding.textFrom.setTextAndValue(getResourceManager().getString(C3290R.string.wallet_connect_transaction_from), from, true);
+        binding.textTo.setTextAndValue(getResourceManager().getString(C3290R.string.wallet_connect_transaction_to), to, true);
+        binding.textPeerUrl.setTextAndValue(getResourceManager().getString(C3290R.string.wallet_connect_transaction_dapp), peerUrl, true);
         binding.textTransactionAmount.setText(transactionAmount);
     }
 
@@ -160,13 +161,13 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(feeType, "feeType");
         FeeView showFee$lambda$1 = getBinding().feeView;
         Intrinsics.checkNotNullExpressionValue(showFee$lambda$1, "showFee$lambda$1");
-        ViewExtKt.visible(showFee$lambda$1);
+        ViewExtKt.visible$default(showFee$lambda$1, false, 1, null);
         showFee$lambda$1.init(this.fragment, this, feeType);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView
     public void onTransactionSuccess() {
-        showToast(getResourceManager().getString(C3242R.string.wallet_connect_transaction_success));
+        showToast(getResourceManager().getString(C3290R.string.wallet_connect_transaction_success));
         dismiss();
     }
 
@@ -180,26 +181,26 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
         ForkContentWalletConnectTransactionBinding binding = getBinding();
         binding.buttonProcess.applyColors();
         ActionBarMenuItem setupColors$lambda$5$lambda$2 = binding.buttonClose;
-        setupColors$lambda$5$lambda$2.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
+        setupColors$lambda$5$lambda$2.setIconColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayIcon));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$2, "setupColors$lambda$5$lambda$2");
         ViewExtKt.setCircleRippleBackground(setupColors$lambda$5$lambda$2);
         AppCompatTextView setupColors$lambda$5$lambda$3 = binding.textTitle;
-        setupColors$lambda$5$lambda$3.setTextColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
+        setupColors$lambda$5$lambda$3.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlueHeader));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$3, "setupColors$lambda$5$lambda$3");
         ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$3);
         AppCompatTextView setupColors$lambda$5$lambda$4 = binding.textTransactionAmount;
-        setupColors$lambda$5$lambda$4.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+        setupColors$lambda$5$lambda$4.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$4, "setupColors$lambda$5$lambda$4");
         ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$4);
     }
 
     private final void setupViews() {
         ForkContentWalletConnectTransactionBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3242R.string.wallet_connect_transaction_title));
+        binding.textTitle.setText(getResourceManager().getString(C3290R.string.wallet_connect_transaction_title));
         binding.buttonProcess.setText(getResourceManager().getString(this.screenType.getButtonTextResId()));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3242R.C3244drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3290R.C3292drawable.ic_close_white);
     }
 
     private final void setupListeners() {
@@ -247,7 +248,7 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
 
     /* compiled from: WalletConnectTransactionBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -19,16 +19,6 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-Qn_hFhdDCWI9WxVmwoYZ_gyJxU(Lorg/telegram/ui/WallpapersListActivity$2;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/WallpapersListActivity$2;->lambda$onItemClick$3(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static synthetic $r8$lambda$4Z_6JcLb5AsA93Y_1qS7uY4W_PM(Lorg/telegram/ui/WallpapersListActivity$2;Landroid/content/DialogInterface;I)V
     .locals 0
 
@@ -45,6 +35,16 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$L9VXa37RJClNGyVmn_8IBzkg_RQ(Lorg/telegram/ui/WallpapersListActivity$2;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 0
+
+    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/WallpapersListActivity$2;->lambda$onItemClick$3(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static synthetic $r8$lambda$hklNkyEMGK2-qeh8o2lcBkXpGuM(Lorg/telegram/ui/WallpapersListActivity$2;[I)V
     .locals 0
 
@@ -56,7 +56,7 @@
 .method constructor <init>(Lorg/telegram/ui/WallpapersListActivity;)V
     .locals 0
 
-    .line 480
+    .line 495
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -69,7 +69,7 @@
 
     const/4 v0, 0x0
 
-    .line 544
+    .line 559
     aget v1, p1, v0
 
     const/4 v2, 0x1
@@ -78,15 +78,15 @@
 
     aput v1, p1, v0
 
-    .line 545
+    .line 560
     aget p1, p1, v0
 
     if-nez p1, :cond_0
 
-    .line 546
+    .line 561
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1, v2}, Lorg/telegram/ui/WallpapersListActivity;->access$1700(Lorg/telegram/ui/WallpapersListActivity;Z)V
+    invoke-static {p1, v2}, Lorg/telegram/ui/WallpapersListActivity;->access$1800(Lorg/telegram/ui/WallpapersListActivity;Z)V
 
     :cond_0
     return-void
@@ -95,7 +95,7 @@
 .method private synthetic lambda$onItemClick$1([ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 543
+    .line 558
     new-instance p2, Lorg/telegram/ui/WallpapersListActivity$2$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/WallpapersListActivity$2$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/WallpapersListActivity$2;[I)V
@@ -108,7 +108,7 @@
 .method private synthetic lambda$onItemClick$2(Landroid/content/DialogInterface;I)V
     .locals 9
 
-    .line 499
+    .line 514
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     new-instance p2, Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -123,12 +123,12 @@
 
     invoke-direct {p2, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;-><init>(Landroid/content/Context;I)V
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/WallpapersListActivity;->access$1202(Lorg/telegram/ui/WallpapersListActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {p1, p2}, Lorg/telegram/ui/WallpapersListActivity;->access$1302(Lorg/telegram/ui/WallpapersListActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 500
+    .line 515
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1200(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1300(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
@@ -136,16 +136,16 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanCancel(Z)V
 
-    .line 501
+    .line 516
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1200(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1300(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 503
+    .line 518
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -158,11 +158,11 @@
 
     move v1, p2
 
-    .line 505
+    .line 520
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
+    invoke-static {v2}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
 
     move-result-object v2
 
@@ -172,10 +172,10 @@
 
     if-ge v1, v2, :cond_6
 
-    .line 506
+    .line 521
     iget-object v2, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
+    invoke-static {v2}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
 
     move-result-object v2
 
@@ -183,17 +183,17 @@
 
     move-result-object v2
 
-    .line 507
+    .line 522
     instance-of v3, v2, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
     if-eqz v3, :cond_1
 
-    .line 508
+    .line 523
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
-    .line 509
+    .line 524
     iget-object v4, v3, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->parentWallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     if-eqz v4, :cond_0
@@ -206,7 +206,7 @@
 
     if-gez v5, :cond_0
 
-    .line 510
+    .line 525
     iget-object v4, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -219,19 +219,19 @@
 
     invoke-virtual {v4, v5, v6}, Lorg/telegram/messenger/MessagesStorage;->deleteWallpaper(J)V
 
-    .line 511
+    .line 526
     iget-object v4, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$1300(Lorg/telegram/ui/WallpapersListActivity;)Ljava/util/ArrayList;
+    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$1400(Lorg/telegram/ui/WallpapersListActivity;)Ljava/util/ArrayList;
 
     move-result-object v4
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 512
+    .line 527
     iget-object v4, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$1400(Lorg/telegram/ui/WallpapersListActivity;)Ljava/util/HashMap;
+    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$1500(Lorg/telegram/ui/WallpapersListActivity;)Ljava/util/HashMap;
 
     move-result-object v4
 
@@ -246,7 +246,7 @@
     :cond_0
     move-object v2, v4
 
-    .line 517
+    .line 532
     :cond_1
     :goto_1
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$WallPaper;
@@ -255,7 +255,7 @@
 
     goto :goto_4
 
-    .line 520
+    .line 535
     :cond_2
     aget v3, v0, p2
 
@@ -263,66 +263,66 @@
 
     aput v3, v0, p2
 
-    .line 521
+    .line 536
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    .line 522
+    .line 537
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_account_saveWallPaper;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_account_saveWallPaper;-><init>()V
 
-    .line 523
+    .line 538
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;-><init>()V
 
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_account_saveWallPaper;->settings:Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
 
-    .line 524
+    .line 539
     iput-boolean p1, v4, Lorg/telegram/tgnet/TLRPC$TL_account_saveWallPaper;->unsave:Z
 
-    .line 526
+    .line 541
     instance-of v2, v2, Lorg/telegram/tgnet/TLRPC$TL_wallPaperNoFile;
 
     if-eqz v2, :cond_3
 
-    .line 527
+    .line 542
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaperNoFile;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaperNoFile;-><init>()V
 
-    .line 528
+    .line 543
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
     iput-wide v5, v2, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaperNoFile;->id:J
 
-    .line 529
+    .line 544
     iput-object v2, v4, Lorg/telegram/tgnet/TLRPC$TL_account_saveWallPaper;->wallpaper:Lorg/telegram/tgnet/TLRPC$InputWallPaper;
 
     goto :goto_2
 
-    .line 531
+    .line 546
     :cond_3
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaper;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaper;-><init>()V
 
-    .line 532
+    .line 547
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
     iput-wide v5, v2, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaper;->id:J
 
-    .line 533
+    .line 548
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$WallPaper;->access_hash:J
 
     iput-wide v5, v2, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaper;->access_hash:J
 
-    .line 534
+    .line 549
     iput-object v2, v4, Lorg/telegram/tgnet/TLRPC$TL_account_saveWallPaper;->wallpaper:Lorg/telegram/tgnet/TLRPC$InputWallPaper;
 
-    .line 537
+    .line 552
     :goto_2
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$WallPaper;->slug:Ljava/lang/String;
 
@@ -330,7 +330,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v3}, Lorg/telegram/ui/WallpapersListActivity;->access$1500(Lorg/telegram/ui/WallpapersListActivity;)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/ui/WallpapersListActivity;->access$1600(Lorg/telegram/ui/WallpapersListActivity;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -340,7 +340,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 538
+    .line 553
     iget-object v2, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasWallpaperFromTheme()Z
@@ -357,9 +357,9 @@
     const-string v3, "d"
 
     :goto_3
-    invoke-static {v2, v3}, Lorg/telegram/ui/WallpapersListActivity;->access$1502(Lorg/telegram/ui/WallpapersListActivity;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3}, Lorg/telegram/ui/WallpapersListActivity;->access$1602(Lorg/telegram/ui/WallpapersListActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 539
+    .line 554
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v2
@@ -368,14 +368,14 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setOverrideWallpaper(Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;)V
 
-    .line 540
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->reloadWallpaper()V
+    .line 555
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->reloadWallpaper(Z)V
 
-    .line 543
+    .line 558
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/WallpapersListActivity;->access$1600(Lorg/telegram/ui/WallpapersListActivity;)I
+    invoke-static {v2}, Lorg/telegram/ui/WallpapersListActivity;->access$1700(Lorg/telegram/ui/WallpapersListActivity;)I
 
     move-result v2
 
@@ -394,40 +394,40 @@
 
     goto/16 :goto_0
 
-    .line 550
+    .line 565
     :cond_6
     aget p2, v0, p2
 
     if-nez p2, :cond_7
 
-    .line 551
+    .line 566
     iget-object p2, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p2, p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1700(Lorg/telegram/ui/WallpapersListActivity;Z)V
+    invoke-static {p2, p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1800(Lorg/telegram/ui/WallpapersListActivity;Z)V
 
-    .line 553
+    .line 568
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/util/LongSparseArray;->clear()V
 
-    .line 554
+    .line 569
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1800(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1900(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->hideActionMode()V
 
-    .line 555
+    .line 570
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$1900(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2000(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p1
 
@@ -436,318 +436,332 @@
     return-void
 .end method
 
-.method private synthetic lambda$onItemClick$3(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+.method private synthetic lambda$onItemClick$3(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
     .locals 26
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
 
-    .line 570
+    move-object/from16 v2, p6
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_0
+
+    const/4 v1, 0x0
+
+    .line 587
+    invoke-interface {v2, v1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+
+    return v3
+
+    .line 591
+    :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    move v4, v3
+    move v5, v4
 
-    .line 571
+    .line 592
     :goto_0
-    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    iget-object v6, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
+    invoke-static {v6}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5}, Landroid/util/LongSparseArray;->size()I
+    invoke-virtual {v6}, Landroid/util/LongSparseArray;->size()I
 
-    move-result v5
+    move-result v6
 
-    if-ge v4, v5, :cond_3
+    if-ge v5, v6, :cond_4
 
-    .line 572
-    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    .line 593
+    iget-object v6, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
+    invoke-static {v6}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5, v4}, Landroid/util/LongSparseArray;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Landroid/util/LongSparseArray;->valueAt(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    .line 574
-    instance-of v6, v5, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
+    .line 595
+    instance-of v7, v6, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    if-eqz v6, :cond_0
+    if-eqz v7, :cond_1
 
-    .line 575
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->getWallPaperUrl(Ljava/lang/Object;)Ljava/lang/String;
+    .line 596
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->getWallPaperUrl(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
     goto :goto_1
 
-    .line 576
-    :cond_0
-    instance-of v6, v5, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
+    .line 597
+    :cond_1
+    instance-of v7, v6, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
-    if-eqz v6, :cond_2
+    if-eqz v7, :cond_3
 
-    .line 577
-    check-cast v5, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
+    .line 598
+    check-cast v6, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->getUrl()Ljava/lang/String;
+    invoke-virtual {v6}, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->getUrl()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    .line 581
+    .line 602
     :goto_1
-    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_2
+    if-nez v7, :cond_3
 
-    .line 582
+    .line 603
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v6
+    move-result v7
 
-    if-lez v6, :cond_1
+    if-lez v7, :cond_2
 
-    const/16 v6, 0xa
+    const/16 v7, 0xa
 
-    .line 583
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    .line 604
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 585
-    :cond_1
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
+    .line 606
     :cond_2
-    add-int/lit8 v4, v4, 0x1
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 588
-    :cond_3
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    .line 609
+    :cond_4
+    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
+    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Landroid/util/LongSparseArray;->clear()V
+    invoke-virtual {v5}, Landroid/util/LongSparseArray;->clear()V
 
-    .line 589
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    .line 610
+    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$400(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$500(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/ActionBar;->hideActionMode()V
+    invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/ActionBar;->hideActionMode()V
 
-    .line 590
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    .line 611
+    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$500(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$600(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/ActionBar;->closeSearchField()V
+    invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/ActionBar;->closeSearchField()V
 
-    .line 592
+    .line 613
     invoke-virtual/range {p2 .. p2}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v5
 
-    const/4 v5, 0x1
+    if-gt v5, v3, :cond_a
 
-    if-gt v4, v5, :cond_9
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v5
 
-    move-result-object v4
+    check-cast v5, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    check-cast v4, Lorg/telegram/messenger/MessagesStorage$TopicKey;
+    iget-wide v5, v5, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    iget-wide v6, v4, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+    iget-object v7, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    invoke-static {v7}, Lorg/telegram/ui/WallpapersListActivity;->access$700(Lorg/telegram/ui/WallpapersListActivity;)I
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$600(Lorg/telegram/ui/WallpapersListActivity;)I
+    move-result v7
 
-    move-result v4
+    invoke-static {v7}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    invoke-static {v4}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    move-result-object v7
 
-    move-result-object v4
+    invoke-virtual {v7}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
-    invoke-virtual {v4}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+    move-result-wide v7
 
-    move-result-wide v8
+    cmp-long v5, v5, v7
 
-    cmp-long v4, v6, v8
+    if-eqz v5, :cond_a
 
-    if-eqz v4, :cond_9
-
-    if-eqz p3, :cond_4
+    if-eqz p3, :cond_5
 
     goto/16 :goto_4
 
-    .line 605
-    :cond_4
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 626
+    :cond_5
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    iget-wide v8, v1, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+    iget-wide v7, v1, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    .line 606
+    .line 627
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    const-string v4, "scrollToTopOnResume"
+    const-string v5, "scrollToTopOnResume"
 
-    .line 607
-    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    .line 628
+    invoke-virtual {v1, v5, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 608
-    invoke-static {v8, v9}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+    .line 629
+    invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_6
 
-    .line 609
-    invoke-static {v8, v9}, Lorg/telegram/messenger/DialogObject;->getEncryptedChatId(J)I
+    .line 630
+    invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->getEncryptedChatId(J)I
 
-    move-result v4
+    move-result v5
 
     const-string v6, "enc_id"
 
-    invoke-virtual {v1, v6, v4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v1, v6, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_3
 
-    .line 611
-    :cond_5
-    invoke-static {v8, v9}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
+    .line 632
+    :cond_6
+    invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_6
+    if-eqz v5, :cond_7
 
-    const-string v4, "user_id"
+    const-string v5, "user_id"
 
-    .line 612
-    invoke-virtual {v1, v4, v8, v9}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    .line 633
+    invoke-virtual {v1, v5, v7, v8}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     goto :goto_2
 
-    .line 613
-    :cond_6
-    invoke-static {v8, v9}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_7
-
-    neg-long v6, v8
-
-    const-string v4, "chat_id"
-
-    .line 614
-    invoke-virtual {v1, v4, v6, v7}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    .line 616
+    .line 634
     :cond_7
+    invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8
+
+    neg-long v5, v7
+
+    const-string v9, "chat_id"
+
+    .line 635
+    invoke-virtual {v1, v9, v5, v6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    .line 637
+    :cond_8
     :goto_2
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$900(Lorg/telegram/ui/WallpapersListActivity;)I
+    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$1000(Lorg/telegram/ui/WallpapersListActivity;)I
 
-    move-result v4
+    move-result v5
 
-    invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v4
+    move-result-object v5
 
     move-object/from16 v6, p1
 
-    invoke-virtual {v4, v1, v6}, Lorg/telegram/messenger/MessagesController;->checkCanOpenChat(Landroid/os/Bundle;Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    invoke-virtual {v5, v1, v6}, Lorg/telegram/messenger/MessagesController;->checkCanOpenChat(Landroid/os/Bundle;Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_8
+    if-nez v5, :cond_9
 
-    return v5
+    return v3
 
-    .line 620
-    :cond_8
+    .line 641
+    :cond_9
     :goto_3
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$1000(Lorg/telegram/ui/WallpapersListActivity;)I
+    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$1100(Lorg/telegram/ui/WallpapersListActivity;)I
 
-    move-result v4
+    move-result v5
 
-    invoke-static {v4}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+    invoke-static {v5}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
-    move-result-object v4
+    move-result-object v5
 
     sget v6, Lorg/telegram/messenger/NotificationCenter;->closeChats:I
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v4, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v4, v6, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {v5, v6, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 622
-    new-instance v3, Lorg/telegram/ui/ChatActivity;
+    .line 643
+    new-instance v4, Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {v3, v1}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
+    invoke-direct {v4, v1}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 623
+    .line 644
     iget-object v1, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-virtual {v1, v3, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
+    invoke-virtual {v1, v4, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
-    .line 624
+    .line 645
     iget-object v1, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/WallpapersListActivity;->access$1100(Lorg/telegram/ui/WallpapersListActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/WallpapersListActivity;->access$1200(Lorg/telegram/ui/WallpapersListActivity;)I
 
     move-result v1
 
     invoke-static {v1}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
-    move-result-object v6
+    move-result-object v5
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
+
+    const/4 v9, 0x0
 
     const/4 v10, 0x0
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    const/4 v12, 0x1
 
-    const/4 v13, 0x1
+    const/4 v13, 0x0
 
     const/4 v14, 0x0
 
     const/4 v15, 0x0
 
-    const/16 v16, 0x0
+    const/16 v16, 0x1
 
-    const/16 v17, 0x1
+    const/16 v17, 0x0
 
     const/16 v18, 0x0
 
@@ -755,48 +769,46 @@
 
     const/16 v20, 0x0
 
-    const/16 v21, 0x0
-
-    invoke-virtual/range {v6 .. v21}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
+    invoke-virtual/range {v5 .. v20}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
 
     goto/16 :goto_7
 
-    :cond_9
+    :cond_a
     :goto_4
     move-object/from16 v6, p1
 
-    .line 593
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    .line 614
+    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$300(Lorg/telegram/ui/WallpapersListActivity;)V
+    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$400(Lorg/telegram/ui/WallpapersListActivity;)V
 
-    .line 594
+    .line 615
     :goto_5
     invoke-virtual/range {p2 .. p2}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v5
 
-    if-ge v3, v4, :cond_c
+    if-ge v4, v5, :cond_d
 
-    .line 595
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 616
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Lorg/telegram/messenger/MessagesStorage$TopicKey;
+    check-cast v5, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    iget-wide v14, v4, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+    iget-wide v14, v5, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_b
 
-    .line 597
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    .line 618
+    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$700(Lorg/telegram/ui/WallpapersListActivity;)I
+    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$800(Lorg/telegram/ui/WallpapersListActivity;)I
 
-    move-result v4
+    move-result v5
 
-    invoke-static {v4}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
+    invoke-static {v5}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v7
 
@@ -810,7 +822,7 @@
 
     const/4 v13, 0x0
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
     const/16 v16, 0x0
 
@@ -832,7 +844,7 @@
 
     move-wide/from16 v24, v14
 
-    move v14, v4
+    move v14, v5
 
     move-object/from16 v15, v16
 
@@ -854,25 +866,25 @@
 
     goto :goto_6
 
-    :cond_a
+    :cond_b
     move-wide/from16 v24, v14
 
-    .line 599
+    .line 620
     :goto_6
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_b
+    if-nez v5, :cond_c
 
-    .line 600
-    iget-object v4, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    .line 621
+    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/WallpapersListActivity;->access$800(Lorg/telegram/ui/WallpapersListActivity;)I
+    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$900(Lorg/telegram/ui/WallpapersListActivity;)I
 
-    move-result v4
+    move-result v5
 
-    invoke-static {v4}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
+    invoke-static {v5}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v7
 
@@ -908,17 +920,17 @@
 
     invoke-virtual/range {v7 .. v22}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
 
-    :cond_b
-    add-int/lit8 v3, v3, 0x1
+    :cond_c
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_5
 
-    .line 603
-    :cond_c
+    .line 624
+    :cond_d
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
 
     :goto_7
-    return v5
+    return v3
 .end method
 
 
@@ -930,10 +942,10 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 484
+    .line 499
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$000(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p1
 
@@ -943,32 +955,32 @@
 
     if-eqz p1, :cond_0
 
-    .line 485
+    .line 500
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/util/LongSparseArray;->clear()V
 
-    .line 486
+    .line 501
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$300(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->hideActionMode()V
 
-    .line 487
+    .line 502
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$300(Lorg/telegram/ui/WallpapersListActivity;)V
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$400(Lorg/telegram/ui/WallpapersListActivity;)V
 
     goto/16 :goto_0
 
-    .line 489
+    .line 504
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
@@ -981,7 +993,7 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 492
+    .line 507
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -992,7 +1004,7 @@
 
     return-void
 
-    .line 495
+    .line 510
     :cond_2
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -1004,10 +1016,10 @@
 
     invoke-direct {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 496
+    .line 511
     iget-object v1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/WallpapersListActivity;->access$100(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
+    invoke-static {v1}, Lorg/telegram/ui/WallpapersListActivity;->access$200(Lorg/telegram/ui/WallpapersListActivity;)Landroid/util/LongSparseArray;
 
     move-result-object v1
 
@@ -1027,7 +1039,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 497
+    .line 512
     sget v1, Lorg/telegram/messenger/R$string;->DeleteChatBackgroundsAlert:I
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -1040,7 +1052,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 498
+    .line 513
     sget v1, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v2, "Delete"
@@ -1055,7 +1067,7 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 557
+    .line 572
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -1068,17 +1080,17 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 558
+    .line 573
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 559
+    .line 574
     iget-object v1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 560
+    .line 575
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
@@ -1087,10 +1099,10 @@
 
     if-eqz p1, :cond_4
 
-    const-string v0, "dialogTextRed"
+    .line 577
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
-    .line 562
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -1103,7 +1115,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 565
+    .line 580
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
@@ -1112,27 +1124,27 @@
 
     const-string v2, "onlySelect"
 
-    .line 566
+    .line 581
     invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v1, "dialogsType"
 
-    .line 567
+    .line 582
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 568
+    .line 583
     new-instance v0, Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 569
+    .line 584
     new-instance p1, Lorg/telegram/ui/WallpapersListActivity$2$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/WallpapersListActivity$2$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/WallpapersListActivity$2;)V
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/DialogsActivity;->setDelegate(Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;)V
 
-    .line 628
+    .line 649
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z

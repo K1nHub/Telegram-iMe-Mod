@@ -124,7 +124,7 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.database.collection.ArraySortedMap$1 */
     /* loaded from: classes3.dex */
-    public class C09911 implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
+    public class C09961 implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
         int currentPos;
         final /* synthetic */ int val$pos;
         final /* synthetic */ boolean val$reverse;
@@ -134,7 +134,7 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C09911(int i, boolean z) {
+        C09961(int i, boolean z) {
             this.val$pos = i;
             this.val$reverse = z;
             this.currentPos = i;
@@ -169,7 +169,7 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
     }
 
     private java.util.Iterator<Map.Entry<K, V>> iterator(int i, boolean z) {
-        return new C09911(i, z);
+        return new C09961(i, z);
     }
 
     @Override // com.google.firebase.database.collection.ImmutableSortedMap, java.lang.Iterable

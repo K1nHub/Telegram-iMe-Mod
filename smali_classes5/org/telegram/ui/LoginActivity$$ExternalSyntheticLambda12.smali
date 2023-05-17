@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$sEEGWtZv_s74WCHceRaUj_NCk8c(Lorg/telegram/ui/LoginActivity;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$vuaE0M03hITA9QiRfo78NVbIB4k(Lorg/telegram/ui/LoginActivity;Landroid/view/View;)V
 
     return-void
 .end method

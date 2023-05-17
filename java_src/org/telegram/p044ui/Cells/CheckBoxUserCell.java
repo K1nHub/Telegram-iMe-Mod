@@ -32,7 +32,7 @@ public class CheckBoxUserCell extends FrameLayout {
         super(context);
         SimpleTextView simpleTextView = new SimpleTextView(context);
         this.textView = simpleTextView;
-        simpleTextView.setTextColor(Theme.getColor(z ? "dialogTextBlack" : "windowBackgroundWhiteBlackText"));
+        simpleTextView.setTextColor(Theme.getColor(z ? Theme.key_dialogTextBlack : Theme.key_windowBackgroundWhiteBlackText));
         this.textView.setTextSize(16);
         this.textView.setEllipsizeByGradient(true);
         this.textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -42,17 +42,20 @@ public class CheckBoxUserCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(36));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(36));
         addView(this.imageView, LayoutHelper.createFrame(36, 36, (LocaleController.isRTL ? 5 : 3) | 48, 23, 7, 23, 0));
         Switch r14 = new Switch(context);
         this.checkBox = r14;
-        r14.setColors("switchTrack", "switchTrackChecked", "windowBackgroundWhite", "windowBackgroundWhite");
+        int i = Theme.key_switchTrack;
+        int i2 = Theme.key_switchTrackChecked;
+        int i3 = Theme.key_windowBackgroundWhite;
+        r14.setColors(i, i2, i3, i3);
         addView(this.checkBox, LayoutHelper.createFrame(37, 20, (LocaleController.isRTL ? 3 : 5) | 16, 22, 0, 22, 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(50) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     public void setTextColor(int i) {
@@ -104,7 +107,7 @@ public class CheckBoxUserCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 }

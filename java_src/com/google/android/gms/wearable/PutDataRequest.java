@@ -25,13 +25,13 @@ import java.util.concurrent.TimeUnit;
 /* loaded from: classes3.dex */
 public class PutDataRequest extends AbstractSafeParcelable {
     public static final String WEAR_URI_SCHEME = "wear";
-    @SafeParcelable.Field(getter = "getUri", m775id = 2)
+    @SafeParcelable.Field(getter = "getUri", m779id = 2)
     private final Uri zzc;
-    @SafeParcelable.Field(getter = "getAssetsInternal", m775id = 4)
+    @SafeParcelable.Field(getter = "getAssetsInternal", m779id = 4)
     private final Bundle zzd;
-    @SafeParcelable.Field(getter = "getData", m775id = 5)
+    @SafeParcelable.Field(getter = "getData", m779id = 5)
     private byte[] zze;
-    @SafeParcelable.Field(getter = "getSyncDeadline", m775id = 6)
+    @SafeParcelable.Field(getter = "getSyncDeadline", m779id = 6)
     private long zzf;
     public static final Parcelable.Creator<PutDataRequest> CREATOR = new zzg();
     private static final long zza = TimeUnit.MINUTES.toMillis(30);
@@ -160,7 +160,7 @@ public class PutDataRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PutDataRequest(@SafeParcelable.Param(m774id = 2) Uri uri, @SafeParcelable.Param(m774id = 4) Bundle bundle, @SafeParcelable.Param(m774id = 5) byte[] bArr, @SafeParcelable.Param(m774id = 6) long j) {
+    public PutDataRequest(@SafeParcelable.Param(m778id = 2) Uri uri, @SafeParcelable.Param(m778id = 4) Bundle bundle, @SafeParcelable.Param(m778id = 5) byte[] bArr, @SafeParcelable.Param(m778id = 6) long j) {
         this.zzc = uri;
         this.zzd = bundle;
         bundle.setClassLoader((ClassLoader) Preconditions.checkNotNull(DataItemAssetParcelable.class.getClassLoader()));

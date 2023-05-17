@@ -41,12 +41,12 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CatalogCategoriesPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCategoriesView> {
     private final CatalogInteractor catalogInteractor;
     private List<FilterItem> categories;
@@ -179,20 +179,20 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
     }
 
     public final void loadChannels(boolean z) {
-        Observable<Result<CampaignsCursored>> observeOn = getChannelsObservable().observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<CampaignsCursored>> observeOn = getChannelsObservable().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getChannelsObservable()\n…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1939xb19ad2ea(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1940xb19ad2eb(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2011xb19ad2ea(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2012xb19ad2eb(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final void onChannelClick(CampaignItem campaign) {
         Intrinsics.checkNotNullParameter(campaign, "campaign");
-        Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo693ui());
+        Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1943xc0315c98(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1944xc0315c99(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2015xc0315c98(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2016xc0315c99(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -218,9 +218,9 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
                 loadInitial$lambda$4 = CatalogCategoriesPresenter.loadInitial$lambda$4(Function1.this, obj);
                 return loadInitial$lambda$4;
             }
-        }).observeOn(this.schedulersProvider.mo693ui());
+        }).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "private fun loadInitial(…     .autoDispose()\n    }");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1941x9d757cd0(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1942x9d757cd1(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2013x9d757cd0(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2014x9d757cd1(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -312,15 +312,15 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Observable<Result<CampaignsCursored>> getCategoriesObservable(Result<CampaignsCursored> result, boolean z) {
-        Observable<Result<List<CategoryWithCounter>>> observeOn = this.catalogInteractor.getCategories(this.chatType, z).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<List<CategoryWithCounter>>> observeOn = this.catalogInteractor.getCategories(this.chatType, z).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        final C1938xf97b28f1 c1938xf97b28f1 = new C1938xf97b28f1(this, result);
-        Observable map = observeOn.map(new Function(c1938xf97b28f1) { // from class: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesPresenter$inlined$sam$i$io_reactivex_functions_Function$0
+        final C2010xf97b28f1 c2010xf97b28f1 = new C2010xf97b28f1(this, result);
+        Observable map = observeOn.map(new Function(c2010xf97b28f1) { // from class: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesPresenter$inlined$sam$i$io_reactivex_functions_Function$0
             private final /* synthetic */ Function1 function;
 
             {
-                Intrinsics.checkNotNullParameter(c1938xf97b28f1, "function");
-                this.function = c1938xf97b28f1;
+                Intrinsics.checkNotNullParameter(c2010xf97b28f1, "function");
+                this.function = c2010xf97b28f1;
             }
 
             @Override // io.reactivex.functions.Function
@@ -350,14 +350,14 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FilterItem getCategoryAll() {
-        String upperCase = this.resourceManager.getString(C3242R.string.catalog_all).toUpperCase(Locale.ROOT);
+        String upperCase = this.resourceManager.getString(C3290R.string.catalog_all).toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         return new FilterItem(-1L, upperCase, true);
     }
 
     /* compiled from: CatalogCategoriesPresenter.kt */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesPresenter$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

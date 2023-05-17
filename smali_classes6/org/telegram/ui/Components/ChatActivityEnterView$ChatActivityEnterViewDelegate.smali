@@ -36,9 +36,6 @@
 .method public abstract hasScheduledMessages()Z
 .end method
 
-.method public abstract isCustomForward()Z
-.end method
-
 .method public abstract measureKeyboardHeight()I
 .end method
 

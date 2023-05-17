@@ -52,9 +52,9 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Components/SwipeGestureSettingsView;->pickerDividersPaint:Landroid/graphics/Paint;
 
-    const-string v2, "radioBackgroundChecked"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackgroundChecked:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

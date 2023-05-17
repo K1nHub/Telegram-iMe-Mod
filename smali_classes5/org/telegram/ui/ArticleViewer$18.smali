@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 3835
+    .line 3848
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$18;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;-><init>()V
@@ -37,7 +37,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3839
+    .line 3852
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$18;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     const/4 v0, 0x0
@@ -51,14 +51,14 @@
 .method public onTextCopied()V
     .locals 3
 
-    .line 3845
+    .line 3858
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->shouldShowClipboardToast()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3846
+    .line 3859
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$18;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$3000(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/FrameLayout;

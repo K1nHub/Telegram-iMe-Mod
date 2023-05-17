@@ -135,7 +135,7 @@
 .end method
 
 .method private final configureProgressState(Landroid/view/View;)Landroid/view/View;
-    .locals 4
+    .locals 5
 
     .line 92
     sget v0, Lorg/telegram/messenger/R$id;->image_state_animation:I
@@ -146,10 +146,10 @@
 
     check-cast v0, Lorg/telegram/ui/Components/RLottieImageView;
 
-    const-string v1, "chats_actionBackground"
-
     .line 94
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -164,7 +164,7 @@
     invoke-virtual {v0, v3, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
     .line 95
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -181,13 +181,19 @@
 
     check-cast v0, Landroidx/appcompat/widget/AppCompatTextView;
 
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
     if-eqz v0, :cond_0
 
-    const-string v1, "findViewById<AppCompatTe\u2026w>(R.id.text_state_title)"
+    const-string v4, "findViewById<AppCompatTe\u2026w>(R.id.text_state_title)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v0, v3, v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 98
     :cond_0
@@ -201,11 +207,11 @@
 
     if-eqz v0, :cond_1
 
-    const-string v1, "findViewById<AppCompatTe\u2026d.text_state_description)"
+    const-string v4, "findViewById<AppCompatTe\u2026d.text_state_description)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {v0, v3, v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     :cond_1
     return-object p1
@@ -294,10 +300,10 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v4, "chat_messagePanelText"
-
     .line 111
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -334,10 +340,10 @@
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string p1, "dialogTextGray2"
-
     .line 116
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -376,10 +382,10 @@
 
     invoke-static {v4, p1, v3, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleBackground$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    const-string p1, "chats_actionBackground"
-
     .line 121
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -407,7 +413,7 @@
 .end method
 
 .method private final hideActionButton(Landroid/view/View;)Landroid/view/View;
-    .locals 1
+    .locals 4
 
     .line 139
     sget v0, Lorg/telegram/messenger/R$id;->button_retry:I
@@ -420,7 +426,13 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     :cond_0
     return-object p1

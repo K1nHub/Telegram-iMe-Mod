@@ -58,7 +58,7 @@
 .method public static final isAlbumsIntroShown()Ljava/lang/String;
     .locals 2
 
-    .line 169
+    .line 166
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "showAlbumsIntro"
@@ -73,7 +73,7 @@
 .method public static final isBotHelpTranslateEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 133
+    .line 130
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "botHelpTranslate"
@@ -103,7 +103,7 @@
 .method public static final isChatSortingEnabledByDefault()Ljava/lang/String;
     .locals 2
 
-    .line 163
+    .line 160
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "sortingEnabledByDefault"
@@ -133,7 +133,7 @@
 .method public static final isCloudAlbumsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 166
+    .line 163
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "cloudAlbums"
@@ -148,25 +148,10 @@
 .method public static final isCombineMessagesEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 139
+    .line 136
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "combineMessages"
-
-    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static final isCustomSharingModeEnabled()Ljava/lang/String;
-    .locals 2
-
-    .line 121
-    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
-
-    const-string v1, "customSharingMode"
 
     invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
 
@@ -223,7 +208,7 @@
 .method public static final isDialogsPremiumHintEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 211
+    .line 208
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isDialogsPremiumHintEnabled"
@@ -298,7 +283,7 @@
 .method public static final isFilterTabsAtBottomEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 154
+    .line 151
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "filterTabsAtBottom"
@@ -343,7 +328,7 @@
 .method public static final isMessageQuickTranslateEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 130
+    .line 127
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "messageQuickTranslate"
@@ -373,7 +358,7 @@
 .method public static final isMultiReplyEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 124
+    .line 121
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "multiReply"
@@ -388,7 +373,7 @@
 .method public static final isMusicIntroShown()Ljava/lang/String;
     .locals 2
 
-    .line 187
+    .line 184
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "showMusicIntro"
@@ -403,7 +388,7 @@
 .method public static final isNewTelegramAuthorizationRulesRead()Ljava/lang/String;
     .locals 2
 
-    .line 208
+    .line 205
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isNewTelegramAuthorizationRulesRead"
@@ -433,7 +418,7 @@
 .method public static final isPinnedPlayerMinimized()Ljava/lang/String;
     .locals 2
 
-    .line 178
+    .line 175
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isPinnedPlayerMinimized"
@@ -448,7 +433,7 @@
 .method public static final isPinnedPlayerNightThemeEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 184
+    .line 181
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isPinnedPlayerNightTheme"
@@ -463,7 +448,7 @@
 .method public static final isPinnedPlayerThemeOverridden()Ljava/lang/String;
     .locals 2
 
-    .line 181
+    .line 178
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isPinnedPlayerThemeOverridden"
@@ -478,7 +463,7 @@
 .method public static final isPlayerPinned()Ljava/lang/String;
     .locals 2
 
-    .line 175
+    .line 172
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isPlayerPinned"
@@ -505,7 +490,7 @@
     return-object v0
 .end method
 
-.method public static final isProxyButtonForceVisible()Ljava/lang/String;
+.method public static final isProxyButtonEnabled()Ljava/lang/String;
     .locals 2
 
     .line 40
@@ -523,7 +508,7 @@
 .method public static final isReactionsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 145
+    .line 142
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "reactionsEnabled"
@@ -538,7 +523,7 @@
 .method public static final isReactionsInSendPopupEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 151
+    .line 148
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "sendPopupReactions"
@@ -568,7 +553,7 @@
 .method public static final isRememberLastFilterTabEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 160
+    .line 157
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "rememberLastFilterTab"
@@ -673,7 +658,7 @@
 .method public static final isSortCloudAlbumsByNameEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 172
+    .line 169
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "sortCloudAlbumsByName"
@@ -703,7 +688,7 @@
 .method public static final isSuggestPremiumReactionsEmoji()Ljava/lang/String;
     .locals 2
 
-    .line 199
+    .line 196
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "suggestPremiumReactionsEmoji"
@@ -718,7 +703,7 @@
 .method public static final isTranslateInSendPopupEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 136
+    .line 133
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "sendPopupTranslate"
@@ -763,7 +748,7 @@
 .method public static final lastSelectedLanguages()Ljava/lang/String;
     .locals 2
 
-    .line 196
+    .line 193
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "lastSelectedLanguages"
@@ -808,7 +793,7 @@
 .method public static final selectedChatProfileTelegramIdMode()Ljava/lang/String;
     .locals 2
 
-    .line 127
+    .line 124
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "chatProfileTelegramIdMode"
@@ -823,7 +808,7 @@
 .method public static final selectedDialogTypesForMessagePopupReactions()Ljava/lang/String;
     .locals 2
 
-    .line 148
+    .line 145
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "messagePopupReactionsEnabledDialogTypes"
@@ -868,7 +853,7 @@
 .method public static final selectedDrawerHolidayIconType()Ljava/lang/String;
     .locals 2
 
-    .line 205
+    .line 202
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedDrawerHolidayIconType"
@@ -913,7 +898,7 @@
 .method public static final selectedFilterTabsNotificationMode()Ljava/lang/String;
     .locals 2
 
-    .line 157
+    .line 154
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "filterTabsNotificationMode"
@@ -928,7 +913,7 @@
 .method public static final selectedFilterTabsWidthMode()Ljava/lang/String;
     .locals 2
 
-    .line 202
+    .line 199
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "filterTabsWidthMode"
@@ -943,7 +928,7 @@
 .method public static final selectedPhotoViewerMenuItems()Ljava/lang/String;
     .locals 2
 
-    .line 142
+    .line 139
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "photoViewerMenuItems"
@@ -973,7 +958,7 @@
 .method public static final selectedTemplatesMode()Ljava/lang/String;
     .locals 2
 
-    .line 190
+    .line 187
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "templatesMode"
@@ -988,7 +973,7 @@
 .method public static final selectedTemplatesSortingType()Ljava/lang/String;
     .locals 2
 
-    .line 193
+    .line 190
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "templatesSortingType"

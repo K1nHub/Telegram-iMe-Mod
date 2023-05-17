@@ -26,9 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -141,26 +141,29 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class, ShadowSectionCell.class}, null, null, null, "windowBackgroundGrayShadow"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, SlideChooseView.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, "windowBackgroundChecked"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, "windowBackgroundUnchecked"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundCheckText"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlue"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueChecked"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueThumb"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueThumbChecked"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueSelector"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueSelectorChecked"), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, "switchTrack"), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, "switchTrackChecked"), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, "windowBackgroundWhiteGrayText"), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class, ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
         int i;
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setAllowOverlayTitle(true);
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setAllowOverlayTitle(true);
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3242R.string.backup_settings_header;
+            i = C3290R.string.backup_settings_header;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3242R.string.topics_catalog;
+            i = C3290R.string.topics_catalog;
         }
-        c3306ActionBar.setTitle(LocaleController.getInternalString(i));
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.ChooseIntervalSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        c3356ActionBar.setTitle(LocaleController.getInternalString(i));
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.ChooseIntervalSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
                     ChooseIntervalSettingsActivity.this.finishFragment();
@@ -183,7 +186,7 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if ((view instanceof TextCheckCell) && i == this$0.enableRow) {
             TextCheckCell textCheckCell = (TextCheckCell) view;
-            textCheckCell.toggleCheckbox();
+            textCheckCell.toggleCheckBox();
             this$0.toggleEnabled();
             ListAdapter listAdapter = this$0.getListAdapter();
             int i2 = this$0.rowCount;
@@ -201,7 +204,7 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initRootView() {
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         return frameLayout;
     }
 
@@ -335,27 +338,27 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == ChooseIntervalSettingsActivity.this.enableRow ? IdFabric$ViewTypes.TEXT_CHECK : i == ChooseIntervalSettingsActivity.this.intervalHeaderRow ? IdFabric$ViewTypes.HEADER : i == ChooseIntervalSettingsActivity.this.enableInfoRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : i == ChooseIntervalSettingsActivity.this.intervalChooserRow ? IdFabric$ViewTypes.SLIDE_CHOOSE : IdFabric$ViewTypes.SHADOW_SECTION;
+            return i == ChooseIntervalSettingsActivity.this.enableRow ? IdFabric$ViewTypes.TEXT_CHECK_CELL : i == ChooseIntervalSettingsActivity.this.intervalHeaderRow ? IdFabric$ViewTypes.HEADER_CELL : i == ChooseIntervalSettingsActivity.this.enableInfoRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL : i == ChooseIntervalSettingsActivity.this.intervalChooserRow ? IdFabric$ViewTypes.SLIDE_CHOOSE : IdFabric$ViewTypes.SHADOW_SECTION;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             SlideChooseView slideChooseView;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.TEXT_CHECK) {
+            if (i == IdFabric$ViewTypes.TEXT_CHECK_CELL) {
                 TextCheckCell textCheckCell = new TextCheckCell(ChooseIntervalSettingsActivity.this.getParentActivity());
                 textCheckCell.setType(1);
                 slideChooseView = textCheckCell;
-            } else if (i == IdFabric$ViewTypes.HEADER) {
+            } else if (i == IdFabric$ViewTypes.HEADER_CELL) {
                 HeaderCell headerCell = new HeaderCell(ChooseIntervalSettingsActivity.this.getParentActivity());
-                headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 slideChooseView = headerCell;
-            } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
+            } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL) {
                 slideChooseView = new TextInfoPrivacyCell(ChooseIntervalSettingsActivity.this.getParentActivity());
             } else if (i == IdFabric$ViewTypes.SLIDE_CHOOSE) {
                 SlideChooseView slideChooseView2 = new SlideChooseView(ChooseIntervalSettingsActivity.this.getParentActivity());
                 final ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = ChooseIntervalSettingsActivity.this;
-                slideChooseView2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                slideChooseView2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 int ordinal = chooseIntervalSettingsActivity.getSelectedInterval().ordinal();
                 Interval[] intervals = chooseIntervalSettingsActivity.getIntervals();
                 ArrayList arrayList = new ArrayList(intervals.length);
@@ -398,47 +401,47 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
             int itemViewType = getItemViewType(i);
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-            if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
+            if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 int i5 = WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()];
                 if (i5 == 1) {
-                    i4 = C3242R.string.backup_settings_save_auto;
+                    i4 = C3290R.string.backup_settings_save_auto;
                 } else if (i5 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i4 = C3242R.string.topics_catalog_update_auto;
+                    i4 = C3290R.string.topics_catalog_update_auto;
                 }
                 textCheckCell.setTextAndCheck(LocaleController.getInternalString(i4), ChooseIntervalSettingsActivity.this.isMainSwitchEnabled(), false);
-            } else if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
+            } else if (itemViewType == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
                 HeaderCell headerCell = (HeaderCell) view;
                 int i6 = WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()];
                 if (i6 == 1) {
-                    i3 = C3242R.string.backup_auto_settings_interval_chooser_header;
+                    i3 = C3290R.string.backup_auto_settings_interval_chooser_header;
                 } else if (i6 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i3 = C3242R.string.topics_catalog_auto_update_settings_interval_chooser_header;
+                    i3 = C3290R.string.topics_catalog_auto_update_settings_interval_chooser_header;
                 }
                 headerCell.setText(LocaleController.getInternalString(i3));
-            } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
+            } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                 ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = ChooseIntervalSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (chooseIntervalSettingsActivity.isMainSwitchEnabled()) {
                     textInfoPrivacyCell.setText(null);
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     textInfoPrivacyCell.setFixedSize(12);
                     return;
                 }
                 int i7 = WhenMappings.$EnumSwitchMapping$0[chooseIntervalSettingsActivity.getType().ordinal()];
                 if (i7 == 1) {
-                    i2 = C3242R.string.backup_auto_settings_enable_item_hint;
+                    i2 = C3290R.string.backup_auto_settings_enable_item_hint;
                 } else if (i7 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i2 = C3242R.string.topics_catalog_auto_update_settings_enable_item_hint;
+                    i2 = C3290R.string.topics_catalog_auto_update_settings_enable_item_hint;
                 }
                 textInfoPrivacyCell.setText(LocaleController.getInternalString(i2));
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 textInfoPrivacyCell.setFixedSize(0);
             }
         }
@@ -446,7 +449,7 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            return holder.getItemViewType() == IdFabric$ViewTypes.TEXT_CHECK;
+            return holder.getItemViewType() == IdFabric$ViewTypes.TEXT_CHECK_CELL;
         }
     }
 

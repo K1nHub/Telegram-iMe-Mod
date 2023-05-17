@@ -26,9 +26,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "undo_infoColor"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
 
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
 
     move-result v2
 

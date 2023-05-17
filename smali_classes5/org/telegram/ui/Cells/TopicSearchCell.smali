@@ -34,10 +34,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/TopicSearchCell;->textView:Landroid/widget/TextView;
 
-    const-string p1, "windowBackgroundWhiteBlackText"
-
     .line 33
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -362,9 +362,9 @@
 
     check-cast p1, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
 
-    const-string v0, "chats_archiveBackground"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archiveBackground:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

@@ -44,12 +44,12 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 345
+    .line 346
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 547
+    .line 548
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 p2, 0x0
@@ -58,7 +58,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->blurPaintAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 548
+    .line 549
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -73,7 +73,7 @@
 .method private synthetic lambda$onLayout$1()V
     .locals 5
 
-    .line 516
+    .line 517
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$400(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -118,7 +118,7 @@
     :goto_0
     invoke-static {v0, v3, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3400(Lorg/telegram/ui/ActionBar/AlertDialog;IZ)V
 
-    .line 517
+    .line 518
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
@@ -162,7 +162,7 @@
     :cond_1
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3400(Lorg/telegram/ui/ActionBar/AlertDialog;IZ)V
 
-    .line 518
+    .line 519
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/ScrollView;
@@ -177,7 +177,7 @@
 .method private synthetic lambda$onMeasure$0()V
     .locals 5
 
-    .line 479
+    .line 480
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -186,7 +186,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1802(Lorg/telegram/ui/ActionBar/AlertDialog;I)I
 
-    .line 480
+    .line 481
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->x:I
@@ -199,14 +199,14 @@
 
     sub-int/2addr v0, v1
 
-    .line 482
+    .line 483
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 483
+    .line 484
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isSmallTablet()Z
 
     move-result v1
@@ -215,7 +215,7 @@
 
     const/16 v1, 0x1be
 
-    .line 484
+    .line 485
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -225,7 +225,7 @@
     :cond_0
     const/16 v1, 0x1f0
 
-    .line 486
+    .line 487
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -235,12 +235,12 @@
     :cond_1
     const/16 v1, 0x164
 
-    .line 489
+    .line 490
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 492
+    .line 493
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -248,19 +248,19 @@
 
     move-result-object v2
 
-    .line 493
+    .line 494
     new-instance v3, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v3}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
-    .line 494
+    .line 495
     invoke-virtual {v2}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Landroid/view/WindowManager$LayoutParams;->copyFrom(Landroid/view/WindowManager$LayoutParams;)I
 
-    .line 495
+    .line 496
     invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -287,7 +287,7 @@
 
     iput v0, v3, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 497
+    .line 498
     :try_start_0
     invoke-virtual {v2, v3}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
     :try_end_0
@@ -298,7 +298,7 @@
     :catchall_0
     move-exception v0
 
-    .line 499
+    .line 500
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -310,7 +310,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 593
+    .line 594
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3000(Lorg/telegram/ui/ActionBar/AlertDialog;)Z
@@ -327,7 +327,7 @@
 
     if-nez v0, :cond_1
 
-    .line 594
+    .line 595
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/drawable/Drawable;
@@ -346,7 +346,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 595
+    .line 596
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$900(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/view/View;
@@ -363,7 +363,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 596
+    .line 597
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$900(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/view/View;
@@ -374,10 +374,10 @@
 
     move-result v0
 
-    .line 597
+    .line 598
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 598
+    .line 599
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1, v3, v0, v1, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 599
+    .line 600
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/drawable/Drawable;
@@ -397,12 +397,12 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 600
+    .line 601
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 602
+    .line 603
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -412,7 +412,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 605
+    .line 606
     :cond_1
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
@@ -423,7 +423,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 552
+    .line 553
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2300(Lorg/telegram/ui/ActionBar/AlertDialog;)Z
@@ -440,7 +440,7 @@
 
     if-nez v0, :cond_4
 
-    .line 554
+    .line 555
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$000(Lorg/telegram/ui/ActionBar/AlertDialog;)I
@@ -461,14 +461,14 @@
 
     const/16 v0, 0x12
 
-    .line 555
+    .line 556
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    .line 556
+    .line 557
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -493,7 +493,7 @@
 
     mul-float/2addr v1, v2
 
-    .line 557
+    .line 558
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -518,10 +518,10 @@
 
     mul-float/2addr v2, v3
 
-    .line 558
+    .line 559
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 559
+    .line 560
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getWidth()I
 
     move-result v4
@@ -534,7 +534,7 @@
 
     div-float/2addr v4, v5
 
-    .line 560
+    .line 561
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getHeight()I
 
     move-result v6
@@ -545,7 +545,7 @@
 
     div-float/2addr v6, v5
 
-    .line 561
+    .line 562
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getWidth()I
 
     move-result v7
@@ -556,7 +556,7 @@
 
     div-float/2addr v7, v5
 
-    .line 562
+    .line 563
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getHeight()I
 
     move-result v1
@@ -567,7 +567,7 @@
 
     div-float/2addr v1, v5
 
-    .line 558
+    .line 559
     invoke-virtual {v3, v4, v6, v7, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     goto :goto_0
@@ -575,14 +575,14 @@
     :cond_0
     const/16 v0, 0xa
 
-    .line 565
+    .line 566
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    .line 566
+    .line 567
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingLeft()I
@@ -623,7 +623,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 570
+    .line 571
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->blurPaintAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -649,7 +649,7 @@
 
     move-result v1
 
-    .line 571
+    .line 572
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2500(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/Paint;
@@ -660,7 +660,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 572
+    .line 573
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2500(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/Paint;
@@ -673,7 +673,7 @@
 
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 573
+    .line 574
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -684,7 +684,7 @@
 
     invoke-virtual {p1, v2, v0, v0, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 577
+    .line 578
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -694,7 +694,7 @@
 
     if-nez v2, :cond_3
 
-    .line 578
+    .line 579
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     new-instance v5, Landroid/graphics/Paint;
@@ -705,7 +705,7 @@
 
     invoke-static {v2, v5}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2602(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/graphics/Paint;)Landroid/graphics/Paint;
 
-    .line 579
+    .line 580
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2600(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/Paint;
@@ -730,7 +730,7 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 581
+    .line 582
     :cond_3
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -742,7 +742,7 @@
 
     invoke-virtual {p1, v2, v0, v0, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 584
+    .line 585
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->backgroundPaint:Landroid/graphics/Paint;
 
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -753,7 +753,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 585
+    .line 586
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v4}, Landroid/graphics/Paint;->getAlpha()I
@@ -780,12 +780,12 @@
 
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 586
+    .line 587
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v0, v0, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 588
+    .line 589
     :cond_4
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->draw(Landroid/graphics/Canvas;)V
 
@@ -803,7 +803,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 360
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$000(Lorg/telegram/ui/ActionBar/AlertDialog;)I
@@ -814,7 +814,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 361
+    .line 362
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$100(Lorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -823,7 +823,7 @@
 
     return p1
 
-    .line 364
+    .line 365
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -835,10 +835,10 @@
 .method protected onLayout(ZIIII)V
     .locals 1
 
-    .line 508
+    .line 509
     invoke-super/range {p0 .. p5}, Landroid/widget/LinearLayout;->onLayout(ZIIII)V
 
-    .line 509
+    .line 510
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$000(Lorg/telegram/ui/ActionBar/AlertDialog;)I
@@ -851,7 +851,7 @@
 
     sub-int/2addr p4, p2
 
-    .line 510
+    .line 511
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -868,7 +868,7 @@
 
     sub-int/2addr p5, p3
 
-    .line 511
+    .line 512
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -883,7 +883,7 @@
 
     div-int/lit8 p5, p5, 0x2
 
-    .line 512
+    .line 513
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -918,7 +918,7 @@
 
     goto :goto_0
 
-    .line 513
+    .line 514
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -928,7 +928,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 514
+    .line 515
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1900(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/view/ViewTreeObserver$OnScrollChangedListener;
@@ -937,7 +937,7 @@
 
     if-nez p1, :cond_1
 
-    .line 515
+    .line 516
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     new-instance p2, Lorg/telegram/ui/ActionBar/AlertDialog$1$$ExternalSyntheticLambda0;
@@ -946,7 +946,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1902(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/view/ViewTreeObserver$OnScrollChangedListener;)Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
-    .line 520
+    .line 521
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/ScrollView;
@@ -965,7 +965,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewTreeObserver;->addOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
 
-    .line 522
+    .line 523
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -975,7 +975,7 @@
 
     invoke-interface {p1}, Landroid/view/ViewTreeObserver$OnScrollChangedListener;->onScrollChanged()V
 
-    .line 525
+    .line 526
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -986,7 +986,7 @@
 
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->getLocationOnScreen([I)V
 
-    .line 526
+    .line 527
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/Matrix;
@@ -1003,7 +1003,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 527
+    .line 528
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/Matrix;
@@ -1012,7 +1012,7 @@
 
     invoke-virtual {p1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 528
+    .line 529
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/Matrix;
@@ -1023,7 +1023,7 @@
 
     invoke-virtual {p1, p2, p2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 529
+    .line 530
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/Matrix;
@@ -1060,7 +1060,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 530
+    .line 531
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$2200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/graphics/BitmapShader;
@@ -1082,7 +1082,7 @@
 .method protected onMeasure(II)V
     .locals 12
 
-    .line 369
+    .line 370
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$000(Lorg/telegram/ui/ActionBar/AlertDialog;)I
@@ -1095,7 +1095,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 370
+    .line 371
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -1122,7 +1122,7 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 371
+    .line 372
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1138,20 +1138,20 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 373
+    .line 374
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->inLayout:Z
 
-    .line 374
+    .line 375
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 375
+    .line 376
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 377
+    .line 378
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingTop()I
 
     move-result v2
@@ -1164,7 +1164,7 @@
 
     sub-int/2addr v0, v2
 
-    .line 378
+    .line 379
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingLeft()I
 
     move-result v2
@@ -1179,7 +1179,7 @@
 
     const/16 v3, 0x30
 
-    .line 380
+    .line 381
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1190,12 +1190,12 @@
 
     move-result v3
 
-    .line 381
+    .line 382
     invoke-static {v2, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
-    .line 384
+    .line 385
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v5, v5, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
@@ -1204,7 +1204,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 385
+    .line 386
     invoke-virtual {v5}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v5
@@ -1214,7 +1214,7 @@
     :goto_0
     if-ge v7, v5, :cond_2
 
-    .line 387
+    .line 388
     iget-object v8, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v8, v8, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
@@ -1223,17 +1223,17 @@
 
     move-result-object v8
 
-    .line 388
+    .line 389
     instance-of v9, v8, Landroid/widget/TextView;
 
     if-eqz v9, :cond_1
 
-    .line 389
+    .line 390
     check-cast v8, Landroid/widget/TextView;
 
     const/16 v9, 0x18
 
-    .line 390
+    .line 391
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -1253,7 +1253,7 @@
 
     goto :goto_0
 
-    .line 393
+    .line 394
     :cond_2
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1261,7 +1261,7 @@
 
     invoke-virtual {v5, v4, p2}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 394
+    .line 395
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v5, v5, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
@@ -1272,7 +1272,7 @@
 
     check-cast v5, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 395
+    .line 396
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v7, v7, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
@@ -1296,7 +1296,7 @@
     :cond_3
     move v5, v0
 
-    .line 397
+    .line 398
     :goto_1
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1308,7 +1308,7 @@
 
     if-eqz v7, :cond_4
 
-    .line 398
+    .line 399
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$300(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1325,7 +1325,7 @@
 
     invoke-virtual {v7, v9, p2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 400
+    .line 401
     :cond_4
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1337,7 +1337,7 @@
 
     if-eqz v7, :cond_6
 
-    .line 401
+    .line 402
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$300(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1346,7 +1346,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 402
+    .line 403
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$400(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1383,7 +1383,7 @@
 
     goto :goto_2
 
-    .line 404
+    .line 405
     :cond_5
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1393,7 +1393,7 @@
 
     invoke-virtual {v7, v3, p2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 407
+    .line 408
     :cond_6
     :goto_2
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -1404,7 +1404,7 @@
 
     if-eqz v7, :cond_7
 
-    .line 408
+    .line 409
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$500(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -1413,7 +1413,7 @@
 
     invoke-virtual {v7, v3, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 409
+    .line 410
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$500(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -1426,7 +1426,7 @@
 
     check-cast v7, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 410
+    .line 411
     iget-object v10, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$500(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -1447,7 +1447,7 @@
 
     sub-int/2addr v5, v10
 
-    .line 412
+    .line 413
     :cond_7
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1457,7 +1457,7 @@
 
     if-eqz v7, :cond_8
 
-    .line 413
+    .line 414
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$600(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1466,7 +1466,7 @@
 
     invoke-virtual {v7, v3, p2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 414
+    .line 415
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$600(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1479,7 +1479,7 @@
 
     check-cast p2, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 415
+    .line 416
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$600(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1500,7 +1500,7 @@
 
     sub-int/2addr v5, v7
 
-    .line 417
+    .line 418
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1510,7 +1510,7 @@
 
     if-eqz p2, :cond_9
 
-    .line 418
+    .line 419
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$700(Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1537,7 +1537,7 @@
 
     invoke-virtual {p2, v2, v7}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 419
+    .line 420
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$700(Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1550,7 +1550,7 @@
 
     sub-int/2addr v5, p2
 
-    .line 421
+    .line 422
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1560,7 +1560,7 @@
 
     if-eqz p2, :cond_b
 
-    .line 424
+    .line 425
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1000(Lorg/telegram/ui/ActionBar/AlertDialog;)F
@@ -1586,7 +1586,7 @@
     :cond_a
     int-to-float p2, p1
 
-    .line 428
+    .line 429
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1000(Lorg/telegram/ui/ActionBar/AlertDialog;)F
@@ -1598,7 +1598,7 @@
 
     float-to-int p2, p2
 
-    .line 430
+    .line 431
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$900(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/view/View;
@@ -1615,7 +1615,7 @@
 
     invoke-virtual {v2, v7, v10}, Landroid/view/View;->measure(II)V
 
-    .line 431
+    .line 432
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$900(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/view/View;
@@ -1628,7 +1628,7 @@
 
     iput p2, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 432
+    .line 433
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$900(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/view/View;
@@ -1641,7 +1641,7 @@
 
     sub-int/2addr v5, p2
 
-    .line 434
+    .line 435
     :cond_b
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1651,7 +1651,7 @@
 
     if-nez p2, :cond_13
 
-    .line 435
+    .line 436
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/ScrollView;
@@ -1664,7 +1664,7 @@
 
     check-cast p2, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 437
+    .line 438
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/view/View;
@@ -1673,7 +1673,7 @@
 
     if-eqz v1, :cond_e
 
-    .line 438
+    .line 439
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$400(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1716,7 +1716,7 @@
     :goto_4
     iput v1, p2, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
-    .line 439
+    .line 440
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v1, v1, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
@@ -1737,7 +1737,7 @@
 
     goto :goto_8
 
-    .line 440
+    .line 441
     :cond_e
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1747,7 +1747,7 @@
 
     if-eqz v1, :cond_10
 
-    .line 441
+    .line 442
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$400(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1780,7 +1780,7 @@
     :goto_6
     iput v1, p2, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
-    .line 442
+    .line 443
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1789,7 +1789,7 @@
 
     goto :goto_8
 
-    .line 443
+    .line 444
     :cond_10
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1803,7 +1803,7 @@
 
     if-nez v1, :cond_12
 
-    .line 444
+    .line 445
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$400(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1828,14 +1828,14 @@
 
     const/16 v1, 0x14
 
-    .line 445
+    .line 446
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     iput v1, p2, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
-    .line 448
+    .line 449
     :cond_12
     :goto_8
     iget v1, p2, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
@@ -1846,7 +1846,7 @@
 
     sub-int/2addr v5, v1
 
-    .line 449
+    .line 450
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/ScrollView;
@@ -1859,7 +1859,7 @@
 
     invoke-virtual {p2, v4, v1}, Landroid/widget/ScrollView;->measure(II)V
 
-    .line 450
+    .line 451
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1100(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/ScrollView;
@@ -1874,7 +1874,7 @@
 
     goto/16 :goto_b
 
-    .line 452
+    .line 453
     :cond_13
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1884,7 +1884,7 @@
 
     if-eqz p2, :cond_14
 
-    .line 453
+    .line 454
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -1897,7 +1897,7 @@
 
     invoke-virtual {p2, v3, v2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 454
+    .line 455
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -1910,7 +1910,7 @@
 
     check-cast p2, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 455
+    .line 456
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$200(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/FrameLayout;
@@ -1934,7 +1934,7 @@
 
     goto :goto_a
 
-    .line 456
+    .line 457
     :cond_14
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1944,7 +1944,7 @@
 
     if-eqz p2, :cond_15
 
-    .line 457
+    .line 458
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1300(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1957,7 +1957,7 @@
 
     invoke-virtual {p2, v3, v2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 458
+    .line 459
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1300(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1970,7 +1970,7 @@
 
     if-eq p2, v9, :cond_15
 
-    .line 459
+    .line 460
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1300(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -1983,7 +1983,7 @@
 
     check-cast p2, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 460
+    .line 461
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1300(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -2002,7 +2002,7 @@
 
     goto :goto_9
 
-    .line 463
+    .line 464
     :cond_15
     :goto_a
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -2013,7 +2013,7 @@
 
     if-eqz p2, :cond_16
 
-    .line 464
+    .line 465
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1500(Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/Components/LineProgressView;
@@ -2032,7 +2032,7 @@
 
     invoke-virtual {p2, v3, v1}, Landroid/view/View;->measure(II)V
 
-    .line 465
+    .line 466
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1500(Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/Components/LineProgressView;
@@ -2045,7 +2045,7 @@
 
     check-cast p2, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 466
+    .line 467
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1500(Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/Components/LineProgressView;
@@ -2066,7 +2066,7 @@
 
     sub-int/2addr v5, v1
 
-    .line 468
+    .line 469
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1600(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -2079,7 +2079,7 @@
 
     invoke-virtual {p2, v3, v1}, Landroid/widget/TextView;->measure(II)V
 
-    .line 469
+    .line 470
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1600(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -2092,7 +2092,7 @@
 
     check-cast p2, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 470
+    .line 471
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1600(Lorg/telegram/ui/ActionBar/AlertDialog;)Landroid/widget/TextView;
@@ -2117,7 +2117,7 @@
     :goto_b
     sub-int/2addr v0, v5
 
-    .line 474
+    .line 475
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingTop()I
 
     move-result p2
@@ -2152,10 +2152,10 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/LinearLayout;->setMeasuredDimension(II)V
 
-    .line 475
+    .line 476
     iput-boolean v6, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->inLayout:Z
 
-    .line 477
+    .line 478
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$1800(Lorg/telegram/ui/ActionBar/AlertDialog;)I
@@ -2168,7 +2168,7 @@
 
     if-eq p1, p2, :cond_18
 
-    .line 478
+    .line 479
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$1$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$1$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog$1;)V
@@ -2183,7 +2183,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 351
+    .line 352
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$000(Lorg/telegram/ui/ActionBar/AlertDialog;)I
@@ -2194,7 +2194,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 352
+    .line 353
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$100(Lorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -2203,7 +2203,7 @@
 
     return p1
 
-    .line 355
+    .line 356
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -2215,14 +2215,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 536
+    .line 537
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->inLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 539
+    .line 540
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 

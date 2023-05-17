@@ -45,10 +45,10 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/AnimatedAvatarContainer;->titleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    const-string v4, "actionBarDefaultTitle"
-
     .line 23
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -116,15 +116,19 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/AnimatedAvatarContainer;->subtitleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    const-string v1, "actionBarDefaultSubtitle"
-
     .line 31
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubtitle:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
     invoke-virtual {v3, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     .line 32
     iget-object v1, v0, Lorg/telegram/ui/Components/AnimatedAvatarContainer;->subtitleTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

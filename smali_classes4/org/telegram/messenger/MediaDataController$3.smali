@@ -37,7 +37,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;I)V
     .locals 0
 
-    .line 7790
+    .line 7831
     iput-object p1, p0, Lorg/telegram/messenger/MediaDataController$3;->this$0:Lorg/telegram/messenger/MediaDataController;
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaDataController$3;->val$previewItems:Ljava/util/ArrayList;
@@ -52,21 +52,21 @@
 .method private synthetic lambda$run$0(Ljava/util/ArrayList;)V
     .locals 2
 
-    .line 7797
+    .line 7838
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$3;->this$0:Lorg/telegram/messenger/MediaDataController;
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaDataController;->defaultEmojiThemes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 7798
+    .line 7839
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$3;->this$0:Lorg/telegram/messenger/MediaDataController;
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaDataController;->defaultEmojiThemes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 7799
+    .line 7840
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -89,7 +89,7 @@
 
     const/4 v0, 0x0
 
-    .line 7793
+    .line 7834
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaDataController$3;->val$previewItems:Ljava/util/ArrayList;
 
@@ -99,7 +99,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 7794
+    .line 7835
     iget-object v1, p0, Lorg/telegram/messenger/MediaDataController$3;->val$previewItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 7796
+    .line 7837
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$3;->val$previewItems:Ljava/util/ArrayList;
 

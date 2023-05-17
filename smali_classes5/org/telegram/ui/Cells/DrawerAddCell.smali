@@ -21,10 +21,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/DrawerAddCell;->textView:Landroid/widget/TextView;
 
-    const-string p1, "chats_menuItemText"
-
     .line 34
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemText:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -120,9 +120,9 @@
     .line 53
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerAddCell;->textView:Landroid/widget/TextView;
 
-    const-string v1, "chats_menuItemText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -157,9 +157,9 @@
     .line 57
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chats_menuItemIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemIcon:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

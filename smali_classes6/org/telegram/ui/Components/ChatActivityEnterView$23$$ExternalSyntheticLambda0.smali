@@ -6,24 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ChatActivityEnterView$23;
-
-.field public final synthetic f$1:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-.field public final synthetic f$2:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
+.field public final synthetic f$0:Landroid/app/Dialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView$23;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+.method public synthetic constructor <init>(Landroid/app/Dialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$23$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView$23;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$23$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$23$$ExternalSyntheticLambda0;->f$2:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$23$$ExternalSyntheticLambda0;->f$0:Landroid/app/Dialog;
 
     return-void
 .end method
@@ -31,15 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$23$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView$23;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$23$$ExternalSyntheticLambda0;->f$0:Landroid/app/Dialog;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$23$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-    iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$23$$ExternalSyntheticLambda0;->f$2:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView$23;->$r8$lambda$SoNXOxx_SCHMZhbEtPx9M1uUoLA(Lorg/telegram/ui/Components/ChatActivityEnterView$23;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 .end method

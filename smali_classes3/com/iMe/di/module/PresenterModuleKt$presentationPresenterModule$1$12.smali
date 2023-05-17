@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$12\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n44#2:434\n129#3,5:435\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$12\n*L\n163#1:434\n164#1:435,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$12\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2:433\n129#3,5:434\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$12\n*L\n164#1:433\n165#1:434,5\n*E\n"
 .end annotation
 
 
@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    .line 164
+    .line 165
     check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
@@ -114,7 +114,7 @@
 
     move-result-object v2
 
-    .line 164
+    .line 165
     check-cast v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
@@ -128,7 +128,7 @@
 
     move-result-object p1
 
-    .line 164
+    .line 165
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     new-instance v1, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;
@@ -141,7 +141,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 163
+    .line 164
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

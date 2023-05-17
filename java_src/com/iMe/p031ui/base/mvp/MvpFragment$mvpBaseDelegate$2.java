@@ -11,8 +11,8 @@ import moxy.MvpDelegate;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MvpFragment.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2 */
-/* loaded from: classes3.dex */
-public final class MvpFragment$mvpBaseDelegate$2 extends Lambda implements Function0<C19201> {
+/* loaded from: classes.dex */
+public final class MvpFragment$mvpBaseDelegate$2 extends Lambda implements Function0<C19921> {
     final /* synthetic */ MvpFragment this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -25,7 +25,7 @@ public final class MvpFragment$mvpBaseDelegate$2 extends Lambda implements Funct
     /* JADX WARN: Can't rename method to resolve collision */
     /* JADX WARN: Type inference failed for: r0v0, types: [com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2$1] */
     @Override // kotlin.jvm.functions.Function0
-    public final C19201 invoke() {
+    public final C19921 invoke() {
         return new MvpBaseDelegate<MvpFragment>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2.1
             private final Lazy context$delegate;
 

@@ -86,13 +86,13 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     goto :goto_1
 
     .line 214
     :cond_2
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATIONS_CHECK_CELL:I
 
     :goto_1
     return p1
@@ -130,7 +130,7 @@
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 228
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     const/4 v2, 0x0
 
@@ -200,7 +200,7 @@
 
     .line 236
     :cond_3
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATIONS_CHECK_CELL:I
 
     if-ne v0, v1, :cond_8
 
@@ -312,7 +312,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 218
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p2, p1, :cond_0
 

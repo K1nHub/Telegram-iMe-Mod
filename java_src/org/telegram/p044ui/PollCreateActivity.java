@@ -27,14 +27,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.SimpleTextView;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -178,22 +178,22 @@ public class PollCreateActivity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         if (this.quizOnly == 1) {
-            this.actionBar.setTitle(LocaleController.getString("NewQuiz", C3242R.string.NewQuiz));
+            this.actionBar.setTitle(LocaleController.getString("NewQuiz", C3290R.string.NewQuiz));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("NewPoll", C3242R.string.NewPoll));
+            this.actionBar.setTitle(LocaleController.getString("NewPoll", C3290R.string.NewPoll));
         }
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C61901());
-        this.doneItem = this.actionBar.createMenu().addItem(1, LocaleController.getString("Create", C3242R.string.Create).toUpperCase());
+        this.actionBar.setActionBarMenuOnItemClick(new C62841());
+        this.doneItem = this.actionBar.createMenu().addItem(1, LocaleController.getString("Create", C3290R.string.Create).toUpperCase());
         this.listAdapter = new ListAdapter(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
         RecyclerListView recyclerListView = new RecyclerListView(this, context) { // from class: org.telegram.ui.PollCreateActivity.2
             /* JADX INFO: Access modifiers changed from: protected */
@@ -206,7 +206,7 @@ public class PollCreateActivity extends BaseFragment {
 
             @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
             public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z) {
-                rect.bottom += AndroidUtilities.m50dp(60);
+                rect.bottom += AndroidUtilities.m54dp(60);
                 return super.requestChildRectangleOnScreen(view, rect, z);
             }
         };
@@ -238,7 +238,7 @@ public class PollCreateActivity extends BaseFragment {
         });
         HintView hintView = new HintView(context, 4);
         this.hintView = hintView;
-        hintView.setText(LocaleController.getString("PollTapToSelect", C3242R.string.PollTapToSelect));
+        hintView.setText(LocaleController.getString("PollTapToSelect", C3290R.string.PollTapToSelect));
         this.hintView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.hintView.setVisibility(4);
         frameLayout2.addView(this.hintView, LayoutHelper.createFrame(-2, -2, 51, 19, 0, 19, 0));
@@ -249,11 +249,11 @@ public class PollCreateActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.PollCreateActivity$1 */
     /* loaded from: classes5.dex */
-    public class C61901 extends C3306ActionBar.ActionBarMenuOnItemClick {
-        C61901() {
+    public class C62841 extends C3356ActionBar.ActionBarMenuOnItemClick {
+        C62841() {
         }
 
-        @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
         public void onItemClick(int i) {
             if (i == -1) {
                 if (PollCreateActivity.this.checkDiscard()) {
@@ -315,7 +315,7 @@ public class PollCreateActivity extends BaseFragment {
                 AlertsCreator.createScheduleDatePickerDialog(PollCreateActivity.this.getParentActivity(), PollCreateActivity.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PollCreateActivity$1$$ExternalSyntheticLambda0
                     @Override // org.telegram.p044ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                     public final void didSelectDate(boolean z, int i5, String str) {
-                        PollCreateActivity.C61901.this.lambda$onItemClick$0(tLRPC$TL_messageMediaPoll, hashMap, z, i5, str);
+                        PollCreateActivity.C62841.this.lambda$onItemClick$0(tLRPC$TL_messageMediaPoll, hashMap, z, i5, str);
                     }
 
                     @Override // org.telegram.p044ui.Components.AlertsCreator.ScheduleDatePickerDelegate
@@ -409,7 +409,7 @@ public class PollCreateActivity extends BaseFragment {
                         PollEditTextCell pollEditTextCell = (PollEditTextCell) view2;
                         pollEditTextCell.setShowCheckBox(this.quizPoll, true);
                         pollEditTextCell.setChecked(this.answersChecks[i5 - this.answerStartRow], z2);
-                        if (pollEditTextCell.getTop() > AndroidUtilities.m50dp(40) && i == this.quizRow && !this.hintShowed) {
+                        if (pollEditTextCell.getTop() > AndroidUtilities.m54dp(40) && i == this.quizRow && !this.hintShowed) {
                             this.hintView.showForView(pollEditTextCell.getCheckBox(), true);
                             this.hintShowed = true;
                         }
@@ -440,7 +440,7 @@ public class PollCreateActivity extends BaseFragment {
                 View view = findViewHolderForAdapterPosition.itemView;
                 if (view instanceof PollEditTextCell) {
                     PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
-                    if (pollEditTextCell.getTop() > AndroidUtilities.m50dp(40)) {
+                    if (pollEditTextCell.getTop() > AndroidUtilities.m54dp(40)) {
                         this.hintView.showForView(pollEditTextCell.getCheckBox(), true);
                         return;
                     }
@@ -652,15 +652,15 @@ public class PollCreateActivity extends BaseFragment {
         }
         if (!isEmpty) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString("CancelPollAlertTitle", C3242R.string.CancelPollAlertTitle));
-            builder.setMessage(LocaleController.getString("CancelPollAlertText", C3242R.string.CancelPollAlertText));
-            builder.setPositiveButton(LocaleController.getString("PassportDiscard", C3242R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda0
+            builder.setTitle(LocaleController.getString("CancelPollAlertTitle", C3290R.string.CancelPollAlertTitle));
+            builder.setMessage(LocaleController.getString("CancelPollAlertText", C3290R.string.CancelPollAlertText));
+            builder.setPositiveButton(LocaleController.getString("PassportDiscard", C3290R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PollCreateActivity$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     PollCreateActivity.this.lambda$checkDiscard$1(dialogInterface, i2);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
             showDialog(builder.create());
         }
         return isEmpty;
@@ -702,9 +702,9 @@ public class PollCreateActivity extends BaseFragment {
             if (length <= f - (0.7f * f)) {
                 pollEditTextCell.setText2(String.format("%d", Integer.valueOf(length)));
                 SimpleTextView textView2 = pollEditTextCell.getTextView2();
-                String str2 = length < 0 ? "windowBackgroundWhiteRedText5" : "windowBackgroundWhiteGrayText3";
-                textView2.setTextColor(Theme.getColor(str2));
-                textView2.setTag(str2);
+                int i5 = length < 0 ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText3;
+                textView2.setTextColor(Theme.getColor(i5));
+                textView2.setTag(Integer.valueOf(i5));
                 return;
             }
             pollEditTextCell.setText2("");
@@ -750,59 +750,59 @@ public class PollCreateActivity extends BaseFragment {
                 if (i != PollCreateActivity.this.questionHeaderRow) {
                     if (i == PollCreateActivity.this.answerHeaderRow) {
                         if (PollCreateActivity.this.quizOnly == 1) {
-                            headerCell.setText(LocaleController.getString("QuizAnswers", C3242R.string.QuizAnswers));
+                            headerCell.setText(LocaleController.getString("QuizAnswers", C3290R.string.QuizAnswers));
                             return;
                         } else {
-                            headerCell.setText(LocaleController.getString("AnswerOptions", C3242R.string.AnswerOptions));
+                            headerCell.setText(LocaleController.getString("AnswerOptions", C3290R.string.AnswerOptions));
                             return;
                         }
                     } else if (i == PollCreateActivity.this.settingsHeaderRow) {
-                        headerCell.setText(LocaleController.getString("Settings", C3242R.string.Settings));
+                        headerCell.setText(LocaleController.getString("Settings", C3290R.string.Settings));
                         return;
                     } else {
                         return;
                     }
                 }
-                headerCell.setText(LocaleController.getString("PollQuestion", C3242R.string.PollQuestion));
+                headerCell.setText(LocaleController.getString("PollQuestion", C3290R.string.PollQuestion));
                 return;
             }
             if (itemViewType == 6) {
                 TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
                 if (i != PollCreateActivity.this.anonymousRow) {
                     if (i == PollCreateActivity.this.multipleRow) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString("PollMultiple", C3242R.string.PollMultiple), PollCreateActivity.this.multipleChoise, PollCreateActivity.this.quizRow != -1);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("PollMultiple", C3290R.string.PollMultiple), PollCreateActivity.this.multipleChoise, PollCreateActivity.this.quizRow != -1);
                         textCheckCell.setEnabled(true, null);
                         return;
                     } else if (i == PollCreateActivity.this.quizRow) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString("PollQuiz", C3242R.string.PollQuiz), PollCreateActivity.this.quizPoll, false);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("PollQuiz", C3290R.string.PollQuiz), PollCreateActivity.this.quizPoll, false);
                         textCheckCell.setEnabled(PollCreateActivity.this.quizOnly == 0, null);
                         return;
                     } else {
                         return;
                     }
                 }
-                String string = LocaleController.getString("PollAnonymous", C3242R.string.PollAnonymous);
+                String string = LocaleController.getString("PollAnonymous", C3290R.string.PollAnonymous);
                 boolean z = PollCreateActivity.this.anonymousPoll;
                 if (PollCreateActivity.this.multipleRow != -1 || PollCreateActivity.this.quizRow != -1) {
-                    r4 = true;
+                    r5 = true;
                 }
-                textCheckCell.setTextAndCheck(string, z, r4);
+                textCheckCell.setTextAndCheck(string, z, r5);
                 textCheckCell.setEnabled(true, null);
             } else if (itemViewType != 2) {
                 if (itemViewType != 3) {
                     return;
                 }
                 TextCell textCell = (TextCell) viewHolder.itemView;
-                textCell.setColors(null, "windowBackgroundWhiteBlueText4");
-                Drawable drawable = this.mContext.getResources().getDrawable(C3242R.C3244drawable.poll_add_circle);
-                Drawable drawable2 = this.mContext.getResources().getDrawable(C3242R.C3244drawable.poll_add_plus);
-                drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("switchTrackChecked"), PorterDuff.Mode.MULTIPLY));
-                drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("checkboxCheck"), PorterDuff.Mode.MULTIPLY));
-                textCell.setTextAndIcon(LocaleController.getString("AddAnOption", C3242R.string.AddAnOption), (Drawable) new CombinedDrawable(drawable, drawable2), false);
+                textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText4);
+                Drawable drawable = this.mContext.getResources().getDrawable(C3290R.C3292drawable.poll_add_circle);
+                Drawable drawable2 = this.mContext.getResources().getDrawable(C3290R.C3292drawable.poll_add_plus);
+                drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
+                drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
+                textCell.setTextAndIcon(LocaleController.getString("AddAnOption", C3290R.string.AddAnOption), (Drawable) new CombinedDrawable(drawable, drawable2), false);
             } else {
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
                 textInfoPrivacyCell.setFixedSize(0);
-                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 if (i != PollCreateActivity.this.solutionInfoRow) {
                     if (i == PollCreateActivity.this.settingsSectionRow) {
                         if (PollCreateActivity.this.quizOnly != 0) {
@@ -810,17 +810,17 @@ public class PollCreateActivity extends BaseFragment {
                             textInfoPrivacyCell.setText(null);
                             return;
                         }
-                        textInfoPrivacyCell.setText(LocaleController.getString("QuizInfo", C3242R.string.QuizInfo));
+                        textInfoPrivacyCell.setText(LocaleController.getString("QuizInfo", C3290R.string.QuizInfo));
                         return;
                     } else if (10 - PollCreateActivity.this.answersCount <= 0) {
-                        textInfoPrivacyCell.setText(LocaleController.getString("AddAnOptionInfoMax", C3242R.string.AddAnOptionInfoMax));
+                        textInfoPrivacyCell.setText(LocaleController.getString("AddAnOptionInfoMax", C3290R.string.AddAnOptionInfoMax));
                         return;
                     } else {
-                        textInfoPrivacyCell.setText(LocaleController.formatString("AddAnOptionInfo", C3242R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", 10 - PollCreateActivity.this.answersCount, new Object[0])));
+                        textInfoPrivacyCell.setText(LocaleController.formatString("AddAnOptionInfo", C3290R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", 10 - PollCreateActivity.this.answersCount, new Object[0])));
                         return;
                     }
                 }
-                textInfoPrivacyCell.setText(LocaleController.getString("AddAnExplanationInfo", C3242R.string.AddAnExplanationInfo));
+                textInfoPrivacyCell.setText(LocaleController.getString("AddAnExplanationInfo", C3290R.string.AddAnExplanationInfo));
             }
         }
 
@@ -830,14 +830,14 @@ public class PollCreateActivity extends BaseFragment {
             if (itemViewType == 4) {
                 PollEditTextCell pollEditTextCell = (PollEditTextCell) viewHolder.itemView;
                 pollEditTextCell.setTag(1);
-                pollEditTextCell.setTextAndHint(PollCreateActivity.this.questionString != null ? PollCreateActivity.this.questionString : "", LocaleController.getString("QuestionHint", C3242R.string.QuestionHint), false);
+                pollEditTextCell.setTextAndHint(PollCreateActivity.this.questionString != null ? PollCreateActivity.this.questionString : "", LocaleController.getString("QuestionHint", C3290R.string.QuestionHint), false);
                 pollEditTextCell.setTag(null);
                 PollCreateActivity.this.setTextLeft(viewHolder.itemView, viewHolder.getAdapterPosition());
             } else if (itemViewType != 5) {
                 if (itemViewType == 7) {
                     PollEditTextCell pollEditTextCell2 = (PollEditTextCell) viewHolder.itemView;
                     pollEditTextCell2.setTag(1);
-                    pollEditTextCell2.setTextAndHint(PollCreateActivity.this.solutionString != null ? PollCreateActivity.this.solutionString : "", LocaleController.getString("AddAnExplanation", C3242R.string.AddAnExplanation), false);
+                    pollEditTextCell2.setTextAndHint(PollCreateActivity.this.solutionString != null ? PollCreateActivity.this.solutionString : "", LocaleController.getString("AddAnExplanation", C3290R.string.AddAnExplanation), false);
                     pollEditTextCell2.setTag(null);
                     PollCreateActivity.this.setTextLeft(viewHolder.itemView, viewHolder.getAdapterPosition());
                 }
@@ -845,7 +845,7 @@ public class PollCreateActivity extends BaseFragment {
                 int adapterPosition = viewHolder.getAdapterPosition();
                 PollEditTextCell pollEditTextCell3 = (PollEditTextCell) viewHolder.itemView;
                 pollEditTextCell3.setTag(1);
-                pollEditTextCell3.setTextAndHint(PollCreateActivity.this.answers[adapterPosition - PollCreateActivity.this.answerStartRow], LocaleController.getString("OptionHint", C3242R.string.OptionHint), true);
+                pollEditTextCell3.setTextAndHint(PollCreateActivity.this.answers[adapterPosition - PollCreateActivity.this.answerStartRow], LocaleController.getString("OptionHint", C3290R.string.OptionHint), true);
                 pollEditTextCell3.setTag(null);
                 if (PollCreateActivity.this.requestFieldFocusAtPosition == adapterPosition) {
                     EditTextBoldCursor textView = pollEditTextCell3.getTextView();
@@ -878,8 +878,8 @@ public class PollCreateActivity extends BaseFragment {
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             PollEditTextCell pollEditTextCell;
             if (i == 0) {
-                View headerCell = new HeaderCell(this.mContext, "windowBackgroundWhiteBlueHeader", 21, 15, false);
-                headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                View headerCell = new HeaderCell(this.mContext, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, false);
+                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 pollEditTextCell = headerCell;
             } else if (i == 1) {
                 pollEditTextCell = new ShadowSectionCell(this.mContext);
@@ -887,12 +887,12 @@ public class PollCreateActivity extends BaseFragment {
                 pollEditTextCell = new TextInfoPrivacyCell(this.mContext);
             } else if (i == 3) {
                 View textCell = new TextCell(this.mContext);
-                textCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 pollEditTextCell = textCell;
             } else if (i == 4) {
                 final PollEditTextCell pollEditTextCell2 = new PollEditTextCell(this.mContext, null);
                 pollEditTextCell2.createErrorTextView();
-                pollEditTextCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                pollEditTextCell2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 pollEditTextCell2.addTextWatcher(new TextWatcher() { // from class: org.telegram.ui.PollCreateActivity.ListAdapter.1
                     @Override // android.text.TextWatcher
                     public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
@@ -919,7 +919,7 @@ public class PollCreateActivity extends BaseFragment {
                 pollEditTextCell = pollEditTextCell2;
             } else if (i == 6) {
                 View textCheckCell = new TextCheckCell(this.mContext);
-                textCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                textCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 pollEditTextCell = textCheckCell;
             } else if (i == 7) {
                 final PollEditTextCell pollEditTextCell3 = new PollEditTextCell(this.mContext, true, null) { // from class: org.telegram.ui.PollCreateActivity.ListAdapter.2
@@ -935,7 +935,7 @@ public class PollCreateActivity extends BaseFragment {
                     }
                 };
                 pollEditTextCell3.createErrorTextView();
-                pollEditTextCell3.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                pollEditTextCell3.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 pollEditTextCell3.addTextWatcher(new TextWatcher() { // from class: org.telegram.ui.PollCreateActivity.ListAdapter.3
                     @Override // android.text.TextWatcher
                     public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
@@ -1019,7 +1019,7 @@ public class PollCreateActivity extends BaseFragment {
                         return PollCreateActivity.this.answersChecks[adapterPosition - PollCreateActivity.this.answerStartRow];
                     }
                 };
-                pollEditTextCell4.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                pollEditTextCell4.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 pollEditTextCell4.addTextWatcher(new TextWatcher() { // from class: org.telegram.ui.PollCreateActivity.ListAdapter.5
                     @Override // android.text.TextWatcher
                     public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
@@ -1190,33 +1190,41 @@ public class PollCreateActivity extends BaseFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, TextCell.class, PollEditTextCell.class, TextCheckCell.class}, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteRedText5"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText3"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{PollEditTextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{PollEditTextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteHintText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{PollEditTextCell.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayIcon"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{PollEditTextCell.class}, new String[]{"moveImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayIcon"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{PollEditTextCell.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "stickers_menuSelector"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CHECKTAG, new Class[]{PollEditTextCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteRedText5"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{PollEditTextCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayIcon"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{PollEditTextCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkboxCheck"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrack"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueText4"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkboxCheck"));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, TextCell.class, PollEditTextCell.class, TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
+        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
+        int i3 = Theme.key_text_RedRegular;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText3));
+        int i4 = Theme.key_windowBackgroundWhiteBlackText;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{PollEditTextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{PollEditTextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteHintText));
+        int i5 = Theme.key_windowBackgroundWhiteGrayIcon;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{PollEditTextCell.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{PollEditTextCell.class}, new String[]{"moveImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{PollEditTextCell.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_stickers_menuSelector));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CHECKTAG, new Class[]{PollEditTextCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{PollEditTextCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5));
+        int i6 = Theme.key_checkboxCheck;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{PollEditTextCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack));
+        int i7 = Theme.key_switchTrackChecked;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueText4));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
         return arrayList;
     }
 }

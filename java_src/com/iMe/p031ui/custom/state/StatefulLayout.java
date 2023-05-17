@@ -80,7 +80,7 @@ public class StatefulLayout extends FrameLayout {
             addView(view);
         }
         if (view != null) {
-            ViewExtKt.gone(view);
+            ViewExtKt.gone$default(view, false, 1, null);
         }
         this.mDirtyFlag = true;
     }

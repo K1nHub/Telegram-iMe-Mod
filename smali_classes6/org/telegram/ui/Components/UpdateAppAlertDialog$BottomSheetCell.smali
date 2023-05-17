@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;Z)V
-    .locals 12
+    .locals 11
 
     .line 69
     iput-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->this$0:Lorg/telegram/ui/Components/UpdateAppAlertDialog;
@@ -61,22 +61,22 @@
     .line 76
     iget-boolean v1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->hasBackground:Z
 
-    const-string v2, "featuredStickers_addButton"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
     if-eqz v1, :cond_0
 
-    new-array v1, v4, [F
+    .line 77
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    new-array v4, v3, [F
 
     const/high16 v5, 0x40800000    # 4.0f
 
-    aput v5, v1, v3
+    aput v5, v4, v2
 
-    .line 77
-    invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -86,37 +86,37 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->background:Landroid/view/View;
 
+    const/4 v4, -0x1
+
     const/4 v5, -0x1
 
-    const/4 v6, -0x1
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
-
-    const/16 v8, 0x10
+    const/16 v7, 0x10
 
     if-eqz p3, :cond_1
 
-    move v9, v3
+    move v8, v2
 
     goto :goto_0
 
     :cond_1
     const/16 p3, 0x10
 
-    move v9, p3
+    move v8, p3
 
     :goto_0
+    const/16 v9, 0x10
+
     const/16 v10, 0x10
 
-    const/16 v11, 0x10
-
-    invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p3
 
     invoke-virtual {p0, v0, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    move p3, v3
+    move p3, v2
 
     :goto_1
     if-ge p3, p1, :cond_5
@@ -135,21 +135,21 @@
 
     aget-object v0, v0, p3
 
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setLines(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setLines(I)V
 
     .line 84
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
 
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setSingleLine(Z)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 85
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
 
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 86
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
@@ -179,26 +179,26 @@
 
     aget-object v0, v0, p3
 
-    const-string v5, "featuredStickers_buttonText"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v5
+    move-result v4
 
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 90
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
 
-    const-string v5, "fonts/rmedium.ttf"
+    const-string v4, "fonts/rmedium.ttf"
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     goto :goto_2
 
@@ -208,11 +208,13 @@
 
     aget-object v0, v0, p3
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    move-result v5
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v4
+
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 94
     :goto_2
@@ -220,47 +222,47 @@
 
     aget-object v0, v0, p3
 
-    const/high16 v5, 0x41600000    # 14.0f
+    const/high16 v4, 0x41600000    # 14.0f
 
-    invoke-virtual {v0, v4, v5}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v0, v3, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 95
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
 
-    iget-boolean v5, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->hasBackground:Z
+    iget-boolean v4, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->hasBackground:Z
 
-    if-eqz v5, :cond_3
+    if-eqz v4, :cond_3
 
-    move v5, v3
+    move v4, v2
 
     goto :goto_3
 
     :cond_3
-    const/16 v5, 0xd
+    const/16 v4, 0xd
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v4
 
     :goto_3
-    invoke-virtual {v0, v3, v3, v3, v5}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v0, v2, v2, v2, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 96
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
 
-    const/4 v5, -0x2
+    const/4 v4, -0x2
 
-    invoke-static {v5, v5, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v4, v4, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    if-ne p3, v4, :cond_4
+    if-ne p3, v3, :cond_4
 
     .line 98
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda95;->f$0:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$-sudfcGL9h1OfaQKbYqz9FofXRM(Lorg/telegram/messenger/MediaController$SavedFilterState;Lorg/telegram/ui/Components/FilterGLThread;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$goJekrFg6GjAijCAKuJrvRK0KDo(Lorg/telegram/messenger/MediaController$SavedFilterState;Lorg/telegram/ui/Components/FilterGLThread;)V
 
     return-void
 .end method

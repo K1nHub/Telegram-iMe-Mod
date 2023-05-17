@@ -14,7 +14,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;
 
-    .line 621
+    .line 644
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -26,6 +26,18 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public static $default$onCameraOpened(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onWallpaperSelected(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;Ljava/lang/Object;)V
+    .locals 0
+
+    return-void
 .end method
 
 .method public static $default$openAvatarsSearch(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;)V

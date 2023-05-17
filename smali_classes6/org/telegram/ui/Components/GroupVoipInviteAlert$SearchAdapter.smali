@@ -1048,7 +1048,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 13
+    .locals 12
 
     .line 681
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -1240,9 +1240,7 @@
     :goto_1
     const/16 v7, 0x21
 
-    const-string v8, "voipgroup_listeningText"
-
-    const/4 v9, -0x1
+    const/4 v8, -0x1
 
     if-nez v6, :cond_b
 
@@ -1272,14 +1270,14 @@
 
     move-result-object v6
 
-    const-string v10, "@"
+    const-string v9, "@"
 
     .line 720
-    invoke-virtual {v6, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v6, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v11
+    move-result v10
 
-    if-eqz v11, :cond_8
+    if-eqz v10, :cond_8
 
     .line 721
     invoke-virtual {v6, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -1294,7 +1292,7 @@
     invoke-direct {v1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     .line 726
-    invoke-virtual {v1, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v1, v9}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 727
     invoke-virtual {v1, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -1302,37 +1300,39 @@
     .line 728
     invoke-static {v2, v6}, Lorg/telegram/messenger/AndroidUtilities;->indexOfIgnoreCase(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v10
+    move-result v9
 
-    if-eq v10, v9, :cond_a
+    if-eq v9, v8, :cond_a
 
     .line 729
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     move-result v6
 
-    if-nez v10, :cond_9
+    if-nez v9, :cond_9
 
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
     :cond_9
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v9, v9, 0x1
 
     .line 735
     :goto_2
-    new-instance v11, Landroid/text/style/ForegroundColorSpan;
+    new-instance v10, Landroid/text/style/ForegroundColorSpan;
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
 
-    move-result v12
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-direct {v11, v12}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+    move-result v11
 
-    add-int/2addr v6, v10
+    invoke-direct {v10, v11}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
 
-    invoke-virtual {v1, v11, v10, v6, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    add-int/2addr v6, v9
+
+    invoke-virtual {v1, v10, v9, v6, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1370,12 +1370,14 @@
 
     move-result v1
 
-    if-eq v1, v9, :cond_c
+    if-eq v1, v8, :cond_c
 
     .line 751
     new-instance v6, Landroid/text/style/ForegroundColorSpan;
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -1484,19 +1486,19 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/GraySectionCell;-><init>(Landroid/content/Context;)V
 
-    const-string p2, "voipgroup_actionBarUnscrolled"
-
     .line 663
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarUnscrolled:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    const-string p2, "voipgroup_searchPlaceholder"
-
     .line 664
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/GraySectionCell;->setTextColor(Ljava/lang/String;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchPlaceholder:I
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/GraySectionCell;->setTextColor(I)V
 
     goto :goto_0
 
@@ -1515,34 +1517,34 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setCustomRightImage(I)V
 
-    const-string p1, "voipgroup_nameText"
-
     .line 656
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setNameColor(I)V
 
-    const-string p1, "voipgroup_lastSeenTextUnscrolled"
-
     .line 657
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_lastSeenTextUnscrolled:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
-    const-string v0, "voipgroup_listeningText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setStatusColors(II)V
 
-    const-string p1, "voipgroup_listViewBackground"
-
     .line 658
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setDividerColor(Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listViewBackground:I
+
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setDividerColor(I)V
 
     move-object p1, p2
 

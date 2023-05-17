@@ -32,7 +32,7 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
@@ -140,7 +140,7 @@ public class ActionBarMenuSlider extends FrameLayout {
         AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, -0.4f);
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.1f);
         this.pseudoBlurPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        this.backgroundPaint.setColor(Theme.getColor("actionBarDefaultSubmenuBackground", resourcesProvider));
+        this.backgroundPaint.setColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground, resourcesProvider));
         boolean z = AndroidUtilities.computePerceivedBrightness(this.backgroundPaint.getColor()) <= 0.721f;
         this.backgroundDark = z;
         this.textDrawable.setTextColor(z ? -1 : -16777216);
@@ -223,8 +223,8 @@ public class ActionBarMenuSlider extends FrameLayout {
 
     public void setDrawShadow(boolean z) {
         this.drawShadow = z;
-        int m50dp = z ? AndroidUtilities.m50dp(8) : 0;
-        setPadding(m50dp, m50dp, m50dp, m50dp);
+        int m54dp = z ? AndroidUtilities.m54dp(8) : 0;
+        setPadding(m54dp, m54dp, m54dp, m54dp);
         invalidate();
     }
 
@@ -278,7 +278,7 @@ public class ActionBarMenuSlider extends FrameLayout {
         if (this.drawShadow) {
             i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i) + getPaddingRight() + getPaddingLeft(), 1073741824);
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(44) + getPaddingTop() + getPaddingBottom(), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(44) + getPaddingTop() + getPaddingBottom(), 1073741824));
         boolean z = SharedConfig.getDevicePerformanceClass() >= 2 && LiteMode.isEnabled(256);
         if (this.drawBlur && this.blurBitmap == null && !this.preparingBlur && z) {
             this.prepareBlur.run();
@@ -322,7 +322,7 @@ public class ActionBarMenuSlider extends FrameLayout {
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
         if (this.drawShadow) {
-            canvas.drawRoundRect(rectF, AndroidUtilities.m51dp(this.roundRadiusDp), AndroidUtilities.m51dp(this.roundRadiusDp), this.shadowPaint);
+            canvas.drawRoundRect(rectF, AndroidUtilities.m55dp(this.roundRadiusDp), AndroidUtilities.m55dp(this.roundRadiusDp), this.shadowPaint);
         }
         if (this.drawBlur) {
             float f = this.blurBitmapAlpha.set(this.blurBitmap != null ? 1.0f : 0.0f);
@@ -341,17 +341,17 @@ public class ActionBarMenuSlider extends FrameLayout {
                     this.pseudoBlurGradient.setLocalMatrix(this.pseudoBlurMatrix);
                 }
                 this.pseudoBlurPaint.setAlpha((int) ((1.0f - f) * 255.0f));
-                canvas.drawRoundRect(rectF, AndroidUtilities.m51dp(this.roundRadiusDp), AndroidUtilities.m51dp(this.roundRadiusDp), this.pseudoBlurPaint);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m55dp(this.roundRadiusDp), AndroidUtilities.m55dp(this.roundRadiusDp), this.pseudoBlurPaint);
             }
             if (this.blurBitmap != null && this.value < 1.0f && f > BitmapDescriptorFactory.HUE_RED) {
                 this.blurPaint.setAlpha((int) (f * 255.0f));
-                canvas.drawRoundRect(rectF, AndroidUtilities.m51dp(this.roundRadiusDp), AndroidUtilities.m51dp(this.roundRadiusDp), this.blurPaint);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m55dp(this.roundRadiusDp), AndroidUtilities.m55dp(this.roundRadiusDp), this.blurPaint);
             }
-            canvas.drawRoundRect(rectF, AndroidUtilities.m51dp(this.roundRadiusDp), AndroidUtilities.m51dp(this.roundRadiusDp), this.brightenBlurPaint);
-            canvas.drawRoundRect(rectF, AndroidUtilities.m51dp(this.roundRadiusDp), AndroidUtilities.m51dp(this.roundRadiusDp), this.darkenBlurPaint);
+            canvas.drawRoundRect(rectF, AndroidUtilities.m55dp(this.roundRadiusDp), AndroidUtilities.m55dp(this.roundRadiusDp), this.brightenBlurPaint);
+            canvas.drawRoundRect(rectF, AndroidUtilities.m55dp(this.roundRadiusDp), AndroidUtilities.m55dp(this.roundRadiusDp), this.darkenBlurPaint);
             this.fillPaint.setColor(-1);
         } else {
-            canvas.drawRoundRect(rectF, AndroidUtilities.m51dp(this.roundRadiusDp), AndroidUtilities.m51dp(this.roundRadiusDp), this.backgroundPaint);
+            canvas.drawRoundRect(rectF, AndroidUtilities.m55dp(this.roundRadiusDp), AndroidUtilities.m55dp(this.roundRadiusDp), this.backgroundPaint);
         }
         if (!this.backgroundDark) {
             drawText(canvas, false);
@@ -360,7 +360,7 @@ public class ActionBarMenuSlider extends FrameLayout {
             canvas.save();
             canvas.clipRect(getPaddingLeft(), getPaddingTop(), getPaddingLeft() + (((getWidth() - getPaddingLeft()) - getPaddingRight()) * this.value), getHeight() - getPaddingBottom());
         }
-        canvas.drawRoundRect(rectF, AndroidUtilities.m51dp(this.roundRadiusDp), AndroidUtilities.m51dp(this.roundRadiusDp), this.fillPaint);
+        canvas.drawRoundRect(rectF, AndroidUtilities.m55dp(this.roundRadiusDp), AndroidUtilities.m55dp(this.roundRadiusDp), this.fillPaint);
         if (!this.backgroundDark) {
             drawText(canvas, true);
         }
@@ -385,7 +385,7 @@ public class ActionBarMenuSlider extends FrameLayout {
             colorFilter = null;
         }
         animatedTextDrawable.setColorFilter(colorFilter);
-        this.textDrawable.setBounds(getPaddingLeft() + AndroidUtilities.m50dp(20), getMeasuredHeight() / 2, (getMeasuredWidth() - getPaddingRight()) - AndroidUtilities.m50dp(20), getMeasuredHeight() / 2);
+        this.textDrawable.setBounds(getPaddingLeft() + AndroidUtilities.m54dp(20), getMeasuredHeight() / 2, (getMeasuredWidth() - getPaddingRight()) - AndroidUtilities.m54dp(20), getMeasuredHeight() / 2);
         this.textDrawable.draw(canvas);
     }
 
@@ -396,7 +396,7 @@ public class ActionBarMenuSlider extends FrameLayout {
         int[] iArr = this.location;
         float f = iArr[0] / AndroidUtilities.displaySize.x;
         float measuredWidth = (iArr[0] + getMeasuredWidth()) / AndroidUtilities.displaySize.x;
-        float currentActionBarHeight = ((this.location[1] - AndroidUtilities.statusBarHeight) - C3306ActionBar.getCurrentActionBarHeight()) / AndroidUtilities.displaySize.y;
+        float currentActionBarHeight = ((this.location[1] - AndroidUtilities.statusBarHeight) - C3356ActionBar.getCurrentActionBarHeight()) / AndroidUtilities.displaySize.y;
         int width = (int) (f * bitmap.getWidth());
         int width2 = (int) (measuredWidth * bitmap.getWidth());
         int height = (int) (currentActionBarHeight * bitmap.getHeight());
@@ -434,10 +434,10 @@ public class ActionBarMenuSlider extends FrameLayout {
                     this.pseudoBlurGradient = linearGradient;
                     this.pseudoBlurPaint.setShader(linearGradient);
                 }
-                color = Theme.multAlpha(Theme.getColor("windowBackgroundWhite", this.resourcesProvider), 0.25f);
+                color = Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider), 0.25f);
             }
         } else {
-            color = Theme.getColor("windowBackgroundWhite", this.resourcesProvider);
+            color = Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider);
             if (!Theme.isCurrentThemeDark()) {
                 color = Theme.blendOver(color, Theme.multAlpha(-16777216, 0.18f));
             }
@@ -521,7 +521,7 @@ public class ActionBarMenuSlider extends FrameLayout {
 
                 @Override // org.telegram.p044ui.Components.SeekBarAccessibilityDelegate
                 public CharSequence getContentDescription(View view) {
-                    return SpeedIconDrawable.formatNumber(SpeedSlider.this.getSpeed()) + "x  " + LocaleController.getString("AccDescrSpeedSlider", C3242R.string.AccDescrSpeedSlider);
+                    return SpeedIconDrawable.formatNumber(SpeedSlider.this.getSpeed()) + "x  " + LocaleController.getString("AccDescrSpeedSlider", C3290R.string.AccDescrSpeedSlider);
                 }
             };
             this.seekBarAccessibilityDelegate = floatSeekBarAccessibilityDelegate;
@@ -554,7 +554,7 @@ public class ActionBarMenuSlider extends FrameLayout {
 
         @Override // org.telegram.p044ui.ActionBar.ActionBarMenuSlider
         protected int getColorValue(float f) {
-            return ColorUtils.blendARGB(Theme.getColor("color_lightblue", this.resourcesProvider), Theme.getColor("color_blue", this.resourcesProvider), MathUtils.clamp((((f * 2.3f) + 0.2f) - 1.0f) / 1.0f, (float) BitmapDescriptorFactory.HUE_RED, 1.0f));
+            return ColorUtils.blendARGB(Theme.getColor(Theme.key_color_lightblue, this.resourcesProvider), Theme.getColor(Theme.key_color_blue, this.resourcesProvider), MathUtils.clamp((((f * 2.3f) + 0.2f) - 1.0f) / 1.0f, (float) BitmapDescriptorFactory.HUE_RED, 1.0f));
         }
     }
 }

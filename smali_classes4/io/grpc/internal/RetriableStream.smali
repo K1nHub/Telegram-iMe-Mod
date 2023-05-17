@@ -1010,7 +1010,7 @@
     const/4 v0, 0x1
 
     :cond_5
-    const-string p1, "substream should be CANCELLED_BECAUSE_COMMITTED already"
+    const-string/jumbo p1, "substream should be CANCELLED_BECAUSE_COMMITTED already"
 
     .line 274
     invoke-static {v0, p1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V

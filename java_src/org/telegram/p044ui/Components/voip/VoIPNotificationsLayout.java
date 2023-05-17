@@ -174,7 +174,7 @@ public class VoIPNotificationsLayout extends LinearLayout {
 
     public int getChildsHight() {
         int childCount = getChildCount();
-        return (childCount > 0 ? AndroidUtilities.m50dp(16) : 0) + (childCount * AndroidUtilities.m50dp(32));
+        return (childCount > 0 ? AndroidUtilities.m54dp(16) : 0) + (childCount * AndroidUtilities.m54dp(32));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -190,7 +190,7 @@ public class VoIPNotificationsLayout extends LinearLayout {
             setFocusable(true);
             setFocusableInTouchMode(true);
             this.iconView = new ImageView(context);
-            setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m50dp(16), ColorUtils.setAlphaComponent(-16777216, 102)));
+            setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(16), ColorUtils.setAlphaComponent(-16777216, 102)));
             addView(this.iconView, LayoutHelper.createFrame(24, 24, 0, 10, 4, 10, 4));
             TextView textView = new TextView(context);
             this.textView = textView;

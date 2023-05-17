@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -46,14 +46,14 @@ public class AdminedChannelCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(24));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(24));
         BackupImageView backupImageView2 = this.avatarImageView;
         boolean z2 = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(48, 48, (z2 ? 5 : 3) | 48, z2 ? 0 : i + 12, 6, z2 ? i + 12 : 0, 6));
         if (z) {
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
-            checkBox2.setColor(null, "windowBackgroundWhite", "checkboxCheck");
+            checkBox2.setColor(-1, Theme.key_windowBackgroundWhite, Theme.key_checkboxCheck);
             this.checkBox.setDrawUnchecked(false);
             this.checkBox.setDrawBackgroundAsArc(3);
             CheckBox2 checkBox22 = this.checkBox;
@@ -63,7 +63,7 @@ public class AdminedChannelCell extends FrameLayout {
         int i2 = onClickListener != null ? 62 : 24;
         SimpleTextView simpleTextView = new SimpleTextView(context);
         this.nameTextView = simpleTextView;
-        simpleTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        simpleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.nameTextView.setTextSize(17);
         this.nameTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         SimpleTextView simpleTextView2 = this.nameTextView;
@@ -72,20 +72,22 @@ public class AdminedChannelCell extends FrameLayout {
         SimpleTextView simpleTextView3 = new SimpleTextView(context);
         this.statusTextView = simpleTextView3;
         simpleTextView3.setTextSize(14);
-        this.statusTextView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
-        this.statusTextView.setLinkTextColor(Theme.getColor("windowBackgroundWhiteLinkText"));
-        this.statusTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         SimpleTextView simpleTextView4 = this.statusTextView;
+        int i3 = Theme.key_windowBackgroundWhiteGrayText;
+        simpleTextView4.setTextColor(Theme.getColor(i3));
+        this.statusTextView.setLinkTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText));
+        this.statusTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        SimpleTextView simpleTextView5 = this.statusTextView;
         boolean z5 = LocaleController.isRTL;
-        addView(simpleTextView4, LayoutHelper.createFrame(-1, 20.0f, (z5 ? 5 : 3) | 48, z5 ? i2 : i + 73, 32.5f, z5 ? i + 73 : i2, 6.0f));
+        addView(simpleTextView5, LayoutHelper.createFrame(-1, 20.0f, (z5 ? 5 : 3) | 48, z5 ? i2 : i + 73, 32.5f, z5 ? i + 73 : i2, 6.0f));
         if (onClickListener != null) {
             ImageView imageView = new ImageView(context);
             this.deleteButton = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.deleteButton.setImageResource(C3242R.C3244drawable.msg_panel_clear);
+            this.deleteButton.setImageResource(C3290R.C3292drawable.msg_panel_clear);
             this.deleteButton.setOnClickListener(onClickListener);
-            this.deleteButton.setBackground(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21")));
-            this.deleteButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayText"), PorterDuff.Mode.MULTIPLY));
+            this.deleteButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
+            this.deleteButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i3), PorterDuff.Mode.MULTIPLY));
             ImageView imageView2 = this.deleteButton;
             boolean z6 = LocaleController.isRTL;
             addView(imageView2, LayoutHelper.createFrame(48, 48, (z6 ? 3 : 5) | 48, z6 ? 7 : 0, 6, z6 ? 0 : 7, 0));
@@ -115,7 +117,7 @@ public class AdminedChannelCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp((this.isLast ? 12 : 0) + 60), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp((this.isLast ? 12 : 0) + 60), 1073741824));
     }
 
     public SimpleTextView getNameTextView() {

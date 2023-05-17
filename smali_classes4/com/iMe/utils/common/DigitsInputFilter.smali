@@ -101,7 +101,7 @@
 
     move-result-object p1
 
-    const-string v0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo v0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -322,7 +322,7 @@
 .method public filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
     .locals 0
 
-    const-string p2, "source"
+    const-string/jumbo p2, "source"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

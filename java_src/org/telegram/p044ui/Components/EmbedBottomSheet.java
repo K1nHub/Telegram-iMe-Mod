@@ -44,7 +44,7 @@ import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BringAppForegroundService;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -214,13 +214,13 @@ public class EmbedBottomSheet extends BottomSheet {
                     }
                     EmbedBottomSheet.this.videoView.destroy();
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
             }
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i5, int i6) {
-                super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(((int) Math.min(EmbedBottomSheet.this.height / (EmbedBottomSheet.this.width / View.MeasureSpec.getSize(i5)), AndroidUtilities.displaySize.y / 2)) + AndroidUtilities.m50dp((EmbedBottomSheet.this.hasDescription ? 22 : 0) + 84) + 1, 1073741824));
+                super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec(((int) Math.min(EmbedBottomSheet.this.height / (EmbedBottomSheet.this.width / View.MeasureSpec.getSize(i5)), AndroidUtilities.displaySize.y / 2)) + AndroidUtilities.m54dp((EmbedBottomSheet.this.hasDescription ? 22 : 0) + 84) + 1, 1073741824));
             }
         };
         this.containerLayout = frameLayout2;
@@ -339,7 +339,7 @@ public class EmbedBottomSheet extends BottomSheet {
                 try {
                     EmbedBottomSheet.this.webView.loadUrl(EmbedBottomSheet.this.embedUrl, hashMap);
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
             }
 
@@ -365,7 +365,7 @@ public class EmbedBottomSheet extends BottomSheet {
                             ((BottomSheet) EmbedBottomSheet.this).containerView.setSystemUiVisibility(AnalyticsListener.EVENT_PLAYER_RELEASED);
                             return null;
                         } catch (Exception e) {
-                            FileLog.m45e(e);
+                            FileLog.m49e(e);
                             return null;
                         }
                     }
@@ -379,7 +379,7 @@ public class EmbedBottomSheet extends BottomSheet {
                         EmbedBottomSheet.this.parentActivity.setRequestedOrientation(EmbedBottomSheet.this.prevOrientation);
                         return null;
                     } catch (Exception e2) {
-                        FileLog.m45e(e2);
+                        FileLog.m49e(e2);
                         return null;
                     }
                 }
@@ -403,11 +403,11 @@ public class EmbedBottomSheet extends BottomSheet {
                                 EmbedBottomSheet.this.parentActivity.setRequestedOrientation(EmbedBottomSheet.this.prevOrientation);
                             }
                         } catch (Exception e) {
-                            FileLog.m45e(e);
+                            FileLog.m49e(e);
                         }
                     }
                     if (EmbedBottomSheet.this.fullscreenVideoContainer.getVisibility() == 0) {
-                        ((BottomSheet) EmbedBottomSheet.this).containerView.setTranslationY(((BottomSheet) EmbedBottomSheet.this).containerView.getMeasuredHeight() + AndroidUtilities.m50dp(10));
+                        ((BottomSheet) EmbedBottomSheet.this).containerView.setTranslationY(((BottomSheet) EmbedBottomSheet.this).containerView.getMeasuredHeight() + AndroidUtilities.m54dp(10));
                         ((BottomSheet) EmbedBottomSheet.this).backDrawable.setAlpha(0);
                     }
                     EmbedBottomSheet.this.setOnShowListener(null);
@@ -418,7 +418,7 @@ public class EmbedBottomSheet extends BottomSheet {
                         Rect pipRect = PipVideoOverlay.getPipRect(true, f);
                         float width = pipRect.width / textureView.getWidth();
                         AnimatorSet animatorSet = new AnimatorSet();
-                        animatorSet.playTogether(ObjectAnimator.ofFloat(textureImageView, View.SCALE_X, width), ObjectAnimator.ofFloat(textureImageView, View.SCALE_Y, width), ObjectAnimator.ofFloat(textureImageView, View.TRANSLATION_X, pipRect.f1727x), ObjectAnimator.ofFloat(textureImageView, View.TRANSLATION_Y, pipRect.f1728y), ObjectAnimator.ofFloat(textureView, View.SCALE_X, width), ObjectAnimator.ofFloat(textureView, View.SCALE_Y, width), ObjectAnimator.ofFloat(textureView, View.TRANSLATION_X, pipRect.f1727x), ObjectAnimator.ofFloat(textureView, View.TRANSLATION_Y, pipRect.f1728y), ObjectAnimator.ofFloat(((BottomSheet) EmbedBottomSheet.this).containerView, View.TRANSLATION_Y, ((BottomSheet) EmbedBottomSheet.this).containerView.getMeasuredHeight() + AndroidUtilities.m50dp(10)), ObjectAnimator.ofInt(((BottomSheet) EmbedBottomSheet.this).backDrawable, AnimationProperties.COLOR_DRAWABLE_ALPHA, 0), ObjectAnimator.ofFloat(EmbedBottomSheet.this.fullscreenVideoContainer, View.ALPHA, BitmapDescriptorFactory.HUE_RED), ObjectAnimator.ofFloat(controlsView, View.ALPHA, BitmapDescriptorFactory.HUE_RED));
+                        animatorSet.playTogether(ObjectAnimator.ofFloat(textureImageView, View.SCALE_X, width), ObjectAnimator.ofFloat(textureImageView, View.SCALE_Y, width), ObjectAnimator.ofFloat(textureImageView, View.TRANSLATION_X, pipRect.f1734x), ObjectAnimator.ofFloat(textureImageView, View.TRANSLATION_Y, pipRect.f1735y), ObjectAnimator.ofFloat(textureView, View.SCALE_X, width), ObjectAnimator.ofFloat(textureView, View.SCALE_Y, width), ObjectAnimator.ofFloat(textureView, View.TRANSLATION_X, pipRect.f1734x), ObjectAnimator.ofFloat(textureView, View.TRANSLATION_Y, pipRect.f1735y), ObjectAnimator.ofFloat(((BottomSheet) EmbedBottomSheet.this).containerView, View.TRANSLATION_Y, ((BottomSheet) EmbedBottomSheet.this).containerView.getMeasuredHeight() + AndroidUtilities.m54dp(10)), ObjectAnimator.ofInt(((BottomSheet) EmbedBottomSheet.this).backDrawable, AnimationProperties.COLOR_DRAWABLE_ALPHA, 0), ObjectAnimator.ofFloat(EmbedBottomSheet.this.fullscreenVideoContainer, View.ALPHA, BitmapDescriptorFactory.HUE_RED), ObjectAnimator.ofFloat(controlsView, View.ALPHA, BitmapDescriptorFactory.HUE_RED));
                         animatorSet.setInterpolator(new DecelerateInterpolator());
                         animatorSet.setDuration(250L);
                         animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.EmbedBottomSheet.6.1
@@ -446,7 +446,7 @@ public class EmbedBottomSheet extends BottomSheet {
                     try {
                         EmbedBottomSheet.this.parentActivity.startService(new Intent(ApplicationLoader.applicationContext, BringAppForegroundService.class));
                     } catch (Throwable th) {
-                        FileLog.m45e(th);
+                        FileLog.m49e(th);
                     }
                 }
                 if (z2) {
@@ -458,12 +458,12 @@ public class EmbedBottomSheet extends BottomSheet {
                     float f2 = pipRect2.width / textureView2.getLayoutParams().width;
                     textureImageView2.setScaleX(f2);
                     textureImageView2.setScaleY(f2);
-                    textureImageView2.setTranslationX(pipRect2.f1727x);
-                    textureImageView2.setTranslationY(pipRect2.f1728y);
+                    textureImageView2.setTranslationX(pipRect2.f1734x);
+                    textureImageView2.setTranslationY(pipRect2.f1735y);
                     textureView2.setScaleX(f2);
                     textureView2.setScaleY(f2);
-                    textureView2.setTranslationX(pipRect2.f1727x);
-                    textureView2.setTranslationY(pipRect2.f1728y);
+                    textureView2.setTranslationX(pipRect2.f1734x);
+                    textureView2.setTranslationY(pipRect2.f1735y);
                 } else {
                     PipVideoOverlay.dismiss();
                 }
@@ -472,7 +472,7 @@ public class EmbedBottomSheet extends BottomSheet {
                 if (z2) {
                     EmbedBottomSheet.this.waitingForDraw = 4;
                     ((BottomSheet) EmbedBottomSheet.this).backDrawable.setAlpha(1);
-                    ((BottomSheet) EmbedBottomSheet.this).containerView.setTranslationY(((BottomSheet) EmbedBottomSheet.this).containerView.getMeasuredHeight() + AndroidUtilities.m50dp(10));
+                    ((BottomSheet) EmbedBottomSheet.this).containerView.setTranslationY(((BottomSheet) EmbedBottomSheet.this).containerView.getMeasuredHeight() + AndroidUtilities.m54dp(10));
                 }
             }
 
@@ -520,14 +520,14 @@ public class EmbedBottomSheet extends BottomSheet {
                         EmbedBottomSheet.this.parentActivity.getWindow().addFlags(128);
                         return;
                     } catch (Exception e) {
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                         return;
                     }
                 }
                 try {
                     EmbedBottomSheet.this.parentActivity.getWindow().clearFlags(128);
                 } catch (Exception e2) {
-                    FileLog.m45e(e2);
+                    FileLog.m49e(e2);
                 }
             }
 
@@ -556,28 +556,28 @@ public class EmbedBottomSheet extends BottomSheet {
         if (this.hasDescription) {
             TextView textView = new TextView(context);
             textView.setTextSize(1, 16.0f);
-            textView.setTextColor(Theme.getColor("dialogTextBlack"));
+            textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
             textView.setText(str2);
             textView.setSingleLine(true);
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            textView.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
+            textView.setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
             this.containerLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 83, 0, 0, 0, 77));
         }
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(Theme.getColor("dialogTextGray"));
+        textView2.setTextColor(Theme.getColor(Theme.key_dialogTextGray));
         textView2.setText(str);
         textView2.setSingleLine(true);
         textView2.setEllipsize(TextUtils.TruncateAt.END);
-        textView2.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
+        textView2.setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
         this.containerLayout.addView(textView2, LayoutHelper.createFrame(-1, -2, 83, 0, 0, 0, 57));
         View view2 = new View(context);
-        view2.setBackgroundColor(Theme.getColor("dialogGrayLine"));
+        view2.setBackgroundColor(Theme.getColor(Theme.key_dialogGrayLine));
         this.containerLayout.addView(view2, new FrameLayout.LayoutParams(-1, 1, 83));
-        ((FrameLayout.LayoutParams) view2.getLayoutParams()).bottomMargin = AndroidUtilities.m50dp(48);
+        ((FrameLayout.LayoutParams) view2.getLayoutParams()).bottomMargin = AndroidUtilities.m54dp(48);
         FrameLayout frameLayout3 = new FrameLayout(context);
-        frameLayout3.setBackgroundColor(Theme.getColor("dialogBackground"));
+        frameLayout3.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
         this.containerLayout.addView(frameLayout3, LayoutHelper.createFrame(-1, 48, 83));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
@@ -585,13 +585,15 @@ public class EmbedBottomSheet extends BottomSheet {
         frameLayout3.addView(linearLayout, LayoutHelper.createFrame(-2, -1, 53));
         TextView textView3 = new TextView(context);
         textView3.setTextSize(1, 14.0f);
-        textView3.setTextColor(Theme.getColor("dialogTextBlue4"));
+        int i5 = Theme.key_dialogTextBlue4;
+        textView3.setTextColor(Theme.getColor(i5));
         textView3.setGravity(17);
         textView3.setSingleLine(true);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
-        textView3.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("dialogButtonSelector"), 0));
-        textView3.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-        textView3.setText(LocaleController.getString("Close", C3242R.string.Close).toUpperCase());
+        int i6 = Theme.key_dialogButtonSelector;
+        textView3.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
+        textView3.setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
+        textView3.setText(LocaleController.getString("Close", C3290R.string.Close).toUpperCase());
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         frameLayout3.addView(textView3, LayoutHelper.createLinear(-2, -1, 51));
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda1
@@ -607,12 +609,12 @@ public class EmbedBottomSheet extends BottomSheet {
         ImageView imageView = new ImageView(context);
         this.pipButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.pipButton.setImageResource(C3242R.C3244drawable.ic_goinline);
-        this.pipButton.setContentDescription(LocaleController.getString("AccDescrPipMode", C3242R.string.AccDescrPipMode));
+        this.pipButton.setImageResource(C3290R.C3292drawable.ic_goinline);
+        this.pipButton.setContentDescription(LocaleController.getString("AccDescrPipMode", C3290R.string.AccDescrPipMode));
         this.pipButton.setEnabled(false);
         this.pipButton.setAlpha(0.5f);
-        this.pipButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("dialogTextBlue4"), PorterDuff.Mode.MULTIPLY));
-        this.pipButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("dialogButtonSelector"), 0));
+        this.pipButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i5), PorterDuff.Mode.MULTIPLY));
+        this.pipButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
         this.imageButtonsContainer.addView(this.pipButton, LayoutHelper.createFrame(48, 48, 51, 0, 0, 4, 0));
         this.pipButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -628,34 +630,34 @@ public class EmbedBottomSheet extends BottomSheet {
         };
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        imageView2.setImageResource(C3242R.C3244drawable.msg_copy);
-        imageView2.setContentDescription(LocaleController.getString("CopyLink", C3242R.string.CopyLink));
-        imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("dialogTextBlue4"), PorterDuff.Mode.MULTIPLY));
-        imageView2.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("dialogButtonSelector"), 0));
+        imageView2.setImageResource(C3290R.C3292drawable.msg_copy);
+        imageView2.setContentDescription(LocaleController.getString("CopyLink", C3290R.string.CopyLink));
+        imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i5), PorterDuff.Mode.MULTIPLY));
+        imageView2.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
         this.imageButtonsContainer.addView(imageView2, LayoutHelper.createFrame(48, 48, 51));
         imageView2.setOnClickListener(onClickListener);
         TextView textView4 = new TextView(context);
         this.copyTextButton = textView4;
         textView4.setTextSize(1, 14.0f);
-        this.copyTextButton.setTextColor(Theme.getColor("dialogTextBlue4"));
+        this.copyTextButton.setTextColor(Theme.getColor(i5));
         this.copyTextButton.setGravity(17);
         this.copyTextButton.setSingleLine(true);
         this.copyTextButton.setEllipsize(TextUtils.TruncateAt.END);
-        this.copyTextButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("dialogButtonSelector"), 0));
-        this.copyTextButton.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-        this.copyTextButton.setText(LocaleController.getString("Copy", C3242R.string.Copy).toUpperCase());
+        this.copyTextButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
+        this.copyTextButton.setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
+        this.copyTextButton.setText(LocaleController.getString("Copy", C3290R.string.Copy).toUpperCase());
         this.copyTextButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         linearLayout.addView(this.copyTextButton, LayoutHelper.createFrame(-2, -1, 51));
         this.copyTextButton.setOnClickListener(onClickListener);
         TextView textView5 = new TextView(context);
         textView5.setTextSize(1, 14.0f);
-        textView5.setTextColor(Theme.getColor("dialogTextBlue4"));
+        textView5.setTextColor(Theme.getColor(i5));
         textView5.setGravity(17);
         textView5.setSingleLine(true);
         textView5.setEllipsize(TextUtils.TruncateAt.END);
-        textView5.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("dialogButtonSelector"), 0));
-        textView5.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-        textView5.setText(LocaleController.getString("OpenInBrowser", C3242R.string.OpenInBrowser).toUpperCase());
+        textView5.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
+        textView5.setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
+        textView5.setText(LocaleController.getString("OpenInBrowser", C3290R.string.OpenInBrowser).toUpperCase());
         textView5.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         linearLayout.addView(textView5, LayoutHelper.createFrame(-2, -1, 51));
         textView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda2
@@ -712,7 +714,7 @@ public class EmbedBottomSheet extends BottomSheet {
                                     str5 = parse.getQueryParameter("time_continue");
                                 }
                             } catch (Exception e) {
-                                FileLog.m45e(e);
+                                FileLog.m49e(e);
                             }
                             if (str5 != null) {
                                 if (str5.contains("m")) {
@@ -731,7 +733,7 @@ public class EmbedBottomSheet extends BottomSheet {
                     }
                     EmbedBottomSheet.this.webView.loadUrl(EmbedBottomSheet.this.embedUrl, hashMap);
                 } catch (Exception e2) {
-                    FileLog.m45e(e2);
+                    FileLog.m49e(e2);
                 }
             }
 
@@ -745,20 +747,20 @@ public class EmbedBottomSheet extends BottomSheet {
                     EmbedBottomSheet.this.parentActivity.getWindow().clearFlags(128);
                     return true;
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                     return true;
                 }
             }
         });
         this.orientationEventListener = new OrientationEventListener(ApplicationLoader.applicationContext) { // from class: org.telegram.ui.Components.EmbedBottomSheet.9
             @Override // android.view.OrientationEventListener
-            public void onOrientationChanged(int i5) {
+            public void onOrientationChanged(int i7) {
                 if (EmbedBottomSheet.this.orientationEventListener != null && EmbedBottomSheet.this.videoView.getVisibility() == 0 && EmbedBottomSheet.this.parentActivity != null && EmbedBottomSheet.this.videoView.isInFullscreen() && EmbedBottomSheet.this.fullscreenedByButton) {
-                    if (i5 < 240 || i5 > 300) {
-                        if (!EmbedBottomSheet.this.wasInLandscape || i5 <= 0) {
+                    if (i7 < 240 || i7 > 300) {
+                        if (!EmbedBottomSheet.this.wasInLandscape || i7 <= 0) {
                             return;
                         }
-                        if (i5 >= 330 || i5 <= 30) {
+                        if (i7 >= 330 || i7 <= 30) {
                             EmbedBottomSheet.this.parentActivity.setRequestedOrientation(EmbedBottomSheet.this.prevOrientation);
                             EmbedBottomSheet.this.fullscreenedByButton = false;
                             EmbedBottomSheet.this.wasInLandscape = false;
@@ -809,7 +811,7 @@ public class EmbedBottomSheet extends BottomSheet {
         if (PipVideoOverlay.isVisible()) {
             PipVideoOverlay.dismiss();
             Objects.requireNonNull(view);
-            AndroidUtilities.runOnUIThread(new ChatActivityEnterView$$ExternalSyntheticLambda42(view), 300L);
+            AndroidUtilities.runOnUIThread(new ChatActivityEnterView$$ExternalSyntheticLambda38(view), 300L);
             return;
         }
         boolean z = this.isYouTube && "inapp".equals(MessagesController.getInstance(this.currentAccount).youtubePipType);
@@ -830,7 +832,7 @@ public class EmbedBottomSheet extends BottomSheet {
         try {
             ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.openUrl));
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         Activity activity = this.parentActivity;
         if (activity instanceof LaunchActivity) {
@@ -854,7 +856,7 @@ public class EmbedBottomSheet extends BottomSheet {
             WebView webView = this.webView;
             webView.loadUrl("javascript:" + str);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -924,7 +926,7 @@ public class EmbedBottomSheet extends BottomSheet {
             try {
                 this.parentActivity.startService(new Intent(ApplicationLoader.applicationContext, BringAppForegroundService.class));
             } catch (Throwable th) {
-                FileLog.m45e(th);
+                FileLog.m49e(th);
             }
         }
         if (this.isYouTube) {
@@ -982,7 +984,7 @@ public class EmbedBottomSheet extends BottomSheet {
         if (view == this.videoView.getControlsView()) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             layoutParams.width = this.videoView.getMeasuredWidth();
-            layoutParams.height = this.videoView.getAspectRatioView().getMeasuredHeight() + (this.videoView.isInFullscreen() ? 0 : AndroidUtilities.m50dp(10));
+            layoutParams.height = this.videoView.getAspectRatioView().getMeasuredHeight() + (this.videoView.isInFullscreen() ? 0 : AndroidUtilities.m54dp(10));
         }
         return false;
     }

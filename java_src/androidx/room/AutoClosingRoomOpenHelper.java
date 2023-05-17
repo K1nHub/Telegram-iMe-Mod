@@ -88,7 +88,7 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
         }
 
         void pokeOpen() {
-            this.mAutoCloser.executeRefCountingFunction(C0287x9c57900c.INSTANCE);
+            this.mAutoCloser.executeRefCountingFunction(C0290x9c57900c.INSTANCE);
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
@@ -142,7 +142,7 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             if (this.mAutoCloser.getDelegateDatabase() == null) {
                 return false;
             }
-            return ((Boolean) this.mAutoCloser.executeRefCountingFunction(C0290x9c57900f.INSTANCE)).booleanValue();
+            return ((Boolean) this.mAutoCloser.executeRefCountingFunction(C0293x9c57900f.INSTANCE)).booleanValue();
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
@@ -198,12 +198,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
         public String getPath() {
-            return (String) this.mAutoCloser.executeRefCountingFunction(C0289x9c57900e.INSTANCE);
+            return (String) this.mAutoCloser.executeRefCountingFunction(C0292x9c57900e.INSTANCE);
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
         public boolean isWriteAheadLoggingEnabled() {
-            return ((Boolean) this.mAutoCloser.executeRefCountingFunction(C0286x9c57900b.INSTANCE)).booleanValue();
+            return ((Boolean) this.mAutoCloser.executeRefCountingFunction(C0289x9c57900b.INSTANCE)).booleanValue();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -216,7 +216,7 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
         public List<Pair<String, String>> getAttachedDbs() {
-            return (List) this.mAutoCloser.executeRefCountingFunction(C0288x9c57900d.INSTANCE);
+            return (List) this.mAutoCloser.executeRefCountingFunction(C0291x9c57900d.INSTANCE);
         }
 
         @Override // java.io.Closeable, java.lang.AutoCloseable
@@ -520,12 +520,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
 
         @Override // androidx.sqlite.p011db.SupportSQLiteStatement
         public int executeUpdateDelete() {
-            return ((Integer) executeSqliteStatementWithRefCount(C0292xd7aa7fff.INSTANCE)).intValue();
+            return ((Integer) executeSqliteStatementWithRefCount(C0295xd7aa7fff.INSTANCE)).intValue();
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteStatement
         public long executeInsert() {
-            return ((Long) executeSqliteStatementWithRefCount(C0293xd7aa8000.INSTANCE)).longValue();
+            return ((Long) executeSqliteStatementWithRefCount(C0296xd7aa8000.INSTANCE)).longValue();
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteProgram

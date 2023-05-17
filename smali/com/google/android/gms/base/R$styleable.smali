@@ -53,16 +53,16 @@
 
     :array_0
     .array-data 4
-        0x7f0400cd
-        0x7f0401f6
-        0x7f0401f7
+        0x7f0400d2
+        0x7f040206
+        0x7f040207
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f040089
-        0x7f0400ff
-        0x7f040363
+        0x7f04008e
+        0x7f040105
+        0x7f040380
     .end array-data
 .end method
 

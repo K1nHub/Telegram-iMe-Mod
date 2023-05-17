@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$41;
-.super Landroid/widget/FrameLayout;
+.super Lorg/telegram/ui/Components/ReportAlert;
 .source "AlertsCreator.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createDrawOverlayGroupCallPermissionDialog(Landroid/content/Context;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    value = Lorg/telegram/ui/Components/AlertsCreator;->lambda$createReportAlert$132([IILorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/content/DialogInterface;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,84 +15,115 @@
 
 
 # instance fields
-.field final synthetic val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
+.field final synthetic val$dialog_id:J
+
+.field final synthetic val$messageId:I
+
+.field final synthetic val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/GroupCallPipButton;)V
+.method constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/BaseFragment;IJ)V
     .locals 0
 
-    .line 5258
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
+    .line 4814
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    iput p4, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$messageId:I
+
+    iput-wide p5, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$dialog_id:J
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onLayout(ZIIII)V
-    .locals 0
+.method public dismissInternal()V
+    .locals 2
 
-    .line 5261
-    invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
+    .line 4818
+    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 5262
-    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
+    .line 4819
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    instance-of v1, v0, Lorg/telegram/ui/ChatActivity;
 
-    move-result p2
+    if-eqz v1, :cond_0
 
-    int-to-float p2, p2
+    .line 4820
+    check-cast v0, Lorg/telegram/ui/ChatActivity;
 
-    const p3, 0x3e8f5c29    # 0.28f
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->checkAdjustResize()V
 
-    mul-float/2addr p2, p3
+    :cond_0
+    return-void
+.end method
 
-    iget-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
+.method protected onSend(ILjava/lang/String;)V
+    .locals 4
 
-    invoke-virtual {p3}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    .line 4826
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result p3
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    int-to-float p3, p3
+    .line 4827
+    iget v1, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$messageId:I
 
-    const/high16 p4, 0x40000000    # 2.0f
+    if-eqz v1, :cond_0
 
-    div-float/2addr p3, p4
+    .line 4828
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    sub-float/2addr p2, p3
+    move-result-object v1
 
-    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5263
-    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
+    .line 4830
+    :cond_0
+    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result p2
+    move-result-object v1
 
-    int-to-float p2, p2
+    iget-wide v2, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$dialog_id:J
 
-    const p3, 0x3f51eb85    # 0.82f
+    invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->getInputPeer(J)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    mul-float/2addr p2, p3
+    move-result-object v1
 
-    iget-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
+    .line 4831
+    invoke-static {v1, p1, p2, v0}, Lorg/telegram/ui/Components/AlertsCreator;->sendReport(Lorg/telegram/tgnet/TLRPC$InputPeer;ILjava/lang/String;Ljava/util/ArrayList;)V
 
-    invoke-virtual {p3}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    .line 4832
+    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    move-result p3
+    instance-of p2, p1, Lorg/telegram/ui/ChatActivity;
 
-    int-to-float p3, p3
+    if-eqz p2, :cond_1
 
-    div-float/2addr p3, p4
+    .line 4833
+    check-cast p1, Lorg/telegram/ui/ChatActivity;
 
-    sub-float/2addr p2, p3
+    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
 
-    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
+    move-result-object p1
 
+    if-eqz p1, :cond_1
+
+    const-wide/16 v0, 0x0
+
+    const/16 p2, 0x4a
+
+    const/4 v2, 0x0
+
+    .line 4835
+    invoke-virtual {p1, v0, v1, p2, v2}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
+
+    :cond_1
     return-void
 .end method

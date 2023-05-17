@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 624
+    .line 656
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$1;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public onChanged(Z)V
     .locals 1
 
-    .line 627
+    .line 659
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$1;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    iget-object v0, v0, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/iMe/ui/profile/ProfilePresenter;
+    iget-object v0, v0, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/iMe/feature/profile/ProfilePresenter;
 
-    invoke-virtual {v0, p1}, Lcom/iMe/ui/profile/ProfilePresenter;->changeRankVisibility(Z)V
+    invoke-virtual {v0, p1}, Lcom/iMe/feature/profile/ProfilePresenter;->changeRankVisibility(Z)V
 
     return-void
 .end method

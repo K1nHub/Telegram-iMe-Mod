@@ -34,14 +34,14 @@ public class MediaCodecVideoConvertor {
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: BlockProcessor
-        jadx.core.utils.exceptions.JadxRuntimeException: Unreachable block: B:412:0x0851
+        jadx.core.utils.exceptions.JadxRuntimeException: Unreachable block: B:384:0x0859
         	at jadx.core.dex.visitors.blocks.BlockProcessor.checkForUnreachableBlocks(BlockProcessor.java:81)
         	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:47)
         	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
         */
     private boolean convertVideoInternal(java.lang.String r74, java.io.File r75, int r76, boolean r77, int r78, int r79, int r80, int r81, int r82, int r83, int r84, long r85, long r87, long r89, long r91, boolean r93, boolean r94, org.telegram.messenger.MediaController.SavedFilterState r95, java.lang.String r96, java.util.ArrayList<org.telegram.messenger.VideoEditedInfo.MediaEntity> r97, boolean r98, org.telegram.messenger.MediaController.CropState r99, boolean r100) {
         /*
-            Method dump skipped, instructions count: 6345
+            Method dump skipped, instructions count: 6126
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.MediaCodecVideoConvertor.convertVideoInternal(java.lang.String, java.io.File, int, boolean, int, int, int, int, int, int, int, long, long, long, long, boolean, boolean, org.telegram.messenger.MediaController$SavedFilterState, java.lang.String, java.util.ArrayList, boolean, org.telegram.messenger.MediaController$CropState, boolean):boolean");
@@ -83,7 +83,7 @@ public class MediaCodecVideoConvertor {
         if (clamp > 1 && SharedConfig.deviceIsAverage()) {
             clamp = 1;
         }
-        FileLog.m48d("source size " + i + "x" + i2 + "    dest size " + i3 + i4 + "   kernelRadius " + clamp);
+        FileLog.m52d("source size " + i + "x" + i2 + "    dest size " + i3 + i4 + "   kernelRadius " + clamp);
         if (z) {
             return "#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nconst float kernel = " + clamp + ".0;\nconst float pixelSizeX = 1.0 / " + i + ".0;\nconst float pixelSizeY = 1.0 / " + i2 + ".0;\nuniform samplerExternalOES sTexture;\nvoid main() {\nvec3 accumulation = vec3(0);\nvec3 weightsum = vec3(0);\nfor (float x = -kernel; x <= kernel; x++){\n   for (float y = -kernel; y <= kernel; y++){\n       accumulation += texture2D(sTexture, vTextureCoord + vec2(x * pixelSizeX, y * pixelSizeY)).xyz;\n       weightsum += 1.0;\n   }\n}\ngl_FragColor = vec4(accumulation / weightsum, 1.0);\n}\n";
         }

@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -33,7 +33,7 @@ public class RequestPeerRequirementsCell extends LinearLayout {
         super(context);
         this.requirements = new ArrayList<>();
         setOrientation(1);
-        setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
     }
 
     public void set(TLRPC$RequestPeerType tLRPC$RequestPeerType) {
@@ -42,50 +42,51 @@ public class RequestPeerRequirementsCell extends LinearLayout {
             removeAllViews();
             this.requirements.clear();
             if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeUser) {
-                checkRequirement(((TLRPC$TL_requestPeerTypeUser) tLRPC$RequestPeerType).premium, C3242R.string.PeerRequirementPremiumTrue, C3242R.string.PeerRequirementPremiumFalse);
+                checkRequirement(((TLRPC$TL_requestPeerTypeUser) tLRPC$RequestPeerType).premium, C3290R.string.PeerRequirementPremiumTrue, C3290R.string.PeerRequirementPremiumFalse);
             } else {
                 boolean z = tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeBroadcast;
                 if (z) {
-                    checkRequirement(tLRPC$RequestPeerType.has_username, C3242R.string.PeerRequirementChannelPublicTrue, C3242R.string.PeerRequirementChannelPublicFalse);
+                    checkRequirement(tLRPC$RequestPeerType.has_username, C3290R.string.PeerRequirementChannelPublicTrue, C3290R.string.PeerRequirementChannelPublicFalse);
                     Boolean bool = tLRPC$RequestPeerType.bot_participant;
                     if (bool != null && bool.booleanValue()) {
-                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3242R.string.PeerRequirementChannelBotParticipant))));
+                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3290R.string.PeerRequirementChannelBotParticipant))));
                     }
                     Boolean bool2 = tLRPC$RequestPeerType.creator;
                     if (bool2 != null && bool2.booleanValue()) {
-                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3242R.string.PeerRequirementChannelCreatorTrue))));
+                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3290R.string.PeerRequirementChannelCreatorTrue))));
                     }
                 } else {
-                    checkRequirement(tLRPC$RequestPeerType.has_username, C3242R.string.PeerRequirementGroupPublicTrue, C3242R.string.PeerRequirementGroupPublicFalse);
-                    checkRequirement(tLRPC$RequestPeerType.forum, C3242R.string.PeerRequirementForumTrue, C3242R.string.PeerRequirementForumFalse);
+                    checkRequirement(tLRPC$RequestPeerType.has_username, C3290R.string.PeerRequirementGroupPublicTrue, C3290R.string.PeerRequirementGroupPublicFalse);
+                    checkRequirement(tLRPC$RequestPeerType.forum, C3290R.string.PeerRequirementForumTrue, C3290R.string.PeerRequirementForumFalse);
                     Boolean bool3 = tLRPC$RequestPeerType.bot_participant;
                     if (bool3 != null && bool3.booleanValue()) {
-                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3242R.string.PeerRequirementGroupBotParticipant))));
+                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3290R.string.PeerRequirementGroupBotParticipant))));
                     }
                     Boolean bool4 = tLRPC$RequestPeerType.creator;
                     if (bool4 != null && bool4.booleanValue()) {
-                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3242R.string.PeerRequirementGroupCreatorTrue))));
+                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3290R.string.PeerRequirementGroupCreatorTrue))));
                     }
                 }
                 Boolean bool5 = tLRPC$RequestPeerType.creator;
                 if (bool5 == null || !bool5.booleanValue()) {
-                    checkAdminRights(tLRPC$RequestPeerType.user_admin_rights, z, C3242R.string.PeerRequirementUserRights, C3242R.string.PeerRequirementUserRight);
+                    checkAdminRights(tLRPC$RequestPeerType.user_admin_rights, z, C3290R.string.PeerRequirementUserRights, C3290R.string.PeerRequirementUserRight);
                 }
             }
             if (this.requirements.isEmpty()) {
                 return;
             }
             HeaderCell headerCell = new HeaderCell(getContext(), 20);
-            headerCell.setText(LocaleController.getString("PeerRequirements", C3242R.string.PeerRequirements));
-            headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+            headerCell.setText(LocaleController.getString("PeerRequirements", C3290R.string.PeerRequirements));
+            int i = Theme.key_windowBackgroundWhite;
+            headerCell.setBackgroundColor(Theme.getColor(i));
             addView(headerCell, LayoutHelper.createLinear(-1, -2));
-            addView(emptyView(9, Theme.getColor("windowBackgroundWhite")), LayoutHelper.createLinear(-1, -2));
+            addView(emptyView(9, Theme.getColor(i)), LayoutHelper.createLinear(-1, -2));
             Iterator<Requirement> it = this.requirements.iterator();
             while (it.hasNext()) {
                 addView(new RequirementCell(this, getContext(), it.next()), LayoutHelper.createLinear(-1, -2));
             }
-            addView(emptyView(12, Theme.getColor("windowBackgroundWhite")), LayoutHelper.createLinear(-1, -2));
-            addView(emptyView(12, Theme.getThemedDrawable(getContext(), C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow")), LayoutHelper.createLinear(-1, -2));
+            addView(emptyView(12, Theme.getColor(Theme.key_windowBackgroundWhite)), LayoutHelper.createLinear(-1, -2));
+            addView(emptyView(12, Theme.getThemedDrawableByKey(getContext(), C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow)), LayoutHelper.createLinear(-1, -2));
         }
     }
 
@@ -97,7 +98,7 @@ public class RequestPeerRequirementsCell extends LinearLayout {
         View view = new View(this, getContext()) { // from class: org.telegram.ui.Cells.RequestPeerRequirementsCell.1
             @Override // android.view.View
             protected void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(i), 1073741824));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(i), 1073741824));
             }
         };
         view.setBackground(drawable);
@@ -121,48 +122,48 @@ public class RequestPeerRequirementsCell extends LinearLayout {
         ArrayList arrayList = new ArrayList();
         if (tLRPC$TL_chatAdminRights.change_info) {
             if (z) {
-                string = LocaleController.getString("EditAdminChangeChannelInfo", C3242R.string.EditAdminChangeChannelInfo);
+                string = LocaleController.getString("EditAdminChangeChannelInfo", C3290R.string.EditAdminChangeChannelInfo);
             } else {
-                string = LocaleController.getString("EditAdminChangeGroupInfo", C3242R.string.EditAdminChangeGroupInfo);
+                string = LocaleController.getString("EditAdminChangeGroupInfo", C3290R.string.EditAdminChangeGroupInfo);
             }
             arrayList.add(Requirement.make(1, string));
         }
         if (tLRPC$TL_chatAdminRights.post_messages && z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPostMessages", C3242R.string.EditAdminPostMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPostMessages", C3290R.string.EditAdminPostMessages)));
         }
         if (tLRPC$TL_chatAdminRights.edit_messages && z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminEditMessages", C3242R.string.EditAdminEditMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminEditMessages", C3290R.string.EditAdminEditMessages)));
         }
         if (tLRPC$TL_chatAdminRights.delete_messages) {
             if (z) {
-                i = C3242R.string.EditAdminDeleteMessages;
+                i = C3290R.string.EditAdminDeleteMessages;
                 str = "EditAdminDeleteMessages";
             } else {
-                i = C3242R.string.EditAdminGroupDeleteMessages;
+                i = C3290R.string.EditAdminGroupDeleteMessages;
                 str = "EditAdminGroupDeleteMessages";
             }
             arrayList.add(Requirement.make(1, LocaleController.getString(str, i)));
         }
         if (tLRPC$TL_chatAdminRights.ban_users && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminBanUsers", C3242R.string.EditAdminBanUsers)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminBanUsers", C3290R.string.EditAdminBanUsers)));
         }
         if (tLRPC$TL_chatAdminRights.invite_users) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddUsers", C3242R.string.EditAdminAddUsers)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddUsers", C3290R.string.EditAdminAddUsers)));
         }
         if (tLRPC$TL_chatAdminRights.pin_messages && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPinMessages", C3242R.string.EditAdminPinMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPinMessages", C3290R.string.EditAdminPinMessages)));
         }
         if (tLRPC$TL_chatAdminRights.add_admins) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddAdmins", C3242R.string.EditAdminAddAdmins)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddAdmins", C3290R.string.EditAdminAddAdmins)));
         }
         if (tLRPC$TL_chatAdminRights.anonymous && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminSendAnonymously", C3242R.string.EditAdminSendAnonymously)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminSendAnonymously", C3290R.string.EditAdminSendAnonymously)));
         }
         if (tLRPC$TL_chatAdminRights.manage_call) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("StartVoipChatPermission", C3242R.string.StartVoipChatPermission)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("StartVoipChatPermission", C3290R.string.StartVoipChatPermission)));
         }
         if (tLRPC$TL_chatAdminRights.manage_topics && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("ManageTopicsPermission", C3242R.string.ManageTopicsPermission)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("ManageTopicsPermission", C3290R.string.ManageTopicsPermission)));
         }
         if (arrayList.size() == 1) {
             return ((Requirement) arrayList.get(0)).text.toString().toLowerCase();
@@ -190,48 +191,48 @@ public class RequestPeerRequirementsCell extends LinearLayout {
         ArrayList arrayList = new ArrayList();
         if (tLRPC$TL_chatAdminRights.change_info) {
             if (z) {
-                string = LocaleController.getString("EditAdminChangeChannelInfo", C3242R.string.EditAdminChangeChannelInfo);
+                string = LocaleController.getString("EditAdminChangeChannelInfo", C3290R.string.EditAdminChangeChannelInfo);
             } else {
-                string = LocaleController.getString("EditAdminChangeGroupInfo", C3242R.string.EditAdminChangeGroupInfo);
+                string = LocaleController.getString("EditAdminChangeGroupInfo", C3290R.string.EditAdminChangeGroupInfo);
             }
             arrayList.add(Requirement.make(1, string));
         }
         if (tLRPC$TL_chatAdminRights.post_messages && z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPostMessages", C3242R.string.EditAdminPostMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPostMessages", C3290R.string.EditAdminPostMessages)));
         }
         if (tLRPC$TL_chatAdminRights.edit_messages && z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminEditMessages", C3242R.string.EditAdminEditMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminEditMessages", C3290R.string.EditAdminEditMessages)));
         }
         if (tLRPC$TL_chatAdminRights.delete_messages) {
             if (z) {
-                i = C3242R.string.EditAdminDeleteMessages;
+                i = C3290R.string.EditAdminDeleteMessages;
                 str = "EditAdminDeleteMessages";
             } else {
-                i = C3242R.string.EditAdminGroupDeleteMessages;
+                i = C3290R.string.EditAdminGroupDeleteMessages;
                 str = "EditAdminGroupDeleteMessages";
             }
             arrayList.add(Requirement.make(1, LocaleController.getString(str, i)));
         }
         if (tLRPC$TL_chatAdminRights.ban_users && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminBanUsers", C3242R.string.EditAdminBanUsers)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminBanUsers", C3290R.string.EditAdminBanUsers)));
         }
         if (tLRPC$TL_chatAdminRights.invite_users) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddUsers", C3242R.string.EditAdminAddUsers)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddUsers", C3290R.string.EditAdminAddUsers)));
         }
         if (tLRPC$TL_chatAdminRights.pin_messages && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPinMessages", C3242R.string.EditAdminPinMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPinMessages", C3290R.string.EditAdminPinMessages)));
         }
         if (tLRPC$TL_chatAdminRights.add_admins) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddAdmins", C3242R.string.EditAdminAddAdmins)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddAdmins", C3290R.string.EditAdminAddAdmins)));
         }
         if (tLRPC$TL_chatAdminRights.anonymous && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminSendAnonymously", C3242R.string.EditAdminSendAnonymously)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminSendAnonymously", C3290R.string.EditAdminSendAnonymously)));
         }
         if (tLRPC$TL_chatAdminRights.manage_call) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("StartVoipChatPermission", C3242R.string.StartVoipChatPermission)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("StartVoipChatPermission", C3290R.string.StartVoipChatPermission)));
         }
         if (tLRPC$TL_chatAdminRights.manage_topics && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("ManageTopicsPermission", C3242R.string.ManageTopicsPermission)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("ManageTopicsPermission", C3290R.string.ManageTopicsPermission)));
         }
         if (arrayList.size() == 1) {
             this.requirements.add(Requirement.make(TextUtils.concat(charSequence2, " ", ((Requirement) arrayList.get(0)).text)));
@@ -262,18 +263,18 @@ public class RequestPeerRequirementsCell extends LinearLayout {
 
         public RequirementCell(RequestPeerRequirementsCell requestPeerRequirementsCell, Context context, Requirement requirement) {
             super(context);
-            setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+            setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             setOrientation(0);
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.imageView.setImageResource(requirement.padding <= 0 ? C3242R.C3244drawable.list_check : C3242R.C3244drawable.list_circle);
-            this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteBlueHeader"), PorterDuff.Mode.MULTIPLY));
+            this.imageView.setImageResource(requirement.padding <= 0 ? C3290R.C3292drawable.list_check : C3290R.C3292drawable.list_circle);
+            this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY));
             addView(this.imageView, LayoutHelper.createLinear(20, 20, BitmapDescriptorFactory.HUE_RED, 51, (requirement.padding * 16) + 17, -1, 0, 0));
             TextView textView = new TextView(context);
             this.textView = textView;
             textView.setTextSize(1, 14.0f);
-            this.textView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+            this.textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
             this.textView.setSingleLine(false);
             this.textView.setText(requirement.text);
             addView(this.textView, LayoutHelper.createLinear(-1, -2, 1, 6, 4, 24, 4));

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1391
+    .line 1390
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/NestedSizeNotifierLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 1394
+    .line 1393
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1395
+    .line 1394
     invoke-virtual {p0}, Lorg/telegram/ui/Components/NestedSizeNotifierLayout;->isPinnedToTop()Z
 
     move-result v0
@@ -53,7 +53,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1396
+    .line 1395
     iget-object v4, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/CacheControlActivity;->access$500(Lorg/telegram/ui/CacheControlActivity;)F
@@ -64,12 +64,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 1397
+    .line 1396
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/CacheControlActivity;->access$524(Lorg/telegram/ui/CacheControlActivity;F)F
 
-    .line 1398
+    .line 1397
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_0
@@ -77,7 +77,7 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 1399
+    .line 1398
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$500(Lorg/telegram/ui/CacheControlActivity;)F
@@ -88,15 +88,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 1400
+    .line 1399
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/CacheControlActivity;->access$516(Lorg/telegram/ui/CacheControlActivity;F)F
 
-    .line 1401
+    .line 1400
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1403
+    .line 1402
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -111,7 +111,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/CacheControlActivity;->access$502(Lorg/telegram/ui/CacheControlActivity;F)F
 
-    .line 1404
+    .line 1403
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$600(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1405
+    .line 1404
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$800(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;

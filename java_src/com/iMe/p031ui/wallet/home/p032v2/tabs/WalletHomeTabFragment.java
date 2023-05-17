@@ -8,7 +8,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: WalletHomeTabFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.WalletHomeTabFragment */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletHomeTabFragment extends MvpFragment {
     private WalletHomeView parentView;
     private final Lazy resourceManager$delegate;

@@ -42,7 +42,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/SnowflakesEffect;)V
     .locals 0
 
-    .line 39
+    .line 38
     iput-object p1, p0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/SnowflakesEffect;Lorg/telegram/ui/Components/SnowflakesEffect$1;)V
     .locals 0
 
-    .line 39
+    .line 38
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;-><init>(Lorg/telegram/ui/Components/SnowflakesEffect;)V
 
     return-void
@@ -68,21 +68,21 @@
 
     move-object/from16 v1, p1
 
-    .line 52
+    .line 51
     iget v2, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->type:I
 
     if-eqz v2, :cond_1
 
     const v2, -0x4036f025
 
-    .line 62
+    .line 61
     iget-object v4, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
     iget-object v5, v4, Lorg/telegram/ui/Components/SnowflakesEffect;->particleBitmap:Landroid/graphics/Bitmap;
 
     if-nez v5, :cond_0
 
-    .line 63
+    .line 62
     invoke-static {v4}, Lorg/telegram/ui/Components/SnowflakesEffect;->access$100(Lorg/telegram/ui/Components/SnowflakesEffect;)Landroid/graphics/Paint;
 
     move-result-object v4
@@ -91,7 +91,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 64
+    .line 63
     iget-object v4, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
     const/16 v5, 0x10
@@ -112,7 +112,7 @@
 
     iput-object v5, v4, Lorg/telegram/ui/Components/SnowflakesEffect;->particleBitmap:Landroid/graphics/Bitmap;
 
-    .line 65
+    .line 64
     new-instance v4, Landroid/graphics/Canvas;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
@@ -123,7 +123,7 @@
 
     const/high16 v5, 0x40000000    # 2.0f
 
-    .line 66
+    .line 65
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v6
@@ -132,7 +132,7 @@
 
     const v6, 0x3f11eb85    # 0.57f
 
-    .line 67
+    .line 66
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v6
@@ -143,7 +143,7 @@
 
     const v6, 0x3fc66666    # 1.55f
 
-    .line 68
+    .line 67
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v6
@@ -161,14 +161,14 @@
 
     const/16 v6, 0x8
 
-    .line 70
+    .line 69
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
 
     int-to-float v15, v7
 
-    .line 71
+    .line 70
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -177,7 +177,7 @@
 
     float-to-double v9, v2
 
-    .line 72
+    .line 71
     invoke-static {v9, v10}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v6
@@ -186,7 +186,7 @@
 
     mul-float/2addr v6, v12
 
-    .line 73
+    .line 72
     invoke-static {v9, v10}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v7
@@ -205,7 +205,7 @@
 
     add-float v19, v11, v7
 
-    .line 76
+    .line 75
     iget-object v6, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/SnowflakesEffect;->access$100(Lorg/telegram/ui/Components/SnowflakesEffect;)Landroid/graphics/Paint;
@@ -238,7 +238,7 @@
 
     float-to-double v10, v6
 
-    .line 79
+    .line 78
     invoke-static {v10, v11}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v6
@@ -261,7 +261,7 @@
 
     double-to-float v6, v6
 
-    .line 80
+    .line 79
     invoke-static {v10, v11}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v19
@@ -288,7 +288,7 @@
 
     add-float v19, v18, v7
 
-    .line 81
+    .line 80
     iget-object v6, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/SnowflakesEffect;->access$100(Lorg/telegram/ui/Components/SnowflakesEffect;)Landroid/graphics/Paint;
@@ -311,7 +311,7 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 83
+    .line 82
     invoke-static/range {v25 .. v26}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v6
@@ -330,7 +330,7 @@
 
     double-to-float v6, v6
 
-    .line 84
+    .line 83
     invoke-static/range {v25 .. v26}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v7
@@ -353,7 +353,7 @@
 
     add-float v10, v18, v3
 
-    .line 85
+    .line 84
     iget-object v3, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SnowflakesEffect;->access$100(Lorg/telegram/ui/Components/SnowflakesEffect;)Landroid/graphics/Paint;
@@ -378,7 +378,7 @@
 
     goto/16 :goto_0
 
-    .line 90
+    .line 89
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
@@ -396,10 +396,10 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 91
+    .line 90
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 92
+    .line 91
     iget v2, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->scale:F
 
     iget v3, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->x:F
@@ -408,7 +408,7 @@
 
     invoke-virtual {v1, v2, v2, v3, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 93
+    .line 92
     iget-object v2, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
     iget-object v3, v2, Lorg/telegram/ui/Components/SnowflakesEffect;->particleBitmap:Landroid/graphics/Bitmap;
@@ -423,12 +423,12 @@
 
     invoke-virtual {v1, v3, v4, v5, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 94
+    .line 93
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_1
 
-    .line 54
+    .line 53
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->this$0:Lorg/telegram/ui/Components/SnowflakesEffect;
 
@@ -446,7 +446,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 55
+    .line 54
     iget v2, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->x:F
 
     iget v3, v0, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->y:F

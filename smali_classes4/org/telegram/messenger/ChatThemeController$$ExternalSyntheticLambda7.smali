@@ -2,50 +2,60 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/ResultCallback;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/ChatThemeController;
+
+.field public final synthetic f$1:J
+
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:Ljava/lang/String;
+
+.field public final synthetic f$4:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->INSTANCE:Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ChatThemeController;JZLjava/lang/String;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/messenger/ChatThemeController;
+
+    iput-wide p2, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$1:J
+
+    iput-boolean p4, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$2:Z
+
+    iput-object p5, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$3:Ljava/lang/String;
+
+    iput-object p6, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$4:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onComplete(Ljava/lang/Object;)V
-    .locals 0
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 8
 
-    check-cast p1, Landroid/util/Pair;
+    iget-object v0, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/messenger/ChatThemeController;
 
-    invoke-static {p1}, Lorg/telegram/messenger/ChatThemeController;->$r8$lambda$PgY3Ca0gGhWOWqLRkf5W71aR8YY(Landroid/util/Pair;)V
+    iget-wide v1, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$1:J
 
-    return-void
-.end method
+    iget-boolean v3, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$2:Z
 
-.method public synthetic onError(Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
+    iget-object v4, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$3:Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lorg/telegram/tgnet/ResultCallback$-CC;->$default$onError(Lorg/telegram/tgnet/ResultCallback;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v5, p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda7;->f$4:Ljava/lang/Runnable;
+
+    move-object v6, p1
+
+    move-object v7, p2
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/ChatThemeController;->$r8$lambda$NcwBF5XAa5CCaKGz7TzPGEXE9cA(Lorg/telegram/messenger/ChatThemeController;JZLjava/lang/String;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

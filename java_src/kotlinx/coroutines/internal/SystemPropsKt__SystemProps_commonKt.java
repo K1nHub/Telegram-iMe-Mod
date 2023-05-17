@@ -1,7 +1,6 @@
 package kotlinx.coroutines.internal;
 
-import kotlin.text.StringsKt;
-/* JADX INFO: Access modifiers changed from: package-private */
+import kotlin.text.StringsKt__StringNumberConversionsKt;
 /* compiled from: SystemProps.common.kt */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
@@ -36,11 +35,12 @@ public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
     }
 
     public static final long systemProp(String str, long j, long j2, long j3) {
+        Long longOrNull;
         String systemProp = SystemPropsKt.systemProp(str);
         if (systemProp == null) {
             return j;
         }
-        Long longOrNull = StringsKt.toLongOrNull(systemProp);
+        longOrNull = StringsKt__StringNumberConversionsKt.toLongOrNull(systemProp);
         if (longOrNull == null) {
             throw new IllegalStateException(("System property '" + str + "' has unrecognized value '" + systemProp + '\'').toString());
         }

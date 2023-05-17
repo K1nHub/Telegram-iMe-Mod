@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.audio.AacUtil;
 import com.google.android.exoplayer2.audio.DtsUtil;
@@ -134,7 +134,7 @@ public final class FlacStreamMetadata {
 
     public long getDurationUs() {
         long j = this.totalSamples;
-        return j == 0 ? C0470C.TIME_UNSET : (j * 1000000) / this.sampleRate;
+        return j == 0 ? C0475C.TIME_UNSET : (j * 1000000) / this.sampleRate;
     }
 
     public long getSampleNumber(long j) {

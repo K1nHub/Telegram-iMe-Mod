@@ -5,7 +5,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.text.Cue;
 import com.google.android.exoplayer2.text.SimpleSubtitleDecoder;
 import com.google.android.exoplayer2.text.Subtitle;
@@ -50,7 +50,7 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
             byte[] bArr = list.get(0);
             this.defaultFontFace = bArr[24];
             this.defaultColorRgba = ((bArr[26] & 255) << 24) | ((bArr[27] & 255) << 16) | ((bArr[28] & 255) << 8) | (bArr[29] & 255);
-            this.defaultFontFamily = TX3G_SERIF.equals(Util.fromUtf8Bytes(bArr, 43, bArr.length - 43)) ? C0470C.SERIF_NAME : "sans-serif";
+            this.defaultFontFamily = TX3G_SERIF.equals(Util.fromUtf8Bytes(bArr, 43, bArr.length - 43)) ? C0475C.SERIF_NAME : "sans-serif";
             int i = bArr[25] * 20;
             this.calculatedVideoTrackHeight = i;
             boolean z = (bArr[0] & 32) != 0;
@@ -127,13 +127,13 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
         parsableByteArray.skipBytes(1);
         int readInt = parsableByteArray.readInt();
         if (readUnsignedShort2 > spannableStringBuilder.length()) {
-            Log.m792w(TAG, "Truncating styl end (" + readUnsignedShort2 + ") to cueText.length() (" + spannableStringBuilder.length() + ").");
+            Log.m796w(TAG, "Truncating styl end (" + readUnsignedShort2 + ") to cueText.length() (" + spannableStringBuilder.length() + ").");
             i = spannableStringBuilder.length();
         } else {
             i = readUnsignedShort2;
         }
         if (readUnsignedShort >= i) {
-            Log.m792w(TAG, "Ignoring styl with start (" + readUnsignedShort + ") >= end (" + i + ").");
+            Log.m796w(TAG, "Ignoring styl with start (" + readUnsignedShort + ") >= end (" + i + ").");
             return;
         }
         int i2 = i;

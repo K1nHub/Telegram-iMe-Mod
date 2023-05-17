@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$5;
-.super Landroid/widget/FrameLayout;
+.super Landroid/widget/TextView;
 .source "AlertsCreator.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createClearOrDeleteDialogAlert(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;ZZZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createBotLaunchAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,68 +14,38 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
-
-
 # direct methods
-.method constructor <init>(Landroid/content/Context;[Lorg/telegram/ui/Cells/CheckBoxCell;)V
+.method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 1850
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$5;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    .line 1811
+    invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onMeasure(II)V
+.method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
     .locals 2
 
-    .line 1853
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+    .line 1814
+    invoke-virtual {p0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
 
-    .line 1854
-    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$5;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
+    move-result-object v0
 
-    const/4 p2, 0x0
+    invoke-virtual {v0}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
-    aget-object p1, p1, p2
+    move-result-object v0
 
-    if-eqz p1, :cond_0
+    const/4 v1, 0x0
 
-    .line 1855
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;Z)Ljava/lang/CharSequence;
 
-    move-result p1
+    move-result-object p1
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    .line 1815
+    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
-    move-result v0
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$5;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    aget-object p2, v1, p2
-
-    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result p2
-
-    add-int/2addr v0, p2
-
-    const/4 p2, 0x7
-
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p2
-
-    add-int/2addr v0, p2
-
-    invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
-
-    :cond_0
     return-void
 .end method

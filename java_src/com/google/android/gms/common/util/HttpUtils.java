@@ -1,6 +1,6 @@
 package com.google.android.gms.common.util;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.internal.common.zzo;
 import com.google.android.gms.internal.common.zzx;
@@ -44,7 +44,7 @@ public class HttpUtils {
 
     private static String zza(String str, String str2) {
         if (str2 == null) {
-            str2 = C0470C.ISO88591_NAME;
+            str2 = C0475C.ISO88591_NAME;
         }
         try {
             return URLDecoder.decode(str, str2);

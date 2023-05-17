@@ -158,7 +158,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/KeepAliveManager;->scheduler:Ljava/util/concurrent/ScheduledExecutorService;
 
-    const-string p1, "stopwatch"
+    const-string/jumbo p1, "stopwatch"
 
     .line 143
     invoke-static {p3, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

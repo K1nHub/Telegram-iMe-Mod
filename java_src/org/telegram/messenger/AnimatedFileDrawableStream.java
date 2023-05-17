@@ -13,7 +13,7 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private String finishedFilePath;
     private boolean finishedLoadingFile;
     private long lastOffset;
-    private final FileLoadOperation loadOperation;
+    private FileLoadOperation loadOperation;
     private int loadingPriority;
     private ImageLocation location;
     private Object parentObject;
@@ -47,12 +47,12 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
             if (this.canceled) {
                 int i3 = this.debugCanceledCount + 1;
                 this.debugCanceledCount = i3;
-                if (!this.debugReportSend && i3 > 100) {
+                if (!this.debugReportSend && i3 > 200) {
                     this.debugReportSend = true;
                     if (BuildVars.DEBUG_PRIVATE_VERSION) {
                         throw new RuntimeException("infinity stream reading!!!");
                     }
-                    FileLog.m45e(new RuntimeException("infinity stream reading!!!"));
+                    FileLog.m49e(new RuntimeException("infinity stream reading!!!"));
                 }
                 return 0;
             } else if (i2 == 0) {
@@ -78,29 +78,39 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                     cancelLoadingInternal();
                                     return 0;
                                 }
+                                this.countDownLatch = new CountDownLatch(1);
                                 if (this.loadOperation.isPaused() || this.lastOffset != j || this.preview) {
-                                    FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, this.location, this.parentObject, j, this.preview, this.loadingPriority);
+                                    FileLoadOperation loadStreamFile = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, this.location, this.parentObject, j, this.preview, this.loadingPriority);
+                                    FileLoadOperation fileLoadOperation = this.loadOperation;
+                                    if (fileLoadOperation != loadStreamFile) {
+                                        fileLoadOperation.removeStreamListener(this);
+                                        this.loadOperation = loadStreamFile;
+                                    }
+                                    this.lastOffset = j + j2;
                                 }
                                 synchronized (this.sync) {
                                     if (this.canceled) {
+                                        this.countDownLatch = null;
                                         cancelLoadingInternal();
                                         return 0;
                                     }
-                                    this.countDownLatch = new CountDownLatch(1);
                                 }
                                 if (!this.preview) {
                                     FileLoader.getInstance(this.currentAccount).setLoadingVideo(this.document, false, true);
                                 }
-                                this.waitingForLoad = true;
-                                this.countDownLatch.await();
-                                this.waitingForLoad = false;
+                                CountDownLatch countDownLatch = this.countDownLatch;
+                                if (countDownLatch != null) {
+                                    this.waitingForLoad = true;
+                                    countDownLatch.await();
+                                    this.waitingForLoad = false;
+                                }
                             }
                         }
                         j3 = j2;
                     } catch (Exception e2) {
                         e = e2;
                         j3 = j2;
-                        FileLog.m44e((Throwable) e, false);
+                        FileLog.m48e((Throwable) e, false);
                         return (int) j3;
                     }
                 }
@@ -122,8 +132,16 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
             CountDownLatch countDownLatch = this.countDownLatch;
             if (countDownLatch != null) {
                 countDownLatch.countDown();
+                this.countDownLatch = null;
                 if (z && !this.canceled && !this.preview) {
                     FileLoader.getInstance(this.currentAccount).removeLoadingVideo(this.document, false, true);
+                }
+            }
+            Object obj = this.parentObject;
+            if (obj instanceof MessageObject) {
+                MessageObject messageObject = (MessageObject) obj;
+                if (DownloadController.getInstance(messageObject.currentAccount).isDownloading(messageObject.getId())) {
+                    z = false;
                 }
             }
             if (z) {
@@ -175,6 +193,11 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
         CountDownLatch countDownLatch = this.countDownLatch;
         if (countDownLatch != null) {
             countDownLatch.countDown();
+            this.countDownLatch = null;
         }
+    }
+
+    public boolean isCanceled() {
+        return this.canceled;
     }
 }

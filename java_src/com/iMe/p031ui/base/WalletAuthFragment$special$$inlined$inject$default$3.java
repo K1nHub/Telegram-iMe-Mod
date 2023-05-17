@@ -11,7 +11,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 /* compiled from: KoinComponent.kt */
 /* renamed from: com.iMe.ui.base.WalletAuthFragment$special$$inlined$inject$default$3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class WalletAuthFragment$special$$inlined$inject$default$3 extends Lambda implements Function0<CryptoAccessManager> {
     final /* synthetic */ Function0 $parameters;
     final /* synthetic */ Qualifier $qualifier;

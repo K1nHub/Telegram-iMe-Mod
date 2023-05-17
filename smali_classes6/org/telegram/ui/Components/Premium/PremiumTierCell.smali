@@ -10,9 +10,9 @@
 
 .field private color1:I
 
-.field private colorKey1:Ljava/lang/String;
+.field private colorKey1:I
 
-.field private colorKey2:Ljava/lang/String;
+.field private colorKey2:I
 
 .field protected discountView:Landroid/widget/TextView;
 
@@ -74,15 +74,15 @@
     .line 41
     iput v2, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->leftPaddingToCheckboxDp:I
 
-    const-string v3, "windowBackgroundWhite"
-
     .line 46
-    iput-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->colorKey1:Ljava/lang/String;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    const-string v3, "windowBackgroundGray"
+    iput v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->colorKey1:I
 
     .line 47
-    iput-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->colorKey2:Ljava/lang/String;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    iput v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->colorKey2:I
 
     .line 50
     new-instance v3, Landroid/graphics/Paint;
@@ -115,11 +115,11 @@
     .line 69
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v4, "radioBackground"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
-    const-string v5, "checkboxCheck"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-virtual {v3, v4, v4, v5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3, v4, v4, v5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 70
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -143,9 +143,9 @@
     .line 74
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->titleView:Landroid/widget/TextView;
 
-    const-string v5, "windowBackgroundWhiteBlackText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -297,9 +297,9 @@
     .line 88
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->pricePerYearStrikeView:Landroid/widget/TextView;
 
-    const-string v5, "windowBackgroundWhiteGrayText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -367,7 +367,7 @@
     .line 95
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->pricePerYearView:Landroid/widget/TextView;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -426,7 +426,7 @@
     .line 101
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->pricePerMonthView:Landroid/widget/TextView;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -2074,16 +2074,16 @@
 
     .line 338
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->colorKey1:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->colorKey1:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     .line 339
-    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->colorKey2:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->colorKey2:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

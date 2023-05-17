@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 2668
+    .line 2402
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,10 +35,10 @@
 .method public getSpanSize(I)I
     .locals 3
 
-    .line 2671
+    .line 2405
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$10100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
@@ -48,7 +48,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$10300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$9700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
 
     move-result-object v1
 
@@ -58,41 +58,41 @@
 
     if-nez p1, :cond_0
 
-    .line 2673
+    .line 2407
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$10300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$9700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
 
     move-result-object p1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10600(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)I
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10000(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)I
 
     move-result p1
 
     return p1
 
-    .line 2675
+    .line 2409
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$10300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10700(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10100(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)I
 
     move-result v0
 
     if-eq p1, v0, :cond_2
 
-    .line 2676
+    .line 2410
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$10300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10800(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)Landroid/util/SparseArray;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10200(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)Landroid/util/SparseArray;
 
     move-result-object v0
 
@@ -102,14 +102,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 2677
+    .line 2411
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$10300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10800(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)Landroid/util/SparseArray;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10200(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)Landroid/util/SparseArray;
 
     move-result-object v0
 
@@ -124,21 +124,21 @@
     :cond_1
     return v2
 
-    .line 2681
+    .line 2415
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$10300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$9700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
 
     move-result-object p1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10600(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)I
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10000(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)I
 
     move-result p1
 
     return p1
 
-    .line 2683
+    .line 2417
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -146,20 +146,20 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;->access$10900(Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;->access$10300(Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;)I
 
     move-result v0
 
     if-eq p1, v0, :cond_5
 
-    .line 2684
+    .line 2418
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$3500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;->access$11000(Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;)Landroid/util/SparseArray;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;->access$10400(Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;)Landroid/util/SparseArray;
 
     move-result-object v0
 
@@ -169,14 +169,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 2685
+    .line 2419
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$3500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;->access$11000(Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;)Landroid/util/SparseArray;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;->access$10400(Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;)Landroid/util/SparseArray;
 
     move-result-object v0
 
@@ -191,15 +191,15 @@
     :cond_4
     return v2
 
-    .line 2689
+    .line 2423
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$19;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$10300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$9700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
 
     move-result-object p1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10600(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)I
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->access$10000(Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;)I
 
     move-result p1
 

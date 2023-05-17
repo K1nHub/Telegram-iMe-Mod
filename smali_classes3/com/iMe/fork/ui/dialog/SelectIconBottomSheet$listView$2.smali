@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 42
+    .line 49
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$listView$2;->invoke()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 42
+    .line 49
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$listView$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->access$initListView(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;

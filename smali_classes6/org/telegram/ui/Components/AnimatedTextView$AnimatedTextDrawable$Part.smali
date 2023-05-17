@@ -30,16 +30,16 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;Landroid/text/StaticLayout;FI)V
     .locals 0
 
-    .line 57
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 64
     iput-object p2, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$Part;->layout:Landroid/text/StaticLayout;
 
-    .line 59
+    .line 65
     iput p3, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$Part;->offset:F
 
-    .line 60
+    .line 66
     iput p4, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$Part;->toOppositeIndex:I
 
     const/4 p1, 0x0
@@ -48,7 +48,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 61
+    .line 67
     invoke-virtual {p2}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p4
@@ -73,7 +73,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 62
+    .line 68
     invoke-virtual {p2}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p4

@@ -81,6 +81,8 @@
     .end annotation
 .end field
 
+.field private imageReceiversPlayingNum:I
+
 .field private indicatorDrawable:Landroid/graphics/drawable/GradientDrawable;
 
 .field private indicatorHeight:I
@@ -244,187 +246,190 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 8
 
-    .line 218
+    .line 217
     invoke-direct {p0, p1}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 135
-    sget-object v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;->LINE:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
+    const/4 v0, 0x1
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->type:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
+    .line 124
+    iput v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->imageReceiversPlayingNum:I
+
+    .line 134
+    sget-object v1, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;->LINE:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->type:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
+
+    .line 139
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
     .line 140
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v1, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
+    iput-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     .line 141
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v1, Landroid/util/SparseArray;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v1}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
+    iput-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->futureTabsPositions:Landroid/util/SparseArray;
 
-    .line 142
-    new-instance v0, Landroid/util/SparseArray;
+    .line 152
+    new-instance v1, Lorg/telegram/ui/Components/AnimatedFloat;
 
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+    sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->futureTabsPositions:Landroid/util/SparseArray;
+    const-wide/16 v3, 0x15e
+
+    invoke-direct {v1, p0, v3, v4, v2}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPositionAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     .line 153
-    new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
+    new-instance v1, Landroid/graphics/RectF;
 
-    sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
-
-    const-wide/16 v2, 0x15e
-
-    invoke-direct {v0, p0, v2, v3, v1}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
-
-    iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPositionAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
+    invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     .line 154
-    new-instance v0, Landroid/graphics/RectF;
+    new-instance v1, Landroid/graphics/RectF;
 
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+    invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     .line 155
-    new-instance v0, Landroid/graphics/RectF;
+    new-instance v1, Landroid/graphics/RectF;
 
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+    invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
-    .line 156
-    new-instance v0, Landroid/graphics/RectF;
+    iput-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabBounds:Landroid/graphics/RectF;
 
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+    const/high16 v1, 0x1a000000
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabBounds:Landroid/graphics/RectF;
+    .line 165
+    iput v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->underlineColor:I
 
-    const/high16 v0, 0x1a000000
+    .line 167
+    new-instance v1, Landroid/graphics/drawable/GradientDrawable;
 
-    .line 166
-    iput v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->underlineColor:I
+    invoke-direct {v1}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
-    .line 168
-    new-instance v0, Landroid/graphics/drawable/GradientDrawable;
+    iput-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->indicatorDrawable:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
+    const/16 v1, 0x21
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->indicatorDrawable:Landroid/graphics/drawable/GradientDrawable;
+    .line 169
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/16 v0, 0x21
+    move-result v5
+
+    iput v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollOffset:I
+
+    const/4 v5, 0x2
 
     .line 170
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v5
 
-    iput v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollOffset:I
+    iput v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->underlineHeight:I
 
-    const/4 v4, 0x2
+    const/16 v5, 0xc
 
     .line 171
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
-
-    iput v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->underlineHeight:I
-
-    const/16 v4, 0xc
+    const/16 v5, 0x18
 
     .line 172
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/16 v4, 0x18
+    const/4 v5, 0x0
 
-    .line 173
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 174
+    iput v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->lastScrollX:I
 
-    const/4 v4, 0x0
+    .line 177
+    new-instance v6, Landroid/util/SparseArray;
 
-    .line 175
-    iput v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->lastScrollX:I
+    invoke-direct {v6}, Landroid/util/SparseArray;-><init>()V
+
+    iput-object v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPlayingImages:Landroid/util/SparseArray;
 
     .line 178
-    new-instance v5, Landroid/util/SparseArray;
+    new-instance v6, Landroid/util/SparseArray;
 
-    invoke-direct {v5}, Landroid/util/SparseArray;-><init>()V
+    invoke-direct {v6}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPlayingImages:Landroid/util/SparseArray;
+    iput-object v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPlayingImagesTmp:Landroid/util/SparseArray;
 
-    .line 179
-    new-instance v5, Landroid/util/SparseArray;
+    .line 190
+    new-instance v6, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$1;
 
-    invoke-direct {v5}, Landroid/util/SparseArray;-><init>()V
+    invoke-direct {v6, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$1;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
-    iput-object v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPlayingImagesTmp:Landroid/util/SparseArray;
-
-    .line 191
-    new-instance v5, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$1;
-
-    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$1;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
-
-    iput-object v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->longClickRunnable:Ljava/lang/Runnable;
+    iput-object v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->longClickRunnable:Ljava/lang/Runnable;
 
     .line 484
-    iput-boolean v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expanded:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expanded:Z
 
     .line 490
-    sget v5, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->EXPANDED_WIDTH:F
+    sget v6, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->EXPANDED_WIDTH:F
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v5
+    move-result v6
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    iput v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->stickerTabExpandedWidth:F
+    iput v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->stickerTabExpandedWidth:F
 
     .line 491
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v6
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    iput v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->stickerTabWidth:F
+    iput v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->stickerTabWidth:F
 
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
     .line 493
-    iput v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollByOnNextMeasure:I
+    iput v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollByOnNextMeasure:I
 
     .line 783
-    new-instance v6, Landroid/graphics/Paint;
+    new-instance v7, Landroid/graphics/Paint;
 
-    invoke-direct {v6}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v7}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->selectorPaint:Landroid/graphics/Paint;
-
-    const/4 v6, 0x1
+    iput-object v7, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->selectorPaint:Landroid/graphics/Paint;
 
     .line 785
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->showSelected:Z
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->showSelected:Z
 
     .line 786
     new-instance v7, Lorg/telegram/ui/Components/AnimatedFloat;
 
-    invoke-direct {v7, p0, v2, v3, v1}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
+    invoke-direct {v7, p0, v3, v4, v2}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
 
     iput-object v7, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->showSelectedAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     .line 1095
-    new-instance v1, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$6;
+    new-instance v2, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$6;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$6;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$6;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
-    iput-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollRunnable:Ljava/lang/Runnable;
+    iput-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollRunnable:Ljava/lang/Runnable;
 
-    .line 219
+    .line 218
     iput-object p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 220
+    .line 219
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object p2
@@ -437,85 +442,85 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->touchSlop:F
 
-    .line 222
-    invoke-virtual {p0, v6}, Landroid/widget/HorizontalScrollView;->setFillViewport(Z)V
+    .line 221
+    invoke-virtual {p0, v0}, Landroid/widget/HorizontalScrollView;->setFillViewport(Z)V
 
-    .line 223
-    invoke-virtual {p0, v4}, Landroid/widget/HorizontalScrollView;->setWillNotDraw(Z)V
+    .line 222
+    invoke-virtual {p0, v5}, Landroid/widget/HorizontalScrollView;->setWillNotDraw(Z)V
+
+    .line 224
+    invoke-virtual {p0, v5}, Landroid/widget/HorizontalScrollView;->setHorizontalScrollBarEnabled(Z)V
 
     .line 225
-    invoke-virtual {p0, v4}, Landroid/widget/HorizontalScrollView;->setHorizontalScrollBarEnabled(Z)V
-
-    .line 226
     new-instance p2, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$2;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$2;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
-    .line 239
-    invoke-virtual {p2, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    .line 238
+    invoke-virtual {p2, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 240
+    .line 239
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     const/high16 p2, 0x41180000    # 9.5f
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v1
+    move-result v2
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p2
 
-    invoke-virtual {p1, v1, v4, p2, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+    invoke-virtual {p1, v2, v5, p2, v5}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 241
+    .line 240
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     new-instance p2, Landroid/widget/FrameLayout$LayoutParams;
 
-    const/16 v1, 0x10
+    const/16 v2, 0x10
 
-    invoke-direct {p2, v5, v5, v1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+    invoke-direct {p2, v6, v6, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/HorizontalScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 243
+    .line 242
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->rectPaint:Landroid/graphics/Paint;
 
-    .line 244
-    invoke-virtual {p1, v6}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    .line 243
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 245
+    .line 244
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->rectPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 247
+    .line 246
     new-instance p1, Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
-    invoke-direct {p1, p2, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    invoke-direct {p1, p2, v6}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->defaultTabLayoutParams:Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 248
+    .line 247
     new-instance p1, Landroid/widget/LinearLayout$LayoutParams;
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    invoke-direct {p1, v4, v5, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+    invoke-direct {p1, v5, v6, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->defaultExpandLayoutParams:Landroid/widget/LinearLayout$LayoutParams;
 
@@ -525,7 +530,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)I
     .locals 0
 
-    .line 68
+    .line 65
     invoke-direct {p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->getTabSize()I
 
     move-result p0
@@ -536,7 +541,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;I)Z
     .locals 0
 
-    .line 68
+    .line 65
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->canSwap(I)Z
 
     move-result p0
@@ -547,7 +552,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)Landroid/widget/LinearLayout;
     .locals 0
 
-    .line 68
+    .line 65
     iget-object p0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     return-object p0
@@ -556,7 +561,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)F
     .locals 0
 
-    .line 68
+    .line 65
     iget p0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->stickerTabWidth:F
 
     return p0
@@ -565,7 +570,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)F
     .locals 0
 
-    .line 68
+    .line 65
     iget p0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->stickerTabExpandedWidth:F
 
     return p0
@@ -574,7 +579,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;F)F
     .locals 0
 
-    .line 68
+    .line 65
     iput p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandOffset:F
 
     return p1
@@ -583,7 +588,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)I
     .locals 0
 
-    .line 68
+    .line 65
     iget p0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollByOnNextMeasure:I
 
     return p0
@@ -592,7 +597,7 @@
 .method static synthetic access$602(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;I)I
     .locals 0
 
-    .line 68
+    .line 65
     iput p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollByOnNextMeasure:I
 
     return p1
@@ -659,15 +664,15 @@
 .method private checkViewIndex(Ljava/lang/String;Landroid/view/View;I)V
     .locals 1
 
-    .line 341
+    .line 340
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
 
-    .line 342
+    .line 341
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 344
+    .line 343
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->futureTabsPositions:Landroid/util/SparseArray;
 
@@ -699,46 +704,23 @@
     return v0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 1142
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 1143
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
 .method private synthetic lambda$addEmojiTab$5(Landroid/view/View;)V
     .locals 2
 
-    .line 439
+    .line 438
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     sget v1, Lorg/telegram/messenger/R$id;->index_tag:I
@@ -761,7 +743,7 @@
 .method private synthetic lambda$addIconTab$2(Landroid/view/View;)V
     .locals 2
 
-    .line 361
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     sget v1, Lorg/telegram/messenger/R$id;->index_tag:I
@@ -784,7 +766,7 @@
 .method private synthetic lambda$addKiklikoTab$1(Landroid/view/View;)V
     .locals 2
 
-    .line 107
+    .line 104
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     sget v1, Lorg/telegram/messenger/R$id;->index_tag:I
@@ -807,7 +789,7 @@
 .method private synthetic lambda$addKiklikoTrendsTab$0(Landroid/view/View;)V
     .locals 2
 
-    .line 85
+    .line 82
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     sget v1, Lorg/telegram/messenger/R$id;->index_tag:I
@@ -830,7 +812,7 @@
 .method private synthetic lambda$addStickerIconTab$3(Landroid/view/View;)V
     .locals 2
 
-    .line 382
+    .line 381
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     sget v1, Lorg/telegram/messenger/R$id;->index_tag:I
@@ -853,7 +835,7 @@
 .method private synthetic lambda$addStickerTab$4(Landroid/view/View;)V
     .locals 2
 
-    .line 406
+    .line 405
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     sget v1, Lorg/telegram/messenger/R$id;->index_tag:I
@@ -876,7 +858,7 @@
 .method private synthetic lambda$addStickerTab$6(Landroid/view/View;)V
     .locals 2
 
-    .line 466
+    .line 465
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     sget v1, Lorg/telegram/messenger/R$id;->index_tag:I
@@ -1213,7 +1195,7 @@
 .method public addEmojiTab(ILorg/telegram/messenger/Emoji$EmojiDrawable;Lorg/telegram/tgnet/TLRPC$Document;)Landroid/view/View;
     .locals 6
 
-    .line 431
+    .line 430
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1228,14 +1210,14 @@
 
     move-result-object p1
 
-    .line 432
+    .line 431
     iget v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     add-int/lit8 v1, v0, 0x1
 
     iput v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
-    .line 433
+    .line 432
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1248,12 +1230,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 435
+    .line 434
     invoke-direct {p0, p1, v1, v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->checkViewIndex(Ljava/lang/String;Landroid/view/View;I)V
 
     goto :goto_0
 
-    .line 437
+    .line 436
     :cond_0
     new-instance v1, Lorg/telegram/ui/Components/StickerTabView;
 
@@ -1265,27 +1247,27 @@
 
     invoke-direct {v1, v3, v4}, Lorg/telegram/ui/Components/StickerTabView;-><init>(Landroid/content/Context;I)V
 
-    .line 438
+    .line 437
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 439
+    .line 438
     new-instance v3, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda7;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 441
+    .line 440
     iget-boolean v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expanded:Z
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/StickerTabView;->setExpanded(Z)V
 
-    .line 442
+    .line 441
     iget v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/StickerTabView;->updateExpandProgress(F)V
 
-    .line 444
+    .line 443
     iget-object v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v3, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
@@ -1293,10 +1275,10 @@
     :goto_0
     const/4 v3, 0x0
 
-    .line 446
+    .line 445
     iput-boolean v3, v1, Lorg/telegram/ui/Components/StickerTabView;->isChatSticker:Z
 
-    .line 447
+    .line 446
     sget v4, Lorg/telegram/messenger/R$id;->index_tag:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1305,17 +1287,17 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 448
+    .line 447
     sget v4, Lorg/telegram/messenger/R$id;->parent_tag:I
 
     invoke-virtual {v1, v4, p2}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 449
+    .line 448
     sget p2, Lorg/telegram/messenger/R$id;->object_tag:I
 
     invoke-virtual {v1, p2, p3}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 450
+    .line 449
     iget p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPosition:I
 
     if-ne v0, p2, :cond_1
@@ -1328,7 +1310,7 @@
     :goto_1
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setSelected(Z)V
 
-    .line 452
+    .line 451
     iget-object p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1339,7 +1321,7 @@
 .method public addIconTab(ILandroid/graphics/drawable/Drawable;)Landroid/widget/FrameLayout;
     .locals 5
 
-    .line 348
+    .line 347
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1354,14 +1336,14 @@
 
     move-result-object p1
 
-    .line 349
+    .line 348
     iget v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     add-int/lit8 v1, v0, 0x1
 
     iput v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
-    .line 351
+    .line 350
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1374,12 +1356,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 353
+    .line 352
     invoke-direct {p0, p1, v1, v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->checkViewIndex(Ljava/lang/String;Landroid/view/View;I)V
 
     goto :goto_0
 
-    .line 355
+    .line 354
     :cond_0
     new-instance v1, Landroid/widget/FrameLayout;
 
@@ -1389,7 +1371,7 @@
 
     invoke-direct {v1, v3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 356
+    .line 355
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getContext()Landroid/content/Context;
@@ -1398,10 +1380,10 @@
 
     invoke-direct {v3, v4}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 357
+    .line 356
     invoke-virtual {v3, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 358
+    .line 357
     sget-object p2, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v3, p2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
@@ -1410,29 +1392,29 @@
 
     const/16 v4, 0x18
 
-    .line 359
+    .line 358
     invoke-static {v4, v4, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
     invoke-virtual {v1, v3, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 360
+    .line 359
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 361
+    .line 360
     new-instance p2, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda5;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
     invoke-virtual {v1, p2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 362
+    .line 361
     iget-object p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
 
-    .line 364
+    .line 363
     :goto_0
     sget p2, Lorg/telegram/messenger/R$id;->index_tag:I
 
@@ -1442,7 +1424,7 @@
 
     invoke-virtual {v1, p2, v3}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 365
+    .line 364
     iget p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPosition:I
 
     if-ne v0, p2, :cond_1
@@ -1455,7 +1437,7 @@
     :goto_1
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setSelected(Z)V
 
-    .line 367
+    .line 366
     iget-object p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1466,7 +1448,7 @@
 .method public addKiklikoTab(Lcom/iMe/storage/data/network/model/response/kikliko/TagResponse;)V
     .locals 7
 
-    .line 98
+    .line 95
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1489,14 +1471,14 @@
 
     move-result-object v0
 
-    .line 99
+    .line 96
     iget v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     add-int/lit8 v2, v1, 0x1
 
     iput v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
-    .line 101
+    .line 98
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1509,12 +1491,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 103
+    .line 100
     invoke-direct {p0, v0, v2, v1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->checkViewIndex(Ljava/lang/String;Landroid/view/View;I)V
 
     goto :goto_0
 
-    .line 105
+    .line 102
     :cond_0
     new-instance v2, Lorg/telegram/ui/Components/StickerTabView;
 
@@ -1526,27 +1508,27 @@
 
     invoke-direct {v2, v4, v5}, Lorg/telegram/ui/Components/StickerTabView;-><init>(Landroid/content/Context;I)V
 
-    .line 106
+    .line 103
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 107
+    .line 104
     new-instance v4, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda3;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 108
+    .line 105
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expanded:Z
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/StickerTabView;->setExpanded(Z)V
 
-    .line 109
+    .line 106
     iget v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/StickerTabView;->updateExpandProgress(F)V
 
-    .line 110
+    .line 107
     iget-object v4, v2, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1569,12 +1551,12 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 111
+    .line 108
     iget-object v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
 
-    .line 113
+    .line 110
     :goto_0
     sget v4, Lorg/telegram/messenger/R$id;->index_tag:I
 
@@ -1584,7 +1566,7 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 114
+    .line 111
     sget v4, Lorg/telegram/messenger/R$id;->object_tag:I
 
     invoke-virtual {p1}, Lcom/iMe/storage/data/network/model/response/kikliko/TagResponse;->getMeme()Lcom/iMe/storage/data/network/model/response/kikliko/GifResponse;
@@ -1601,7 +1583,7 @@
 
     invoke-virtual {v2, v4, p1}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 115
+    .line 112
     iget p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPosition:I
 
     if-ne v1, p1, :cond_1
@@ -1614,7 +1596,7 @@
     :goto_1
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setSelected(Z)V
 
-    .line 116
+    .line 113
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
     invoke-virtual {p1, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1625,14 +1607,14 @@
 .method public addKiklikoTrendsTab(Landroid/graphics/drawable/Drawable;)V
     .locals 6
 
-    .line 76
+    .line 73
     iget v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     add-int/lit8 v1, v0, 0x1
 
     iput v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
-    .line 78
+    .line 75
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     const-string v2, "kiklikoTrendsTab"
@@ -1647,12 +1629,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 80
+    .line 77
     invoke-direct {p0, v2, v1, v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->checkViewIndex(Ljava/lang/String;Landroid/view/View;I)V
 
     goto :goto_0
 
-    .line 82
+    .line 79
     :cond_0
     new-instance v1, Lorg/telegram/ui/Components/StickerTabView;
 
@@ -1662,32 +1644,32 @@
 
     invoke-direct {v1, v4, v3}, Lorg/telegram/ui/Components/StickerTabView;-><init>(Landroid/content/Context;I)V
 
-    .line 83
+    .line 80
     iget-object v4, v1, Lorg/telegram/ui/Components/StickerTabView;->iconView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 84
+    .line 81
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 85
+    .line 82
     new-instance p1, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda8;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
     invoke-virtual {v1, p1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 86
+    .line 83
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expanded:Z
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/StickerTabView;->setExpanded(Z)V
 
-    .line 87
+    .line 84
     iget p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/StickerTabView;->updateExpandProgress(F)V
 
-    .line 88
+    .line 85
     iget-object p1, v1, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->FeaturedStickersShort:I
@@ -1700,7 +1682,7 @@
 
     invoke-virtual {p1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 89
+    .line 86
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
@@ -1708,10 +1690,10 @@
     :goto_0
     const/4 p1, 0x0
 
-    .line 91
+    .line 88
     iput-boolean p1, v1, Lorg/telegram/ui/Components/StickerTabView;->isChatSticker:Z
 
-    .line 92
+    .line 89
     sget v4, Lorg/telegram/messenger/R$id;->index_tag:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1720,7 +1702,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 93
+    .line 90
     iget v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPosition:I
 
     if-ne v0, v4, :cond_1
@@ -1733,7 +1715,7 @@
     :goto_1
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setSelected(Z)V
 
-    .line 94
+    .line 91
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
     invoke-virtual {p1, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1744,7 +1726,7 @@
 .method public addStickerIconTab(ILandroid/graphics/drawable/Drawable;)Lorg/telegram/ui/Components/StickerTabView;
     .locals 5
 
-    .line 372
+    .line 371
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1759,14 +1741,14 @@
 
     move-result-object p1
 
-    .line 373
+    .line 372
     iget v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     add-int/lit8 v1, v0, 0x1
 
     iput v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
-    .line 375
+    .line 374
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1779,12 +1761,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 377
+    .line 376
     invoke-direct {p0, p1, v1, v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->checkViewIndex(Ljava/lang/String;Landroid/view/View;I)V
 
     goto :goto_0
 
-    .line 379
+    .line 378
     :cond_0
     new-instance v1, Lorg/telegram/ui/Components/StickerTabView;
 
@@ -1794,32 +1776,32 @@
 
     invoke-direct {v1, v3, v2}, Lorg/telegram/ui/Components/StickerTabView;-><init>(Landroid/content/Context;I)V
 
-    .line 380
+    .line 379
     iget-object v3, v1, Lorg/telegram/ui/Components/StickerTabView;->iconView:Landroid/widget/ImageView;
 
     invoke-virtual {v3, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 381
+    .line 380
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 382
+    .line 381
     new-instance p2, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda4;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
     invoke-virtual {v1, p2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 383
+    .line 382
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expanded:Z
 
     invoke-virtual {v1, p2}, Lorg/telegram/ui/Components/StickerTabView;->setExpanded(Z)V
 
-    .line 384
+    .line 383
     iget p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
     invoke-virtual {v1, p2}, Lorg/telegram/ui/Components/StickerTabView;->updateExpandProgress(F)V
 
-    .line 385
+    .line 384
     iget-object p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
@@ -1827,10 +1809,10 @@
     :goto_0
     const/4 p2, 0x0
 
-    .line 387
+    .line 386
     iput-boolean p2, v1, Lorg/telegram/ui/Components/StickerTabView;->isChatSticker:Z
 
-    .line 388
+    .line 387
     sget v3, Lorg/telegram/messenger/R$id;->index_tag:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1839,7 +1821,7 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 389
+    .line 388
     iget v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPosition:I
 
     if-ne v0, v3, :cond_1
@@ -1852,7 +1834,7 @@
     :goto_1
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setSelected(Z)V
 
-    .line 391
+    .line 390
     iget-object p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1861,9 +1843,9 @@
 .end method
 
 .method public addStickerTab(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)Landroid/view/View;
-    .locals 6
+    .locals 7
 
-    .line 457
+    .line 456
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1890,14 +1872,14 @@
 
     move-result-object v0
 
-    .line 458
+    .line 457
     iget v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     add-int/lit8 v2, v1, 0x1
 
     iput v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
-    .line 460
+    .line 459
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1912,12 +1894,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 462
+    .line 461
     invoke-direct {p0, v0, v2, v1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->checkViewIndex(Ljava/lang/String;Landroid/view/View;I)V
 
     goto :goto_1
 
-    .line 464
+    .line 463
     :cond_1
     new-instance v2, Lorg/telegram/ui/Components/StickerTabView;
 
@@ -1927,33 +1909,40 @@
 
     invoke-direct {v2, v5, v3}, Lorg/telegram/ui/Components/StickerTabView;-><init>(Landroid/content/Context;I)V
 
-    .line 465
+    .line 464
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 466
+    .line 465
     new-instance v5, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda6;
 
     invoke-direct {v5, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 468
+    .line 467
     iget-boolean v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expanded:Z
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/StickerTabView;->setExpanded(Z)V
 
-    .line 469
+    .line 468
     iget v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/StickerTabView;->updateExpandProgress(F)V
 
-    .line 471
+    .line 470
     iget-object v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
 
-    .line 473
+    .line 472
     :goto_1
+    iget-object v5, v2, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    iget v6, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->imageReceiversPlayingNum:I
+
+    invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/BackupImageView;->setLayerNum(I)V
+
+    .line 473
     iput-boolean v3, v2, Lorg/telegram/ui/Components/StickerTabView;->isChatSticker:Z
 
     .line 474
@@ -1997,9 +1986,9 @@
 .end method
 
 .method public addStickerTab(Lorg/telegram/tgnet/TLRPC$Chat;)V
-    .locals 7
+    .locals 8
 
-    .line 396
+    .line 395
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2016,14 +2005,14 @@
 
     move-result-object v0
 
-    .line 397
+    .line 396
     iget v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     add-int/lit8 v2, v1, 0x1
 
     iput v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
-    .line 399
+    .line 398
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2038,12 +2027,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 401
+    .line 400
     invoke-direct {p0, v0, v2, v1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->checkViewIndex(Ljava/lang/String;Landroid/view/View;I)V
 
     goto :goto_0
 
-    .line 403
+    .line 402
     :cond_0
     new-instance v2, Lorg/telegram/ui/Components/StickerTabView;
 
@@ -2053,75 +2042,77 @@
 
     invoke-direct {v2, v5, v3}, Lorg/telegram/ui/Components/StickerTabView;-><init>(Landroid/content/Context;I)V
 
-    .line 405
+    .line 404
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 406
+    .line 405
     new-instance v5, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda2;
 
     invoke-direct {v5, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 407
+    .line 406
     iget-object v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
 
-    .line 408
+    .line 407
     invoke-virtual {v2}, Lorg/telegram/ui/Components/StickerTabView;->setRoundImage()V
 
-    .line 410
+    .line 409
     new-instance v5, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v5}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     const/16 v6, 0xe
 
-    .line 411
+    .line 410
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
 
-    .line 412
+    .line 411
     invoke-virtual {v5, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 414
+    .line 413
     iget-object v6, v2, Lorg/telegram/ui/Components/StickerTabView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 415
-    invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/BackupImageView;->setLayerNum(I)V
+    .line 414
+    iget v7, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->imageReceiversPlayingNum:I
 
-    .line 416
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/BackupImageView;->setLayerNum(I)V
+
+    .line 415
     invoke-virtual {v6, p1, v5}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 417
+    .line 416
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/BackupImageView;->setAspectFit(Z)V
 
-    .line 419
+    .line 418
     iget-boolean v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expanded:Z
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/StickerTabView;->setExpanded(Z)V
 
-    .line 420
+    .line 419
     iget v5, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/StickerTabView;->updateExpandProgress(F)V
 
-    .line 421
+    .line 420
     iget-object v5, v2, Lorg/telegram/ui/Components/StickerTabView;->textView:Landroid/widget/TextView;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     invoke-virtual {v5, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 423
+    .line 422
     :goto_0
     iput-boolean v4, v2, Lorg/telegram/ui/Components/StickerTabView;->isChatSticker:Z
 
-    .line 424
+    .line 423
     sget p1, Lorg/telegram/messenger/R$id;->index_tag:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2130,7 +2121,7 @@
 
     invoke-virtual {v2, p1, v5}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 425
+    .line 424
     iget p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->currentPosition:I
 
     if-ne v1, p1, :cond_1
@@ -2140,7 +2131,7 @@
     :cond_1
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setSelected(Z)V
 
-    .line 427
+    .line 426
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
     invoke-virtual {p1, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2151,58 +2142,58 @@
 .method public beginUpdate(Z)V
     .locals 3
 
-    .line 285
+    .line 284
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
-    .line 286
+    .line 285
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabTypes:Ljava/util/HashMap;
 
-    .line 287
+    .line 286
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->futureTabsPositions:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
     const/4 v0, 0x0
 
-    .line 288
+    .line 287
     iput v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     if-eqz p1, :cond_0
 
-    .line 289
+    .line 288
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt p1, v1, :cond_0
 
-    .line 290
+    .line 289
     new-instance p1, Landroid/transition/AutoTransition;
 
     invoke-direct {p1}, Landroid/transition/AutoTransition;-><init>()V
 
     const-wide/16 v1, 0xfa
 
-    .line 291
+    .line 290
     invoke-virtual {p1, v1, v2}, Landroid/transition/AutoTransition;->setDuration(J)Landroid/transition/TransitionSet;
 
-    .line 292
+    .line 291
     invoke-virtual {p1, v0}, Landroid/transition/AutoTransition;->setOrdering(I)Landroid/transition/TransitionSet;
 
-    .line 293
+    .line 292
     new-instance v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$3;-><init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
 
     invoke-virtual {p1, v0}, Landroid/transition/AutoTransition;->addTransition(Landroid/transition/Transition;)Landroid/transition/TransitionSet;
 
-    .line 309
+    .line 308
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-static {v0, p1}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
@@ -2708,12 +2699,12 @@
 .method public commitUpdate()V
     .locals 5
 
-    .line 314
+    .line 313
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
     if-eqz v0, :cond_1
 
-    .line 315
+    .line 314
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -2735,7 +2726,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 316
+    .line 315
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -2748,7 +2739,7 @@
 
     goto :goto_0
 
-    .line 318
+    .line 317
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->prevTypes:Ljava/util/HashMap;
 
@@ -2757,7 +2748,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 320
+    .line 319
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->futureTabsPositions:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
@@ -2767,14 +2758,14 @@
     :goto_1
     if-ge v0, v1, :cond_3
 
-    .line 321
+    .line 320
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->futureTabsPositions:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v2
 
-    .line 322
+    .line 321
     iget-object v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->futureTabsPositions:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2783,7 +2774,7 @@
 
     check-cast v3, Landroid/view/View;
 
-    .line 323
+    .line 322
     iget-object v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->indexOfChild(Landroid/view/View;)I
@@ -2792,12 +2783,12 @@
 
     if-eq v4, v2, :cond_2
 
-    .line 325
+    .line 324
     iget-object v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
 
-    .line 326
+    .line 325
     iget-object v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v3, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
@@ -2807,7 +2798,7 @@
 
     goto :goto_1
 
-    .line 329
+    .line 328
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->futureTabsPositions:Landroid/util/SparseArray;
 
@@ -3441,9 +3432,9 @@
 
     const v3, 0x2effffff
 
-    const-string v4, "chat_emojiPanelIcon"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIcon:I
 
-    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->getThemedColor(I)I
 
     move-result v4
 
@@ -3848,7 +3839,7 @@
 .method public getDelegate()Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
     .locals 1
 
-    .line 120
+    .line 117
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     return-object v0
@@ -3886,7 +3877,7 @@
 .method public getType()Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
     .locals 1
 
-    .line 256
+    .line 255
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->type:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
 
     return-object v0
@@ -4164,14 +4155,14 @@
 
     if-ltz p1, :cond_1
 
-    .line 333
+    .line 332
     iget v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabCount:I
 
     if-lt p1, v0, :cond_0
 
     goto :goto_0
 
-    .line 336
+    .line 335
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
@@ -4179,7 +4170,7 @@
 
     move-result-object p1
 
-    .line 337
+    .line 336
     invoke-virtual {p1}, Landroid/view/View;->performClick()Z
 
     :cond_1
@@ -4199,7 +4190,7 @@
 .method public setDelegate(Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;)V
     .locals 0
 
-    .line 252
+    .line 251
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->delegate:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;
 
     return-void
@@ -4210,6 +4201,15 @@
 
     .line 1138
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->dragEnabled:Z
+
+    return-void
+.end method
+
+.method public setImageReceiversLayerNum(I)V
+    .locals 0
+
+    .line 1147
+    iput p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->imageReceiversPlayingNum:I
 
     return-void
 .end method
@@ -4589,8 +4589,6 @@
 
     const v11, 0x3e4ccccd    # 0.2f
 
-    const-string v12, "emptyListPlaceholder"
-
     if-eqz v10, :cond_a
 
     .line 707
@@ -4601,7 +4599,9 @@
     .line 708
     check-cast v8, Lorg/telegram/tgnet/TLRPC$Document;
 
-    invoke-static {v8, v12, v11}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_emptyListPlaceholder:I
+
+    invoke-static {v8, v10, v11}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v8
 
@@ -4662,7 +4662,9 @@
     if-eqz v6, :cond_c
 
     .line 723
-    invoke-static {v6, v12, v11}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_emptyListPlaceholder:I
+
+    invoke-static {v6, v10, v11}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v10
 
@@ -4978,15 +4980,15 @@
 
     if-eqz p1, :cond_2
 
-    .line 260
+    .line 259
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->type:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
 
     if-eq v0, p1, :cond_2
 
-    .line 261
+    .line 260
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->type:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
 
-    .line 262
+    .line 261
     sget-object v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$7;->$SwitchMap$org$telegram$ui$Components$ScrollSlidingTabStrip$Type:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -5010,12 +5012,12 @@
     :cond_0
     const/high16 p1, 0x40400000    # 3.0f
 
-    .line 267
+    .line 266
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result p1
 
-    .line 268
+    .line 267
     iget-object v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->indicatorDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     const/16 v4, 0x8
@@ -5054,7 +5056,7 @@
 
     goto :goto_0
 
-    .line 264
+    .line 263
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->indicatorDrawable:Landroid/graphics/drawable/GradientDrawable;
 

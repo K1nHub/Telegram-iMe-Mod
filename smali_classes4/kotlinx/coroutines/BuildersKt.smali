@@ -44,6 +44,55 @@
     return-object p0
 .end method
 
+.method public static final runBlocking(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lkotlin/coroutines/CoroutineContext;",
+            "Lkotlin/jvm/functions/Function2<",
+            "-",
+            "Lkotlinx/coroutines/CoroutineScope;",
+            "-",
+            "Lkotlin/coroutines/Continuation<",
+            "-TT;>;+",
+            "Ljava/lang/Object;",
+            ">;)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p0, p1}, Lkotlinx/coroutines/BuildersKt__BuildersKt;->runBlocking(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic runBlocking$default(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p0, p1, p2, p3}, Lkotlinx/coroutines/BuildersKt__BuildersKt;->runBlocking$default(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static final withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

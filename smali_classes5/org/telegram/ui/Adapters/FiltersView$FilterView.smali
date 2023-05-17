@@ -104,44 +104,8 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
-    .locals 1
-
-    .line 773
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 774
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
-    return p1
-.end method
-
 .method private updateColors()V
-    .locals 6
+    .locals 5
 
     const/16 v0, 0x1c
 
@@ -150,9 +114,9 @@
 
     move-result v0
 
-    const-string v1, "groupcreate_spanBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanBackground:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v1
 
@@ -165,9 +129,9 @@
     .line 721
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->titleView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v1
 
@@ -187,25 +151,25 @@
 
     const/4 v3, 0x1
 
-    const-string v4, "avatar_actionBarIconBlue"
-
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     if-ne v1, v2, :cond_0
 
-    const-string v1, "avatar_backgroundArchived"
-
     .line 724
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundArchived:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v1
 
-    invoke-static {v0, v1, v5}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
+    invoke-static {v0, v1, v4}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 725
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->thumbDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarIconBlue:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v1
 
@@ -213,20 +177,22 @@
 
     goto :goto_0
 
-    :cond_0
-    const-string v1, "avatar_backgroundBlue"
-
     .line 727
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    :cond_0
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v1
 
-    invoke-static {v0, v1, v5}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
+    invoke-static {v0, v1, v4}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 728
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->thumbDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarIconBlue:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v1
 
@@ -239,6 +205,19 @@
 
 
 # virtual methods
+.method protected getThemedColor(I)I
+    .locals 1
+
+    .line 773
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public setData(Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;)V
     .locals 10
 
@@ -259,57 +238,57 @@
 
     const/4 v1, 0x1
 
-    const-string v2, "avatar_actionBarIconBlue"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/16 v3, 0x20
 
-    const/16 v4, 0x20
+    const/16 v4, 0x10
 
-    const/16 v5, 0x10
+    const/4 v5, 0x7
 
-    const/4 v6, 0x7
-
-    if-ne v0, v6, :cond_0
+    if-ne v0, v5, :cond_0
 
     .line 737
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    sget v4, Lorg/telegram/messenger/R$drawable;->chats_archive:I
+    sget v3, Lorg/telegram/messenger/R$drawable;->chats_archive:I
 
-    invoke-static {v0, v4}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawableWithIcon(II)Lorg/telegram/ui/Components/CombinedDrawable;
+    invoke-static {v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawableWithIcon(II)Lorg/telegram/ui/Components/CombinedDrawable;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->thumbDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
     .line 738
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    invoke-virtual {v0, v4, v5}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
+    invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
 
     .line 739
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->thumbDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
-    const-string v4, "avatar_backgroundArchived"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundArchived:I
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
-    move-result v4
+    move-result v3
 
-    invoke-static {v0, v4, v3}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
+    invoke-static {v0, v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 740
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->thumbDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarIconBlue:I
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v2
 
@@ -325,7 +304,9 @@
     .line 742
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->titleView:Landroid/widget/TextView;
 
-    iget-object p1, p1, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->title:Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->access$1100(Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;)Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -333,31 +314,33 @@
 
     .line 745
     :cond_0
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    iget v6, p1, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->iconResFilled:I
+    iget v5, p1, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->iconResFilled:I
 
-    invoke-static {v0, v6}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawableWithIcon(II)Lorg/telegram/ui/Components/CombinedDrawable;
+    invoke-static {v0, v5}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawableWithIcon(II)Lorg/telegram/ui/Components/CombinedDrawable;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->thumbDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
-    const-string v6, "avatar_backgroundBlue"
-
     .line 746
-    invoke-direct {p0, v6}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
 
-    move-result v6
+    invoke-virtual {p0, v5}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
-    invoke-static {v0, v6, v3}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
+    move-result v5
+
+    invoke-static {v0, v5, v2}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 747
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->thumbDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarIconBlue:I
+
+    invoke-virtual {p0, v5}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v6
 
@@ -400,38 +383,38 @@
     if-nez v6, :cond_1
 
     .line 752
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    sget v4, Lorg/telegram/messenger/R$drawable;->chats_saved:I
+    sget v3, Lorg/telegram/messenger/R$drawable;->chats_saved:I
 
-    invoke-static {v0, v4}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawableWithIcon(II)Lorg/telegram/ui/Components/CombinedDrawable;
+    invoke-static {v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawableWithIcon(II)Lorg/telegram/ui/Components/CombinedDrawable;
 
     move-result-object v0
 
     .line 753
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    invoke-virtual {v0, v4, v5}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
-
-    const-string v4, "avatar_backgroundSaved"
+    invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
 
     .line 754
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundSaved:I
 
-    move-result v4
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
-    invoke-static {v0, v4, v3}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
+    move-result v3
+
+    invoke-static {v0, v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 755
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v5}, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->getThemedColor(I)I
 
     move-result v2
 
@@ -452,7 +435,7 @@
 
     move-result-object v1
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
@@ -487,7 +470,7 @@
 
     move-result-object v1
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
@@ -519,7 +502,9 @@
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->titleView:Landroid/widget/TextView;
 
-    iget-object p1, p1, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->title:Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->access$1100(Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;)Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

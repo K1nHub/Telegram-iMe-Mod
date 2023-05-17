@@ -11,16 +11,16 @@ import org.bouncycastle.util.p042io.Streams;
 class LMOtsSignature implements Encodable {
 
     /* renamed from: C */
-    private final byte[] f1308C;
+    private final byte[] f1313C;
     private final LMOtsParameters type;
 
     /* renamed from: y */
-    private final byte[] f1309y;
+    private final byte[] f1314y;
 
     public LMOtsSignature(LMOtsParameters lMOtsParameters, byte[] bArr, byte[] bArr2) {
         this.type = lMOtsParameters;
-        this.f1308C = bArr;
-        this.f1309y = bArr2;
+        this.f1313C = bArr;
+        this.f1314y = bArr2;
     }
 
     public static LMOtsSignature getInstance(Object obj) throws IOException {
@@ -72,8 +72,8 @@ class LMOtsSignature implements Encodable {
         LMOtsSignature lMOtsSignature = (LMOtsSignature) obj;
         LMOtsParameters lMOtsParameters = this.type;
         if (lMOtsParameters == null ? lMOtsSignature.type == null : lMOtsParameters.equals(lMOtsSignature.type)) {
-            if (Arrays.equals(this.f1308C, lMOtsSignature.f1308C)) {
-                return Arrays.equals(this.f1309y, lMOtsSignature.f1309y);
+            if (Arrays.equals(this.f1313C, lMOtsSignature.f1313C)) {
+                return Arrays.equals(this.f1314y, lMOtsSignature.f1314y);
             }
             return false;
         }
@@ -82,11 +82,11 @@ class LMOtsSignature implements Encodable {
 
     @Override // org.bouncycastle.util.Encodable
     public byte[] getEncoded() throws IOException {
-        return Composer.compose().u32str(this.type.getType()).bytes(this.f1308C).bytes(this.f1309y).build();
+        return Composer.compose().u32str(this.type.getType()).bytes(this.f1313C).bytes(this.f1314y).build();
     }
 
     public int hashCode() {
         LMOtsParameters lMOtsParameters = this.type;
-        return ((((lMOtsParameters != null ? lMOtsParameters.hashCode() : 0) * 31) + Arrays.hashCode(this.f1308C)) * 31) + Arrays.hashCode(this.f1309y);
+        return ((((lMOtsParameters != null ? lMOtsParameters.hashCode() : 0) * 31) + Arrays.hashCode(this.f1313C)) * 31) + Arrays.hashCode(this.f1314y);
     }
 }

@@ -44,6 +44,25 @@
 .field public nanoTime:J
 
 
+# direct methods
+.method public constructor <init>(J)V
+    .locals 0
+
+    .line 411
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 416
+    iput-wide p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
+
+    const/4 p1, -0x1
+
+    .line 428
+    iput p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->index:I
+
+    return-void
+.end method
+
+
 # virtual methods
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0

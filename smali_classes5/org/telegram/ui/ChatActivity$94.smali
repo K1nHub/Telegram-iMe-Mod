@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ChatActivity$94;
-.super Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "ChatActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->openVideoEditor(Ljava/lang/String;Ljava/lang/String;Z)V
+    value = Lorg/telegram/ui/ChatActivity;->addToSelectedMessages(Lorg/telegram/messenger/MessageObject;ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,83 +17,100 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$cameraPhoto:Ljava/util/ArrayList;
+.field final synthetic val$editItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-.field final synthetic val$thumb:Landroid/graphics/Bitmap;
+.field final synthetic val$newEditVisibility:I
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/graphics/Bitmap;Ljava/util/ArrayList;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;ILorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
     .locals 0
 
-    .line 17557
+    .line 17294
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$94;->val$thumb:Landroid/graphics/Bitmap;
+    iput p2, p0, Lorg/telegram/ui/ChatActivity$94;->val$newEditVisibility:I
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$94;->val$cameraPhoto:Ljava/util/ArrayList;
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$94;->val$editItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public canScrollAway()Z
+.method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getThumbForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;I)Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
-    .locals 1
-
-    .line 17560
-    new-instance p1, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
-
-    iget-object p2, p0, Lorg/telegram/ui/ChatActivity$94;->val$thumb:Landroid/graphics/Bitmap;
-
-    const/4 p3, 0x0
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p2, p3, v0}, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;-><init>(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
-
-    return-object p1
-.end method
-
-.method public sendButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;Z)V
-    .locals 7
-
-    .line 17565
+    .line 17306
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$94;->val$cameraPhoto:Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44700(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
-    const/4 p7, 0x0
+    move-result-object v0
 
-    invoke-virtual {p1, p7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object p1
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-object v1, p1
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44700(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
-    check-cast v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
+    move-result-object v0
 
-    move-object v2, p2
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move v3, p3
+    move-result p1
 
-    move v4, p4
+    if-eqz p1, :cond_0
 
-    move v5, p5
+    .line 17307
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-object v6, p6
+    const/4 v0, 0x0
 
-    invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/ChatActivity;->sendMedia(Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$44702(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
+    :cond_0
+    return-void
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    .line 17297
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44700(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44700(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 17298
+    iget p1, p0, Lorg/telegram/ui/ChatActivity$94;->val$newEditVisibility:I
+
+    const/16 v0, 0x8
+
+    if-ne p1, v0, :cond_0
+
+    .line 17299
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$94;->val$editItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    :cond_0
     return-void
 .end method

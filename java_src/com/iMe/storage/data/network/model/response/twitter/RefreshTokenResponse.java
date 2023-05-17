@@ -52,7 +52,7 @@ public final class RefreshTokenResponse {
     }
 
     public int hashCode() {
-        return (((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.expiresIn);
+        return (((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.expiresIn);
     }
 
     public String toString() {

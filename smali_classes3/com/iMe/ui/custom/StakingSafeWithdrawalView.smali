@@ -128,20 +128,24 @@
     .line 50
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->checkboxSafeWithdrawal:Lorg/telegram/ui/Components/CheckBoxSquare;
 
-    const-string v2, "checkboxSquareUnchecked"
+    .line 51
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareUnchecked:I
 
-    const-string v3, "checkboxSquareBackground"
+    .line 52
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareBackground:I
 
-    const-string v4, "checkboxSquareCheck"
+    .line 53
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareCheck:I
 
-    invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/Components/CheckBoxSquare;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .line 50
+    invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/Components/CheckBoxSquare;->setColors(III)V
 
     .line 55
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->textSafeWithdrawal:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -155,9 +159,9 @@
     .line 57
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "windowBackgroundWhiteGrayIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

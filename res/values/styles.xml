@@ -1692,6 +1692,10 @@
         <item name="android:windowEnterAnimation">@null</item>
         <item name="android:windowExitAnimation">@null</item>
     </style>
+    <style name="DropDownFromTopAnimation">
+        <item name="android:windowEnterAnimation">@anim/fork_drop_down_from_top</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
     <style name="EmptyTheme" />
     <style name="InternalPointWalletDetailsActionButtonPadding">
         <item name="android:paddingLeft">@dimen/margin_normal</item>

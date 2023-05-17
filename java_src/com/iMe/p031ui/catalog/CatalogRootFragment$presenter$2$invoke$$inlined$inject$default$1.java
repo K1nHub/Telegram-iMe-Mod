@@ -10,7 +10,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 /* compiled from: KoinComponent.kt */
 /* renamed from: com.iMe.ui.catalog.CatalogRootFragment$presenter$2$invoke$$inlined$inject$default$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogRootFragment$presenter$2$invoke$$inlined$inject$default$1 extends Lambda implements Function0<CatalogRootPresenter> {
     final /* synthetic */ Function0 $parameters;
     final /* synthetic */ Qualifier $qualifier;

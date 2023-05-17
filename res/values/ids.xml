@@ -64,6 +64,7 @@
     <item type="id" name="activity_chooser_view_content" />
     <item type="id" name="ads_phrase" />
     <item type="id" name="alertTitle" />
+    <item type="id" name="androidx_window_activity_scope" />
     <item type="id" name="answer_btn" />
     <item type="id" name="answer_text" />
     <item type="id" name="appbar" />
@@ -94,6 +95,7 @@
     <item type="id" name="bottom_navigation_wallet" />
     <item type="id" name="btn_cancel" />
     <item type="id" name="btn_ok" />
+    <item type="id" name="buttonAdd" />
     <item type="id" name="buttonPanel" />
     <item type="id" name="button_action" />
     <item type="id" name="button_add" />
@@ -192,6 +194,8 @@
     <item type="id" name="design_menu_item_action_area_stub" />
     <item type="id" name="design_menu_item_text" />
     <item type="id" name="design_navigation_view" />
+    <item type="id" name="devSettings" />
+    <item type="id" name="dev_tools_nav_graph.xml" />
     <item type="id" name="dialog_button" />
     <item type="id" name="divider" />
     <item type="id" name="divider1" />
@@ -209,6 +213,7 @@
     <item type="id" name="edit_seed" />
     <item type="id" name="edit_to_amount" />
     <item type="id" name="empty_view" />
+    <item type="id" name="errorBlock" />
     <item type="id" name="expand_activities_button" />
     <item type="id" name="expanded_menu" />
     <item type="id" name="fee_view" />
@@ -216,6 +221,7 @@
     <item type="id" name="feed_widget_item_text" />
     <item type="id" name="fit_width_tag" />
     <item type="id" name="flexbox_tags" />
+    <item type="id" name="fork_main_nav_graph.xml" />
     <item type="id" name="fragment_container_view_tag" />
     <item type="id" name="frame_collapsing_content_container" />
     <item type="id" name="frame_contacts" />
@@ -246,9 +252,11 @@
     <item type="id" name="icon_group" />
     <item type="id" name="image" />
     <item type="id" name="imageBots" />
+    <item type="id" name="imageError" />
     <item type="id" name="imageGifResponses" />
     <item type="id" name="imageSettings" />
     <item type="id" name="imageTextResponses" />
+    <item type="id" name="imageView" />
     <item type="id" name="image_account_avatar" />
     <item type="id" name="image_action" />
     <item type="id" name="image_alert_picture" />
@@ -278,6 +286,7 @@
     <item type="id" name="image_language" />
     <item type="id" name="image_like" />
     <item type="id" name="image_logo" />
+    <item type="id" name="image_menu" />
     <item type="id" name="image_network_icon" />
     <item type="id" name="image_nft_image" />
     <item type="id" name="image_peer_icon" />
@@ -321,9 +330,12 @@
     <item type="id" name="layoutLabel" />
     <item type="id" name="line1" />
     <item type="id" name="line3" />
+    <item type="id" name="linearImages" />
+    <item type="id" name="linearLayout" />
     <item type="id" name="linear_actions" />
     <item type="id" name="linear_add_session" />
     <item type="id" name="linear_alert_root" />
+    <item type="id" name="linear_bottom_panel" />
     <item type="id" name="linear_choose_from" />
     <item type="id" name="linear_choose_to" />
     <item type="id" name="linear_content" />
@@ -351,6 +363,7 @@
     <item type="id" name="load_more_loading_view" />
     <item type="id" name="loading_progress" />
     <item type="id" name="loading_text" />
+    <item type="id" name="main_content" />
     <item type="id" name="masked" />
     <item type="id" name="material_clock_display" />
     <item type="id" name="material_clock_face" />
@@ -375,6 +388,8 @@
     <item type="id" name="menu_delete_bot" />
     <item type="id" name="menu_groupbolditalic" />
     <item type="id" name="menu_italic" />
+    <item type="id" name="menu_item_icon" />
+    <item type="id" name="menu_item_title" />
     <item type="id" name="menu_link" />
     <item type="id" name="menu_mono" />
     <item type="id" name="menu_open_bot" />
@@ -416,6 +431,8 @@
     <item type="id" name="mtrl_picker_title_text" />
     <item type="id" name="mtrl_view_tag_bottom_padding" />
     <item type="id" name="name" />
+    <item type="id" name="nav_controller_view_tag" />
+    <item type="id" name="nav_host_fragment_container" />
     <item type="id" name="navigation_bar_item_icon_view" />
     <item type="id" name="navigation_bar_item_labels_group" />
     <item type="id" name="navigation_bar_item_large_label_view" />
@@ -540,9 +557,13 @@
     <item type="id" name="shortcut_widget_item_message" />
     <item type="id" name="shortcut_widget_item_text" />
     <item type="id" name="shortcut_widget_item_time" />
+    <item type="id" name="sliding_pane_detail_container" />
+    <item type="id" name="sliding_pane_layout" />
     <item type="id" name="smart_panel_root" />
     <item type="id" name="snackbar_action" />
     <item type="id" name="snackbar_text" />
+    <item type="id" name="socialAuthScreen" />
+    <item type="id" name="socialWebScreen" />
     <item type="id" name="spacer" />
     <item type="id" name="special_effects_controller_view_tag" />
     <item type="id" name="split_action_bar" />
@@ -583,10 +604,14 @@
     <item type="id" name="test_radiobutton_app_button_tint" />
     <item type="id" name="text" />
     <item type="id" name="textCountryName" />
+    <item type="id" name="textDevScreen" />
     <item type="id" name="textEmptyBots" />
+    <item type="id" name="textError" />
     <item type="id" name="textRateBot" />
     <item type="id" name="textSpacerNoButtons" />
     <item type="id" name="textSpacerNoTitle" />
+    <item type="id" name="textSubTitle" />
+    <item type="id" name="textTitle" />
     <item type="id" name="text_account_balance" />
     <item type="id" name="text_account_balance_in_dollars" />
     <item type="id" name="text_account_id" />
@@ -751,6 +776,8 @@
     <item type="id" name="title" />
     <item type="id" name="titleDividerNoCustom" />
     <item type="id" name="title_template" />
+    <item type="id" name="toSocialAuth" />
+    <item type="id" name="toSocialWeb" />
     <item type="id" name="toolbar" />
     <item type="id" name="topPanel" />
     <item type="id" name="topic" />

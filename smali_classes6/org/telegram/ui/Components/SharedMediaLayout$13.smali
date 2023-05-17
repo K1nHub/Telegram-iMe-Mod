@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
     .locals 0
 
-    .line 2340
+    .line 2341
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -39,7 +39,7 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 2
 
-    .line 2343
+    .line 2344
     iget-object p4, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p4}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/BlurredRecyclerView;
@@ -60,18 +60,18 @@
 
     if-ne p4, v0, :cond_2
 
-    .line 2344
+    .line 2345
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
 
-    .line 2345
+    .line 2346
     iput v1, p1, Landroid/graphics/Rect;->left:I
 
-    .line 2346
+    .line 2347
     iput v1, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2347
+    .line 2348
     iget-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
@@ -86,7 +86,7 @@
 
     if-nez p3, :cond_0
 
-    .line 2348
+    .line 2349
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
@@ -95,11 +95,11 @@
 
     goto :goto_0
 
-    .line 2350
+    .line 2351
     :cond_0
     iput v1, p1, Landroid/graphics/Rect;->top:I
 
-    .line 2352
+    .line 2353
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -125,17 +125,17 @@
 
     goto :goto_2
 
-    .line 2354
+    .line 2355
     :cond_2
     iput v1, p1, Landroid/graphics/Rect;->left:I
 
-    .line 2355
+    .line 2356
     iput v1, p1, Landroid/graphics/Rect;->top:I
 
-    .line 2356
+    .line 2357
     iput v1, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2357
+    .line 2358
     iput v1, p1, Landroid/graphics/Rect;->right:I
 
     :goto_2

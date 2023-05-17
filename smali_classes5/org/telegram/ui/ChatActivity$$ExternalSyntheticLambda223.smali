@@ -14,11 +14,9 @@
 
 .field public final synthetic f$3:Z
 
-.field public final synthetic f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;IIZLorg/telegram/ui/Components/ReactionsContainerLayout;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;IIZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,15 +29,13 @@
 
     iput-boolean p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda223;->f$3:Z
 
-    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda223;->f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda223;->f$0:Lorg/telegram/ui/ChatActivity;
 
@@ -49,9 +45,7 @@
 
     iget-boolean v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda223;->f$3:Z
 
-    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda223;->f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$0y7pS1mKmxZd__B1ugxON2cUlrM(Lorg/telegram/ui/ChatActivity;IIZLorg/telegram/ui/Components/ReactionsContainerLayout;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$DNzoakZZ3QJNO9rVm6cHZhSqXFE(Lorg/telegram/ui/ChatActivity;IIZ)V
 
     return-void
 .end method

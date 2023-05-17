@@ -13,17 +13,17 @@ import com.google.android.gms.wearable.ChannelApi;
 /* loaded from: classes3.dex */
 public final class zzbf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzbf> CREATOR = new zzbg();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     final zzbq zza;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     final int zzb;
-    @SafeParcelable.Field(m775id = 4)
+    @SafeParcelable.Field(m779id = 4)
     final int zzc;
-    @SafeParcelable.Field(m775id = 5)
+    @SafeParcelable.Field(m779id = 5)
     final int zzd;
 
     @SafeParcelable.Constructor
-    public zzbf(@SafeParcelable.Param(m774id = 2) zzbq zzbqVar, @SafeParcelable.Param(m774id = 3) int i, @SafeParcelable.Param(m774id = 4) int i2, @SafeParcelable.Param(m774id = 5) int i3) {
+    public zzbf(@SafeParcelable.Param(m778id = 2) zzbq zzbqVar, @SafeParcelable.Param(m778id = 3) int i, @SafeParcelable.Param(m778id = 4) int i2, @SafeParcelable.Param(m778id = 5) int i3) {
         this.zza = zzbqVar;
         this.zzb = i;
         this.zzc = i2;

@@ -607,10 +607,10 @@
     .line 130
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->buttonReset:Lcom/iMe/ui/custom/BigActionButton;
 
-    const-string v1, "windowBackgroundWhiteRedText"
-
     .line 131
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -623,10 +623,10 @@
 
     move-result v1
 
-    const-string v2, "listSelectorSDK21"
-
     .line 135
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

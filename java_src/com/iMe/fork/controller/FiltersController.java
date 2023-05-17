@@ -64,7 +64,7 @@ public final class FiltersController extends BaseController implements KoinCompo
     private boolean isAllChatsTabEnabled;
     private boolean isArchiveSortingChatsEnabled;
     private boolean isFoldersFirstEnabled;
-    private boolean isHideFoldersEnabled;
+    private boolean isFoldersHidden;
     private boolean isIconInsteadAllChatsTabTitleEnabled;
     private boolean isSortingChatsEnabled;
     private Set<FilterFab> selectedAllChatsTabFabs;
@@ -79,7 +79,7 @@ public final class FiltersController extends BaseController implements KoinCompo
         Lazy lazy;
         lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new FiltersController$special$$inlined$inject$default$1(this, null, null));
         this.filtersDao$delegate = lazy;
-        this.isHideFoldersEnabled = TelegramPreferenceKeys.User.Default.isHideFoldersEnabled();
+        this.isFoldersHidden = TelegramPreferenceKeys.User.Default.isFoldersHidden();
         this.isFoldersFirstEnabled = TelegramPreferenceKeys.User.Default.isFoldersFirstEnabled();
         this.isAllChatsTabEnabled = TelegramPreferenceKeys.User.Default.isAllChatsTabEnabled();
         this.isIconInsteadAllChatsTabTitleEnabled = TelegramPreferenceKeys.User.Default.isIconInsteadAllChatsTabTitleEnabled();
@@ -102,12 +102,12 @@ public final class FiltersController extends BaseController implements KoinCompo
         return (FiltersDao) this.filtersDao$delegate.getValue();
     }
 
-    public final boolean isHideFoldersEnabled() {
-        return this.isHideFoldersEnabled;
+    public final boolean isFoldersHidden() {
+        return this.isFoldersHidden;
     }
 
-    public final void setHideFoldersEnabled(boolean z) {
-        this.isHideFoldersEnabled = z;
+    public final void setFoldersHidden(boolean z) {
+        this.isFoldersHidden = z;
     }
 
     public final boolean isFoldersFirstEnabled() {
@@ -164,7 +164,7 @@ public final class FiltersController extends BaseController implements KoinCompo
     public final void loadConfig(SharedPreferences preferences) {
         Set<String> selectedAllChatsTabFabs;
         Intrinsics.checkNotNullParameter(preferences, "preferences");
-        this.isHideFoldersEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isHideFoldersEnabled(), TelegramPreferenceKeys.User.Default.isHideFoldersEnabled());
+        this.isFoldersHidden = preferences.getBoolean(TelegramPreferenceKeys.User.isFoldersHidden(), TelegramPreferenceKeys.User.Default.isFoldersHidden());
         this.isFoldersFirstEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isFoldersFirstEnabled(), TelegramPreferenceKeys.User.Default.isFoldersFirstEnabled());
         this.isAllChatsTabEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isAllChatsTabEnabled(), TelegramPreferenceKeys.User.Default.isAllChatsTabEnabled());
         this.isIconInsteadAllChatsTabTitleEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isIconInsteadAllChatsTabTitleEnabled(), TelegramPreferenceKeys.User.Default.isIconInsteadAllChatsTabTitleEnabled());
@@ -186,7 +186,7 @@ public final class FiltersController extends BaseController implements KoinCompo
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putBoolean(TelegramPreferenceKeys.User.isHideFoldersEnabled(), this.isHideFoldersEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isFoldersHidden(), this.isFoldersHidden);
         edit.putBoolean(TelegramPreferenceKeys.User.isFoldersFirstEnabled(), this.isFoldersFirstEnabled);
         edit.putBoolean(TelegramPreferenceKeys.User.isAllChatsTabEnabled(), this.isAllChatsTabEnabled);
         edit.putBoolean(TelegramPreferenceKeys.User.isIconInsteadAllChatsTabTitleEnabled(), this.isIconInsteadAllChatsTabTitleEnabled);
@@ -208,7 +208,7 @@ public final class FiltersController extends BaseController implements KoinCompo
     public final void restoreBackup(Backup backup) {
         Intrinsics.checkNotNullParameter(backup, "backup");
         if (backup.getHideFolders() != null) {
-            this.isHideFoldersEnabled = backup.getHideFolders().booleanValue();
+            this.isFoldersHidden = backup.getHideFolders().booleanValue();
         }
         if (backup.getFoldersFirst() != null) {
             this.isFoldersFirstEnabled = backup.getFoldersFirst().booleanValue();
@@ -284,7 +284,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1367id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1373id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -408,7 +408,7 @@ public final class FiltersController extends BaseController implements KoinCompo
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(filterSettings, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (FilterSettingsDb filterSettingsDb : filterSettings) {
-            arrayList.add(TuplesKt.m80to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
+            arrayList.add(TuplesKt.m85to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -466,8 +466,8 @@ public final class FiltersController extends BaseController implements KoinCompo
                 arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
                 arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m80to = TuplesKt.m80to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1367id).name(), TuplesKt.m80to(arrayList, arrayList2));
-            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
+            Pair m85to = TuplesKt.m85to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1373id).name(), TuplesKt.m85to(arrayList, arrayList2));
+            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;

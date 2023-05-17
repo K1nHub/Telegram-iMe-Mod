@@ -17,7 +17,8 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 import kotlin.ranges.IntProgression;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
-import kotlin.text.StringsKt;
+import kotlin.text.StringsKt__StringsJVMKt;
+import kotlin.text.StringsKt__StringsKt;
 import okhttp3.internal.Util;
 /* compiled from: Headers.kt */
 /* loaded from: classes4.dex */
@@ -26,8 +27,8 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     private final String[] namesAndValues;
 
     /* renamed from: of */
-    public static final Headers m72of(String... strArr) {
-        return Companion.m71of(strArr);
+    public static final Headers m76of(String... strArr) {
+        return Companion.m75of(strArr);
     }
 
     private Headers(String[] strArr) {
@@ -56,11 +57,13 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     }
 
     public final List<String> values(String name) {
+        boolean equals;
         Intrinsics.checkNotNullParameter(name, "name");
         int size = size();
         ArrayList arrayList = null;
         for (int i = 0; i < size; i++) {
-            if (StringsKt.equals(name, name(i), true)) {
+            equals = StringsKt__StringsJVMKt.equals(name, name(i), true);
+            if (equals) {
                 if (arrayList == null) {
                     arrayList = new ArrayList(2);
                 }
@@ -80,7 +83,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         int size = size();
         Pair[] pairArr = new Pair[size];
         for (int i = 0; i < size; i++) {
-            pairArr[i] = TuplesKt.m80to(name(i), value(i));
+            pairArr[i] = TuplesKt.m85to(name(i), value(i));
         }
         return ArrayIteratorKt.iterator(pairArr);
     }
@@ -128,8 +131,9 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         }
 
         public final Builder addLenient$okhttp(String line) {
+            int indexOf$default;
             Intrinsics.checkNotNullParameter(line, "line");
-            int indexOf$default = StringsKt.indexOf$default((CharSequence) line, ':', 1, false, 4, (Object) null);
+            indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) line, ':', 1, false, 4, (Object) null);
             if (indexOf$default != -1) {
                 String substring = line.substring(0, indexOf$default);
                 Intrinsics.checkNotNullExpressionValue(substring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
@@ -165,18 +169,23 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         }
 
         public final Builder addLenient$okhttp(String name, String value) {
+            CharSequence trim;
             Intrinsics.checkNotNullParameter(name, "name");
             Intrinsics.checkNotNullParameter(value, "value");
             this.namesAndValues.add(name);
-            this.namesAndValues.add(StringsKt.trim(value).toString());
+            List<String> list = this.namesAndValues;
+            trim = StringsKt__StringsKt.trim(value);
+            list.add(trim.toString());
             return this;
         }
 
         public final Builder removeAll(String name) {
+            boolean equals;
             Intrinsics.checkNotNullParameter(name, "name");
             int i = 0;
             while (i < this.namesAndValues.size()) {
-                if (StringsKt.equals(name, this.namesAndValues.get(i), true)) {
+                equals = StringsKt__StringsJVMKt.equals(name, this.namesAndValues.get(i), true);
+                if (equals) {
                     this.namesAndValues.remove(i);
                     this.namesAndValues.remove(i);
                     i -= 2;
@@ -197,29 +206,52 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
             return this;
         }
 
-        public final String get(String name) {
-            IntProgression downTo;
-            IntProgression step;
-            Intrinsics.checkNotNullParameter(name, "name");
-            downTo = RangesKt___RangesKt.downTo(this.namesAndValues.size() - 2, 0);
-            step = RangesKt___RangesKt.step(downTo, 2);
-            int first = step.getFirst();
-            int last = step.getLast();
-            int step2 = step.getStep();
-            if (step2 >= 0) {
-                if (first > last) {
-                    return null;
-                }
-            } else if (first < last) {
-                return null;
-            }
-            while (!StringsKt.equals(name, this.namesAndValues.get(first), true)) {
-                if (first == last) {
-                    return null;
-                }
-                first += step2;
-            }
-            return this.namesAndValues.get(first + 1);
+        /* JADX WARN: Incorrect condition in loop: B:8:0x0036 */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct add '--show-bad-code' argument
+        */
+        public final java.lang.String get(java.lang.String r6) {
+            /*
+                r5 = this;
+                java.lang.String r0 = "name"
+                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, r0)
+                java.util.List<java.lang.String> r0 = r5.namesAndValues
+                int r0 = r0.size()
+                r1 = 2
+                int r0 = r0 - r1
+                r2 = 0
+                kotlin.ranges.IntProgression r0 = kotlin.ranges.RangesKt.downTo(r0, r2)
+                kotlin.ranges.IntProgression r0 = kotlin.ranges.RangesKt.step(r0, r1)
+                int r1 = r0.getFirst()
+                int r2 = r0.getLast()
+                int r0 = r0.getStep()
+                if (r0 < 0) goto L27
+                if (r1 > r2) goto L46
+                goto L29
+            L27:
+                if (r1 < r2) goto L46
+            L29:
+                java.util.List<java.lang.String> r3 = r5.namesAndValues
+                java.lang.Object r3 = r3.get(r1)
+                java.lang.String r3 = (java.lang.String) r3
+                r4 = 1
+                boolean r3 = kotlin.text.StringsKt.equals(r6, r3, r4)
+                if (r3 == 0) goto L42
+                java.util.List<java.lang.String> r6 = r5.namesAndValues
+                int r1 = r1 + r4
+                java.lang.Object r6 = r6.get(r1)
+                java.lang.String r6 = (java.lang.String) r6
+                return r6
+            L42:
+                if (r1 == r2) goto L46
+                int r1 = r1 + r0
+                goto L29
+            L46:
+                r6 = 0
+                return r6
+            */
+            throw new UnsupportedOperationException("Method not decompiled: okhttp3.Headers.Builder.get(java.lang.String):java.lang.String");
         }
 
         public final Headers build() {
@@ -240,34 +272,52 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public final String get(String[] strArr, String str) {
-            IntProgression downTo;
-            IntProgression step;
-            downTo = RangesKt___RangesKt.downTo(strArr.length - 2, 0);
-            step = RangesKt___RangesKt.step(downTo, 2);
-            int first = step.getFirst();
-            int last = step.getLast();
-            int step2 = step.getStep();
-            if (step2 >= 0) {
-                if (first > last) {
-                    return null;
-                }
-            } else if (first < last) {
-                return null;
-            }
-            while (!StringsKt.equals(str, strArr[first], true)) {
-                if (first == last) {
-                    return null;
-                }
-                first += step2;
-            }
-            return strArr[first + 1];
+        /* JADX WARN: Incorrect condition in loop: B:8:0x0026 */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct add '--show-bad-code' argument
+        */
+        public final java.lang.String get(java.lang.String[] r6, java.lang.String r7) {
+            /*
+                r5 = this;
+                int r0 = r6.length
+                r1 = 2
+                int r0 = r0 - r1
+                r2 = 0
+                kotlin.ranges.IntProgression r0 = kotlin.ranges.RangesKt.downTo(r0, r2)
+                kotlin.ranges.IntProgression r0 = kotlin.ranges.RangesKt.step(r0, r1)
+                int r1 = r0.getFirst()
+                int r2 = r0.getLast()
+                int r0 = r0.getStep()
+                if (r0 < 0) goto L1d
+                if (r1 > r2) goto L30
+                goto L1f
+            L1d:
+                if (r1 < r2) goto L30
+            L1f:
+                r3 = r6[r1]
+                r4 = 1
+                boolean r3 = kotlin.text.StringsKt.equals(r7, r3, r4)
+                if (r3 == 0) goto L2c
+                int r1 = r1 + r4
+                r6 = r6[r1]
+                return r6
+            L2c:
+                if (r1 == r2) goto L30
+                int r1 = r1 + r0
+                goto L1f
+            L30:
+                r6 = 0
+                return r6
+            */
+            throw new UnsupportedOperationException("Method not decompiled: okhttp3.Headers.Companion.get(java.lang.String[], java.lang.String):java.lang.String");
         }
 
         /* renamed from: of */
-        public final Headers m71of(String... namesAndValues) {
+        public final Headers m75of(String... namesAndValues) {
             IntRange indices;
             IntProgression step;
+            CharSequence trim;
             Intrinsics.checkNotNullParameter(namesAndValues, "namesAndValues");
             if (!(namesAndValues.length % 2 == 0)) {
                 throw new IllegalArgumentException("Expected alternating header names and values".toString());
@@ -282,7 +332,8 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
                 }
                 String str = strArr[i];
                 Objects.requireNonNull(str, "null cannot be cast to non-null type kotlin.CharSequence");
-                strArr[i] = StringsKt.trim(str).toString();
+                trim = StringsKt__StringsKt.trim(str);
+                strArr[i] = trim.toString();
             }
             indices = ArraysKt___ArraysKt.getIndices(strArr);
             step = RangesKt___RangesKt.step(indices, 2);

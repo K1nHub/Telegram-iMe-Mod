@@ -53,11 +53,6 @@ public abstract class BasePreference implements BasePreferenceHelper {
     }
 
     @Override // com.iMe.storage.domain.storage.BasePreferenceHelper
-    public void clear() {
-        getMPref().edit().clear().apply();
-    }
-
-    @Override // com.iMe.storage.domain.storage.BasePreferenceHelper
     public void remove(String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         getMPref().edit().remove(key).apply();

@@ -219,7 +219,7 @@ public final class VeChain {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Clause, Builder> implements ClauseOrBuilder {
-            /* synthetic */ Builder(C67551 c67551) {
+            /* synthetic */ Builder(C68571 c68571) {
                 this();
             }
 
@@ -292,7 +292,7 @@ public final class VeChain {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67551.f1824xa1df5c61[method.ordinal()]) {
+            switch (C68571.f1832xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Clause();
                 case 2:
@@ -339,40 +339,40 @@ public final class VeChain {
 
     /* renamed from: wallet.core.jni.proto.VeChain$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C67551 {
+    static /* synthetic */ class C68571 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1824xa1df5c61;
+        static final /* synthetic */ int[] f1832xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1824xa1df5c61 = iArr;
+            f1832xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1824xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1832xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1824xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1832xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1824xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1832xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1824xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1832xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1824xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1832xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1824xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1832xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -656,7 +656,7 @@ public final class VeChain {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C67551 c67551) {
+            /* synthetic */ Builder(C68571 c68571) {
                 this();
             }
 
@@ -872,7 +872,7 @@ public final class VeChain {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67551.f1824xa1df5c61[method.ordinal()]) {
+            switch (C68571.f1832xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -1022,7 +1022,7 @@ public final class VeChain {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C67551 c67551) {
+            /* synthetic */ Builder(C68571 c68571) {
                 this();
             }
 
@@ -1067,7 +1067,7 @@ public final class VeChain {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67551.f1824xa1df5c61[method.ordinal()]) {
+            switch (C68571.f1832xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

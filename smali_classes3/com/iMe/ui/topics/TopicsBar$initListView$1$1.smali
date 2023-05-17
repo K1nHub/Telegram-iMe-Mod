@@ -30,7 +30,7 @@
 
     const/4 p1, 0x0
 
-    .line 147
+    .line 153
     invoke-direct {p0, p3, p1, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
     return-void
@@ -49,16 +49,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 172
+    .line 181
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$initListView$1$1;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
-    invoke-static {v0}, Lcom/iMe/ui/topics/TopicsBar;->access$getDelegate$p(Lcom/iMe/ui/topics/TopicsBar;)Lcom/iMe/ui/topics/TopicsBar$TopicsBarDelegate;
+    invoke-virtual {v0}, Lcom/iMe/ui/topics/TopicsBar;->getDelegate()Lcom/iMe/ui/topics/TopicsBar$Delegate;
 
     move-result-object v0
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-interface {v0}, Lcom/iMe/ui/topics/TopicsBar$TopicsBarDelegate;->isTabMenuVisible()Z
+    invoke-interface {v0}, Lcom/iMe/ui/topics/TopicsBar$Delegate;->isTabMenuVisible()Z
 
     move-result v0
 
@@ -85,7 +85,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 151
+    .line 160
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -96,10 +96,10 @@
 
     invoke-direct {p2, v0, p1}, Lcom/iMe/ui/topics/TopicsBar$initListView$1$1$smoothScrollToPosition$linearSmoothScroller$1;-><init>(Lorg/telegram/ui/Components/RecyclerListView;Landroid/content/Context;)V
 
-    .line 167
+    .line 176
     invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 168
+    .line 177
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
     return-void

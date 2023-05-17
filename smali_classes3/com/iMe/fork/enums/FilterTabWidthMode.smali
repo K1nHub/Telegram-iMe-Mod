@@ -32,12 +32,6 @@
 
 
 # instance fields
-.field private final marginIconAndCount:I
-
-.field private final tabDefaultMargin:I
-
-.field private final tabNoCounterMargin:I
-
 .field private final titleResId:I
 
 
@@ -71,68 +65,44 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 15
+    .locals 4
 
     .line 6
-    new-instance v7, Lcom/iMe/fork/enums/FilterTabWidthMode;
+    new-instance v0, Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    sget v3, Lorg/telegram/messenger/R$string;->folder_tabs_width_mode_value_default:I
+    sget v1, Lorg/telegram/messenger/R$string;->folder_tabs_width_mode_value_default:I
 
-    const-string v1, "DEFAULT"
+    const-string v2, "DEFAULT"
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    const/16 v4, 0x20
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/FilterTabWidthMode;-><init>(Ljava/lang/String;II)V
 
-    const/16 v5, 0x12
-
-    const/4 v6, 0x6
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Lcom/iMe/fork/enums/FilterTabWidthMode;-><init>(Ljava/lang/String;IIIII)V
-
-    sput-object v7, Lcom/iMe/fork/enums/FilterTabWidthMode;->DEFAULT:Lcom/iMe/fork/enums/FilterTabWidthMode;
+    sput-object v0, Lcom/iMe/fork/enums/FilterTabWidthMode;->DEFAULT:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     .line 7
     new-instance v0, Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    sget v11, Lorg/telegram/messenger/R$string;->folder_tabs_width_mode_value_medium:I
+    sget v1, Lorg/telegram/messenger/R$string;->folder_tabs_width_mode_value_medium:I
 
-    const-string v9, "MEDIUM"
+    const-string v2, "MEDIUM"
 
-    const/4 v10, 0x1
+    const/4 v3, 0x1
 
-    const/16 v12, 0x10
-
-    const/16 v13, 0x8
-
-    const/4 v14, 0x6
-
-    move-object v8, v0
-
-    invoke-direct/range {v8 .. v14}, Lcom/iMe/fork/enums/FilterTabWidthMode;-><init>(Ljava/lang/String;IIIII)V
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/FilterTabWidthMode;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/FilterTabWidthMode;->MEDIUM:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     .line 8
     new-instance v0, Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    sget v4, Lorg/telegram/messenger/R$string;->folder_tabs_width_mode_value_minimum:I
+    sget v1, Lorg/telegram/messenger/R$string;->folder_tabs_width_mode_value_minimum:I
 
     const-string v2, "MINIMUM"
 
     const/4 v3, 0x2
 
-    const/4 v5, 0x4
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x2
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/fork/enums/FilterTabWidthMode;-><init>(Ljava/lang/String;IIIII)V
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/FilterTabWidthMode;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/FilterTabWidthMode;->MINIMUM:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
@@ -153,11 +123,11 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IIIII)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(IIII)V"
+            "(I)V"
         }
     .end annotation
 
@@ -165,12 +135,6 @@
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     iput p3, p0, Lcom/iMe/fork/enums/FilterTabWidthMode;->titleResId:I
-
-    iput p4, p0, Lcom/iMe/fork/enums/FilterTabWidthMode;->tabDefaultMargin:I
-
-    iput p5, p0, Lcom/iMe/fork/enums/FilterTabWidthMode;->tabNoCounterMargin:I
-
-    iput p6, p0, Lcom/iMe/fork/enums/FilterTabWidthMode;->marginIconAndCount:I
 
     return-void
 .end method
@@ -217,33 +181,6 @@
 
 
 # virtual methods
-.method public final getMarginIconAndCount()I
-    .locals 1
-
-    .line 5
-    iget v0, p0, Lcom/iMe/fork/enums/FilterTabWidthMode;->marginIconAndCount:I
-
-    return v0
-.end method
-
-.method public final getTabDefaultMargin()I
-    .locals 1
-
-    .line 5
-    iget v0, p0, Lcom/iMe/fork/enums/FilterTabWidthMode;->tabDefaultMargin:I
-
-    return v0
-.end method
-
-.method public final getTabNoCounterMargin()I
-    .locals 1
-
-    .line 5
-    iget v0, p0, Lcom/iMe/fork/enums/FilterTabWidthMode;->tabNoCounterMargin:I
-
-    return v0
-.end method
-
 .method public final getTitleResId()I
     .locals 1
 

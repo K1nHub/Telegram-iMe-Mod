@@ -130,12 +130,12 @@ public final class VorbisUtil {
             String str = list.get(i);
             String[] splitAtFirst = Util.splitAtFirst(str, "=");
             if (splitAtFirst.length != 2) {
-                Log.m792w(TAG, "Failed to parse Vorbis comment: " + str);
+                Log.m796w(TAG, "Failed to parse Vorbis comment: " + str);
             } else if (splitAtFirst[0].equals("METADATA_BLOCK_PICTURE")) {
                 try {
                     arrayList.add(PictureFrame.fromPictureBlock(new ParsableByteArray(Base64.decode(splitAtFirst[1], 0))));
                 } catch (RuntimeException e) {
-                    Log.m791w(TAG, "Failed to parse vorbis picture", e);
+                    Log.m795w(TAG, "Failed to parse vorbis picture", e);
                 }
             } else {
                 arrayList.add(new VorbisComment(splitAtFirst[0], splitAtFirst[1]));
@@ -206,7 +206,7 @@ public final class VorbisUtil {
         for (int i2 = 0; i2 < readBits; i2++) {
             int readBits2 = vorbisBitArray.readBits(16);
             if (readBits2 != 0) {
-                Log.m796e(TAG, "mapping type other than 0 not supported: " + readBits2);
+                Log.m800e(TAG, "mapping type other than 0 not supported: " + readBits2);
             } else {
                 int readBits3 = vorbisBitArray.readBit() ? vorbisBitArray.readBits(4) + 1 : 1;
                 if (vorbisBitArray.readBit()) {

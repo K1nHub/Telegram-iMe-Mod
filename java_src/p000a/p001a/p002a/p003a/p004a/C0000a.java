@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class C0000a {
     /* renamed from: a */
-    public static final boolean m845a(Context context, String packageName) {
+    public static final boolean m849a(Context context, String packageName) {
         Intrinsics.checkParameterIsNotNull(context, "context");
         Intrinsics.checkParameterIsNotNull(packageName, "packageName");
         return context.getPackageManager().getPackageInfo(packageName, 2048) != null;

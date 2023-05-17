@@ -24,7 +24,7 @@
 
     move-result-object v0
 
-    const-string v1, "this as java.lang.String).toCharArray()"
+    const-string/jumbo v1, "this as java.lang.String).toCharArray()"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

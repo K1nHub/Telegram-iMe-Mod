@@ -159,9 +159,9 @@
     .line 89
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chats_menuItemIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemIcon:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -211,10 +211,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    const-string v1, "chats_menuItemText"
-
     .line 83
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -286,9 +286,9 @@
 
     move-result-object v0
 
-    const-string v1, "chats_menuItemText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -379,9 +379,9 @@
     .line 46
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "chats_menuItemIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemIcon:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

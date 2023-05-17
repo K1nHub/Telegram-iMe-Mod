@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TokenBalanceProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TokenBalanceProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class TokenBalanceProvider$convert$1 extends Lambda implements Function1<CoinTickerView, Unit> {
     final /* synthetic */ AccountItem.Token $item;
     final /* synthetic */ TokenBalanceProvider this$0;

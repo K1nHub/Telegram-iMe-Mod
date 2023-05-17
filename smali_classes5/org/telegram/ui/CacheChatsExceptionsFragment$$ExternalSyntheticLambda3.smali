@@ -26,8 +26,8 @@
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 7
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/CacheChatsExceptionsFragment;
 
@@ -43,7 +43,9 @@
 
     move-object v6, p5
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->$r8$lambda$dLQHLYCafXJJUfzp3Jh8QSoTljQ(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    move-object v7, p6
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->$r8$lambda$g2jhzF13Nz1zc1ZHR4bffNBalGw(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
     move-result p1
 

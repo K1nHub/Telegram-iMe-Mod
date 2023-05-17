@@ -19,9 +19,9 @@
 
 .field color2:I
 
-.field public colorKey1:Ljava/lang/String;
+.field public colorKey1:I
 
-.field public colorKey2:Ljava/lang/String;
+.field public colorKey2:I
 
 .field context:Landroid/content/Context;
 
@@ -92,15 +92,15 @@
     .line 31
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->mRotationMatrix:[F
 
-    const-string v0, "premiumStarGradient1"
-
     .line 44
-    iput-object v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->colorKey1:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartGradient1:I
 
-    const-string v0, "premiumStarGradient2"
+    iput v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->colorKey1:I
 
     .line 45
-    iput-object v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->colorKey2:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartGradient2:I
+
+    iput v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->colorKey2:I
 
     .line 53
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->context:Landroid/content/Context;
@@ -459,18 +459,18 @@
     .locals 6
 
     .line 144
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->colorKey1:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->colorKey1:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->color1:I
 
     .line 145
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->colorKey2:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->colorKey2:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -483,9 +483,9 @@
 
     if-ne v0, v1, :cond_0
 
-    const-string v0, "dialogBackground"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

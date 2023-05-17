@@ -2,40 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda132;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda132;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$9cqkJKQc1X9MnDwROvoeqYGH5d4(Lorg/telegram/ui/DialogsActivity;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$JfNDMooEzZCWyTdqUHRnSLjiIy8(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
-    return-void
-.end method
+    move-result p1
 
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
-
-    return-void
+    return p1
 .end method

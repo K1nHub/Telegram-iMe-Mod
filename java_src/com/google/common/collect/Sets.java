@@ -17,7 +17,7 @@ public final class Sets {
 
     /* renamed from: com.google.common.collect.Sets$1 */
     /* loaded from: classes3.dex */
-    class C09111 extends SetView<Object> {
+    class C09161 extends SetView<Object> {
     }
 
     /* loaded from: classes3.dex */
@@ -37,6 +37,12 @@ public final class Sets {
         return new HashSet<>();
     }
 
+    public static <E> HashSet<E> newHashSet(E... eArr) {
+        HashSet<E> newHashSetWithExpectedSize = newHashSetWithExpectedSize(eArr.length);
+        Collections.addAll(newHashSetWithExpectedSize, eArr);
+        return newHashSetWithExpectedSize;
+    }
+
     public static <E> HashSet<E> newHashSetWithExpectedSize(int i) {
         return new HashSet<>(Maps.capacity(i));
     }
@@ -47,7 +53,7 @@ public final class Sets {
 
     /* loaded from: classes3.dex */
     public static abstract class SetView<E> extends AbstractSet<E> {
-        /* synthetic */ SetView(C09111 c09111) {
+        /* synthetic */ SetView(C09161 c09161) {
             this();
         }
 

@@ -2261,7 +2261,7 @@
     :cond_a
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v2, "surface was null"
+    const-string/jumbo v2, "surface was null"
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -2271,7 +2271,7 @@
     :cond_b
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v2, "surface already created"
+    const-string/jumbo v2, "surface already created"
 
     invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

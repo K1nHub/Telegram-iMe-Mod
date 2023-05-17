@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.controller.ForkTopicsController;
 import com.iMe.p031ui.topics.TopicsBar;
 import com.iMe.storage.domain.model.topics.TopicModel;
+import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -25,6 +26,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.RecyclerListView;
 /* compiled from: TopicsBar.kt */
@@ -34,7 +36,7 @@ public final class TopicsBar extends FrameLayout {
     private final Lazy controller$delegate;
     private final int currentAccount;
     private final List<TopicModel> data;
-    private TopicsBarDelegate delegate;
+    private final Delegate delegate;
     private float editingAnimationProgress;
     private boolean editingForwardAnimation;
     private boolean isEditing;
@@ -44,25 +46,30 @@ public final class TopicsBar extends FrameLayout {
     private long selectedTopicId;
 
     /* compiled from: TopicsBar.kt */
-    /* renamed from: com.iMe.ui.topics.TopicsBar$TopicsBarDelegate */
+    /* renamed from: com.iMe.ui.topics.TopicsBar$Delegate */
     /* loaded from: classes3.dex */
-    public interface TopicsBarDelegate {
+    public interface Delegate {
         boolean canPerformActions();
-
-        boolean didSelectTab(TopicView topicView);
 
         boolean isTabMenuVisible();
 
-        void onTopicSelected(long j);
+        void onTopicClick(long j);
+
+        boolean onTopicLongClick(TopicView topicView);
+    }
+
+    public final Delegate getDelegate() {
+        return this.delegate;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public TopicsBar(Context context) {
+    public TopicsBar(Context context, Delegate delegate) {
         super(context);
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
         Intrinsics.checkNotNullParameter(context, "context");
+        this.delegate = delegate;
         lazy = LazyKt__LazyJVMKt.lazy(new TopicsBar$listView$2(this));
         this.listView$delegate = lazy;
         lazy2 = LazyKt__LazyJVMKt.lazy(new TopicsBar$listAdapter$2(this));
@@ -129,11 +136,18 @@ public final class TopicsBar extends FrameLayout {
         return z3;
     }
 
+    public final void setSelectedTopicId(long j) {
+        this.selectedTopicId = j;
+    }
+
     public final void resetSelectedTopic() {
+        if (this.selectedTopicId == -1) {
+            return;
+        }
         this.selectedTopicId = -1L;
-        TopicsBarDelegate topicsBarDelegate = this.delegate;
-        Intrinsics.checkNotNull(topicsBarDelegate);
-        topicsBarDelegate.onTopicSelected(this.selectedTopicId);
+        Delegate delegate = this.delegate;
+        Intrinsics.checkNotNull(delegate);
+        delegate.onTopicClick(this.selectedTopicId);
     }
 
     public final boolean allowReorder() {
@@ -142,10 +156,6 @@ public final class TopicsBar extends FrameLayout {
 
     public final boolean isEditing() {
         return this.isEditing;
-    }
-
-    public final void setDelegate(TopicsBarDelegate topicsBarDelegate) {
-        this.delegate = topicsBarDelegate;
     }
 
     public final void notifyDataSetChanged() {
@@ -290,10 +300,10 @@ public final class TopicsBar extends FrameLayout {
                         Intrinsics.checkNotNullParameter(state2, "state");
                         Intrinsics.checkNotNullParameter(action, "action");
                         int calculateDxToMakeVisible = calculateDxToMakeVisible(targetView, getHorizontalSnapPreference());
-                        if (calculateDxToMakeVisible > 0 || (calculateDxToMakeVisible == 0 && targetView.getLeft() - AndroidUtilities.m50dp(21) < 0)) {
-                            calculateDxToMakeVisible += AndroidUtilities.m50dp(60);
-                        } else if (calculateDxToMakeVisible < 0 || (calculateDxToMakeVisible == 0 && targetView.getRight() + AndroidUtilities.m50dp(21) > RecyclerListView.this.getMeasuredWidth())) {
-                            calculateDxToMakeVisible -= AndroidUtilities.m50dp(60);
+                        if (calculateDxToMakeVisible > 0 || (calculateDxToMakeVisible == 0 && targetView.getLeft() - AndroidUtilities.m54dp(21) < 0)) {
+                            calculateDxToMakeVisible += AndroidUtilities.m54dp(60);
+                        } else if (calculateDxToMakeVisible < 0 || targetView.getRight() + AndroidUtilities.m54dp(21) > RecyclerListView.this.getMeasuredWidth()) {
+                            calculateDxToMakeVisible -= AndroidUtilities.m54dp(60);
                         }
                         int calculateDyToMakeVisible = calculateDyToMakeVisible(targetView, getVerticalSnapPreference());
                         int max = Math.max(180, calculateTimeForDeceleration((int) Math.sqrt((calculateDxToMakeVisible * calculateDxToMakeVisible) + (calculateDyToMakeVisible * calculateDyToMakeVisible))));
@@ -308,12 +318,11 @@ public final class TopicsBar extends FrameLayout {
 
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public int scrollHorizontallyBy(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
-                TopicsBar.TopicsBarDelegate topicsBarDelegate;
                 Intrinsics.checkNotNullParameter(recycler, "recycler");
                 Intrinsics.checkNotNullParameter(state, "state");
-                topicsBarDelegate = this.delegate;
-                Intrinsics.checkNotNull(topicsBarDelegate);
-                if (topicsBarDelegate.isTabMenuVisible()) {
+                TopicsBar.Delegate delegate = this.getDelegate();
+                Intrinsics.checkNotNull(delegate);
+                if (delegate.isTabMenuVisible()) {
                     i = 0;
                 }
                 return super.scrollHorizontallyBy(i, recycler, state);
@@ -322,7 +331,7 @@ public final class TopicsBar extends FrameLayout {
         recyclerListView.setLayoutManager(linearLayoutManager);
         recyclerListView.setLayoutManager(linearLayoutManager);
         recyclerListView.setAdapter(getListAdapter());
-        recyclerListView.setPadding(AndroidUtilities.m50dp(7), 0, AndroidUtilities.m50dp(7), 0);
+        ViewExtKt.setHorizontalPadding(recyclerListView, 7);
         new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(recyclerListView);
         recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.iMe.ui.topics.TopicsBar$initListView$1$3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -354,16 +363,16 @@ public final class TopicsBar extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupListeners$lambda$3(TopicsBar this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        TopicsBarDelegate topicsBarDelegate = this$0.delegate;
-        Intrinsics.checkNotNull(topicsBarDelegate);
-        if (!topicsBarDelegate.canPerformActions() || this$0.isEditing) {
+        Delegate delegate = this$0.delegate;
+        Intrinsics.checkNotNull(delegate);
+        if (!delegate.canPerformActions() || this$0.isEditing) {
             return;
         }
         TopicModel topicModel = this$0.data.get(i);
         this$0.selectedTopicId = topicModel.getTopicId() == this$0.selectedTopicId ? -1L : topicModel.getTopicId();
-        TopicsBarDelegate topicsBarDelegate2 = this$0.delegate;
-        Intrinsics.checkNotNull(topicsBarDelegate2);
-        topicsBarDelegate2.onTopicSelected(this$0.selectedTopicId);
+        Delegate delegate2 = this$0.delegate;
+        Intrinsics.checkNotNull(delegate2);
+        delegate2.onTopicClick(this$0.selectedTopicId);
         this$0.getListView().smoothScrollToPosition(i);
         this$0.notifyDataSetChanged();
     }
@@ -371,12 +380,12 @@ public final class TopicsBar extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean setupListeners$lambda$4(TopicsBar this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        TopicsBarDelegate topicsBarDelegate = this$0.delegate;
-        Intrinsics.checkNotNull(topicsBarDelegate);
-        if (topicsBarDelegate.canPerformActions() && !this$0.isEditing) {
-            TopicsBarDelegate topicsBarDelegate2 = this$0.delegate;
-            Intrinsics.checkNotNull(topicsBarDelegate2);
-            if (topicsBarDelegate2.didSelectTab((TopicView) view)) {
+        Delegate delegate = this$0.delegate;
+        Intrinsics.checkNotNull(delegate);
+        if (delegate.canPerformActions() && !this$0.isEditing) {
+            Delegate delegate2 = this$0.delegate;
+            Intrinsics.checkNotNull(delegate2);
+            if (delegate2.onTopicLongClick((TopicView) view)) {
                 return true;
             }
         }
@@ -449,11 +458,9 @@ public final class TopicsBar extends FrameLayout {
         }
 
         public final void swapElements(int i, int i2) {
-            long topicId = ((TopicModel) TopicsBar.this.data.get(i)).getTopicId();
-            long topicId2 = ((TopicModel) TopicsBar.this.data.get(i2)).getTopicId();
             Collections.swap(TopicsBar.this.data, i, i2);
             notifyItemMoved(i, i2);
-            ForkTopicsController.Companion.getInstance(TopicsBar.this.currentAccount).swapTopics(topicId, topicId2);
+            ForkTopicsController.Companion.getInstance(TopicsBar.this.currentAccount).swapTopics((TopicModel) TopicsBar.this.data.get(i), (TopicModel) TopicsBar.this.data.get(i2));
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -474,9 +481,8 @@ public final class TopicsBar extends FrameLayout {
                     Intrinsics.checkNotNullExpressionValue(context, "context");
                 }
 
-                /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.iMe.p031ui.topics.TopicView, android.widget.LinearLayout, android.view.View
-                public void onDraw(Canvas canvas) {
+                @Override // android.view.View
+                protected void onDraw(Canvas canvas) {
                     float f;
                     float f2;
                     Intrinsics.checkNotNullParameter(canvas, "canvas");
@@ -486,14 +492,14 @@ public final class TopicsBar extends FrameLayout {
                         if (!(f == BitmapDescriptorFactory.HUE_RED)) {
                             f2 = TopicsBar.this.editingAnimationProgress;
                             float f3 = f2 * (this.position % 2 == 0 ? 1.0f : -1.0f);
-                            canvas.translate(AndroidUtilities.m51dp(0.66f) * f3, BitmapDescriptorFactory.HUE_RED);
+                            canvas.translate(AndroidUtilities.m55dp(0.66f) * f3, BitmapDescriptorFactory.HUE_RED);
                             canvas.rotate(f3, getMeasuredWidth() / 2, getMeasuredHeight() / 2);
                         }
                     }
                     super.onDraw(canvas);
                 }
             };
-            topicView.setLayoutParams(LayoutHelper.createRecycler(-2, 24, 8, 6, 8, 6));
+            topicView.setLayoutParams(LayoutHelper.createRecycler(-2, -1));
             return new RecyclerListView.Holder(topicView);
         }
 
@@ -507,6 +513,7 @@ public final class TopicsBar extends FrameLayout {
             TopicModel topicModel = (TopicModel) topicsBar.data.get(holder.getAdapterPosition());
             topicView.setTopic(topicModel, topicModel.getTopicId() == topicsBar.selectedTopicId);
             topicView.position = holder.getAdapterPosition();
+            topicView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(4), Theme.getColor(Theme.key_windowBackgroundWhite)));
         }
     }
 }

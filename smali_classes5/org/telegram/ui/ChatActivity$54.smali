@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$54;
-.super Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+.super Lorg/telegram/ui/Components/BlurredFrameLayout;
 .source "ChatActivity.java"
 
 
@@ -15,147 +15,337 @@
 
 
 # instance fields
-.field colorFilter:Landroid/graphics/PorterDuffColorFilter;
-
-.field lastColor:I
-
-.field lastLayout:Landroid/text/Layout;
-
-.field stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+.field private ignoreLayout:Z
 
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
     .locals 0
 
-    .line 9642
+    .line 9518
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/BlurredFrameLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 13
+.method protected onMeasure(II)V
+    .locals 8
 
-    .line 9657
-    invoke-super {p0, p1}, Landroid/widget/TextView;->dispatchDraw(Landroid/graphics/Canvas;)V
-
-    .line 9658
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->lastLayout:Landroid/text/Layout;
-
-    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x7
-
-    .line 9659
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Landroid/text/Layout;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lorg/telegram/ui/ChatActivity$54;->lastLayout:Landroid/text/Layout;
-
-    aput-object v4, v2, v3
-
-    invoke-static {v0, p0, v1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->update(ILandroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;[Landroid/text/Layout;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    .line 9661
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    const-string v1, "windowBackgroundWhiteBlueIcon"
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ChatActivity;->getThemedColor(Ljava/lang/String;)I
+    .line 9524
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 9662
-    iget v1, p0, Lorg/telegram/ui/ChatActivity$54;->lastColor:I
+    .line 9525
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    if-ne v1, v0, :cond_1
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->colorFilter:Landroid/graphics/PorterDuffColorFilter;
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getVisibility()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getVisibility()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/16 v1, 0x1f
+
+    .line 9526
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    div-int/lit8 v0, v0, 0x2
+
+    :cond_0
+    const/4 v1, 0x1
+
+    .line 9528
+    iput-boolean v1, p0, Lorg/telegram/ui/ChatActivity$54;->ignoreLayout:Z
+
+    .line 9529
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    const/4 v2, 0x4
+
+    const/16 v3, 0x30
+
+    const/4 v4, 0x0
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getVisibility()I
+
+    move-result v1
 
     if-nez v1, :cond_2
 
-    .line 9663
+    .line 9530
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    .line 9531
+    iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    .line 9532
+    iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_1
+
+    iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/widget/TextView;->getVisibility()I
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    .line 9533
+    iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v5
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v7
+
+    invoke-virtual {v5, v6, v4, v7, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 9534
+    iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    .line 9535
+    iget v5, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    const/16 v6, 0xf
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    sub-int/2addr v5, v6
+
+    iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    goto :goto_0
+
+    .line 9537
     :cond_1
-    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
+    iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
-    invoke-direct {v1, v0, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    move-result-object v5
 
-    iput-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->colorFilter:Landroid/graphics/PorterDuffColorFilter;
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 9664
-    iput v0, p0, Lorg/telegram/ui/ChatActivity$54;->lastColor:I
+    move-result v6
 
-    .line 9666
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v7
+
+    invoke-virtual {v5, v6, v4, v7, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 9538
+    iput v4, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    .line 9541
     :cond_2
-    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+    :goto_0
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-result-object v4
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
-    iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+    move-result-object v1
 
-    const/4 v6, 0x0
+    if-eqz v1, :cond_4
 
-    const/4 v7, 0x0
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v8, 0x0
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
-    const/4 v9, 0x0
+    move-result-object v1
 
-    const/4 v10, 0x0
+    invoke-virtual {v1}, Landroid/widget/TextView;->getVisibility()I
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move-result v1
 
-    iget-object v12, p0, Lorg/telegram/ui/ChatActivity$54;->colorFilter:Landroid/graphics/PorterDuffColorFilter;
+    if-nez v1, :cond_4
 
-    move-object v3, p1
+    .line 9542
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static/range {v3 .. v12}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFFLandroid/graphics/ColorFilter;)V
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    .line 9543
+    iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    .line 9544
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    .line 9545
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    const/16 v1, 0xb
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v4, v2, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    goto :goto_1
+
+    .line 9547
+    :cond_3
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-virtual {v0, v2, v4, v3, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 9548
+    iput v4, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    .line 9551
+    :cond_4
+    :goto_1
+    iput-boolean v4, p0, Lorg/telegram/ui/ChatActivity$54;->ignoreLayout:Z
+
+    .line 9552
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
 .end method
 
-.method protected onDetachedFromWindow()V
+.method public requestLayout()V
     .locals 1
 
-    .line 9650
-    invoke-super {p0}, Landroid/widget/TextView;->onDetachedFromWindow()V
+    .line 9558
+    iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$54;->ignoreLayout:Z
 
-    .line 9651
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+    if-eqz v0, :cond_0
 
-    invoke-static {p0, v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
+    return-void
 
-    const/4 v0, 0x0
-
-    .line 9652
-    iput-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->lastLayout:Landroid/text/Layout;
+    .line 9561
+    :cond_0
+    invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
     return-void
 .end method

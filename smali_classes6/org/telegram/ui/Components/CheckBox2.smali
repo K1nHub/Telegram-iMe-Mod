@@ -41,10 +41,19 @@
 
 
 # virtual methods
+.method public getCheckBoxBase()Lorg/telegram/ui/Components/CheckBoxBase;
+    .locals 1
+
+    .line 62
+    iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
+
+    return-object v0
+.end method
+
 .method public getProgress()F
     .locals 1
 
-    .line 88
+    .line 92
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBoxBase;->getProgress()F
@@ -57,7 +66,7 @@
 .method public hasIcon()Z
     .locals 1
 
-    .line 151
+    .line 159
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -76,7 +85,7 @@
 .method public isChecked()Z
     .locals 1
 
-    .line 66
+    .line 70
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBoxBase;->isChecked()Z
@@ -89,10 +98,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 93
+    .line 97
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 94
+    .line 98
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBoxBase;->onAttachedToWindow()V
@@ -103,10 +112,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 103
+    .line 107
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 104
+    .line 108
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBoxBase;->onDetachedFromWindow()V
@@ -117,26 +126,26 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 115
+    .line 119
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 120
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
     shr-int/lit8 v0, v0, 0x1
 
-    .line 117
+    .line 121
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
 
     shr-int/lit8 v1, v1, 0x1
 
-    .line 118
+    .line 122
     iget-object v2, p0, Lorg/telegram/ui/Components/CheckBox2;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -179,24 +188,24 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 119
+    .line 123
     iget-object v2, p0, Lorg/telegram/ui/Components/CheckBox2;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 120
+    .line 124
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
-    .line 121
+    .line 125
     sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     const v3, 0x3f99999a    # 1.2f
 
-    .line 122
+    .line 126
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v3
@@ -205,10 +214,10 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    const-string v3, "switch2Track"
+    .line 127
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_switch2Track:I
 
-    .line 123
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -220,7 +229,7 @@
 
     const/high16 v4, 0x3fc00000    # 1.5f
 
-    .line 124
+    .line 128
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v4
@@ -233,7 +242,7 @@
 
     goto :goto_0
 
-    .line 126
+    .line 130
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
@@ -246,20 +255,20 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 132
+    .line 140
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.Switch"
 
-    .line 133
+    .line 141
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     const/4 v0, 0x1
 
-    .line 134
+    .line 142
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 135
+    .line 143
     invoke-virtual {p0}, Lorg/telegram/ui/Components/CheckBox2;->isChecked()Z
 
     move-result v0
@@ -272,10 +281,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 109
+    .line 113
     invoke-super/range {p0 .. p5}, Landroid/view/View;->onLayout(ZIIII)V
 
-    .line 110
+    .line 114
     iget-object p1, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     sub-int/2addr p4, p2
@@ -331,13 +340,13 @@
     return-void
 .end method
 
-.method public setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setColor(III)V
     .locals 1
 
-    .line 70
+    .line 74
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
-    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Components/CheckBoxBase;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Components/CheckBoxBase;->setColor(III)V
 
     return-void
 .end method
@@ -345,7 +354,7 @@
 .method public setDrawBackgroundAsArc(I)V
     .locals 1
 
-    .line 84
+    .line 88
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CheckBoxBase;->setBackgroundType(I)V
@@ -356,7 +365,7 @@
 .method public setDrawUnchecked(Z)V
     .locals 1
 
-    .line 80
+    .line 84
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CheckBoxBase;->setDrawUnchecked(Z)V
@@ -367,7 +376,7 @@
 .method public setDuration(J)V
     .locals 1
 
-    .line 98
+    .line 102
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     iput-wide p1, v0, Lorg/telegram/ui/Components/CheckBoxBase;->animationDuration:J
@@ -378,13 +387,24 @@
 .method public setEnabled(Z)V
     .locals 1
 
-    .line 75
+    .line 79
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CheckBoxBase;->setEnabled(Z)V
 
-    .line 76
+    .line 80
     invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+
+    return-void
+.end method
+
+.method public setForbidden(Z)V
+    .locals 1
+
+    .line 135
+    iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CheckBoxBase;->setForbidden(Z)V
 
     return-void
 .end method
@@ -392,24 +412,24 @@
 .method public setIcon(I)V
     .locals 2
 
-    .line 139
+    .line 147
     iget v0, p0, Lorg/telegram/ui/Components/CheckBox2;->currentIcon:I
 
     if-eq p1, v0, :cond_1
 
-    .line 140
+    .line 148
     iput p1, p0, Lorg/telegram/ui/Components/CheckBox2;->currentIcon:I
 
     if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 142
+    .line 150
     iput-object p1, p0, Lorg/telegram/ui/Components/CheckBox2;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     goto :goto_0
 
-    .line 144
+    .line 152
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -425,10 +445,10 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/CheckBox2;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
-    const-string v0, "switch2Track"
+    .line 153
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_switch2Track:I
 
-    .line 145
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -444,7 +464,7 @@
 .method public setNum(I)V
     .locals 1
 
-    .line 62
+    .line 66
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBox2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CheckBoxBase;->setNum(I)V

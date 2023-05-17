@@ -398,9 +398,9 @@
     .line 290
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v8, "chats_menuName"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuName:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -546,9 +546,9 @@
     .line 320
     iget-object v7, v0, Lorg/telegram/ui/Cells/DrawerProfileCell;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    const-string v10, "dialogButtonSelector"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -564,7 +564,7 @@
     invoke-virtual {v7}, Lorg/telegram/ui/Components/RLottieDrawable;->beginApplyLayerColors()V
 
     .line 322
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -625,9 +625,9 @@
     .line 331
     iget-object v7, v0, Lorg/telegram/ui/Cells/DrawerProfileCell;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    const-string v10, "listSelectorSDK21"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -734,7 +734,7 @@
     iput-object v2, v0, Lorg/telegram/ui/Cells/DrawerProfileCell;->snowflakesEffect:Lorg/telegram/ui/Components/SnowflakesEffect;
 
     .line 395
-    invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/SnowflakesEffect;->setColorKey(Ljava/lang/String;)V
+    invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/SnowflakesEffect;->setColorKey(I)V
 
     .line 398
     :cond_5
@@ -1401,9 +1401,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "chats_menuName"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuName:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1466,9 +1466,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "chats_menuName"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuName:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -2019,7 +2019,7 @@
     return-void
 .end method
 
-.method public applyBackground(Z)Ljava/lang/String;
+.method public applyBackground(Z)Ljava/lang/Integer;
     .locals 3
 
     .line 882
@@ -2027,18 +2027,18 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
-
-    const-string v1, "chats_menuTopBackground"
+    check-cast v0, Ljava/lang/Integer;
 
     .line 883
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuTopBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -2047,31 +2047,42 @@
     goto :goto_0
 
     :cond_0
-    const-string v1, "chats_menuTopBackgroundCats"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuTopBackgroundCats:I
 
     :goto_0
     if-nez p1, :cond_1
 
+    if-eqz v0, :cond_1
+
     .line 884
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    if-nez p1, :cond_2
+    if-eq v1, p1, :cond_2
 
     .line 885
     :cond_1
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     .line 886
-    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+
+    .line 888
     :cond_2
-    return-object v1
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
@@ -2703,7 +2714,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 11
+    .locals 12
 
     .line 666
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaper()Landroid/graphics/drawable/Drawable;
@@ -2713,20 +2724,20 @@
     const/4 v1, 0x0
 
     .line 667
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/Cells/DrawerProfileCell;->applyBackground(Z)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Cells/DrawerProfileCell;->applyBackground(Z)Ljava/lang/Integer;
 
     move-result-object v2
 
-    const-string v3, "chats_menuTopBackground"
-
-    .line 668
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    const/4 v3, 0x1
+    .line 668
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuTopBackground:I
 
-    if-nez v2, :cond_0
+    const/4 v4, 0x1
+
+    if-eq v2, v3, :cond_0
 
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCustomTheme()Z
 
@@ -2750,7 +2761,7 @@
 
     if-nez v2, :cond_0
 
-    move v2, v3
+    move v2, v4
 
     goto :goto_0
 
@@ -2760,38 +2771,38 @@
     :goto_0
     if-nez v2, :cond_1
 
-    const-string v4, "chats_menuTopShadowCats"
-
     .line 672
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuTopShadowCats:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
     .line 673
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v4
+    move-result v3
 
-    move v5, v3
+    move v5, v4
 
     goto :goto_2
 
-    :cond_1
-    const-string v4, "chats_menuTopShadow"
-
     .line 676
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
+    :cond_1
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuTopShadow:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
     .line 677
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v4
+    move-result v3
 
     goto :goto_1
 
@@ -2799,11 +2810,11 @@
     :cond_2
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getServiceMessageColor()I
 
-    move-result v4
+    move-result v3
 
     const/high16 v5, -0x1000000
 
-    or-int/2addr v4, v5
+    or-int/2addr v3, v5
 
     :goto_1
     move v5, v1
@@ -2818,11 +2829,11 @@
 
     move-result v6
 
-    if-eq v6, v4, :cond_4
+    if-eq v6, v3, :cond_4
 
     .line 683
     :cond_3
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
@@ -2839,15 +2850,15 @@
 
     sget-object v8, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v7, v4, v8}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v7, v3, v8}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {v6, v7}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    :cond_4
-    const-string v4, "chats_menuName"
-
     .line 686
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_4
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuName:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -2987,26 +2998,24 @@
     :cond_6
     iget-object v6, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v6, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
-
-    const-string v4, "listSelectorSDK21"
+    invoke-virtual {v6, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     if-eqz v2, :cond_a
 
     .line 703
     iget-object v2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->phoneTextView:Landroid/widget/TextView;
 
-    const-string v5, "chats_menuPhone"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuPhone:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v5
+    move-result v3
 
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 704
     iget-object v2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->shadowView:Landroid/widget/ImageView;
@@ -3056,18 +3065,18 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    div-float/2addr v2, v4
+    div-float/2addr v2, v3
 
     .line 714
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -3075,23 +3084,23 @@
 
     int-to-float v5, v5
 
-    div-float/2addr v4, v5
+    div-float/2addr v3, v5
 
     .line 715
-    invoke-static {v2, v4}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
 
     .line 716
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    div-float/2addr v4, v2
+    div-float/2addr v3, v2
 
-    float-to-int v4, v4
+    float-to-int v3, v3
 
     .line 717
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -3109,7 +3118,7 @@
 
     move-result v5
 
-    sub-int/2addr v5, v4
+    sub-int/2addr v5, v3
 
     div-int/lit8 v5, v5, 0x2
 
@@ -3125,24 +3134,24 @@
     .line 720
     iget-object v7, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->srcRect:Landroid/graphics/Rect;
 
-    add-int/2addr v4, v5
+    add-int/2addr v3, v5
 
     add-int/2addr v2, v6
 
-    invoke-virtual {v7, v5, v6, v4, v2}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v7, v5, v6, v3, v2}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 721
     iget-object v2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->destRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v4
+    move-result v3
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v5
 
-    invoke-virtual {v2, v1, v1, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v2, v1, v1, v3, v5}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 723
     :try_start_0
@@ -3150,9 +3159,9 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->destRect:Landroid/graphics/Rect;
 
-    iget-object v4, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->paint:Landroid/graphics/Paint;
+    iget-object v3, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v1, v2, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -3179,15 +3188,17 @@
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v5
+    move-result v3
 
-    invoke-virtual {v0, v1, v1, v2, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v0, v1, v1, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 709
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 710
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     goto :goto_6
 
@@ -3218,9 +3229,9 @@
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->phoneTextView:Landroid/widget/TextView;
 
-    const-string v1, "chats_menuPhoneCats"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuPhoneCats:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -3230,7 +3241,9 @@
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 736
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     .line 751
     :cond_d
@@ -3241,7 +3254,7 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     if-eqz v0, :cond_e
 
@@ -3264,7 +3277,7 @@
     .line 753
     iget v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->drawPremiumProgress:F
 
-    cmpl-float v5, v0, v4
+    cmpl-float v5, v0, v3
 
     if-eqz v5, :cond_f
 
@@ -3278,13 +3291,13 @@
     :goto_7
     iget v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->drawPremiumProgress:F
 
-    invoke-static {v0, v2, v4}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    invoke-static {v0, v2, v3}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->drawPremiumProgress:F
 
-    cmpl-float v0, v0, v4
+    cmpl-float v0, v0, v3
 
     if-eqz v0, :cond_12
 
@@ -3296,20 +3309,20 @@
     .line 759
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    const/4 v1, 0x0
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBottomSheet1:I
 
-    const-string v2, "premiumGradientBottomSheet1"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBottomSheet2:I
 
-    const-string v5, "premiumGradientBottomSheet2"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradientBottomSheet3:I
 
-    const-string v6, "premiumGradientBottomSheet3"
+    const/4 v6, -0x1
 
-    invoke-direct {v0, v2, v5, v6, v1}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, v5, v6}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIII)V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     .line 760
-    iput v4, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x1:F
+    iput v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x1:F
 
     const v1, 0x3f8ccccd    # 1.1f
 
@@ -3327,29 +3340,29 @@
     iput v1, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->y2:F
 
     .line 764
-    iput-boolean v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->exactly:Z
+    iput-boolean v4, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->exactly:Z
 
     .line 766
     :cond_10
-    iget-object v4, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
-
-    const/4 v5, 0x0
+    iget-object v5, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     const/4 v6, 0x0
 
+    const/4 v7, 0x0
+
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v7
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v8
 
-    const/4 v9, 0x0
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v9
 
     const/4 v10, 0x0
 
-    invoke-virtual/range {v4 .. v10}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->gradientMatrix(IIIIFF)V
+    const/4 v11, 0x0
+
+    invoke-virtual/range {v5 .. v11}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->gradientMatrix(IIIIFF)V
 
     .line 767
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
@@ -3659,7 +3672,7 @@
 .end method
 
 .method public setUser(Lorg/telegram/tgnet/TLRPC$User;ZLcom/iMe/fork/models/DrawerHeaderSettings;)V
-    .locals 8
+    .locals 7
 
     .line 805
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->previewMode:Z
@@ -3850,11 +3863,9 @@
 
     const/4 v1, 0x4
 
-    const-string v3, "chats_menuPhoneCats"
-
     const-wide/16 v5, 0xc8
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
     if-eqz v0, :cond_9
 
@@ -3868,7 +3879,7 @@
     .line 844
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->animatedStatus:Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;
 
-    invoke-virtual {v0, v7}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_3
 
@@ -3880,7 +3891,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v7}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
@@ -3934,7 +3945,7 @@
     .line 852
     iget-object p2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->animatedStatus:Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;
 
-    invoke-virtual {p2, v7}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p2, v3}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_4
 
@@ -3946,7 +3957,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p2, v7}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p2
 
@@ -3994,7 +4005,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuPhoneCats:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -4075,19 +4088,17 @@
 
     move-result v0
 
-    const-string v1, "chats_verifiedBackground"
-
     if-eqz v0, :cond_f
 
-    move-object v0, v1
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
 
     goto :goto_7
 
     :cond_f
-    move-object v0, v3
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuPhoneCats:I
 
     :goto_7
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -4102,10 +4113,15 @@
 
     if-eqz v0, :cond_10
 
-    move-object v3, v1
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
+
+    goto :goto_8
 
     :cond_10
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuPhoneCats:I
+
+    :goto_8
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -4149,10 +4165,10 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    const-string v0, "avatar_backgroundInProfileBlue"
-
     .line 874
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundInProfileBlue:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -4164,7 +4180,7 @@
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
     .line 876
-    invoke-virtual {p0, v4}, Lorg/telegram/ui/Cells/DrawerProfileCell;->applyBackground(Z)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Lorg/telegram/ui/Cells/DrawerProfileCell;->applyBackground(Z)Ljava/lang/Integer;
 
     .line 877
     iput-boolean v4, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->updateRightDrawable:Z
@@ -4176,7 +4192,7 @@
 .end method
 
 .method public updateColors()V
-    .locals 4
+    .locals 2
 
     .line 892
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->snowflakesEffect:Lorg/telegram/ui/Components/SnowflakesEffect;
@@ -4190,32 +4206,28 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell;->animatedStatus:Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;
 
-    const-string v1, "chats_verifiedBackground"
-
-    const-string v2, "chats_menuPhoneCats"
-
     if-eqz v0, :cond_2
 
     .line 896
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_1
+    if-eqz v1, :cond_1
 
-    move-object v3, v1
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
 
     goto :goto_0
 
     :cond_1
-    move-object v3, v2
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuPhoneCats:I
 
     :goto_0
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v3
+    move-result v1
 
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->setColor(I)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->setColor(I)V
 
     .line 898
     :cond_2
@@ -4226,17 +4238,19 @@
     .line 899
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_3
+    if-eqz v1, :cond_3
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
 
     goto :goto_1
 
     :cond_3
-    move-object v1, v2
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuPhoneCats:I
 
     :goto_1
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

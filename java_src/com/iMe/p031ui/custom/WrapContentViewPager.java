@@ -95,7 +95,7 @@ public final class WrapContentViewPager extends ViewPager {
                 Intrinsics.checkNotNull(declaredField);
                 declaredField.setAccessible(true);
             } catch (Exception e) {
-                Timber.m4e(e);
+                Timber.m6e(e);
             }
         }
         try {
@@ -105,7 +105,7 @@ public final class WrapContentViewPager extends ViewPager {
                 field.set(layoutParams, Boolean.FALSE);
             }
         } catch (Exception e2) {
-            Timber.m4e(e2);
+            Timber.m6e(e2);
         }
     }
 
@@ -117,7 +117,7 @@ public final class WrapContentViewPager extends ViewPager {
                 Intrinsics.checkNotNull(declaredMethod);
                 declaredMethod.setAccessible(true);
             } catch (Exception e) {
-                Timber.m4e(e);
+                Timber.m6e(e);
             }
         }
         try {
@@ -127,7 +127,7 @@ public final class WrapContentViewPager extends ViewPager {
                 method.invoke(this, new Object[0]);
             }
         } catch (Exception e2) {
-            Timber.m4e(e2);
+            Timber.m6e(e2);
         }
     }
 
@@ -140,7 +140,7 @@ public final class WrapContentViewPager extends ViewPager {
                 field.set(this, Boolean.valueOf(z));
             }
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -152,7 +152,7 @@ public final class WrapContentViewPager extends ViewPager {
                 Intrinsics.checkNotNull(declaredField);
                 declaredField.setAccessible(true);
             } catch (Exception e) {
-                Timber.m4e(e);
+                Timber.m6e(e);
             }
         }
     }

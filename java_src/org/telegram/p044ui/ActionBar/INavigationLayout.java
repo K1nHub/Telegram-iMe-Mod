@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
+import android.util.SparseIntArray;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.FrameLayout;
-import java.util.HashMap;
+import androidx.core.util.Supplier;
 import java.util.List;
 import org.telegram.p044ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -61,6 +63,8 @@ public interface INavigationLayout {
     boolean extendActionMode(Menu menu);
 
     void finishPreviewFragment();
+
+    BottomSheet getBottomSheet();
 
     float getCurrentPreviewFragmentAlpha();
 
@@ -192,6 +196,10 @@ public interface INavigationLayout {
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$-CC */
     /* loaded from: classes5.dex */
     public final /* synthetic */ class CC {
+        public static BottomSheet $default$getBottomSheet(INavigationLayout iNavigationLayout) {
+            return null;
+        }
+
         public static boolean $default$hasIntegratedBlurInPreview(INavigationLayout iNavigationLayout) {
             return false;
         }
@@ -202,6 +210,15 @@ public interface INavigationLayout {
 
         public static INavigationLayout newLayout(Context context) {
             return new ActionBarLayout(context);
+        }
+
+        public static INavigationLayout newLayout(Context context, final Supplier<BottomSheet> supplier) {
+            return new ActionBarLayout(context) { // from class: org.telegram.ui.ActionBar.INavigationLayout.1
+                @Override // org.telegram.p044ui.ActionBar.ActionBarLayout, org.telegram.p044ui.ActionBar.INavigationLayout
+                public BottomSheet getBottomSheet() {
+                    return (BottomSheet) supplier.get();
+                }
+            };
         }
 
         public static void $default$rebuildFragments(INavigationLayout _this, int i) {
@@ -248,6 +265,13 @@ public interface INavigationLayout {
                 return;
             }
             fragmentStack.get(fragmentStack.size() - 1).dismissCurrentDialog();
+        }
+
+        public static Window $default$getWindow(INavigationLayout _this) {
+            if (_this.getParentActivity() != null) {
+                return _this.getParentActivity().getWindow();
+            }
+            return null;
         }
     }
 
@@ -369,8 +393,8 @@ public interface INavigationLayout {
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$StartColorsProvider */
     /* loaded from: classes5.dex */
     public static class StartColorsProvider implements Theme.ResourcesProvider {
-        HashMap<String, Integer> colors = new HashMap<>();
-        String[] keysToSave = {"chat_outBubble", "chat_outBubbleGradient", "chat_outBubbleGradient2", "chat_outBubbleGradient3", "chat_outBubbleGradientAnimated", "chat_outBubbleShadow"};
+        SparseIntArray colors = new SparseIntArray();
+        int[] keysToSave = {Theme.key_chat_outBubble, Theme.key_chat_outBubbleGradient1, Theme.key_chat_outBubbleGradient2, Theme.key_chat_outBubbleGradient3, Theme.key_chat_outBubbleGradientAnimated, Theme.key_chat_outBubbleShadow};
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
         public /* synthetic */ void applyServiceShaderMatrix(int i, int i2, float f, float f2) {
@@ -378,8 +402,8 @@ public interface INavigationLayout {
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ int getColorOrDefault(String str) {
-            return Theme.ResourcesProvider.CC.$default$getColorOrDefault(this, str);
+        public /* synthetic */ int getColorOrDefault(int i) {
+            return Theme.ResourcesProvider.CC.$default$getColorOrDefault(this, i);
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
@@ -398,25 +422,30 @@ public interface INavigationLayout {
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ void setAnimatedColor(String str, int i) {
-            Theme.ResourcesProvider.CC.$default$setAnimatedColor(this, str, i);
+        public /* synthetic */ void setAnimatedColor(int i, int i2) {
+            Theme.ResourcesProvider.CC.$default$setAnimatedColor(this, i, i2);
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
-        public Integer getColor(String str) {
-            return this.colors.get(str);
+        public int getColor(int i) {
+            return this.colors.get(i);
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
-        public Integer getCurrentColor(String str) {
-            return this.colors.get(str);
+        public boolean contains(int i) {
+            return this.colors.indexOfKey(i) >= 0;
+        }
+
+        @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
+        public int getCurrentColor(int i) {
+            return this.colors.get(i);
         }
 
         public void saveColors(Theme.ResourcesProvider resourcesProvider) {
-            String[] strArr;
+            int[] iArr;
             this.colors.clear();
-            for (String str : this.keysToSave) {
-                this.colors.put(str, resourcesProvider.getCurrentColor(str));
+            for (int i : this.keysToSave) {
+                this.colors.put(i, resourcesProvider.getCurrentColor(i));
             }
         }
     }

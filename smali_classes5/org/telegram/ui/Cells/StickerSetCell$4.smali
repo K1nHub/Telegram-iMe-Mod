@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/StickerSetCell;I)V
     .locals 0
 
-    .line 618
+    .line 622
     iput-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     iput p2, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->val$state:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 628
+    .line 632
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->access$200(Lorg/telegram/ui/Cells/StickerSetCell;)Lorg/telegram/ui/Components/Premium/PremiumButtonView;
@@ -74,7 +74,7 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 629
+    .line 633
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->access$300(Lorg/telegram/ui/Cells/StickerSetCell;)Landroid/widget/TextView;
@@ -97,7 +97,7 @@
     :goto_2
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 630
+    .line 634
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->access$400(Lorg/telegram/ui/Cells/StickerSetCell;)Landroid/widget/TextView;
@@ -115,7 +115,7 @@
     :cond_3
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 631
+    .line 635
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->updateRightMargin()V
@@ -126,7 +126,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 621
+    .line 625
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->access$200(Lorg/telegram/ui/Cells/StickerSetCell;)Lorg/telegram/ui/Components/Premium/PremiumButtonView;
@@ -137,7 +137,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 622
+    .line 626
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->access$300(Lorg/telegram/ui/Cells/StickerSetCell;)Landroid/widget/TextView;
@@ -146,7 +146,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 623
+    .line 627
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell$4;->this$0:Lorg/telegram/ui/Cells/StickerSetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->access$400(Lorg/telegram/ui/Cells/StickerSetCell;)Landroid/widget/TextView;

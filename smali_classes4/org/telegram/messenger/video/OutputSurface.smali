@@ -315,7 +315,7 @@
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string p2, "surface was null"
+    const-string/jumbo p2, "surface was null"
 
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -363,8 +363,6 @@
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    nop
 
     :array_0
     .array-data 4

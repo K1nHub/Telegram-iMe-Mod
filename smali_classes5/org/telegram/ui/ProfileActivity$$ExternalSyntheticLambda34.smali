@@ -2,32 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/ui/profile/ProfilePresenter;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Landroid/app/Activity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/ui/profile/ProfilePresenter;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;ZLandroid/app/Activity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda34;->f$0:Lcom/iMe/ui/profile/ProfilePresenter;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda34;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda34;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda34;->f$2:Landroid/app/Activity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda34;->f$0:Lcom/iMe/ui/profile/ProfilePresenter;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda34;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    invoke-virtual {v0}, Lcom/iMe/ui/profile/ProfilePresenter;->onTwitterCellClick()V
+    iget-boolean v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda34;->f$1:Z
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda34;->f$2:Landroid/app/Activity;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$hD1ezKLHr8_rI4SZx0jym8Wial4(Lorg/telegram/ui/ActionBar/AlertDialog;ZLandroid/app/Activity;)V
 
     return-void
 .end method

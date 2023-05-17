@@ -22,10 +22,10 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -88,17 +88,20 @@ public final class BotSettingsActivity extends MvpFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, TextCheckCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrack"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, "windowBackgroundGrayShadow"));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setTitle(LocaleController.getInternalString(C3242R.string.neurobots_settings_screen_title));
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.BotSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setTitle(LocaleController.getInternalString(C3290R.string.neurobots_settings_screen_title));
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.BotSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BotSettingsActivity.this.finishFragment();
@@ -110,7 +113,7 @@ public final class BotSettingsActivity extends MvpFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initRootView() {
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         return frameLayout;
     }
 
@@ -134,7 +137,7 @@ public final class BotSettingsActivity extends MvpFragment {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof TextCheckCell) {
             TextCheckCell textCheckCell = (TextCheckCell) view;
-            textCheckCell.toggleCheckbox();
+            textCheckCell.toggleCheckBox();
             if (i == this$0.enableBotsRow) {
                 NeuroBotsController neuroBotsController = this$0.getNeuroBotsController();
                 neuroBotsController.setNeuroBotsEnabled(!neuroBotsController.isNeuroBotsEnabled());
@@ -207,28 +210,28 @@ public final class BotSettingsActivity extends MvpFragment {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
             if (i == BotSettingsActivity.this.autoBotsRow) {
-                return IdFabric$ViewTypes.HEADER;
+                return IdFabric$ViewTypes.HEADER_CELL;
             }
-            return ((i == BotSettingsActivity.this.enableBotsRow || i == BotSettingsActivity.this.autoBotsInPersonalChatsRow) || i == BotSettingsActivity.this.autoBotsInGroupsRow) || i == BotSettingsActivity.this.showOftenUsedRow ? IdFabric$ViewTypes.TEXT_CHECK : IdFabric$ViewTypes.SHADOW_SECTION;
+            return ((i == BotSettingsActivity.this.enableBotsRow || i == BotSettingsActivity.this.autoBotsInPersonalChatsRow) || i == BotSettingsActivity.this.autoBotsInGroupsRow) || i == BotSettingsActivity.this.showOftenUsedRow ? IdFabric$ViewTypes.TEXT_CHECK_CELL : IdFabric$ViewTypes.SHADOW_SECTION;
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            return holder.getItemViewType() == IdFabric$ViewTypes.TEXT_CHECK;
+            return holder.getItemViewType() == IdFabric$ViewTypes.TEXT_CHECK_CELL;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             HeaderCell headerCell;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.HEADER) {
+            if (i == IdFabric$ViewTypes.HEADER_CELL) {
                 HeaderCell headerCell2 = new HeaderCell(BotSettingsActivity.this.getParentActivity());
-                headerCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                headerCell2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 headerCell = headerCell2;
-            } else if (i == IdFabric$ViewTypes.TEXT_CHECK) {
+            } else if (i == IdFabric$ViewTypes.TEXT_CHECK_CELL) {
                 View textCheckCell = new TextCheckCell(BotSettingsActivity.this.getParentActivity());
-                textCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                textCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 headerCell = textCheckCell;
             } else {
                 headerCell = new ShadowSectionCell(BotSettingsActivity.this.getParentActivity());
@@ -244,17 +247,17 @@ public final class BotSettingsActivity extends MvpFragment {
             int itemViewType = holder.getItemViewType();
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-            if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(C3242R.string.neurobots_settings_automatic_response_header));
-            } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
+            if (itemViewType == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
+                ((HeaderCell) view).setText(LocaleController.getInternalString(C3290R.string.neurobots_settings_automatic_response_header));
+            } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
                 if (i == BotSettingsActivity.this.enableBotsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3242R.string.neurobots_settings_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsEnabled(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3290R.string.neurobots_settings_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsEnabled(), z);
                 } else if (i == BotSettingsActivity.this.autoBotsInPersonalChatsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3242R.string.neurobots_settings_chats_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInPersonalChats(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3290R.string.neurobots_settings_chats_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInPersonalChats(), z);
                 } else if (i == BotSettingsActivity.this.autoBotsInGroupsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3242R.string.neurobots_settings_groups_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInGroups(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3290R.string.neurobots_settings_groups_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInGroups(), z);
                 } else if (i == BotSettingsActivity.this.showOftenUsedRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3242R.string.neurobots_settings_often_used_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isShowOftenUsedNeuroBotsEnabled(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3290R.string.neurobots_settings_often_used_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isShowOftenUsedNeuroBotsEnabled(), z);
                 }
             }
         }

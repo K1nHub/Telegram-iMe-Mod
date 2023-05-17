@@ -1300,7 +1300,7 @@
     :goto_3
     if-eqz v0, :cond_4
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     goto/16 :goto_9
 
@@ -1368,7 +1368,7 @@
     :goto_6
     if-eqz v0, :cond_9
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL:I
 
     goto :goto_9
 
@@ -1404,7 +1404,7 @@
     :goto_8
     if-eqz v0, :cond_c
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     goto :goto_9
 
@@ -1437,7 +1437,7 @@
 
     .line 632
     :cond_e
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
 
     :goto_9
     return p1
@@ -1887,6 +1887,8 @@
     :cond_4
     instance-of v1, v0, Lorg/telegram/ui/Cells/TextCell;
 
+    const/4 v5, -0x1
+
     if-eqz v1, :cond_8
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1895,12 +1897,10 @@
 
     check-cast v0, Lorg/telegram/ui/Cells/TextCell;
 
-    const/4 v1, 0x0
-
-    const-string v2, "windowBackgroundWhiteBlueText4"
-
     .line 589
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-virtual {v0, v5, v1}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
     .line 590
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1937,9 +1937,9 @@
     :cond_6
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v5, "switchTrackChecked"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -1952,9 +1952,9 @@
     .line 595
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v5, "checkboxCheck"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -2083,10 +2083,8 @@
     .line 610
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    const/4 p1, -0x1
-
     .line 611
-    invoke-static {v1, p1}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;->access$setRequestFieldFocusAtPosition$p(Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;I)V
+    invoke-static {v1, v5}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;->access$setRequestFieldFocusAtPosition$p(Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;I)V
 
     goto :goto_3
 
@@ -2133,16 +2131,14 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 9
+    .locals 8
 
     const-string v0, "parent"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 517
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
-
-    const-string v0, "windowBackgroundWhite"
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, p1, :cond_0
 
@@ -2157,7 +2153,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
     .line 518
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2167,7 +2165,7 @@
 
     .line 520
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-ne p2, p1, :cond_1
 
@@ -2187,7 +2185,7 @@
 
     .line 521
     :cond_1
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL:I
 
     if-ne p2, p1, :cond_2
 
@@ -2202,7 +2200,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
     .line 522
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2214,9 +2214,9 @@
     :cond_2
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_REACTION:I
 
-    const-string v1, "context"
+    const-string v0, "context"
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     if-ne p2, p1, :cond_3
 
@@ -2228,7 +2228,7 @@
 
     move-result-object p2
 
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -2237,24 +2237,24 @@
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;
 
     .line 525
-    invoke-virtual {p1, v2}, Lcom/iMe/fork/ui/view/MovingReactionCell;->setShowNextButton(Z)V
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/MovingReactionCell;->setShowNextButton(Z)V
 
     .line 526
     invoke-virtual {p1}, Lcom/iMe/fork/ui/view/MovingReactionCell;->getDeleteImageView()Landroid/widget/ImageView;
 
-    move-result-object v3
+    move-result-object v2
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v3, 0x0
 
-    new-instance v6, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$3$1;
+    new-instance v5, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$3$1;
 
-    invoke-direct {v6, p2, p1}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$3$1;-><init>(Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;Lcom/iMe/fork/ui/view/MovingReactionCell;)V
+    invoke-direct {v5, p2, p1}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$3$1;-><init>(Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;Lcom/iMe/fork/ui/view/MovingReactionCell;)V
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    invoke-static/range {v3 .. v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-static/range {v2 .. v7}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -2272,9 +2272,9 @@
 
     move-result-object p2
 
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p1, p2, v2}, Lcom/iMe/fork/ui/view/MovingReactionCell;-><init>(Landroid/content/Context;Z)V
+    invoke-direct {p1, p2, v1}, Lcom/iMe/fork/ui/view/MovingReactionCell;-><init>(Landroid/content/Context;Z)V
 
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;
 
@@ -2284,15 +2284,15 @@
     move-result-object v0
 
     .line 80
-    new-instance v1, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$lambda$8$$inlined$doOnTextChanged$1;
+    new-instance v2, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$lambda$8$$inlined$doOnTextChanged$1;
 
-    invoke-direct {v1, p2, p1}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$lambda$8$$inlined$doOnTextChanged$1;-><init>(Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;Lcom/iMe/fork/ui/view/MovingReactionCell;)V
+    invoke-direct {v2, p2, p1}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$lambda$8$$inlined$doOnTextChanged$1;-><init>(Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;Lcom/iMe/fork/ui/view/MovingReactionCell;)V
 
     .line 93
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 544
-    invoke-virtual {p1, v2}, Lcom/iMe/fork/ui/view/MovingReactionCell;->setShowNextButton(Z)V
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/MovingReactionCell;->setShowNextButton(Z)V
 
     .line 546
     invoke-virtual {p1}, Lcom/iMe/fork/ui/view/MovingReactionCell;->getDeleteImageView()Landroid/widget/ImageView;
@@ -2331,7 +2331,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 559
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

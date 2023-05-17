@@ -1,6 +1,7 @@
 package kotlin.sequences;
 
 import java.util.Iterator;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Sequences.kt */
@@ -20,5 +21,13 @@ public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
     public static final <T> Sequence<T> constrainOnce(Sequence<? extends T> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         return sequence instanceof ConstrainedOnceSequence ? sequence : new ConstrainedOnceSequence(sequence);
+    }
+
+    public static <T> Sequence<T> generateSequence(T t, Function1<? super T, ? extends T> nextFunction) {
+        Intrinsics.checkNotNullParameter(nextFunction, "nextFunction");
+        if (t == null) {
+            return EmptySequence.INSTANCE;
+        }
+        return new GeneratorSequence(new SequencesKt__SequencesKt$generateSequence$2(t), nextFunction);
     }
 }

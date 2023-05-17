@@ -23,7 +23,7 @@ public final class DynamicLinksInteractor {
     public final Observable<Result<DynamicLinkData>> getLink(AndroidActivityHolder holder, String url) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(url, "url");
-        Observable<Result<DynamicLinkData>> subscribeOn = this.dynamicLinksRepository.getLink(holder, url).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<DynamicLinkData>> subscribeOn = this.dynamicLinksRepository.getLink(holder, url).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "dynamicLinksRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }

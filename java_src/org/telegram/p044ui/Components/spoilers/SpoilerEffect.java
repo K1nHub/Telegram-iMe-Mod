@@ -21,10 +21,8 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.StaticLayout;
-import android.text.TextPaint;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ReplacementSpan;
-import android.text.style.URLSpan;
 import android.view.View;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
@@ -41,7 +39,6 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -117,11 +114,11 @@ public class SpoilerEffect extends Drawable {
         for (int i = 0; i < ALPHAS.length; i++) {
             this.particlePaints[i] = new Paint();
             if (i == 0) {
-                this.particlePaints[i].setStrokeWidth(AndroidUtilities.m51dp(1.4f));
+                this.particlePaints[i].setStrokeWidth(AndroidUtilities.m55dp(1.4f));
                 this.particlePaints[i].setStyle(Paint.Style.STROKE);
                 this.particlePaints[i].setStrokeCap(Paint.Cap.ROUND);
             } else {
-                this.particlePaints[i].setStrokeWidth(AndroidUtilities.m51dp(1.2f));
+                this.particlePaints[i].setStrokeWidth(AndroidUtilities.m55dp(1.2f));
                 this.particlePaints[i].setStyle(Paint.Style.STROKE);
                 this.particlePaints[i].setStrokeCap(Paint.Cap.ROUND);
             }
@@ -140,7 +137,7 @@ public class SpoilerEffect extends Drawable {
     }
 
     public void updateMaxParticles() {
-        int width = getBounds().width() / AndroidUtilities.m50dp(6);
+        int width = getBounds().width() / AndroidUtilities.m54dp(6);
         int i = PARTICLES_PER_CHARACTER;
         setMaxParticlesCount(MathUtils.clamp(width * i, i, MAX_PARTICLES_PER_ENTITY));
     }
@@ -241,7 +238,7 @@ public class SpoilerEffect extends Drawable {
         Iterator<Particle> it = this.particles.iterator();
         while (it.hasNext()) {
             Particle next = it.next();
-            if (!getBounds().contains((int) next.f1755x, (int) next.f1756y)) {
+            if (!getBounds().contains((int) next.f1762x, (int) next.f1763y)) {
                 it.remove();
             }
             if (this.particlesPool.size() < this.maxParticles) {
@@ -272,7 +269,7 @@ public class SpoilerEffect extends Drawable {
                 Particle particle2 = this.particles.get(i8);
                 float f2 = min;
                 particle2.currentTime = Math.min(particle2.currentTime + f2, particle2.lifeTime);
-                if (particle2.currentTime >= particle2.lifeTime || isOutOfBounds(i2, i3, i4, i5, particle2.f1755x, particle2.f1756y)) {
+                if (particle2.currentTime >= particle2.lifeTime || isOutOfBounds(i2, i3, i4, i5, particle2.f1762x, particle2.f1763y)) {
                     if (this.particlesPool.size() < this.maxParticles) {
                         this.particlesPool.push(particle2);
                     }
@@ -283,8 +280,8 @@ public class SpoilerEffect extends Drawable {
                     Particle.access$516(particle2, particle2.vecX * f3);
                     Particle.access$616(particle2, particle2.vecY * f3);
                     int i9 = particle2.alpha;
-                    this.particlePoints[i9][this.renderCount[i9] * 2] = particle2.f1755x;
-                    this.particlePoints[i9][(this.renderCount[i9] * 2) + 1] = particle2.f1756y;
+                    this.particlePoints[i9][this.renderCount[i9] * 2] = particle2.f1762x;
+                    this.particlePoints[i9][(this.renderCount[i9] * 2) + 1] = particle2.f1763y;
                     int[] iArr = this.renderCount;
                     iArr[i9] = iArr[i9] + 1;
                 }
@@ -314,7 +311,7 @@ public class SpoilerEffect extends Drawable {
                         particle = pop;
                         i = size2;
                         f = f6;
-                        if (isOutOfBounds(i2, i3, i4, i5, pop.f1755x, pop.f1756y) && i14 < 4) {
+                        if (isOutOfBounds(i2, i3, i4, i5, pop.f1762x, pop.f1763y) && i14 < 4) {
                             f6 = f;
                             pop = particle;
                             i13 = i14;
@@ -330,8 +327,8 @@ public class SpoilerEffect extends Drawable {
                     particle.alpha = Utilities.fastRandom.nextInt(ALPHAS.length);
                     this.particles.add(particle);
                     int i15 = particle.alpha;
-                    this.particlePoints[i15][this.renderCount[i15] * 2] = particle.f1755x;
-                    this.particlePoints[i15][(this.renderCount[i15] * 2) + 1] = particle.f1756y;
+                    this.particlePoints[i15][this.renderCount[i15] * 2] = particle.f1762x;
+                    this.particlePoints[i15][(this.renderCount[i15] * 2) + 1] = particle.f1763y;
                     int[] iArr2 = this.renderCount;
                     iArr2[i15] = iArr2[i15] + 1;
                     i11++;
@@ -346,10 +343,10 @@ public class SpoilerEffect extends Drawable {
                 for (int i18 = 0; i18 < this.particles.size(); i18++) {
                     Particle particle3 = this.particles.get(i18);
                     RectF rectF = this.visibleRect;
-                    if ((rectF == null || rectF.contains(particle3.f1755x, particle3.f1756y)) && (particle3.alpha == length || !this.enableAlpha)) {
+                    if ((rectF == null || rectF.contains(particle3.f1762x, particle3.f1763y)) && (particle3.alpha == length || !this.enableAlpha)) {
                         int i19 = (i18 - i17) * 2;
-                        this.particlePoints[length][i19] = particle3.f1755x;
-                        this.particlePoints[length][i19 + 1] = particle3.f1756y;
+                        this.particlePoints[length][i19] = particle3.f1762x;
+                        this.particlePoints[length][i19 + 1] = particle3.f1763y;
                         i16 += 2;
                     } else {
                         i17++;
@@ -383,7 +380,7 @@ public class SpoilerEffect extends Drawable {
     }
 
     private boolean isOutOfBounds(int i, int i2, int i3, int i4, float f, float f2) {
-        if (f < i || f > i3 || f2 < i2 + AndroidUtilities.m51dp(2.5f) || f2 > i4 - AndroidUtilities.m51dp(2.5f)) {
+        if (f < i || f > i3 || f2 < i2 + AndroidUtilities.m55dp(2.5f) || f2 > i4 - AndroidUtilities.m55dp(2.5f)) {
             return true;
         }
         for (int i5 = 0; i5 < this.spaces.size(); i5++) {
@@ -395,8 +392,8 @@ public class SpoilerEffect extends Drawable {
     }
 
     private void generateRandomLocation(Particle particle, int i) {
-        particle.f1755x = getBounds().left + (Utilities.fastRandom.nextFloat() * getBounds().width());
-        particle.f1756y = getBounds().top + (Utilities.fastRandom.nextFloat() * getBounds().height());
+        particle.f1762x = getBounds().left + (Utilities.fastRandom.nextFloat() * getBounds().width());
+        particle.f1763y = getBounds().top + (Utilities.fastRandom.nextFloat() * getBounds().height());
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -466,7 +463,12 @@ public class SpoilerEffect extends Drawable {
     }
 
     public static void addSpoilers(TextView textView, Stack<SpoilerEffect> stack, List<SpoilerEffect> list) {
-        addSpoilers(textView, textView.getLayout(), (Spanned) textView.getText(), stack, list);
+        int measuredWidth = textView.getMeasuredWidth();
+        Layout layout = textView.getLayout();
+        if (measuredWidth <= 0) {
+            measuredWidth = -2;
+        }
+        addSpoilers(textView, layout, 0, measuredWidth, (Spanned) textView.getText(), stack, list);
     }
 
     public static void addSpoilers(View view, Layout layout, Stack<SpoilerEffect> stack, List<SpoilerEffect> list) {
@@ -475,71 +477,46 @@ public class SpoilerEffect extends Drawable {
         }
     }
 
+    public static void addSpoilers(View view, Layout layout, int i, int i2, Stack<SpoilerEffect> stack, List<SpoilerEffect> list) {
+        if (layout.getText() instanceof Spanned) {
+            addSpoilers(view, layout, i, i2, (Spanned) layout.getText(), stack, list);
+        }
+    }
+
     public static void addSpoilers(View view, Layout layout, Spanned spanned, Stack<SpoilerEffect> stack, List<SpoilerEffect> list) {
-        int i;
-        int i2;
-        TextStyleSpan[] textStyleSpanArr;
+        if (layout == null) {
+            return;
+        }
+        addSpoilers(view, layout, -1, -1, spanned, stack, list);
+    }
+
+    public static void addSpoilers(View view, Layout layout, int i, int i2, Spanned spanned, Stack<SpoilerEffect> stack, List<SpoilerEffect> list) {
         int i3;
         int i4;
-        float f;
-        float f2;
-        int i5;
-        int i6 = 0;
-        while (i6 < layout.getLineCount()) {
-            float lineLeft = layout.getLineLeft(i6);
-            float lineTop = layout.getLineTop(i6);
-            float lineRight = layout.getLineRight(i6);
-            float lineBottom = layout.getLineBottom(i6);
-            int lineStart = layout.getLineStart(i6);
-            int lineEnd = layout.getLineEnd(i6);
-            TextStyleSpan[] textStyleSpanArr2 = (TextStyleSpan[]) spanned.getSpans(lineStart, lineEnd, TextStyleSpan.class);
-            int length = textStyleSpanArr2.length;
-            int i7 = 0;
-            while (i7 < length) {
-                TextStyleSpan textStyleSpan = textStyleSpanArr2[i7];
-                if (textStyleSpan.isSpoiler()) {
-                    int spanStart = spanned.getSpanStart(textStyleSpan);
-                    int spanEnd = spanned.getSpanEnd(textStyleSpan);
-                    int max = Math.max(lineStart, spanStart);
-                    int min = Math.min(lineEnd, spanEnd);
-                    if (min - max != 0) {
-                        i = i7;
-                        i2 = length;
-                        textStyleSpanArr = textStyleSpanArr2;
-                        i3 = lineEnd;
-                        i4 = lineStart;
-                        f = lineBottom;
-                        f2 = lineTop;
-                        i5 = i6;
-                        addSpoilersInternal(view, spanned, layout, lineStart, lineEnd, lineLeft, lineTop, lineRight, lineBottom, max, min, stack, list);
-                        i7 = i + 1;
-                        lineBottom = f;
-                        lineTop = f2;
-                        length = i2;
-                        textStyleSpanArr2 = textStyleSpanArr;
-                        lineEnd = i3;
-                        lineStart = i4;
-                        i6 = i5;
+        if (layout == null) {
+            return;
+        }
+        Object[] objArr = (TextStyleSpan[]) spanned.getSpans(0, layout.getText().length(), TextStyleSpan.class);
+        for (int i5 = 0; i5 < objArr.length; i5++) {
+            if (objArr[i5].isSpoiler()) {
+                int spanStart = spanned.getSpanStart(objArr[i5]);
+                int spanEnd = spanned.getSpanEnd(objArr[i5]);
+                if (i == -1 && i2 == -1) {
+                    int i6 = Integer.MAX_VALUE;
+                    int i7 = Integer.MIN_VALUE;
+                    int lineForOffset = layout.getLineForOffset(spanEnd);
+                    for (int lineForOffset2 = layout.getLineForOffset(spanStart); lineForOffset2 <= lineForOffset; lineForOffset2++) {
+                        i6 = Math.min(i6, (int) layout.getLineLeft(lineForOffset2));
+                        i7 = Math.max(i7, (int) layout.getLineRight(lineForOffset2));
                     }
+                    i3 = i6;
+                    i4 = i7;
+                } else {
+                    i3 = i;
+                    i4 = i2;
                 }
-                i = i7;
-                i2 = length;
-                textStyleSpanArr = textStyleSpanArr2;
-                i3 = lineEnd;
-                i4 = lineStart;
-                f = lineBottom;
-                f2 = lineTop;
-                i5 = i6;
-                i7 = i + 1;
-                lineBottom = f;
-                lineTop = f2;
-                length = i2;
-                textStyleSpanArr2 = textStyleSpanArr;
-                lineEnd = i3;
-                lineStart = i4;
-                i6 = i5;
+                addSpoilerRangesInternal(view, layout, i3, i4, spanStart, spanEnd, stack, list);
             }
-            i6++;
         }
         if (!(view instanceof TextView) || stack == null) {
             return;
@@ -547,61 +524,25 @@ public class SpoilerEffect extends Drawable {
         stack.clear();
     }
 
-    private static void addSpoilersInternal(View view, Spanned spanned, Layout layout, int i, int i2, float f, float f2, float f3, float f4, int i3, int i4, Stack<SpoilerEffect> stack, List<SpoilerEffect> list) {
-        int i5;
-        int i6;
-        int i7;
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(AndroidUtilities.replaceNewLines(new SpannableStringBuilder(spanned, i3, i4)));
-        for (TextStyleSpan textStyleSpan : (TextStyleSpan[]) valueOf.getSpans(0, valueOf.length(), TextStyleSpan.class)) {
-            valueOf.removeSpan(textStyleSpan);
-        }
-        for (URLSpan uRLSpan : (URLSpan[]) valueOf.getSpans(0, valueOf.length(), URLSpan.class)) {
-            valueOf.removeSpan(uRLSpan);
-        }
-        if (valueOf.toString().trim().length() == 0) {
-            return;
-        }
-        int ellipsizedWidth = layout.getEllipsizedWidth() > 0 ? layout.getEllipsizedWidth() : layout.getWidth();
-        TextPaint textPaint = new TextPaint(layout.getPaint());
-        textPaint.setColor(-16777216);
-        if (Build.VERSION.SDK_INT >= 24) {
-            StaticLayout.Builder.obtain(valueOf, 0, valueOf.length(), textPaint, ellipsizedWidth).setBreakStrategy(1).setHyphenationFrequency(0).setAlignment(Layout.Alignment.ALIGN_NORMAL).setLineSpacing(layout.getSpacingAdd(), layout.getSpacingMultiplier()).build();
-            i5 = 1;
-            i6 = 0;
-        } else {
-            i5 = 1;
-            i6 = 0;
-            new StaticLayout(valueOf, textPaint, ellipsizedWidth, Layout.Alignment.ALIGN_NORMAL, layout.getSpacingMultiplier(), layout.getSpacingAdd(), false);
-        }
-        int i8 = ((LocaleController.isRTLCharacter(valueOf.charAt(i6)) || LocaleController.isRTLCharacter(valueOf.charAt(valueOf.length() + (-1)))) && !LocaleController.isRTL) ? i5 : i6;
-        SpoilerEffect spoilerEffect = (stack == null || stack.isEmpty()) ? new SpoilerEffect() : stack.remove(i6);
+    private static void addSpoilerRangesInternal(final View view, final Layout layout, final int i, final int i2, int i3, int i4, final Stack<SpoilerEffect> stack, final List<SpoilerEffect> list) {
+        layout.getSelectionPath(i3, i4, new Path() { // from class: org.telegram.ui.Components.spoilers.SpoilerEffect.2
+            @Override // android.graphics.Path
+            public void addRect(float f, float f2, float f3, float f4, Path.Direction direction) {
+                SpoilerEffect.addSpoilerRangeInternal(view, layout, f, f2, f3, f4, stack, list, i, i2);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void addSpoilerRangeInternal(View view, Layout layout, float f, float f2, float f3, float f4, Stack<SpoilerEffect> stack, List<SpoilerEffect> list, int i, int i2) {
+        SpoilerEffect spoilerEffect = (stack == null || stack.isEmpty()) ? new SpoilerEffect() : stack.remove(0);
         spoilerEffect.setRippleProgress(-1.0f);
-        float primaryHorizontal = i3 == i ? f : layout.getPrimaryHorizontal(i3);
-        float primaryHorizontal2 = (i4 == i2 || (i8 != 0 && i4 == (i7 = i2 + (-1)) && spanned.charAt(i7) == 8230)) ? f3 : layout.getPrimaryHorizontal(i4);
-        spoilerEffect.setBounds((int) Math.min(primaryHorizontal, primaryHorizontal2), (int) f2, (int) Math.max(primaryHorizontal, primaryHorizontal2), (int) f4);
+        spoilerEffect.setBounds((int) Math.max(f, i), (int) f2, (int) Math.min(f3, i2 <= 0 ? 2.14748365E9f : i2), (int) f4);
         spoilerEffect.setColor(layout.getPaint().getColor());
         spoilerEffect.setRippleInterpolator(Easings.easeInQuad);
         spoilerEffect.updateMaxParticles();
-        int i9 = i6;
         if (view != null) {
             spoilerEffect.setParentView(view);
-        }
-        spoilerEffect.spaces.clear();
-        for (int i10 = i9; i10 < valueOf.length(); i10++) {
-            if (valueOf.charAt(i10) == ' ') {
-                RectF rectF = new RectF();
-                int i11 = i3 + i10;
-                int lineForOffset = layout.getLineForOffset(i11);
-                rectF.top = layout.getLineTop(lineForOffset);
-                rectF.bottom = layout.getLineBottom(lineForOffset);
-                float primaryHorizontal3 = layout.getPrimaryHorizontal(i11);
-                float primaryHorizontal4 = layout.getPrimaryHorizontal(i11 + 1);
-                rectF.left = (int) Math.min(primaryHorizontal3, primaryHorizontal4);
-                rectF.right = (int) Math.max(primaryHorizontal3, primaryHorizontal4);
-                if (Math.abs(primaryHorizontal3 - primaryHorizontal4) <= AndroidUtilities.m50dp(20)) {
-                    spoilerEffect.spaces.add(rectF);
-                }
-            }
         }
         list.add(spoilerEffect);
     }
@@ -639,7 +580,7 @@ public class SpoilerEffect extends Drawable {
                         int i6 = i4;
                         while (i6 < length2) {
                             final Emoji.EmojiSpan emojiSpan = emojiSpanArr[i6];
-                            spannableStringBuilder.setSpan(new ReplacementSpan() { // from class: org.telegram.ui.Components.spoilers.SpoilerEffect.2
+                            spannableStringBuilder.setSpan(new ReplacementSpan() { // from class: org.telegram.ui.Components.spoilers.SpoilerEffect.3
                                 @Override // android.text.style.ReplacementSpan
                                 public void draw(Canvas canvas2, CharSequence charSequence, int i7, int i8, float f, int i9, int i10, int i11, Paint paint) {
                                 }
@@ -753,23 +694,23 @@ public class SpoilerEffect extends Drawable {
         private float velocity;
 
         /* renamed from: x */
-        private float f1755x;
+        private float f1762x;
 
         /* renamed from: y */
-        private float f1756y;
+        private float f1763y;
 
         private Particle() {
         }
 
         static /* synthetic */ float access$516(Particle particle, float f) {
-            float f2 = particle.f1755x + f;
-            particle.f1755x = f2;
+            float f2 = particle.f1762x + f;
+            particle.f1762x = f2;
             return f2;
         }
 
         static /* synthetic */ float access$616(Particle particle, float f) {
-            float f2 = particle.f1756y + f;
-            particle.f1756y = f2;
+            float f2 = particle.f1763y + f;
+            particle.f1763y = f2;
             return f2;
         }
     }

@@ -26,16 +26,16 @@
 .method public constructor <init>(BSI)V
     .locals 0
 
-    .line 319
+    .line 346
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 320
+    .line 347
     iput-byte p1, p0, Lorg/telegram/messenger/Emoji$DrawableInfo;->page:B
 
-    .line 321
+    .line 348
     iput-short p2, p0, Lorg/telegram/messenger/Emoji$DrawableInfo;->page2:S
 
-    .line 322
+    .line 349
     iput p3, p0, Lorg/telegram/messenger/Emoji$DrawableInfo;->emojiIndex:I
 
     return-void

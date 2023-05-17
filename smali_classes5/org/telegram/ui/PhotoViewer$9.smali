@@ -26,7 +26,7 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 2872
+    .line 3326
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,7 +37,7 @@
 .method public get(Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;)Ljava/lang/Float;
     .locals 0
 
-    .line 2880
+    .line 3334
     invoke-virtual {p1}, Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;->getProgress()F
 
     move-result p1
@@ -52,7 +52,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 2872
+    .line 3326
     check-cast p1, Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PhotoViewer$9;->get(Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;)Ljava/lang/Float;
@@ -65,7 +65,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 2872
+    .line 3326
     check-cast p1, Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/PhotoViewer$9;->setValue(Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;F)V
@@ -76,7 +76,7 @@
 .method public setValue(Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;F)V
     .locals 0
 
-    .line 2875
+    .line 3329
     invoke-virtual {p1, p2}, Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;->setProgress(F)V
 
     return-void

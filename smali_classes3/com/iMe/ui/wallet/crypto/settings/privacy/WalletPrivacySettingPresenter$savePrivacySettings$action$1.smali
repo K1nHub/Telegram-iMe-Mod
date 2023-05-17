@@ -100,7 +100,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 38
+    .line 39
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$savePrivacySettings$action$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -111,10 +111,10 @@
 .method public final invoke()V
     .locals 5
 
-    .line 39
+    .line 40
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$savePrivacySettings$action$1;->this$0:Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
-    .line 40
+    .line 41
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$savePrivacySettings$action$1;->$prevAllowUsers:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$savePrivacySettings$action$1;->$allowUsers:Ljava/util/ArrayList;
@@ -127,7 +127,7 @@
 
     move-result-object v1
 
-    .line 41
+    .line 42
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$savePrivacySettings$action$1;->this$0:Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     iget v3, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$savePrivacySettings$action$1;->$prevAccountRankAllowType:I
@@ -138,7 +138,7 @@
 
     move-result-object v2
 
-    .line 39
+    .line 40
     invoke-static {v0, v1, v2}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->access$saveSettings(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;Lio/reactivex/Observable;Lio/reactivex/Observable;)V
 
     return-void

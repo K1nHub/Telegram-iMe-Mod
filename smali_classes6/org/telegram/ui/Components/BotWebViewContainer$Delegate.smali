@@ -39,7 +39,7 @@
 .method public abstract onWebAppReady()V
 .end method
 
-.method public abstract onWebAppSetActionBarColor(Ljava/lang/String;)V
+.method public abstract onWebAppSetActionBarColor(I)V
 .end method
 
 .method public abstract onWebAppSetBackgroundColor(I)V

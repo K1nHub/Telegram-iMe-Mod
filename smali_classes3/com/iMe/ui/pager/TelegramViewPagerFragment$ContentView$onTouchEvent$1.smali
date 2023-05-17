@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 4
+    .locals 5
 
     const-string v0, "animator"
 
@@ -57,9 +57,9 @@
 
     move-result p1
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     if-nez p1, :cond_0
 
@@ -70,14 +70,40 @@
 
     move-result-object p1
 
-    aget-object p1, p1, v0
+    aget-object p1, p1, v1
 
     .line 570
-    iget-object v2, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
+    iget-object v3, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
 
-    invoke-virtual {v2}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;
+    invoke-virtual {v3}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;
 
-    move-result-object v2
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
+
+    invoke-virtual {v4}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;
+
+    move-result-object v4
+
+    aget-object v4, v4, v2
+
+    aput-object v4, v3, v1
+
+    .line 571
+    iget-object v3, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
+
+    invoke-virtual {v3}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;
+
+    move-result-object v3
+
+    aput-object p1, v3, v2
+
+    .line 572
+    iget-object p1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
+
+    invoke-static {p1}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->access$getScrollSlidingTextTabStrip(Lcom/iMe/ui/pager/TelegramViewPagerFragment;)Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
+
+    move-result-object p1
 
     iget-object v3, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
 
@@ -87,39 +113,13 @@
 
     aget-object v3, v3, v1
 
-    aput-object v3, v2, v0
+    invoke-virtual {v3}, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;->getSelectedType()I
 
-    .line 571
-    iget-object v2, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
+    move-result v3
 
-    invoke-virtual {v2}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    move-result-object v2
-
-    aput-object p1, v2, v1
-
-    .line 572
-    iget-object p1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
-
-    invoke-static {p1}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->access$getScrollSlidingTextTabStrip(Lcom/iMe/ui/pager/TelegramViewPagerFragment;)Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
-
-    move-result-object p1
-
-    iget-object v2, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
-
-    invoke-virtual {v2}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;
-
-    move-result-object v2
-
-    aget-object v2, v2, v0
-
-    invoke-virtual {v2}, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ViewPage;->getSelectedType()I
-
-    move-result v2
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    invoke-virtual {p1, v2, v3}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->selectTabWithId(IF)V
+    invoke-virtual {p1, v3, v4}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->selectTabWithId(IF)V
 
     .line 574
     :cond_0
@@ -129,19 +129,19 @@
 
     move-result-object p1
 
-    aget-object p1, p1, v1
+    aget-object p1, p1, v2
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 575
     iget-object p1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
 
-    invoke-static {p1, v0}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->access$setTabsAnimationInProgress$p(Lcom/iMe/ui/pager/TelegramViewPagerFragment;Z)V
+    invoke-static {p1, v1}, Lcom/iMe/ui/pager/TelegramViewPagerFragment;->access$setTabsAnimationInProgress$p(Lcom/iMe/ui/pager/TelegramViewPagerFragment;Z)V
 
     .line 576
     iget-object p1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$0:Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView;
 
-    invoke-static {p1, v0}, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView;->access$setMaybeStartTracking$p(Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView;Z)V
+    invoke-static {p1, v1}, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView;->access$setMaybeStartTracking$p(Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView;Z)V
 
     .line 577
     iget-object p1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
@@ -150,7 +150,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setEnabled(Z)V
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setEnabled(Z)V
 
     .line 578
     iget-object p1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView$onTouchEvent$1;->this$1:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
@@ -159,7 +159,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->setEnabled(Z)V
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->setEnabled(Z)V
 
     return-void
 .end method

@@ -130,7 +130,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
         } catch (Exception e) {
             e.printStackTrace();
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -219,7 +219,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             file.mkdirs();
             return file;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return new File("/data/data/org.telegram.messenger/files".replace(BuildConfig.LIBRARY_PACKAGE_NAME, getApplicationId()));
         }
     }
@@ -273,7 +273,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             isScreenOn = ((PowerManager) applicationContext.getSystemService("power")).isScreenOn();
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m48d("screen state = " + isScreenOn);
+                FileLog.m52d("screen state = " + isScreenOn);
             }
         } catch (Exception e4) {
             e4.printStackTrace();
@@ -295,7 +295,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         }
         ((ApplicationLoader) applicationContext).initPushServices();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("app initied");
+            FileLog.m52d("app initied");
         }
         MediaController.getInstance();
         for (int i3 = 0; i3 < 5; i3++) {
@@ -323,8 +323,8 @@ public class ApplicationLoader extends Application implements BillingProvider {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
             sb.append(elapsedRealtime);
-            FileLog.m48d(sb.toString());
-            FileLog.m48d("buildVersion = " + BuildVars.BUILD_VERSION);
+            FileLog.m52d(sb.toString());
+            FileLog.m52d("buildVersion = " + BuildVars.BUILD_VERSION);
         }
         if (applicationContext == null) {
             applicationContext = getApplicationContext();
@@ -343,7 +343,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 }
             };
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m48d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
+                FileLog.m52d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
             AndroidUtilities.runOnUIThread(ApplicationLoader$$ExternalSyntheticLambda2.INSTANCE);
@@ -398,7 +398,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("No valid " + getPushProvider().getLogTitle() + " APK found.");
+            FileLog.m52d("No valid " + getPushProvider().getLogTitle() + " APK found.");
         }
         SharedConfig.pushStringStatus = "__NO_GOOGLE_PLAY_SERVICES__";
         PushListenerController.sendRegistrationToServer(getPushProvider().getPushType(), null);
@@ -408,7 +408,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             return GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == 0;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return true;
         }
     }
@@ -449,7 +449,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return false;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return false;
         }
     }
@@ -466,7 +466,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 return true;
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         return false;
     }
@@ -480,7 +480,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 }
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         return false;
     }
@@ -504,7 +504,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             ensureCurrentNetworkGet(false);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         if (currentNetworkInfo == null) {
             return 0;
@@ -549,7 +549,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return true;
         }
     }
@@ -573,7 +573,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return true;
         }
     }
@@ -581,7 +581,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
     public static boolean isNetworkOnline() {
         boolean isNetworkOnlineRealtime = isNetworkOnlineRealtime();
         if (BuildVars.DEBUG_PRIVATE_VERSION && isNetworkOnlineRealtime != isNetworkOnlineFast()) {
-            FileLog.m48d("network online mismatch");
+            FileLog.m52d("network online mismatch");
         }
         return isNetworkOnlineRealtime;
     }

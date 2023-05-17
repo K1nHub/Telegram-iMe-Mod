@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.Forum.ForumBubbleDrawable */
@@ -60,7 +60,7 @@ public class ForumBubbleDrawable extends Drawable {
 
     public ForumBubbleDrawable(int i) {
         if (mainDrawable == null) {
-            mainDrawable = SvgHelper.getDrawable(C3242R.raw.topic_bubble, -1);
+            mainDrawable = SvgHelper.getDrawable(C3290R.raw.topic_bubble, -1);
         }
         SvgHelper.SvgDrawable clone = mainDrawable.clone();
         this.svgDrawable = clone;
@@ -69,7 +69,7 @@ public class ForumBubbleDrawable extends Drawable {
         this.topPaint = paint;
         Paint paint2 = new Paint(1);
         this.strokePaint = paint2;
-        paint2.setStrokeWidth(AndroidUtilities.m50dp(1));
+        paint2.setStrokeWidth(AndroidUtilities.m54dp(1));
         paint2.setStyle(Paint.Style.STROKE);
         this.svgDrawable.setPaint(paint, 1);
         this.svgDrawable.setPaint(paint2, 2);
@@ -87,12 +87,12 @@ public class ForumBubbleDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(24);
+        return AndroidUtilities.m54dp(24);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(24);
+        return AndroidUtilities.m54dp(24);
     }
 
     public int colorDistance(int i, int i2) {

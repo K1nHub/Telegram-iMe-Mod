@@ -639,10 +639,10 @@
 
     move-result v1
 
-    const-string v2, "dialogButton"
-
     .line 278
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButton:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1557,10 +1557,10 @@
 
     invoke-static {v0, v1}, Lcom/tbuonomo/viewpagerdotsindicator/ViewExtKt;->setPaddingHorizontal(Landroid/view/View;I)V
 
-    const-string v1, "dialogBackground"
-
     .line 186
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1724,14 +1724,14 @@
 
     move-result-object v2
 
-    sget v3, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX:I
+    sget v3, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_BOX_CELL:I
 
     invoke-virtual {v2, v3, v0}, Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;->setMaxRecycledViews(II)V
 
-    const-string v0, "dialogScrollGlow"
-
     .line 144
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -1775,7 +1775,7 @@
     .line 152
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckBox()V
 
     .line 153
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->selectedFiltersCodes:Ljava/util/ArrayList;
@@ -2027,7 +2027,7 @@
 .end method
 
 .method private final initShadows()[Landroid/view/View;
-    .locals 5
+    .locals 6
 
     const/4 v0, 0x2
 
@@ -2042,56 +2042,58 @@
 
     invoke-direct {v1, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 119
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
-
-    .line 120
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    const/4 v3, 0x0
-
-    .line 121
-    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
-
-    const-string v3, "dialogShadowLine"
-
-    .line 122
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v4
-
-    invoke-virtual {v1, v4}, Landroid/view/View;->setBackgroundColor(I)V
-
-    .line 123
-    sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    aput-object v1, v0, v4
+    .line 119
+    invoke-static {v1, v2, v3, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 120
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    const/4 v4, 0x0
+
+    .line 121
+    invoke-virtual {v1, v4}, Landroid/view/View;->setAlpha(F)V
+
+    .line 122
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v5
+
+    invoke-virtual {v1, v5}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 123
+    sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    aput-object v1, v0, v2
 
     .line 124
     new-instance v1, Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v1, v4}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     .line 125
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v1, v3}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     return-object v0
 .end method
@@ -2133,10 +2135,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "dialogTextBlack"
-
     .line 111
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -2149,10 +2151,10 @@
     .line 112
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "dialogTextLink"
-
     .line 113
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -2276,21 +2278,23 @@
 
     aget-object v1, v1, v0
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     if-eqz p1, :cond_2
 
-    const/4 v3, 0x0
+    move-object v4, v2
 
     goto :goto_0
 
     :cond_2
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
     :goto_0
-    invoke-virtual {v1, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v1, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     if-eqz p1, :cond_3
 
@@ -2301,7 +2305,7 @@
 
     aget-object v1, v1, v0
 
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v1, v0, v3, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 231
     :cond_3
@@ -2317,16 +2321,16 @@
     :cond_4
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
-    new-instance v3, Landroid/animation/AnimatorSet;
+    new-instance v2, Landroid/animation/AnimatorSet;
 
-    invoke-direct {v3}, Landroid/animation/AnimatorSet;-><init>()V
+    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
     const-wide/16 v4, 0x96
 
     .line 233
-    invoke-virtual {v3, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+    invoke-virtual {v2, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    new-array v4, v2, [Landroid/animation/Animator;
+    new-array v4, v3, [Landroid/animation/Animator;
 
     .line 234
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->getShadows()[Landroid/view/View;
@@ -2337,7 +2341,7 @@
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    new-array v2, v2, [F
+    new-array v3, v3, [F
 
     if-eqz p1, :cond_5
 
@@ -2349,31 +2353,31 @@
     const/4 v7, 0x0
 
     :goto_1
-    aput v7, v2, v0
+    aput v7, v3, v0
 
-    invoke-static {v5, v6, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v5, v6, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v2
+    move-result-object v3
 
-    aput-object v2, v4, v0
+    aput-object v3, v4, v0
 
-    invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 235
-    new-instance v2, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet$runShadowAnimation$1$1;
+    new-instance v3, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet$runShadowAnimation$1$1;
 
-    invoke-direct {v2, p0, p1}, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet$runShadowAnimation$1$1;-><init>(Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Z)V
+    invoke-direct {v3, p0, p1}, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet$runShadowAnimation$1$1;-><init>(Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Z)V
 
-    invoke-virtual {v3, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     .line 251
-    invoke-virtual {v3}, Landroid/animation/AnimatorSet;->start()V
+    invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
     .line 252
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 232
-    aput-object v3, v1, v0
+    aput-object v2, v1, v0
 
     :cond_6
     return-void

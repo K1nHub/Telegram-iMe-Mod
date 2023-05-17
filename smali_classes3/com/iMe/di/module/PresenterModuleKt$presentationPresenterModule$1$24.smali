@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/twitter/search/TwitterSearchPresenter;",
+        "Lcom/iMe/feature/twitter/search/TwitterSearchPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n44#2:434\n129#3,5:435\n129#3,5:440\n129#3,5:445\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24\n*L\n222#1:434\n224#1:435,5\n225#1:440,5\n226#1:445,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2:433\n129#3,5:434\n129#3,5:439\n129#3,5:444\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24\n*L\n222#1:433\n224#1:434,5\n225#1:439,5\n226#1:444,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/twitter/search/TwitterSearchPresenter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/twitter/search/TwitterSearchPresenter;
     .locals 10
 
     const-string v0, "$this$factory"
@@ -220,11 +220,11 @@
     check-cast v8, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;
 
     .line 223
-    new-instance p1, Lcom/iMe/ui/twitter/search/TwitterSearchPresenter;
+    new-instance p1, Lcom/iMe/feature/twitter/search/TwitterSearchPresenter;
 
     move-object v0, p1
 
-    invoke-direct/range {v0 .. v9}, Lcom/iMe/ui/twitter/search/TwitterSearchPresenter;-><init>(Lcom/iMe/storage/domain/gateway/TelegramGateway;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/manager/TelegramApi;Lcom/iMe/gateway/TelegramControllersGateway;Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;)V
+    invoke-direct/range {v0 .. v9}, Lcom/iMe/feature/twitter/search/TwitterSearchPresenter;-><init>(Lcom/iMe/storage/domain/gateway/TelegramGateway;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/manager/TelegramApi;Lcom/iMe/gateway/TelegramControllersGateway;Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;)V
 
     return-object p1
 .end method
@@ -237,7 +237,7 @@
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/twitter/search/TwitterSearchPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/twitter/search/TwitterSearchPresenter;
 
     move-result-object p1
 

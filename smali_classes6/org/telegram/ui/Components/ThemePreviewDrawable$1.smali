@@ -15,15 +15,15 @@
 
 
 # instance fields
-.field final synthetic val$colors:Ljava/util/HashMap;
+.field final synthetic val$colors:Landroid/util/SparseIntArray;
 
 
 # direct methods
-.method constructor <init>(IZZLjava/util/HashMap;)V
+.method constructor <init>(IZZLandroid/util/SparseIntArray;)V
     .locals 0
 
     .line 77
-    iput-object p4, p0, Lorg/telegram/ui/Components/ThemePreviewDrawable$1;->val$colors:Ljava/util/HashMap;
+    iput-object p4, p0, Lorg/telegram/ui/Components/ThemePreviewDrawable$1;->val$colors:Landroid/util/SparseIntArray;
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;-><init>(IZZ)V
 
@@ -32,22 +32,24 @@
 
 
 # virtual methods
-.method protected getColor(Ljava/lang/String;)I
+.method protected getColor(I)I
     .locals 1
 
     .line 80
-    iget-object v0, p0, Lorg/telegram/ui/Components/ThemePreviewDrawable$1;->val$colors:Ljava/util/HashMap;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ThemePreviewDrawable$1;->val$colors:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
 
     if-nez v0, :cond_0
 
     .line 82
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -62,17 +64,15 @@
     return p1
 .end method
 
-.method protected getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
+.method protected getCurrentColor(I)I
     .locals 1
 
     .line 89
-    iget-object v0, p0, Lorg/telegram/ui/Components/ThemePreviewDrawable$1;->val$colors:Ljava/util/HashMap;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ThemePreviewDrawable$1;->val$colors:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
 
-    move-result-object p1
+    move-result p1
 
-    check-cast p1, Ljava/lang/Integer;
-
-    return-object p1
+    return p1
 .end method

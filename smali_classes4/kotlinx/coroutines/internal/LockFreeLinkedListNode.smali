@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlinx/coroutines/internal/LockFreeLinkedListNode$CondAddOp;
+        Lkotlinx/coroutines/internal/LockFreeLinkedListNode$CondAddOp;,
+        Lkotlinx/coroutines/internal/LockFreeLinkedListNode$PrepareOp;
     }
 .end annotation
 
@@ -320,6 +321,57 @@
 
 
 # virtual methods
+.method public final addLast(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V
+    .locals 1
+
+    .line 144
+    :cond_0
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getPrevNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->addNext(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+.end method
+
+.method public final addNext(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Z
+    .locals 1
+
+    .line 215
+    sget-object v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 216
+    sget-object v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 217
+    invoke-virtual {v0, p0, p2, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 219
+    :cond_0
+    invoke-direct {p1, p2}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->finishAdd(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V
+
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
 .method public final addOneIfEmpty(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Z
     .locals 1
 
@@ -425,6 +477,55 @@
     return-object v0
 .end method
 
+.method public final helpRemove()V
+    .locals 1
+
+    .line 266
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlinx/coroutines/internal/Removed;
+
+    iget-object v0, v0, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->helpRemovePrev()V
+
+    return-void
+.end method
+
+.method public final helpRemovePrev()V
+    .locals 3
+
+    move-object v0, p0
+
+    .line 276
+    :goto_0
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 277
+    instance-of v2, v1, Lkotlinx/coroutines/internal/Removed;
+
+    if-eqz v2, :cond_0
+
+    .line 278
+    check-cast v1, Lkotlinx/coroutines/internal/Removed;
+
+    iget-object v0, v1, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 281
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->correctPrev(Lkotlinx/coroutines/internal/OpDescriptor;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    return-void
+.end method
+
 .method public isRemoved()Z
     .locals 1
 
@@ -457,6 +558,40 @@
 
     :goto_0
     return v0
+.end method
+
+.method public final removeFirstOrNull()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+    .locals 2
+
+    .line 286
+    :goto_0
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    if-ne v0, p0, :cond_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    .line 288
+    :cond_0
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->remove()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    return-object v0
+
+    .line 289
+    :cond_1
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->helpRemove()V
+
+    goto :goto_0
 .end method
 
 .method public final removeOrNext()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;

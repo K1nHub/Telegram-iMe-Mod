@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onItemClick(I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/QRCodeBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->$r8$lambda$F872_A6MwT83omae9XwttxXP-Ec(Lorg/telegram/ui/Components/QRCodeBottomSheet;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->$r8$lambda$Ux6FfhMEWFHgQRr3T06stNb7nbU(Lorg/telegram/ui/Components/QRCodeBottomSheet;I)V
 
     return-void
 .end method

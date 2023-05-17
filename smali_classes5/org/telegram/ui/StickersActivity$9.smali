@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/StickersActivity;I)V
     .locals 0
 
-    .line 897
+    .line 896
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$9;->this$0:Lorg/telegram/ui/StickersActivity;
 
     iput p2, p0, Lorg/telegram/ui/StickersActivity$9;->val$startRow:I
@@ -42,7 +42,7 @@
 .method public onChanged(IILjava/lang/Object;)V
     .locals 1
 
-    .line 914
+    .line 913
     iget-object p3, p0, Lorg/telegram/ui/StickersActivity$9;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
@@ -61,7 +61,7 @@
 .method public onInserted(II)V
     .locals 2
 
-    .line 900
+    .line 899
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$9;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
@@ -86,7 +86,7 @@
 .method public onRemoved(II)V
     .locals 2
 
-    .line 905
+    .line 904
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$9;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;

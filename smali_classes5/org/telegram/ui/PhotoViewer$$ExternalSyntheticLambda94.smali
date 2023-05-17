@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda94;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$swUZVj8u7eUuqMGPnP9pY7GSqoE(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;I)Z
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$uA-Gvgj4LirUGvIsPpJTS659PBk(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;I)Z
 
     move-result p1
 

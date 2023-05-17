@@ -460,10 +460,10 @@
     .line 119
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "dialogTextBlue2"
-
     .line 120
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -741,7 +741,7 @@
     .line 88
     check-cast p1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
-    invoke-virtual {p1, p3}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->checkSwitchLocation(F)Z
+    invoke-virtual {p1, p3}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->isInSwitch(F)Z
 
     move-result p3
 
@@ -840,10 +840,10 @@
     .line 75
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    const-string v1, "windowBackgroundWhite"
-
     .line 76
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

@@ -74,21 +74,21 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer;Landroid/content/Context;Lorg/telegram/ui/ArticleViewer$WebpageAdapter;I)V
     .locals 4
 
-    .line 6135
+    .line 6148
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    .line 6136
+    .line 6149
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 6137
+    .line 6150
     iput-object p3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
 
     const/4 p3, 0x0
 
-    .line 6139
+    .line 6152
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 6140
+    .line 6153
     new-instance p3, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p3, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
@@ -97,18 +97,18 @@
 
     const/4 v0, 0x1
 
-    .line 6141
+    .line 6154
     invoke-virtual {p3, v0}, Lorg/telegram/messenger/ImageReceiver;->setNeedsQualityThumb(Z)V
 
-    .line 6142
+    .line 6155
     iget-object p3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p3, v0}, Lorg/telegram/messenger/ImageReceiver;->setShouldGenerateQualityThumb(Z)V
 
-    .line 6143
+    .line 6156
     iput p4, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentType:I
 
-    .line 6144
+    .line 6157
     new-instance p3, Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-direct {p3, p0}, Lorg/telegram/ui/Components/RadialProgress2;-><init>(Landroid/view/View;)V
@@ -117,10 +117,10 @@
 
     const/4 p4, -0x1
 
-    .line 6145
+    .line 6158
     invoke-virtual {p3, p4}, Lorg/telegram/ui/Components/RadialProgress2;->setProgressColor(I)V
 
-    .line 6146
+    .line 6159
     iget-object p3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     const/high16 v1, 0x66000000
@@ -131,8 +131,8 @@
 
     invoke-virtual {p3, v1, v2, p4, v3}, Lorg/telegram/ui/Components/RadialProgress2;->setColors(IIII)V
 
-    .line 6147
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    .line 6160
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result p3
 
@@ -146,7 +146,7 @@
 
     iput p3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->TAG:I
 
-    .line 6148
+    .line 6161
     new-instance p3, Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
@@ -157,7 +157,7 @@
 
     const/4 p1, -0x2
 
-    .line 6149
+    .line 6162
     invoke-static {p4, p1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -170,7 +170,7 @@
 .method static synthetic access$17300(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
     .locals 0
 
-    .line 6101
+    .line 6114
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     return-object p0
@@ -179,7 +179,7 @@
 .method static synthetic access$17502(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;)Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
     .locals 0
 
-    .line 6101
+    .line 6114
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->groupPosition:Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
     return-object p1
@@ -188,7 +188,7 @@
 .method static synthetic access$21700(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/messenger/ImageReceiver;
     .locals 0
 
-    .line 6101
+    .line 6114
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     return-object p0
@@ -197,7 +197,7 @@
 .method private didPressedButton(Z)V
     .locals 13
 
-    .line 6425
+    .line 6438
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
     const/4 v1, 0x0
@@ -206,22 +206,22 @@
 
     if-nez v0, :cond_1
 
-    .line 6426
+    .line 6439
     iput-boolean v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->cancelLoading:Z
 
-    .line 6427
+    .line 6440
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3, v1}, Lorg/telegram/ui/Components/RadialProgress2;->setProgress(FZ)V
 
-    .line 6428
+    .line 6441
     iget-boolean v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->isGif:Z
 
     if-eqz v0, :cond_0
 
-    .line 6429
+    .line 6442
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -232,7 +232,7 @@
 
     move-result-object v0
 
-    .line 6430
+    .line 6443
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
@@ -269,11 +269,11 @@
 
     goto :goto_0
 
-    .line 6432
+    .line 6445
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v0
 
@@ -291,11 +291,11 @@
 
     invoke-virtual {v0, v1, v3, v2, v2}, Lorg/telegram/messenger/FileLoader;->loadFile(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;II)V
 
-    .line 6434
+    .line 6447
     :goto_0
     iput v2, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
-    .line 6435
+    .line 6448
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->getIconForCurrentState()I
@@ -304,7 +304,7 @@
 
     invoke-virtual {v0, v1, v2, p1}, Lorg/telegram/ui/Components/RadialProgress2;->setIcon(IZZ)V
 
-    .line 6436
+    .line 6449
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_2
@@ -312,26 +312,26 @@
     :cond_1
     if-ne v0, v2, :cond_3
 
-    .line 6438
+    .line 6451
     iput-boolean v2, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->cancelLoading:Z
 
-    .line 6439
+    .line 6452
     iget-boolean v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->isGif:Z
 
     if-eqz v0, :cond_2
 
-    .line 6440
+    .line 6453
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->cancelLoadImage()V
 
     goto :goto_1
 
-    .line 6442
+    .line 6455
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v0
 
@@ -343,11 +343,11 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/FileLoader;->cancelLoadFile(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 6444
+    .line 6457
     :goto_1
     iput v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
-    .line 6445
+    .line 6458
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->getIconForCurrentState()I
@@ -356,7 +356,7 @@
 
     invoke-virtual {v0, v2, v1, p1}, Lorg/telegram/ui/Components/RadialProgress2;->setIcon(IZZ)V
 
-    .line 6446
+    .line 6459
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_2
@@ -366,22 +366,22 @@
 
     if-ne v0, v3, :cond_4
 
-    .line 6448
+    .line 6461
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
 
-    .line 6449
+    .line 6462
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
     const/4 v0, -0x1
 
-    .line 6450
+    .line 6463
     iput v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
-    .line 6451
+    .line 6464
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->getIconForCurrentState()I
@@ -397,7 +397,7 @@
 
     if-ne v0, p1, :cond_5
 
-    .line 6453
+    .line 6466
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
@@ -414,7 +414,7 @@
 .method private getIconForCurrentState()I
     .locals 4
 
-    .line 6373
+    .line 6386
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
     const/4 v1, 0x2
@@ -465,21 +465,21 @@
         }
     .end annotation
 
-    .line 6519
+    .line 6532
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->captionLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-eqz v0, :cond_0
 
-    .line 6520
+    .line 6533
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 6522
+    .line 6535
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->creditLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-eqz v0, :cond_1
 
-    .line 6523
+    .line 6536
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
@@ -489,7 +489,7 @@
 .method public getObserverTag()I
     .locals 1
 
-    .line 6502
+    .line 6515
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->TAG:I
 
     return v0
@@ -498,17 +498,17 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 6466
+    .line 6479
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 6467
+    .line 6480
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
     const/4 v0, 0x0
 
-    .line 6468
+    .line 6481
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->updateButtonState(Z)V
 
     return-void
@@ -517,18 +517,18 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 6459
+    .line 6472
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 6460
+    .line 6473
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 6461
+    .line 6474
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v0
 
@@ -544,14 +544,14 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 6340
+    .line 6353
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 6343
+    .line 6356
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -573,7 +573,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 6344
+    .line 6357
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -587,7 +587,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 6346
+    .line 6359
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -599,12 +599,12 @@
 
     if-nez v0, :cond_3
 
-    .line 6347
+    .line 6360
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 6348
+    .line 6361
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getVisible()Z
@@ -613,12 +613,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 6349
+    .line 6362
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RadialProgress2;->draw(Landroid/graphics/Canvas;)V
 
-    .line 6353
+    .line 6366
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->captionLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
@@ -626,10 +626,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 6354
+    .line 6367
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 6355
+    .line 6368
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->textX:I
 
     int-to-float v0, v0
@@ -640,19 +640,19 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 6356
+    .line 6369
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     const/4 v2, 0x1
 
     invoke-static {v0, p1, p0, v1}, Lorg/telegram/ui/ArticleViewer;->access$13900(Lorg/telegram/ui/ArticleViewer;Landroid/graphics/Canvas;Lorg/telegram/ui/Cells/TextSelectionHelper$ArticleSelectableView;I)V
 
-    .line 6357
+    .line 6370
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->captionLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     invoke-virtual {v0, p1, p0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->draw(Landroid/graphics/Canvas;Landroid/view/View;)V
 
-    .line 6358
+    .line 6371
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
@@ -660,16 +660,16 @@
     :cond_4
     move v2, v1
 
-    .line 6360
+    .line 6373
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->creditLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-eqz v0, :cond_5
 
-    .line 6361
+    .line 6374
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 6362
+    .line 6375
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->textX:I
 
     int-to-float v0, v0
@@ -684,20 +684,20 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 6363
+    .line 6376
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0, p1, p0, v2}, Lorg/telegram/ui/ArticleViewer;->access$13900(Lorg/telegram/ui/ArticleViewer;Landroid/graphics/Canvas;Lorg/telegram/ui/Cells/TextSelectionHelper$ArticleSelectableView;I)V
 
-    .line 6364
+    .line 6377
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->creditLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     invoke-virtual {v0, p1, p0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->draw(Landroid/graphics/Canvas;Landroid/view/View;)V
 
-    .line 6365
+    .line 6378
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 6367
+    .line 6380
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
@@ -707,7 +707,7 @@
 
     const/16 v0, 0x12
 
-    .line 6368
+    .line 6381
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -762,7 +762,7 @@
 
     const/4 p1, 0x0
 
-    .line 6473
+    .line 6486
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->updateButtonState(Z)V
 
     return-void
@@ -771,15 +771,15 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
 
-    .line 6507
+    .line 6520
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const/4 v0, 0x1
 
-    .line 6508
+    .line 6521
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 6509
+    .line 6522
     new-instance v0, Ljava/lang/StringBuilder;
 
     sget v1, Lorg/telegram/messenger/R$string;->AttachVideo:I
@@ -792,17 +792,17 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 6510
+    .line 6523
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->captionLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-eqz v1, :cond_0
 
     const-string v1, ", "
 
-    .line 6511
+    .line 6524
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6512
+    .line 6525
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->captionLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ArticleViewer$DrawingText;->getText()Ljava/lang/CharSequence;
@@ -811,7 +811,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 6514
+    .line 6527
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -827,12 +827,12 @@
 
     move-object/from16 v9, p0
 
-    .line 6215
+    .line 6228
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 6217
+    .line 6230
     iget v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentType:I
 
     const/4 v11, 0x2
@@ -841,7 +841,7 @@
 
     if-ne v1, v12, :cond_0
 
-    .line 6218
+    .line 6231
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -852,7 +852,7 @@
 
     move-result v0
 
-    .line 6219
+    .line 6232
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
@@ -871,7 +871,7 @@
     :cond_0
     if-ne v1, v11, :cond_1
 
-    .line 6221
+    .line 6234
     iget-object v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->groupPosition:Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
     iget v1, v1, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->ph:F
@@ -909,13 +909,13 @@
 
     const/4 v1, 0x0
 
-    .line 6224
+    .line 6237
     :goto_1
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     if-eqz v0, :cond_1a
 
-    .line 6229
+    .line 6242
     iget v2, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentType:I
 
     const/16 v3, 0x12
@@ -928,7 +928,7 @@
 
     mul-int/lit8 v0, v0, 0xe
 
-    .line 6230
+    .line 6243
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -941,7 +941,7 @@
 
     iput v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->textX:I
 
-    .line 6231
+    .line 6244
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -954,7 +954,7 @@
 
     goto :goto_2
 
-    .line 6235
+    .line 6248
     :cond_2
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -964,7 +964,7 @@
 
     const/16 v0, 0x24
 
-    .line 6236
+    .line 6249
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -977,7 +977,7 @@
 
     const/4 v0, 0x0
 
-    .line 6238
+    .line 6251
     :goto_2
     iget-object v3, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -989,12 +989,12 @@
 
     const/16 v3, 0x30
 
-    .line 6239
+    .line 6252
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    .line 6240
+    .line 6253
     iget-object v5, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -1003,12 +1003,12 @@
 
     move-result-object v3
 
-    .line 6241
+    .line 6254
     iget v5, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentType:I
 
     if-nez v5, :cond_b
 
-    .line 6244
+    .line 6257
     iget-object v5, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
@@ -1022,7 +1022,7 @@
     :goto_3
     if-ge v6, v5, :cond_4
 
-    .line 6245
+    .line 6258
     iget-object v7, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
@@ -1033,21 +1033,21 @@
 
     check-cast v7, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 6246
+    .line 6259
     instance-of v10, v7, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
     if-eqz v10, :cond_3
 
     int-to-float v1, v2
 
-    .line 6247
+    .line 6260
     iget v5, v7, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->w:I
 
     int-to-float v5, v5
 
     div-float/2addr v1, v5
 
-    .line 6248
+    .line 6261
     iget v5, v7, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
 
     int-to-float v5, v5
@@ -1073,7 +1073,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 6253
+    .line 6266
     iget v7, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
     int-to-float v7, v7
@@ -1086,7 +1086,7 @@
     :goto_5
     if-eqz v3, :cond_6
 
-    .line 6254
+    .line 6267
     iget v6, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
     int-to-float v6, v6
@@ -1102,7 +1102,7 @@
 
     float-to-int v1, v1
 
-    .line 6259
+    .line 6272
     :cond_7
     iget-object v5, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->parentBlock:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
@@ -1110,14 +1110,14 @@
 
     if-eqz v5, :cond_8
 
-    .line 6260
+    .line 6273
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
     goto :goto_6
 
-    .line 6262
+    .line 6275
     :cond_8
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -1159,7 +1159,7 @@
 
     sub-int/2addr v2, v1
 
-    .line 6267
+    .line 6280
     div-int/2addr v2, v11
 
     add-int/2addr v0, v2
@@ -1174,7 +1174,7 @@
 
     const/16 v1, 0x64
 
-    .line 6271
+    .line 6284
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1191,7 +1191,7 @@
     :cond_b
     if-ne v5, v11, :cond_d
 
-    .line 6277
+    .line 6290
     iget-object v5, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->groupPosition:Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
     iget v5, v5, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
@@ -1200,14 +1200,14 @@
 
     if-nez v5, :cond_c
 
-    .line 6278
+    .line 6291
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     sub-int/2addr v2, v5
 
-    .line 6280
+    .line 6293
     :cond_c
     iget-object v5, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->groupPosition:Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
@@ -1217,7 +1217,7 @@
 
     if-nez v5, :cond_d
 
-    .line 6281
+    .line 6294
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -1240,7 +1240,7 @@
 
     move v2, v1
 
-    .line 6284
+    .line 6297
     :goto_8
     iget-object v6, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1248,7 +1248,7 @@
 
     invoke-virtual {v6, v7}, Lorg/telegram/messenger/ImageReceiver;->setQualityThumbDocument(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 6285
+    .line 6298
     iget-object v6, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     int-to-float v0, v0
@@ -1291,17 +1291,17 @@
 
     invoke-virtual {v6, v0, v7, v5, v1}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 6287
+    .line 6300
     iget-boolean v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->isGif:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_12
 
-    .line 6288
+    .line 6301
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v0
 
@@ -1319,10 +1319,10 @@
 
     iput-boolean v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->autoDownload:Z
 
-    .line 6289
+    .line 6302
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v0
 
@@ -1336,7 +1336,7 @@
 
     move-result-object v0
 
-    .line 6290
+    .line 6303
     iget-boolean v5, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->autoDownload:Z
 
     if-nez v5, :cond_11
@@ -1349,7 +1349,7 @@
 
     goto :goto_b
 
-    .line 6294
+    .line 6307
     :cond_10
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1361,7 +1361,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setStrippedLocation(Lorg/telegram/messenger/ImageLocation;)V
 
-    .line 6295
+    .line 6308
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     const/16 v18, 0x0
@@ -1404,14 +1404,14 @@
 
     goto :goto_c
 
-    .line 6291
+    .line 6304
     :cond_11
     :goto_b
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setStrippedLocation(Lorg/telegram/messenger/ImageLocation;)V
 
-    .line 6292
+    .line 6305
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
@@ -1458,13 +1458,13 @@
 
     goto :goto_c
 
-    .line 6298
+    .line 6311
     :cond_12
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setStrippedLocation(Lorg/telegram/messenger/ImageLocation;)V
 
-    .line 6299
+    .line 6312
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     const/16 v18, 0x0
@@ -1495,13 +1495,13 @@
 
     invoke-virtual/range {v17 .. v26}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 6301
+    .line 6314
     :goto_c
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, v12}, Lorg/telegram/messenger/ImageReceiver;->setAspectFit(Z)V
 
-    .line 6302
+    .line 6315
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getImageX()F
@@ -1528,7 +1528,7 @@
 
     iput v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonX:I
 
-    .line 6303
+    .line 6316
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getImageY()F
@@ -1551,7 +1551,7 @@
 
     iput v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonY:I
 
-    .line 6304
+    .line 6317
     iget-object v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     iget v3, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonX:I
@@ -1569,7 +1569,7 @@
     :cond_13
     move v10, v1
 
-    .line 6306
+    .line 6319
     :goto_d
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1597,12 +1597,12 @@
 
     iput v5, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->textY:I
 
-    .line 6307
+    .line 6320
     iget v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentType:I
 
     if-nez v0, :cond_16
 
-    .line 6308
+    .line 6321
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     const/4 v2, 0x0
@@ -1627,7 +1627,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 6310
+    .line 6323
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1642,7 +1642,7 @@
 
     iput v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->creditOffset:I
 
-    .line 6311
+    .line 6324
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1651,19 +1651,19 @@
 
     add-int/2addr v10, v0
 
-    .line 6312
+    .line 6325
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->captionLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     iget v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->textX:I
 
     iput v1, v0, Lorg/telegram/ui/ArticleViewer$DrawingText;->x:I
 
-    .line 6313
+    .line 6326
     iget v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->textY:I
 
     iput v1, v0, Lorg/telegram/ui/ArticleViewer$DrawingText;->y:I
 
-    .line 6315
+    .line 6328
     :cond_14
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -1719,7 +1719,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 6317
+    .line 6330
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1734,14 +1734,14 @@
 
     add-int/2addr v10, v0
 
-    .line 6318
+    .line 6331
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->creditLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     iget v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->textX:I
 
     iput v1, v0, Lorg/telegram/ui/ArticleViewer$DrawingText;->x:I
 
-    .line 6319
+    .line 6332
     iget v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->textY:I
 
     iget v2, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->creditOffset:I
@@ -1750,7 +1750,7 @@
 
     iput v1, v0, Lorg/telegram/ui/ArticleViewer$DrawingText;->y:I
 
-    .line 6322
+    .line 6335
     :cond_16
     iget-boolean v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->isFirst:Z
 
@@ -1766,14 +1766,14 @@
 
     if-gtz v0, :cond_17
 
-    .line 6323
+    .line 6336
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     add-int/2addr v10, v0
 
-    .line 6325
+    .line 6338
     :cond_17
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->parentBlock:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
@@ -1814,7 +1814,7 @@
     :cond_18
     const/16 v16, 0x0
 
-    .line 6326
+    .line 6339
     :goto_f
     iget v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentType:I
 
@@ -1822,7 +1822,7 @@
 
     if-nez v16, :cond_19
 
-    .line 6327
+    .line 6340
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1832,7 +1832,7 @@
     :cond_19
     move v12, v10
 
-    .line 6332
+    .line 6345
     :cond_1a
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->channelCell:Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
@@ -1842,7 +1842,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 6333
+    .line 6346
     iget-object v0, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->channelCell:Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
     iget-object v1, v9, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
@@ -1863,7 +1863,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 6335
+    .line 6348
     invoke-virtual {v9, v13, v12}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
     return-void
@@ -1872,7 +1872,7 @@
 .method public onProgressDownload(Ljava/lang/String;JJ)V
     .locals 0
 
-    .line 6494
+    .line 6507
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     long-to-float p2, p2
@@ -1891,12 +1891,12 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Components/RadialProgress2;->setProgress(FZ)V
 
-    .line 6495
+    .line 6508
     iget p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
     if-eq p1, p3, :cond_0
 
-    .line 6496
+    .line 6509
     invoke-virtual {p0, p3}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->updateButtonState(Z)V
 
     :cond_0
@@ -1912,7 +1912,7 @@
 .method public onSuccessDownload(Ljava/lang/String;)V
     .locals 2
 
-    .line 6478
+    .line 6491
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -1921,22 +1921,22 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/RadialProgress2;->setProgress(FZ)V
 
-    .line 6479
+    .line 6492
     iget-boolean p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->isGif:Z
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x2
 
-    .line 6480
+    .line 6493
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
-    .line 6481
+    .line 6494
     invoke-direct {p0, v1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->didPressedButton(Z)V
 
     goto :goto_0
 
-    .line 6483
+    .line 6496
     :cond_0
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->updateButtonState(Z)V
 
@@ -1947,7 +1947,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 12
 
-    .line 6177
+    .line 6190
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/ArticleViewer;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
@@ -1966,18 +1966,18 @@
 
     return v1
 
-    .line 6180
+    .line 6193
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    .line 6181
+    .line 6194
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
-    .line 6182
+    .line 6195
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->channelCell:Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -2018,7 +2018,7 @@
 
     if-gez v3, :cond_2
 
-    .line 6183
+    .line 6196
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->access$7300(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
@@ -2033,10 +2033,10 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 6184
+    .line 6197
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result p1
 
@@ -2066,7 +2066,7 @@
 
     invoke-virtual {p1, v0, v2, v3}, Lorg/telegram/messenger/MessagesController;->openByUserName(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;I)V
 
-    .line 6185
+    .line 6198
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-virtual {p1, v4, v1}, Lorg/telegram/ui/ArticleViewer;->close(ZZ)V
@@ -2074,7 +2074,7 @@
     :cond_1
     return v1
 
-    .line 6189
+    .line 6202
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -2090,7 +2090,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 6190
+    .line 6203
     iget v3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
     const/4 v5, -0x1
@@ -2144,22 +2144,22 @@
 
     if-nez v0, :cond_5
 
-    .line 6191
+    .line 6204
     :cond_4
     iput v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonPressed:I
 
-    .line 6192
+    .line 6205
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_0
 
-    .line 6194
+    .line 6207
     :cond_5
     iput-boolean v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->photoPressed:Z
 
     goto :goto_0
 
-    .line 6196
+    .line 6209
     :cond_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -2167,15 +2167,15 @@
 
     if-ne v0, v1, :cond_8
 
-    .line 6197
+    .line 6210
     iget-boolean v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->photoPressed:Z
 
     if-eqz v0, :cond_7
 
-    .line 6198
+    .line 6211
     iput-boolean v4, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->photoPressed:Z
 
-    .line 6199
+    .line 6212
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
@@ -2186,27 +2186,27 @@
 
     goto :goto_0
 
-    .line 6200
+    .line 6213
     :cond_7
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonPressed:I
 
     if-ne v0, v1, :cond_9
 
-    .line 6201
+    .line 6214
     iput v4, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonPressed:I
 
-    .line 6202
+    .line 6215
     invoke-virtual {p0, v4}, Landroid/widget/FrameLayout;->playSoundEffect(I)V
 
-    .line 6203
+    .line 6216
     invoke-direct {p0, v1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->didPressedButton(Z)V
 
-    .line 6204
+    .line 6217
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_0
 
-    .line 6206
+    .line 6219
     :cond_8
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -2216,10 +2216,10 @@
 
     if-ne v0, v2, :cond_9
 
-    .line 6207
+    .line 6220
     iput-boolean v4, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->photoPressed:Z
 
-    .line 6209
+    .line 6222
     :cond_9
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->photoPressed:Z
@@ -2293,15 +2293,15 @@
 .method public setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;ZZ)V
     .locals 2
 
-    .line 6153
+    .line 6166
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     const/4 p3, 0x0
 
-    .line 6154
+    .line 6167
     iput-object p3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->parentBlock:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 6155
+    .line 6168
     iget-object p3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->video_id:J
@@ -2312,7 +2312,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 6156
+    .line 6169
     invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isVideoDocument(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result p1
@@ -2343,20 +2343,20 @@
     :goto_1
     iput-boolean p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->isGif:Z
 
-    .line 6157
+    .line 6170
     iput-boolean p2, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->isFirst:Z
 
-    .line 6158
+    .line 6171
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->channelCell:Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
     const/4 p2, 0x4
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 6159
+    .line 6172
     invoke-virtual {p0, p3}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->updateButtonState(Z)V
 
-    .line 6160
+    .line 6173
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
     return-void
@@ -2365,22 +2365,22 @@
 .method public setParentBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;Lorg/telegram/tgnet/TLRPC$PageBlock;)V
     .locals 0
 
-    .line 6164
+    .line 6177
     iput-object p2, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->parentBlock:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     if-eqz p1, :cond_0
 
-    .line 6165
+    .line 6178
     instance-of p2, p2, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
     if-eqz p2, :cond_0
 
-    .line 6166
+    .line 6179
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->channelCell:Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ArticleViewer$BlockChannelCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;)V
 
-    .line 6167
+    .line 6180
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->channelCell:Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
     const/4 p2, 0x0
@@ -2394,17 +2394,17 @@
 .method public updateButtonState(Z)V
     .locals 5
 
-    .line 6386
+    .line 6399
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->currentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6387
+    .line 6400
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v1}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v1}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v1
 
@@ -2420,12 +2420,12 @@
 
     move-result-object v1
 
-    .line 6388
+    .line 6401
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v1
 
-    .line 6389
+    .line 6402
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -2434,7 +2434,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 6390
+    .line 6403
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     const/4 v0, 0x4
@@ -2446,10 +2446,10 @@
     :cond_0
     if-eqz v1, :cond_2
 
-    .line 6394
+    .line 6407
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v0
 
@@ -2459,14 +2459,14 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/messenger/DownloadController;->removeLoadingFileObserver(Lorg/telegram/messenger/DownloadController$FileDownloadProgressListener;)V
 
-    .line 6395
+    .line 6408
     iget-boolean v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->isGif:Z
 
     if-nez v0, :cond_1
 
     const/4 v0, 0x3
 
-    .line 6396
+    .line 6409
     iput v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
     goto :goto_0
@@ -2474,10 +2474,10 @@
     :cond_1
     const/4 v0, -0x1
 
-    .line 6398
+    .line 6411
     iput v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
-    .line 6400
+    .line 6413
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
@@ -2489,11 +2489,11 @@
 
     goto :goto_2
 
-    .line 6402
+    .line 6415
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v1}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v1}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v1
 
@@ -2505,10 +2505,10 @@
 
     invoke-virtual {v1, v0, v2, p0}, Lorg/telegram/messenger/DownloadController;->addLoadingFileObserver(Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/DownloadController$FileDownloadProgressListener;)V
 
-    .line 6405
+    .line 6418
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v1}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)I
+    invoke-static {v1}, Lorg/telegram/ui/ArticleViewer;->access$11300(Lorg/telegram/ui/ArticleViewer;)I
 
     move-result v1
 
@@ -2524,7 +2524,7 @@
 
     if-nez v1, :cond_4
 
-    .line 6406
+    .line 6419
     iget-boolean v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->cancelLoading:Z
 
     if-nez v0, :cond_3
@@ -2537,12 +2537,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 6408
+    .line 6421
     iput v3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
     goto :goto_1
 
-    .line 6410
+    .line 6423
     :cond_3
     iput v4, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
@@ -2550,11 +2550,11 @@
 
     goto :goto_1
 
-    .line 6414
+    .line 6427
     :cond_4
     iput v3, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
-    .line 6415
+    .line 6428
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v1
@@ -2565,14 +2565,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 6416
+    .line 6429
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
     move v2, v0
 
-    .line 6418
+    .line 6431
     :cond_5
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
@@ -2583,12 +2583,12 @@
 
     invoke-virtual {v0, v1, v3, p1}, Lorg/telegram/ui/Components/RadialProgress2;->setIcon(IZZ)V
 
-    .line 6419
+    .line 6432
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Components/RadialProgress2;->setProgress(FZ)V
 
-    .line 6421
+    .line 6434
     :goto_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 

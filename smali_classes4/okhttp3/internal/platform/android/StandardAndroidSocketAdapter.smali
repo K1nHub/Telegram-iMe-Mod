@@ -48,11 +48,11 @@
         }
     .end annotation
 
-    const-string v0, "sslSocketClass"
+    const-string/jumbo v0, "sslSocketClass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "sslSocketFactoryClass"
+    const-string/jumbo v0, "sslSocketFactoryClass"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,176:1\n129#2,5:177\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$11\n*L\n72#1:177,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,178:1\n129#2,5:179\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$11\n*L\n73#1:179,5\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 72
+    .line 73
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
@@ -87,7 +87,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 72
+    .line 73
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getDEFAULT_CLIENT()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object p2
@@ -121,7 +121,7 @@
 
     const-string v0, "https://translate.googleapis.com/"
 
-    .line 72
+    .line 73
     invoke-static {p2, v0, p1}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->createRetrofit(Lokhttp3/OkHttpClient;Ljava/lang/String;Lcom/google/gson/Gson;)Lretrofit2/Retrofit;
 
     move-result-object p1

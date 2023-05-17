@@ -2,34 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$$ExternalSyntheticLambda44;->f$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$$ExternalSyntheticLambda44;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)Z
-    .locals 1
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$$ExternalSyntheticLambda44;->f$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlert;->$r8$lambda$ufwcBmFJlUuDBVLwlvtnmkEP7qo(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/view/View;I)Z
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$$ExternalSyntheticLambda44;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result p1
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlert;->$r8$lambda$8yFIV5wV0pExrY-_QG3uzqGY4Ho(Lorg/telegram/ui/Components/ChatAttachAlert;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;I)V
 
-    return p1
+    return-void
 .end method

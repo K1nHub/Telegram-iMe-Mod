@@ -320,7 +320,7 @@
     .line 182
     iput-boolean v1, p0, Lio/grpc/internal/AbstractManagedChannelImplBuilder;->tracingEnabled:Z
 
-    const-string v0, "target"
+    const-string/jumbo v0, "target"
 
     .line 185
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

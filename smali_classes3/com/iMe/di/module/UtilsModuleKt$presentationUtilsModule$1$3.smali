@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUtilsModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UtilsModule.kt\ncom/iMe/di/module/UtilsModuleKt$presentationUtilsModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,21:1\n129#2,5:22\n*S KotlinDebug\n*F\n+ 1 UtilsModule.kt\ncom/iMe/di/module/UtilsModuleKt$presentationUtilsModule$1$3\n*L\n16#1:22,5\n*E\n"
+    value = "SMAP\nUtilsModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UtilsModule.kt\ncom/iMe/di/module/UtilsModuleKt$presentationUtilsModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,16:1\n129#2,5:17\n*S KotlinDebug\n*F\n+ 1 UtilsModule.kt\ncom/iMe/di/module/UtilsModuleKt$presentationUtilsModule$1$3\n*L\n13#1:17,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 16
+    .line 13
     new-instance p2, Lcom/iMe/utils/validator/wallet/CustomPriceValidator;
 
     .line 133
@@ -90,7 +90,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 16
+    .line 13
     invoke-direct {p2, p1}, Lcom/iMe/utils/validator/wallet/CustomPriceValidator;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     return-object p2
@@ -99,7 +99,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 16
+    .line 13
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

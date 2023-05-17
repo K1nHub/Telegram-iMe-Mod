@@ -11,7 +11,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 /* compiled from: KoinComponent.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$special$$inlined$inject$default$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletHomeBinancePayFragment$special$$inlined$inject$default$1 extends Lambda implements Function0<BinancePayRecycleAdapter> {
     final /* synthetic */ Function0 $parameters;
     final /* synthetic */ Qualifier $qualifier;

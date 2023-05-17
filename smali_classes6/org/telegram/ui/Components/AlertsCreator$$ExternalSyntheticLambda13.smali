@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda13;->f$0:Landroid/content/Context;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$r00d2h5k0Ce77oyQTtKS0hAWHcw(Landroid/content/Context;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$sUogdWKpZ81fV6zVcgRh1223vsw(Landroid/content/Context;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

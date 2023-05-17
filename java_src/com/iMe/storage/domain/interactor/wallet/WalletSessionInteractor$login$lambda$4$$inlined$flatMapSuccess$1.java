@@ -2,9 +2,9 @@ package com.iMe.storage.domain.interactor.wallet;
 
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.repository.notification.PushNotificationRepository;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
+import io.reactivex.schedulers.Schedulers;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
@@ -22,14 +22,11 @@ public final class WalletSessionInteractor$login$lambda$4$$inlined$flatMapSucces
     @Override // kotlin.jvm.functions.Function1
     public final ObservableSource<? extends Result<? extends String>> invoke(Result<? extends Boolean> result) {
         PushNotificationRepository pushNotificationRepository;
-        SchedulersProvider schedulersProvider;
         Intrinsics.checkNotNullParameter(result, "result");
         if (result instanceof Result.Success) {
             pushNotificationRepository = this.this$0.notificationRepository;
-            Observable<Result<String>> issuePushAllowanceToken = pushNotificationRepository.issuePushAllowanceToken();
-            schedulersProvider = this.this$0.schedulersProvider;
-            Observable<Result<String>> subscribeOn = issuePushAllowanceToken.subscribeOn(schedulersProvider.mo694io());
-            Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository.i…(schedulersProvider.io())");
+            Observable<Result<String>> subscribeOn = pushNotificationRepository.issuePushAllowanceToken().subscribeOn(Schedulers.m679io());
+            Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository.i…scribeOn(Schedulers.io())");
             return subscribeOn;
         } else if (result instanceof Result.Error) {
             Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);

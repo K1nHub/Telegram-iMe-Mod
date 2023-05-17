@@ -16,7 +16,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.Components.CubicBezierInterpolator;
 import org.telegram.p044ui.Components.ProfileGalleryView;
 /* renamed from: org.telegram.ui.AvatarPreviewPagerIndicator */
@@ -163,16 +163,16 @@ public class AvatarPreviewPagerIndicator extends View implements ProfileGalleryV
         super.onMeasure(i, i2);
         this.path.reset();
         this.rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredHeight(), getMeasuredWidth());
-        this.path.addRoundRect(this.rectF, new float[]{AndroidUtilities.m50dp(13), AndroidUtilities.m50dp(13), AndroidUtilities.m50dp(13), AndroidUtilities.m50dp(13), BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED}, Path.Direction.CCW);
+        this.path.addRoundRect(this.rectF, new float[]{AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(13), BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED}, Path.Direction.CCW);
     }
 
     @Override // android.view.View
     protected void onSizeChanged(int i, int i2, int i3, int i4) {
-        int currentActionBarHeight = C3306ActionBar.getCurrentActionBarHeight() + 0;
+        int currentActionBarHeight = C3356ActionBar.getCurrentActionBarHeight() + 0;
         this.topOverlayRect.set(0, 0, i, (int) (currentActionBarHeight * 0.5f));
-        this.bottomOverlayRect.set(0, (int) (i2 - (AndroidUtilities.m51dp(72.0f) * 0.5f)), i, i2);
-        this.topOverlayGradient.setBounds(0, this.topOverlayRect.bottom, i, currentActionBarHeight + AndroidUtilities.m51dp(16.0f));
-        this.bottomOverlayGradient.setBounds(0, (i2 - AndroidUtilities.m51dp(72.0f)) - AndroidUtilities.m51dp(24.0f), i, this.bottomOverlayRect.top);
+        this.bottomOverlayRect.set(0, (int) (i2 - (AndroidUtilities.m55dp(72.0f) * 0.5f)), i, i2);
+        this.topOverlayGradient.setBounds(0, this.topOverlayRect.bottom, i, currentActionBarHeight + AndroidUtilities.m55dp(16.0f));
+        this.bottomOverlayGradient.setBounds(0, (i2 - AndroidUtilities.m55dp(72.0f)) - AndroidUtilities.m55dp(24.0f), i, this.bottomOverlayRect.top);
         int i5 = i / 5;
         this.pressedOverlayGradient[0].setBounds(0, 0, i5, i2);
         this.pressedOverlayGradient[1].setBounds(i - i5, 0, i, i2);

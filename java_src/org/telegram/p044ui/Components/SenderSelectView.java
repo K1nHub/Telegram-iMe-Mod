@@ -14,7 +14,7 @@ import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserObject;
@@ -50,18 +50,18 @@ public class SenderSelectView extends View {
         this.avatarDrawable = new AvatarDrawable();
         this.backgroundPaint = new Paint(1);
         this.menuPaint = new Paint(1);
-        this.avatarImage.setRoundRadius(AndroidUtilities.m50dp(28));
-        this.menuPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.avatarImage.setRoundRadius(AndroidUtilities.m54dp(28));
+        this.menuPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.menuPaint.setStrokeCap(Paint.Cap.ROUND);
         this.menuPaint.setStyle(Paint.Style.STROKE);
         updateColors();
-        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3242R.string.AccDescrSendAsPeer, ""));
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3290R.string.AccDescrSendAsPeer, ""));
     }
 
     private void updateColors() {
-        this.backgroundPaint.setColor(Theme.getColor("chat_messagePanelVoiceBackground"));
-        this.menuPaint.setColor(Theme.getColor("chat_messagePanelVoicePressed"));
-        Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(16), 0, Theme.getColor("windowBackgroundWhite"));
+        this.backgroundPaint.setColor(Theme.getColor(Theme.key_chat_messagePanelVoiceBackground));
+        this.menuPaint.setColor(Theme.getColor(Theme.key_chat_messagePanelVoicePressed));
+        Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(16), 0, Theme.getColor(Theme.key_windowBackgroundWhite));
         this.selectorDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
     }
@@ -101,9 +101,9 @@ public class SenderSelectView extends View {
         canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth(), getHeight()) / 2.0f, this.backgroundPaint);
         canvas.save();
         this.menuPaint.setAlpha(i);
-        float m50dp = AndroidUtilities.m50dp(9) + this.menuPaint.getStrokeWidth();
-        canvas.drawLine(m50dp, m50dp, getWidth() - m50dp, getHeight() - m50dp, this.menuPaint);
-        canvas.drawLine(m50dp, getHeight() - m50dp, getWidth() - m50dp, m50dp, this.menuPaint);
+        float m54dp = AndroidUtilities.m54dp(9) + this.menuPaint.getStrokeWidth();
+        canvas.drawLine(m54dp, m54dp, getWidth() - m54dp, getHeight() - m54dp, this.menuPaint);
+        canvas.drawLine(m54dp, getHeight() - m54dp, getWidth() - m54dp, m54dp, this.menuPaint);
         canvas.restore();
         this.selectorDrawable.setBounds(0, 0, getWidth(), getHeight());
         this.selectorDrawable.draw(canvas);
@@ -119,7 +119,7 @@ public class SenderSelectView extends View {
         } else {
             str = tLObject instanceof TLRPC$ChatInvite ? ((TLRPC$ChatInvite) tLObject).title : "";
         }
-        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3242R.string.AccDescrSendAsPeer, str));
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3290R.string.AccDescrSendAsPeer, str));
         this.avatarDrawable.setInfo(tLObject);
         this.avatarImage.setForUserOrChat(tLObject, this.avatarDrawable);
     }

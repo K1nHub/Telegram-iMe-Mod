@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$33$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/DialogsActivity$33;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity$33;->$r8$lambda$vUZNSIpnRXz93J3U7gfiVrKbLdk(Lorg/telegram/ui/DialogsActivity$33;Landroid/view/KeyEvent;)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$33;->$r8$lambda$NiJlBCFCxNk6PPOTOe6hDY11GYE(Lorg/telegram/ui/DialogsActivity$33;)V
 
     return-void
 .end method

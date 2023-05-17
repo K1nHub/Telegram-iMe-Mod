@@ -384,13 +384,13 @@
     :cond_1
     move-object v6, v3
 
-    :goto_2
-    const v1, 0x3e4ccccd    # 0.2f
-
-    const-string v2, "windowBackgroundWhiteGrayIcon"
-
     .line 98
-    invoke-static {v0, v2, v1}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    :goto_2
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
+
+    const v2, 0x3e4ccccd    # 0.2f
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v9
 

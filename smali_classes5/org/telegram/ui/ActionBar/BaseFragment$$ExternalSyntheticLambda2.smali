@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-.field public final synthetic f$1:Lcom/iMe/fork/enums/LockedSection;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/enums/LockedSection;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    iput-object p2, p0, Lorg/telegram/ui/ActionBar/BaseFragment$$ExternalSyntheticLambda2;->f$1:Lcom/iMe/fork/enums/LockedSection;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment$$ExternalSyntheticLambda2;->f$1:Lcom/iMe/fork/enums/LockedSection;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->$r8$lambda$m0-8QfGxJI5yZJnBe7d2AlFoQuw(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/enums/LockedSection;)V
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->$r8$lambda$MS3ZIT6gzIFzhIC4Q5GH_2nqB2M(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

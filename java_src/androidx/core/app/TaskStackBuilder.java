@@ -33,6 +33,18 @@ public final class TaskStackBuilder implements Iterable<Intent> {
         return this;
     }
 
+    public TaskStackBuilder addNextIntentWithParentStack(Intent intent) {
+        ComponentName component = intent.getComponent();
+        if (component == null) {
+            component = intent.resolveActivity(this.mSourceContext.getPackageManager());
+        }
+        if (component != null) {
+            addParentStack(component);
+        }
+        addNextIntent(intent);
+        return this;
+    }
+
     public TaskStackBuilder addParentStack(Activity activity) {
         Intent supportParentActivityIntent = activity instanceof SupportParentable ? ((SupportParentable) activity).getSupportParentActivityIntent() : null;
         if (supportParentActivityIntent == null) {

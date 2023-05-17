@@ -49,7 +49,7 @@
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 11
+    .locals 10
 
     const/16 v0, 0xd
 
@@ -253,61 +253,61 @@
 
     cmpl-float v3, v0, v7
 
-    const-string v4, "dialogBackground"
-
     if-eqz v3, :cond_3
 
     .line 691
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    move-result v5
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setColor(I)V
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 692
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
+    iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
+
+    invoke-static {v4}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2300(Lorg/telegram/ui/Components/PollVotesAlert;)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
     iget-object v5, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2300(Lorg/telegram/ui/Components/PollVotesAlert;)I
+    invoke-static {v5}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2400(Lorg/telegram/ui/Components/PollVotesAlert;)I
 
     move-result v5
 
+    add-int/2addr v5, v1
+
     int-to-float v5, v5
-
-    iget-object v8, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
-
-    invoke-static {v8}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2400(Lorg/telegram/ui/Components/PollVotesAlert;)I
-
-    move-result v8
-
-    add-int/2addr v8, v1
-
-    int-to-float v8, v8
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
+    move-result v8
+
+    iget-object v9, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
+
+    invoke-static {v9}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2500(Lorg/telegram/ui/Components/PollVotesAlert;)I
+
     move-result v9
 
-    iget-object v10, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
+    sub-int/2addr v8, v9
 
-    invoke-static {v10}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2500(Lorg/telegram/ui/Components/PollVotesAlert;)I
+    int-to-float v8, v8
 
-    move-result v10
+    iget-object v9, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
-    sub-int/2addr v9, v10
+    invoke-static {v9}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2600(Lorg/telegram/ui/Components/PollVotesAlert;)I
 
-    int-to-float v9, v9
+    move-result v9
 
-    iget-object v10, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
-
-    invoke-static {v10}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2600(Lorg/telegram/ui/Components/PollVotesAlert;)I
-
-    move-result v10
-
-    add-int/2addr v10, v1
+    add-int/2addr v9, v1
 
     const/16 v1, 0x18
 
@@ -315,11 +315,11 @@
 
     move-result v1
 
-    add-int/2addr v10, v1
+    add-int/2addr v9, v1
 
-    int-to-float v1, v10
+    int-to-float v1, v9
 
-    invoke-virtual {v3, v5, v8, v9, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v3, v4, v5, v8, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 693
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
@@ -328,11 +328,11 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v4
 
-    int-to-float v5, v5
+    int-to-float v4, v4
 
-    mul-float/2addr v5, v0
+    mul-float/2addr v4, v0
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -342,9 +342,9 @@
 
     mul-float/2addr v3, v0
 
-    sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v1, v5, v3, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v1, v4, v3, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     :cond_3
     const/4 v1, 0x0
@@ -365,27 +365,27 @@
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v5
+    move-result v4
 
-    sub-int/2addr v5, v1
+    sub-int/2addr v4, v1
 
-    const/4 v8, 0x2
+    const/4 v5, 0x2
 
-    div-int/2addr v5, v8
+    div-int/2addr v4, v5
 
-    int-to-float v5, v5
+    int-to-float v4, v4
 
-    int-to-float v9, v2
+    int-to-float v8, v2
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v10
+    move-result v9
 
-    add-int/2addr v10, v1
+    add-int/2addr v9, v1
 
-    div-int/2addr v10, v8
+    div-int/2addr v9, v5
 
-    int-to-float v1, v10
+    int-to-float v1, v9
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -395,12 +395,12 @@
 
     int-to-float v2, v2
 
-    invoke-virtual {v3, v5, v9, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
-
-    const-string v1, "key_sheet_scrollUp"
+    invoke-virtual {v3, v4, v8, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 700
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -430,13 +430,13 @@
     .line 704
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
@@ -448,7 +448,9 @@
 
     .line 707
     :cond_4
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

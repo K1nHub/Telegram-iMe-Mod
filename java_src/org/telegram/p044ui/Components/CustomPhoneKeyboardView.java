@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.GestureDetectorCompat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.CustomPhoneKeyboardView */
 /* loaded from: classes6.dex */
@@ -144,11 +144,11 @@ public class CustomPhoneKeyboardView extends ViewGroup {
             }
         };
         this.backButton = imageView;
-        imageView.setImageResource(C3242R.C3244drawable.msg_clear_input);
-        this.backButton.setColorFilter(Theme.getColor("windowBackgroundWhiteBlackText"));
+        imageView.setImageResource(C3290R.C3292drawable.msg_clear_input);
+        this.backButton.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.backButton.setBackground(getButtonDrawable());
-        int m50dp = AndroidUtilities.m50dp(11);
-        this.backButton.setPadding(m50dp, m50dp, m50dp, m50dp);
+        int m54dp = AndroidUtilities.m54dp(11);
+        this.backButton.setPadding(m54dp, m54dp, m54dp, m54dp);
         this.backButton.setOnClickListener(CustomPhoneKeyboardView$$ExternalSyntheticLambda1.INSTANCE);
         View[] viewArr = this.views;
         ImageView imageView2 = this.backButton;
@@ -245,14 +245,14 @@ public class CustomPhoneKeyboardView extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int width = (getWidth() - AndroidUtilities.m50dp(32)) / 3;
-        int height = (getHeight() - AndroidUtilities.m50dp(42)) / 4;
+        int width = (getWidth() - AndroidUtilities.m54dp(32)) / 3;
+        int height = (getHeight() - AndroidUtilities.m54dp(42)) / 4;
         for (int i5 = 0; i5 < this.views.length; i5++) {
-            int m50dp = ((i5 % 3) * (AndroidUtilities.m50dp(6) + width)) + AndroidUtilities.m50dp(10);
-            int m50dp2 = ((i5 / 3) * (AndroidUtilities.m50dp(6) + height)) + AndroidUtilities.m50dp(10);
+            int m54dp = ((i5 % 3) * (AndroidUtilities.m54dp(6) + width)) + AndroidUtilities.m54dp(10);
+            int m54dp2 = ((i5 / 3) * (AndroidUtilities.m54dp(6) + height)) + AndroidUtilities.m54dp(10);
             View[] viewArr = this.views;
             if (viewArr[i5] != null) {
-                viewArr[i5].layout(m50dp, m50dp2, m50dp + width, m50dp2 + height);
+                viewArr[i5].layout(m54dp, m54dp2, m54dp + width, m54dp2 + height);
             }
         }
     }
@@ -261,8 +261,8 @@ public class CustomPhoneKeyboardView extends ViewGroup {
     protected void onMeasure(int i, int i2) {
         View[] viewArr;
         setMeasuredDimension(View.MeasureSpec.getSize(i), View.MeasureSpec.getSize(i2));
-        int width = (getWidth() - AndroidUtilities.m50dp(32)) / 3;
-        int height = (getHeight() - AndroidUtilities.m50dp(42)) / 4;
+        int width = (getWidth() - AndroidUtilities.m54dp(32)) / 3;
+        int height = (getHeight() - AndroidUtilities.m54dp(42)) / 4;
         for (View view : this.views) {
             if (view != null) {
                 view.measure(View.MeasureSpec.makeMeasureSpec(width, 1073741824), View.MeasureSpec.makeMeasureSpec(height, 1073741824));
@@ -272,12 +272,14 @@ public class CustomPhoneKeyboardView extends ViewGroup {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static Drawable getButtonDrawable() {
-        return Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), Theme.getColor("listSelectorSDK21"), ColorUtils.setAlphaComponent(Theme.getColor("listSelectorSDK21"), 60));
+        int m54dp = AndroidUtilities.m54dp(6);
+        int i = Theme.key_listSelector;
+        return Theme.createSimpleSelectorRoundRectDrawable(m54dp, Theme.getColor(i), ColorUtils.setAlphaComponent(Theme.getColor(i), 60));
     }
 
     public void updateColors() {
         View[] viewArr;
-        this.backButton.setColorFilter(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.backButton.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         for (View view : this.views) {
             if (view != null) {
                 view.setBackground(getButtonDrawable());
@@ -304,16 +306,16 @@ public class CustomPhoneKeyboardView extends ViewGroup {
             this.rect = new Rect();
             this.mNumber = str;
             this.mSymbols = str2;
-            this.numberTextPaint.setTextSize(AndroidUtilities.m50dp(24));
-            this.symbolsTextPaint.setTextSize(AndroidUtilities.m50dp(14));
+            this.numberTextPaint.setTextSize(AndroidUtilities.m54dp(24));
+            this.symbolsTextPaint.setTextSize(AndroidUtilities.m54dp(14));
             setBackground(CustomPhoneKeyboardView.getButtonDrawable());
             updateColors();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void updateColors() {
-            this.numberTextPaint.setColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-            this.symbolsTextPaint.setColor(Theme.getColor("windowBackgroundWhiteHintText"));
+            this.numberTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+            this.symbolsTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
         }
 
         @Override // android.view.View

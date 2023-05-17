@@ -54,6 +54,10 @@
 
 .field public static final CoordinatorLayout_statusBarBackground:I = 0x1
 
+.field public static final DrawerLayout:[I
+
+.field public static final DrawerLayout_elevation:I = 0x0
+
 .field public static final FontFamily:[I
 
 .field public static final FontFamilyFont:[I
@@ -161,7 +165,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 3
+    .locals 6
 
     const/4 v0, 0x2
 
@@ -193,6 +197,18 @@
 
     sput-object v2, Lcom/google/android/gms/auth/api/R$styleable;->CoordinatorLayout_Layout:[I
 
+    const/4 v2, 0x1
+
+    new-array v3, v2, [I
+
+    const v4, 0x7f040184
+
+    const/4 v5, 0x0
+
+    aput v4, v3, v5
+
+    sput-object v3, Lcom/google/android/gms/auth/api/R$styleable;->DrawerLayout:[I
+
     new-array v1, v1, [I
 
     fill-array-data v1, :array_4
@@ -209,25 +225,25 @@
 
     const/4 v1, 0x3
 
-    new-array v2, v1, [I
+    new-array v3, v1, [I
 
-    fill-array-data v2, :array_6
+    fill-array-data v3, :array_6
 
-    sput-object v2, Lcom/google/android/gms/auth/api/R$styleable;->Fragment:[I
+    sput-object v3, Lcom/google/android/gms/auth/api/R$styleable;->Fragment:[I
 
-    new-array v2, v0, [I
+    new-array v3, v0, [I
 
-    fill-array-data v2, :array_7
+    fill-array-data v3, :array_7
 
-    sput-object v2, Lcom/google/android/gms/auth/api/R$styleable;->FragmentContainerView:[I
+    sput-object v3, Lcom/google/android/gms/auth/api/R$styleable;->FragmentContainerView:[I
 
-    const/16 v2, 0xc
+    const/16 v3, 0xc
 
-    new-array v2, v2, [I
+    new-array v3, v3, [I
 
-    fill-array-data v2, :array_8
+    fill-array-data v3, :array_8
 
-    sput-object v2, Lcom/google/android/gms/auth/api/R$styleable;->GradientColor:[I
+    sput-object v3, Lcom/google/android/gms/auth/api/R$styleable;->GradientColor:[I
 
     new-array v0, v0, [I
 
@@ -247,24 +263,22 @@
 
     sput-object v0, Lcom/google/android/gms/auth/api/R$styleable;->SignInButton:[I
 
-    const/4 v0, 0x1
+    new-array v0, v2, [I
 
-    new-array v0, v0, [I
+    const v1, 0x7f0403ed
 
-    const/4 v1, 0x0
-
-    const v2, 0x7f0403c9
-
-    aput v2, v0, v1
+    aput v1, v0, v5
 
     sput-object v0, Lcom/google/android/gms/auth/api/R$styleable;->SwipeRefreshLayout:[I
 
     return-void
 
+    nop
+
     :array_0
     .array-data 4
-        0x7f04034a
-        0x7f040380
+        0x7f040365
+        0x7f04039f
     .end array-data
 
     :array_1
@@ -272,36 +286,36 @@
         0x10101a5
         0x101031f
         0x1010647
-        0x7f04002f
-        0x7f040229
+        0x7f040032
+        0x7f040239
     .end array-data
 
     :array_2
     .array-data 4
-        0x7f040228
-        0x7f0403b7
+        0x7f040238
+        0x7f0403db
     .end array-data
 
     :array_3
     .array-data 4
         0x10100b3
-        0x7f040236
-        0x7f040237
-        0x7f040238
-        0x7f040269
-        0x7f040276
-        0x7f040277
+        0x7f040247
+        0x7f040248
+        0x7f040249
+        0x7f04027a
+        0x7f040287
+        0x7f040288
     .end array-data
 
     :array_4
     .array-data 4
-        0x7f0401c1
-        0x7f0401c2
-        0x7f0401c3
-        0x7f0401c4
-        0x7f0401c5
-        0x7f0401c6
-        0x7f0401c7
+        0x7f0401d0
+        0x7f0401d1
+        0x7f0401d2
+        0x7f0401d3
+        0x7f0401d4
+        0x7f0401d5
+        0x7f0401d6
     .end array-data
 
     :array_5
@@ -311,11 +325,11 @@
         0x101053f
         0x101056f
         0x1010570
-        0x7f0401bf
-        0x7f0401c8
-        0x7f0401c9
-        0x7f0401ca
-        0x7f040459
+        0x7f0401ce
+        0x7f0401d7
+        0x7f0401d8
+        0x7f0401d9
+        0x7f04047e
     .end array-data
 
     :array_6
@@ -355,16 +369,16 @@
 
     :array_a
     .array-data 4
-        0x7f0400cd
-        0x7f0401f6
-        0x7f0401f7
+        0x7f0400d2
+        0x7f040206
+        0x7f040207
     .end array-data
 
     :array_b
     .array-data 4
-        0x7f040089
-        0x7f0400ff
-        0x7f040363
+        0x7f04008e
+        0x7f040105
+        0x7f040380
     .end array-data
 .end method
 

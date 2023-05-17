@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25209
+    .line 25881
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$MessageAction;-><init>()V
 
     return-void
@@ -34,28 +34,28 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 25216
+    .line 25888
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
-    .line 25217
+    .line 25889
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetMessagesTTL;->period:I
 
-    .line 25218
+    .line 25890
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 25219
+    .line 25891
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide p1
@@ -69,29 +69,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 25224
+    .line 25896
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetMessagesTTL;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 25225
+    .line 25897
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 25226
+    .line 25898
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetMessagesTTL;->period:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 25227
+    .line 25899
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 25228
+    .line 25900
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetMessagesTTL;->auto_setting_from:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

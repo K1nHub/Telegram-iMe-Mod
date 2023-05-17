@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: CatalogFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment$presenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class CatalogFragment$presenter$2 extends Lambda implements Function0<CatalogPresenter> {
     final /* synthetic */ CatalogFragment this$0;
 

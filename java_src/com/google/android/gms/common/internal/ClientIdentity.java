@@ -16,14 +16,14 @@ public class ClientIdentity extends AbstractSafeParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<ClientIdentity> CREATOR = new zaa();
     @KeepForSdk
-    @SafeParcelable.Field(defaultValueUnchecked = "null", m775id = 2)
+    @SafeParcelable.Field(defaultValueUnchecked = "null", m779id = 2)
     public final String packageName;
     @KeepForSdk
-    @SafeParcelable.Field(defaultValueUnchecked = SessionDescription.SUPPORTED_SDP_VERSION, m775id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = SessionDescription.SUPPORTED_SDP_VERSION, m779id = 1)
     public final int uid;
 
     @SafeParcelable.Constructor
-    public ClientIdentity(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str) {
+    public ClientIdentity(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) String str) {
         this.uid = i;
         this.packageName = str;
     }

@@ -2,41 +2,23 @@ package com.iMe.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: FilterTabWidthMode.kt */
 /* loaded from: classes3.dex */
 public enum FilterTabWidthMode {
-    DEFAULT(C3242R.string.folder_tabs_width_mode_value_default, 32, 18, 6),
-    MEDIUM(C3242R.string.folder_tabs_width_mode_value_medium, 16, 8, 6),
-    MINIMUM(C3242R.string.folder_tabs_width_mode_value_minimum, 4, 0, 2);
+    DEFAULT(C3290R.string.folder_tabs_width_mode_value_default),
+    MEDIUM(C3290R.string.folder_tabs_width_mode_value_medium),
+    MINIMUM(C3290R.string.folder_tabs_width_mode_value_minimum);
     
     public static final Companion Companion = new Companion(null);
-    private final int marginIconAndCount;
-    private final int tabDefaultMargin;
-    private final int tabNoCounterMargin;
     private final int titleResId;
 
     public static final FilterTabWidthMode mapNameToEnum(String str) {
         return Companion.mapNameToEnum(str);
     }
 
-    FilterTabWidthMode(int i, int i2, int i3, int i4) {
+    FilterTabWidthMode(int i) {
         this.titleResId = i;
-        this.tabDefaultMargin = i2;
-        this.tabNoCounterMargin = i3;
-        this.marginIconAndCount = i4;
-    }
-
-    public final int getMarginIconAndCount() {
-        return this.marginIconAndCount;
-    }
-
-    public final int getTabDefaultMargin() {
-        return this.tabDefaultMargin;
-    }
-
-    public final int getTabNoCounterMargin() {
-        return this.tabNoCounterMargin;
     }
 
     public final int getTitleResId() {

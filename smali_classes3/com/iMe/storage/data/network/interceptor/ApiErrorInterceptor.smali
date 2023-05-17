@@ -376,7 +376,7 @@
 
     const-string v2, "Authorization"
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     .line 120
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getWalletSessionInteractor()Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
@@ -384,20 +384,7 @@
     move-result-object p1
 
     .line 121
-    invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->getRefreshToken()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    move-object v0, v1
-
-    :cond_1
-    invoke-virtual {p1, v0}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->refreshToken(Ljava/lang/String;)Lio/reactivex/Observable;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->refreshToken()Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -413,7 +400,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
@@ -423,11 +410,11 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     move-object v1, p1
 
     :goto_0
@@ -438,12 +425,12 @@
     goto :goto_1
 
     .line 127
-    :cond_3
+    :cond_2
     invoke-direct {p0, v2, p2, p3, v0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->processNewRequest(Ljava/lang/String;Lokhttp3/Interceptor$Chain;Lokhttp3/Request;Ljava/lang/String;)Lokhttp3/Response;
 
     move-result-object p4
 
-    :cond_4
+    :cond_3
     :goto_1
     return-object p4
 .end method

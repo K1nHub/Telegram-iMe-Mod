@@ -83,7 +83,7 @@ public class FileLog {
                 }
             });
         } catch (Throwable th) {
-            m44e(th, BuildVars.DEBUG_PRIVATE_VERSION);
+            m48e(th, BuildVars.DEBUG_PRIVATE_VERSION);
         }
     }
 
@@ -169,7 +169,7 @@ public class FileLog {
                 public boolean shouldSkipClass(Class<?> cls) {
                     return cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
                 }
-            }).create();
+            }).registerTypeAdapterFactory(RuntimeClassNameTypeAdapterFactory.m44of(TLObject.class, "type_")).create();
         }
     }
 
@@ -249,7 +249,7 @@ public class FileLog {
     }
 
     /* renamed from: e */
-    public static void m46e(final String str, final Throwable th) {
+    public static void m50e(final String str, final Throwable th) {
         if (BuildVars.LOGS_ENABLED) {
             ensureInitied();
             Log.e(tag, str, th);
@@ -277,7 +277,7 @@ public class FileLog {
     }
 
     /* renamed from: e */
-    public static void m47e(final String str) {
+    public static void m51e(final String str) {
         if (BuildVars.LOGS_ENABLED) {
             ensureInitied();
             Log.e(tag, str);
@@ -304,18 +304,18 @@ public class FileLog {
     }
 
     /* renamed from: e */
-    public static void m45e(Throwable th) {
-        m44e(th, true);
+    public static void m49e(Throwable th) {
+        m48e(th, true);
     }
 
     /* renamed from: e */
-    public static void m44e(final Throwable th, boolean z) {
+    public static void m48e(final Throwable th, boolean z) {
         if (BuildVars.LOGS_ENABLED) {
             if (BuildVars.DEBUG_VERSION && needSent(th) && z) {
                 AndroidUtilities.appCenterLog(th);
             }
             if (BuildVars.DEBUG_VERSION && th.getMessage() != null && th.getMessage().contains("disk image is malformed") && !databaseIsMalformed) {
-                m48d("copy malformed files");
+                m52d("copy malformed files");
                 databaseIsMalformed = true;
                 File file = new File(ApplicationLoader.getFilesDirFixed(), "malformed_database/");
                 file.mkdirs();
@@ -324,7 +324,7 @@ public class FileLog {
                     try {
                         AndroidUtilities.copyFile(databaseFiles.get(i), new File(file, databaseFiles.get(i).getName()));
                     } catch (IOException e) {
-                        m45e(e);
+                        m49e(e);
                     }
                 }
             }
@@ -410,7 +410,7 @@ public class FileLog {
     }
 
     /* renamed from: d */
-    public static void m48d(final String str) {
+    public static void m52d(final String str) {
         if (BuildVars.LOGS_ENABLED) {
             ensureInitied();
             Log.d(tag, str);
@@ -440,7 +440,7 @@ public class FileLog {
     }
 
     /* renamed from: w */
-    public static void m43w(final String str) {
+    public static void m47w(final String str) {
         if (BuildVars.LOGS_ENABLED) {
             ensureInitied();
             Log.w(tag, str);

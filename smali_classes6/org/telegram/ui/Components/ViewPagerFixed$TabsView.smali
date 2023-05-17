@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field private activeTextColorKey:Ljava/lang/String;
+.field private activeTextColorKey:I
 
 .field private adapter:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$ListAdapter;
 
@@ -42,7 +42,7 @@
 
 .field private animationTime:F
 
-.field private backgroundColorKey:Ljava/lang/String;
+.field private backgroundColorKey:I
 
 .field private counterPaint:Landroid/graphics/Paint;
 
@@ -110,11 +110,11 @@
 
 .field private selectedTabId:I
 
-.field private selectorColorKey:Ljava/lang/String;
+.field private selectorColorKey:I
 
 .field private selectorDrawable:Landroid/graphics/drawable/GradientDrawable;
 
-.field private tabLineColorKey:Ljava/lang/String;
+.field private tabLineColorKey:I
 
 .field public tabMarginDp:I
 
@@ -136,7 +136,7 @@
 
 .field private textPaint:Landroid/text/TextPaint;
 
-.field private unactiveTextColorKey:Ljava/lang/String;
+.field private unactiveTextColorKey:I
 
 
 # direct methods
@@ -235,30 +235,30 @@
     .line 1149
     iput v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->scrollingToChild:I
 
-    const-string v2, "profile_tabSelectedLine"
-
     .line 1152
-    iput-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->tabLineColorKey:Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedLine:I
 
-    const-string v2, "profile_tabSelectedText"
+    iput v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->tabLineColorKey:I
 
     .line 1153
-    iput-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->activeTextColorKey:Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedText:I
 
-    const-string v2, "profile_tabText"
+    iput v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->activeTextColorKey:I
 
     .line 1154
-    iput-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->unactiveTextColorKey:Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabText:I
 
-    const-string v2, "profile_tabSelector"
+    iput v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->unactiveTextColorKey:I
 
     .line 1155
-    iput-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorColorKey:Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelector:I
 
-    const-string v2, "actionBarDefault"
+    iput v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorColorKey:I
 
     .line 1156
-    iput-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->backgroundColorKey:Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
+    iput v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->backgroundColorKey:I
 
     .line 1165
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -438,9 +438,9 @@
     .line 1229
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorDrawable:Landroid/graphics/drawable/GradientDrawable;
 
-    iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->tabLineColorKey:Ljava/lang/String;
+    iget v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->tabLineColorKey:I
 
-    invoke-static {v6, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v6, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v6
 
@@ -498,9 +498,9 @@
     :goto_1
     iget-object p3, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorColorKey:Ljava/lang/String;
+    iget v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorColorKey:I
 
-    invoke-static {v2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p4
 
@@ -659,22 +659,22 @@
     return p0
 .end method
 
-.method static synthetic access$2200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/lang/String;
+.method static synthetic access$2200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
     .locals 0
 
     .line 822
-    iget-object p0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->activeTextColorKey:Ljava/lang/String;
+    iget p0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->activeTextColorKey:I
 
-    return-object p0
+    return p0
 .end method
 
-.method static synthetic access$2300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/lang/String;
+.method static synthetic access$2300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
     .locals 0
 
     .line 822
-    iget-object p0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->unactiveTextColorKey:Ljava/lang/String;
+    iget p0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->unactiveTextColorKey:I
 
-    return-object p0
+    return p0
 .end method
 
 .method static synthetic access$2400(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -722,13 +722,13 @@
     return p0
 .end method
 
-.method static synthetic access$3000(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/lang/String;
+.method static synthetic access$3000(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
     .locals 0
 
     .line 822
-    iget-object p0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->backgroundColorKey:Ljava/lang/String;
+    iget p0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->backgroundColorKey:I
 
-    return-object p0
+    return p0
 .end method
 
 .method static synthetic access$3100(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
@@ -1719,13 +1719,13 @@
     return v0
 .end method
 
-.method public getBackgroundColorKey()Ljava/lang/String;
+.method public getBackgroundColorKey()I
     .locals 1
 
     .line 862
-    iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->backgroundColorKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->backgroundColorKey:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public getCurrentPosition()I
@@ -2557,35 +2557,35 @@
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(IIIII)V
     .locals 0
 
     .line 852
-    iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->tabLineColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->tabLineColorKey:I
 
     .line 853
-    iput-object p2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->activeTextColorKey:Ljava/lang/String;
+    iput p2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->activeTextColorKey:I
 
     .line 854
-    iput-object p3, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->unactiveTextColorKey:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->unactiveTextColorKey:I
 
     .line 855
-    iput-object p4, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorColorKey:Ljava/lang/String;
+    iput p4, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorColorKey:I
 
     .line 856
     iget-object p2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorDrawable:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
     .line 857
-    iput-object p5, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->backgroundColorKey:Ljava/lang/String;
+    iput p5, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->backgroundColorKey:I
 
     .line 858
-    invoke-static {p5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -2723,11 +2723,11 @@
     .line 1585
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectorDrawable:Landroid/graphics/drawable/GradientDrawable;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->tabLineColorKey:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->tabLineColorKey:I
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 

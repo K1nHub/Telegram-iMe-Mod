@@ -44,15 +44,15 @@
     .line 26
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    const-string v1, "premiumGradient1"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
-    const-string v2, "premiumGradient2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient2:I
 
-    const-string v3, "premiumGradient3"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient3:I
 
-    const-string v4, "premiumGradient4"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient4:I
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIII)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->mainGradient:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
@@ -214,10 +214,10 @@
 .method public checkIconColors()V
     .locals 4
 
-    const-string v0, "chats_verifiedBackground"
-
     .line 85
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -226,7 +226,7 @@
     if-eq v1, v2, :cond_0
 
     .line 86
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -412,9 +412,9 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
 
-    const-string v1, "featuredStickers_addButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -453,9 +453,9 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient;->lockedPremiumPaint:Landroid/graphics/Paint;
 
-    const-string v1, "featuredStickers_addButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

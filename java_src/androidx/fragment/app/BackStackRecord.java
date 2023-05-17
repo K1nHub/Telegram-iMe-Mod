@@ -157,8 +157,20 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         this.mManager = fragmentManager;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public BackStackRecord(BackStackRecord backStackRecord) {
+        super(backStackRecord.mManager.getFragmentFactory(), backStackRecord.mManager.getHost() != null ? backStackRecord.mManager.getHost().getContext().getClassLoader() : null, backStackRecord);
+        this.mIndex = -1;
+        this.mBeingSaved = false;
+        this.mManager = backStackRecord.mManager;
+        this.mCommitted = backStackRecord.mCommitted;
+        this.mIndex = backStackRecord.mIndex;
+        this.mBeingSaved = backStackRecord.mBeingSaved;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.fragment.app.FragmentTransaction
-    void doAddOp(int i, Fragment fragment, String str, int i2) {
+    public void doAddOp(int i, Fragment fragment, String str, int i2) {
         super.doAddOp(i, fragment, str, i2);
         fragment.mFragmentManager = this.mManager;
     }
@@ -170,6 +182,15 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
             throw new IllegalStateException("Cannot remove Fragment attached to a different FragmentManager. Fragment " + fragment.toString() + " is already attached to a FragmentManager.");
         }
         return super.remove(fragment);
+    }
+
+    @Override // androidx.fragment.app.FragmentTransaction
+    public FragmentTransaction setPrimaryNavigationFragment(Fragment fragment) {
+        FragmentManager fragmentManager;
+        if (fragment != null && (fragmentManager = fragment.mFragmentManager) != null && fragmentManager != this.mManager) {
+            throw new IllegalStateException("Cannot setPrimaryNavigation for Fragment attached to a different FragmentManager. Fragment " + fragment.toString() + " is already attached to a FragmentManager.");
+        }
+        return super.setPrimaryNavigationFragment(fragment);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -458,6 +479,33 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
             arrayList.remove(c0212Op.mFragment);
         }
         return fragment;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void collapseOps() {
+        int size = this.mOps.size() - 1;
+        while (size >= 0) {
+            FragmentTransaction.C0212Op c0212Op = this.mOps.get(size);
+            if (c0212Op.mFromExpandedOp) {
+                if (c0212Op.mCmd == 8) {
+                    c0212Op.mFromExpandedOp = false;
+                    this.mOps.remove(size - 1);
+                    size--;
+                } else {
+                    int i = c0212Op.mFragment.mContainerId;
+                    c0212Op.mCmd = 2;
+                    c0212Op.mFromExpandedOp = false;
+                    for (int i2 = size - 1; i2 >= 0; i2--) {
+                        FragmentTransaction.C0212Op c0212Op2 = this.mOps.get(i2);
+                        if (c0212Op2.mFromExpandedOp && c0212Op2.mFragment.mContainerId == i) {
+                            this.mOps.remove(i2);
+                            size--;
+                        }
+                    }
+                }
+            }
+            size--;
+        }
     }
 
     public String getName() {

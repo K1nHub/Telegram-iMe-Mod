@@ -208,13 +208,13 @@
 
     if-ne p1, v0, :cond_0
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
 
     goto :goto_0
 
     .line 192
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     :goto_0
     return p1
@@ -265,7 +265,7 @@
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 215
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne v0, v2, :cond_5
 
@@ -405,7 +405,7 @@
 
     .line 225
     :cond_5
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
 
     if-ne v0, v2, :cond_6
 
@@ -470,9 +470,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 196
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT:I
-
-    const-string v0, "windowBackgroundWhite"
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL:I
 
     if-ne p2, p1, :cond_0
 
@@ -487,7 +485,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
     .line 197
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -497,7 +497,7 @@
 
     .line 199
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
 
     if-ne p2, p1, :cond_1
 
@@ -512,7 +512,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
     .line 200
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -522,7 +524,7 @@
 
     .line 202
     :cond_1
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p2, p1, :cond_2
 
@@ -537,7 +539,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
     .line 203
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

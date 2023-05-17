@@ -1284,7 +1284,7 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -1342,8 +1342,6 @@
     :cond_1
     const/16 v1, 0xb
 
-    const-string v2, "windowBackgroundWhite"
-
     if-ne p2, v1, :cond_2
 
     .line 774
@@ -1356,7 +1354,9 @@
     invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/LoadingCell;-><init>(Landroid/content/Context;)V
 
     .line 775
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -1367,9 +1367,9 @@
     :cond_2
     const/16 v1, 0xf
 
-    const/16 v3, 0xc
+    const/16 v2, 0xc
 
-    if-ne p2, v3, :cond_3
+    if-ne p2, v2, :cond_3
 
     .line 777
     new-instance p2, Lorg/telegram/ui/Cells/EmptyCell;
@@ -1389,9 +1389,9 @@
     goto :goto_0
 
     :cond_3
-    const/16 v4, 0xd
+    const/16 v3, 0xd
 
-    if-ne p2, v4, :cond_4
+    if-ne p2, v3, :cond_4
 
     .line 779
     new-instance v1, Lorg/telegram/ui/StatisticActivity$Adapter$3;
@@ -1457,18 +1457,20 @@
     invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
 
     .line 795
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {v1, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    const-string p1, "windowBackgroundWhiteBlueIcon"
-
-    const-string p2, "windowBackgroundWhiteBlueButton"
-
     .line 796
-    invoke-virtual {v1, p1, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
+
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
+
+    invoke-virtual {v1, p1, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
     goto :goto_0
 
@@ -1480,13 +1482,13 @@
 
     move-result-object p1
 
-    const-string p2, "windowBackgroundGray"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
-    invoke-direct {v1, p1, v3, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;II)V
+    invoke-direct {v1, p1, v2, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;II)V
 
     .line 800
     :goto_0

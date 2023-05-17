@@ -42,7 +42,7 @@ public class BitmapsCache {
     private int frameIndex;
 
     /* renamed from: h */
-    int f1413h;
+    int f1419h;
     BitmapFactory.Options options;
     volatile boolean recycled;
     private final Cacheable source;
@@ -50,11 +50,11 @@ public class BitmapsCache {
     final boolean useSharedBuffers;
 
     /* renamed from: w */
-    int f1414w;
+    int f1420w;
     static ConcurrentHashMap<Thread, byte[]> sharedBuffers = new ConcurrentHashMap<>();
 
     /* renamed from: N */
-    private static final int f1412N = Utilities.clamp(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
+    private static final int f1418N = Utilities.clamp(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
     ArrayList<FrameOffset> frameOffsets = new ArrayList<>();
     private final Object mutex = new Object();
     public AtomicBoolean cancelled = new AtomicBoolean(false);
@@ -103,12 +103,12 @@ public class BitmapsCache {
         RandomAccessFile randomAccessFile;
         Throwable th;
         this.source = cacheable;
-        this.f1414w = i;
-        this.f1413h = i2;
+        this.f1420w = i;
+        this.f1419h = i2;
         this.compressQuality = cacheOptions.compressQuality;
         this.fileName = file.getName();
         if (bitmapCompressExecutor == null) {
-            int i3 = f1412N;
+            int i3 = f1418N;
             bitmapCompressExecutor = new ThreadPoolExecutor(i3, i3, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue());
         }
         File file2 = new File(FileLoader.checkDirectory(4), "acache");
@@ -127,7 +127,7 @@ public class BitmapsCache {
         sb.append(".pcache2");
         File file3 = new File(file2, sb.toString());
         this.file = file3;
-        this.useSharedBuffers = (i >= AndroidUtilities.m50dp(60) || i2 >= AndroidUtilities.m50dp(60)) ? false : z2;
+        this.useSharedBuffers = (i >= AndroidUtilities.m54dp(60) || i2 >= AndroidUtilities.m54dp(60)) ? false : z2;
         if (SharedConfig.getDevicePerformanceClass() >= 2) {
             this.fileExist = file3.exists();
             if (this.fileExist) {
@@ -331,7 +331,7 @@ public class BitmapsCache {
                     } catch (Throwable th) {
                         th = th;
                         randomAccessFile2 = randomAccessFile;
-                        FileLog.m44e(th, false);
+                        FileLog.m48e(th, false);
                         int i2 = this.tryCount + 1;
                         this.tryCount = i2;
                         if (i2 > 10) {
@@ -450,15 +450,15 @@ public class BitmapsCache {
         private int lastSize;
 
         private CacheGeneratorSharedTools() {
-            this.byteArrayOutputStream = new ImmutableByteArrayOutputStream[BitmapsCache.f1412N];
-            this.bitmap = new Bitmap[BitmapsCache.f1412N];
+            this.byteArrayOutputStream = new ImmutableByteArrayOutputStream[BitmapsCache.f1418N];
+            this.bitmap = new Bitmap[BitmapsCache.f1418N];
         }
 
         void allocate(int i, int i2) {
             int i3 = (i2 << 16) + i;
             boolean z = this.lastSize != i3;
             this.lastSize = i3;
-            for (int i4 = 0; i4 < BitmapsCache.f1412N; i4++) {
+            for (int i4 = 0; i4 < BitmapsCache.f1418N; i4++) {
                 if (z || this.bitmap[i4] == null) {
                     Bitmap[] bitmapArr = this.bitmap;
                     if (bitmapArr[i4] != null) {
@@ -489,7 +489,7 @@ public class BitmapsCache {
 
         void release() {
             final ArrayList arrayList = null;
-            for (int i = 0; i < BitmapsCache.f1412N; i++) {
+            for (int i = 0; i < BitmapsCache.f1418N; i++) {
                 if (this.bitmap[i] != null) {
                     if (arrayList == null) {
                         arrayList = new ArrayList();

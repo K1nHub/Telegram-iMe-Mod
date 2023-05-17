@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 42164
+    .line 43019
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$ChannelAdminLogEventAction;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 42171
+    .line 43026
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -45,7 +45,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionEditTopic;->prev_topic:Lorg/telegram/tgnet/TLRPC$ForumTopic;
 
-    .line 42172
+    .line 43027
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -62,17 +62,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 42176
+    .line 43031
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionEditTopic;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 42177
+    .line 43032
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionEditTopic;->prev_topic:Lorg/telegram/tgnet/TLRPC$ForumTopic;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 42178
+    .line 43033
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionEditTopic;->new_topic:Lorg/telegram/tgnet/TLRPC$ForumTopic;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

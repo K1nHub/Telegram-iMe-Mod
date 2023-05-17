@@ -33,11 +33,11 @@ final class BuyCryptoProductFragment$showErrorPurchase$1 extends Lambda implemen
     /* compiled from: BuyCryptoProductFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductFragment$showErrorPurchase$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C20801 extends Lambda implements Function1<DialogInterface, Unit> {
+    public static final class C21191 extends Lambda implements Function1<DialogInterface, Unit> {
         final /* synthetic */ String $orderId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C20801(String str) {
+        C21191(String str) {
             super(1);
             this.$orderId = str;
         }
@@ -60,6 +60,6 @@ final class BuyCryptoProductFragment$showErrorPurchase$1 extends Lambda implemen
         Intrinsics.checkNotNullParameter(view, "view");
         Intrinsics.checkNotNullParameter(dialog, "dialog");
         String str = this.$orderId;
-        DialogExtKt.makeClickableDescription(dialog, view, str, new C20801(str));
+        DialogExtKt.makeClickableDescription(dialog, view, str, new C21191(str));
     }
 }

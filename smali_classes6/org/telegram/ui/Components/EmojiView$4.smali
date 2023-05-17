@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 758
+    .line 756
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,14 +52,14 @@
 .method private synthetic lambda$openKiklikoReport$0(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 780
+    .line 778
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiView;->presenter:Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 781
+    .line 779
     invoke-virtual {v0, p1, p2}, Lcom/iMe/ui/kikliko/EmojiViewPresenter;->report(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
@@ -69,7 +69,7 @@
 .method private synthetic lambda$setAsEmojiStatus$1(Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
     .locals 1
 
-    .line 846
+    .line 844
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget v0, v0, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -88,7 +88,7 @@
 .method public can()Z
     .locals 1
 
-    .line 807
+    .line 805
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -111,7 +111,7 @@
 .method public canSchedule()Z
     .locals 1
 
-    .line 921
+    .line 919
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -128,7 +128,7 @@
 .method public canSetAsStatus(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/Boolean;
     .locals 4
 
-    .line 900
+    .line 898
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -145,7 +145,7 @@
 
     return-object v1
 
-    .line 903
+    .line 901
     :cond_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -161,7 +161,7 @@
 
     return-object v1
 
-    .line 907
+    .line 905
     :cond_1
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getEmojiStatusDocumentId(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/Long;
 
@@ -171,7 +171,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 908
+    .line 906
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
@@ -201,7 +201,7 @@
 .method public copyEmoji(Lorg/telegram/tgnet/TLRPC$Document;)V
     .locals 4
 
-    .line 870
+    .line 868
     invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->findAnimatedEmojiEmoticon(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
 
     move-result-object v0
@@ -210,7 +210,7 @@
 
     move-result-object v0
 
-    .line 871
+    .line 869
     new-instance v1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     const/4 v2, 0x0
@@ -227,14 +227,14 @@
 
     invoke-interface {v0, v1, v2, p1, v3}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    .line 872
+    .line 870
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    .line 873
+    .line 871
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -272,7 +272,7 @@
 
     move-result-object p1
 
-    .line 874
+    .line 872
     :goto_0
     sget v0, Lorg/telegram/messenger/R$string;->EmojiCopied:I
 
@@ -295,7 +295,7 @@
 .method public editAnimatedSticker(Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/RLottieDrawable;Z)V
     .locals 1
 
-    .line 788
+    .line 786
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -310,7 +310,7 @@
 .method public editMedia(Lorg/telegram/tgnet/TLRPC$Document;Z)V
     .locals 1
 
-    .line 793
+    .line 791
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -325,7 +325,7 @@
 .method public getDialogId()J
     .locals 2
 
-    .line 953
+    .line 951
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -346,7 +346,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 959
+    .line 957
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -378,7 +378,7 @@
     :cond_0
     return-object v0
 
-    .line 961
+    .line 959
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -415,7 +415,7 @@
 .method public gifAddedOrDeleted()V
     .locals 1
 
-    .line 948
+    .line 946
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1800(Lorg/telegram/ui/Components/EmojiView;)V
@@ -426,7 +426,7 @@
 .method public isInScheduleMode()Z
     .locals 1
 
-    .line 926
+    .line 924
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -483,7 +483,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 885
+    .line 883
     sget-object v0, Lorg/telegram/messenger/Emoji;->recentEmoji:Ljava/util/ArrayList;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -528,7 +528,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 914
+    .line 912
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -610,7 +610,7 @@
 .method public openKiklikoReport(Ljava/lang/String;)V
     .locals 2
 
-    .line 779
+    .line 777
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -633,7 +633,7 @@
 
     return-void
 
-    .line 934
+    .line 932
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -661,7 +661,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 891
+    .line 889
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -680,7 +680,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/Emoji;->removeRecentEmoji(Ljava/lang/String;)V
 
-    .line 892
+    .line 890
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1400(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
@@ -689,7 +689,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 893
+    .line 891
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1400(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
@@ -705,7 +705,7 @@
 .method public resetTouch()V
     .locals 1
 
-    .line 817
+    .line 815
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
@@ -714,7 +714,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 818
+    .line 816
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
@@ -730,7 +730,7 @@
 .method public sendEmoji(Lorg/telegram/tgnet/TLRPC$Document;)V
     .locals 3
 
-    .line 824
+    .line 822
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -741,7 +741,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 825
+    .line 823
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -763,7 +763,7 @@
 .method public sendGif(Ljava/lang/Object;Ljava/lang/Object;ZI)V
     .locals 9
 
-    .line 939
+    .line 937
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -782,7 +782,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 940
+    .line 938
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -807,7 +807,7 @@
 
     goto :goto_0
 
-    .line 941
+    .line 939
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -827,7 +827,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 942
+    .line 940
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -858,7 +858,7 @@
 .method public sendKiklikoVideo(Ljava/lang/String;Ljava/lang/String;ZZI)V
     .locals 7
 
-    .line 771
+    .line 769
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -877,14 +877,14 @@
 
     invoke-interface/range {v1 .. v6}, Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;->onKiklikoVideoSelected(Ljava/lang/String;ZZILjava/lang/String;)V
 
-    .line 772
+    .line 770
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView;->presenter:Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
     if-eqz p1, :cond_0
 
-    .line 773
+    .line 771
     invoke-virtual {p1, p2}, Lcom/iMe/ui/kikliko/EmojiViewPresenter;->onGifWasSent(Ljava/lang/String;)V
 
     :cond_0
@@ -894,7 +894,7 @@
 .method public sendSticker(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/lang/Object;ZI)V
     .locals 10
 
-    .line 812
+    .line 810
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -927,7 +927,7 @@
 
     if-nez p1, :cond_0
 
-    .line 833
+    .line 831
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;-><init>()V
@@ -937,17 +937,17 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 835
+    .line 833
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;-><init>()V
 
-    .line 836
+    .line 834
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
 
-    .line 837
+    .line 835
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
@@ -958,18 +958,18 @@
 
     goto :goto_0
 
-    .line 839
+    .line 837
     :cond_1
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;-><init>()V
 
-    .line 840
+    .line 838
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iput-wide v0, p2, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
 
-    .line 842
+    .line 840
     :goto_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -983,7 +983,7 @@
 
     if-nez v0, :cond_2
 
-    .line 843
+    .line 841
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;-><init>()V
@@ -993,7 +993,7 @@
     :cond_2
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
-    .line 844
+    .line 842
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1005,14 +1005,14 @@
 
     invoke-virtual {v1, p2}, Lorg/telegram/messenger/MessagesController;->updateEmojiStatus(Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
 
-    .line 846
+    .line 844
     new-instance p2, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0, v0}, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/EmojiView$4;Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
 
     if-nez p1, :cond_4
 
-    .line 848
+    .line 846
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -1029,7 +1029,7 @@
 
     invoke-direct {p1, v0, v1}, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 849
+    .line 847
     iget-object v0, p1, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->RemoveStatusInfo:I
@@ -1042,39 +1042,39 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 850
+    .line 848
     iget-object v0, p1, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->imageView:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_settings_premium:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 851
+    .line 849
     iget-object v0, p1, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->imageView:Landroid/widget/ImageView;
 
     const v1, 0x3f4ccccd    # 0.8f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 852
+    .line 850
     iget-object v0, p1, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 853
+    .line 851
     iget-object v0, p1, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->imageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView;->access$1200(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    move-result-object v2
+    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiView;->access$1200(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    const-string v3, "chats_verifiedBackground"
+    move-result-object v3
 
-    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -1084,7 +1084,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 854
+    .line 852
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -1103,13 +1103,13 @@
 
     invoke-direct {v0, v1, v2, v3}, Lorg/telegram/ui/Components/Bulletin$UndoButton;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 855
+    .line 853
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/Bulletin$UndoButton;->setUndoAction(Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
-    .line 856
+    .line 854
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->setButton(Lorg/telegram/ui/Components/Bulletin$Button;)V
 
-    .line 857
+    .line 855
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$1000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -1120,7 +1120,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 858
+    .line 856
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$1000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -1135,7 +1135,7 @@
 
     goto :goto_3
 
-    .line 860
+    .line 858
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1151,7 +1151,7 @@
 
     goto :goto_3
 
-    .line 863
+    .line 861
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1190,7 +1190,7 @@
 
     move-result-object v0
 
-    .line 864
+    .line 862
     :goto_2
     sget v1, Lorg/telegram/messenger/R$string;->SetAsEmojiStatusInfo:I
 
@@ -1221,7 +1221,7 @@
 .method public setKiklikoAvatar(Ljava/lang/String;)V
     .locals 1
 
-    .line 798
+    .line 796
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;

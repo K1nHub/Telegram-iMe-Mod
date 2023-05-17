@@ -2,40 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LoginActivity;
+.field public final synthetic f$0:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity;)V
+.method public synthetic constructor <init>(Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/LoginActivity;
+    iput-boolean p1, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda23;->f$0:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/LoginActivity;
+    iget-boolean v0, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda23;->f$0:Z
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$5bTfPNdyUwRm1QGZsQymNGY3-QU(Lorg/telegram/ui/LoginActivity;)V
+    check-cast p1, Ljava/lang/Void;
 
-    return-void
-.end method
+    invoke-static {v0, p1}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$JZV6higFBcxrfg7f6nDMiJdD9K0(ZLjava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
 
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
+    move-result-object p1
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
-
-    return-void
+    return-object p1
 .end method

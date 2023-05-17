@@ -6,17 +6,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class User {
 
     /* renamed from: id */
-    private final String f351id;
+    private final String f355id;
 
     public static /* synthetic */ User copy$default(User user, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = user.f351id;
+            str = user.f355id;
         }
         return user.copy(str);
     }
 
     public final String component1() {
-        return this.f351id;
+        return this.f355id;
     }
 
     public final User copy(String id) {
@@ -28,23 +28,23 @@ public final class User {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof User) && Intrinsics.areEqual(this.f351id, ((User) obj).f351id);
+        return (obj instanceof User) && Intrinsics.areEqual(this.f355id, ((User) obj).f355id);
     }
 
     public int hashCode() {
-        return this.f351id.hashCode();
+        return this.f355id.hashCode();
     }
 
     public String toString() {
-        return "User(id=" + this.f351id + ')';
+        return "User(id=" + this.f355id + ')';
     }
 
     public User(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        this.f351id = id;
+        this.f355id = id;
     }
 
     public final String getId() {
-        return this.f351id;
+        return this.f355id;
     }
 }

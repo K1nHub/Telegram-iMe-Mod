@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletPrivacySettingPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletPrivacySettingPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,160:1\n39#2,8:161\n39#2,8:169\n58#2,6:177\n58#2,6:183\n18#3:189\n18#3:190\n*S KotlinDebug\n*F\n+ 1 WalletPrivacySettingPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter\n*L\n73#1:161,8\n94#1:169,8\n105#1:177,6\n111#1:183,6\n119#1:189\n136#1:190\n*E\n"
+    value = "SMAP\nWalletPrivacySettingPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletPrivacySettingPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,162:1\n39#2,8:163\n39#2,8:171\n58#2,6:179\n58#2,6:185\n18#3:191\n18#3:192\n*S KotlinDebug\n*F\n+ 1 WalletPrivacySettingPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter\n*L\n74#1:163,8\n95#1:171,8\n106#1:179,6\n112#1:185,6\n120#1:191\n137#1:192\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -100,22 +100,22 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
+    .line 30
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 24
+    .line 25
     iput p1, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->settingsType:I
 
-    .line 25
+    .line 26
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    .line 26
+    .line 27
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->cryptoPermissionInteractor:Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
 
-    .line 27
+    .line 28
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 28
+    .line 29
     iput-object p5, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-void
@@ -124,7 +124,7 @@
 .method public static final synthetic access$getAccountLevelInteractor$p(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;)Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
     .locals 0
 
-    .line 22
+    .line 23
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
     return-object p0
@@ -133,7 +133,7 @@
 .method public static final synthetic access$getCryptoPermissionInteractor$p(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;)Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
     .locals 0
 
-    .line 22
+    .line 23
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->cryptoPermissionInteractor:Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
 
     return-object p0
@@ -142,7 +142,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 22
+    .line 23
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -151,7 +151,7 @@
 .method public static final synthetic access$getSchedulersProvider$p(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
     .locals 0
 
-    .line 22
+    .line 23
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-object p0
@@ -160,7 +160,7 @@
 .method public static final synthetic access$resolveAccessTypeBy(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;Z)I
     .locals 0
 
-    .line 22
+    .line 23
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->resolveAccessTypeBy(Z)I
 
     move-result p0
@@ -171,7 +171,7 @@
 .method public static final synthetic access$saveAccountRankSettingsObservable(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;II)Lio/reactivex/Observable;
     .locals 0
 
-    .line 22
+    .line 23
     invoke-direct {p0, p1, p2}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->saveAccountRankSettingsObservable(II)Lio/reactivex/Observable;
 
     move-result-object p0
@@ -182,7 +182,7 @@
 .method public static final synthetic access$saveSettings(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;Lio/reactivex/Observable;Lio/reactivex/Observable;)V
     .locals 0
 
-    .line 22
+    .line 23
     invoke-direct {p0, p1, p2}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->saveSettings(Lio/reactivex/Observable;Lio/reactivex/Observable;)V
 
     return-void
@@ -191,7 +191,7 @@
 .method public static final synthetic access$saveWalletAddressSettingsObservable(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;Ljava/util/ArrayList;Ljava/util/ArrayList;II)Lio/reactivex/Observable;
     .locals 0
 
-    .line 22
+    .line 23
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->saveWalletAddressSettingsObservable(Ljava/util/ArrayList;Ljava/util/ArrayList;II)Lio/reactivex/Observable;
 
     move-result-object p0
@@ -211,30 +211,20 @@
         }
     .end annotation
 
-    .line 108
+    .line 109
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    .line 109
+    .line 110
     invoke-virtual {v0}, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;->getLevelVisibility()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 110
-    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+    .line 111
+    invoke-static {v0}, Lcom/iMe/utils/extentions/rx/SchedulersExtKt;->scheduleIO(Lio/reactivex/Observable;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    const-string v1, "accountLevelInteractor\n \u2026(schedulersProvider.ui())"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 111
+    .line 112
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -270,10 +260,10 @@
 .method private final getEverybodyWarningDialogModel()Lcom/iMe/model/dialog/DialogModel;
     .locals 6
 
-    .line 146
+    .line 148
     new-instance v0, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 147
+    .line 149
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_crypto_privacy_everyone_dialog_confirm_title:I
@@ -282,7 +272,7 @@
 
     move-result-object v1
 
-    .line 148
+    .line 150
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_crypto_privacy_everyone_dialog_confirm_description:I
@@ -291,7 +281,7 @@
 
     move-result-object v2
 
-    .line 149
+    .line 151
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -300,7 +290,7 @@
 
     move-result-object v3
 
-    .line 150
+    .line 152
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->common_confirm:I
@@ -309,7 +299,7 @@
 
     move-result-object v4
 
-    .line 146
+    .line 148
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -327,17 +317,17 @@
         }
     .end annotation
 
-    .line 102
+    .line 103
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->cryptoPermissionInteractor:Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
 
     const/4 v1, 0x0
 
-    .line 103
+    .line 104
     invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;->getCryptoPrivacySettings(Z)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 104
+    .line 105
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -352,7 +342,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 105
+    .line 106
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -388,7 +378,7 @@
 .method private final loadPrivacySettings()V
     .locals 5
 
-    .line 68
+    .line 69
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->getWalletAddressSettingsObservable()Lio/reactivex/Observable;
 
     move-result-object v0
@@ -407,7 +397,7 @@
 
     move-result-object v0
 
-    .line 71
+    .line 72
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -420,10 +410,10 @@
 
     const-string v1, "zip(getWalletAddressSett\u2026(schedulersProvider.ui())"
 
-    .line 68
+    .line 69
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 72
+    .line 73
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -444,7 +434,7 @@
 
     move-result-object v0
 
-    .line 73
+    .line 74
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -481,7 +471,7 @@
 
     const/4 v1, 0x1
 
-    .line 82
+    .line 83
     invoke-static {p0, v0, v4, v1, v4}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -494,7 +484,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 69
     invoke-interface {p0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -533,7 +523,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 135
+    .line 136
     :goto_0
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -548,7 +538,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 137
+    .line 138
+    invoke-static {p1}, Lcom/iMe/utils/extentions/rx/SchedulersExtKt;->scheduleIO(Lio/reactivex/Observable;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 139
     new-instance v0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$saveAccountRankSettingsObservable$1;
 
     invoke-direct {v0, p0, p2}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$saveAccountRankSettingsObservable$1;-><init>(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;I)V
@@ -575,7 +570,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 137
+    .line 139
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -592,7 +587,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 46
+    .line 47
     invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void
@@ -614,7 +609,7 @@
         }
     .end annotation
 
-    .line 89
+    .line 90
     sget-object v0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$saveSettings$1;->INSTANCE:Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$saveSettings$1;
 
     new-instance v1, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$$ExternalSyntheticLambda2;
@@ -625,7 +620,7 @@
 
     move-result-object p1
 
-    .line 92
+    .line 93
     iget-object p2, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -638,10 +633,10 @@
 
     const-string p2, "zip(walletAddressObserva\u2026(schedulersProvider.ui())"
 
-    .line 89
+    .line 90
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 93
+    .line 94
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -662,7 +657,7 @@
 
     move-result-object p1
 
-    .line 94
+    .line 95
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -699,7 +694,7 @@
 
     const/4 p2, 0x1
 
-    .line 99
+    .line 100
     invoke-static {p0, p1, v2, p2, v2}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -712,7 +707,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 89
+    .line 90
     invoke-interface {p0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -742,7 +737,7 @@
 
     if-ne p3, p4, :cond_1
 
-    .line 118
+    .line 119
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -774,7 +769,7 @@
 
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 120
+    .line 121
     new-instance p3, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$saveWalletAddressSettingsObservable$1;
 
     invoke-direct {p3, p0, p4, p2}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$saveWalletAddressSettingsObservable$1;-><init>(Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;ILjava/util/ArrayList;)V
@@ -801,7 +796,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 120
+    .line 121
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -816,14 +811,14 @@
 .method protected onFirstViewAttach()V
     .locals 2
 
-    .line 57
+    .line 58
     iget v0, p0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->settingsType:I
 
     const/16 v1, 0x65
 
     if-ne v0, v1, :cond_0
 
-    .line 58
+    .line 59
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->loadPrivacySettings()V
 
     :cond_0
@@ -852,7 +847,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 39
     new-instance v0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$savePrivacySettings$action$1;
 
     move-object v1, v0
@@ -877,7 +872,7 @@
 
     if-nez p4, :cond_0
 
-    .line 46
+    .line 47
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -896,7 +891,7 @@
 
     goto :goto_0
 
-    .line 48
+    .line 49
     :cond_0
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 

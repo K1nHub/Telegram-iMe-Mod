@@ -20,7 +20,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.SimpleTextView;
@@ -61,7 +61,7 @@ public final class TopicProfileCell extends FrameLayout {
         lazy3 = LazyKt__LazyJVMKt.lazy(new TopicProfileCell$deleteImageView$2(this));
         this.deleteImageView$delegate = lazy3;
         this.currentAccount = UserConfig.selectedAccount;
-        addView(getTopicView(), LayoutHelper.createFrame(-2, -2, 19, 23, 0, 0, 0));
+        addView(getTopicView(), LayoutHelper.createFrame(-2, -2, 19, 16, 0, 0, 0));
         addView(getSelectTopicTextView(), LayoutHelper.createFrame(-2, -2, 19, 23, 0, 0, 0));
         addView(getDeleteImageView(), LayoutHelper.createFrame(48, 48, 21, 0, 0, 12, 0));
         setupListeners();
@@ -83,15 +83,15 @@ public final class TopicProfileCell extends FrameLayout {
     public final void setData(TopicModel topicModel) {
         List listOf;
         if (topicModel != null) {
-            ViewExtKt.visible(getTopicView());
-            ViewExtKt.invisible(getSelectTopicTextView());
+            ViewExtKt.visible$default(getTopicView(), false, 1, null);
+            ViewExtKt.invisible$default(getSelectTopicTextView(), false, 1, null);
             ImageView deleteImageView = getDeleteImageView();
             deleteImageView.setClickable(true);
-            deleteImageView.setBackground(Theme.createSelectorDrawable(Theme.getColor("stickers_menuSelector")));
+            deleteImageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector)));
             getTopicView().setTopic(topicModel, true);
         } else {
-            ViewExtKt.invisible(getTopicView());
-            ViewExtKt.visible(getSelectTopicTextView());
+            ViewExtKt.invisible$default(getTopicView(), false, 1, null);
+            ViewExtKt.visible$default(getSelectTopicTextView(), false, 1, null);
             ImageView deleteImageView2 = getDeleteImageView();
             deleteImageView2.setClickable(false);
             deleteImageView2.setBackground(null);
@@ -102,7 +102,7 @@ public final class TopicProfileCell extends FrameLayout {
         Property property = FrameLayout.TRANSLATION_X;
         float[] fArr = new float[1];
         float f = BitmapDescriptorFactory.HUE_RED;
-        fArr[0] = AndroidUtilities.m51dp(topicModel != null ? -48.0f : 0.0f);
+        fArr[0] = AndroidUtilities.m55dp(topicModel != null ? -48.0f : 0.0f);
         objectAnimatorArr[0] = ObjectAnimator.ofFloat(selectTopicTextView, property, fArr);
         SimpleTextView selectTopicTextView2 = getSelectTopicTextView();
         Property property2 = FrameLayout.ALPHA;
@@ -112,7 +112,7 @@ public final class TopicProfileCell extends FrameLayout {
         TopicView topicView = getTopicView();
         Property property3 = FrameLayout.TRANSLATION_X;
         float[] fArr3 = new float[1];
-        fArr3[0] = AndroidUtilities.m51dp(topicModel != null ? 0.0f : -48.0f);
+        fArr3[0] = AndroidUtilities.m55dp(topicModel != null ? 0.0f : -48.0f);
         objectAnimatorArr[2] = ObjectAnimator.ofFloat(topicView, property3, fArr3);
         TopicView topicView2 = getTopicView();
         Property property4 = FrameLayout.ALPHA;
@@ -137,19 +137,19 @@ public final class TopicProfileCell extends FrameLayout {
 
     public final void updateColors() {
         getTopicView().updateColors();
-        getSelectTopicTextView().setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        getDeleteImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor("switch2TrackChecked"), PorterDuff.Mode.SRC_IN));
+        getSelectTopicTextView().setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        getDeleteImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switch2TrackChecked), PorterDuff.Mode.SRC_IN));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initSelectTopicTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3242R.string.topics_select));
+        simpleTextView.setText(LocaleController.getInternalString(C3290R.string.topics_select));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }
@@ -158,7 +158,7 @@ public final class TopicProfileCell extends FrameLayout {
     public final ImageView initDeleteImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(C3242R.C3244drawable.fork_plus);
+        imageView.setImageResource(C3290R.C3292drawable.msg_add);
         return imageView;
     }
 

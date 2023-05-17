@@ -201,7 +201,7 @@ public final class AiBotsManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void rebuildActiveBotsList() {
-        Single<List<AigramBot>> observeOn = this.botsRepository.getActiveBotsList().subscribeOn(Schedulers.m674io()).observeOn(AndroidSchedulers.mainThread());
+        Single<List<AigramBot>> observeOn = this.botsRepository.getActiveBotsList().subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread());
         final AiBotsManager$rebuildActiveBotsList$1 aiBotsManager$rebuildActiveBotsList$1 = new AiBotsManager$rebuildActiveBotsList$1(this);
         Consumer<? super List<AigramBot>> consumer = new Consumer() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda30
             @Override // io.reactivex.functions.Consumer
@@ -232,7 +232,7 @@ public final class AiBotsManager {
 
     public final void sendAppInstalledEvent(final long j, final AppInstalledCallback callback) {
         Intrinsics.checkNotNullParameter(callback, "callback");
-        Completable subscribeOn = this.botsRepository.sendAppInstallEvent(j).subscribeOn(Schedulers.m674io());
+        Completable subscribeOn = this.botsRepository.sendAppInstallEvent(j).subscribeOn(Schedulers.m679io());
         Action action = new Action() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -263,7 +263,7 @@ public final class AiBotsManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void sendBotInstalledEvent(final String str, final long j) {
-        Completable subscribeOn = this.botsRepository.sendBotInstallEvent(str, j).subscribeOn(Schedulers.m674io());
+        Completable subscribeOn = this.botsRepository.sendBotInstallEvent(str, j).subscribeOn(Schedulers.m679io());
         Action action = new Action() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -293,7 +293,7 @@ public final class AiBotsManager {
 
     public final void sendBotRatingEvent(String botId, long j, int i) {
         Intrinsics.checkNotNullParameter(botId, "botId");
-        Single<Integer> subscribeOn = this.botsRepository.sendBotRating(botId, j, i).subscribeOn(Schedulers.m674io());
+        Single<Integer> subscribeOn = this.botsRepository.sendBotRating(botId, j, i).subscribeOn(Schedulers.m679io());
         final AiBotsManager$sendBotRatingEvent$1 aiBotsManager$sendBotRatingEvent$1 = new AiBotsManager$sendBotRatingEvent$1(botId, i, j);
         Consumer<? super Integer> consumer = new Consumer() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda17
             @Override // io.reactivex.functions.Consumer
@@ -474,7 +474,7 @@ public final class AiBotsManager {
 
     public final Observable<List<SmartBotCategory>> getCategories(String language) {
         Intrinsics.checkNotNullParameter(language, "language");
-        Single<QuerySnapshot> observeOn = this.botsRepository.getCategoriesInfo().subscribeOn(Schedulers.m674io()).observeOn(Schedulers.m674io());
+        Single<QuerySnapshot> observeOn = this.botsRepository.getCategoriesInfo().subscribeOn(Schedulers.m679io()).observeOn(Schedulers.m679io());
         final AiBotsManager$getCategories$1 aiBotsManager$getCategories$1 = new AiBotsManager$getCategories$1(this);
         Observable observable = observeOn.map(new Function() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda41
             @Override // io.reactivex.functions.Function
@@ -529,7 +529,7 @@ public final class AiBotsManager {
 
     public final void listenForRemoteBotUpdates(FirebaseSnapshotCallback callback) {
         Intrinsics.checkNotNullParameter(callback, "callback");
-        Observable<QuerySnapshot> observeOn = this.botsRepository.getRemoteBotUpdates().subscribeOn(Schedulers.m674io()).observeOn(Schedulers.m674io());
+        Observable<QuerySnapshot> observeOn = this.botsRepository.getRemoteBotUpdates().subscribeOn(Schedulers.m679io()).observeOn(Schedulers.m679io());
         final AiBotsManager$listenForRemoteBotUpdates$1 aiBotsManager$listenForRemoteBotUpdates$1 = new AiBotsManager$listenForRemoteBotUpdates$1(this, callback);
         Consumer<? super QuerySnapshot> consumer = new Consumer() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda31
             @Override // io.reactivex.functions.Consumer
@@ -566,7 +566,7 @@ public final class AiBotsManager {
             public final void run() {
                 AiBotsManager.handleChosenBotAnswer$lambda$28(botId, this, j, tag, i);
             }
-        }).subscribeOn(Schedulers.m674io());
+        }).subscribeOn(Schedulers.m679io());
         AiBotsManager$$ExternalSyntheticLambda12 aiBotsManager$$ExternalSyntheticLambda12 = AiBotsManager$$ExternalSyntheticLambda12.INSTANCE;
         final AiBotsManager$handleChosenBotAnswer$3 aiBotsManager$handleChosenBotAnswer$3 = AiBotsManager$handleChosenBotAnswer$3.INSTANCE;
         this.disposables.add(subscribeOn.subscribe(aiBotsManager$$ExternalSyntheticLambda12, new Consumer() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda29
@@ -597,7 +597,7 @@ public final class AiBotsManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void fetchTags() {
-        Single<QuerySnapshot> observeOn = this.botsRepository.getTagsInfo().subscribeOn(Schedulers.m674io()).observeOn(Schedulers.m674io());
+        Single<QuerySnapshot> observeOn = this.botsRepository.getTagsInfo().subscribeOn(Schedulers.m679io()).observeOn(Schedulers.m679io());
         final AiBotsManager$fetchTags$1 aiBotsManager$fetchTags$1 = new AiBotsManager$fetchTags$1(this);
         Consumer<? super QuerySnapshot> consumer = new Consumer() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda15
             @Override // io.reactivex.functions.Consumer
@@ -628,7 +628,7 @@ public final class AiBotsManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void fetchCategories() {
-        Single<QuerySnapshot> observeOn = this.botsRepository.getCategoriesInfo().subscribeOn(Schedulers.m674io()).observeOn(Schedulers.m674io());
+        Single<QuerySnapshot> observeOn = this.botsRepository.getCategoriesInfo().subscribeOn(Schedulers.m679io()).observeOn(Schedulers.m679io());
         final AiBotsManager$fetchCategories$1 aiBotsManager$fetchCategories$1 = new AiBotsManager$fetchCategories$1(this);
         Consumer<? super QuerySnapshot> consumer = new Consumer() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda23
             @Override // io.reactivex.functions.Consumer
@@ -664,7 +664,7 @@ public final class AiBotsManager {
 
     public final void downloadPurchase(String sku, long j) {
         Intrinsics.checkNotNullParameter(sku, "sku");
-        Single<BotsDbModel> observeOn = this.botsRepository.getBotBySku(sku).subscribeOn(Schedulers.m674io()).observeOn(Schedulers.m674io());
+        Single<BotsDbModel> observeOn = this.botsRepository.getBotBySku(sku).subscribeOn(Schedulers.m679io()).observeOn(Schedulers.m679io());
         final AiBotsManager$downloadPurchase$1 aiBotsManager$downloadPurchase$1 = new AiBotsManager$downloadPurchase$1(this, j);
         Consumer<? super BotsDbModel> consumer = new Consumer() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda24
             @Override // io.reactivex.functions.Consumer
@@ -714,7 +714,7 @@ public final class AiBotsManager {
 
     public final void disableBot(final String botId) {
         Intrinsics.checkNotNullParameter(botId, "botId");
-        Completable observeOn = updateBotStatus(botId, BotStatus.DISABLED).subscribeOn(Schedulers.m674io()).observeOn(AndroidSchedulers.mainThread());
+        Completable observeOn = updateBotStatus(botId, BotStatus.DISABLED).subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread());
         Action action = new Action() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -758,7 +758,7 @@ public final class AiBotsManager {
             public final void accept(Object obj) {
                 AiBotsManager.startBotDownloading$lambda$45(Function1.this, obj);
             }
-        }).subscribeOn(Schedulers.m674io()).observeOn(Schedulers.m674io());
+        }).subscribeOn(Schedulers.m679io()).observeOn(Schedulers.m679io());
         Action action = new Action() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -822,7 +822,7 @@ public final class AiBotsManager {
         String absolutePath = file != null ? file.getAbsolutePath() : null;
         String absolutePath2 = this.destinationPath.getAbsolutePath();
         Intrinsics.checkNotNullExpressionValue(absolutePath2, "destinationPath.absolutePath");
-        Completable subscribeOn = unzip(absolutePath, absolutePath2).subscribeOn(Schedulers.m674io());
+        Completable subscribeOn = unzip(absolutePath, absolutePath2).subscribeOn(Schedulers.m679io());
         DownloadSession downloadSession2 = this.downloads.get(Long.valueOf(j));
         if (downloadSession2 == null || (botId = downloadSession2.getBotId()) == null || (complete = this.botsRepository.updateRemoteBotHash(botId)) == null) {
             complete = Completable.complete();
@@ -869,7 +869,7 @@ public final class AiBotsManager {
             public final void run() {
                 file.delete();
             }
-        }).subscribeOn(Schedulers.m674io()).observeOn(AndroidSchedulers.mainThread());
+        }).subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread());
         Action action = new Action() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -927,7 +927,7 @@ public final class AiBotsManager {
         while (it.hasNext()) {
             this.downloadManager.remove(it.next().getKey().longValue());
         }
-        Completable doFinally = this.botsRepository.resetDownloads().subscribeOn(Schedulers.m674io()).observeOn(AndroidSchedulers.mainThread()).doFinally(new Action() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda10
+        Completable doFinally = this.botsRepository.resetDownloads().subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread()).doFinally(new Action() { // from class: com.iMe.bots.usecase.AiBotsManager$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Action
             public final void run() {
                 AiBotsManager.cleanDownloads$lambda$59(Function0.this);

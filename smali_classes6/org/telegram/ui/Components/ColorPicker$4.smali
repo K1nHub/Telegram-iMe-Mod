@@ -138,11 +138,11 @@
 
     const/4 v4, -0x1
 
-    invoke-static {v2, v3, v4}, Lorg/telegram/ui/Components/ColorPicker;->access$200(Lorg/telegram/ui/Components/ColorPicker;II)I
+    invoke-static {v2, v3, v4}, Lorg/telegram/ui/Components/ColorPicker;->access$300(Lorg/telegram/ui/Components/ColorPicker;II)I
 
     move-result v3
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ColorPicker;->access$300(Lorg/telegram/ui/Components/ColorPicker;I)V
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ColorPicker;->access$400(Lorg/telegram/ui/Components/ColorPicker;I)V
 
     .line 356
     iget-object v2, p0, Lorg/telegram/ui/Components/ColorPicker$4;->this$0:Lorg/telegram/ui/Components/ColorPicker;
@@ -222,7 +222,7 @@
     .line 359
     iget-object v3, p0, Lorg/telegram/ui/Components/ColorPicker$4;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/ColorPicker;->access$000(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    invoke-static {v3}, Lorg/telegram/ui/Components/ColorPicker;->access$100(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v3
 
@@ -240,13 +240,13 @@
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$4;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$400(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/ColorPicker$RadioButton;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$500(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/ColorPicker$RadioButton;
 
     move-result-object p1
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ColorPicker$4;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/ColorPicker;->access$500(Lorg/telegram/ui/Components/ColorPicker;)I
+    invoke-static {v3}, Lorg/telegram/ui/Components/ColorPicker;->access$600(Lorg/telegram/ui/Components/ColorPicker;)I
 
     move-result v3
 
@@ -257,13 +257,13 @@
     .line 362
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$4;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$600(Lorg/telegram/ui/Components/ColorPicker;)Lorg/telegram/ui/Components/ColorPicker$ColorPickerDelegate;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$700(Lorg/telegram/ui/Components/ColorPicker;)Lorg/telegram/ui/Components/ColorPicker$ColorPickerDelegate;
 
     move-result-object p1
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ColorPicker$4;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/ColorPicker;->access$500(Lorg/telegram/ui/Components/ColorPicker;)I
+    invoke-static {v3}, Lorg/telegram/ui/Components/ColorPicker;->access$600(Lorg/telegram/ui/Components/ColorPicker;)I
 
     move-result v3
 

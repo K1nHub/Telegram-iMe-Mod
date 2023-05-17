@@ -52,11 +52,11 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
     public final void validatePin(String pin) {
         Intrinsics.checkNotNullParameter(pin, "pin");
         if (isValidPinCode(pin)) {
-            Observable observeOn = PinCodeInteractor.readPasswordByPinCode$default(this.pinCodeInteractor, pin, null, this.screenType == EnterPinCodeScreenType.TOTAL_LOCK, 2, null).observeOn(this.schedulersProvider.mo693ui());
+            Observable observeOn = PinCodeInteractor.readPasswordByPinCode$default(this.pinCodeInteractor, pin, null, this.screenType == EnterPinCodeScreenType.TOTAL_LOCK, 2, null).observeOn(this.schedulersProvider.mo698ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "pinCodeInteractor\n      …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog(observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2129x3ca87642(this, pin)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2130x3ca87643((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog(observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2168x3ca87642(this, pin)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2169x3ca87643((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }

@@ -151,10 +151,10 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet;->shadow:Landroid/view/View;
 
-    const-string v0, "dialogShadowLine"
-
     .line 198
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -260,9 +260,9 @@
     .line 219
     iget-object p2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const-string p3, "dialogScrollGlow"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
 
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 
@@ -329,9 +329,9 @@
     .line 235
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet;->titleTextView:Landroid/widget/TextView;
 
-    const-string p2, "dialogTextBlack"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -347,9 +347,9 @@
     .line 237
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet;->titleTextView:Landroid/widget/TextView;
 
-    const-string p2, "dialogTextLink"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -358,9 +358,9 @@
     .line 238
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet;->titleTextView:Landroid/widget/TextView;
 
-    const-string p2, "dialogLinkSelection"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogLinkSelection:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -609,22 +609,22 @@
     return p0
 .end method
 
-.method static synthetic access$2300(Lorg/telegram/ui/Components/FiltersListBottomSheet;Ljava/lang/String;)I
+.method static synthetic access$2300(Lorg/telegram/ui/Components/FiltersListBottomSheet;I)I
     .locals 0
 
     .line 44
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$2400(Lorg/telegram/ui/Components/FiltersListBottomSheet;Ljava/lang/String;)I
+.method static synthetic access$2400(Lorg/telegram/ui/Components/FiltersListBottomSheet;I)I
     .locals 0
 
     .line 44
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 

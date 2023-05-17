@@ -42,7 +42,7 @@
 .method public constructor <init>(ZLokio/BufferedSink;Ljava/util/Random;ZZJ)V
     .locals 1
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

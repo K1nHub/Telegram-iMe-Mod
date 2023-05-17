@@ -2,54 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# instance fields
-.field public final synthetic f$0:J
-
-.field public final synthetic f$1:Ljava/util/Calendar;
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:I
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;
 
 
 # direct methods
-.method public synthetic constructor <init>(JLjava/util/Calendar;II)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->f$0:J
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->f$1:Ljava/util/Calendar;
-
-    iput p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->f$2:I
-
-    iput p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->f$3:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final format(I)Ljava/lang/String;
-    .locals 6
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
 
-    iget-wide v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->f$0:J
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$25yq_HNxDeIzDiB1Vk7tVyZqvQw(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->f$1:Ljava/util/Calendar;
-
-    iget v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->f$2:I
-
-    iget v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda137;->f$3:I
-
-    move v5, p1
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$PiwgtxujT3K83EGDdKjCu5jW0gw(JLjava/util/Calendar;III)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

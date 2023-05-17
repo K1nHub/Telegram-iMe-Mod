@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.chunk;
 
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
@@ -77,14 +77,14 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         this.endTimeUs = j2;
         if (!this.extractorInitialized) {
             this.extractor.init(this);
-            if (j != C0470C.TIME_UNSET) {
+            if (j != C0475C.TIME_UNSET) {
                 this.extractor.seek(0L, j);
             }
             this.extractorInitialized = true;
             return;
         }
         Extractor extractor = this.extractor;
-        if (j == C0470C.TIME_UNSET) {
+        if (j == C0475C.TIME_UNSET) {
             j = 0;
         }
         extractor.seek(0L, j);
@@ -137,7 +137,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         private final DummyTrackOutput fakeTrackOutput = new DummyTrackOutput();
 
         /* renamed from: id */
-        private final int f125id;
+        private final int f128id;
         private final Format manifestFormat;
         public Format sampleFormat;
         private TrackOutput trackOutput;
@@ -156,7 +156,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         }
 
         public BindingTrackOutput(int i, int i2, Format format) {
-            this.f125id = i;
+            this.f128id = i;
             this.type = i2;
             this.manifestFormat = format;
         }
@@ -167,7 +167,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
                 return;
             }
             this.endTimeUs = j;
-            TrackOutput track = trackOutputProvider.track(this.f125id, this.type);
+            TrackOutput track = trackOutputProvider.track(this.f128id, this.type);
             this.trackOutput = track;
             Format format = this.sampleFormat;
             if (format != null) {
@@ -198,7 +198,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         @Override // com.google.android.exoplayer2.extractor.TrackOutput
         public void sampleMetadata(long j, int i, int i2, int i3, TrackOutput.CryptoData cryptoData) {
             long j2 = this.endTimeUs;
-            if (j2 != C0470C.TIME_UNSET && j >= j2) {
+            if (j2 != C0475C.TIME_UNSET && j >= j2) {
                 this.trackOutput = this.fakeTrackOutput;
             }
             ((TrackOutput) Util.castNonNull(this.trackOutput)).sampleMetadata(j, i, i2, i3, cryptoData);

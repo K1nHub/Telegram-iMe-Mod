@@ -28,7 +28,7 @@ public class OpenChatReceiver extends Activity {
                 startActivity(intent2);
                 finish();
             } catch (Throwable th) {
-                FileLog.m45e(th);
+                FileLog.m49e(th);
             }
         }
     }

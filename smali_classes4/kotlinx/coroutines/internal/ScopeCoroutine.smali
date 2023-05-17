@@ -116,6 +116,29 @@
     return-object v0
 .end method
 
+.method public final getParent$kotlinx_coroutines_core()Lkotlinx/coroutines/Job;
+    .locals 1
+
+    .line 24
+    invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getParentHandle$kotlinx_coroutines_core()Lkotlinx/coroutines/ChildHandle;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Lkotlinx/coroutines/ChildHandle;->getParent()Lkotlinx/coroutines/Job;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+.end method
+
 .method public final getStackTraceElement()Ljava/lang/StackTraceElement;
     .locals 1
 

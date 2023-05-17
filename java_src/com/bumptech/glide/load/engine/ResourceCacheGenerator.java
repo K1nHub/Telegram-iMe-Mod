@@ -14,7 +14,7 @@ public class ResourceCacheGenerator implements DataFetcherGenerator, DataFetcher
     private File cacheFile;
 
     /* renamed from: cb */
-    private final DataFetcherGenerator.FetcherReadyCallback f86cb;
+    private final DataFetcherGenerator.FetcherReadyCallback f89cb;
     private ResourceCacheKey currentKey;
     private final DecodeHelper<?> helper;
     private volatile ModelLoader.LoadData<?> loadData;
@@ -27,7 +27,7 @@ public class ResourceCacheGenerator implements DataFetcherGenerator, DataFetcher
     /* JADX INFO: Access modifiers changed from: package-private */
     public ResourceCacheGenerator(DecodeHelper<?> decodeHelper, DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback) {
         this.helper = decodeHelper;
-        this.f86cb = fetcherReadyCallback;
+        this.f89cb = fetcherReadyCallback;
     }
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator
@@ -101,11 +101,11 @@ public class ResourceCacheGenerator implements DataFetcherGenerator, DataFetcher
 
     @Override // com.bumptech.glide.load.data.DataFetcher.DataCallback
     public void onDataReady(Object obj) {
-        this.f86cb.onDataFetcherReady(this.sourceKey, obj, this.loadData.fetcher, DataSource.RESOURCE_DISK_CACHE, this.currentKey);
+        this.f89cb.onDataFetcherReady(this.sourceKey, obj, this.loadData.fetcher, DataSource.RESOURCE_DISK_CACHE, this.currentKey);
     }
 
     @Override // com.bumptech.glide.load.data.DataFetcher.DataCallback
     public void onLoadFailed(Exception exc) {
-        this.f86cb.onDataFetcherFailed(this.currentKey, exc, this.loadData.fetcher, DataSource.RESOURCE_DISK_CACHE);
+        this.f89cb.onDataFetcherFailed(this.currentKey, exc, this.loadData.fetcher, DataSource.RESOURCE_DISK_CACHE);
     }
 }

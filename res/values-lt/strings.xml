@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Palieskite, kad perjungtumėte į dienos pasirinkimą</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Perjungti į teksto įvesties režimą</string>
     <string name="mtrl_picker_toggle_to_year_selection">Palieskite, kad perjungtumėte į metų pasirinkimą</string>
+    <string name="nav_app_bar_navigate_up_description">Naršyti aukštyn</string>
+    <string name="nav_app_bar_open_drawer_description">Atidaryti naršymo juostą</string>
     <string name="password_toggle_content_description">Rodyti slaptažodį</string>
     <string name="search_menu_title">Ieškoti</string>
     <string name="status_bar_notification_info_overflow">999+</string>

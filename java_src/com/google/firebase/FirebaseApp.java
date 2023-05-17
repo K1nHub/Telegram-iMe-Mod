@@ -171,7 +171,7 @@ public class FirebaseApp {
         this.applicationContext = (Context) Preconditions.checkNotNull(context);
         this.name = Preconditions.checkNotEmpty(str);
         this.options = (FirebaseOptions) Preconditions.checkNotNull(firebaseOptions);
-        this.componentRuntime = ComponentRuntime.builder(UI_EXECUTOR).addLazyComponentRegistrars(ComponentDiscovery.forContext(context, ComponentDiscoveryService.class).discoverLazy()).addComponentRegistrar(new FirebaseCommonRegistrar()).addComponent(Component.m726of(context, Context.class, new Class[0])).addComponent(Component.m726of(this, FirebaseApp.class, new Class[0])).addComponent(Component.m726of(firebaseOptions, FirebaseOptions.class, new Class[0])).build();
+        this.componentRuntime = ComponentRuntime.builder(UI_EXECUTOR).addLazyComponentRegistrars(ComponentDiscovery.forContext(context, ComponentDiscoveryService.class).discoverLazy()).addComponentRegistrar(new FirebaseCommonRegistrar()).addComponent(Component.m730of(context, Context.class, new Class[0])).addComponent(Component.m730of(this, FirebaseApp.class, new Class[0])).addComponent(Component.m730of(firebaseOptions, FirebaseOptions.class, new Class[0])).build();
         this.dataCollectionConfigStorage = new Lazy<>(new Provider() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Provider
             public final Object get() {

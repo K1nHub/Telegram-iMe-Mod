@@ -3,12 +3,12 @@
 .source "DialogsActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->showDisablePopup(Landroid/view/View;)V
+    value = Lorg/telegram/ui/DialogsActivity;->openQrCodeScan()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,84 +18,99 @@
 
 
 # instance fields
-.field private final popupRect:Landroid/graphics/Rect;
-
-.field final synthetic val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+.field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 623
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$1;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    .line 612
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$1;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 625
-    new-instance p1, Landroid/graphics/Rect;
-
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$1;->popupRect:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public synthetic didFindMrzInfo(Lorg/telegram/messenger/MrzRecognizer$Result;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate$-CC;->$default$didFindMrzInfo(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;Lorg/telegram/messenger/MrzRecognizer$Result;)V
+
+    return-void
+.end method
+
+.method public didFindQr(Ljava/lang/String;)V
+    .locals 3
+
+    .line 615
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$1;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$100(Lorg/telegram/ui/DialogsActivity;)I
+
+    move-result v0
+
+    sget v1, Lcom/iMe/common/IdFabric$CustomType;->QR_CODE_SCANNER_CHAT_LINK:I
+
+    if-ne v0, v1, :cond_0
+
+    .line 616
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$1;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->closeSearchField()V
+
+    .line 617
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$1;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, p1, v1, v2}, Lorg/telegram/ui/Components/AlertsCreator;->showOpenUrlAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;ZZ)V
+
+    goto :goto_0
+
+    .line 619
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$1;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/DialogsActivity;->processQr(Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+.end method
+
+.method public synthetic getSubtitleText()Ljava/lang/String;
     .locals 1
 
-    .line 629
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
+    invoke-static {p0}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate$-CC;->$default$getSubtitleText(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v0
 
-    if-nez v0, :cond_0
+    return-object v0
+.end method
 
-    .line 630
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$1;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+.method public synthetic onDismiss()V
+    .locals 0
 
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
+    invoke-static {p0}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate$-CC;->$default$onDismiss(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;)V
 
-    move-result v0
+    return-void
+.end method
 
-    if-eqz v0, :cond_0
+.method public synthetic processQr(Ljava/lang/String;Ljava/lang/Runnable;)Z
+    .locals 0
 
-    .line 631
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$1;->popupRect:Landroid/graphics/Rect;
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
-
-    .line 632
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$1;->popupRect:Landroid/graphics/Rect;
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
-
-    move-result p2
-
-    float-to-int p2, p2
-
-    invoke-virtual {p1, v0, p2}, Landroid/graphics/Rect;->contains(II)Z
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate$-CC;->$default$processQr(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;Ljava/lang/String;Ljava/lang/Runnable;)Z
 
     move-result p1
-
-    if-nez p1, :cond_0
-
-    .line 633
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$1;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
-
-    :cond_0
-    const/4 p1, 0x0
 
     return p1
 .end method

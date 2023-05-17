@@ -57,7 +57,7 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
         if (flowItemCount == 0) {
             return;
         }
-        int m50dp = AndroidUtilities.m50dp(100);
+        int m54dp = AndroidUtilities.m54dp(100);
         int spanCount = getSpanCount();
         int i4 = (this.lastRowFullWidth ? 1 : 0) + flowItemCount;
         int i5 = 0;
@@ -76,7 +76,7 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
                     i2 = i6 != 0 ? 1 : i3;
                     i = spanCount;
                 } else {
-                    int min = Math.min(spanCount, (int) Math.floor(spanCount * (((sizeForItem.width / sizeForItem.height) * m50dp) / f2)));
+                    int min = Math.min(spanCount, (int) Math.floor(spanCount * (((sizeForItem.width / sizeForItem.height) * m54dp) / f2)));
                     i = min;
                     i2 = (i7 < min || (min > 33 && i7 < min + (-15))) ? 1 : i3;
                 }

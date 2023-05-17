@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field private final buttonDefaultColor:Ljava/lang/String;
+.field private final buttonDefaultColor:I
 
-.field private final buttonPressedColor:Ljava/lang/String;
+.field private final buttonPressedColor:I
 
-.field private final buttonTextColor:Ljava/lang/String;
+.field private final buttonTextColor:I
 
-.field private final iconCircleColor:Ljava/lang/String;
+.field private final iconCircleColor:I
 
-.field private final iconColor:Ljava/lang/String;
+.field private final iconColor:I
 
 .field private final noPermissionImageView$delegate:Lkotlin/Lazy;
 
@@ -22,9 +22,9 @@
 
 .field private final requestButton$delegate:Lkotlin/Lazy;
 
-.field private final subtitleColor:Ljava/lang/String;
+.field private final subtitleColor:I
 
-.field private final titleColor:Ljava/lang/String;
+.field private final titleColor:I
 
 
 # direct methods
@@ -82,40 +82,40 @@
 
     iput-object p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->requestButton$delegate:Lkotlin/Lazy;
 
-    const-string p1, "chats_actionIcon"
-
     .line 70
-    iput-object p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconColor:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionIcon:I
 
-    const-string p1, "chats_actionBackground"
+    iput p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconColor:I
 
     .line 71
-    iput-object p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconCircleColor:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    const-string p1, "chats_nameMessage_threeLines"
+    iput p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconCircleColor:I
 
     .line 72
-    iput-object p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->titleColor:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_nameMessage_threeLines:I
 
-    const-string p1, "chats_message"
+    iput p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->titleColor:I
 
     .line 73
-    iput-object p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->subtitleColor:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
 
-    const-string p1, "featuredStickers_buttonText"
+    iput p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->subtitleColor:I
 
     .line 74
-    iput-object p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonTextColor:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    const-string p1, "featuredStickers_addButton"
+    iput p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonTextColor:I
 
     .line 75
-    iput-object p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonDefaultColor:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    const-string p1, "featuredStickers_addButtonPressed"
+    iput p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonDefaultColor:I
 
     .line 76
-    iput-object p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonPressedColor:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
+
+    iput p1, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonPressedColor:I
 
     const/16 p1, 0x11
 
@@ -202,67 +202,67 @@
     return-void
 .end method
 
-.method public static final synthetic access$getButtonDefaultColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+.method public static final synthetic access$getButtonDefaultColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
     .locals 0
 
     .line 24
-    iget-object p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonDefaultColor:Ljava/lang/String;
+    iget p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonDefaultColor:I
 
-    return-object p0
+    return p0
 .end method
 
-.method public static final synthetic access$getButtonPressedColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+.method public static final synthetic access$getButtonPressedColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
     .locals 0
 
     .line 24
-    iget-object p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonPressedColor:Ljava/lang/String;
+    iget p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonPressedColor:I
 
-    return-object p0
+    return p0
 .end method
 
-.method public static final synthetic access$getButtonTextColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+.method public static final synthetic access$getButtonTextColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
     .locals 0
 
     .line 24
-    iget-object p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonTextColor:Ljava/lang/String;
+    iget p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonTextColor:I
 
-    return-object p0
+    return p0
 .end method
 
-.method public static final synthetic access$getIconCircleColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+.method public static final synthetic access$getIconCircleColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
     .locals 0
 
     .line 24
-    iget-object p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconCircleColor:Ljava/lang/String;
+    iget p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconCircleColor:I
 
-    return-object p0
+    return p0
 .end method
 
-.method public static final synthetic access$getIconColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+.method public static final synthetic access$getIconColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
     .locals 0
 
     .line 24
-    iget-object p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconColor:Ljava/lang/String;
+    iget p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconColor:I
 
-    return-object p0
+    return p0
 .end method
 
-.method public static final synthetic access$getSubtitleColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+.method public static final synthetic access$getSubtitleColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
     .locals 0
 
     .line 24
-    iget-object p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->subtitleColor:Ljava/lang/String;
+    iget p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->subtitleColor:I
 
-    return-object p0
+    return p0
 .end method
 
-.method public static final synthetic access$getTitleColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)Ljava/lang/String;
+.method public static final synthetic access$getTitleColor$p(Lcom/iMe/ui/music/NoPermissionMusicCell;)I
     .locals 0
 
     .line 24
-    iget-object p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->titleColor:Ljava/lang/String;
+    iget p0, p0, Lcom/iMe/ui/music/NoPermissionMusicCell;->titleColor:I
 
-    return-object p0
+    return p0
 .end method
 
 .method private final getNoPermissionImageView()Landroid/widget/ImageView;
@@ -353,7 +353,7 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
 
-    iget-object v9, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconColor:Ljava/lang/String;
+    iget v9, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconColor:I
 
     const/4 v5, 0x0
 
@@ -365,7 +365,7 @@
 
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v2, 0x0
 
@@ -380,7 +380,7 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    iget-object v3, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconCircleColor:Ljava/lang/String;
+    iget v3, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->iconCircleColor:I
 
     const/4 v14, 0x0
 
@@ -392,9 +392,9 @@
 
     move-object v11, v2
 
-    move-object/from16 v18, v3
+    move/from16 v18, v3
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x1
 
@@ -409,7 +409,7 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    iget-object v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->titleColor:Ljava/lang/String;
+    iget v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->titleColor:I
 
     const/4 v9, 0x0
 
@@ -417,7 +417,7 @@
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x2
 
@@ -432,11 +432,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    iget-object v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->subtitleColor:Ljava/lang/String;
+    iget v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->subtitleColor:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x3
 
@@ -451,11 +451,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    iget-object v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonTextColor:Ljava/lang/String;
+    iget v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonTextColor:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x4
 
@@ -470,11 +470,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    iget-object v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonDefaultColor:Ljava/lang/String;
+    iget v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonDefaultColor:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x5
 
@@ -493,11 +493,11 @@
 
     or-int v6, v3, v4
 
-    iget-object v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonPressedColor:Ljava/lang/String;
+    iget v11, v0, Lcom/iMe/ui/music/NoPermissionMusicCell;->buttonPressedColor:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x6
 

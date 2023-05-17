@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/PhotoViewer$63;
-.super Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PhotoViewer.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PhotoViewer;->createPaintView()V
+    value = Lorg/telegram/ui/PhotoViewer;->toggleActionBar(ZZLorg/telegram/ui/PhotoViewer$ActionBarToggleParams;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,166 +17,137 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/PhotoViewer;
 
+.field final synthetic val$finalShow:Z
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;ILjava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 11
+.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Z)V
+    .locals 0
 
-    move-object v10, p0
+    .line 11542
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    move-object v0, p1
+    iput-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$63;->val$finalShow:Z
 
-    .line 10669
-    iput-object v0, v10, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move v2, p3
-
-    move-object v3, p4
-
-    move-object/from16 v4, p5
-
-    move/from16 v5, p6
-
-    move-object/from16 v6, p7
-
-    move-object/from16 v7, p8
-
-    move-object/from16 v8, p9
-
-    move-object/from16 v9, p10
-
-    invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;-><init>(Landroid/content/Context;ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;ILjava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected didSetAnimatedSticker(Lorg/telegram/ui/Components/RLottieDrawable;)V
-    .locals 6
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 10686
+    .line 11561
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$27700(Lorg/telegram/ui/PhotoViewer;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    return-void
+    move-result p1
 
-    .line 10689
+    if-eqz p1, :cond_0
+
+    .line 11562
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$27702(Lorg/telegram/ui/PhotoViewer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getCurrentPosition()J
-
-    move-result-wide v0
-
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$27300(Lorg/telegram/ui/PhotoViewer;)J
-
-    move-result-wide v2
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_1
-
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$27300(Lorg/telegram/ui/PhotoViewer;)J
-
-    move-result-wide v2
-
-    const-wide/16 v4, 0x3e8
-
-    div-long v4, v2, v4
-
-    :cond_1
-    sub-long/2addr v0, v4
-
-    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setProgressMs(J)V
-
     return-void
 .end method
 
-.method protected onOpenCloseStickersAlert(Z)V
-    .locals 2
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 10672
+    .line 11545
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$27700(Lorg/telegram/ui/PhotoViewer;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    return-void
+    move-result p1
 
-    .line 10675
+    if-eqz p1, :cond_2
+
+    .line 11546
+    iget-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$63;->val$finalShow:Z
+
+    if-nez p1, :cond_1
+
+    .line 11547
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$7600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object p1
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 11548
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$9600(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 11549
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$9600(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 11551
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    const/4 v1, 0x0
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$9500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$2502(Lorg/telegram/ui/PhotoViewer;Z)Z
+    move-result-object p1
 
-    .line 10676
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
+    invoke-virtual {p1}, Landroid/widget/ViewSwitcher;->getTag()Ljava/lang/Object;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$2600(Lorg/telegram/ui/PhotoViewer;)V
+    move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 10678
+    .line 11552
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$9500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->setVisibility(I)V
 
-    goto :goto_0
-
-    .line 10680
+    .line 11555
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
+    const/4 v0, 0x0
 
-    move-result-object p1
+    invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$27702(Lorg/telegram/ui/PhotoViewer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
-
-    :goto_0
-    return-void
-.end method
-
-.method protected onTextAdd()V
-    .locals 1
-
-    .line 10694
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$63;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6100(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/FrameLayout;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->isFocusable()Z
-
+    :cond_2
     return-void
 .end method

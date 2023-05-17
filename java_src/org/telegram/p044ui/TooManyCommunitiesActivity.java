@@ -23,14 +23,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.EmptyCell;
@@ -71,7 +71,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
     private ArrayList<TLRPC$Chat> inactiveChats = new ArrayList<>();
     private ArrayList<String> inactiveChatsSignatures = new ArrayList<>();
     private Set<Long> selectedIds = new HashSet();
-    private int buttonHeight = AndroidUtilities.m50dp(64);
+    private int buttonHeight = AndroidUtilities.m54dp(64);
     Runnable showProgressRunnable = new Runnable() { // from class: org.telegram.ui.TooManyCommunitiesActivity.1
         @Override // java.lang.Runnable
         public void run() {
@@ -100,11 +100,11 @@ public class TooManyCommunitiesActivity extends BaseFragment {
         if (view instanceof GroupCreateUserCell) {
             GroupCreateUserCell groupCreateUserCell = (GroupCreateUserCell) view;
             TLRPC$Chat tLRPC$Chat = (TLRPC$Chat) groupCreateUserCell.getObject();
-            if (this.selectedIds.contains(Long.valueOf(tLRPC$Chat.f1427id))) {
-                this.selectedIds.remove(Long.valueOf(tLRPC$Chat.f1427id));
+            if (this.selectedIds.contains(Long.valueOf(tLRPC$Chat.f1433id))) {
+                this.selectedIds.remove(Long.valueOf(tLRPC$Chat.f1433id));
                 groupCreateUserCell.setChecked(false, true);
             } else {
-                this.selectedIds.add(Long.valueOf(tLRPC$Chat.f1427id));
+                this.selectedIds.add(Long.valueOf(tLRPC$Chat.f1433id));
                 groupCreateUserCell.setChecked(true, true);
             }
             onSelectedCountChange();
@@ -135,18 +135,18 @@ public class TooManyCommunitiesActivity extends BaseFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.type = this.arguments.getInt(SessionDescription.ATTR_TYPE, 0);
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("LimitReached", C3242R.string.LimitReached));
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.TooManyCommunitiesActivity.2
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("LimitReached", C3290R.string.LimitReached));
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.TooManyCommunitiesActivity.2
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TooManyCommunitiesActivity.this.finishFragment();
                 }
             }
         });
-        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3242R.C3244drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity.3
+        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3290R.C3292drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity.3
             boolean expanded = false;
 
             @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
@@ -193,7 +193,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
                 }
             }
         });
-        int i = C3242R.string.Search;
+        int i = C3290R.string.Search;
         actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", i));
         actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", i));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -228,7 +228,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView;
         emptyTextProgressView.setShowAtCenter(true);
-        this.emptyView.setText(LocaleController.getString("NoResult", C3242R.string.NoResult));
+        this.emptyView.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
         this.emptyView.showTextView();
         RadialProgressView radialProgressView = new RadialProgressView(context);
         this.progressBar = radialProgressView;
@@ -243,7 +243,9 @@ public class TooManyCommunitiesActivity extends BaseFragment {
         this.searchViewContainer.setVisibility(8);
         frameLayout.addView(this.searchViewContainer);
         loadInactiveChannels();
-        this.fragmentView.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        View view = this.fragmentView;
+        int i2 = Theme.key_windowBackgroundWhite;
+        view.setBackgroundColor(Theme.getColor(i2));
         FrameLayout frameLayout3 = new FrameLayout(this, context) { // from class: org.telegram.ui.TooManyCommunitiesActivity.5
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
@@ -255,19 +257,19 @@ public class TooManyCommunitiesActivity extends BaseFragment {
         frameLayout3.setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.buttonTextView = textView;
-        textView.setTextColor(Theme.getColor("featuredStickers_buttonText"));
+        textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         this.buttonTextView.setGravity(17);
         this.buttonTextView.setTextSize(1, 14.0f);
         this.buttonTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.buttonTextView.setBackground(Theme.AdaptiveRipple.filledRect("featuredStickers_addButton", 4.0f));
+        this.buttonTextView.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 4.0f));
         frameLayout.addView(this.buttonLayout, LayoutHelper.createFrame(-1, 64, 80));
-        this.buttonLayout.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        this.buttonLayout.setBackgroundColor(Theme.getColor(i2));
         this.buttonLayout.addView(this.buttonTextView, LayoutHelper.createFrame(-1, -1, 0, 16, 12, 16, 12));
         this.buttonLayout.setVisibility(8);
         this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                TooManyCommunitiesActivity.this.lambda$createView$2(view);
+            public final void onClick(View view2) {
+                TooManyCommunitiesActivity.this.lambda$createView$2(view2);
             }
         });
         return this.fragmentView;
@@ -281,14 +283,14 @@ public class TooManyCommunitiesActivity extends BaseFragment {
         TLRPC$User user = getMessagesController().getUser(Long.valueOf(getUserConfig().getClientUserId()));
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < this.inactiveChats.size(); i++) {
-            if (this.selectedIds.contains(Long.valueOf(this.inactiveChats.get(i).f1427id))) {
+            if (this.selectedIds.contains(Long.valueOf(this.inactiveChats.get(i).f1433id))) {
                 arrayList.add(this.inactiveChats.get(i));
             }
         }
         for (int i2 = 0; i2 < arrayList.size(); i2++) {
             TLRPC$Chat tLRPC$Chat = (TLRPC$Chat) arrayList.get(i2);
             getMessagesController().putChat(tLRPC$Chat, false);
-            getMessagesController().deleteParticipantFromChat(tLRPC$Chat.f1427id, user);
+            getMessagesController().deleteParticipantFromChat(tLRPC$Chat.f1433id, user);
         }
         finishFragment();
     }
@@ -311,7 +313,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
             if ((findLastVisibleItemPosition == recyclerListView.getAdapter().getItemCount() - 1 || (findLastVisibleItemPosition == recyclerListView.getAdapter().getItemCount() - 2 && recyclerListView == this.listView)) && (findViewHolderForAdapterPosition = recyclerListView.findViewHolderForAdapterPosition(findLastVisibleItemPosition)) != null) {
                 int bottom = findViewHolderForAdapterPosition.itemView.getBottom();
                 if (findLastVisibleItemPosition == this.adapter.getItemCount() - 2) {
-                    bottom += AndroidUtilities.m50dp(12);
+                    bottom += AndroidUtilities.m54dp(12);
                 }
                 if (recyclerListView.getMeasuredHeight() - bottom <= this.buttonHeight) {
                     recyclerListView.setTranslationY(-(recyclerListView.getMeasuredHeight() - bottom));
@@ -332,13 +334,13 @@ public class TooManyCommunitiesActivity extends BaseFragment {
                     TooManyCommunitiesActivity.this.buttonAnimation = 0;
                 }
             }).start();
-            this.listView.setPadding(0, 0, 0, this.buttonHeight - AndroidUtilities.m50dp(12));
+            this.listView.setPadding(0, 0, 0, this.buttonHeight - AndroidUtilities.m54dp(12));
             this.searchListView.setPadding(0, 0, 0, this.buttonHeight);
         }
         if (this.selectedIds.isEmpty()) {
             return;
         }
-        this.buttonTextView.setText(LocaleController.formatString("LeaveChats", C3242R.string.LeaveChats, LocaleController.formatPluralString("Chats", this.selectedIds.size(), new Object[0])));
+        this.buttonTextView.setText(LocaleController.formatString("LeaveChats", C3290R.string.LeaveChats, LocaleController.formatPluralString("Chats", this.selectedIds.size(), new Object[0])));
     }
 
     private void loadInactiveChannels() {
@@ -370,11 +372,11 @@ public class TooManyCommunitiesActivity extends BaseFragment {
                     formatPluralString = LocaleController.formatPluralString("Years", currentTime / 365, new Object[0]);
                 }
                 if (ChatObject.isMegagroup(tLRPC$Chat)) {
-                    arrayList.add(LocaleController.formatString("InactiveChatSignature", C3242R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", tLRPC$Chat.participants_count, new Object[0]), formatPluralString));
+                    arrayList.add(LocaleController.formatString("InactiveChatSignature", C3290R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", tLRPC$Chat.participants_count, new Object[0]), formatPluralString));
                 } else if (ChatObject.isChannel(tLRPC$Chat)) {
-                    arrayList.add(LocaleController.formatString("InactiveChannelSignature", C3242R.string.InactiveChannelSignature, formatPluralString));
+                    arrayList.add(LocaleController.formatString("InactiveChannelSignature", C3290R.string.InactiveChannelSignature, formatPluralString));
                 } else {
-                    arrayList.add(LocaleController.formatString("InactiveChatSignature", C3242R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", tLRPC$Chat.participants_count, new Object[0]), formatPluralString));
+                    arrayList.add(LocaleController.formatString("InactiveChatSignature", C3290R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", tLRPC$Chat.participants_count, new Object[0]), formatPluralString));
                 }
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TooManyCommunitiesActivity$$ExternalSyntheticLambda2
@@ -494,31 +496,31 @@ public class TooManyCommunitiesActivity extends BaseFragment {
                 View view = TooManyCommunitiesActivity.this.hintCell;
                 int i2 = TooManyCommunitiesActivity.this.type;
                 if (i2 == 0) {
-                    string = LocaleController.getString("TooManyCommunitiesHintJoin", C3242R.string.TooManyCommunitiesHintJoin);
+                    string = LocaleController.getString("TooManyCommunitiesHintJoin", C3290R.string.TooManyCommunitiesHintJoin);
                 } else if (i2 == 1) {
-                    string = LocaleController.getString("TooManyCommunitiesHintEdit", C3242R.string.TooManyCommunitiesHintEdit);
+                    string = LocaleController.getString("TooManyCommunitiesHintEdit", C3290R.string.TooManyCommunitiesHintEdit);
                 } else {
-                    string = LocaleController.getString("TooManyCommunitiesHintCreate", C3242R.string.TooManyCommunitiesHintCreate);
+                    string = LocaleController.getString("TooManyCommunitiesHintCreate", C3290R.string.TooManyCommunitiesHintCreate);
                 }
                 TooManyCommunitiesActivity.this.hintCell.setMessageText(string);
                 RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(-1, -2);
-                ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = AndroidUtilities.m50dp(16);
-                ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = AndroidUtilities.m50dp(23);
+                ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = AndroidUtilities.m54dp(16);
+                ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = AndroidUtilities.m54dp(23);
                 TooManyCommunitiesActivity.this.hintCell.setLayoutParams(layoutParams);
                 headerCell = view;
             } else if (i == 2) {
                 View shadowSectionCell = new ShadowSectionCell(viewGroup.getContext());
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(viewGroup.getContext(), C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(viewGroup.getContext(), C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable.setFullsize(true);
                 shadowSectionCell.setBackground(combinedDrawable);
                 headerCell = shadowSectionCell;
             } else if (i == 3) {
-                HeaderCell headerCell2 = new HeaderCell(viewGroup.getContext(), "windowBackgroundWhiteBlueHeader", 21, 8, false);
+                HeaderCell headerCell2 = new HeaderCell(viewGroup.getContext(), Theme.key_windowBackgroundWhiteBlueHeader, 21, 8, false);
                 headerCell2.setHeight(54);
-                headerCell2.setText(LocaleController.getString("InactiveChats", C3242R.string.InactiveChats));
+                headerCell2.setText(LocaleController.getString("InactiveChats", C3290R.string.InactiveChats));
                 headerCell = headerCell2;
             } else if (i == 5) {
-                headerCell = new EmptyCell(viewGroup.getContext(), AndroidUtilities.m50dp(12));
+                headerCell = new EmptyCell(viewGroup.getContext(), AndroidUtilities.m54dp(12));
             } else {
                 headerCell = new GroupCreateUserCell(viewGroup.getContext(), 1, 0, false);
             }
@@ -537,7 +539,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
                 GroupCreateUserCell groupCreateUserCell = (GroupCreateUserCell) viewHolder.itemView;
                 TLRPC$Chat tLRPC$Chat = (TLRPC$Chat) TooManyCommunitiesActivity.this.inactiveChats.get(i - this.inactiveChatsStartRow);
                 groupCreateUserCell.setObject(tLRPC$Chat, tLRPC$Chat.title, (String) TooManyCommunitiesActivity.this.inactiveChatsSignatures.get(i - this.inactiveChatsStartRow), i != this.inactiveChatsEndRow - 1);
-                groupCreateUserCell.setChecked(TooManyCommunitiesActivity.this.selectedIds.contains(Long.valueOf(tLRPC$Chat.f1427id)), false);
+                groupCreateUserCell.setChecked(TooManyCommunitiesActivity.this.selectedIds.contains(Long.valueOf(tLRPC$Chat.f1433id)), false);
             }
         }
 
@@ -594,7 +596,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
             String str = this.searchResultsSignatures.get(i);
             GroupCreateUserCell groupCreateUserCell = (GroupCreateUserCell) viewHolder.itemView;
             groupCreateUserCell.setObject(tLRPC$Chat, tLRPC$Chat.title, str, i != this.searchResults.size() - 1);
-            groupCreateUserCell.setChecked(TooManyCommunitiesActivity.this.selectedIds.contains(Long.valueOf(tLRPC$Chat.f1427id)), false);
+            groupCreateUserCell.setChecked(TooManyCommunitiesActivity.this.selectedIds.contains(Long.valueOf(tLRPC$Chat.f1433id)), false);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -737,47 +739,64 @@ public class TooManyCommunitiesActivity extends BaseFragment {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
         };
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCH, null, null, null, null, "actionBarDefaultSearch"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCHPLACEHOLDER, null, null, null, null, "actionBarDefaultSearchPlaceholder"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.hintCell, 0, new Class[]{TooManyCommunitiesHintCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "chats_nameMessage_threeLines"));
-        arrayList.add(new ThemeDescription(this.hintCell, 0, new Class[]{TooManyCommunitiesHintCell.class}, new String[]{"headerTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "chats_nameMessage_threeLines"));
-        arrayList.add(new ThemeDescription(this.hintCell, 0, new Class[]{TooManyCommunitiesHintCell.class}, new String[]{"messageTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "chats_message"));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.buttonLayout, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{ShadowSectionCell.class}, null, null, null, "windowBackgroundGray"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "groupcreate_sectionText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkbox"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkboxDisabled"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkboxCheck"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{GroupCreateUserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{GroupCreateUserCell.class}, null, Theme.avatarDrawables, null, "avatar_text"));
-        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "groupcreate_sectionText"));
-        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkbox"));
-        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkboxDisabled"));
-        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkboxCheck"));
-        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{GroupCreateUserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText"));
-        arrayList.add(new ThemeDescription(this.searchListView, 0, new Class[]{GroupCreateUserCell.class}, null, Theme.avatarDrawables, null, "avatar_text"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundRed"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundOrange"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundViolet"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundGreen"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundCyan"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundBlue"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundPink"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "emptyListPlaceholder"));
-        arrayList.add(new ThemeDescription(this.buttonTextView, 0, null, null, null, themeDescriptionDelegate, "featuredStickers_addButton"));
-        arrayList.add(new ThemeDescription(this.buttonTextView, 0, null, null, null, themeDescriptionDelegate, "featuredStickers_addButtonPressed"));
-        arrayList.add(new ThemeDescription(this.progressBar, 0, null, null, null, themeDescriptionDelegate, "featuredStickers_addButtonPressed"));
-        arrayList.add(new ThemeDescription(this.hintCell, 0, new Class[]{TooManyCommunitiesHintCell.class}, new String[]{"imageLayout"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "dialogRedIcon"));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_AB_ITEMSCOLOR;
+        int i2 = Theme.key_actionBarDefaultIcon;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCH, null, null, null, null, Theme.key_actionBarDefaultSearch));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCHPLACEHOLDER, null, null, null, null, Theme.key_actionBarDefaultSearchPlaceholder));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        int i3 = Theme.key_chats_nameMessage_threeLines;
+        arrayList.add(new ThemeDescription(this.hintCell, 0, new Class[]{TooManyCommunitiesHintCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
+        arrayList.add(new ThemeDescription(this.hintCell, 0, new Class[]{TooManyCommunitiesHintCell.class}, new String[]{"headerTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
+        arrayList.add(new ThemeDescription(this.hintCell, 0, new Class[]{TooManyCommunitiesHintCell.class}, new String[]{"messageTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chats_message));
+        View view = this.fragmentView;
+        int i4 = ThemeDescription.FLAG_BACKGROUND;
+        int i5 = Theme.key_windowBackgroundWhite;
+        arrayList.add(new ThemeDescription(view, i4, null, null, null, null, i5));
+        arrayList.add(new ThemeDescription(this.buttonLayout, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i5));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGray));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
+        int i6 = Theme.key_groupcreate_sectionText;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        int i7 = Theme.key_checkbox;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7));
+        int i8 = Theme.key_checkboxDisabled;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i8));
+        int i9 = Theme.key_checkboxCheck;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i9));
+        int i10 = Theme.key_windowBackgroundWhiteBlackText;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i10));
+        int i11 = Theme.key_windowBackgroundWhiteGrayText;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{GroupCreateUserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i11));
+        Drawable[] drawableArr = Theme.avatarDrawables;
+        int i12 = Theme.key_avatar_text;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{GroupCreateUserCell.class}, null, drawableArr, null, i12));
+        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7));
+        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i8));
+        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i9));
+        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{GroupCreateUserCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i10));
+        arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{GroupCreateUserCell.class}, new String[]{"statusTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i11));
+        arrayList.add(new ThemeDescription(this.searchListView, 0, new Class[]{GroupCreateUserCell.class}, null, Theme.avatarDrawables, null, i12));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundRed));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundOrange));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundViolet));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundGreen));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundCyan));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundBlue));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundPink));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_emptyListPlaceholder));
+        arrayList.add(new ThemeDescription(this.buttonTextView, 0, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_addButton));
+        TextView textView = this.buttonTextView;
+        int i13 = Theme.key_featuredStickers_addButtonPressed;
+        arrayList.add(new ThemeDescription(textView, 0, null, null, null, themeDescriptionDelegate, i13));
+        arrayList.add(new ThemeDescription(this.progressBar, 0, null, null, null, themeDescriptionDelegate, i13));
+        arrayList.add(new ThemeDescription(this.hintCell, 0, new Class[]{TooManyCommunitiesHintCell.class}, new String[]{"imageLayout"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_text_RedRegular));
         return arrayList;
     }
 
@@ -803,7 +822,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
                 }
             }
         }
-        this.buttonTextView.setBackground(Theme.AdaptiveRipple.filledRect("featuredStickers_addButton", 4.0f));
-        this.progressBar.setProgressColor(Theme.getColor("progressCircle"));
+        this.buttonTextView.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 4.0f));
+        this.progressBar.setProgressColor(Theme.getColor(Theme.key_progressCircle));
     }
 }

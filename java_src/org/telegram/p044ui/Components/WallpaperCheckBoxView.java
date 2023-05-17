@@ -33,9 +33,10 @@ public class WallpaperCheckBoxView extends View {
     private View parentView;
     private float progress;
     private RectF rect;
+    Theme.ResourcesProvider resourcesProvider;
     private TextPaint textPaint;
 
-    public WallpaperCheckBoxView(Context context, boolean z, View view) {
+    public WallpaperCheckBoxView(Context context, boolean z, View view, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.colors = new int[4];
         this.PROGRESS_PROPERTY = new AnimationProperties.FloatProperty<WallpaperCheckBoxView>("progress") { // from class: org.telegram.ui.Components.WallpaperCheckBoxView.1
@@ -52,18 +53,18 @@ public class WallpaperCheckBoxView extends View {
         };
         this.rect = new RectF();
         if (z) {
-            this.drawBitmap = Bitmap.createBitmap(AndroidUtilities.m50dp(18), AndroidUtilities.m50dp(18), Bitmap.Config.ARGB_4444);
+            this.drawBitmap = Bitmap.createBitmap(AndroidUtilities.m54dp(18), AndroidUtilities.m54dp(18), Bitmap.Config.ARGB_4444);
             this.drawCanvas = new Canvas(this.drawBitmap);
         }
         this.parentView = view;
         TextPaint textPaint = new TextPaint(1);
         this.textPaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m50dp(14));
+        textPaint.setTextSize(AndroidUtilities.m54dp(14));
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         Paint paint = new Paint(1);
         this.checkPaint = paint;
         paint.setStyle(Paint.Style.STROKE);
-        this.checkPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.checkPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.checkPaint.setColor(0);
         this.checkPaint.setStrokeCap(Paint.Cap.ROUND);
         this.checkPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
@@ -94,7 +95,7 @@ public class WallpaperCheckBoxView extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.maxTextSize + AndroidUtilities.m50dp(56), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(32), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.maxTextSize + AndroidUtilities.m54dp(56), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(32), 1073741824));
     }
 
     @Override // android.view.View
@@ -102,17 +103,20 @@ public class WallpaperCheckBoxView extends View {
         float f;
         float f2;
         this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-        Theme.applyServiceShaderMatrixForView(this, this.parentView);
-        canvas.drawRoundRect(this.rect, getMeasuredHeight() / 2, getMeasuredHeight() / 2, Theme.chat_actionBackgroundPaint);
-        if (Theme.hasGradientService()) {
+        Theme.applyServiceShaderMatrixForView(this, this.parentView, this.resourcesProvider);
+        canvas.drawRoundRect(this.rect, getMeasuredHeight() / 2, getMeasuredHeight() / 2, getThemedPaint("paintChatActionBackground"));
+        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+        if (resourcesProvider == null ? Theme.hasGradientService() : resourcesProvider.hasGradientService()) {
             canvas.drawRoundRect(this.rect, getMeasuredHeight() / 2, getMeasuredHeight() / 2, Theme.chat_actionBackgroundGradientDarkenPaint);
         }
-        this.textPaint.setColor(Theme.getColor("chat_serviceText"));
-        int measuredWidth = ((getMeasuredWidth() - this.currentTextSize) - AndroidUtilities.m50dp(28)) / 2;
-        canvas.drawText(this.currentText, AndroidUtilities.m50dp(28) + measuredWidth, AndroidUtilities.m50dp(21), this.textPaint);
+        TextPaint textPaint = this.textPaint;
+        int i = Theme.key_chat_serviceText;
+        textPaint.setColor(Theme.getColor(i, this.resourcesProvider));
+        int measuredWidth = ((getMeasuredWidth() - this.currentTextSize) - AndroidUtilities.m54dp(28)) / 2;
+        canvas.drawText(this.currentText, AndroidUtilities.m54dp(28) + measuredWidth, AndroidUtilities.m54dp(21), this.textPaint);
         canvas.save();
-        canvas.translate(measuredWidth, AndroidUtilities.m50dp(7));
-        int i = 0;
+        canvas.translate(measuredWidth, AndroidUtilities.m54dp(7));
+        int i2 = 0;
         if (this.drawBitmap != null) {
             float f3 = this.progress;
             if (f3 <= 0.5f) {
@@ -122,46 +126,46 @@ public class WallpaperCheckBoxView extends View {
                 f = 2.0f - (f3 / 0.5f);
                 f2 = 1.0f;
             }
-            float m50dp = AndroidUtilities.m50dp(1) * f;
-            this.rect.set(m50dp, m50dp, AndroidUtilities.m50dp(18) - m50dp, AndroidUtilities.m50dp(18) - m50dp);
+            float m54dp = AndroidUtilities.m54dp(1) * f;
+            this.rect.set(m54dp, m54dp, AndroidUtilities.m54dp(18) - m54dp, AndroidUtilities.m54dp(18) - m54dp);
             this.drawBitmap.eraseColor(0);
-            this.backgroundPaint.setColor(Theme.getColor("chat_serviceText"));
+            this.backgroundPaint.setColor(Theme.getColor(i, this.resourcesProvider));
             Canvas canvas2 = this.drawCanvas;
             RectF rectF = this.rect;
             canvas2.drawRoundRect(rectF, rectF.width() / 2.0f, this.rect.height() / 2.0f, this.backgroundPaint);
             if (f2 != 1.0f) {
-                float min = Math.min(AndroidUtilities.m50dp(7), (AndroidUtilities.m50dp(7) * f2) + m50dp);
-                this.rect.set(AndroidUtilities.m50dp(2) + min, AndroidUtilities.m50dp(2) + min, AndroidUtilities.m50dp(16) - min, AndroidUtilities.m50dp(16) - min);
+                float min = Math.min(AndroidUtilities.m54dp(7), (AndroidUtilities.m54dp(7) * f2) + m54dp);
+                this.rect.set(AndroidUtilities.m54dp(2) + min, AndroidUtilities.m54dp(2) + min, AndroidUtilities.m54dp(16) - min, AndroidUtilities.m54dp(16) - min);
                 Canvas canvas3 = this.drawCanvas;
                 RectF rectF2 = this.rect;
                 canvas3.drawRoundRect(rectF2, rectF2.width() / 2.0f, this.rect.height() / 2.0f, this.eraserPaint);
             }
             if (this.progress > 0.5f) {
                 float f4 = 1.0f - f;
-                this.drawCanvas.drawLine(AndroidUtilities.m51dp(7.3f), AndroidUtilities.m50dp(13), (int) (AndroidUtilities.m51dp(7.3f) - (AndroidUtilities.m51dp(2.5f) * f4)), (int) (AndroidUtilities.m50dp(13) - (AndroidUtilities.m51dp(2.5f) * f4)), this.checkPaint);
-                this.drawCanvas.drawLine(AndroidUtilities.m51dp(7.3f), AndroidUtilities.m50dp(13), (int) (AndroidUtilities.m51dp(7.3f) + (AndroidUtilities.m50dp(6) * f4)), (int) (AndroidUtilities.m50dp(13) - (AndroidUtilities.m50dp(6) * f4)), this.checkPaint);
+                this.drawCanvas.drawLine(AndroidUtilities.m55dp(7.3f), AndroidUtilities.m54dp(13), (int) (AndroidUtilities.m55dp(7.3f) - (AndroidUtilities.m55dp(2.5f) * f4)), (int) (AndroidUtilities.m54dp(13) - (AndroidUtilities.m55dp(2.5f) * f4)), this.checkPaint);
+                this.drawCanvas.drawLine(AndroidUtilities.m55dp(7.3f), AndroidUtilities.m54dp(13), (int) (AndroidUtilities.m55dp(7.3f) + (AndroidUtilities.m54dp(6) * f4)), (int) (AndroidUtilities.m54dp(13) - (AndroidUtilities.m54dp(6) * f4)), this.checkPaint);
             }
             canvas.drawBitmap(this.drawBitmap, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (Paint) null);
         } else {
-            this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(18), AndroidUtilities.m50dp(18));
+            this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(18), AndroidUtilities.m54dp(18));
             int[] iArr = this.colors;
             if (iArr[3] != 0) {
-                while (i < 4) {
-                    this.backgroundPaint.setColor(this.colors[i]);
-                    canvas.drawArc(this.rect, (i * 90) - 90, 90.0f, true, this.backgroundPaint);
-                    i++;
+                while (i2 < 4) {
+                    this.backgroundPaint.setColor(this.colors[i2]);
+                    canvas.drawArc(this.rect, (i2 * 90) - 90, 90.0f, true, this.backgroundPaint);
+                    i2++;
                 }
             } else if (iArr[2] != 0) {
-                while (i < 3) {
-                    this.backgroundPaint.setColor(this.colors[i]);
-                    canvas.drawArc(this.rect, (i * 120) - 90, 120.0f, true, this.backgroundPaint);
-                    i++;
+                while (i2 < 3) {
+                    this.backgroundPaint.setColor(this.colors[i2]);
+                    canvas.drawArc(this.rect, (i2 * 120) - 90, 120.0f, true, this.backgroundPaint);
+                    i2++;
                 }
             } else if (iArr[1] != 0) {
-                while (i < 2) {
-                    this.backgroundPaint.setColor(this.colors[i]);
-                    canvas.drawArc(this.rect, (i * 180) - 90, 180.0f, true, this.backgroundPaint);
-                    i++;
+                while (i2 < 2) {
+                    this.backgroundPaint.setColor(this.colors[i2]);
+                    canvas.drawArc(this.rect, (i2 * 180) - 90, 180.0f, true, this.backgroundPaint);
+                    i2++;
                 }
             } else {
                 this.backgroundPaint.setColor(iArr[0]);
@@ -218,5 +222,11 @@ public class WallpaperCheckBoxView extends View {
 
     public boolean isChecked() {
         return this.isChecked;
+    }
+
+    private Paint getThemedPaint(String str) {
+        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+        Paint paint = resourcesProvider != null ? resourcesProvider.getPaint(str) : null;
+        return paint != null ? paint : Theme.getThemePaint(str);
     }
 }

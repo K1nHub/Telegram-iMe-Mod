@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.sequences.Sequence;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Maps.kt */
 /* loaded from: classes4.dex */
@@ -36,5 +37,12 @@ public class MapsKt___MapsKt extends MapsKt___MapsJvmKt {
             arrayList.add(new Pair(next2.getKey(), next2.getValue()));
         } while (it.hasNext());
         return arrayList;
+    }
+
+    public static <K, V> Sequence<Map.Entry<K, V>> asSequence(Map<? extends K, ? extends V> map) {
+        Sequence<Map.Entry<K, V>> asSequence;
+        Intrinsics.checkNotNullParameter(map, "<this>");
+        asSequence = CollectionsKt___CollectionsKt.asSequence(map.entrySet());
+        return asSequence;
     }
 }

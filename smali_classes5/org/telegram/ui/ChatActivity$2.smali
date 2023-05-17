@@ -18,19 +18,19 @@
 
 
 # instance fields
-.field final synthetic val$dialogId:J
+.field final synthetic val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-.field final synthetic val$newParamsCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
+.field final synthetic val$dialogId:J
 
 
 # direct methods
 .method constructor <init>(JLcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 597
+    .line 593
     iput-wide p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$2;->val$newParamsCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public onCompleteForwardingEditing(Ljava/util/ArrayList;)V
+.method public onForwardingMessagesChanged(Ljava/util/ArrayList;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -50,7 +50,7 @@
         }
     .end annotation
 
-    .line 600
+    .line 596
     new-instance v0, Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-wide v1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
@@ -59,13 +59,13 @@
 
     const/4 p1, 0x1
 
-    .line 601
+    .line 597
     iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->needForceHideForwardAuthor:Z
 
-    .line 602
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$newParamsCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
+    .line 598
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p1, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
@@ -100,6 +100,14 @@
     .locals 0
 
     invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$openSearch(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public synthetic setFieldText(Ljava/lang/CharSequence;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$setFieldText(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/lang/CharSequence;)V
 
     return-void
 .end method

@@ -26,11 +26,11 @@ public final class CryptoBuyCustomPriceBottomSheetDialog$presenter$2 extends Lam
     /* compiled from: CryptoBuyCustomPriceBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C20911 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C21301 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ CryptoBuyCustomPriceBottomSheetDialog this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C20911(CryptoBuyCustomPriceBottomSheetDialog cryptoBuyCustomPriceBottomSheetDialog) {
+        C21301(CryptoBuyCustomPriceBottomSheetDialog cryptoBuyCustomPriceBottomSheetDialog) {
             super(0);
             this.this$0 = cryptoBuyCustomPriceBottomSheetDialog;
         }
@@ -48,7 +48,7 @@ public final class CryptoBuyCustomPriceBottomSheetDialog$presenter$2 extends Lam
     public final CryptoBuyCustomPricePresenter invoke() {
         Lazy lazy;
         CryptoBuyCustomPriceBottomSheetDialog cryptoBuyCustomPriceBottomSheetDialog = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2088xd82e53d5(cryptoBuyCustomPriceBottomSheetDialog, null, new C20911(cryptoBuyCustomPriceBottomSheetDialog)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2127xd82e53d5(cryptoBuyCustomPriceBottomSheetDialog, null, new C21301(cryptoBuyCustomPriceBottomSheetDialog)));
         return (CryptoBuyCustomPricePresenter) lazy.getValue();
     }
 }

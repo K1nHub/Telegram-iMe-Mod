@@ -2,40 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback2;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-.field public final synthetic f$1:Lorg/telegram/ui/Components/LinkActionView;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/ui/Components/LinkActionView;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/ui/Components/LinkActionView;
+    check-cast p1, Lcom/iMe/model/twitter/TwitterUserItem;
 
-    check-cast p1, Lcom/iMe/model/wallet/select/SelectableToken;
+    check-cast p2, Ljava/lang/String;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$C06L8VbWPIQ3pagNRwAJEgE-rUs(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;Lcom/iMe/model/wallet/select/SelectableToken;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$Hcp-ioniqBcV8l8Z_eZ_RkmxB7o(Lorg/telegram/ui/ManageLinksActivity;Lcom/iMe/model/twitter/TwitterUserItem;Ljava/lang/String;)V
 
     return-void
 .end method

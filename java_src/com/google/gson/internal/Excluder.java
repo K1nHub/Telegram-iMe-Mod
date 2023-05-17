@@ -28,7 +28,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: clone */
-    public Excluder m1116clone() {
+    public Excluder m1124clone() {
         try {
             return (Excluder) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -37,18 +37,18 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     }
 
     public Excluder withExclusionStrategy(ExclusionStrategy exclusionStrategy, boolean z, boolean z2) {
-        Excluder m1116clone = m1116clone();
+        Excluder m1124clone = m1124clone();
         if (z) {
             ArrayList arrayList = new ArrayList(this.serializationStrategies);
-            m1116clone.serializationStrategies = arrayList;
+            m1124clone.serializationStrategies = arrayList;
             arrayList.add(exclusionStrategy);
         }
         if (z2) {
             ArrayList arrayList2 = new ArrayList(this.deserializationStrategies);
-            m1116clone.deserializationStrategies = arrayList2;
+            m1124clone.deserializationStrategies = arrayList2;
             arrayList2.add(exclusionStrategy);
         }
-        return m1116clone;
+        return m1124clone;
     }
 
     @Override // com.google.gson.TypeAdapterFactory

@@ -153,9 +153,9 @@
     .line 48
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "windowBackgroundWhiteGrayText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -164,10 +164,10 @@
     .line 49
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->textValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     .line 50
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -193,9 +193,9 @@
     .line 55
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "windowBackgroundWhiteGrayIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -211,9 +211,9 @@
     :goto_0
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->divider:Lcom/iMe/ui/custom/DividerView;
 
-    const-string v1, "divider"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

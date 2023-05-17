@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.ogg;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
@@ -205,7 +205,7 @@ public abstract class StreamReader {
 
         @Override // com.google.android.exoplayer2.extractor.ogg.OggSeeker
         public SeekMap createSeekMap() {
-            return new SeekMap.Unseekable(C0470C.TIME_UNSET);
+            return new SeekMap.Unseekable(C0475C.TIME_UNSET);
         }
     }
 }

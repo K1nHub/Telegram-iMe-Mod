@@ -376,10 +376,10 @@
     .line 90
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    const-string v1, "windowBackgroundWhiteGrayIcon"
-
     .line 91
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v1
 

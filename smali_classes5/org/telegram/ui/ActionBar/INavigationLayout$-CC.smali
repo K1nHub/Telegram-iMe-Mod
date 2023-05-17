@@ -10,7 +10,7 @@
 
     const/4 v0, -0x1
 
-    .line 231
+    .line 248
     invoke-interface {p0, p1, v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->addFragmentToStack(Lorg/telegram/ui/ActionBar/BaseFragment;I)Z
 
     move-result p1
@@ -22,7 +22,7 @@
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 160
+    .line 177
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;
 
     invoke-direct {v0, p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;-><init>(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;IZZ)V
@@ -38,7 +38,7 @@
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 164
+    .line 181
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;
 
     invoke-direct {v0, p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;-><init>(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;IZZ)V
@@ -54,7 +54,7 @@
 
     const/4 v0, 0x1
 
-    .line 204
+    .line 221
     invoke-interface {p0, v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->closeLastFragment(Z)V
 
     return-void
@@ -64,19 +64,19 @@
     .locals 2
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 267
+    .line 284
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
 
     move-result-object v0
 
-    .line 268
+    .line 285
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 269
+    .line 286
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
@@ -89,7 +89,7 @@
 
     check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 270
+    .line 287
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->dismissCurrentDialog()V
 
     :cond_0
@@ -102,7 +102,7 @@
 
     const/16 v0, 0xff
 
-    .line 148
+    .line 160
     invoke-interface {p0, p1, v0, p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->drawHeaderShadow(Landroid/graphics/Canvas;II)V
 
     return-void
@@ -112,7 +112,7 @@
     .locals 2
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 152
+    .line 164
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
 
     move-result-object v0
@@ -154,11 +154,19 @@
     return-object v0
 .end method
 
+.method public static $default$getBottomSheet(Lorg/telegram/ui/ActionBar/INavigationLayout;)Lorg/telegram/ui/ActionBar/BottomSheet;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public static $default$getParentActivity(Lorg/telegram/ui/ActionBar/INavigationLayout;)Landroid/app/Activity;
     .locals 2
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 189
+    .line 206
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getView()Landroid/view/ViewGroup;
 
     move-result-object v0
@@ -167,17 +175,17 @@
 
     move-result-object v0
 
-    .line 190
+    .line 207
     instance-of v1, v0, Landroid/app/Activity;
 
     if-eqz v1, :cond_0
 
-    .line 191
+    .line 208
     check-cast v0, Landroid/app/Activity;
 
     return-object v0
 
-    .line 193
+    .line 210
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -192,19 +200,19 @@
     .locals 2
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 197
+    .line 214
     instance-of v0, p0, Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
-    .line 198
+    .line 215
     move-object v0, p0
 
     check-cast v0, Landroid/view/ViewGroup;
 
     return-object v0
 
-    .line 200
+    .line 217
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -213,6 +221,34 @@
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public static $default$getWindow(Lorg/telegram/ui/ActionBar/INavigationLayout;)Landroid/view/Window;
+    .locals 1
+    .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
+
+    .line 292
+    invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 293
+    invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static $default$hasIntegratedBlurInPreview(Lorg/telegram/ui/ActionBar/INavigationLayout;)Z
@@ -235,7 +271,7 @@
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 235
+    .line 252
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -251,7 +287,7 @@
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 239
+    .line 256
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -273,7 +309,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 255
+    .line 272
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -307,7 +343,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 263
+    .line 280
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -343,7 +379,7 @@
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 243
+    .line 260
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -365,7 +401,7 @@
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 247
+    .line 264
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -395,7 +431,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 112
+    .line 124
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->showLastFragment()V
 
     return-void
@@ -412,7 +448,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 116
+    .line 128
     :goto_0
     invoke-interface {p0, v0, v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->rebuildAllFragmentViews(ZZ)V
 
@@ -425,7 +461,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 224
+    .line 241
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
 
     move-result-object v0
@@ -438,7 +474,7 @@
 
     goto :goto_0
 
-    .line 227
+    .line 244
     :cond_0
     invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
 
@@ -463,7 +499,7 @@
 
     const/4 v0, 0x0
 
-    .line 100
+    .line 112
     invoke-interface {p0, p1, v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->removeFragmentFromStack(Lorg/telegram/ui/ActionBar/BaseFragment;Z)V
 
     return-void
@@ -472,10 +508,31 @@
 .method public static newLayout(Landroid/content/Context;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 1
 
-    .line 96
+    .line 99
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;-><init>(Landroid/content/Context;)V
+
+    return-object v0
+.end method
+
+.method public static newLayout(Landroid/content/Context;Landroidx/core/util/Supplier;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Landroidx/core/util/Supplier<",
+            "Lorg/telegram/ui/ActionBar/BottomSheet;",
+            ">;)",
+            "Lorg/telegram/ui/ActionBar/INavigationLayout;"
+        }
+    .end annotation
+
+    .line 103
+    new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$1;
+
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ActionBar/INavigationLayout$1;-><init>(Landroid/content/Context;Landroidx/core/util/Supplier;)V
 
     return-object v0
 .end method

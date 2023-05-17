@@ -72,7 +72,7 @@
 
     move-result p2
 
-    const-string v0, "shortcut_widget"
+    const-string/jumbo v0, "shortcut_widget"
 
     .line 46
     invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;

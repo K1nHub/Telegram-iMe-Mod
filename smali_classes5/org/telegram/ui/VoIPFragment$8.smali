@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 931
+    .line 932
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,10 +29,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 934
+    .line 935
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 935
+    .line 936
     const-class v0, Landroid/widget/ToggleButton;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -43,17 +43,17 @@
 
     const/4 v0, 0x1
 
-    .line 936
+    .line 937
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 937
+    .line 938
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 939
+    .line 940
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isSpeakerphoneOn()Z
 
     move-result v0

@@ -22,6 +22,27 @@
     return-object v0
 .end method
 
+.method public static bridge synthetic minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Set<",
+            "+TT;>;TT;)",
+            "Ljava/util/Set<",
+            "TT;>;"
+        }
+    .end annotation
+
+    invoke-static {p0, p1}, Lkotlin/collections/SetsKt___SetsKt;->minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static bridge varargs synthetic mutableSetOf([Ljava/lang/Object;)Ljava/util/Set;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

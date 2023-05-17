@@ -33,7 +33,7 @@ public final class UpdateManager$checkUpdate$1 extends Lambda implements Functio
         if (appUpdateInfo.updateAvailability() == 2) {
             i = this.this$0.mode;
             if (appUpdateInfo.isUpdateTypeAllowed(i)) {
-                Timber.m7d("Update available", new Object[0]);
+                Timber.m9d("Update available", new Object[0]);
                 isNeedUpdate = this.this$0.isNeedUpdate();
                 if (isNeedUpdate) {
                     this.this$0.startUpdate(appUpdateInfo);
@@ -42,6 +42,6 @@ public final class UpdateManager$checkUpdate$1 extends Lambda implements Functio
                 return;
             }
         }
-        Timber.m7d("No Update available", new Object[0]);
+        Timber.m9d("No Update available", new Object[0]);
     }
 }

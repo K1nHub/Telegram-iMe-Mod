@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: BaseView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.base.mvp.base.BaseView */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface BaseView extends MvpView {
     void finishScreen();
 
@@ -21,7 +21,7 @@ public interface BaseView extends MvpView {
 
     /* compiled from: BaseView.kt */
     /* renamed from: com.iMe.ui.base.mvp.base.BaseView$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public final /* synthetic */ class CC {
         public static void $default$finishScreen(BaseView baseView) {
         }

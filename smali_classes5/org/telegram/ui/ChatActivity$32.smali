@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$32;
-.super Lorg/telegram/ui/Components/CounterView;
+.super Landroid/view/ViewOutlineProvider;
 .source "ChatActivity.java"
 
 
@@ -14,44 +14,35 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 8273
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$32;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/CounterView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .line 8184
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public invalidate()V
-    .locals 1
+.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+    .locals 2
 
-    .line 8276
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/CounterView;->isInOutAnimation()Z
+    const/16 p1, 0x2a
+
+    .line 8187
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 8277
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$32;->this$0:Lorg/telegram/ui/ChatActivity;
+    move-result p1
 
-    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
-
-    .line 8279
-    :cond_0
-    invoke-super {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
 
     return-void
 .end method

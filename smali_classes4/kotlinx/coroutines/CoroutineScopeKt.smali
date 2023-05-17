@@ -113,3 +113,22 @@
     :cond_0
     return-object p0
 .end method
+
+.method public static final plus(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
+    .locals 1
+
+    .line 96
+    new-instance v0, Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-interface {p0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
+
+    return-object v0
+.end method

@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: WalletBinancePayReplenishView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.replenish.WalletBinancePayReplenishView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletBinancePayReplenishView extends BaseView {
     void setupReplenishAddress();
 }

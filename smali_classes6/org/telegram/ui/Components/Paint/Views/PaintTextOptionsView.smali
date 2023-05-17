@@ -628,7 +628,7 @@
 .method private synthetic lambda$setTypeface$5(Ljava/lang/String;)V
     .locals 0
 
-    .line 165
+    .line 171
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setTypeface(Ljava/lang/String;)V
 
     return-void
@@ -740,7 +740,7 @@
 
     const/4 v0, 0x0
 
-    .line 181
+    .line 187
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setAlignment(IZ)V
 
     return-void
@@ -749,24 +749,24 @@
 .method public setAlignment(IZ)V
     .locals 6
 
-    .line 185
+    .line 191
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->currentAlign:I
 
-    .line 186
+    .line 192
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->currentAlign:I
 
     const/4 v1, 0x0
 
     if-ne v0, p1, :cond_3
 
-    .line 189
+    .line 195
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->alignView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object v0
 
-    .line 190
+    .line 196
     sget-object v2, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->ALIGN_PAIRS:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -775,7 +775,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;
 
-    .line 191
+    .line 197
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -793,7 +793,7 @@
 
     check-cast v3, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;
 
-    .line 192
+    .line 198
     iget v4, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->currentAlign:I
 
     invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->access$100(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
@@ -804,7 +804,7 @@
 
     move-object v1, v3
 
-    .line 197
+    .line 203
     :cond_1
     invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->access$200(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
 
@@ -812,7 +812,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 198
+    .line 204
     invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->access$200(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
 
     move-result v1
@@ -821,7 +821,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 201
+    .line 207
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->delegate:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$Delegate;
 
     invoke-interface {p2, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$Delegate;->onTextAlignmentSelected(I)V
@@ -829,7 +829,7 @@
     :cond_2
     return-void
 
-    .line 206
+    .line 212
     :cond_3
     sget-object v2, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->ALIGN_PAIRS:Ljava/util/List;
 
@@ -839,7 +839,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;
 
-    .line 207
+    .line 213
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -857,7 +857,7 @@
 
     check-cast v3, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;
 
-    .line 208
+    .line 214
     invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->access$300(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
 
     move-result v4
@@ -874,7 +874,7 @@
 
     move-object v1, v3
 
-    .line 213
+    .line 219
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->alignView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -882,26 +882,26 @@
 
     move-result-object v0
 
-    .line 214
+    .line 220
     invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->access$400(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 215
+    .line 221
     invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->access$200(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 216
+    .line 222
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
     if-eqz p2, :cond_6
 
-    .line 219
+    .line 225
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->delegate:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$Delegate;
 
     invoke-interface {p2, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$Delegate;->onTextAlignmentSelected(I)V
@@ -913,7 +913,7 @@
 .method public setDelegate(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$Delegate;)V
     .locals 0
 
-    .line 177
+    .line 183
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->delegate:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$Delegate;
 
     return-void
@@ -999,34 +999,18 @@
 
     .line 165
     :cond_0
-    new-instance v0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$$ExternalSyntheticLambda5;
-
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;Ljava/lang/String;)V
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->fetched(Ljava/lang/Runnable;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    return-void
-
-    .line 168
-    :cond_1
-    invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->get()Ljava/util/List;
-
-    move-result-object v0
+    sget-object v0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->BUILT_IN_FONTS:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_2
+    :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1034,7 +1018,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
-    .line 169
+    .line 166
     invoke-virtual {v1}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -1043,14 +1027,69 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
-    .line 170
+    .line 167
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->typefaceCell:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->bind(Lorg/telegram/ui/Components/Paint/PaintTypeface;)V
 
+    return-void
+
+    .line 171
+    :cond_2
+    new-instance v0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$$ExternalSyntheticLambda5;
+
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->fetched(Ljava/lang/Runnable;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    return-void
+
+    .line 174
     :cond_3
+    invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->get()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_4
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/telegram/ui/Components/Paint/PaintTypeface;
+
+    .line 175
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->getKey()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    .line 176
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->typefaceCell:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;
+
+    invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->bind(Lorg/telegram/ui/Components/Paint/PaintTypeface;)V
+
+    :cond_5
     return-void
 .end method
 

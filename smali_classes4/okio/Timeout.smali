@@ -237,7 +237,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "timeout < 0: "
+    const-string/jumbo v0, "timeout < 0: "
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

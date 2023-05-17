@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,176:1\n129#2,5:177\n129#2,5:182\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$4\n*L\n60#1:177,5\n61#1:182,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,178:1\n129#2,5:179\n129#2,5:184\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$4\n*L\n61#1:179,5\n62#1:184,5\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 58
+    .line 59
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
@@ -108,7 +108,7 @@
 
     new-array v2, v2, [Lokhttp3/Interceptor;
 
-    .line 60
+    .line 61
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getDURATION_ANALYTIC_INTERCEPTOR()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v3
@@ -128,7 +128,7 @@
 
     aput-object v3, v2, v4
 
-    .line 60
+    .line 61
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getMETADATA_INTERCEPTOR()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v3
@@ -148,7 +148,7 @@
 
     aput-object v3, v2, v4
 
-    .line 61
+    .line 62
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getLOGGING_INTERCEPTOR()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v3
@@ -168,7 +168,7 @@
 
     aput-object v3, v2, v4
 
-    .line 61
+    .line 62
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getERROR_INTERCEPTOR()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v3
@@ -188,7 +188,7 @@
 
     aput-object p1, v2, v0
 
-    .line 59
+    .line 60
     invoke-static {p2, v2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->createOkHttpClient(Lokhttp3/Cache;[Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient;
 
     move-result-object p1

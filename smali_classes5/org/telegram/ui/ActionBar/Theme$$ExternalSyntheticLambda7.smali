@@ -14,13 +14,13 @@
 
 .field public final synthetic f$3:Z
 
-.field public final synthetic f$4:Z
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$Document;
 
-.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$Document;
+.field public final synthetic f$5:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Ljava/io/File;IZZLorg/telegram/tgnet/TLRPC$Document;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Ljava/io/File;IZLorg/telegram/tgnet/TLRPC$Document;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,9 +33,9 @@
 
     iput-boolean p4, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$3:Z
 
-    iput-boolean p5, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$4:Z
+    iput-object p5, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$4:Lorg/telegram/tgnet/TLRPC$Document;
 
-    iput-object p6, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$5:Lorg/telegram/tgnet/TLRPC$Document;
+    iput-boolean p6, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$5:Z
 
     return-void
 .end method
@@ -53,11 +53,11 @@
 
     iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$3:Z
 
-    iget-boolean v4, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$4:Z
+    iget-object v4, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$4:Lorg/telegram/tgnet/TLRPC$Document;
 
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$5:Lorg/telegram/tgnet/TLRPC$Document;
+    iget-boolean v5, p0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda7;->f$5:Z
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$qI4HVrywypVzDu-KVTACl1pBOUg(Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Ljava/io/File;IZZLorg/telegram/tgnet/TLRPC$Document;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ActionBar/Theme;->$r8$lambda$3tCMANyViUnsuEhmBfakDWTKfr8(Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Ljava/io/File;IZLorg/telegram/tgnet/TLRPC$Document;Z)V
 
     return-void
 .end method

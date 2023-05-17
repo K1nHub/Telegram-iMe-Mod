@@ -110,7 +110,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
     @Override // android.service.media.MediaBrowserService
     public void onLoadChildren(final String str, final MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result) {
         if (passcode()) {
-            Toast.makeText(getApplicationContext(), LocaleController.getString(C3242R.string.EnterYourTelegramPasscode), 1).show();
+            Toast.makeText(getApplicationContext(), LocaleController.getString(C3290R.string.EnterYourTelegramPasscode), 1).show();
             stopSelf();
             result.detach();
         } else if (!this.chatsLoaded) {
@@ -159,7 +159,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                         byteBufferValue.reuse();
                         if (MessageObject.isMusicMessage(TLdeserialize)) {
                             long longValue2 = queryFinalized2.longValue(0);
-                            TLdeserialize.f1451id = queryFinalized2.intValue(2);
+                            TLdeserialize.f1457id = queryFinalized2.intValue(2);
                             TLdeserialize.dialog_id = longValue2;
                             ArrayList<MessageObject> arrayList3 = this.musicObjects.get(longValue2);
                             ArrayList<MediaSession.QueueItem> arrayList4 = this.musicQueues.get(longValue2);
@@ -184,7 +184,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                     messagesStorage.getUsersInternal(TextUtils.join(",", arrayList), arrayList5);
                     for (int i = 0; i < arrayList5.size(); i++) {
                         TLRPC$User tLRPC$User = arrayList5.get(i);
-                        this.users.put(tLRPC$User.f1567id, tLRPC$User);
+                        this.users.put(tLRPC$User.f1574id, tLRPC$User);
                     }
                 }
                 if (!arrayList2.isEmpty()) {
@@ -192,12 +192,12 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                     messagesStorage.getChatsInternal(TextUtils.join(",", arrayList2), arrayList6);
                     for (int i2 = 0; i2 < arrayList6.size(); i2++) {
                         TLRPC$Chat tLRPC$Chat = arrayList6.get(i2);
-                        this.chats.put(tLRPC$Chat.f1427id, tLRPC$Chat);
+                        this.chats.put(tLRPC$Chat.f1433id, tLRPC$Chat);
                     }
                 }
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MusicBrowserService$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
@@ -294,7 +294,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
             }
             return null;
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
             return null;
         }
     }
@@ -344,7 +344,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                 arrayList = (ArrayList) MusicBrowserService.this.musicObjects.get(parseLong);
                 arrayList2 = (ArrayList) MusicBrowserService.this.musicQueues.get(parseLong);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
             if (arrayList != null && parseInt >= 0 && parseInt < arrayList.size()) {
                 MusicBrowserService.this.lastSelectedDialog = parseLong;
@@ -473,7 +473,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
             try {
                 startService(new Intent(getApplicationContext(), MusicBrowserService.class));
             } catch (Throwable th) {
-                FileLog.m45e(th);
+                FileLog.m49e(th);
             }
             this.serviceStarted = true;
         }

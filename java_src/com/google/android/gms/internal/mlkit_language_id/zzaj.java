@@ -3,7 +3,7 @@ package com.google.android.gms.internal.mlkit_language_id;
 import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public enum zzaj implements zzet {
     UNKNOWN_EVENT(0),
     ON_DEVICE_FACE_DETECT(1),

@@ -66,7 +66,7 @@
 
     move-result-object p1
 
-    const-string v0, "sms_hash"
+    const-string/jumbo v0, "sms_hash"
 
     const/4 v2, 0x0
 
@@ -179,7 +179,7 @@
 
     move-result-object p1
 
-    const-string v1, "sms_hash_code"
+    const-string/jumbo v1, "sms_hash_code"
 
     new-instance v2, Ljava/lang/StringBuilder;
 

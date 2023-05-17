@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.CombinedDrawable;
 /* renamed from: org.telegram.ui.Cells.ShadowSectionCell */
@@ -66,12 +66,12 @@ public class ShadowSectionCell extends View {
             if (!this.top && !this.bottom) {
                 setBackground(null);
             } else {
-                setBackground(Theme.getThemedDrawable(getContext(), getBackgroundResId(), Theme.getColor("windowBackgroundGrayShadow", this.resourcesProvider)));
+                setBackground(Theme.getThemedDrawable(getContext(), getBackgroundResId(), Theme.getColor(Theme.key_windowBackgroundGrayShadow, this.resourcesProvider)));
             }
         } else if (!this.top && !this.bottom) {
             setBackgroundColor(i);
         } else {
-            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(this.backgroundColor), Theme.getThemedDrawable(getContext(), getBackgroundResId(), Theme.getColor("windowBackgroundGrayShadow", this.resourcesProvider)), 0, 0);
+            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(this.backgroundColor), Theme.getThemedDrawable(getContext(), getBackgroundResId(), Theme.getColor(Theme.key_windowBackgroundGrayShadow, this.resourcesProvider)), 0, 0);
             combinedDrawable.setFullsize(true);
             setBackground(combinedDrawable);
         }
@@ -80,19 +80,19 @@ public class ShadowSectionCell extends View {
     private int getBackgroundResId() {
         boolean z = this.top;
         if (z && this.bottom) {
-            return C3242R.C3244drawable.greydivider;
+            return C3290R.C3292drawable.greydivider;
         }
         if (z) {
-            return C3242R.C3244drawable.greydivider_bottom;
+            return C3290R.C3292drawable.greydivider_bottom;
         }
         if (this.bottom) {
-            return C3242R.C3244drawable.greydivider_top;
+            return C3290R.C3292drawable.greydivider_top;
         }
-        return C3242R.C3244drawable.transparent;
+        return C3290R.C3292drawable.transparent;
     }
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(this.size), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.size), 1073741824));
     }
 }

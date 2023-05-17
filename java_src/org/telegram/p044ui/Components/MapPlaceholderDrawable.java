@@ -38,7 +38,7 @@ public class MapPlaceholderDrawable extends Drawable {
     public MapPlaceholderDrawable() {
         Paint paint = new Paint();
         this.linePaint = paint;
-        paint.setStrokeWidth(AndroidUtilities.m50dp(1));
+        paint.setStrokeWidth(AndroidUtilities.m54dp(1));
         if (Theme.getCurrentTheme().isDark()) {
             this.paint.setColor(-14865331);
             this.linePaint.setColor(-15854042);
@@ -51,21 +51,21 @@ public class MapPlaceholderDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         canvas.drawRect(getBounds(), this.paint);
-        int m50dp = AndroidUtilities.m50dp(9);
-        int width = getBounds().width() / m50dp;
-        int height = getBounds().height() / m50dp;
+        int m54dp = AndroidUtilities.m54dp(9);
+        int width = getBounds().width() / m54dp;
+        int height = getBounds().height() / m54dp;
         int i = getBounds().left;
         int i2 = getBounds().top;
         int i3 = 0;
         int i4 = 0;
         while (i4 < width) {
             i4++;
-            float f = (m50dp * i4) + i;
+            float f = (m54dp * i4) + i;
             canvas.drawLine(f, i2, f, getBounds().height() + i2, this.linePaint);
         }
         while (i3 < height) {
             i3++;
-            float f2 = (m50dp * i3) + i2;
+            float f2 = (m54dp * i3) + i2;
             canvas.drawLine(i, f2, getBounds().width() + i, f2, this.linePaint);
         }
     }

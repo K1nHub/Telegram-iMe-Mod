@@ -63,9 +63,9 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
-    const-string v1, "dialogBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2300(Lorg/telegram/ui/Components/FiltersListBottomSheet;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2300(Lorg/telegram/ui/Components/FiltersListBottomSheet;I)I
 
     move-result v0
 
@@ -94,9 +94,9 @@
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
-    const-string v5, "actionBarDefault"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    invoke-static {v4, v5}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2400(Lorg/telegram/ui/Components/FiltersListBottomSheet;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2400(Lorg/telegram/ui/Components/FiltersListBottomSheet;I)I
 
     move-result v4
 
@@ -347,61 +347,61 @@
 
     cmpl-float v1, v2, v4
 
-    const-string v4, "dialogBackground"
-
     if-eqz v1, :cond_3
 
     .line 169
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    move-result v6
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setColor(I)V
+    move-result v4
+
+    invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 170
     iget-object v1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->rect:Landroid/graphics/RectF;
 
+    iget-object v4, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
+
+    invoke-static {v4}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1700(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
     iget-object v6, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1700(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
+    invoke-static {v6}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1800(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
 
     move-result v6
 
+    add-int/2addr v6, v0
+
     int-to-float v6, v6
-
-    iget-object v7, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
-
-    invoke-static {v7}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1800(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
-
-    move-result v7
-
-    add-int/2addr v7, v0
-
-    int-to-float v7, v7
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
+    move-result v7
+
+    iget-object v8, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
+
+    invoke-static {v8}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1900(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
+
     move-result v8
 
-    iget-object v9, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
+    sub-int/2addr v7, v8
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1900(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
+    int-to-float v7, v7
 
-    move-result v9
+    iget-object v8, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
-    sub-int/2addr v8, v9
+    invoke-static {v8}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2000(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
 
-    int-to-float v8, v8
+    move-result v8
 
-    iget-object v9, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
-
-    invoke-static {v9}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2000(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
-
-    move-result v9
-
-    add-int/2addr v9, v0
+    add-int/2addr v8, v0
 
     const/16 v0, 0x18
 
@@ -409,11 +409,11 @@
 
     move-result v0
 
-    add-int/2addr v9, v0
+    add-int/2addr v8, v0
 
-    int-to-float v0, v9
+    int-to-float v0, v8
 
-    invoke-virtual {v1, v6, v7, v8, v0}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v1, v4, v6, v7, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 171
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->rect:Landroid/graphics/RectF;
@@ -422,11 +422,11 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v4
 
-    int-to-float v6, v6
+    int-to-float v4, v4
 
-    mul-float/2addr v6, v2
+    mul-float/2addr v4, v2
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -438,7 +438,7 @@
 
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v6, v1, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v4, v1, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     :cond_3
     if-lez v5, :cond_4
@@ -446,7 +446,9 @@
     .line 175
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

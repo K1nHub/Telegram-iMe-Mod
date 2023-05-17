@@ -159,7 +159,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "starting keep-alive job"
+    const-string/jumbo v0, "starting keep-alive job"
 
     .line 30
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -275,7 +275,7 @@
 
     if-eqz p1, :cond_1
 
-    const-string p1, "started keep-alive job"
+    const-string/jumbo p1, "started keep-alive job"
 
     .line 74
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

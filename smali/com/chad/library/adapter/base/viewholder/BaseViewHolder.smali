@@ -8,7 +8,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBaseViewHolder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseViewHolder.kt\ncom/chad/library/adapter/base/viewholder/BaseViewHolder\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,109:1\n1#2:110\n*E\n"
+    value = "SMAP\nBaseViewHolder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseViewHolder.kt\ncom/chad/library/adapter/base/viewholder/BaseViewHolder\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,107:1\n1#2:108\n*E\n"
 .end annotation
 
 

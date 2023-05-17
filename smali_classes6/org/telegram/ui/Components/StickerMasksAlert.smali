@@ -157,7 +157,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 11
+    .locals 12
 
     const/4 v0, 0x1
 
@@ -243,21 +243,21 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->contentPreviewViewerDelegate:Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
-    const/4 v2, 0x0
+    const/4 v2, -0x1
 
     .line 330
-    iput-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->behindKeyboardColorKey:Ljava/lang/String;
+    iput v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->behindKeyboardColorKey:I
 
-    const v2, -0xdadadb
+    const v3, -0xdadadb
 
     .line 331
-    iput v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->behindKeyboardColor:I
+    iput v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->behindKeyboardColor:I
 
     .line 332
     iput-boolean v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->useLightStatusBar:Z
 
     .line 333
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
 
     .line 335
     iput v4, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentType:I
@@ -265,322 +265,320 @@
     .line 337
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
-    move-result-object v3
+    move-result-object v6
 
-    sget v6, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
+    sget v7, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
-    invoke-virtual {v3, p0, v6}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
+    invoke-virtual {v6, p0, v7}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
     .line 338
-    iget v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+    iget v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
 
-    invoke-static {v3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+    invoke-static {v6}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
-    move-result-object v3
+    move-result-object v6
 
-    sget v6, Lorg/telegram/messenger/NotificationCenter;->stickersDidLoad:I
+    sget v7, Lorg/telegram/messenger/NotificationCenter;->stickersDidLoad:I
 
-    invoke-virtual {v3, p0, v6}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
+    invoke-virtual {v6, p0, v7}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
     .line 339
-    iget v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+    iget v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
 
-    invoke-static {v3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+    invoke-static {v6}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
-    move-result-object v3
+    move-result-object v6
 
-    sget v6, Lorg/telegram/messenger/NotificationCenter;->recentDocumentsDidLoad:I
+    sget v7, Lorg/telegram/messenger/NotificationCenter;->recentDocumentsDidLoad:I
 
-    invoke-virtual {v3, p0, v6}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
+    invoke-virtual {v6, p0, v7}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
     .line 340
-    iget v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+    iget v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
 
-    invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
+    invoke-static {v6}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v3, v4, v4, v0, v4}, Lorg/telegram/messenger/MediaDataController;->loadRecents(IZZZ)V
+    invoke-virtual {v6, v4, v4, v0, v4}, Lorg/telegram/messenger/MediaDataController;->loadRecents(IZZZ)V
 
     .line 341
-    iget v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+    iget v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
 
-    invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
+    invoke-static {v6}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v3, v0, v4, v0, v4}, Lorg/telegram/messenger/MediaDataController;->loadRecents(IZZZ)V
+    invoke-virtual {v6, v0, v4, v0, v4}, Lorg/telegram/messenger/MediaDataController;->loadRecents(IZZZ)V
 
     .line 342
-    iget v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+    iget v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
 
-    invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
+    invoke-static {v6}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v3, v5, v4, v0, v4}, Lorg/telegram/messenger/MediaDataController;->loadRecents(IZZZ)V
+    invoke-virtual {v6, v5, v4, v0, v4}, Lorg/telegram/messenger/MediaDataController;->loadRecents(IZZZ)V
 
     .line 344
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v3
+    move-result-object v6
 
-    sget v6, Lorg/telegram/messenger/R$drawable;->sheet_shadow_round:I
+    sget v7, Lorg/telegram/messenger/R$drawable;->sheet_shadow_round:I
 
-    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    move-result-object v6
 
-    iput-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->shadowDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 345
-    new-instance v6, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
-    sget-object v7, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    sget-object v8, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v6, v2, v7}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v7, v3, v8}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v3, v6}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v6, v7}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 347
-    new-instance v3, Lorg/telegram/ui/Components/StickerMasksAlert$2;
+    new-instance v6, Lorg/telegram/ui/Components/StickerMasksAlert$2;
 
-    invoke-direct {v3, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$2;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
+    invoke-direct {v6, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$2;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
 
-    iput-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+    iput-object v6, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     .line 486
-    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
+    invoke-virtual {v6, v4}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
     .line 487
-    iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+    iget-object v6, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    iget v6, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
+    iget v7, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
-    invoke-virtual {v3, v6, v4, v6, v4}, Landroid/view/ViewGroup;->setPadding(IIII)V
+    invoke-virtual {v6, v7, v4, v7, v4}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    const/16 v3, 0x40
+    const/16 v6, 0x40
 
     .line 489
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    iput v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->searchFieldHeight:I
-
-    new-array v3, v5, [Landroid/graphics/drawable/Drawable;
-
-    .line 491
-    sget v5, Lorg/telegram/messenger/R$drawable;->stickers_recent:I
-
-    const v6, -0xb4b4b5
-
-    const v7, -0x914513
-
-    .line 492
-    invoke-static {p1, v5, v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    sget v5, Lorg/telegram/messenger/R$drawable;->stickers_favorites:I
-
-    .line 493
-    invoke-static {p1, v5, v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    aput-object v5, v3, v0
-
-    iput-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickerIcons:[Landroid/graphics/drawable/Drawable;
-
-    .line 496
-    iget v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
-
-    invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/MediaDataController;->checkStickers(I)V
-
-    .line 497
-    iget v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
-
-    invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Lorg/telegram/messenger/MediaDataController;->checkStickers(I)V
-
-    .line 498
-    iget v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
-
-    invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lorg/telegram/messenger/MediaDataController;->checkFeaturedStickers()V
-
-    .line 499
-    new-instance v3, Lorg/telegram/ui/Components/StickerMasksAlert$3;
-
-    invoke-direct {v3, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$3;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
-
-    iput-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
-
-    .line 596
-    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$4;
-
-    const/4 v6, 0x5
-
-    invoke-direct {v5, p0, p1, v6}, Lorg/telegram/ui/Components/StickerMasksAlert$4;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;I)V
-
-    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
-
-    invoke-virtual {v3, v5}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
-
-    .line 616
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
-
-    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$5;
-
-    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$5;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
-
-    invoke-virtual {v3, v5}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanSizeLookup(Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;)V
-
-    .line 641
-    new-instance v3, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
-
-    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
-
-    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
-
-    invoke-direct {v3, v5, v6}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;-><init>(Lorg/telegram/ui/Components/RecyclerListView;Landroidx/recyclerview/widget/LinearLayoutManager;)V
-
-    iput-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
-
-    .line 642
-    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$6;
-
-    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$6;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
-
-    invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;->setAnimationCallback(Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;)V
-
-    .line 660
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
-
-    const/4 v5, 0x4
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
-    const/16 v8, 0x38
+    iput v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->searchFieldHeight:I
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    new-array v5, v5, [Landroid/graphics/drawable/Drawable;
 
-    move-result v8
+    .line 491
+    sget v6, Lorg/telegram/messenger/R$drawable;->stickers_recent:I
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const v7, -0xb4b4b5
 
-    move-result v5
+    const v8, -0x914513
 
-    const/16 v9, 0x30
+    .line 492
+    invoke-static {p1, v6, v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    aput-object v6, v5, v4
+
+    sget v6, Lorg/telegram/messenger/R$drawable;->stickers_favorites:I
+
+    .line 493
+    invoke-static {p1, v6, v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    aput-object v6, v5, v0
+
+    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickerIcons:[Landroid/graphics/drawable/Drawable;
+
+    .line 496
+    iget v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+
+    invoke-static {v5}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Lorg/telegram/messenger/MediaDataController;->checkStickers(I)V
+
+    .line 497
+    iget v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+
+    invoke-static {v5}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Lorg/telegram/messenger/MediaDataController;->checkStickers(I)V
+
+    .line 498
+    iget v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+
+    invoke-static {v5}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lorg/telegram/messenger/MediaDataController;->checkFeaturedStickers()V
+
+    .line 499
+    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$3;
+
+    invoke-direct {v5, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$3;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
+
+    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    .line 596
+    new-instance v6, Lorg/telegram/ui/Components/StickerMasksAlert$4;
+
+    const/4 v7, 0x5
+
+    invoke-direct {v6, p0, p1, v7}, Lorg/telegram/ui/Components/StickerMasksAlert$4;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;I)V
+
+    iput-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
+
+    invoke-virtual {v5, v6}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+
+    .line 616
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
+
+    new-instance v6, Lorg/telegram/ui/Components/StickerMasksAlert$5;
+
+    invoke-direct {v6, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$5;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
+
+    invoke-virtual {v5, v6}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanSizeLookup(Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;)V
+
+    .line 641
+    new-instance v5, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
+
+    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    iget-object v7, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
+
+    invoke-direct {v5, v6, v7}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;-><init>(Lorg/telegram/ui/Components/RecyclerListView;Landroidx/recyclerview/widget/LinearLayoutManager;)V
+
+    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
+
+    .line 642
+    new-instance v6, Lorg/telegram/ui/Components/StickerMasksAlert$6;
+
+    invoke-direct {v6, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$6;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
+
+    invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;->setAnimationCallback(Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;)V
+
+    .line 660
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    const/4 v6, 0x4
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v7
+
+    const/16 v9, 0x38
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v9
 
-    invoke-virtual {v3, v6, v8, v5, v10}, Landroid/view/ViewGroup;->setPadding(IIII)V
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    const/16 v10, 0x30
+
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v11
+
+    invoke-virtual {v5, v7, v9, v6, v11}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
     .line 661
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v3, v4}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
+    invoke-virtual {v5, v4}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
     .line 662
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setHorizontalScrollBarEnabled(Z)V
+    invoke-virtual {v5, v4}, Landroid/view/ViewGroup;->setHorizontalScrollBarEnabled(Z)V
 
     .line 663
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
+    invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
     .line 664
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v3, v2}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
+    invoke-virtual {v5, v3}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
 
     .line 665
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorDrawableColor(I)V
+    invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorDrawableColor(I)V
 
     .line 666
-    new-instance v3, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
+    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-direct {v3, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
+    invoke-direct {v5, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
 
-    iput-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersSearchGridAdapter:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
+    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersSearchGridAdapter:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
     .line 667
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;
+    new-instance v6, Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;
 
-    invoke-direct {v5, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
+    invoke-direct {v6, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
 
-    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersGridAdapter:Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;
+    iput-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersGridAdapter:Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;
 
-    invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+    invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     .line 668
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda3;
+    new-instance v6, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda3;
 
-    invoke-direct {v5, p0, p3}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v6, p0, p3}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 669
-    new-instance v3, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda4;
+    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda4;
 
-    invoke-direct {v3, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
+    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
 
-    iput-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersOnItemClickListener:Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersOnItemClickListener:Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
     .line 682
-    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v5, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
+    invoke-virtual {v6, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
     .line 683
-    iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const/4 v6, -0x1
+    invoke-static {v2, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static {v6, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    move-result-object v7
 
-    move-result-object v8
-
-    invoke-virtual {v3, v5, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v5, v6, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 685
-    new-instance v3, Lorg/telegram/ui/Components/StickerMasksAlert$7;
+    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$7;
 
-    invoke-direct {v3, p0, p1, p3}, Lorg/telegram/ui/Components/StickerMasksAlert$7;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v5, p0, p1, p3}, Lorg/telegram/ui/Components/StickerMasksAlert$7;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
+    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     .line 695
     new-instance p3, Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;
@@ -590,42 +588,42 @@
     iput-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersSearchField:Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;
 
     .line 696
-    iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
+    new-instance v6, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget v8, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->searchFieldHeight:I
+    iget v7, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->searchFieldHeight:I
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
 
-    move-result v10
+    move-result v9
 
-    add-int/2addr v8, v10
+    add-int/2addr v7, v9
 
-    invoke-direct {v5, v6, v8}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+    invoke-direct {v6, v2, v7}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v3, p3, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v5, p3, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 698
     iget-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
-    sget-object v3, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;->TAB:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
+    sget-object v5, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;->TAB:Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;
 
-    invoke-virtual {p3, v3}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setType(Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;)V
+    invoke-virtual {p3, v5}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setType(Lorg/telegram/ui/Components/ScrollSlidingTabStrip$Type;)V
 
     .line 699
     iget-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
 
-    move-result v3
+    move-result v5
 
-    invoke-virtual {p3, v3}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setUnderlineHeight(I)V
+    invoke-virtual {p3, v5}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setUnderlineHeight(I)V
 
     .line 700
     iget-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
-    invoke-virtual {p3, v7}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setIndicatorColor(I)V
+    invoke-virtual {p3, v8}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setIndicatorColor(I)V
 
     .line 701
     iget-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
@@ -635,40 +633,40 @@
     .line 702
     iget-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
-    invoke-virtual {p3, v2}, Landroid/widget/HorizontalScrollView;->setBackgroundColor(I)V
+    invoke-virtual {p3, v3}, Landroid/widget/HorizontalScrollView;->setBackgroundColor(I)V
 
     .line 703
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
-    const/16 v5, 0x2a
+    const/16 v6, 0x2a
 
-    const/16 v8, 0x33
+    const/16 v7, 0x33
 
-    invoke-static {v6, v5, v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v2, v6, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {p3, v3, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p3, v5, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 704
     iget-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
-    new-instance v3, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda5;
+    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda5;
 
-    invoke-direct {v3, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
+    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
 
-    invoke-virtual {p3, v3}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setDelegate(Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;)V
+    invoke-virtual {p3, v5}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setDelegate(Lorg/telegram/ui/Components/ScrollSlidingTabStrip$ScrollSlidingTabStripDelegate;)V
 
     .line 730
     iget-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v3, Lorg/telegram/ui/Components/StickerMasksAlert$8;
+    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$8;
 
-    invoke-direct {v3, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$8;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
+    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$8;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
 
-    invoke-virtual {p3, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
+    invoke-virtual {p3, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
     .line 748
     new-instance p3, Lorg/telegram/ui/Components/StickerMasksAlert$9;
@@ -684,25 +682,25 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->shadowLine:Landroid/view/View;
 
-    const/high16 v3, 0x12000000
+    const/high16 v5, 0x12000000
 
     .line 759
-    invoke-virtual {p3, v3}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p3, v5}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 760
     iget-object p3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->bottomTabContainer:Landroid/widget/FrameLayout;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->shadowLine:Landroid/view/View;
+    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->shadowLine:Landroid/view/View;
 
-    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
+    new-instance v6, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
 
-    move-result v8
+    move-result v7
 
-    invoke-direct {v5, v6, v8}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+    invoke-direct {v6, v2, v7}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {p3, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p3, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 762
     new-instance p3, Landroid/view/View;
@@ -710,43 +708,43 @@
     invoke-direct {p3, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     .line 763
-    invoke-virtual {p3, v2}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p3, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 764
-    iget-object v2, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->bottomTabContainer:Landroid/widget/FrameLayout;
+    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->bottomTabContainer:Landroid/widget/FrameLayout;
 
-    new-instance v3, Landroid/widget/FrameLayout$LayoutParams;
+    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v6
 
-    const/16 v8, 0x53
+    const/16 v7, 0x53
 
-    invoke-direct {v3, v6, v5, v8}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+    invoke-direct {v5, v2, v6, v7}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    invoke-virtual {v2, p3, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, p3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 766
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->bottomTabContainer:Landroid/widget/FrameLayout;
+    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->bottomTabContainer:Landroid/widget/FrameLayout;
 
-    new-instance v3, Landroid/widget/FrameLayout$LayoutParams;
+    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v6
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
 
-    move-result v10
+    move-result v9
 
-    add-int/2addr v5, v10
+    add-int/2addr v6, v9
 
-    invoke-direct {v3, v6, v5, v8}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+    invoke-direct {v5, v2, v6, v7}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    invoke-virtual {p3, v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p3, v3, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 768
     new-instance p3, Landroid/widget/LinearLayout;
@@ -757,131 +755,131 @@
     invoke-virtual {p3, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 771
-    new-instance v2, Lorg/telegram/ui/Components/StickerMasksAlert$10;
+    new-instance v3, Lorg/telegram/ui/Components/StickerMasksAlert$10;
 
-    invoke-direct {v2, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$10;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
+    invoke-direct {v3, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$10;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
 
-    iput-object v2, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
+    iput-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
 
     .line 782
-    sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+    sget-object v4, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 783
-    iget-object v2, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
+    iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
 
-    sget v3, Lorg/telegram/messenger/R$drawable;->smiles_tab_smiles:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->smiles_tab_smiles:I
 
-    invoke-static {p1, v3, v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v4, v2, v8}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 784
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const v3, 0x1effffff
+    const v4, 0x1effffff
 
-    const/16 v4, 0x15
+    const/16 v5, 0x15
 
-    if-lt v2, v4, :cond_0
+    if-lt v3, v5, :cond_0
 
     .line 785
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Landroid/graphics/drawable/RippleDrawable;
+    check-cast v6, Landroid/graphics/drawable/RippleDrawable;
 
     .line 786
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->setRippleDrawableForceSoftware(Landroid/graphics/drawable/RippleDrawable;)V
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->setRippleDrawableForceSoftware(Landroid/graphics/drawable/RippleDrawable;)V
 
     .line 787
-    iget-object v8, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
+    iget-object v7, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
 
-    invoke-virtual {v8, v5}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v7, v6}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 789
     :cond_0
-    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
+    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
 
-    const/16 v8, 0x46
+    const/16 v7, 0x46
 
-    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v7, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {p3, v5, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p3, v6, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 790
-    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
+    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->emojiButton:Landroid/widget/ImageView;
 
-    new-instance v10, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda2;
+    new-instance v9, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda2;
 
-    invoke-direct {v10, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
+    invoke-direct {v9, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
 
-    invoke-virtual {v5, v10}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v6, v9}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 798
-    new-instance v5, Lorg/telegram/ui/Components/StickerMasksAlert$11;
+    new-instance v6, Lorg/telegram/ui/Components/StickerMasksAlert$11;
 
-    invoke-direct {v5, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$11;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
+    invoke-direct {v6, p0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$11;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;Landroid/content/Context;)V
 
-    iput-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
+    iput-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
 
     .line 809
-    sget-object v10, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+    sget-object v9, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    invoke-virtual {v5, v10}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    invoke-virtual {v6, v9}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 810
-    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
+    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
 
-    sget v10, Lorg/telegram/messenger/R$drawable;->smiles_tab_stickers:I
+    sget v9, Lorg/telegram/messenger/R$drawable;->smiles_tab_stickers:I
 
-    invoke-static {p1, v10, v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v9, v2, v8}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v5, v10}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v6, v9}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    if-lt v2, v4, :cond_1
+    if-lt v3, v5, :cond_1
 
     .line 812
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Landroid/graphics/drawable/RippleDrawable;
+    check-cast v6, Landroid/graphics/drawable/RippleDrawable;
 
     .line 813
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->setRippleDrawableForceSoftware(Landroid/graphics/drawable/RippleDrawable;)V
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->setRippleDrawableForceSoftware(Landroid/graphics/drawable/RippleDrawable;)V
 
     .line 814
-    iget-object v10, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
+    iget-object v9, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
 
-    invoke-virtual {v10, v5}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v9, v6}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 816
     :cond_1
-    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
+    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
 
-    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v7, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {p3, v5, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p3, v6, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 817
-    iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
+    iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersButton:Landroid/widget/ImageView;
 
-    new-instance v10, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda1;
+    new-instance v9, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda1;
 
-    invoke-direct {v10, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
+    invoke-direct {v9, p0}, Lorg/telegram/ui/Components/StickerMasksAlert$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/StickerMasksAlert;)V
 
-    invoke-virtual {v5, v10}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v6, v9}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     if-nez p2, :cond_3
 
@@ -893,25 +891,25 @@
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->masksButton:Landroid/widget/ImageView;
 
     .line 837
-    sget-object v5, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+    sget-object v6, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    invoke-virtual {p2, v5}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    invoke-virtual {p2, v6}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 838
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->masksButton:Landroid/widget/ImageView;
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->ic_masks_msk1:I
+    sget v6, Lorg/telegram/messenger/R$drawable;->ic_masks_msk1:I
 
-    invoke-static {p1, v5, v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v6, v2, v8}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    if-lt v2, v4, :cond_2
+    if-lt v3, v5, :cond_2
 
     .line 840
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -929,7 +927,7 @@
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->masksButton:Landroid/widget/ImageView;
 
-    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v7, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p2
 
@@ -950,7 +948,7 @@
 
     const/16 p2, 0x51
 
-    invoke-static {v1, v9, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v1, v10, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
@@ -1210,7 +1208,25 @@
     return p0
 .end method
 
-.method static synthetic access$4300(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$4300(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    .locals 0
+
+    .line 73
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
+
+    return p0
+.end method
+
+.method static synthetic access$4400(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    .locals 0
+
+    .line 73
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
+
+    return p0
+.end method
+
+.method static synthetic access$4500(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
     .line 73
@@ -1219,7 +1235,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$4500(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/util/ArrayList;
+.method static synthetic access$4700(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/util/ArrayList;
     .locals 0
 
     .line 73
@@ -1228,7 +1244,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$4600(Lorg/telegram/ui/Components/StickerMasksAlert;)Ljava/util/ArrayList;
+.method static synthetic access$4800(Lorg/telegram/ui/Components/StickerMasksAlert;)Ljava/util/ArrayList;
     .locals 0
 
     .line 73
@@ -1237,33 +1253,13 @@
     return-object p0
 .end method
 
-.method static synthetic access$4700(Lorg/telegram/ui/Components/StickerMasksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
+.method static synthetic access$4900(Lorg/telegram/ui/Components/StickerMasksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
     .locals 0
 
     .line 73
     iget-object p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     return-object p0
-.end method
-
-.method static synthetic access$4800(Lorg/telegram/ui/Components/StickerMasksAlert;Ljava/lang/String;)I
-    .locals 0
-
-    .line 73
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method static synthetic access$4900(Lorg/telegram/ui/Components/StickerMasksAlert;)I
-    .locals 0
-
-    .line 73
-    iget p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
-
-    return p0
 .end method
 
 .method static synthetic access$500(Lorg/telegram/ui/Components/StickerMasksAlert;)Z
@@ -1275,7 +1271,27 @@
     return p0
 .end method
 
-.method static synthetic access$5700(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/lang/String;
+.method static synthetic access$5000(Lorg/telegram/ui/Components/StickerMasksAlert;I)I
+    .locals 0
+
+    .line 73
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static synthetic access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    .locals 0
+
+    .line 73
+    iget p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
+
+    return p0
+.end method
+
+.method static synthetic access$5900(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/lang/String;
     .locals 0
 
     .line 73
@@ -1284,7 +1300,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$5702(Lorg/telegram/ui/Components/StickerMasksAlert;[Ljava/lang/String;)[Ljava/lang/String;
+.method static synthetic access$5902(Lorg/telegram/ui/Components/StickerMasksAlert;[Ljava/lang/String;)[Ljava/lang/String;
     .locals 0
 
     .line 73
@@ -1302,7 +1318,25 @@
     return p0
 .end method
 
-.method static synthetic access$6000(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$6200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    .locals 0
+
+    .line 73
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
+
+    return p0
+.end method
+
+.method static synthetic access$6300(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    .locals 0
+
+    .line 73
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
+
+    return p0
+.end method
+
+.method static synthetic access$6400(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
     .line 73
@@ -3188,6 +3222,20 @@
 
     .line 925
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->delegate:Lorg/telegram/ui/Components/StickerMasksAlert$StickerMasksAlertDelegate;
+
+    return-void
+.end method
+
+.method public setImageReceiverNumLevel(II)V
+    .locals 0
+
+    .line 2139
+    invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setImageReceiverNumLevel(II)V
+
+    .line 2140
+    iget-object p2, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersTab:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
+
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setImageReceiversLayerNum(I)V
 
     return-void
 .end method

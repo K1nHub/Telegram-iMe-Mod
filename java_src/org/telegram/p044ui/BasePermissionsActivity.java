@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
@@ -37,17 +37,17 @@ public class BasePermissionsActivity extends Activity {
                     groupCallActivity.enableCamera();
                 }
             } else {
-                showPermissionErrorAlert(C3242R.raw.permission_request_camera, LocaleController.getString("VoipNeedCameraPermission", C3242R.string.VoipNeedCameraPermission));
+                showPermissionErrorAlert(C3290R.raw.permission_request_camera, LocaleController.getString("VoipNeedCameraPermission", C3290R.string.VoipNeedCameraPermission));
             }
         } else if (i == 4 || i == 151) {
             if (!z) {
-                showPermissionErrorAlert(C3242R.raw.permission_request_folder, i == 151 ? LocaleController.getString("PermissionNoStorageAvatar", C3242R.string.PermissionNoStorageAvatar) : LocaleController.getString("PermissionStorageWithHint", C3242R.string.PermissionStorageWithHint));
+                showPermissionErrorAlert(C3290R.raw.permission_request_folder, i == 151 ? LocaleController.getString("PermissionNoStorageAvatar", C3290R.string.PermissionNoStorageAvatar) : LocaleController.getString("PermissionStorageWithHint", C3290R.string.PermissionStorageWithHint));
             } else {
                 ImageLoader.getInstance().checkMediaPaths();
             }
         } else if (i == 5) {
             if (!z) {
-                showPermissionErrorAlert(C3242R.raw.permission_request_contacts, LocaleController.getString("PermissionNoContactsSharing", C3242R.string.PermissionNoContactsSharing));
+                showPermissionErrorAlert(C3290R.raw.permission_request_contacts, LocaleController.getString("PermissionNoContactsSharing", C3290R.string.PermissionNoContactsSharing));
                 return false;
             }
             ContactsController.getInstance(this.currentAccount).forceImportContacts();
@@ -63,11 +63,11 @@ public class BasePermissionsActivity extends Activity {
                 }
             }
             if (i == 150 && !(z2 && z3)) {
-                showPermissionErrorAlert(C3242R.raw.permission_request_camera, LocaleController.getString("PermissionNoCameraMicVideo", C3242R.string.PermissionNoCameraMicVideo));
+                showPermissionErrorAlert(C3290R.raw.permission_request_camera, LocaleController.getString("PermissionNoCameraMicVideo", C3290R.string.PermissionNoCameraMicVideo));
             } else if (!z2) {
-                showPermissionErrorAlert(C3242R.raw.permission_request_microphone, LocaleController.getString("PermissionNoAudioWithHint", C3242R.string.PermissionNoAudioWithHint));
+                showPermissionErrorAlert(C3290R.raw.permission_request_microphone, LocaleController.getString("PermissionNoAudioWithHint", C3290R.string.PermissionNoAudioWithHint));
             } else if (!z3) {
-                showPermissionErrorAlert(C3242R.raw.permission_request_camera, LocaleController.getString("PermissionNoCameraWithHint", C3242R.string.PermissionNoCameraWithHint));
+                showPermissionErrorAlert(C3290R.raw.permission_request_camera, LocaleController.getString("PermissionNoCameraWithHint", C3290R.string.PermissionNoCameraWithHint));
             } else {
                 if (SharedConfig.inappCamera) {
                     CameraController.getInstance().initCamera(null);
@@ -76,7 +76,7 @@ public class BasePermissionsActivity extends Activity {
             }
         } else if (i == 18 || i == 19 || i == 20 || i == 22 || i == 34) {
             if (!z) {
-                showPermissionErrorAlert(C3242R.raw.permission_request_camera, LocaleController.getString("PermissionNoCameraWithHint", C3242R.string.PermissionNoCameraWithHint));
+                showPermissionErrorAlert(C3290R.raw.permission_request_camera, LocaleController.getString("PermissionNoCameraWithHint", C3290R.string.PermissionNoCameraWithHint));
             }
         } else if (i == 2) {
             NotificationCenter.getGlobalInstance().postNotificationName(z ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
@@ -86,12 +86,12 @@ public class BasePermissionsActivity extends Activity {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public AlertDialog createPermissionErrorAlert(int i, String str) {
-        return new AlertDialog.Builder(this).setTopAnimation(i, 72, false, Theme.getColor("dialogTopBackground")).setMessage(AndroidUtilities.replaceTags(str)).setPositiveButton(LocaleController.getString("PermissionOpenSettings", C3242R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.BasePermissionsActivity$$ExternalSyntheticLambda0
+        return new AlertDialog.Builder(this).setTopAnimation(i, 72, false, Theme.getColor(Theme.key_dialogTopBackground)).setMessage(AndroidUtilities.replaceTags(str)).setPositiveButton(LocaleController.getString("PermissionOpenSettings", C3290R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.BasePermissionsActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 BasePermissionsActivity.this.lambda$createPermissionErrorAlert$0(dialogInterface, i2);
             }
-        }).setNegativeButton(LocaleController.getString("ContactsPermissionAlertNotNow", C3242R.string.ContactsPermissionAlertNotNow), null).create();
+        }).setNegativeButton(LocaleController.getString("ContactsPermissionAlertNotNow", C3290R.string.ContactsPermissionAlertNotNow), null).create();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -101,7 +101,7 @@ public class BasePermissionsActivity extends Activity {
             intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
             startActivity(intent);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 

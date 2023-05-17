@@ -37,7 +37,7 @@
         }
     .end annotation
 
-    const-string p1, "source"
+    const-string/jumbo p1, "source"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

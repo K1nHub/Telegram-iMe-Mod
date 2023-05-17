@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogOrContactPickerActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 483
+    .line 489
     iput-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$5;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setTranslationX(F)V
     .locals 3
 
-    .line 486
+    .line 492
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 487
+    .line 493
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$5;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$1900(Lorg/telegram/ui/DialogOrContactPickerActivity;)Z
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 488
+    .line 494
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$5;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
@@ -60,7 +60,7 @@
 
     if-ne p1, p0, :cond_0
 
-    .line 489
+    .line 495
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$5;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
@@ -93,7 +93,7 @@
 
     div-float/2addr p1, v0
 
-    .line 490
+    .line 496
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$5;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$600(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;

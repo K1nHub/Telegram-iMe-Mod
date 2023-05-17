@@ -17,7 +17,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class UserAddressRequest extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<UserAddressRequest> CREATOR = new zze();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     List<CountrySpecification> zza;
 
     /* compiled from: com.google.android.gms:play-services-identity@@17.0.1 */
@@ -70,7 +70,7 @@ public final class UserAddressRequest extends AbstractSafeParcelable implements 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public UserAddressRequest(@SafeParcelable.Param(m774id = 2) List<CountrySpecification> list) {
+    public UserAddressRequest(@SafeParcelable.Param(m778id = 2) List<CountrySpecification> list) {
         this.zza = list;
     }
 }

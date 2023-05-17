@@ -20,13 +20,20 @@ import org.telegram.p044ui.ActionBar.Theme;
 /* loaded from: classes6.dex */
 public class CheckBoxBase {
     private static Paint eraser;
+    private static Paint forbidPaint;
     private static Paint paint;
+    public long animationDuration;
     private boolean attachedToWindow;
+    private int background2ColorKey;
+    private int backgroundColorKey;
     private Paint backgroundPaint;
     private int backgroundType;
     private ObjectAnimator checkAnimator;
     private Paint checkPaint;
     private String checkedText;
+    private GenericProvider<Void, Paint> circlePaintProvider;
+    private boolean drawUnchecked;
+    private boolean forbidden;
     private boolean isChecked;
     private Theme.MessageDrawable messageDrawable;
     private View parentView;
@@ -38,15 +45,11 @@ public class CheckBoxBase {
     private boolean useDefaultCheck;
     public Rect bounds = new Rect();
     private RectF rect = new RectF();
+    private float alpha = 1.0f;
     private Path path = new Path();
     private boolean enabled = true;
     private float backgroundAlpha = 1.0f;
-    private String checkColorKey = "checkboxCheck";
-    private String backgroundColorKey = "chat_serviceBackground";
-    private String background2ColorKey = "chat_serviceBackground";
-    private boolean drawUnchecked = true;
-    private GenericProvider<Void, Paint> circlePaintProvider = CheckBoxBase$$ExternalSyntheticLambda0.INSTANCE;
-    public long animationDuration = 200;
+    private int checkColorKey = Theme.key_checkboxCheck;
 
     /* renamed from: org.telegram.ui.Components.CheckBoxBase$ProgressDelegate */
     /* loaded from: classes6.dex */
@@ -59,7 +62,18 @@ public class CheckBoxBase {
         invalidate();
     }
 
+    public void setAlpha(float f) {
+        this.alpha = f;
+        invalidate();
+    }
+
     public CheckBoxBase(View view, int i, Theme.ResourcesProvider resourcesProvider) {
+        int i2 = Theme.key_chat_serviceBackground;
+        this.backgroundColorKey = i2;
+        this.background2ColorKey = i2;
+        this.drawUnchecked = true;
+        this.circlePaintProvider = CheckBoxBase$$ExternalSyntheticLambda0.INSTANCE;
+        this.animationDuration = 200L;
         this.resourcesProvider = resourcesProvider;
         this.parentView = view;
         this.size = i;
@@ -75,11 +89,11 @@ public class CheckBoxBase {
         paint3.setStrokeCap(Paint.Cap.ROUND);
         this.checkPaint.setStyle(Paint.Style.STROKE);
         this.checkPaint.setStrokeJoin(Paint.Join.ROUND);
-        this.checkPaint.setStrokeWidth(AndroidUtilities.m51dp(1.9f));
+        this.checkPaint.setStrokeWidth(AndroidUtilities.m55dp(1.9f));
         Paint paint4 = new Paint(1);
         this.backgroundPaint = paint4;
         paint4.setStyle(Paint.Style.STROKE);
-        this.backgroundPaint.setStrokeWidth(AndroidUtilities.m51dp(1.2f));
+        this.backgroundPaint.setStrokeWidth(AndroidUtilities.m55dp(1.2f));
     }
 
     public void setResourcesProvider(Theme.ResourcesProvider resourcesProvider) {
@@ -119,6 +133,14 @@ public class CheckBoxBase {
         }
     }
 
+    public void setForbidden(boolean z) {
+        if (this.forbidden == z) {
+            return;
+        }
+        this.forbidden = z;
+        invalidate();
+    }
+
     private void invalidate() {
         if (this.parentView.getParent() != null) {
             ((View) this.parentView.getParent()).invalidate();
@@ -146,16 +168,16 @@ public class CheckBoxBase {
     public void setBackgroundType(int i) {
         this.backgroundType = i;
         if (i == 12 || i == 13) {
-            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m50dp(1));
+            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m54dp(1));
         } else if (i == 4 || i == 5) {
-            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m51dp(1.9f));
+            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m55dp(1.9f));
             if (i == 5) {
-                this.checkPaint.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
+                this.checkPaint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
             }
         } else if (i == 3) {
-            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m51dp(1.2f));
+            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m55dp(3.0f));
         } else if (i != 0) {
-            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
+            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
         }
     }
 
@@ -189,10 +211,10 @@ public class CheckBoxBase {
         this.checkAnimator.start();
     }
 
-    public void setColor(String str, String str2, String str3) {
-        this.backgroundColorKey = str;
-        this.background2ColorKey = str2;
-        this.checkColorKey = str3;
+    public void setColor(int i, int i2, int i3) {
+        this.backgroundColorKey = i;
+        this.background2ColorKey = i2;
+        this.checkColorKey = i3;
         invalidate();
     }
 
@@ -238,19 +260,21 @@ public class CheckBoxBase {
         setProgress(z ? 1.0f : BitmapDescriptorFactory.HUE_RED);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:107:0x02b8  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:182:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x02d0  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:204:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00ee  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void draw(android.graphics.Canvas r23) {
+    public void draw(android.graphics.Canvas r26) {
         /*
-            Method dump skipped, instructions count: 1167
+            Method dump skipped, instructions count: 1376
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.CheckBoxBase.draw(android.graphics.Canvas):void");
@@ -260,9 +284,7 @@ public class CheckBoxBase {
         this.circlePaintProvider = genericProvider;
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

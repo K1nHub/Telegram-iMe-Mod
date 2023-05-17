@@ -27,11 +27,11 @@ public final class TopicDb {
     }
 
     public int hashCode() {
-        int m702m = BotsDbModel$$ExternalSyntheticBackport0.m702m(this.topicId) * 31;
+        int m706m = BotsDbModel$$ExternalSyntheticBackport0.m706m(this.topicId) * 31;
         String str = this.name;
-        int hashCode = (m702m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m706m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.icon;
-        return ((((((((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.order) * 31) + this.presets.hashCode()) * 31) + this.dialogs.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.userId);
+        return ((((((((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.order) * 31) + this.presets.hashCode()) * 31) + this.dialogs.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId);
     }
 
     public String toString() {

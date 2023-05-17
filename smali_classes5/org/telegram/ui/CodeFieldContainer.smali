@@ -154,16 +154,16 @@
 
     move-result v3
 
-    const-string v6, "windowBackgroundWhiteInputField"
-
     .line 60
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
-    const-string v7, "windowBackgroundWhiteInputFieldActivated"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -175,10 +175,10 @@
 
     move-result v6
 
-    const-string v7, "dialogTextRed"
-
     .line 61
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -193,9 +193,9 @@
     .line 62
     iget-object v7, p0, Lorg/telegram/ui/CodeFieldContainer;->paint:Landroid/graphics/Paint;
 
-    const-string v8, "checkbox"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_checkbox:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 

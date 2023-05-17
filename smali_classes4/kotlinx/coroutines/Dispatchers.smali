@@ -8,6 +8,8 @@
 
 .field private static final IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
+.field private static final Unconfined:Lkotlinx/coroutines/CoroutineDispatcher;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -24,6 +26,8 @@
 
     .line 93
     sget-object v0, Lkotlinx/coroutines/Unconfined;->INSTANCE:Lkotlinx/coroutines/Unconfined;
+
+    sput-object v0, Lkotlinx/coroutines/Dispatchers;->Unconfined:Lkotlinx/coroutines/CoroutineDispatcher;
 
     .line 135
     sget-object v0, Lkotlinx/coroutines/scheduling/DefaultIoScheduler;->INSTANCE:Lkotlinx/coroutines/scheduling/DefaultIoScheduler;
@@ -65,6 +69,15 @@
 
     .line 57
     sget-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lkotlinx/coroutines/MainCoroutineDispatcher;
+
+    return-object v0
+.end method
+
+.method public static final getUnconfined()Lkotlinx/coroutines/CoroutineDispatcher;
+    .locals 1
+
+    .line 93
+    sget-object v0, Lkotlinx/coroutines/Dispatchers;->Unconfined:Lkotlinx/coroutines/CoroutineDispatcher;
 
     return-object v0
 .end method

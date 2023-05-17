@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Докоснете, за да превключите към избиране на ден</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Превключване към режим за въвеждане на текст</string>
     <string name="mtrl_picker_toggle_to_year_selection">Докоснете, за да превключите към избиране на година</string>
+    <string name="nav_app_bar_navigate_up_description">Придвижване нагоре</string>
+    <string name="nav_app_bar_open_drawer_description">Отваряне на слоя за навигация</string>
     <string name="password_toggle_content_description">Показване на паролата</string>
     <string name="search_menu_title">Търсене</string>
     <string name="status_bar_notification_info_overflow">999+</string>

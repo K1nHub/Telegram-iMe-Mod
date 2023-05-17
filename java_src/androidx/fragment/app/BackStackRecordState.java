@@ -7,6 +7,7 @@ import android.util.Log;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Lifecycle;
 import java.util.ArrayList;
+import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public final class BackStackRecordState implements Parcelable {
@@ -117,6 +118,23 @@ public final class BackStackRecordState implements Parcelable {
             }
         }
         backStackRecord.bumpBackStackNesting(1);
+        return backStackRecord;
+    }
+
+    public BackStackRecord instantiate(FragmentManager fragmentManager, Map<String, Fragment> map) {
+        BackStackRecord backStackRecord = new BackStackRecord(fragmentManager);
+        fillInBackStackRecord(backStackRecord);
+        for (int i = 0; i < this.mFragmentWhos.size(); i++) {
+            String str = this.mFragmentWhos.get(i);
+            if (str != null) {
+                Fragment fragment = map.get(str);
+                if (fragment != null) {
+                    backStackRecord.mOps.get(i).mFragment = fragment;
+                } else {
+                    throw new IllegalStateException("Restoring FragmentTransaction " + this.mName + " failed due to missing saved state for Fragment (" + str + ")");
+                }
+            }
+        }
         return backStackRecord;
     }
 

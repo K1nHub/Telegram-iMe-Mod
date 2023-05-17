@@ -9,7 +9,7 @@ import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CryptoAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$4 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CryptoAccountProvider$convert$4 extends Lambda implements Function1<ActionBarMenuItem, Unit> {
     final /* synthetic */ CryptoAccountItem $item;
     final /* synthetic */ CryptoAccountProvider this$0;

@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 9677
+    .line 10100
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
     .locals 1
 
-    .line 9684
+    .line 10107
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 9686
+    .line 10109
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 9691
+    .line 10114
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;-><init>()V
 
-    .line 9692
+    .line 10115
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,7 +86,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 9697
+    .line 10120
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -97,7 +97,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 9699
+    .line 10122
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result p1
@@ -111,24 +111,24 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 9704
+    .line 10127
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 9705
+    .line 10128
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 9706
+    .line 10129
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 9707
+    .line 10130
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->archive_and_mute_new_noncontact_peers:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V

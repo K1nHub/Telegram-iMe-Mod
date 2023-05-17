@@ -333,9 +333,9 @@
 
     int-to-float v10, v10
 
-    const-string v11, "featuredStickers_addButton"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v12
 
@@ -346,9 +346,9 @@
     .line 260
     new-instance v8, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v9, "windowBackgroundWhiteLinkText"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
-    invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v9
 
@@ -445,9 +445,9 @@
     .line 347
     iget-object v8, v0, Lorg/telegram/ui/Components/EmojiPacksAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const-string v9, "listSelectorSDK21"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v9, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v9, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v9
 
@@ -566,10 +566,10 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert;->shadowView:Landroid/view/View;
 
-    const-string v3, "dialogShadowLine"
-
     .line 480
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -616,10 +616,10 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert;->buttonsView:Landroid/widget/FrameLayout;
 
-    const-string v3, "dialogBackground"
-
     .line 485
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v3
 
@@ -651,7 +651,7 @@
     .line 490
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert;->addButtonView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v3
 
@@ -670,9 +670,9 @@
     .line 491
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert;->addButtonView:Landroid/widget/TextView;
 
-    const-string v3, "featuredStickers_buttonText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v3
 
@@ -736,9 +736,9 @@
 
     const v6, 0xfffffff
 
-    const-string v8, "dialogTextRed"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
-    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v9
 
@@ -753,7 +753,7 @@
     .line 499
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert;->removeButtonView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v6
 
@@ -993,11 +993,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1096,11 +1096,11 @@
     return p0
 .end method
 
-.method static synthetic access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1143,11 +1143,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$3900(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$3900(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1181,11 +1181,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$4200(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$4200(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1255,11 +1255,11 @@
     return p0
 .end method
 
-.method static synthetic access$4900(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$4900(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1275,33 +1275,33 @@
     return-object p0
 .end method
 
-.method static synthetic access$5000(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$5000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$5100(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$5100(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$5200(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$5200(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1326,33 +1326,33 @@
     return-object p0
 .end method
 
-.method static synthetic access$5500(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$5500(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$5600(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$5600(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$5700(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$5700(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1368,11 +1368,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$5900(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+.method static synthetic access$5900(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -2554,9 +2554,9 @@
     .line 444
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "actionBarDefaultSubmenuBackground"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v4
 
@@ -3881,10 +3881,10 @@
 .method private updateLightStatusBar(Z)V
     .locals 6
 
-    const-string v0, "dialogBackground"
-
     .line 900
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v0
 
@@ -3909,11 +3909,11 @@
     :cond_0
     move v0, v3
 
-    :goto_0
-    const-string v4, "actionBarDefault"
-
     .line 901
-    invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    :goto_0
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
+    invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v4
 

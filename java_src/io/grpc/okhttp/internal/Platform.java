@@ -66,7 +66,6 @@ public class Platform {
         Method method;
         Method method2;
         TlsExtensionType tlsExtensionType;
-        Class<?> cls;
         Provider androidSecurityProvider = getAndroidSecurityProvider();
         if (androidSecurityProvider != null) {
             OptionalMethod optionalMethod = new OptionalMethod(null, "setUseSessionTickets", Boolean.TYPE);
@@ -74,19 +73,19 @@ public class Platform {
             OptionalMethod optionalMethod3 = new OptionalMethod(byte[].class, "getAlpnSelectedProtocol", new Class[0]);
             OptionalMethod optionalMethod4 = new OptionalMethod(null, "setAlpnProtocols", byte[].class);
             try {
-                cls = Class.forName("android.net.TrafficStats");
+                Class<?> cls = Class.forName("android.net.TrafficStats");
                 method = cls.getMethod("tagSocket", Socket.class);
-            } catch (ClassNotFoundException | NoSuchMethodException unused) {
-                method = null;
-            }
-            try {
-                method2 = cls.getMethod("untagSocket", Socket.class);
-            } catch (ClassNotFoundException | NoSuchMethodException unused2) {
-                method2 = null;
-                if (!androidSecurityProvider.getName().equals(ProviderInstaller.PROVIDER_NAME)) {
+                try {
+                    method2 = cls.getMethod("untagSocket", Socket.class);
+                } catch (ClassNotFoundException | NoSuchMethodException unused) {
+                    method2 = null;
+                    if (!androidSecurityProvider.getName().equals(ProviderInstaller.PROVIDER_NAME)) {
+                    }
+                    tlsExtensionType = TlsExtensionType.ALPN_AND_NPN;
+                    return new Android(optionalMethod, optionalMethod2, method, method2, optionalMethod3, optionalMethod4, androidSecurityProvider, tlsExtensionType);
                 }
-                tlsExtensionType = TlsExtensionType.ALPN_AND_NPN;
-                return new Android(optionalMethod, optionalMethod2, method, method2, optionalMethod3, optionalMethod4, androidSecurityProvider, tlsExtensionType);
+            } catch (ClassNotFoundException | NoSuchMethodException unused2) {
+                method = null;
             }
             if (!androidSecurityProvider.getName().equals(ProviderInstaller.PROVIDER_NAME) || androidSecurityProvider.getName().equals("Conscrypt") || androidSecurityProvider.getName().equals("Ssl_Guard")) {
                 tlsExtensionType = TlsExtensionType.ALPN_AND_NPN;
@@ -122,13 +121,13 @@ public class Platform {
                             return SSLSocket.class.getMethod("getApplicationProtocol", new Class[0]);
                         }
                     }));
-                } catch (ClassNotFoundException | NoSuchMethodException unused3) {
-                    return new Platform(provider);
+                } catch (IllegalAccessException | InvocationTargetException | KeyManagementException | NoSuchAlgorithmException | PrivilegedActionException unused3) {
+                    Class<?> cls2 = Class.forName("org.eclipse.jetty.alpn.ALPN");
+                    Class<?> cls3 = Class.forName("org.eclipse.jetty.alpn.ALPN$Provider");
+                    return new JdkWithJettyBootPlatform(cls2.getMethod("put", SSLSocket.class, cls3), cls2.getMethod("get", SSLSocket.class), cls2.getMethod("remove", SSLSocket.class), Class.forName("org.eclipse.jetty.alpn.ALPN$ClientProvider"), Class.forName("org.eclipse.jetty.alpn.ALPN$ServerProvider"), provider);
                 }
-            } catch (IllegalAccessException | InvocationTargetException | KeyManagementException | NoSuchAlgorithmException | PrivilegedActionException unused4) {
-                Class<?> cls2 = Class.forName("org.eclipse.jetty.alpn.ALPN");
-                Class<?> cls3 = Class.forName("org.eclipse.jetty.alpn.ALPN$Provider");
-                return new JdkWithJettyBootPlatform(cls2.getMethod("put", SSLSocket.class, cls3), cls2.getMethod("get", SSLSocket.class), cls2.getMethod("remove", SSLSocket.class), Class.forName("org.eclipse.jetty.alpn.ALPN$ClientProvider"), Class.forName("org.eclipse.jetty.alpn.ALPN$ServerProvider"), provider);
+            } catch (ClassNotFoundException | NoSuchMethodException unused4) {
+                return new Platform(provider);
             }
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);

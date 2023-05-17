@@ -627,27 +627,23 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 6
 
-    const-string p1, "windowBackgroundGrayShadow"
-
-    const-string v0, "windowBackgroundGray"
-
-    const/4 v1, 0x1
+    const/4 p1, 0x1
 
     if-eqz p2, :cond_7
 
-    if-eq p2, v1, :cond_6
+    if-eq p2, p1, :cond_6
 
-    const/4 v2, 0x2
+    const/4 v0, 0x2
 
-    if-eq p2, v2, :cond_5
+    if-eq p2, v0, :cond_5
 
-    const/4 v2, 0x4
+    const/4 v0, 0x4
 
-    if-eq p2, v2, :cond_4
+    if-eq p2, v0, :cond_4
 
-    const/4 v2, 0x5
+    const/4 v0, 0x5
 
-    if-eq p2, v2, :cond_2
+    if-eq p2, v0, :cond_2
 
     const/4 p1, 0x6
 
@@ -688,7 +684,9 @@
     if-eqz p2, :cond_8
 
     .line 1017
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -724,55 +722,59 @@
     :cond_2
     new-instance p2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    iget-object v2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->context:Landroid/content/Context;
+    iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->context:Landroid/content/Context;
 
-    invoke-direct {p2, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
     .line 1002
-    iget-object v2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->context:Landroid/content/Context;
+    iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->context:Landroid/content/Context;
 
-    iget-object v3, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
+    iget-object v1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
-    invoke-static {v3}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$1600(Lorg/telegram/ui/GroupCreateFinalActivity;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$1600(Lorg/telegram/ui/GroupCreateFinalActivity;)Ljava/util/ArrayList;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_3
+    if-nez v1, :cond_3
 
-    sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
     goto :goto_0
 
     :cond_3
-    sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
     :goto_0
-    invoke-static {v2, v3, p1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    move-result-object p1
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
 
     .line 1003
-    new-instance v2, Lorg/telegram/ui/Components/CombinedDrawable;
+    new-instance v1, Lorg/telegram/ui/Components/CombinedDrawable;
 
-    new-instance v3, Landroid/graphics/drawable/ColorDrawable;
+    new-instance v2, Landroid/graphics/drawable/ColorDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    move-result v0
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-direct {v3, v0}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    move-result v3
 
-    invoke-direct {v2, v3, p1}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v2, v3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    invoke-direct {v1, v2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 1004
-    invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
+    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
     .line 1005
-    invoke-virtual {p2, v2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p2, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
@@ -819,37 +821,41 @@
     :cond_7
     new-instance p2, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
-    iget-object v2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->context:Landroid/content/Context;
+    iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->context:Landroid/content/Context;
 
-    invoke-direct {p2, v2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
     .line 983
-    iget-object v2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->context:Landroid/content/Context;
+    iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateAdapter;->context:Landroid/content/Context;
 
-    sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
 
-    invoke-static {v2, v3, p1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    move-result-object p1
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
 
     .line 984
-    new-instance v2, Lorg/telegram/ui/Components/CombinedDrawable;
+    new-instance v1, Lorg/telegram/ui/Components/CombinedDrawable;
 
-    new-instance v3, Landroid/graphics/drawable/ColorDrawable;
+    new-instance v2, Landroid/graphics/drawable/ColorDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    move-result v0
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-direct {v3, v0}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    move-result v3
 
-    invoke-direct {v2, v3, p1}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v2, v3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    invoke-direct {v1, v2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 985
-    invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
+    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
     .line 986
-    invoke-virtual {p2, v2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p2, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :goto_1
     move-object p1, p2

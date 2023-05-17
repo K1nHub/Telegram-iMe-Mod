@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/SearchViewPager;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/SearchViewPager;->$r8$lambda$e2PCTu_DTJMC3vrX8A_5NzCgTsE(Lorg/telegram/ui/Components/SearchViewPager;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/SearchViewPager;->$r8$lambda$sfSBPjD5bFuYKBEnQ2BIwZjSPew(Lorg/telegram/ui/Components/SearchViewPager;)V
 
     return-void
 .end method

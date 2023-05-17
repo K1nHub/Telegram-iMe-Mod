@@ -34,7 +34,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.Components.URLSpanReplacement;
 /* compiled from: WalletCreateManager.kt */
 /* loaded from: classes3.dex */
@@ -173,7 +173,7 @@ public final class WalletCreateManager {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(walletCreationTypes, "$walletCreationTypes");
         WalletCreateManagerView viewState = this$0.getViewState();
-        String string = this$0.resourceManager.getString(C3242R.string.wallet_dashboard_create_start_dialog_title);
+        String string = this$0.resourceManager.getString(C3290R.string.wallet_dashboard_create_start_dialog_title);
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(walletCreationTypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         Iterator it = walletCreationTypes.iterator();
@@ -210,26 +210,26 @@ public final class WalletCreateManager {
 
     public void loadCryptoInformation(Callbacks$Callback endAction) {
         Intrinsics.checkNotNullParameter(endAction, "endAction");
-        Observable<Result<String>> observeOn = this.cryptoWalletInteractor.getLinkedCryptoWalletAddress(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<String>> observeOn = this.cryptoWalletInteractor.getLinkedCryptoWalletAddress(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1528xf0d1187c(this, endAction)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1529xf0d1187d(getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1597xf0d1187c(this, endAction)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1598xf0d1187d(getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         com.iMe.storage.data.utils.extentions.RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void activateBib39BasedWallet() {
-        Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.activateBip39BasedWallet(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.activateBip39BasedWallet(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) getViewState(), false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1526x5bee52ad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1527x5bee52ae(this.viewState))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) getViewState(), false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1595x5bee52ad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1596x5bee52ae(this.viewState))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 
     private final void prepareCreateWalletFlow(WalletCreationType.Initial initial) {
         String walletPassword = this.cryptoAccessManager.getWalletPassword();
         if (Intrinsics.areEqual(initial, WalletCreationType.Initial.Create.INSTANCE)) {
-            Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.createLocalWallet(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo693ui());
+            Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.createLocalWallet(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1530x1a054ca1(this, initial, walletPassword)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1531x1a054ca2(this.viewState)));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1599x1a054ca1(this, initial, walletPassword)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1600x1a054ca2(this.viewState)));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             com.iMe.storage.data.utils.extentions.RxExtKt.autoDispose(subscribe, this.subscriptions);
             return;
@@ -274,7 +274,7 @@ public final class WalletCreateManager {
     }
 
     private final DialogModel getActivationConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3242R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3242R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3242R.string.common_cancel), this.resourceManager.getString(C3242R.string.common_ok));
+        return new DialogModel(this.resourceManager.getString(C3290R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3290R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.common_ok));
     }
 
     private final AnimatedSpannableDialogModel getAnimatedSpannableDialogModelByType(WalletCreationType.Initial initial) {
@@ -290,24 +290,24 @@ public final class WalletCreateManager {
     private final AnimatedSpannableDialogModel getCreateWalletAnimatedSpannableDialogModel() {
         List<CharacterStyle> listOf;
         int indexOf$default;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CharacterStyle[]{new URLSpanReplacement(this.resourceManager.getString(C3242R.string.wallet_dashboard_create_start_dialog_description_privacy_link)), new ForegroundColorSpan(this.resourceManager.getColor(C3242R.C3243color.crypto_product_custom))});
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(this.resourceManager.getString(C3242R.string.wallet_dashboard_create_start_dialog_description_privacy));
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CharacterStyle[]{new URLSpanReplacement(this.resourceManager.getString(C3290R.string.wallet_dashboard_create_start_dialog_description_privacy_link)), new ForegroundColorSpan(this.resourceManager.getColor(C3290R.C3291color.crypto_product_custom))});
+        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(this.resourceManager.getString(C3290R.string.wallet_dashboard_create_start_dialog_description_privacy));
         for (CharacterStyle characterStyle : listOf) {
             valueOf.setSpan(characterStyle, 0, valueOf.length(), 33);
         }
-        SpannableStringBuilder description = SpannableStringBuilder.valueOf(this.resourceManager.getString(C3242R.string.wallet_dashboard_create_start_dialog_description));
+        SpannableStringBuilder description = SpannableStringBuilder.valueOf(this.resourceManager.getString(C3290R.string.wallet_dashboard_create_start_dialog_description));
         String spannableStringBuilder = description.toString();
         Intrinsics.checkNotNullExpressionValue(spannableStringBuilder, "toString()");
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) spannableStringBuilder, "%s", 0, false, 6, (Object) null);
         description.replace(indexOf$default, indexOf$default + 2, (CharSequence) valueOf);
-        int i = C3242R.raw.fork_crypto_wallet;
-        String string = this.resourceManager.getString(C3242R.string.wallet_dashboard_create_start_dialog_title);
+        int i = C3290R.raw.fork_crypto_wallet;
+        String string = this.resourceManager.getString(C3290R.string.wallet_dashboard_create_start_dialog_title);
         Intrinsics.checkNotNullExpressionValue(description, "description");
-        return new AnimatedSpannableDialogModel(i, string, description, this.resourceManager.getString(C3242R.string.common_next));
+        return new AnimatedSpannableDialogModel(i, string, description, this.resourceManager.getString(C3290R.string.common_next));
     }
 
     private final AnimatedSpannableDialogModel getImportWalletAnimatedSpannableDialogModel() {
-        return new AnimatedSpannableDialogModel(C3242R.raw.fork_wallet_import, this.resourceManager.getString(C3242R.string.wallet_dashboard_import_start_dialog_title), new SpannableStringBuilder(this.resourceManager.getString(C3242R.string.wallet_dashboard_import_start_dialog_description)), this.resourceManager.getString(C3242R.string.common_next));
+        return new AnimatedSpannableDialogModel(C3290R.raw.fork_wallet_import, this.resourceManager.getString(C3290R.string.wallet_dashboard_import_start_dialog_title), new SpannableStringBuilder(this.resourceManager.getString(C3290R.string.wallet_dashboard_import_start_dialog_description)), this.resourceManager.getString(C3290R.string.common_next));
     }
 
     private final DialogModel getWarningDialogModelByType(WalletCreationType.Initial initial) {
@@ -324,41 +324,41 @@ public final class WalletCreateManager {
     }
 
     private final DialogModel getCreateWalletWarningDialogModel() {
-        String string = this.resourceManager.getString(C3242R.string.wallet_dashboard_eth_wallet_warning_dialog_title);
+        String string = this.resourceManager.getString(C3290R.string.wallet_dashboard_eth_wallet_warning_dialog_title);
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3242R.string.wallet_dashboard_create_eth_wallet_warning_dialog_description;
+        int i = C3290R.string.wallet_dashboard_create_eth_wallet_warning_dialog_description;
         Object[] objArr = new Object[1];
         String linkedCryptoWalletAddress = getLinkedCryptoWalletAddress();
         if (linkedCryptoWalletAddress == null) {
             linkedCryptoWalletAddress = "";
         }
         objArr[0] = linkedCryptoWalletAddress;
-        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3242R.string.common_cancel), this.resourceManager.getString(C3242R.string.wallet_dashboard_create_eth_wallet_warning_dialog_action_button));
+        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.wallet_dashboard_create_eth_wallet_warning_dialog_action_button));
     }
 
     private final DialogModel getImportWalletWarningDialogModel() {
-        String string = this.resourceManager.getString(C3242R.string.wallet_dashboard_eth_wallet_warning_dialog_title);
+        String string = this.resourceManager.getString(C3290R.string.wallet_dashboard_eth_wallet_warning_dialog_title);
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3242R.string.wallet_dashboard_import_eth_wallet_warning_dialog_description;
+        int i = C3290R.string.wallet_dashboard_import_eth_wallet_warning_dialog_description;
         Object[] objArr = new Object[1];
         String linkedCryptoWalletAddress = getLinkedCryptoWalletAddress();
         if (linkedCryptoWalletAddress == null) {
             linkedCryptoWalletAddress = "";
         }
         objArr[0] = linkedCryptoWalletAddress;
-        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3242R.string.common_cancel), this.resourceManager.getString(C3242R.string.wallet_dashboard_import_eth_wallet_warning_dialog_action_button));
+        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.wallet_dashboard_import_eth_wallet_warning_dialog_action_button));
     }
 
     private final DialogModel getRestoreWalletWarningDialogModel() {
-        String string = this.resourceManager.getString(C3242R.string.wallet_dashboard_eth_wallet_warning_dialog_title);
+        String string = this.resourceManager.getString(C3290R.string.wallet_dashboard_eth_wallet_warning_dialog_title);
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3242R.string.wallet_dashboard_restore_eth_wallet_warning_dialog_description;
+        int i = C3290R.string.wallet_dashboard_restore_eth_wallet_warning_dialog_description;
         Object[] objArr = new Object[1];
         String linkedCryptoWalletAddress = getLinkedCryptoWalletAddress();
         if (linkedCryptoWalletAddress == null) {
             linkedCryptoWalletAddress = "";
         }
         objArr[0] = linkedCryptoWalletAddress;
-        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3242R.string.common_cancel), this.resourceManager.getString(C3242R.string.wallet_dashboard_restore_eth_wallet_warning_dialog_action_button));
+        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.wallet_dashboard_restore_eth_wallet_warning_dialog_action_button));
     }
 }

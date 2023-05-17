@@ -66,7 +66,7 @@ public final class TRONBlockchainCryptoWalletManagerImpl extends BlockchainCrypt
                 return generateAddressByMnemonic$lambda$0;
             }
         });
-        final C1746x29f55e4 c1746x29f55e4 = C1746x29f55e4.INSTANCE;
+        final C1823x29f55e4 c1823x29f55e4 = C1823x29f55e4.INSTANCE;
         Observable<Result<String>> onErrorReturn = fromCallable.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.crypto.TRONBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {

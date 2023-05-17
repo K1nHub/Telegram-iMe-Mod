@@ -49,7 +49,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/AbstractClientStream$GetFramer;->headers:Lio/grpc/Metadata;
 
-    const-string p1, "statsTraceCtx"
+    const-string/jumbo p1, "statsTraceCtx"
 
     .line 487
     invoke-static {p3, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

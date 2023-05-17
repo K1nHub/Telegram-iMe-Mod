@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;)V
     .locals 0
 
-    .line 2981
+    .line 2988
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public linkRevoked(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 11
 
-    .line 2990
+    .line 2997
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;-><init>()V
 
-    .line 2991
+    .line 2998
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity;->messages:Ljava/util/ArrayList;
@@ -54,21 +54,21 @@
 
     const/4 v9, 0x1
 
-    .line 2992
+    .line 2999
     iput-boolean v9, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->revoked:Z
 
-    .line 2993
+    .line 3000
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteRevoke;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteRevoke;-><init>()V
 
-    .line 2994
+    .line 3001
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteRevoke;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 2995
+    .line 3002
     iput-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->action:Lorg/telegram/tgnet/TLRPC$ChannelAdminLogEventAction;
 
-    .line 2996
+    .line 3003
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -81,7 +81,7 @@
 
     iput v0, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->date:I
 
-    .line 2997
+    .line 3004
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
@@ -96,7 +96,7 @@
 
     iput-wide v0, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->user_id:J
 
-    .line 2998
+    .line 3005
     new-instance v10, Lorg/telegram/messenger/MessageObject;
 
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -127,14 +127,14 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;Ljava/util/ArrayList;Ljava/util/HashMap;Lorg/telegram/tgnet/TLRPC$Chat;[IZ)V
 
-    .line 2999
+    .line 3006
     iget v0, v10, Lorg/telegram/messenger/MessageObject;->contentType:I
 
     if-gez v0, :cond_0
 
     return-void
 
-    .line 3002
+    .line 3009
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -148,7 +148,7 @@
 
     if-lez v0, :cond_1
 
-    .line 3004
+    .line 3011
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$7400(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
@@ -157,7 +157,7 @@
 
     invoke-virtual {v1, v9}, Landroidx/recyclerview/widget/ChatListItemAnimator;->setShouldAnimateEnterFromBottom(Z)V
 
-    .line 3005
+    .line 3012
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$7500(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
@@ -176,12 +176,12 @@
 
     invoke-virtual {v1, v2, v0}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->notifyItemRangeInserted(II)V
 
-    .line 3006
+    .line 3013
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$7700(Lorg/telegram/ui/ChannelAdminLogActivity;)V
 
-    .line 3008
+    .line 3015
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -199,7 +199,7 @@
 .method public onLinkDeleted(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 10
 
-    .line 3013
+    .line 3020
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity;->messages:Ljava/util/ArrayList;
@@ -208,7 +208,7 @@
 
     move-result v0
 
-    .line 3014
+    .line 3021
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$7500(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
@@ -217,23 +217,23 @@
 
     invoke-static {v1}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->access$7600(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;)I
 
-    .line 3015
+    .line 3022
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;-><init>()V
 
-    .line 3016
+    .line 3023
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteDelete;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteDelete;-><init>()V
 
-    .line 3017
+    .line 3024
     iput-object p1, v1, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteDelete;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 3018
+    .line 3025
     iput-object v1, v4, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->action:Lorg/telegram/tgnet/TLRPC$ChannelAdminLogEventAction;
 
-    .line 3019
+    .line 3026
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -246,7 +246,7 @@
 
     iput v1, v4, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->date:I
 
-    .line 3020
+    .line 3027
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
@@ -261,7 +261,7 @@
 
     iput-wide v1, v4, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->user_id:J
 
-    .line 3021
+    .line 3028
     new-instance v1, Lorg/telegram/messenger/MessageObject;
 
     iget-object v2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -292,14 +292,14 @@
 
     invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;Ljava/util/ArrayList;Ljava/util/HashMap;Lorg/telegram/tgnet/TLRPC$Chat;[IZ)V
 
-    .line 3022
+    .line 3029
     iget v1, v1, Lorg/telegram/messenger/MessageObject;->contentType:I
 
     if-gez v1, :cond_0
 
     return-void
 
-    .line 3025
+    .line 3032
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -313,7 +313,7 @@
 
     if-lez v1, :cond_1
 
-    .line 3027
+    .line 3034
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$7400(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
@@ -324,7 +324,7 @@
 
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/ChatListItemAnimator;->setShouldAnimateEnterFromBottom(Z)V
 
-    .line 3028
+    .line 3035
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$7500(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
@@ -343,12 +343,12 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->notifyItemRangeInserted(II)V
 
-    .line 3029
+    .line 3036
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$7700(Lorg/telegram/ui/ChannelAdminLogActivity;)V
 
-    .line 3032
+    .line 3039
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -366,26 +366,26 @@
 .method public onLinkEdited(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 8
 
-    .line 3037
+    .line 3044
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;-><init>()V
 
-    .line 3038
+    .line 3045
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteEdit;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteEdit;-><init>()V
 
-    .line 3039
+    .line 3046
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteEdit;->new_invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 3040
+    .line 3047
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteEdit;->prev_invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 3041
+    .line 3048
     iput-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->action:Lorg/telegram/tgnet/TLRPC$ChannelAdminLogEventAction;
 
-    .line 3042
+    .line 3049
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -398,7 +398,7 @@
 
     iput p1, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->date:I
 
-    .line 3043
+    .line 3050
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
@@ -413,7 +413,7 @@
 
     iput-wide v0, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->user_id:J
 
-    .line 3044
+    .line 3051
     new-instance p1, Lorg/telegram/messenger/MessageObject;
 
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -444,14 +444,14 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;Ljava/util/ArrayList;Ljava/util/HashMap;Lorg/telegram/tgnet/TLRPC$Chat;[IZ)V
 
-    .line 3045
+    .line 3052
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->contentType:I
 
     if-gez p1, :cond_0
 
     return-void
 
-    .line 3048
+    .line 3055
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -461,7 +461,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->notifyDataSetChanged()V
 
-    .line 3049
+    .line 3056
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$7700(Lorg/telegram/ui/ChannelAdminLogActivity;)V

@@ -21,14 +21,14 @@ public final class GeobFrame extends Id3Frame {
     };
 
     /* renamed from: ID */
-    public static final String f113ID = "GEOB";
+    public static final String f116ID = "GEOB";
     public final byte[] data;
     public final String description;
     public final String filename;
     public final String mimeType;
 
     public GeobFrame(String str, String str2, String str3, byte[] bArr) {
-        super(f113ID);
+        super(f116ID);
         this.mimeType = str;
         this.filename = str2;
         this.description = str3;
@@ -36,7 +36,7 @@ public final class GeobFrame extends Id3Frame {
     }
 
     GeobFrame(Parcel parcel) {
-        super(f113ID);
+        super(f116ID);
         this.mimeType = (String) Util.castNonNull(parcel.readString());
         this.filename = (String) Util.castNonNull(parcel.readString());
         this.description = (String) Util.castNonNull(parcel.readString());
@@ -65,7 +65,7 @@ public final class GeobFrame extends Id3Frame {
 
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame
     public String toString() {
-        return this.f114id + ": mimeType=" + this.mimeType + ", filename=" + this.filename + ", description=" + this.description;
+        return this.f117id + ": mimeType=" + this.mimeType + ", filename=" + this.filename + ", description=" + this.description;
     }
 
     @Override // android.os.Parcelable

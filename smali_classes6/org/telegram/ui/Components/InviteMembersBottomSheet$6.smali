@@ -280,10 +280,10 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 1296
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -308,9 +308,9 @@
     .line 1297
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$6;->paint:Landroid/graphics/Paint;
 
-    const-string v1, "divider"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

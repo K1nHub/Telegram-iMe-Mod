@@ -19,18 +19,18 @@ import java.util.Arrays;
 /* loaded from: classes3.dex */
 public class Asset extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<Asset> CREATOR = new zzc();
-    @SafeParcelable.Field(m775id = 4)
+    @SafeParcelable.Field(m779id = 4)
     public ParcelFileDescriptor zza;
-    @SafeParcelable.Field(m775id = 5)
+    @SafeParcelable.Field(m779id = 5)
     public Uri zzb;
-    @SafeParcelable.Field(getter = "getData", m775id = 2)
+    @SafeParcelable.Field(getter = "getData", m779id = 2)
     private byte[] zzc;
-    @SafeParcelable.Field(getter = "getDigest", m775id = 3)
+    @SafeParcelable.Field(getter = "getDigest", m779id = 3)
     private String zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public Asset(@SafeParcelable.Param(m774id = 2) byte[] bArr, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) ParcelFileDescriptor parcelFileDescriptor, @SafeParcelable.Param(m774id = 5) Uri uri) {
+    public Asset(@SafeParcelable.Param(m778id = 2) byte[] bArr, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) ParcelFileDescriptor parcelFileDescriptor, @SafeParcelable.Param(m778id = 5) Uri uri) {
         this.zzc = bArr;
         this.zzd = str;
         this.zza = parcelFileDescriptor;

@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$23;
-.super Landroid/widget/FrameLayout;
+.super Lorg/telegram/ui/Components/SeekBarView;
 .source "ThemePreviewActivity.java"
 
 
@@ -14,167 +14,42 @@
 .end annotation
 
 
-# instance fields
-.field private loc:[I
-
-.field final synthetic this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1910
-    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    const/4 p1, 0x2
-
-    new-array p1, p1, [I
-
-    .line 1912
-    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->loc:[I
+    .line 2172
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/SeekBarView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public invalidate()V
-    .locals 1
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
 
-    .line 1916
-    invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
+    .line 2175
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    .line 1917
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    move-result v0
 
-    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
+    if-nez v0, :cond_0
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 1918
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
+    .line 2176
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
-
-    :cond_0
-    return-void
-.end method
-
-.method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 4
-
-    .line 1924
-    sget-boolean p1, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
-
-    if-nez p1, :cond_2
-
-    .line 1925
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->loc:[I
-
-    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
-
-    .line 1926
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0x15
 
     const/4 v1, 0x1
 
-    if-ge p1, v0, :cond_0
+    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    .line 1927
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->loc:[I
-
-    aget v0, p1, v1
-
-    sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
-
-    sub-int/2addr v0, v2
-
-    aput v0, p1, v1
-
-    .line 1929
+    .line 2178
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1200(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/SeekBarView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->loc:[I
-
-    aget v0, v0, v1
-
-    int-to-float v0, v0
-
-    cmpl-float p1, p1, v0
-
-    if-eqz p1, :cond_1
-
-    .line 1930
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1200(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->loc:[I
-
-    aget v0, v0, v1
-
-    neg-int v0, v0
-
-    int-to-float v0, v0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setTranslationY(F)V
-
-    .line 1931
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$6400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
-
-    .line 1933
-    :cond_1
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$23;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$6500(Lorg/telegram/ui/ThemePreviewActivity;)J
-
-    move-result-wide v2
-
-    cmp-long p1, v0, v2
-
-    if-gez p1, :cond_2
-
-    .line 1934
-    invoke-virtual {p0}, Lorg/telegram/ui/ThemePreviewActivity$23;->invalidate()V
-
-    :cond_2
-    return-void
+    return p1
 .end method

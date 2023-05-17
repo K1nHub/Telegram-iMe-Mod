@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$35;
-.super Lorg/telegram/ui/Components/BlurredLinearLayout;
+.super Landroid/view/ViewOutlineProvider;
 .source "ChatActivity.java"
 
 
@@ -15,33 +15,34 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 8407
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/BlurredLinearLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
+    .line 8315
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 2
 
-    .line 8410
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
+    const/16 p1, 0x2a
 
-    move-result-object v0
+    .line 8318
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/4 v1, 0x1
+    move-result v0
 
-    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
-
-    .line 8411
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    return p1
+    const/4 v1, 0x0
+
+    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
+
+    return-void
 .end method

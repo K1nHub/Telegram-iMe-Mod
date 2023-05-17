@@ -18,8 +18,6 @@
 
 .field activity:Landroid/app/Activity;
 
-.field animationIndex:I
-
 .field private backIcon:Landroid/widget/ImageView;
 
 .field bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
@@ -111,6 +109,8 @@
 .field navigationBarAnimationListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 .field notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
+
+.field notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
 .field private overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
@@ -427,36 +427,36 @@
 .end method
 
 .method public constructor <init>(I)V
-    .locals 4
+    .locals 3
 
-    .line 419
+    .line 420
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x4
 
     new-array v1, v0, [Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
-    .line 113
+    .line 114
     iput-object v1, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     new-array v1, v0, [Landroid/widget/ImageView;
 
-    .line 129
+    .line 130
     iput-object v1, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     new-array v0, v0, [Lorg/telegram/messenger/Emoji$EmojiDrawable;
 
-    .line 130
+    .line 131
     iput-object v0, p0, Lorg/telegram/ui/VoIPFragment;->emojiDrawables:[Lorg/telegram/messenger/Emoji$EmojiDrawable;
 
-    .line 146
+    .line 147
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/VoIPFragment;->overlayPaint:Landroid/graphics/Paint;
 
-    .line 147
+    .line 148
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
@@ -465,66 +465,68 @@
 
     const/4 v0, 0x1
 
-    .line 167
+    .line 168
     iput-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 168
+    .line 169
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAlpha:F
 
-    const/4 v1, -0x1
+    .line 185
+    new-instance v1, Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    .line 184
-    iput v1, p0, Lorg/telegram/ui/VoIPFragment;->animationIndex:I
+    invoke-direct {v1}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
 
-    .line 190
-    new-instance v2, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda1;
+    iput-object v1, p0, Lorg/telegram/ui/VoIPFragment;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/VoIPFragment;)V
+    .line 191
+    new-instance v1, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda1;
 
-    iput-object v2, p0, Lorg/telegram/ui/VoIPFragment;->statusbarAnimatorListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    invoke-direct {v1, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
-    .line 198
-    new-instance v2, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda0;
+    iput-object v1, p0, Lorg/telegram/ui/VoIPFragment;->statusbarAnimatorListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/VoIPFragment;)V
+    .line 199
+    new-instance v1, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda0;
 
-    iput-object v2, p0, Lorg/telegram/ui/VoIPFragment;->navigationBarAnimationListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    invoke-direct {v1, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
-    .line 204
-    new-instance v2, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda25;
+    iput-object v1, p0, Lorg/telegram/ui/VoIPFragment;->navigationBarAnimationListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/VoIPFragment;)V
+    .line 205
+    new-instance v1, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda25;
 
-    iput-object v2, p0, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
+    invoke-direct {v1, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
-    .line 230
+    iput-object v1, p0, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
+
+    .line 231
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->pinchScale:F
 
-    .line 420
+    .line 421
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->currentAccount:I
 
-    .line 421
+    .line 422
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+    invoke-virtual {v1}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 422
+    .line 423
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -535,24 +537,26 @@
 
     iput-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 423
+    .line 424
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lorg/telegram/messenger/voip/VoIPService;->registerStateListener(Lorg/telegram/messenger/voip/VoIPService$StateListener;)V
 
-    .line 424
+    .line 425
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isOutgoing()Z
 
-    .line 425
-    iput v1, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
+    const/4 v0, -0x1
 
     .line 426
+    iput v0, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
+
+    .line 427
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -563,7 +567,7 @@
 
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
-    .line 427
+    .line 428
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -572,7 +576,7 @@
 
     invoke-virtual {p1, p0, v0}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 428
+    .line 429
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -581,7 +585,7 @@
 
     invoke-virtual {p1, p0, v0}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 429
+    .line 430
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -596,7 +600,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->isFinished:Z
 
     return p0
@@ -605,7 +609,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->switchingToPip:Z
 
     return p0
@@ -614,7 +618,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPTextureView;
     .locals 0
 
-    .line 100
+    .line 101
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->getFullscreenTextureView()Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     move-result-object p0
@@ -625,7 +629,7 @@
 .method static synthetic access$102(Lorg/telegram/ui/VoIPFragment;Z)Z
     .locals 0
 
-    .line 100
+    .line 101
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->switchingToPip:Z
 
     return p1
@@ -634,7 +638,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/VoIPFragment;)F
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pinchStartDistance:F
 
     return p0
@@ -643,7 +647,7 @@
 .method static synthetic access$1102(Lorg/telegram/ui/VoIPFragment;F)F
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchStartDistance:F
 
     return p1
@@ -652,7 +656,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/VoIPFragment;)F
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pinchStartCenterX:F
 
     return p0
@@ -661,7 +665,7 @@
 .method static synthetic access$1202(Lorg/telegram/ui/VoIPFragment;F)F
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchStartCenterX:F
 
     return p1
@@ -670,7 +674,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/VoIPFragment;)F
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pinchCenterX:F
 
     return p0
@@ -679,7 +683,7 @@
 .method static synthetic access$1302(Lorg/telegram/ui/VoIPFragment;F)F
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchCenterX:F
 
     return p1
@@ -688,7 +692,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/VoIPFragment;)F
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pinchStartCenterY:F
 
     return p0
@@ -697,7 +701,7 @@
 .method static synthetic access$1402(Lorg/telegram/ui/VoIPFragment;F)F
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchStartCenterY:F
 
     return p1
@@ -706,7 +710,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/VoIPFragment;)F
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pinchCenterY:F
 
     return p0
@@ -715,7 +719,7 @@
 .method static synthetic access$1502(Lorg/telegram/ui/VoIPFragment;F)F
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchCenterY:F
 
     return p1
@@ -724,7 +728,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/VoIPFragment;)I
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pointerId1:I
 
     return p0
@@ -733,7 +737,7 @@
 .method static synthetic access$1602(Lorg/telegram/ui/VoIPFragment;I)I
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pointerId1:I
 
     return p1
@@ -742,7 +746,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/VoIPFragment;)I
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pointerId2:I
 
     return p0
@@ -751,7 +755,7 @@
 .method static synthetic access$1702(Lorg/telegram/ui/VoIPFragment;I)I
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pointerId2:I
 
     return p1
@@ -760,7 +764,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/VoIPFragment;)F
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationX:F
 
     return p0
@@ -769,7 +773,7 @@
 .method static synthetic access$1802(Lorg/telegram/ui/VoIPFragment;F)F
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationX:F
 
     return p1
@@ -778,7 +782,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/VoIPFragment;)F
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationY:F
 
     return p0
@@ -787,7 +791,7 @@
 .method static synthetic access$1902(Lorg/telegram/ui/VoIPFragment;F)F
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationY:F
 
     return p1
@@ -796,7 +800,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->lockOnScreen:Z
 
     return p0
@@ -805,7 +809,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/VoIPFragment;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 100
+    .line 101
     invoke-direct {p0, p1}, Lorg/telegram/ui/VoIPFragment;->checkPointerIds(Landroid/view/MotionEvent;)Z
 
     move-result p0
@@ -816,7 +820,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/VoIPFragment;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->fragmentView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -825,7 +829,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->emojiExpanded:Z
 
     return p0
@@ -834,7 +838,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/VoIPFragment;Z)V
     .locals 0
 
-    .line 100
+    .line 101
     invoke-direct {p0, p1}, Lorg/telegram/ui/VoIPFragment;->expandEmoji(Z)V
 
     return-void
@@ -843,7 +847,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->canHideUI:Z
 
     return p0
@@ -852,7 +856,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     return p0
@@ -861,7 +865,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/VoIPFragment;Z)V
     .locals 0
 
-    .line 100
+    .line 101
     invoke-direct {p0, p1}, Lorg/telegram/ui/VoIPFragment;->showUi(Z)V
 
     return-void
@@ -870,7 +874,7 @@
 .method static synthetic access$2702(Lorg/telegram/ui/VoIPFragment;I)I
     .locals 0
 
-    .line 100
+    .line 101
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
     return p1
@@ -879,7 +883,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 100
+    .line 101
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     return-void
@@ -888,7 +892,7 @@
 .method static synthetic access$2900(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/BackupImageView;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object p0
@@ -897,7 +901,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 100
+    .line 101
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->onBackPressed()V
 
     return-void
@@ -906,7 +910,7 @@
 .method static synthetic access$3000(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPTextureView;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     return-object p0
@@ -915,7 +919,7 @@
 .method static synthetic access$3100(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     return-object p0
@@ -924,7 +928,7 @@
 .method static synthetic access$3200(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraIsFullscreen:Z
 
     return p0
@@ -933,7 +937,7 @@
 .method static synthetic access$3300(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->emojiLoaded:Z
 
     return p0
@@ -942,7 +946,7 @@
 .method static synthetic access$3400(Lorg/telegram/ui/VoIPFragment;)Landroid/widget/TextView;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserTitle:Landroid/widget/TextView;
 
     return-object p0
@@ -951,7 +955,7 @@
 .method static synthetic access$3500(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
     return p0
@@ -960,7 +964,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/VoIPFragment;)I
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->currentAccount:I
 
     return p0
@@ -969,7 +973,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPWindowView;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     return-object p0
@@ -978,7 +982,7 @@
 .method static synthetic access$3800(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPTextureView;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     return-object p0
@@ -987,7 +991,7 @@
 .method static synthetic access$3900(Lorg/telegram/ui/VoIPFragment;)Lorg/webrtc/TextureViewRenderer;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
     return-object p0
@@ -996,7 +1000,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/VoIPFragment;)I
     .locals 0
 
-    .line 100
+    .line 101
     iget p0, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     return p0
@@ -1005,7 +1009,7 @@
 .method static synthetic access$4000(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 100
+    .line 101
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->destroy()V
 
     return-void
@@ -1014,7 +1018,7 @@
 .method static synthetic access$4102(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/VoIPFragment;
     .locals 0
 
-    .line 100
+    .line 101
     sput-object p0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     return-object p0
@@ -1023,7 +1027,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     return-object p0
@@ -1032,7 +1036,7 @@
 .method static synthetic access$4300(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     return-object p0
@@ -1041,7 +1045,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/BackupImageView;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object p0
@@ -1050,7 +1054,7 @@
 .method static synthetic access$4500(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/AcceptDeclineView;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     return-object p0
@@ -1059,7 +1063,7 @@
 .method static synthetic access$4602(Lorg/telegram/ui/VoIPFragment;Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;)Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
     .locals 0
 
-    .line 100
+    .line 101
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment;->previewDialog:Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
     return-object p1
@@ -1068,7 +1072,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/VoIPFragment;)Landroid/view/WindowInsets;
     .locals 0
 
-    .line 100
+    .line 101
     iget-object p0, p0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     return-object p0
@@ -1077,7 +1081,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->canZoomGesture:Z
 
     return p0
@@ -1086,7 +1090,7 @@
 .method static synthetic access$602(Lorg/telegram/ui/VoIPFragment;Z)Z
     .locals 0
 
-    .line 100
+    .line 101
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->canZoomGesture:Z
 
     return p1
@@ -1095,7 +1099,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->isInPinchToZoomTouchMode:Z
 
     return p0
@@ -1104,7 +1108,7 @@
 .method static synthetic access$702(Lorg/telegram/ui/VoIPFragment;Z)Z
     .locals 0
 
-    .line 100
+    .line 101
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->isInPinchToZoomTouchMode:Z
 
     return p1
@@ -1113,7 +1117,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/VoIPFragment;)Z
     .locals 0
 
-    .line 100
+    .line 101
     iget-boolean p0, p0, Lorg/telegram/ui/VoIPFragment;->zoomStarted:Z
 
     return p0
@@ -1122,7 +1126,7 @@
 .method static synthetic access$802(Lorg/telegram/ui/VoIPFragment;Z)Z
     .locals 0
 
-    .line 100
+    .line 101
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->zoomStarted:Z
 
     return p1
@@ -1131,7 +1135,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 100
+    .line 101
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->finishZoom()V
 
     return-void
@@ -1151,7 +1155,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 1932
+    .line 1933
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->emojiDrawables:[Lorg/telegram/messenger/Emoji$EmojiDrawable;
 
     aget-object v4, v3, v1
@@ -1178,7 +1182,7 @@
 
     const/4 v1, 0x1
 
-    .line 1938
+    .line 1939
     iput-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->emojiLoaded:Z
 
     move v1, v0
@@ -1186,7 +1190,7 @@
     :goto_1
     if-ge v1, v3, :cond_3
 
-    .line 1940
+    .line 1941
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v2, v2, v1
@@ -1197,7 +1201,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1941
+    .line 1942
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v2, v2, v1
@@ -1206,7 +1210,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 1943
+    .line 1944
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v2, v2, v1
@@ -1215,7 +1219,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1944
+    .line 1945
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v2, v2, v1
@@ -1230,7 +1234,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    .line 1945
+    .line 1946
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v2, v2, v1
@@ -1277,7 +1281,7 @@
 .method private checkPointerIds(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 993
+    .line 994
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v0
@@ -1290,7 +1294,7 @@
 
     return v1
 
-    .line 996
+    .line 997
     :cond_0
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->pointerId1:I
 
@@ -1312,7 +1316,7 @@
 
     return v3
 
-    .line 999
+    .line 1000
     :cond_1
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->pointerId1:I
 
@@ -1339,19 +1343,19 @@
 .method public static clearInstance()V
     .locals 7
 
-    .line 366
+    .line 367
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     if-eqz v0, :cond_2
 
-    .line 367
+    .line 368
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 368
+    .line 369
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
@@ -1360,7 +1364,7 @@
 
     move-result v0
 
-    .line 369
+    .line 370
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x14
@@ -1373,14 +1377,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 370
+    .line 371
     invoke-virtual {v3}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
 
     move-result v3
 
     sub-int/2addr v0, v3
 
-    .line 372
+    .line 373
     :cond_0
     sget-object v3, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
@@ -1388,7 +1392,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 373
+    .line 374
     iget-object v4, v3, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     iget v5, v3, Lorg/telegram/ui/VoIPFragment;->currentAccount:I
@@ -1405,21 +1409,21 @@
 
     if-lt v1, v2, :cond_1
 
-    .line 374
+    .line 375
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     if-eqz v0, :cond_1
 
-    .line 375
+    .line 376
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v0
 
     sput v0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->topInset:I
 
-    .line 376
+    .line 377
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
@@ -1430,7 +1434,7 @@
 
     sput v0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->bottomInset:I
 
-    .line 380
+    .line 381
     :cond_1
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
@@ -1440,7 +1444,7 @@
 
     invoke-virtual {v0}, Lorg/webrtc/TextureViewRenderer;->release()V
 
-    .line 381
+    .line 382
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
@@ -1449,14 +1453,14 @@
 
     invoke-virtual {v0}, Lorg/webrtc/TextureViewRenderer;->release()V
 
-    .line 382
+    .line 383
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v0}, Lorg/webrtc/TextureViewRenderer;->release()V
 
-    .line 383
+    .line 384
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {v0}, Lorg/telegram/ui/VoIPFragment;->destroy()V
@@ -1464,7 +1468,7 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 385
+    .line 386
     sput-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     return-void
@@ -1473,17 +1477,17 @@
 .method private destroy()V
     .locals 2
 
-    .line 433
+    .line 434
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 435
+    .line 436
     invoke-virtual {v0, p0}, Lorg/telegram/messenger/voip/VoIPService;->unregisterStateListener(Lorg/telegram/messenger/voip/VoIPService$StateListener;)V
 
-    .line 437
+    .line 438
     :cond_0
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->currentAccount:I
 
@@ -1495,7 +1499,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 438
+    .line 439
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1504,7 +1508,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 439
+    .line 440
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1519,7 +1523,7 @@
 .method private expandEmoji(Z)V
     .locals 7
 
-    .line 1324
+    .line 1325
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->emojiLoaded:Z
 
     if-eqz v0, :cond_6
@@ -1534,7 +1538,7 @@
 
     goto/16 :goto_2
 
-    .line 1327
+    .line 1328
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->emojiExpanded:Z
 
@@ -1546,17 +1550,17 @@
 
     if-eqz p1, :cond_5
 
-    .line 1329
+    .line 1330
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 p1, 0x0
 
-    .line 1330
+    .line 1331
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
-    .line 1331
+    .line 1332
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
@@ -1565,7 +1569,7 @@
 
     int-to-float v4, v4
 
-    .line 1332
+    .line 1333
     iget-object v5, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -1584,7 +1588,7 @@
 
     div-float/2addr v5, v4
 
-    .line 1334
+    .line 1335
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1601,7 +1605,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
-    .line 1335
+    .line 1336
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v5
@@ -1628,22 +1632,22 @@
 
     sget-object v5, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    .line 1336
+    .line 1337
     invoke-virtual {v4, v5}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v4
 
     const-wide/16 v5, 0xfa
 
-    .line 1337
+    .line 1338
     invoke-virtual {v4, v5, v6}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v4
 
-    .line 1338
+    .line 1339
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1339
+    .line 1340
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1658,7 +1662,7 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1340
+    .line 1341
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->getVisibility()I
@@ -1667,17 +1671,17 @@
 
     if-eqz v4, :cond_1
 
-    .line 1341
+    .line 1342
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, p1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1342
+    .line 1343
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v3}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1344
+    .line 1345
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
@@ -1695,7 +1699,7 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1346
+    .line 1347
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     invoke-virtual {v4}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1708,7 +1712,7 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1347
+    .line 1348
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     invoke-virtual {v4}, Landroid/widget/ImageView;->getVisibility()I
@@ -1717,17 +1721,17 @@
 
     if-eqz v4, :cond_4
 
-    .line 1348
+    .line 1349
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     invoke-virtual {v4, p1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1349
+    .line 1350
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1350
+    .line 1351
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     iget-boolean v4, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
@@ -1752,7 +1756,7 @@
     :goto_1
     invoke-virtual {v3, v4, p1}, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;->setShowBlackout(ZZ)V
 
-    .line 1352
+    .line 1353
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
@@ -1772,7 +1776,7 @@
 
     goto :goto_2
 
-    .line 1354
+    .line 1355
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
@@ -1788,27 +1792,27 @@
 
     move-result-object p1
 
-    .line 1355
+    .line 1356
     invoke-virtual {p1, v3}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    .line 1356
+    .line 1357
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 1357
+    .line 1358
     invoke-virtual {p1, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 1358
+    .line 1359
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1360
+    .line 1361
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getVisibility()I
@@ -1819,7 +1823,7 @@
 
     if-eq p1, v0, :cond_6
 
-    .line 1361
+    .line 1362
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1838,14 +1842,14 @@
 
     move-result-object p1
 
-    .line 1371
+    .line 1372
     invoke-virtual {p1, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1373
+    .line 1374
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1864,7 +1868,7 @@
 
     move-result-object p1
 
-    .line 1378
+    .line 1379
     invoke-virtual {p1, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -1879,7 +1883,7 @@
 .method private fillNavigationBar(ZZ)V
     .locals 4
 
-    .line 1719
+    .line 1720
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->switchingToPip:Z
 
     if-eqz v0, :cond_0
@@ -1893,12 +1897,12 @@
 
     if-nez p2, :cond_4
 
-    .line 1723
+    .line 1724
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->naviagtionBarAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p2, :cond_1
 
-    .line 1724
+    .line 1725
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_1
@@ -1906,11 +1910,11 @@
 
     move v0, v1
 
-    .line 1726
+    .line 1727
     :cond_2
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->fillNaviagtionBarValue:F
 
-    .line 1727
+    .line 1728
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->overlayBottomPaint:Landroid/graphics/Paint;
 
     const/high16 v0, -0x1000000
@@ -1937,18 +1941,18 @@
 
     goto :goto_1
 
-    .line 1728
+    .line 1729
     :cond_4
     iget-boolean p2, p0, Lorg/telegram/ui/VoIPFragment;->fillNaviagtionBar:Z
 
     if-eq p1, p2, :cond_7
 
-    .line 1729
+    .line 1730
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->naviagtionBarAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p2, :cond_5
 
-    .line 1730
+    .line 1731
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_5
@@ -1958,7 +1962,7 @@
 
     const/4 v2, 0x0
 
-    .line 1732
+    .line 1733
     iget v3, p0, Lorg/telegram/ui/VoIPFragment;->fillNaviagtionBarValue:F
 
     aput v3, p2, v2
@@ -1978,19 +1982,19 @@
 
     iput-object p2, p0, Lorg/telegram/ui/VoIPFragment;->naviagtionBarAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1733
+    .line 1734
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->navigationBarAnimationListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1734
+    .line 1735
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->naviagtionBarAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x12c
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1735
+    .line 1736
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->naviagtionBarAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Landroid/view/animation/LinearInterpolator;
@@ -1999,12 +2003,12 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1736
+    .line 1737
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->naviagtionBarAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1738
+    .line 1739
     :cond_7
     :goto_1
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->fillNaviagtionBar:Z
@@ -2015,21 +2019,21 @@
 .method private finishZoom()V
     .locals 6
 
-    .line 1013
+    .line 1014
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->zoomStarted:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 1014
+    .line 1015
     iput-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->zoomStarted:Z
 
     const/4 v0, 0x2
 
     new-array v0, v0, [F
 
-    .line 1015
+    .line 1016
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -2038,23 +2042,23 @@
 
     iput-object v0, p0, Lorg/telegram/ui/VoIPFragment;->zoomBackAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1017
+    .line 1018
     iget v2, p0, Lorg/telegram/ui/VoIPFragment;->pinchScale:F
 
-    .line 1018
+    .line 1019
     iget v3, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationX:F
 
-    .line 1019
+    .line 1020
     iget v4, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationY:F
 
-    .line 1020
+    .line 1021
     new-instance v5, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda2;
 
     invoke-direct {v5, p0, v2, v3, v4}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/VoIPFragment;FFF)V
 
     invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1028
+    .line 1029
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->zoomBackAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v2, Lorg/telegram/ui/VoIPFragment$9;
@@ -2063,30 +2067,30 @@
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1038
+    .line 1039
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->zoomBackAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x15e
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1039
+    .line 1040
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->zoomBackAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1040
+    .line 1041
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->zoomBackAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1042
+    .line 1043
     :cond_0
     iput-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->canZoomGesture:Z
 
-    .line 1043
+    .line 1044
     iput-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->isInPinchToZoomTouchMode:Z
 
     return-void
@@ -2103,17 +2107,17 @@
 .method private getFullscreenTextureView()Lorg/telegram/ui/Components/voip/VoIPTextureView;
     .locals 1
 
-    .line 1006
+    .line 1007
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
     if-eqz v0, :cond_0
 
-    .line 1007
+    .line 1008
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     return-object v0
 
-    .line 1009
+    .line 1010
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
@@ -2123,7 +2127,7 @@
 .method public static getInstance()Lorg/telegram/ui/VoIPFragment;
     .locals 1
 
-    .line 389
+    .line 390
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     return-object v0
@@ -2132,7 +2136,7 @@
 .method private initRenderers()V
     .locals 5
 
-    .line 1047
+    .line 1048
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
@@ -2151,7 +2155,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/webrtc/TextureViewRenderer;->init(Lorg/webrtc/EglBase$Context;Lorg/webrtc/RendererCommon$RendererEvents;)V
 
-    .line 1059
+    .line 1060
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
@@ -2176,7 +2180,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lorg/webrtc/TextureViewRenderer;->init(Lorg/webrtc/EglBase$Context;Lorg/webrtc/RendererCommon$RendererEvents;[ILorg/webrtc/RendererCommon$GlDrawer;)V
 
-    .line 1072
+    .line 1073
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-static {}, Lorg/telegram/messenger/voip/VideoCapturerDevice;->getEglBase()Lorg/webrtc/EglBase;
@@ -2199,7 +2203,7 @@
 
     move-object v0, p0
 
-    .line 1287
+    .line 1288
     invoke-virtual/range {p18 .. p18}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -2214,10 +2218,10 @@
 
     sub-float v3, v2, v1
 
-    .line 1288
+    .line 1289
     iput v3, v0, Lorg/telegram/ui/VoIPFragment;->enterTransitionProgress:F
 
-    .line 1289
+    .line 1290
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateSystemBarColors()V
 
     if-eqz p1, :cond_0
@@ -2228,17 +2232,17 @@
 
     add-float/2addr v4, v5
 
-    .line 1293
+    .line 1294
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v5, v4}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1294
+    .line 1295
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v5, v4}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1295
+    .line 1296
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     mul-float v5, p4, v3
@@ -2249,7 +2253,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 1296
+    .line 1297
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     mul-float v5, p6, v3
@@ -2260,7 +2264,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1297
+    .line 1298
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     mul-float v5, p8, v3
@@ -2271,7 +2275,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setCornerRadius(F)V
 
-    .line 1298
+    .line 1299
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     mul-float v5, p10, v3
@@ -2289,12 +2293,12 @@
 
     add-float/2addr v4, v5
 
-    .line 1302
+    .line 1303
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v5, v4}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1303
+    .line 1304
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v5, v4}, Landroid/widget/FrameLayout;->setScaleY(F)V
@@ -2311,17 +2315,17 @@
 
     add-float/2addr v6, v7
 
-    .line 1307
+    .line 1308
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v7, v5}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 1308
+    .line 1309
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v7, v6}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1309
+    .line 1310
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     const/4 v8, 0x4
@@ -2340,42 +2344,42 @@
 
     invoke-virtual {v7, v8}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->setRoundCorners(F)V
 
-    .line 1310
+    .line 1311
     iget-object v2, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-boolean v2, v2, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->measuredAsFloatingMode:Z
 
     if-nez v2, :cond_1
 
-    .line 1311
+    .line 1312
     iget-object v2, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     const/4 v7, 0x0
 
     invoke-virtual {v2, v1, v7}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->setScreenshareMiniProgress(FZ)V
 
-    .line 1314
+    .line 1315
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1315
+    .line 1316
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1316
+    .line 1317
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, v5}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1317
+    .line 1318
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, v6}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1318
+    .line 1319
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
@@ -2386,12 +2390,12 @@
 .method private synthetic lambda$createView$10(Landroid/view/View;)V
     .locals 0
 
-    .line 957
+    .line 958
     iget-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->lockOnScreen:Z
 
     if-nez p1, :cond_0
 
-    .line 958
+    .line 959
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->onBackPressed()V
 
     :cond_0
@@ -2401,12 +2405,12 @@
 .method private synthetic lambda$createView$11()V
     .locals 1
 
-    .line 968
+    .line 969
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 969
+    .line 970
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     return-void
@@ -2415,14 +2419,14 @@
 .method private synthetic lambda$createView$4(Lorg/telegram/messenger/ImageReceiver;ZZZ)V
     .locals 0
 
-    .line 709
+    .line 710
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 711
+    .line 712
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;->setBackground(Lorg/telegram/messenger/ImageReceiver$BitmapHolder;)V
@@ -2434,7 +2438,7 @@
 .method private synthetic lambda$createView$5(FZ)V
     .locals 1
 
-    .line 718
+    .line 719
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->setScreenshareMiniProgress(FZ)V
@@ -2445,7 +2449,7 @@
 .method private synthetic lambda$createView$6(Landroid/view/View;)V
     .locals 4
 
-    .line 725
+    .line 726
     iget-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz p1, :cond_0
@@ -2468,24 +2472,24 @@
 
     if-lez p1, :cond_0
 
-    .line 726
+    .line 727
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 p1, 0x0
 
-    .line 727
+    .line 728
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
-    .line 728
+    .line 729
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/VoIPFragment;->lastContentTapTime:J
 
-    .line 729
+    .line 730
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -2494,18 +2498,18 @@
 
     const/4 p1, 0x1
 
-    .line 730
+    .line 731
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraIsFullscreen:Z
 
-    .line 731
+    .line 732
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->cameraForceExpanded:Z
 
-    .line 732
+    .line 733
     iget p1, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 733
+    .line 734
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     :cond_0
@@ -2515,7 +2519,7 @@
 .method private synthetic lambda$createView$7(Landroid/view/View;)V
     .locals 4
 
-    .line 753
+    .line 754
     iget-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->cameraForceExpanded:Z
 
     if-eqz p1, :cond_0
@@ -2534,42 +2538,42 @@
 
     if-lez p1, :cond_0
 
-    .line 754
+    .line 755
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 p1, 0x0
 
-    .line 755
+    .line 756
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
-    .line 756
+    .line 757
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/VoIPFragment;->lastContentTapTime:J
 
-    .line 757
+    .line 758
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setRelativePosition(Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;)V
 
-    .line 758
+    .line 759
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraIsFullscreen:Z
 
-    .line 759
+    .line 760
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->cameraForceExpanded:Z
 
-    .line 760
+    .line 761
     iget p1, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 761
+    .line 762
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     :cond_0
@@ -2579,7 +2583,7 @@
 .method private synthetic lambda$createView$8(Landroid/view/View;)V
     .locals 4
 
-    .line 792
+    .line 793
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -2596,7 +2600,7 @@
 
     return-void
 
-    .line 795
+    .line 796
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -2604,12 +2608,12 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/VoIPFragment;->lastContentTapTime:J
 
-    .line 796
+    .line 797
     iget-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->emojiLoaded:Z
 
     if-eqz p1, :cond_1
 
-    .line 797
+    .line 798
     iget-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->emojiExpanded:Z
 
     xor-int/lit8 p1, p1, 0x1
@@ -2623,7 +2627,7 @@
 .method private synthetic lambda$createView$9(Landroid/view/View;)V
     .locals 2
 
-    .line 948
+    .line 949
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->getTag()Ljava/lang/Object;
@@ -2634,7 +2638,7 @@
 
     return-void
 
-    .line 951
+    .line 952
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -2642,7 +2646,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 952
+    .line 953
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p1
@@ -2660,7 +2664,7 @@
 .method private synthetic lambda$finishZoom$12(FFFLandroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 1021
+    .line 1022
     invoke-virtual {p4}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p4
@@ -2681,20 +2685,20 @@
 
     add-float/2addr p1, v1
 
-    .line 1022
+    .line 1023
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchScale:F
 
     mul-float/2addr p2, p4
 
-    .line 1023
+    .line 1024
     iput p2, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationX:F
 
     mul-float/2addr p3, p4
 
-    .line 1024
+    .line 1025
     iput p3, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationY:F
 
-    .line 1025
+    .line 1026
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->fragmentView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
@@ -2705,7 +2709,7 @@
 .method private synthetic lambda$new$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 191
+    .line 192
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2718,7 +2722,7 @@
 
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAlpha:F
 
-    .line 192
+    .line 193
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateSystemBarColors()V
 
     return-void
@@ -2727,7 +2731,7 @@
 .method private synthetic lambda$new$1(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 199
+    .line 200
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2740,7 +2744,7 @@
 
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->fillNaviagtionBarValue:F
 
-    .line 200
+    .line 201
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateSystemBarColors()V
 
     return-void
@@ -2751,10 +2755,10 @@
 
     const/4 v0, 0x0
 
-    .line 205
+    .line 206
     iput-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
-    .line 206
+    .line 207
     iget-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->canHideUI:Z
 
     if-eqz v1, :cond_0
@@ -2767,22 +2771,22 @@
 
     if-nez v1, :cond_0
 
-    .line 207
+    .line 208
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lorg/telegram/ui/VoIPFragment;->lastContentTapTime:J
 
-    .line 208
+    .line 209
     invoke-direct {p0, v0}, Lorg/telegram/ui/VoIPFragment;->showUi(Z)V
 
-    .line 209
+    .line 210
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 210
+    .line 211
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     :cond_0
@@ -2792,7 +2796,7 @@
 .method private synthetic lambda$onRequestPermissionsResultInternal$28()V
     .locals 1
 
-    .line 2292
+    .line 2293
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -2803,12 +2807,12 @@
 .method private synthetic lambda$requestInlinePermissions$30(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 2400
+    .line 2401
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     if-eqz p1, :cond_0
 
-    .line 2401
+    .line 2402
     invoke-virtual {p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
 
     :cond_0
@@ -2818,14 +2822,14 @@
 .method private synthetic lambda$setFrontalCameraAction$27(Lorg/telegram/messenger/voip/VoIPService;Landroid/view/View;)V
     .locals 2
 
-    .line 2183
+    .line 2184
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 2185
+    .line 2186
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->accessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
     invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
@@ -2834,14 +2838,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 2187
+    .line 2188
     invoke-virtual {p1}, Lorg/telegram/messenger/voip/VoIPService;->isFrontFaceCamera()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 2188
+    .line 2189
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrVoipCamSwitchedToBack:I
 
     const-string v1, "AccDescrVoipCamSwitchedToBack"
@@ -2852,7 +2856,7 @@
 
     goto :goto_0
 
-    .line 2190
+    .line 2191
     :cond_0
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrVoipCamSwitchedToFront:I
 
@@ -2862,11 +2866,11 @@
 
     move-result-object p1
 
-    .line 2192
+    .line 2193
     :goto_0
     invoke-virtual {p2, p1}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 2194
+    .line 2195
     :cond_1
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->switchCamera()V
 
@@ -2877,14 +2881,14 @@
 .method private synthetic lambda$setMicrohoneAction$23(Landroid/view/View;)V
     .locals 5
 
-    .line 2072
+    .line 2073
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 2074
+    .line 2075
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isMicMute()Z
 
     move-result v1
@@ -2893,7 +2897,7 @@
 
     xor-int/2addr v1, v2
 
-    .line 2075
+    .line 2076
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->accessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
     invoke-virtual {v3}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
@@ -2904,7 +2908,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2078
+    .line 2079
     sget v3, Lorg/telegram/messenger/R$string;->AccDescrVoipMicOff:I
 
     const-string v4, "AccDescrVoipMicOff"
@@ -2915,7 +2919,7 @@
 
     goto :goto_0
 
-    .line 2080
+    .line 2081
     :cond_0
     sget v3, Lorg/telegram/messenger/R$string;->AccDescrVoipMicOn:I
 
@@ -2925,22 +2929,22 @@
 
     move-result-object v3
 
-    .line 2082
+    .line 2083
     :goto_0
     invoke-virtual {p1, v3}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
     :cond_1
     const/4 p1, 0x0
 
-    .line 2084
+    .line 2085
     invoke-virtual {v0, v1, p1, v2}, Lorg/telegram/messenger/voip/VoIPService;->setMicMute(ZZZ)V
 
-    .line 2085
+    .line 2086
     iget p1, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 2086
+    .line 2087
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     :cond_2
@@ -2950,14 +2954,14 @@
 .method private synthetic lambda$setSpeakerPhoneAction$26(Landroid/view/View;)V
     .locals 2
 
-    .line 2163
+    .line 2164
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 2164
+    .line 2165
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p1
@@ -2975,14 +2979,14 @@
 .method private synthetic lambda$setVideoAction$24(Lorg/telegram/messenger/voip/VoIPService;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 2113
+    .line 2114
     iget-object p1, p1, Lorg/telegram/messenger/voip/VoIPService;->sharedUIParams:Lorg/telegram/messenger/voip/VoIPService$SharedUIParams;
 
     const/4 p2, 0x1
 
     iput-boolean p2, p1, Lorg/telegram/messenger/voip/VoIPService$SharedUIParams;->cameraAlertWasShowed:Z
 
-    .line 2114
+    .line 2115
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->toggleCameraInput()V
 
     return-void
@@ -2991,7 +2995,7 @@
 .method private synthetic lambda$setVideoAction$25(Lorg/telegram/messenger/voip/VoIPService;Landroid/view/View;)V
     .locals 2
 
-    .line 2106
+    .line 2107
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x17
@@ -3008,7 +3012,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2107
+    .line 2108
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     filled-new-array {v1}, [Ljava/lang/String;
@@ -3026,7 +3030,7 @@
 
     if-ge p2, v0, :cond_1
 
-    .line 2109
+    .line 2110
     iget-object p2, p1, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     if-eqz p2, :cond_1
@@ -3045,14 +3049,14 @@
 
     if-nez p2, :cond_1
 
-    .line 2110
+    .line 2111
     new-instance p2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2111
+    .line 2112
     sget v0, Lorg/telegram/messenger/R$string;->VoipSwitchToVideoCall:I
 
     const-string v1, "VoipSwitchToVideoCall"
@@ -3063,7 +3067,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2112
+    .line 2113
     sget v0, Lorg/telegram/messenger/R$string;->VoipSwitch:I
 
     const-string v1, "VoipSwitch"
@@ -3078,7 +3082,7 @@
 
     invoke-virtual {p2, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2116
+    .line 2117
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v0, "Cancel"
@@ -3091,7 +3095,7 @@
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2117
+    .line 2118
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -3100,7 +3104,7 @@
 
     goto :goto_0
 
-    .line 2119
+    .line 2120
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->toggleCameraInput()V
 
@@ -3111,14 +3115,14 @@
 .method private static synthetic lambda$show$3(Lorg/telegram/ui/VoIPFragment;Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .locals 1
 
-    .line 298
+    .line 299
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
 
     if-lt p1, v0, :cond_0
 
-    .line 299
+    .line 300
     invoke-direct {p0, p2}, Lorg/telegram/ui/VoIPFragment;->setInsets(Landroid/view/WindowInsets;)V
 
     :cond_0
@@ -3126,12 +3130,12 @@
 
     if-lt p1, p0, :cond_1
 
-    .line 302
+    .line 303
     sget-object p0, Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets;
 
     return-object p0
 
-    .line 304
+    .line 305
     :cond_1
     invoke-virtual {p2}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
 
@@ -3143,7 +3147,7 @@
 .method private synthetic lambda$showErrorDialog$29(Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 2393
+    .line 2394
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -3156,13 +3160,13 @@
 
     const/4 v0, 0x0
 
-    .line 1172
+    .line 1173
     sput-boolean v0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->switchingToPip:Z
 
-    .line 1173
+    .line 1174
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->finish()V
 
-    .line 1175
+    .line 1176
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3183,7 +3187,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1176
+    .line 1177
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3206,7 +3210,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1177
+    .line 1178
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3227,7 +3231,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1178
+    .line 1179
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3248,7 +3252,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1179
+    .line 1180
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3269,7 +3273,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1180
+    .line 1181
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->bottomShadow:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3292,7 +3296,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1181
+    .line 1182
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->topShadow:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3313,7 +3317,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1182
+    .line 1183
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3334,7 +3338,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1183
+    .line 1184
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3355,20 +3359,20 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1185
+    .line 1186
     new-instance v0, Lorg/telegram/ui/VoIPFragment$13;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/VoIPFragment$13;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1196
+    .line 1197
     invoke-virtual {p1, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 1197
+    .line 1198
     invoke-virtual {p1, v3}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1198
+    .line 1199
     invoke-virtual {p1}, Landroid/animation/Animator;->start()V
 
     return-void
@@ -3377,7 +3381,7 @@
 .method private synthetic lambda$startTransitionFromPiP$14()V
     .locals 4
 
-    .line 1152
+    .line 1153
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -3386,7 +3390,7 @@
 
     const/4 v0, 0x1
 
-    .line 1153
+    .line 1154
     invoke-virtual {p0, v0}, Lorg/telegram/ui/VoIPFragment;->createPiPTransition(Z)Landroid/animation/Animator;
 
     move-result-object v1
@@ -3395,7 +3399,7 @@
 
     return-void
 
-    .line 1160
+    .line 1161
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
@@ -3403,52 +3407,52 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1161
+    .line 1162
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    .line 1162
+    .line 1163
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    .line 1163
+    .line 1164
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1164
+    .line 1165
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->bottomShadow:Landroid/view/View;
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1165
+    .line 1166
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->topShadow:Landroid/view/View;
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1166
+    .line 1167
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1167
+    .line 1168
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    .line 1168
+    .line 1169
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1170
+    .line 1171
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iput-boolean v0, v2, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->switchingToPip:Z
 
-    .line 1171
+    .line 1172
     new-instance v0, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda28;
 
     invoke-direct {v0, p0, v1}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/VoIPFragment;Landroid/animation/Animator;)V
@@ -3463,14 +3467,14 @@
 .method private static synthetic lambda$updateButtons$22(Landroid/view/View;)V
     .locals 0
 
-    .line 2048
+    .line 2049
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p0
 
     if-eqz p0, :cond_0
 
-    .line 2049
+    .line 2050
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p0
@@ -3484,7 +3488,7 @@
 .method private synthetic lambda$updateViewState$16()V
     .locals 1
 
-    .line 1450
+    .line 1451
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -3495,7 +3499,7 @@
 .method private synthetic lambda$updateViewState$17(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1469
+    .line 1470
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -3510,15 +3514,15 @@
 
     const/4 p3, 0x1
 
-    .line 1471
+    .line 1472
     aput-boolean p3, p1, p2
 
     const/16 p1, 0x11
 
-    .line 1472
+    .line 1473
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
-    .line 1473
+    .line 1474
     new-instance p1, Landroid/content/Intent;
 
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
@@ -3527,7 +3531,7 @@
 
     invoke-direct {p1, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1474
+    .line 1475
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -3538,32 +3542,32 @@
 
     const-string v0, "is_outgoing"
 
-    .line 1475
+    .line 1476
     invoke-virtual {p1, v0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     const-string p3, "start_incall_activity"
 
-    .line 1476
+    .line 1477
     invoke-virtual {p1, p3, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     const-string p3, "video_call"
 
-    .line 1477
+    .line 1478
     invoke-virtual {p1, p3, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     const-string p3, "can_video_call"
 
-    .line 1478
+    .line 1479
     invoke-virtual {p1, p3, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 1479
+    .line 1480
     iget p2, p0, Lorg/telegram/ui/VoIPFragment;->currentAccount:I
 
     const-string p3, "account"
 
     invoke-virtual {p1, p3, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1481
+    .line 1482
     :try_start_0
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
@@ -3576,7 +3580,7 @@
     :catchall_0
     move-exception p1
 
-    .line 1483
+    .line 1484
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -3588,12 +3592,12 @@
 
     const/4 p2, 0x0
 
-    .line 1489
+    .line 1490
     aget-boolean p1, p1, p2
 
     if-nez p1, :cond_0
 
-    .line 1490
+    .line 1491
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -3605,7 +3609,7 @@
 .method private synthetic lambda$updateViewState$20()V
     .locals 1
 
-    .line 1509
+    .line 1510
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -3616,7 +3620,7 @@
 .method private synthetic lambda$updateViewState$21()V
     .locals 1
 
-    .line 1512
+    .line 1513
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -3627,7 +3631,7 @@
 .method private onBackPressed()V
     .locals 3
 
-    .line 332
+    .line 333
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->isFinished:Z
 
     if-nez v0, :cond_7
@@ -3638,7 +3642,7 @@
 
     goto :goto_0
 
-    .line 335
+    .line 336
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->previewDialog:Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
@@ -3646,12 +3650,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 336
+    .line 337
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;->dismiss(ZZ)V
 
     return-void
 
-    .line 339
+    .line 340
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
@@ -3665,41 +3669,41 @@
 
     if-eqz v0, :cond_2
 
-    .line 340
+    .line 341
     iput-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->cameraForceExpanded:Z
 
-    .line 341
+    .line 342
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setRelativePosition(Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;)V
 
-    .line 342
+    .line 343
     iput-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraIsFullscreen:Z
 
-    .line 343
+    .line 344
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 344
+    .line 345
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     return-void
 
-    .line 347
+    .line 348
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->emojiExpanded:Z
 
     if-eqz v0, :cond_3
 
-    .line 348
+    .line 349
     invoke-direct {p0, v1}, Lorg/telegram/ui/VoIPFragment;->expandEmoji(Z)V
 
     goto :goto_0
 
-    .line 350
+    .line 351
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
@@ -3713,7 +3717,7 @@
 
     return-void
 
-    .line 353
+    .line 354
     :cond_4
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->canSwitchToPip:Z
 
@@ -3723,7 +3727,7 @@
 
     if-nez v0, :cond_6
 
-    .line 354
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->checkInlinePermissions(Landroid/content/Context;)Z
@@ -3732,18 +3736,18 @@
 
     if-eqz v0, :cond_5
 
-    .line 355
+    .line 356
     invoke-virtual {p0}, Lorg/telegram/ui/VoIPFragment;->switchToPip()V
 
     goto :goto_0
 
-    .line 357
+    .line 358
     :cond_5
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->requestInlinePermissions()V
 
     goto :goto_0
 
-    .line 360
+    .line 361
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
@@ -3757,15 +3761,15 @@
 .method public static onPause()V
     .locals 1
 
-    .line 2317
+    .line 2318
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     if-eqz v0, :cond_0
 
-    .line 2318
+    .line 2319
     invoke-virtual {v0}, Lorg/telegram/ui/VoIPFragment;->onPauseInternal()V
 
-    .line 2320
+    .line 2321
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
@@ -3773,7 +3777,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2321
+    .line 2322
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     move-result-object v0
@@ -3787,12 +3791,12 @@
 .method public static onRequestPermissionsResult(I[Ljava/lang/String;[I)V
     .locals 1
 
-    .line 2275
+    .line 2276
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     if-eqz v0, :cond_0
 
-    .line 2276
+    .line 2277
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/VoIPFragment;->onRequestPermissionsResultInternal(I[Ljava/lang/String;[I)V
 
     :cond_0
@@ -3808,21 +3812,21 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 2283
+    .line 2284
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 2284
+    .line 2285
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
 
     return-void
 
-    .line 2287
+    .line 2288
     :cond_0
     array-length v0, p3
 
@@ -3832,7 +3836,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2288
+    .line 2289
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -3841,7 +3845,7 @@
 
     goto :goto_0
 
-    .line 2290
+    .line 2291
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
@@ -3853,14 +3857,14 @@
 
     if-nez v0, :cond_2
 
-    .line 2291
+    .line 2292
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p2
 
     invoke-virtual {p2}, Lorg/telegram/messenger/voip/VoIPService;->declineIncomingCall()V
 
-    .line 2292
+    .line 2293
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     new-instance p3, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda22;
@@ -3877,21 +3881,21 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 2298
+    .line 2299
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p1
 
     if-nez p1, :cond_3
 
-    .line 2299
+    .line 2300
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
 
     return-void
 
-    .line 2302
+    .line 2303
     :cond_3
     array-length p1, p3
 
@@ -3901,7 +3905,7 @@
 
     if-nez p1, :cond_4
 
-    .line 2303
+    .line 2304
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->toggleCameraInput()V
 
     :cond_4
@@ -3911,15 +3915,15 @@
 .method public static onResume()V
     .locals 1
 
-    .line 2326
+    .line 2327
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     if-eqz v0, :cond_0
 
-    .line 2327
+    .line 2328
     invoke-virtual {v0}, Lorg/telegram/ui/VoIPFragment;->onResumeInternal()V
 
-    .line 2329
+    .line 2330
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
@@ -3927,7 +3931,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2330
+    .line 2331
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     move-result-object v0
@@ -3941,14 +3945,14 @@
 .method private requestInlinePermissions()V
     .locals 2
 
-    .line 2398
+    .line 2399
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
 
-    .line 2399
+    .line 2400
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     new-instance v1, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda4;
@@ -3959,7 +3963,7 @@
 
     move-result-object v0
 
-    .line 2403
+    .line 2404
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     :cond_0
@@ -3969,7 +3973,7 @@
 .method private setFrontalCameraAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
     .locals 8
 
-    .line 2170
+    .line 2171
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     const/16 v1, 0x1e
@@ -3980,7 +3984,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2171
+    .line 2172
     sget v4, Lorg/telegram/messenger/R$drawable;->calls_flip:I
 
     const/16 v0, 0x7f
@@ -4017,12 +4021,12 @@
 
     const/4 v0, 0x0
 
-    .line 2172
+    .line 2173
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const/4 v0, 0x0
 
-    .line 2173
+    .line 2174
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
     goto :goto_1
@@ -4030,17 +4034,17 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 2175
+    .line 2176
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 2176
+    .line 2177
     invoke-virtual {p2}, Lorg/telegram/messenger/voip/VoIPService;->isFrontFaceCamera()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 2177
+    .line 2178
     sget v1, Lorg/telegram/messenger/R$drawable;->calls_flip:I
 
     const/high16 v3, -0x1000000
@@ -4071,7 +4075,7 @@
 
     goto :goto_0
 
-    .line 2179
+    .line 2180
     :cond_1
     sget v4, Lorg/telegram/messenger/R$drawable;->calls_flip:I
 
@@ -4103,7 +4107,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setData(IIILjava/lang/String;ZZ)V
 
-    .line 2182
+    .line 2183
     :goto_0
     new-instance v0, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda18;
 
@@ -4118,10 +4122,10 @@
 .method private setInsets(Landroid/view/WindowInsets;)V
     .locals 3
 
-    .line 395
+    .line 396
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
-    .line 396
+    .line 397
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4138,7 +4142,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 397
+    .line 398
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4155,7 +4159,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 398
+    .line 399
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4172,7 +4176,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 399
+    .line 400
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4189,7 +4193,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 400
+    .line 401
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->topShadow:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4206,7 +4210,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 401
+    .line 402
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4231,7 +4235,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 402
+    .line 403
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4256,7 +4260,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 403
+    .line 404
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4279,25 +4283,8 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 405
-    iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
-
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
-
-    iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
-
-    invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
-
-    move-result v0
-
-    iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
     .line 406
-    iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
+    iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -4314,7 +4301,7 @@
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     .line 407
-    iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
+    iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -4331,6 +4318,23 @@
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     .line 408
+    iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
+
+    iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
+
+    invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
+
+    move-result v0
+
+    iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    .line 409
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4347,7 +4351,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 410
+    .line 411
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->bottomShadow:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4364,31 +4368,31 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 411
+    .line 412
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setInsets(Landroid/view/WindowInsets;)V
 
-    .line 412
+    .line 413
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setInsets(Landroid/view/WindowInsets;)V
 
-    .line 413
+    .line 414
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->fragmentView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->requestLayout()V
 
-    .line 414
+    .line 415
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->previewDialog:Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
     if-eqz p1, :cond_0
 
-    .line 415
+    .line 416
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
@@ -4406,14 +4410,14 @@
 
     move-object v0, p0
 
-    .line 2065
+    .line 2066
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/messenger/voip/VoIPService;->isMicMute()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 2066
+    .line 2067
     sget v3, Lorg/telegram/messenger/R$drawable;->calls_unmute:I
 
     const/high16 v4, -0x1000000
@@ -4438,7 +4442,7 @@
 
     goto :goto_0
 
-    .line 2068
+    .line 2069
     :cond_0
     sget v9, Lorg/telegram/messenger/R$drawable;->calls_unmute:I
 
@@ -4468,7 +4472,7 @@
 
     invoke-virtual/range {v8 .. v14}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setData(IIILjava/lang/String;ZZ)V
 
-    .line 2070
+    .line 2071
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
@@ -4480,7 +4484,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setMuted(ZZ)V
 
-    .line 2071
+    .line 2072
     new-instance v1, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda15;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/VoIPFragment;)V
@@ -4499,7 +4503,7 @@
 
     move/from16 v8, p3
 
-    .line 2150
+    .line 2151
     invoke-virtual {p2}, Lorg/telegram/messenger/voip/VoIPService;->isBluetoothOn()Z
 
     move-result v0
@@ -4514,7 +4518,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2151
+    .line 2152
     sget v3, Lorg/telegram/messenger/R$drawable;->calls_bluetooth:I
 
     const/4 v4, -0x1
@@ -4549,12 +4553,12 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setData(IIILjava/lang/String;ZZ)V
 
-    .line 2152
+    .line 2153
     invoke-virtual {p1, v9, v8}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setChecked(ZZ)V
 
     goto :goto_0
 
-    .line 2153
+    .line 2154
     :cond_0
     invoke-virtual {p2}, Lorg/telegram/messenger/voip/VoIPService;->isSpeakerphoneOn()Z
 
@@ -4564,7 +4568,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2154
+    .line 2155
     sget v1, Lorg/telegram/messenger/R$drawable;->calls_speaker:I
 
     const/high16 v2, -0x1000000
@@ -4591,12 +4595,12 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setData(IIILjava/lang/String;ZZ)V
 
-    .line 2155
+    .line 2156
     invoke-virtual {p1, v10, v8}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setChecked(ZZ)V
 
     goto :goto_0
 
-    .line 2157
+    .line 2158
     :cond_1
     sget v4, Lorg/telegram/messenger/R$drawable;->calls_speaker:I
 
@@ -4630,17 +4634,17 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setData(IIILjava/lang/String;ZZ)V
 
-    .line 2158
+    .line 2159
     invoke-virtual {p1, v9, v8}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setChecked(ZZ)V
 
-    .line 2160
+    .line 2161
     :goto_0
     invoke-virtual {p1, v10}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setCheckableForAccessibility(Z)V
 
-    .line 2161
+    .line 2162
     invoke-virtual {p1, v10}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 2162
+    .line 2163
     new-instance v0, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda13;
 
     move-object v1, p0
@@ -4655,7 +4659,7 @@
 .method private setVideoAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
     .locals 9
 
-    .line 2093
+    .line 2094
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     const/4 v7, 0x1
@@ -4668,7 +4672,7 @@
 
     goto :goto_0
 
-    .line 2096
+    .line 2097
     :cond_0
     invoke-virtual {p2}, Lorg/telegram/messenger/voip/VoIPService;->isVideoAvailable()Z
 
@@ -4687,12 +4691,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 2099
+    .line 2100
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz v0, :cond_3
 
-    .line 2100
+    .line 2101
     invoke-virtual {p2}, Lorg/telegram/messenger/voip/VoIPService;->isScreencast()Z
 
     move-result v0
@@ -4743,7 +4747,7 @@
 
     goto :goto_3
 
-    .line 2102
+    .line 2103
     :cond_3
     sget v1, Lorg/telegram/messenger/R$drawable;->calls_video:I
 
@@ -4770,7 +4774,7 @@
     :goto_3
     const/high16 v0, 0x40600000    # 3.5f
 
-    .line 2104
+    .line 2105
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
@@ -4779,19 +4783,19 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setCrossOffset(F)V
 
-    .line 2105
+    .line 2106
     new-instance v0, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda19;
 
     invoke-direct {v0, p0, p2}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/VoIPFragment;Lorg/telegram/messenger/voip/VoIPService;)V
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2123
+    .line 2124
     invoke-virtual {p1, v7}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
     goto :goto_4
 
-    .line 2125
+    .line 2126
     :cond_4
     sget v3, Lorg/telegram/messenger/R$drawable;->calls_video:I
 
@@ -4827,12 +4831,12 @@
 
     const/4 v0, 0x0
 
-    .line 2126
+    .line 2127
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const/4 v0, 0x0
 
-    .line 2127
+    .line 2128
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
     :goto_4
@@ -4844,7 +4848,7 @@
 
     const/4 v0, 0x0
 
-    .line 237
+    .line 238
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/VoIPFragment;->show(Landroid/app/Activity;ZI)V
 
     return-void
@@ -4853,7 +4857,7 @@
 .method public static show(Landroid/app/Activity;ZI)V
     .locals 7
 
-    .line 241
+    .line 242
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     if-eqz v0, :cond_1
@@ -4866,22 +4870,13 @@
 
     if-nez v0, :cond_1
 
-    .line 242
+    .line 243
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     if-eqz v0, :cond_0
 
-    .line 243
-    iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
-
-    iget-object v0, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
-
-    invoke-virtual {v0}, Lorg/webrtc/TextureViewRenderer;->release()V
-
     .line 244
-    sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
-
-    iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
+    iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
@@ -4890,11 +4885,20 @@
     .line 245
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
-    iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
+    iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
+
+    iget-object v0, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v0}, Lorg/webrtc/TextureViewRenderer;->release()V
 
     .line 246
+    sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
+
+    iget-object v0, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
+
+    invoke-virtual {v0}, Lorg/webrtc/TextureViewRenderer;->release()V
+
+    .line 247
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {v0}, Lorg/telegram/ui/VoIPFragment;->destroy()V
@@ -4902,10 +4906,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 248
+    .line 249
     sput-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
-    .line 250
+    .line 251
     :cond_1
     sget-object v0, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
@@ -4919,7 +4923,7 @@
 
     goto/16 :goto_3
 
-    .line 253
+    .line 254
     :cond_2
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
@@ -4936,7 +4940,7 @@
     :cond_3
     const/4 v0, 0x0
 
-    .line 254
+    .line 255
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -4956,26 +4960,26 @@
 
     goto/16 :goto_3
 
-    .line 257
+    .line 258
     :cond_4
     new-instance v2, Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {v2, p2}, Lorg/telegram/ui/VoIPFragment;-><init>(I)V
 
-    .line 258
+    .line 259
     iput-object p0, v2, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
-    .line 259
+    .line 260
     sput-object v2, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
-    .line 260
+    .line 261
     new-instance p2, Lorg/telegram/ui/VoIPFragment$1;
 
     xor-int/lit8 v3, v0, 0x1
 
     invoke-direct {p2, p0, v3, v2}, Lorg/telegram/ui/VoIPFragment$1;-><init>(Landroid/app/Activity;ZLorg/telegram/ui/VoIPFragment;)V
 
-    .line 283
+    .line 284
     sget-object v3, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     const-string v4, "keyguard"
@@ -4994,34 +4998,34 @@
 
     const-string v3, "power"
 
-    .line 285
+    .line 286
     invoke-virtual {p0, v3}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/os/PowerManager;
 
-    .line 287
+    .line 288
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x14
 
     if-lt v4, v5, :cond_5
 
-    .line 288
+    .line 289
     invoke-virtual {v3}, Landroid/os/PowerManager;->isInteractive()Z
 
     move-result v3
 
     goto :goto_1
 
-    .line 290
+    .line 291
     :cond_5
     invoke-virtual {v3}, Landroid/os/PowerManager;->isScreenOn()Z
 
     move-result v3
 
-    .line 292
+    .line 293
     :goto_1
     sget-object v6, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
@@ -5029,17 +5033,17 @@
 
     iput-boolean v1, v6, Lorg/telegram/ui/VoIPFragment;->screenWasWakeup:Z
 
-    .line 293
+    .line 294
     iget-boolean v1, v6, Lorg/telegram/ui/VoIPFragment;->deviceIsLocked:Z
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->setLockOnScreen(Z)V
 
-    .line 294
+    .line 295
     iput-object p2, v2, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     if-lt v4, v5, :cond_6
 
-    .line 297
+    .line 298
     new-instance v1, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda10;
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/VoIPFragment;)V
@@ -5049,14 +5053,14 @@
     :cond_6
     const-string v1, "window"
 
-    .line 309
+    .line 310
     invoke-virtual {p0, v1}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 310
+    .line 311
     invoke-virtual {p2}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->createWindowLayoutParams()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v3
@@ -5069,7 +5073,7 @@
 
     const/16 p1, 0x7f6
 
-    .line 313
+    .line 314
     iput p1, v3, Landroid/view/WindowManager$LayoutParams;->type:I
 
     goto :goto_2
@@ -5077,30 +5081,30 @@
     :cond_7
     const/16 p1, 0x7d3
 
-    .line 315
+    .line 316
     iput p1, v3, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 318
+    .line 319
     :cond_8
     :goto_2
     invoke-interface {v1, p2, v3}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 319
+    .line 320
     invoke-virtual {v2, p0}, Lorg/telegram/ui/VoIPFragment;->createView(Landroid/content/Context;)Landroid/view/View;
 
     move-result-object p0
 
-    .line 320
+    .line 321
     invoke-virtual {p2, p0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     if-eqz v0, :cond_9
 
     const/4 p0, 0x0
 
-    .line 323
+    .line 324
     iput p0, v2, Lorg/telegram/ui/VoIPFragment;->enterTransitionProgress:F
 
-    .line 324
+    .line 325
     invoke-virtual {v2}, Lorg/telegram/ui/VoIPFragment;->startTransitionFromPiP()V
 
     goto :goto_3
@@ -5108,10 +5112,10 @@
     :cond_9
     const/high16 p0, 0x3f800000    # 1.0f
 
-    .line 326
+    .line 327
     iput p0, v2, Lorg/telegram/ui/VoIPFragment;->enterTransitionProgress:F
 
-    .line 327
+    .line 328
     invoke-direct {v2}, Lorg/telegram/ui/VoIPFragment;->updateSystemBarColors()V
 
     :cond_a
@@ -5130,7 +5134,7 @@
 
     if-nez p2, :cond_1
 
-    .line 1954
+    .line 1955
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     if-eqz p1, :cond_0
@@ -5150,7 +5154,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 1956
+    .line 1957
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -5159,7 +5163,7 @@
 
     if-nez v3, :cond_3
 
-    .line 1957
+    .line 1958
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -5172,7 +5176,7 @@
 
     invoke-virtual {v3}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1958
+    .line 1959
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -5181,17 +5185,17 @@
 
     if-ne v3, v1, :cond_2
 
-    .line 1959
+    .line 1960
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1960
+    .line 1961
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v0, p2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1962
+    .line 1963
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
@@ -5206,7 +5210,7 @@
     :cond_3
     if-nez p1, :cond_4
 
-    .line 1964
+    .line 1965
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -5215,7 +5219,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1965
+    .line 1966
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -5228,7 +5232,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1966
+    .line 1967
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -5243,17 +5247,17 @@
 
     move-result-object v0
 
-    .line 1971
+    .line 1972
     invoke-virtual {v0, p2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 1975
+    .line 1976
     :cond_4
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 1976
+    .line 1977
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     if-eqz p1, :cond_5
@@ -5289,7 +5293,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1866
+    .line 1867
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v6}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -5298,7 +5302,7 @@
 
     if-nez v6, :cond_0
 
-    .line 1867
+    .line 1868
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v6}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -5311,17 +5315,17 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1868
+    .line 1869
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v6, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1869
+    .line 1870
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1870
+    .line 1871
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -5334,7 +5338,7 @@
 
     invoke-virtual {v0, p2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1871
+    .line 1872
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -5366,7 +5370,7 @@
     :cond_0
     if-nez p1, :cond_3
 
-    .line 1872
+    .line 1873
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -5375,7 +5379,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1873
+    .line 1874
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -5388,7 +5392,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1874
+    .line 1875
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -5425,17 +5429,17 @@
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/VoIPFragment$18;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
-    .line 1875
+    .line 1876
     invoke-virtual {p2, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p2
 
-    .line 1880
+    .line 1881
     invoke-virtual {p2}, Landroid/view/ViewPropertyAnimator;->start()V
 
     goto :goto_1
 
-    .line 1883
+    .line 1884
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -5449,17 +5453,17 @@
 
     invoke-virtual {p2}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1884
+    .line 1885
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p2, v2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1885
+    .line 1886
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p2, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1886
+    .line 1887
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz p1, :cond_2
@@ -5472,7 +5476,7 @@
     :goto_0
     invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1888
+    .line 1889
     :cond_3
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
@@ -5494,7 +5498,7 @@
 .method private showErrorDialog(Ljava/lang/CharSequence;)V
     .locals 3
 
-    .line 2384
+    .line 2385
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
@@ -5505,7 +5509,7 @@
 
     return-void
 
-    .line 2387
+    .line 2388
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/DarkAlertDialog$Builder;
 
@@ -5517,7 +5521,7 @@
 
     const-string v2, "VoipFailed"
 
-    .line 2388
+    .line 2389
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -5526,7 +5530,7 @@
 
     move-result-object v0
 
-    .line 2389
+    .line 2390
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p1
@@ -5535,7 +5539,7 @@
 
     const-string v1, "OK"
 
-    .line 2390
+    .line 2391
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -5546,17 +5550,17 @@
 
     move-result-object p1
 
-    .line 2391
+    .line 2392
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
     const/4 v0, 0x1
 
-    .line 2392
+    .line 2393
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 2393
+    .line 2394
     new-instance v0, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda8;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/VoIPFragment;)V
@@ -5569,7 +5573,7 @@
 .method private showFloatingLayout(IZ)V
     .locals 10
 
-    .line 1783
+    .line 1784
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -5594,7 +5598,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1784
+    .line 1785
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
@@ -5605,15 +5609,15 @@
     :cond_1
     if-nez p2, :cond_2
 
-    .line 1786
+    .line 1787
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     if-eqz v0, :cond_2
 
-    .line 1787
+    .line 1788
     invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1788
+    .line 1789
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
@@ -5633,7 +5637,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 1792
+    .line 1793
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -5656,20 +5660,20 @@
 
     if-eqz p2, :cond_11
 
-    .line 1793
+    .line 1794
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     if-eqz p2, :cond_3
 
-    .line 1794
+    .line 1795
     invoke-virtual {p2}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1795
+    .line 1796
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p2}, Landroid/animation/Animator;->cancel()V
 
-    .line 1797
+    .line 1798
     :cond_3
     new-instance p2, Landroid/animation/AnimatorSet;
 
@@ -5677,14 +5681,14 @@
 
     new-array v0, v4, [Landroid/animation/Animator;
 
-    .line 1798
+    .line 1799
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v8, v1, [F
 
-    .line 1799
+    .line 1800
     invoke-virtual {v6}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result v9
@@ -5699,10 +5703,10 @@
 
     aput-object v2, v0, v5
 
-    .line 1798
+    .line 1799
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1801
+    .line 1802
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -5727,14 +5731,14 @@
 
     new-array v0, v1, [Landroid/animation/Animator;
 
-    .line 1802
+    .line 1803
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     sget-object v6, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v7, v1, [F
 
-    .line 1803
+    .line 1804
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getScaleX()F
 
     move-result v8
@@ -5755,7 +5759,7 @@
 
     new-array v1, v1, [F
 
-    .line 1804
+    .line 1805
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getScaleX()F
 
     move-result v7
@@ -5770,21 +5774,21 @@
 
     aput-object v1, v0, v4
 
-    .line 1802
+    .line 1803
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1807
+    .line 1808
     :cond_4
     iput-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
-    .line 1808
+    .line 1809
     new-instance v0, Lorg/telegram/ui/VoIPFragment$17;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/VoIPFragment$17;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1818
+    .line 1819
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     const-wide/16 v0, 0xfa
@@ -5797,21 +5801,21 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1819
+    .line 1820
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     const-wide/16 v0, 0x32
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 1820
+    .line 1821
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p2}, Landroid/animation/Animator;->start()V
 
     goto/16 :goto_5
 
-    .line 1823
+    .line 1824
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
@@ -5819,7 +5823,7 @@
 
     goto/16 :goto_5
 
-    .line 1827
+    .line 1828
     :cond_6
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
@@ -5857,7 +5861,7 @@
     :goto_1
     if-eqz p2, :cond_b
 
-    .line 1831
+    .line 1832
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -5880,7 +5884,7 @@
 
     if-nez p2, :cond_c
 
-    .line 1832
+    .line 1833
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -5889,41 +5893,41 @@
 
     if-ne p2, v0, :cond_9
 
-    .line 1833
+    .line 1834
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1834
+    .line 1835
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p2, v3}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1835
+    .line 1836
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p2, v3}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1836
+    .line 1837
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p2, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1838
+    .line 1839
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     if-eqz p2, :cond_a
 
-    .line 1839
+    .line 1840
     invoke-virtual {p2}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1840
+    .line 1841
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p2}, Landroid/animation/Animator;->cancel()V
 
-    .line 1842
+    .line 1843
     :cond_a
     new-instance p2, Landroid/animation/AnimatorSet;
 
@@ -5933,7 +5937,7 @@
 
     new-array v0, v0, [Landroid/animation/Animator;
 
-    .line 1843
+    .line 1844
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -5942,7 +5946,7 @@
 
     fill-array-data v8, :array_0
 
-    .line 1844
+    .line 1845
     invoke-static {v3, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -5957,7 +5961,7 @@
 
     fill-array-data v8, :array_1
 
-    .line 1845
+    .line 1846
     invoke-static {v3, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -5972,22 +5976,22 @@
 
     fill-array-data v8, :array_2
 
-    .line 1846
+    .line 1847
     invoke-static {v3, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
     aput-object v3, v0, v1
 
-    .line 1843
+    .line 1844
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1848
+    .line 1849
     iput-object p2, p0, Lorg/telegram/ui/VoIPFragment;->cameraShowingAnimator:Landroid/animation/Animator;
 
     const-wide/16 v7, 0x96
 
-    .line 1849
+    .line 1850
     invoke-virtual {p2, v7, v8}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
     move-result-object p2
@@ -5996,13 +6000,13 @@
 
     goto :goto_2
 
-    .line 1852
+    .line 1853
     :cond_b
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {p2, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1854
+    .line 1855
     :cond_c
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -6038,13 +6042,13 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1855
+    .line 1856
     invoke-virtual {p2, v0, v0}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setRelativePosition(FF)V
 
-    .line 1856
+    .line 1857
     iput-boolean v4, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraIsFullscreen:Z
 
-    .line 1858
+    .line 1859
     :cond_e
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
@@ -6067,11 +6071,11 @@
     :cond_10
     move v4, v5
 
-    .line 1859
+    .line 1860
     :goto_4
     iput-boolean v4, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraIsFullscreen:Z
 
-    .line 1861
+    .line 1862
     :cond_11
     :goto_5
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -6108,12 +6112,12 @@
 .method private showUi(Z)V
     .locals 10
 
-    .line 1742
+    .line 1743
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 1743
+    .line 1744
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
@@ -6129,12 +6133,12 @@
 
     if-nez p1, :cond_1
 
-    .line 1746
+    .line 1747
     iget-boolean v6, p0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     if-eqz v6, :cond_1
 
-    .line 1747
+    .line 1748
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v6}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6171,43 +6175,10 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1748
+    .line 1749
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v6}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v6
-
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    neg-int v9, v9
-
-    int-to-float v9, v9
-
-    invoke-virtual {v6, v9}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v8}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    .line 1749
-    iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v6}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v6
 
@@ -6238,6 +6209,39 @@
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
     .line 1750
+    iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v6}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v6
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v9
+
+    neg-int v9, v9
+
+    int-to-float v9, v9
+
+    invoke-virtual {v6, v9}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v8}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 1751
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v6}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6258,7 +6262,7 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1751
+    .line 1752
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-virtual {v6}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6289,7 +6293,7 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1752
+    .line 1753
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->bottomShadow:Landroid/view/View;
 
     invoke-virtual {v6}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6310,7 +6314,7 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1753
+    .line 1754
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->topShadow:Landroid/view/View;
 
     invoke-virtual {v6}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6333,7 +6337,7 @@
 
     new-array v0, v0, [F
 
-    .line 1754
+    .line 1755
     iget v6, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAlpha:F
 
     aput v6, v0, v2
@@ -6346,12 +6350,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1755
+    .line 1756
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->statusbarAnimatorListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1756
+    .line 1757
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
@@ -6360,20 +6364,20 @@
 
     invoke-virtual {v0, v8}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1757
+    .line 1758
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1758
+    .line 1759
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1759
+    .line 1760
     iput-boolean v2, p0, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
-    .line 1760
+    .line 1761
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setEnabled(Z)V
@@ -6383,17 +6387,17 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 1761
+    .line 1762
     iget-boolean v6, p0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     if-nez v6, :cond_2
 
-    .line 1762
+    .line 1763
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->tapToVideoTooltip:Lorg/telegram/ui/Components/HintView;
 
     invoke-virtual {v6}, Lorg/telegram/ui/Components/HintView;->hide()V
 
-    .line 1763
+    .line 1764
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v6}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6422,7 +6426,7 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1764
+    .line 1765
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v6}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6447,7 +6451,7 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1765
+    .line 1766
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v6}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6472,7 +6476,7 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1766
+    .line 1767
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v6}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6493,7 +6497,7 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1767
+    .line 1768
     iget-object v6, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-virtual {v6}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6518,7 +6522,7 @@
 
     invoke-virtual {v3}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1768
+    .line 1769
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->bottomShadow:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6539,7 +6543,7 @@
 
     invoke-virtual {v3}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1769
+    .line 1770
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->topShadow:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6562,7 +6566,7 @@
 
     new-array v0, v0, [F
 
-    .line 1770
+    .line 1771
     iget v3, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAlpha:F
 
     aput v3, v0, v2
@@ -6575,12 +6579,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1771
+    .line 1772
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->statusbarAnimatorListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1772
+    .line 1773
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
@@ -6589,29 +6593,29 @@
 
     invoke-virtual {v0, v8}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1773
+    .line 1774
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1774
+    .line 1775
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1777
+    .line 1778
     :cond_2
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
-    .line 1778
+    .line 1779
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     xor-int/2addr p1, v1
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->requestFullscreen(Z)V
 
-    .line 1779
+    .line 1780
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -6663,14 +6667,14 @@
 .method private toggleCameraInput()V
     .locals 5
 
-    .line 2208
+    .line 2209
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_9
 
-    .line 2210
+    .line 2211
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->accessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
     invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
@@ -6679,12 +6683,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 2212
+    .line 2213
     iget-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-nez v1, :cond_0
 
-    .line 2213
+    .line 2214
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrVoipCamOn:I
 
     const-string v2, "AccDescrVoipCamOn"
@@ -6695,7 +6699,7 @@
 
     goto :goto_0
 
-    .line 2215
+    .line 2216
     :cond_0
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrVoipCamOff:I
 
@@ -6705,13 +6709,13 @@
 
     move-result-object v1
 
-    .line 2217
+    .line 2218
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->fragmentView:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 2219
+    .line 2220
     :cond_1
     iget-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
@@ -6721,38 +6725,38 @@
 
     if-nez v1, :cond_7
 
-    .line 2220
+    .line 2221
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v4, 0x1
 
     if-lt v1, v2, :cond_5
 
-    .line 2221
+    .line 2222
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->previewDialog:Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
     if-nez v1, :cond_4
 
-    .line 2222
+    .line 2223
     invoke-virtual {v0, v3}, Lorg/telegram/messenger/voip/VoIPService;->createCaptureDevice(Z)V
 
-    .line 2223
+    .line 2224
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isFrontFaceCamera()Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 2224
+    .line 2225
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->switchCamera()V
 
-    .line 2226
+    .line 2227
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->setLockOnScreen(Z)V
 
-    .line 2227
+    .line 2228
     new-instance v0, Lorg/telegram/ui/VoIPFragment$21;
 
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->fragmentView:Landroid/view/ViewGroup;
@@ -6765,19 +6769,19 @@
 
     iput-object v0, p0, Lorg/telegram/ui/VoIPFragment;->previewDialog:Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
-    .line 2248
+    .line 2249
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     if-eqz v1, :cond_3
 
-    .line 2249
+    .line 2250
     invoke-virtual {v1}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;->setBottomPadding(I)V
 
-    .line 2251
+    .line 2252
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->fragmentView:Landroid/view/ViewGroup;
 
@@ -6788,18 +6792,18 @@
     :cond_4
     return-void
 
-    .line 2255
+    .line 2256
     :cond_5
     iput-boolean v4, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
-    .line 2256
+    .line 2257
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isSpeakerphoneOn()Z
 
     move-result v1
 
     if-nez v1, :cond_6
 
-    .line 2257
+    .line 2258
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v1
@@ -6808,42 +6812,42 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/voip/VoIPService;->toggleSpeakerphoneOrShowRouteSheet(Landroid/content/Context;Z)V
 
-    .line 2259
+    .line 2260
     :cond_6
     invoke-virtual {v0, v3}, Lorg/telegram/messenger/voip/VoIPService;->requestVideoCall(Z)V
 
     const/4 v1, 0x2
 
-    .line 2260
+    .line 2261
     invoke-virtual {v0, v3, v1}, Lorg/telegram/messenger/voip/VoIPService;->setVideoState(ZI)V
 
     goto :goto_1
 
-    .line 2263
+    .line 2264
     :cond_7
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->saveCameraLastBitmap()V
 
-    .line 2264
+    .line 2265
     invoke-virtual {v0, v3, v3}, Lorg/telegram/messenger/voip/VoIPService;->setVideoState(ZI)V
 
-    .line 2265
+    .line 2266
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v1, v2, :cond_8
 
-    .line 2266
+    .line 2267
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->clearCamera()V
 
-    .line 2269
+    .line 2270
     :cond_8
     :goto_1
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 2270
+    .line 2271
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     :cond_9
@@ -6853,7 +6857,7 @@
 .method private updateButtons(Z)V
     .locals 12
 
-    .line 1980
+    .line 1981
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -6867,26 +6871,26 @@
 
     if-eqz p1, :cond_1
 
-    .line 1984
+    .line 1985
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x13
 
     if-lt v2, v3, :cond_1
 
-    .line 1985
+    .line 1986
     new-instance v2, Landroid/transition/TransitionSet;
 
     invoke-direct {v2}, Landroid/transition/TransitionSet;-><init>()V
 
-    .line 1986
+    .line 1987
     new-instance v3, Lorg/telegram/ui/VoIPFragment$20;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/VoIPFragment$20;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
     const-wide/16 v4, 0x96
 
-    .line 2003
+    .line 2004
     invoke-virtual {v3, v4, v5}, Landroid/transition/Visibility;->setDuration(J)Landroid/transition/Transition;
 
     move-result-object v3
@@ -6905,7 +6909,7 @@
 
     invoke-direct {v8}, Landroid/transition/ChangeBounds;-><init>()V
 
-    .line 2004
+    .line 2005
     invoke-virtual {v8, v4, v5}, Landroid/transition/ChangeBounds;->setDuration(J)Landroid/transition/Transition;
 
     move-result-object v4
@@ -6916,17 +6920,17 @@
 
     invoke-virtual {v3, v4}, Landroid/transition/TransitionSet;->addTransition(Landroid/transition/Transition;)Landroid/transition/TransitionSet;
 
-    .line 2005
+    .line 2006
     const-class v3, Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     invoke-virtual {v2, v3, v1}, Landroid/transition/TransitionSet;->excludeChildren(Ljava/lang/Class;Z)Landroid/transition/Transition;
 
-    .line 2006
+    .line 2007
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-static {v3, v2}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 2009
+    .line 2010
     :cond_1
     iget v2, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
@@ -6950,7 +6954,7 @@
 
     goto/16 :goto_1
 
-    .line 2029
+    .line 2030
     :cond_2
     sget-object v2, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
@@ -6958,7 +6962,7 @@
 
     return-void
 
-    .line 2032
+    .line 2033
     :cond_3
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isScreencast()Z
 
@@ -6974,7 +6978,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 2033
+    .line 2034
     :cond_4
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
@@ -6982,12 +6986,12 @@
 
     invoke-direct {p0, v2, v0, p1}, Lorg/telegram/ui/VoIPFragment;->setFrontalCameraAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
 
-    .line 2034
+    .line 2035
     iget-boolean v2, p0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     if-eqz v2, :cond_6
 
-    .line 2035
+    .line 2036
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6996,7 +7000,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 2036
+    .line 2037
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -7011,7 +7015,7 @@
 
     goto :goto_0
 
-    .line 2039
+    .line 2040
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
@@ -7019,14 +7023,14 @@
 
     invoke-direct {p0, v2, v0, p1}, Lorg/telegram/ui/VoIPFragment;->setSpeakerPhoneAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
 
-    .line 2040
+    .line 2041
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 2041
+    .line 2042
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -7039,7 +7043,7 @@
 
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 2043
+    .line 2044
     :cond_6
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
@@ -7048,14 +7052,14 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/VoIPFragment;->setVideoAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
 
-    .line 2044
+    .line 2045
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     aget-object v1, v1, v8
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/VoIPFragment;->setMicrohoneAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
 
-    .line 2046
+    .line 2047
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     aget-object v0, v0, v7
@@ -7080,7 +7084,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->setData(IIILjava/lang/String;ZZ)V
 
-    .line 2047
+    .line 2048
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     aget-object v0, v0, v7
@@ -7091,7 +7095,7 @@
 
     goto/16 :goto_4
 
-    .line 2010
+    .line 2011
     :cond_7
     :goto_1
     iget-object v10, v0, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
@@ -7106,7 +7110,7 @@
 
     if-ne v2, v5, :cond_b
 
-    .line 2011
+    .line 2012
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isScreencast()Z
 
     move-result v2
@@ -7121,7 +7125,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 2012
+    .line 2013
     :cond_8
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
@@ -7129,12 +7133,12 @@
 
     invoke-direct {p0, v2, v0, p1}, Lorg/telegram/ui/VoIPFragment;->setFrontalCameraAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
 
-    .line 2013
+    .line 2014
     iget-boolean v2, p0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     if-eqz v2, :cond_a
 
-    .line 2014
+    .line 2015
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -7149,7 +7153,7 @@
 
     goto :goto_2
 
-    .line 2017
+    .line 2018
     :cond_9
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
@@ -7157,7 +7161,7 @@
 
     invoke-direct {p0, v2, v0, p1}, Lorg/telegram/ui/VoIPFragment;->setSpeakerPhoneAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
 
-    .line 2018
+    .line 2019
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -7170,7 +7174,7 @@
 
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 2020
+    .line 2021
     :cond_a
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
@@ -7179,7 +7183,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/VoIPFragment;->setVideoAction(Lorg/telegram/ui/Components/voip/VoIPToggleButton;Lorg/telegram/messenger/voip/VoIPService;Z)V
 
-    .line 2021
+    .line 2022
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     aget-object v1, v1, v8
@@ -7188,7 +7192,7 @@
 
     goto :goto_3
 
-    .line 2023
+    .line 2024
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
@@ -7196,21 +7200,21 @@
 
     invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2024
+    .line 2025
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2025
+    .line 2026
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     aget-object v0, v0, v8
 
     invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2027
+    .line 2028
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
@@ -7226,7 +7230,7 @@
 
     if-ge v9, v1, :cond_d
 
-    .line 2056
+    .line 2057
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     aget-object v1, v1, v9
@@ -7237,7 +7241,7 @@
 
     if-nez v1, :cond_c
 
-    .line 2057
+    .line 2058
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     aget-object v1, v1, v9
@@ -7251,7 +7255,7 @@
 
     goto :goto_5
 
-    .line 2061
+    .line 2062
     :cond_d
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateSpeakerPhoneIcon()V
 
@@ -7261,14 +7265,14 @@
 .method private updateKeyView(Z)V
     .locals 6
 
-    .line 1892
+    .line 1893
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->emojiLoaded:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1895
+    .line 1896
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -7283,27 +7287,27 @@
 
     const/4 v2, 0x0
 
-    .line 1901
+    .line 1902
     :try_start_0
     new-instance v3, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v3}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 1902
+    .line 1903
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getEncryptionKey()[B
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    .line 1903
+    .line 1904
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getGA()[B
 
     move-result-object v0
 
     invoke-virtual {v3, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    .line 1904
+    .line 1905
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v1
@@ -7315,7 +7319,7 @@
     :catch_0
     move-exception v0
 
-    .line 1906
+    .line 1907
     invoke-static {v0, v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :goto_0
@@ -7323,7 +7327,7 @@
 
     return-void
 
-    .line 1911
+    .line 1912
     :cond_2
     array-length v0, v1
 
@@ -7333,7 +7337,7 @@
 
     move-result-object v0
 
-    .line 1912
+    .line 1913
     invoke-static {v0}, Lorg/telegram/messenger/voip/EncryptionKeyEmojifier;->emojifyForCall([B)[Ljava/lang/String;
 
     move-result-object v0
@@ -7345,12 +7349,12 @@
 
     if-ge v1, v3, :cond_4
 
-    .line 1914
+    .line 1915
     aget-object v3, v0, v1
 
     invoke-static {v3}, Lorg/telegram/messenger/Emoji;->preloadEmoji(Ljava/lang/CharSequence;)V
 
-    .line 1915
+    .line 1916
     aget-object v3, v0, v1
 
     invoke-static {v3}, Lorg/telegram/messenger/Emoji;->getEmojiDrawable(Ljava/lang/CharSequence;)Lorg/telegram/messenger/Emoji$EmojiDrawable;
@@ -7361,7 +7365,7 @@
 
     const/16 v4, 0x16
 
-    .line 1917
+    .line 1918
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -7372,17 +7376,17 @@
 
     invoke-virtual {v3, v2, v2, v5, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1918
+    .line 1919
     invoke-virtual {v3}, Lorg/telegram/messenger/Emoji$EmojiDrawable;->preload()V
 
-    .line 1919
+    .line 1920
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v4, v4, v1
 
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1920
+    .line 1921
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v4, v4, v1
@@ -7391,7 +7395,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1921
+    .line 1922
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v4, v4, v1
@@ -7400,7 +7404,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1923
+    .line 1924
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/VoIPFragment;->emojiDrawables:[Lorg/telegram/messenger/Emoji$EmojiDrawable;
 
@@ -7410,7 +7414,7 @@
 
     goto :goto_1
 
-    .line 1925
+    .line 1926
     :cond_4
     invoke-direct {p0, p1}, Lorg/telegram/ui/VoIPFragment;->checkEmojiLoaded(Z)V
 
@@ -7420,7 +7424,7 @@
 .method private updateSpeakerPhoneIcon()V
     .locals 2
 
-    .line 2132
+    .line 2133
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -7429,7 +7433,7 @@
 
     return-void
 
-    .line 2136
+    .line 2137
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isBluetoothOn()Z
 
@@ -7437,7 +7441,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2137
+    .line 2138
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->calls_bluetooth:I
@@ -7446,7 +7450,7 @@
 
     goto :goto_0
 
-    .line 2138
+    .line 2139
     :cond_1
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isSpeakerphoneOn()Z
 
@@ -7454,7 +7458,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 2139
+    .line 2140
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->calls_speaker:I
@@ -7463,7 +7467,7 @@
 
     goto :goto_0
 
-    .line 2141
+    .line 2142
     :cond_2
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->isHeadsetPlugged()Z
 
@@ -7471,7 +7475,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 2142
+    .line 2143
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->calls_menu_headset:I
@@ -7480,7 +7484,7 @@
 
     goto :goto_0
 
-    .line 2144
+    .line 2145
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
@@ -7495,7 +7499,7 @@
 .method private updateSystemBarColors()V
     .locals 4
 
-    .line 2309
+    .line 2310
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->overlayPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lorg/telegram/ui/VoIPFragment;->uiVisibilityAlpha:F
@@ -7518,7 +7522,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2310
+    .line 2311
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->overlayBottomPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lorg/telegram/ui/VoIPFragment;->fillNaviagtionBarValue:F
@@ -7545,12 +7549,12 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2311
+    .line 2312
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->fragmentView:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
-    .line 2312
+    .line 2313
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_0
@@ -7562,7 +7566,7 @@
 
     move-object/from16 v0, p0
 
-    .line 1384
+    .line 1385
     iget-boolean v1, v0, Lorg/telegram/ui/VoIPFragment;->isFinished:Z
 
     if-nez v1, :cond_4c
@@ -7576,10 +7580,10 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 1387
+    .line 1388
     iput-boolean v1, v0, Lorg/telegram/ui/VoIPFragment;->lockOnScreen:Z
 
-    .line 1388
+    .line 1389
     iget v2, v0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
     const/4 v3, -0x1
@@ -7595,13 +7599,13 @@
     :cond_1
     move v2, v1
 
-    .line 1394
+    .line 1395
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v3
 
-    .line 1396
+    .line 1397
     iget v5, v0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     const/4 v6, 0x5
@@ -7628,7 +7632,7 @@
 
     goto/16 :goto_5
 
-    .line 1435
+    .line 1436
     :pswitch_0
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -7642,15 +7646,15 @@
 
     invoke-virtual {v5, v10, v1, v2}, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;->setText(Ljava/lang/String;ZZ)V
 
-    .line 1436
+    .line 1437
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/voip/AcceptDeclineView;->setRetryMod(Z)V
 
-    .line 1437
+    .line 1438
     iput-boolean v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
-    .line 1438
+    .line 1439
     iput-boolean v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
     move v5, v1
@@ -7667,7 +7671,7 @@
 
     goto/16 :goto_7
 
-    .line 1426
+    .line 1427
     :pswitch_1
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -7683,25 +7687,25 @@
 
     goto/16 :goto_5
 
-    .line 1399
+    .line 1400
     :pswitch_2
     iput-boolean v4, v0, Lorg/telegram/ui/VoIPFragment;->lockOnScreen:Z
 
     const/16 v5, 0x18
 
-    .line 1400
+    .line 1401
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
-    .line 1401
+    .line 1402
     iget-object v10, v0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v10, v1}, Lorg/telegram/ui/Components/voip/AcceptDeclineView;->setRetryMod(Z)V
 
     if-eqz v3, :cond_3
 
-    .line 1402
+    .line 1403
     iget-object v10, v3, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     if-eqz v10, :cond_3
@@ -7710,7 +7714,7 @@
 
     if-eqz v10, :cond_3
 
-    .line 1403
+    .line 1404
     iget-boolean v10, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz v10, :cond_2
@@ -7728,7 +7732,7 @@
     :cond_2
     move v10, v1
 
-    .line 1408
+    .line 1409
     :goto_3
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -7742,7 +7746,7 @@
 
     invoke-virtual {v11, v12, v4, v2}, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;->setText(Ljava/lang/String;ZZ)V
 
-    .line 1409
+    .line 1410
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     const/16 v12, 0x3c
@@ -7761,7 +7765,7 @@
 
     goto :goto_2
 
-    .line 1411
+    .line 1412
     :cond_3
     iget-object v10, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -7775,7 +7779,7 @@
 
     invoke-virtual {v10, v11, v4, v2}, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;->setText(Ljava/lang/String;ZZ)V
 
-    .line 1412
+    .line 1413
     iget-object v10, v0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v10, v9}, Landroid/view/View;->setTranslationY(F)V
@@ -7784,7 +7788,7 @@
 
     goto :goto_1
 
-    .line 1429
+    .line 1430
     :pswitch_3
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -7800,7 +7804,7 @@
 
     goto/16 :goto_5
 
-    .line 1423
+    .line 1424
     :pswitch_4
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -7816,7 +7820,7 @@
 
     goto/16 :goto_5
 
-    .line 1420
+    .line 1421
     :pswitch_5
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -7832,13 +7836,13 @@
 
     goto/16 :goto_5
 
-    .line 1449
+    .line 1450
     :pswitch_6
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->saveCameraLastBitmap()V
 
-    .line 1450
+    .line 1451
     new-instance v5, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda24;
 
     invoke-direct {v5, v0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/VoIPFragment;)V
@@ -7849,7 +7853,7 @@
 
     goto/16 :goto_5
 
-    .line 1453
+    .line 1454
     :cond_4
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -7863,7 +7867,7 @@
 
     invoke-virtual {v5, v12, v1, v2}, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;->setText(Ljava/lang/String;ZZ)V
 
-    .line 1454
+    .line 1455
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v5
@@ -7872,7 +7876,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 1455
+    .line 1456
     invoke-virtual {v5}, Lorg/telegram/messenger/voip/VoIPService;->getLastError()Ljava/lang/String;
 
     move-result-object v5
@@ -7882,7 +7886,7 @@
     :cond_5
     move-object v5, v12
 
-    .line 1456
+    .line 1457
     :goto_4
     invoke-static {v5, v12}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -7894,14 +7898,14 @@
 
     const-string v12, "ERROR_INCOMPATIBLE"
 
-    .line 1457
+    .line 1458
     invoke-static {v5, v12}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v12
 
     if-eqz v12, :cond_6
 
-    .line 1458
+    .line 1459
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v10, v5, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -7912,7 +7916,7 @@
 
     move-result-object v5
 
-    .line 1459
+    .line 1460
     sget v10, Lorg/telegram/messenger/R$string;->VoipPeerIncompatible:I
 
     new-array v11, v4, [Ljava/lang/Object;
@@ -7925,7 +7929,7 @@
 
     move-result-object v5
 
-    .line 1460
+    .line 1461
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v5
@@ -7937,26 +7941,26 @@
     :cond_6
     const-string v12, "ERROR_PEER_OUTDATED"
 
-    .line 1461
+    .line 1462
     invoke-static {v5, v12}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v12
 
     if-eqz v12, :cond_8
 
-    .line 1462
+    .line 1463
     iget-boolean v5, v0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
     if-eqz v5, :cond_7
 
-    .line 1463
+    .line 1464
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-static {v5}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1464
+    .line 1465
     sget v12, Lorg/telegram/messenger/R$string;->VoipPeerVideoOutdated:I
 
     new-array v13, v4, [Ljava/lang/Object;
@@ -7971,14 +7975,14 @@
 
     new-array v12, v4, [Z
 
-    .line 1466
+    .line 1467
     new-instance v13, Lorg/telegram/ui/ActionBar/DarkAlertDialog$Builder;
 
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     invoke-direct {v13, v14}, Lorg/telegram/ui/ActionBar/DarkAlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1467
+    .line 1468
     invoke-static {v11, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v10
@@ -7987,7 +7991,7 @@
 
     move-result-object v10
 
-    .line 1468
+    .line 1469
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v5
@@ -8000,7 +8004,7 @@
 
     const-string v11, "Cancel"
 
-    .line 1469
+    .line 1470
     invoke-static {v11, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v10
@@ -8017,7 +8021,7 @@
 
     const-string v11, "VoipPeerVideoOutdatedMakeVoice"
 
-    .line 1470
+    .line 1471
     invoke-static {v11, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v10
@@ -8030,15 +8034,15 @@
 
     move-result-object v5
 
-    .line 1486
+    .line 1487
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v5
 
-    .line 1487
+    .line 1488
     invoke-virtual {v5, v4}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 1488
+    .line 1489
     new-instance v10, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda9;
 
     invoke-direct {v10, v0, v12}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/VoIPFragment;[Z)V
@@ -8047,7 +8051,7 @@
 
     goto/16 :goto_5
 
-    .line 1494
+    .line 1495
     :cond_7
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -8055,7 +8059,7 @@
 
     move-result-object v5
 
-    .line 1495
+    .line 1496
     sget v10, Lorg/telegram/messenger/R$string;->VoipPeerOutdated:I
 
     new-array v11, v4, [Ljava/lang/Object;
@@ -8068,7 +8072,7 @@
 
     move-result-object v5
 
-    .line 1496
+    .line 1497
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v5
@@ -8080,14 +8084,14 @@
     :cond_8
     const-string v10, "ERROR_PRIVACY"
 
-    .line 1498
+    .line 1499
     invoke-static {v5, v10}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v10
 
     if-eqz v10, :cond_9
 
-    .line 1499
+    .line 1500
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v10, v5, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -8098,7 +8102,7 @@
 
     move-result-object v5
 
-    .line 1500
+    .line 1501
     sget v10, Lorg/telegram/messenger/R$string;->CallNotAvailable:I
 
     new-array v11, v4, [Ljava/lang/Object;
@@ -8111,7 +8115,7 @@
 
     move-result-object v5
 
-    .line 1501
+    .line 1502
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v5
@@ -8123,7 +8127,7 @@
     :cond_9
     const-string v10, "ERROR_AUDIO_IO"
 
-    .line 1502
+    .line 1503
     invoke-static {v5, v10}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v10
@@ -8132,7 +8136,7 @@
 
     const-string v5, "Error initializing audio hardware"
 
-    .line 1503
+    .line 1504
     invoke-direct {v0, v5}, Lorg/telegram/ui/VoIPFragment;->showErrorDialog(Ljava/lang/CharSequence;)V
 
     goto :goto_5
@@ -8140,14 +8144,14 @@
     :cond_a
     const-string v10, "ERROR_LOCALIZED"
 
-    .line 1504
+    .line 1505
     invoke-static {v5, v10}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v10
 
     if-eqz v10, :cond_b
 
-    .line 1505
+    .line 1506
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -8157,14 +8161,14 @@
     :cond_b
     const-string v10, "ERROR_CONNECTION_SERVICE"
 
-    .line 1506
+    .line 1507
     invoke-static {v5, v10}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-eqz v5, :cond_c
 
-    .line 1507
+    .line 1508
     sget v5, Lorg/telegram/messenger/R$string;->VoipErrorUnknown:I
 
     const-string v10, "VoipErrorUnknown"
@@ -8177,7 +8181,7 @@
 
     goto :goto_5
 
-    .line 1509
+    .line 1510
     :cond_c
     new-instance v5, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda21;
 
@@ -8187,7 +8191,7 @@
 
     goto :goto_5
 
-    .line 1512
+    .line 1513
     :cond_d
     new-instance v5, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda26;
 
@@ -8197,11 +8201,11 @@
 
     goto :goto_5
 
-    .line 1442
+    .line 1443
     :cond_e
     invoke-direct {v0, v2}, Lorg/telegram/ui/VoIPFragment;->updateKeyView(Z)V
 
-    .line 1444
+    .line 1445
     iget v5, v0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     if-ne v5, v6, :cond_f
@@ -8229,7 +8233,7 @@
 
     goto :goto_7
 
-    .line 1417
+    .line 1418
     :cond_10
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -8255,7 +8259,7 @@
     :goto_6
     move v13, v12
 
-    .line 1516
+    .line 1517
     :goto_7
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->previewDialog:Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
@@ -8266,7 +8270,7 @@
     :cond_11
     if-eqz v3, :cond_15
 
-    .line 1521
+    .line 1522
     invoke-virtual {v3}, Lorg/telegram/messenger/voip/VoIPService;->getRemoteVideoState()I
 
     move-result v14
@@ -8283,7 +8287,7 @@
     :goto_8
     iput-boolean v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
-    .line 1522
+    .line 1523
     invoke-virtual {v3, v1}, Lorg/telegram/messenger/voip/VoIPService;->getVideoState(Z)I
 
     move-result v14
@@ -8312,28 +8316,28 @@
 
     if-eqz v14, :cond_15
 
-    .line 1523
+    .line 1524
     iget-boolean v14, v0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
     if-nez v14, :cond_15
 
-    .line 1524
+    .line 1525
     iput-boolean v4, v0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
     :cond_15
     if-eqz v2, :cond_16
 
-    .line 1529
+    .line 1530
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v14}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->saveRelativePosition()V
 
-    .line 1530
+    .line 1531
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v14}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->saveRelativePosition()V
 
-    .line 1533
+    .line 1534
     :cond_16
     iget-boolean v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
@@ -8343,12 +8347,12 @@
 
     if-eqz v14, :cond_19
 
-    .line 1534
+    .line 1535
     iget-boolean v14, v0, Lorg/telegram/ui/VoIPFragment;->switchingToPip:Z
 
     if-nez v14, :cond_17
 
-    .line 1535
+    .line 1536
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v14, v15}, Landroid/view/View;->setAlpha(F)V
@@ -8356,7 +8360,7 @@
     :cond_17
     if-eqz v2, :cond_18
 
-    .line 1538
+    .line 1539
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v14}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -8375,7 +8379,7 @@
 
     goto :goto_b
 
-    .line 1540
+    .line 1541
     :cond_18
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
@@ -8385,12 +8389,12 @@
 
     invoke-virtual {v14}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1541
+    .line 1542
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v14, v15}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1543
+    .line 1544
     :goto_b
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
@@ -8406,10 +8410,10 @@
 
     if-nez v14, :cond_19
 
-    .line 1544
+    .line 1545
     iput-boolean v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
-    .line 1548
+    .line 1549
     :cond_19
     iget-boolean v14, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
@@ -8421,18 +8425,18 @@
 
     goto :goto_c
 
-    .line 1551
+    .line 1552
     :cond_1a
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/VoIPFragment;->fillNavigationBar(ZZ)V
 
-    .line 1552
+    .line 1553
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v14, v1}, Landroid/view/View;->setVisibility(I)V
 
     if-eqz v2, :cond_1b
 
-    .line 1554
+    .line 1555
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v14}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -8451,7 +8455,7 @@
 
     goto :goto_d
 
-    .line 1556
+    .line 1557
     :cond_1b
     iget-object v6, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
@@ -8461,19 +8465,19 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1557
+    .line 1558
     iget-object v6, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v6, v9}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     goto :goto_d
 
-    .line 1549
+    .line 1550
     :cond_1c
     :goto_c
     invoke-direct {v0, v4, v2}, Lorg/telegram/ui/VoIPFragment;->fillNavigationBar(ZZ)V
 
-    .line 1561
+    .line 1562
     :goto_d
     iget-boolean v6, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
@@ -8483,14 +8487,14 @@
 
     if-nez v7, :cond_1e
 
-    .line 1562
+    .line 1563
     :cond_1d
     iput-boolean v1, v0, Lorg/telegram/ui/VoIPFragment;->cameraForceExpanded:Z
 
     :cond_1e
     if-eqz v6, :cond_1f
 
-    .line 1565
+    .line 1566
     iget-boolean v6, v0, Lorg/telegram/ui/VoIPFragment;->cameraForceExpanded:Z
 
     if-eqz v6, :cond_1f
@@ -8502,11 +8506,11 @@
     :cond_1f
     move v6, v1
 
-    .line 1567
+    .line 1568
     :goto_e
     invoke-direct {v0, v10, v2}, Lorg/telegram/ui/VoIPFragment;->showCallingUserAvatarMini(ZZ)V
 
-    .line 1568
+    .line 1569
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v7}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -8537,10 +8541,10 @@
     :goto_f
     add-int/2addr v5, v7
 
-    .line 1569
+    .line 1570
     invoke-direct {v0, v11, v2}, Lorg/telegram/ui/VoIPFragment;->showAcceptDeclineView(ZZ)V
 
-    .line 1570
+    .line 1571
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     iget-boolean v10, v0, Lorg/telegram/ui/VoIPFragment;->lockOnScreen:Z
@@ -8565,7 +8569,7 @@
     :goto_11
     invoke-virtual {v7, v10}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->setLockOnScreen(Z)V
 
-    .line 1571
+    .line 1572
     iget v7, v0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     const/4 v10, 0x3
@@ -8593,15 +8597,15 @@
 
     if-nez v7, :cond_25
 
-    .line 1572
+    .line 1573
     iget-boolean v7, v0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     if-nez v7, :cond_25
 
-    .line 1573
+    .line 1574
     invoke-direct {v0, v4}, Lorg/telegram/ui/VoIPFragment;->showUi(Z)V
 
-    .line 1576
+    .line 1577
     :cond_25
     iget-boolean v7, v0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
@@ -8623,14 +8627,14 @@
 
     if-nez v7, :cond_26
 
-    .line 1577
+    .line 1578
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v10, 0xbb8
 
     invoke-static {v7, v10, v11}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1578
+    .line 1579
     iput-boolean v4, v0, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
     goto :goto_13
@@ -8638,22 +8642,22 @@
     :cond_26
     if-eqz v3, :cond_27
 
-    .line 1579
+    .line 1580
     invoke-virtual {v3}, Lorg/telegram/messenger/voip/VoIPService;->isMicMute()Z
 
     move-result v7
 
     if-eqz v7, :cond_27
 
-    .line 1580
+    .line 1581
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1581
+    .line 1582
     iput-boolean v1, v0, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
-    .line 1583
+    .line 1584
     :cond_27
     :goto_13
     iget-boolean v7, v0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
@@ -8662,7 +8666,7 @@
 
     const/16 v7, 0x32
 
-    .line 1584
+    .line 1585
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -8680,7 +8684,7 @@
 
     if-eqz v2, :cond_2d
 
-    .line 1588
+    .line 1589
     iget-boolean v11, v0, Lorg/telegram/ui/VoIPFragment;->lockOnScreen:Z
 
     if-nez v11, :cond_2a
@@ -8691,7 +8695,7 @@
 
     goto :goto_14
 
-    .line 1595
+    .line 1596
     :cond_29
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
@@ -8707,7 +8711,7 @@
 
     goto :goto_15
 
-    .line 1589
+    .line 1590
     :cond_2a
     :goto_14
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
@@ -8718,17 +8722,17 @@
 
     if-eqz v11, :cond_2b
 
-    .line 1590
+    .line 1591
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v11, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1591
+    .line 1592
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v11, v9}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1593
+    .line 1594
     :cond_2b
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
@@ -8742,7 +8746,7 @@
 
     invoke-virtual {v11}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1597
+    .line 1598
     :goto_15
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
@@ -8792,18 +8796,18 @@
 
     goto :goto_19
 
-    .line 1599
+    .line 1600
     :cond_2d
     iget-boolean v11, v0, Lorg/telegram/ui/VoIPFragment;->lockOnScreen:Z
 
     if-nez v11, :cond_2e
 
-    .line 1600
+    .line 1601
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v11, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1602
+    .line 1603
     :cond_2e
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
@@ -8821,7 +8825,7 @@
     :goto_17
     invoke-virtual {v11, v15}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1603
+    .line 1604
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -8850,7 +8854,7 @@
 
     invoke-virtual {v11, v7}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
-    .line 1606
+    .line 1607
     :goto_19
     iget v7, v0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
@@ -8862,18 +8866,18 @@
 
     if-eq v7, v11, :cond_31
 
-    .line 1607
+    .line 1608
     invoke-direct {v0, v2}, Lorg/telegram/ui/VoIPFragment;->updateButtons(Z)V
 
     :cond_31
     if-eqz v12, :cond_32
 
-    .line 1611
+    .line 1612
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
     invoke-virtual {v7, v2}, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;->showTimer(Z)V
 
-    .line 1614
+    .line 1615
     :cond_32
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
@@ -8881,12 +8885,12 @@
 
     if-eqz v2, :cond_33
 
-    .line 1617
+    .line 1618
     iget v7, v0, Lorg/telegram/ui/VoIPFragment;->statusLayoutAnimateToOffset:I
 
     if-eq v14, v7, :cond_34
 
-    .line 1618
+    .line 1619
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v7}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -8913,7 +8917,7 @@
 
     goto :goto_1a
 
-    .line 1621
+    .line 1622
     :cond_33
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
@@ -8921,12 +8925,12 @@
 
     invoke-virtual {v7, v10}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
-    .line 1623
+    .line 1624
     :cond_34
     :goto_1a
     iput v14, v0, Lorg/telegram/ui/VoIPFragment;->statusLayoutAnimateToOffset:I
 
-    .line 1624
+    .line 1625
     iget-object v7, v0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     iget-boolean v10, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
@@ -8951,7 +8955,7 @@
     :goto_1c
     invoke-virtual {v7, v10, v2}, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;->setShowBlackout(ZZ)V
 
-    .line 1625
+    .line 1626
     iget v7, v0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     if-eq v7, v11, :cond_38
@@ -8983,19 +8987,19 @@
 
     if-eqz v3, :cond_45
 
-    .line 1629
+    .line 1630
     iget-boolean v10, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz v10, :cond_39
 
-    .line 1630
+    .line 1631
     iget-object v10, v3, Lorg/telegram/messenger/voip/VoIPService;->sharedUIParams:Lorg/telegram/messenger/voip/VoIPService$SharedUIParams;
 
     const/4 v11, 0x1
 
     iput-boolean v11, v10, Lorg/telegram/messenger/voip/VoIPService$SharedUIParams;->tapToVideoTooltipWasShowed:Z
 
-    .line 1632
+    .line 1633
     :cond_39
     iget-object v10, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
@@ -9005,7 +9009,7 @@
 
     invoke-virtual {v10, v12}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->setIsScreencast(Z)V
 
-    .line 1633
+    .line 1634
     iget-object v10, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v10, v10, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
@@ -9016,7 +9020,7 @@
 
     invoke-virtual {v10, v12}, Lorg/webrtc/TextureViewRenderer;->setMirror(Z)V
 
-    .line 1634
+    .line 1635
     iget-boolean v10, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz v10, :cond_3a
@@ -9053,12 +9057,12 @@
 
     if-eqz v2, :cond_3c
 
-    .line 1637
+    .line 1638
     iget-object v10, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v10}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->beforeLayoutChanges()V
 
-    .line 1639
+    .line 1640
     :cond_3c
     iget-boolean v10, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
@@ -9096,14 +9100,14 @@
 
     if-lez v10, :cond_41
 
-    .line 1640
+    .line 1641
     invoke-virtual {v3}, Lorg/telegram/messenger/voip/VoIPService;->getRemoteAudioState()I
 
     move-result v10
 
     if-nez v10, :cond_3f
 
-    .line 1641
+    .line 1642
     iget-object v10, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     sget v15, Lorg/telegram/messenger/R$drawable;->calls_mute_mini:I
@@ -9130,13 +9134,13 @@
 
     goto :goto_20
 
-    .line 1643
+    .line 1644
     :cond_3f
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v4, v14}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->removeNotification(Ljava/lang/String;)V
 
-    .line 1645
+    .line 1646
     :goto_20
     invoke-virtual {v3}, Lorg/telegram/messenger/voip/VoIPService;->getRemoteVideoState()I
 
@@ -9144,7 +9148,7 @@
 
     if-nez v4, :cond_40
 
-    .line 1646
+    .line 1647
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     sget v5, Lorg/telegram/messenger/R$drawable;->calls_camera_mini:I
@@ -9173,7 +9177,7 @@
 
     goto :goto_22
 
-    .line 1648
+    .line 1649
     :cond_40
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
@@ -9181,7 +9185,7 @@
 
     goto :goto_22
 
-    .line 1651
+    .line 1652
     :cond_41
     invoke-virtual {v3}, Lorg/telegram/messenger/voip/VoIPService;->getRemoteAudioState()I
 
@@ -9189,7 +9193,7 @@
 
     if-nez v4, :cond_42
 
-    .line 1652
+    .line 1653
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     sget v5, Lorg/telegram/messenger/R$drawable;->calls_mute_mini:I
@@ -9216,19 +9220,19 @@
 
     goto :goto_21
 
-    .line 1654
+    .line 1655
     :cond_42
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v4, v14}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->removeNotification(Ljava/lang/String;)V
 
-    .line 1656
+    .line 1657
     :goto_21
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v4, v13}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->removeNotification(Ljava/lang/String;)V
 
-    .line 1659
+    .line 1660
     :goto_22
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
@@ -9258,10 +9262,10 @@
 
     const/4 v4, 0x1
 
-    .line 1660
+    .line 1661
     iput-boolean v4, v3, Lorg/telegram/messenger/voip/VoIPService$SharedUIParams;->tapToVideoTooltipWasShowed:Z
 
-    .line 1661
+    .line 1662
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->tapToVideoTooltip:Lorg/telegram/ui/Components/HintView;
 
     iget-object v5, v0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
@@ -9272,7 +9276,7 @@
 
     goto :goto_23
 
-    .line 1662
+    .line 1663
     :cond_43
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
@@ -9282,7 +9286,7 @@
 
     if-eqz v3, :cond_44
 
-    .line 1663
+    .line 1664
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->tapToVideoTooltip:Lorg/telegram/ui/Components/HintView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/HintView;->hide()V
@@ -9291,12 +9295,12 @@
     :goto_23
     if-eqz v2, :cond_45
 
-    .line 1667
+    .line 1668
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->animateLayoutChanges()V
 
-    .line 1671
+    .line 1672
     :cond_45
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
@@ -9304,36 +9308,36 @@
 
     move-result v3
 
-    .line 1673
+    .line 1674
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v4, v3, v2}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setBottomOffset(IZ)V
 
-    .line 1674
+    .line 1675
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v4, v3, v2}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setBottomOffset(IZ)V
 
-    .line 1675
+    .line 1676
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-boolean v4, v0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setUiVisible(Z)V
 
-    .line 1676
+    .line 1677
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-boolean v4, v0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setUiVisible(Z)V
 
-    .line 1678
+    .line 1679
     iget-boolean v3, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz v3, :cond_48
 
-    .line 1679
+    .line 1680
     iget-boolean v3, v0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
     if-eqz v3, :cond_47
@@ -9344,7 +9348,7 @@
 
     goto :goto_24
 
-    .line 1682
+    .line 1683
     :cond_46
     invoke-direct {v0, v8, v2}, Lorg/telegram/ui/VoIPFragment;->showFloatingLayout(IZ)V
 
@@ -9356,7 +9360,7 @@
     :goto_24
     const/4 v3, 0x1
 
-    .line 1680
+    .line 1681
     invoke-direct {v0, v3, v2}, Lorg/telegram/ui/VoIPFragment;->showFloatingLayout(IZ)V
 
     goto :goto_25
@@ -9364,7 +9368,7 @@
     :cond_48
     const/4 v3, 0x1
 
-    .line 1685
+    .line 1686
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/VoIPFragment;->showFloatingLayout(IZ)V
 
     :goto_25
@@ -9372,7 +9376,7 @@
 
     if-eqz v6, :cond_4a
 
-    .line 1688
+    .line 1689
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -9381,12 +9385,12 @@
 
     if-nez v4, :cond_4a
 
-    .line 1689
+    .line 1690
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setIsActive(Z)V
 
-    .line 1690
+    .line 1691
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -9395,27 +9399,27 @@
 
     if-eqz v3, :cond_49
 
-    .line 1691
+    .line 1692
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v3, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1692
+    .line 1693
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1, v9}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1693
+    .line 1694
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1694
+    .line 1695
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1696
+    .line 1697
     :cond_49
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
@@ -9429,7 +9433,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1697
+    .line 1698
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -9468,7 +9472,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1698
+    .line 1699
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     const/4 v2, 0x1
@@ -9484,7 +9488,7 @@
     :cond_4a
     if-nez v6, :cond_4b
 
-    .line 1699
+    .line 1700
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -9493,12 +9497,12 @@
 
     if-eqz v3, :cond_4b
 
-    .line 1700
+    .line 1701
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setIsActive(Z)V
 
-    .line 1701
+    .line 1702
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -9527,7 +9531,7 @@
 
     const-wide/16 v2, 0x96
 
-    .line 1708
+    .line 1709
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
@@ -9540,24 +9544,24 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1709
+    .line 1710
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1, v7}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1712
+    .line 1713
     :cond_4b
     :goto_26
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->restoreRelativePosition()V
 
-    .line 1713
+    .line 1714
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->restoreRelativePosition()V
 
-    .line 1715
+    .line 1716
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/VoIPFragment;->updateSpeakerPhoneIcon()V
 
     :cond_4c
@@ -9583,7 +9587,7 @@
 
     move-object/from16 v15, p0
 
-    .line 1205
+    .line 1206
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -9592,7 +9596,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1207
+    .line 1208
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     move-result-object v0
@@ -9603,7 +9607,7 @@
 
     return-object v0
 
-    .line 1211
+    .line 1212
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
@@ -9623,7 +9627,7 @@
 
     int-to-float v0, v0
 
-    .line 1212
+    .line 1213
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     move-result-object v1
@@ -9642,21 +9646,21 @@
 
     int-to-float v1, v1
 
-    .line 1214
+    .line 1215
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v5
 
-    .line 1215
+    .line 1216
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getY()F
 
     move-result v7
 
-    .line 1216
+    .line 1217
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getScaleX()F
@@ -9667,7 +9671,7 @@
 
     const/16 v17, 0x0
 
-    .line 1225
+    .line 1226
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->isExpanding()Z
 
     move-result v2
@@ -9685,7 +9689,7 @@
 
     move v14, v2
 
-    .line 1227
+    .line 1228
     :goto_0
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
@@ -9713,7 +9717,7 @@
 
     sub-float v12, v0, v2
 
-    .line 1228
+    .line 1229
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -9738,7 +9742,7 @@
 
     sub-float v11, v1, v2
 
-    .line 1229
+    .line 1230
     iget-boolean v2, v15, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
     const/4 v10, 0x4
@@ -9747,21 +9751,21 @@
 
     if-eqz v2, :cond_3
 
-    .line 1230
+    .line 1231
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
 
-    .line 1231
+    .line 1232
     iget-boolean v9, v15, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz v9, :cond_2
 
     if-eqz v2, :cond_2
 
-    .line 1232
+    .line 1233
     iget-object v9, v15, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v9}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -9778,7 +9782,7 @@
 
     mul-float/2addr v9, v4
 
-    .line 1233
+    .line 1234
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -9803,7 +9807,7 @@
 
     sub-float/2addr v0, v2
 
-    .line 1234
+    .line 1235
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     move-result-object v2
@@ -9838,7 +9842,7 @@
 
     sub-float/2addr v0, v2
 
-    .line 1235
+    .line 1236
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -9863,7 +9867,7 @@
 
     sub-float/2addr v1, v2
 
-    .line 1236
+    .line 1237
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     move-result-object v2
@@ -9920,7 +9924,7 @@
 
     goto :goto_2
 
-    .line 1245
+    .line 1246
     :cond_3
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
@@ -9946,7 +9950,7 @@
 
     sub-float/2addr v0, v2
 
-    .line 1246
+    .line 1247
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -9979,7 +9983,7 @@
 
     const/4 v2, 0x1
 
-    .line 1249
+    .line 1250
     :goto_2
     iget-boolean v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
@@ -9998,7 +10002,7 @@
     :cond_4
     const/4 v9, 0x0
 
-    .line 1250
+    .line 1251
     :goto_3
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -10012,12 +10016,12 @@
 
     const/high16 v22, 0x3f800000    # 1.0f
 
-    .line 1254
+    .line 1255
     iget-boolean v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
     if-eqz v0, :cond_6
 
-    .line 1255
+    .line 1256
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->isExpanding()Z
 
     move-result v0
@@ -10044,58 +10048,58 @@
 
     if-eqz v2, :cond_7
 
-    .line 1260
+    .line 1261
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1261
+    .line 1262
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1262
+    .line 1263
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 1263
+    .line 1264
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0, v8}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1264
+    .line 1265
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0, v10}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setCornerRadius(F)V
 
-    .line 1265
+    .line 1266
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1267
+    .line 1268
     :cond_7
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1268
+    .line 1269
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1269
+    .line 1270
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 1270
+    .line 1271
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1271
+    .line 1272
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     const/16 v23, 0x6
@@ -10112,29 +10116,29 @@
 
     invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->setRoundCorners(F)V
 
-    .line 1273
+    .line 1274
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/4 v13, 0x0
 
     invoke-virtual {v0, v13}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1274
+    .line 1275
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v14}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1275
+    .line 1276
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v14}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1276
+    .line 1277
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v12}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1277
+    .line 1278
     iget-object v0, v15, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v11}, Landroid/view/View;->setTranslationY(F)V
@@ -10177,7 +10181,7 @@
 
     aput v20, v0, v21
 
-    .line 1279
+    .line 1280
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
@@ -10189,14 +10193,14 @@
     :cond_b
     move/from16 v13, v19
 
-    .line 1281
+    .line 1282
     :goto_9
     iput v13, v15, Lorg/telegram/ui/VoIPFragment;->enterTransitionProgress:F
 
-    .line 1282
+    .line 1283
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/VoIPFragment;->updateSystemBarColors()V
 
-    .line 1286
+    .line 1287
     new-instance v13, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda3;
 
     move-object/from16 v24, v0
@@ -10243,7 +10247,7 @@
 
     move-object/from16 v7, p1
 
-    .line 512
+    .line 513
     invoke-static/range {p1 .. p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v1
@@ -10256,7 +10260,7 @@
 
     iput v1, v0, Lorg/telegram/ui/VoIPFragment;->touchSlop:F
 
-    .line 513
+    .line 514
     const-class v1, Landroid/view/accessibility/AccessibilityManager;
 
     invoke-static {v7, v1}, Landroidx/core/content/ContextCompat;->getSystemService(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
@@ -10267,43 +10271,43 @@
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->accessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
-    .line 515
+    .line 516
     new-instance v8, Lorg/telegram/ui/VoIPFragment$2;
 
     invoke-direct {v8, v0, v7}, Lorg/telegram/ui/VoIPFragment$2;-><init>(Lorg/telegram/ui/VoIPFragment;Landroid/content/Context;)V
 
     const/4 v9, 0x0
 
-    .line 670
+    .line 671
     invoke-virtual {v8, v9}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
-    .line 671
+    .line 672
     invoke-virtual {v8, v9}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
     const/high16 v10, -0x1000000
 
-    .line 672
+    .line 673
     invoke-virtual {v8, v10}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 673
+    .line 674
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/VoIPFragment;->updateSystemBarColors()V
 
-    .line 674
+    .line 675
     iput-object v8, v0, Lorg/telegram/ui/VoIPFragment;->fragmentView:Landroid/view/ViewGroup;
 
     const/4 v11, 0x1
 
-    .line 675
+    .line 676
     invoke-virtual {v8, v11}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
 
-    .line 676
+    .line 677
     new-instance v1, Lorg/telegram/ui/VoIPFragment$3;
 
     invoke-direct {v1, v0, v7}, Lorg/telegram/ui/VoIPFragment$3;-><init>(Lorg/telegram/ui/VoIPFragment;Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 686
+    .line 687
     new-instance v12, Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     const/4 v3, 0x0
@@ -10322,45 +10326,45 @@
 
     iput-object v12, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
-    .line 687
+    .line 688
     iget-object v1, v12, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     sget-object v2, Lorg/webrtc/RendererCommon$ScalingType;->SCALE_ASPECT_FIT:Lorg/webrtc/RendererCommon$ScalingType;
 
     invoke-virtual {v1, v2}, Lorg/webrtc/TextureViewRenderer;->setScalingType(Lorg/webrtc/RendererCommon$ScalingType;)V
 
-    .line 688
+    .line 689
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v1, v11}, Lorg/webrtc/TextureViewRenderer;->setEnableHardwareScaler(Z)V
 
-    .line 689
+    .line 690
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v1, v11}, Lorg/webrtc/TextureViewRenderer;->setRotateTextureWithScreen(Z)V
 
-    .line 690
+    .line 691
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     sget v3, Lorg/telegram/ui/Components/voip/VoIPTextureView;->SCALE_TYPE_FIT:I
 
     iput v3, v1, Lorg/telegram/ui/Components/voip/VoIPTextureView;->scaleType:I
 
-    .line 693
+    .line 694
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v8, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 694
+    .line 695
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v8, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 697
+    .line 698
     new-instance v1, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
     sget-object v3, Landroid/graphics/drawable/GradientDrawable$Orientation;->TOP_BOTTOM:Landroid/graphics/drawable/GradientDrawable$Orientation;
@@ -10373,21 +10377,21 @@
 
     invoke-direct {v1, v3, v5}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
-    .line 698
+    .line 699
     sget-object v3, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes$Orientation;->PORTRAIT:Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes$Orientation;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;->ofDeviceScreen(Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes$Orientation;)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;
 
     move-result-object v3
 
-    .line 699
+    .line 700
     new-instance v5, Lorg/telegram/ui/VoIPFragment$4;
 
     invoke-direct {v5, v0}, Lorg/telegram/ui/VoIPFragment$4;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
     invoke-virtual {v1, v3, v5}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->startDithering(Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;Lorg/telegram/ui/Components/BackgroundGradientDrawable$Listener;)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
-    .line 705
+    .line 706
     new-instance v3, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     invoke-direct {v3, v7}, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;-><init>(Landroid/content/Context;)V
@@ -10396,10 +10400,10 @@
 
     const/16 v5, 0x8
 
-    .line 706
+    .line 707
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 708
+    .line 709
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -10412,7 +10416,7 @@
 
     invoke-virtual {v3, v6}, Lorg/telegram/messenger/ImageReceiver;->setDelegate(Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;)V
 
-    .line 715
+    .line 716
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v6, v0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
@@ -10427,50 +10431,50 @@
 
     invoke-virtual {v3, v6, v13, v1, v12}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
-    .line 717
+    .line 718
     new-instance v1, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
-    .line 718
+    .line 719
     new-instance v3, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda30;
 
     invoke-direct {v3, v0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setDelegate(Lorg/telegram/ui/Components/voip/VoIPFloatingLayout$VoIPFloatingLayoutDelegate;)V
 
-    .line 719
+    .line 720
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-virtual {v1, v3, v3}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setRelativePosition(FF)V
 
-    .line 720
+    .line 721
     iput-boolean v11, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraIsFullscreen:Z
 
-    .line 721
+    .line 722
     new-instance v1, Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-direct {v1, v7, v11, v9}, Lorg/telegram/ui/Components/voip/VoIPTextureView;-><init>(Landroid/content/Context;ZZ)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
-    .line 722
+    .line 723
     iget-object v1, v1, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v1, v11}, Lorg/webrtc/TextureViewRenderer;->setIsCamera(Z)V
 
-    .line 723
+    .line 724
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v1, v11}, Lorg/webrtc/TextureViewRenderer;->setUseCameraRotation(Z)V
 
-    .line 724
+    .line 725
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     new-instance v3, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda12;
@@ -10479,71 +10483,71 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setOnTapListener(Landroid/view/View$OnClickListener;)V
 
-    .line 736
+    .line 737
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v1, v11}, Lorg/webrtc/TextureViewRenderer;->setMirror(Z)V
 
-    .line 737
+    .line 738
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-object v3, v0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 739
+    .line 740
     new-instance v1, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
-    .line 740
+    .line 741
     iput-boolean v11, v1, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->alwaysFloating:Z
 
-    .line 741
+    .line 742
     invoke-virtual {v1, v11, v9}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setFloatingMode(ZZ)V
 
-    .line 742
+    .line 743
     new-instance v1, Lorg/webrtc/TextureViewRenderer;
 
     invoke-direct {v1, v7}, Lorg/webrtc/TextureViewRenderer;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
-    .line 743
+    .line 744
     invoke-virtual {v1, v11}, Lorg/webrtc/TextureViewRenderer;->setEnableHardwareScaler(Z)V
 
-    .line 744
+    .line 745
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v1, v9}, Lorg/webrtc/TextureViewRenderer;->setIsCamera(Z)V
 
-    .line 745
+    .line 746
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
     const/high16 v3, 0x41f00000    # 30.0f
 
     invoke-virtual {v1, v3}, Lorg/webrtc/TextureViewRenderer;->setFpsReduction(F)V
 
-    .line 746
+    .line 747
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {v1, v2}, Lorg/webrtc/TextureViewRenderer;->setScalingType(Lorg/webrtc/RendererCommon$ScalingType;)V
 
-    .line 748
+    .line 749
     new-instance v1, Landroid/view/View;
 
     invoke-direct {v1, v7}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const v2, -0xe4e0dd
 
-    .line 749
+    .line 750
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 750
+    .line 751
     iget-object v2, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     const/4 v3, -0x1
@@ -10554,7 +10558,7 @@
 
     invoke-virtual {v2, v1, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 751
+    .line 752
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
@@ -10569,7 +10573,7 @@
 
     invoke-virtual {v1, v2, v14}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 752
+    .line 753
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     new-instance v2, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda16;
@@ -10578,12 +10582,12 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setOnTapListener(Landroid/view/View$OnClickListener;)V
 
-    .line 764
+    .line 765
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 766
+    .line 767
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-static {v6, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -10592,24 +10596,24 @@
 
     invoke-virtual {v8, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 767
+    .line 768
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v8, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 768
+    .line 769
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->overlayBackground:Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;
 
     invoke-virtual {v8, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 771
+    .line 772
     new-instance v1, Landroid/view/View;
 
     invoke-direct {v1, v7}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->bottomShadow:Landroid/view/View;
 
-    .line 772
+    .line 773
     new-instance v2, Landroid/graphics/drawable/GradientDrawable;
 
     sget-object v14, Landroid/graphics/drawable/GradientDrawable$Orientation;->TOP_BOTTOM:Landroid/graphics/drawable/GradientDrawable$Orientation;
@@ -10630,7 +10634,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 773
+    .line 774
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->bottomShadow:Landroid/view/View;
 
     const/16 v2, 0x8c
@@ -10643,14 +10647,14 @@
 
     invoke-virtual {v8, v1, v14}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 775
+    .line 776
     new-instance v1, Landroid/view/View;
 
     invoke-direct {v1, v7}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->topShadow:Landroid/view/View;
 
-    .line 776
+    .line 777
     new-instance v14, Landroid/graphics/drawable/GradientDrawable;
 
     sget-object v15, Landroid/graphics/drawable/GradientDrawable$Orientation;->TOP_BOTTOM:Landroid/graphics/drawable/GradientDrawable$Orientation;
@@ -10671,7 +10675,7 @@
 
     invoke-virtual {v1, v14}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 777
+    .line 778
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->topShadow:Landroid/view/View;
 
     const/16 v4, 0x30
@@ -10682,17 +10686,17 @@
 
     invoke-virtual {v8, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 780
+    .line 781
     new-instance v1, Lorg/telegram/ui/VoIPFragment$5;
 
     invoke-direct {v1, v0, v7}, Lorg/telegram/ui/VoIPFragment$5;-><init>(Lorg/telegram/ui/VoIPFragment;Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
-    .line 787
+    .line 788
     invoke-virtual {v1, v9}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 788
+    .line 789
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     const/16 v2, 0x1e
@@ -10703,12 +10707,12 @@
 
     invoke-virtual {v1, v9, v9, v9, v2}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 789
+    .line 790
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v9}, Landroid/widget/LinearLayout;->setClipToPadding(Z)V
 
-    .line 791
+    .line 792
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     new-instance v2, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda14;
@@ -10717,14 +10721,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 801
+    .line 802
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, v7}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
-    .line 802
+    .line 803
     sget v2, Lorg/telegram/messenger/R$string;->CallEmojiKeyTooltip:I
 
     new-array v4, v11, [Ljava/lang/Object;
@@ -10745,24 +10749,24 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 803
+    .line 804
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41800000    # 16.0f
 
     invoke-virtual {v1, v11, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 804
+    .line 805
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 805
+    .line 806
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v12}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 806
+    .line 807
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
@@ -10774,7 +10778,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 809
+    .line 810
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     new-instance v6, Landroid/widget/ImageView;
@@ -10783,7 +10787,7 @@
 
     aput-object v6, v4, v1
 
-    .line 810
+    .line 811
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
 
     aget-object v4, v4, v1
@@ -10792,7 +10796,7 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 811
+    .line 812
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     iget-object v6, v0, Lorg/telegram/ui/VoIPFragment;->emojiViews:[Landroid/widget/ImageView;
@@ -10829,7 +10833,7 @@
 
     goto :goto_0
 
-    .line 813
+    .line 814
     :cond_1
     new-instance v1, Lorg/telegram/ui/VoIPFragment$6;
 
@@ -10837,27 +10841,27 @@
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
-    .line 839
-    invoke-virtual {v1, v11}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
     .line 840
-    iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v1, v11}, Landroid/widget/LinearLayout;->setFocusable(Z)V
+    invoke-virtual {v1, v11}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 841
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
+    invoke-virtual {v1, v11}, Landroid/widget/LinearLayout;->setFocusable(Z)V
+
+    .line 842
+    iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
+
     invoke-virtual {v1, v11}, Landroid/widget/LinearLayout;->setFocusableInTouchMode(Z)V
 
-    .line 843
+    .line 844
     new-instance v1, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 844
+    .line 845
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-static {v4, v11}, Lorg/telegram/messenger/ImageLocation;->getForUserOrChat(Lorg/telegram/tgnet/TLObject;I)Lorg/telegram/messenger/ImageLocation;
@@ -10878,7 +10882,7 @@
 
     invoke-virtual {v1, v4, v13, v10, v12}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
-    .line 845
+    .line 846
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -10891,12 +10895,12 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 846
+    .line 847
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 848
+    .line 849
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, v7}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -10905,10 +10909,10 @@
 
     const/high16 v4, 0x41c00000    # 24.0f
 
-    .line 849
+    .line 850
     invoke-virtual {v1, v11, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 850
+    .line 851
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUser:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -10919,7 +10923,7 @@
 
     move-result-object v1
 
-    .line 851
+    .line 852
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTitle:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -10940,12 +10944,12 @@
 
     move-result-object v1
 
-    .line 852
+    .line 853
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTitle:Landroid/widget/TextView;
 
     invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 853
+    .line 854
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTitle:Landroid/widget/TextView;
 
     const/4 v4, 0x3
@@ -10970,24 +10974,24 @@
 
     invoke-virtual {v1, v4, v6, v10, v12}, Landroid/widget/TextView;->setShadowLayer(FFFI)V
 
-    .line 854
+    .line 855
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTitle:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 855
+    .line 856
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTitle:Landroid/widget/TextView;
 
     invoke-virtual {v1, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 856
+    .line 857
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTitle:Landroid/widget/TextView;
 
     const/4 v4, 0x2
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setImportantForAccessibility(I)V
 
-    .line 857
+    .line 858
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTitle:Landroid/widget/TextView;
@@ -11012,17 +11016,17 @@
 
     invoke-virtual {v1, v4, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 859
+    .line 860
     new-instance v1, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
-    .line 860
+    .line 861
     invoke-static {v1, v2}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
 
-    .line 861
+    .line 862
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
@@ -11033,17 +11037,17 @@
 
     invoke-virtual {v1, v4, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 863
+    .line 864
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v9}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
 
-    .line 864
+    .line 865
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v9}, Landroid/widget/LinearLayout;->setClipToPadding(Z)V
 
-    .line 865
+    .line 866
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     const/16 v4, 0xf
@@ -11054,7 +11058,7 @@
 
     invoke-virtual {v1, v9, v9, v9, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 867
+    .line 868
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserPhotoViewMini:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v18, 0x87
@@ -11071,7 +11075,7 @@
 
     invoke-virtual {v8, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 868
+    .line 869
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     const/16 v18, -0x1
@@ -11086,7 +11090,7 @@
 
     invoke-virtual {v8, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 869
+    .line 870
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     const/16 v18, -0x2
@@ -11101,7 +11105,7 @@
 
     invoke-virtual {v8, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 870
+    .line 871
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->emojiRationalTextView:Landroid/widget/TextView;
 
     const/16 v18, -0x1
@@ -11120,7 +11124,7 @@
 
     invoke-virtual {v8, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 872
+    .line 873
     new-instance v1, Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;-><init>(Landroid/content/Context;)V
@@ -11132,7 +11136,7 @@
     :goto_2
     if-ge v1, v2, :cond_2
 
-    .line 874
+    .line 875
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     new-instance v6, Lorg/telegram/ui/Components/voip/VoIPToggleButton;
@@ -11141,7 +11145,7 @@
 
     aput-object v6, v4, v1
 
-    .line 875
+    .line 876
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     iget-object v6, v0, Lorg/telegram/ui/VoIPFragment;->bottomButtons:[Lorg/telegram/ui/Components/voip/VoIPToggleButton;
@@ -11154,7 +11158,7 @@
 
     goto :goto_2
 
-    .line 877
+    .line 878
     :cond_2
     new-instance v1, Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
@@ -11162,21 +11166,21 @@
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
-    .line 878
+    .line 879
     new-instance v4, Lorg/telegram/ui/VoIPFragment$7;
 
     invoke-direct {v4, v0}, Lorg/telegram/ui/VoIPFragment$7;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/voip/AcceptDeclineView;->setListener(Lorg/telegram/ui/Components/voip/AcceptDeclineView$Listener;)V
 
-    .line 919
+    .line 920
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     iget-boolean v4, v0, Lorg/telegram/ui/VoIPFragment;->screenWasWakeup:Z
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/voip/AcceptDeclineView;->setScreenWasWakeup(Z)V
 
-    .line 921
+    .line 922
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     const/16 v4, 0x50
@@ -11189,7 +11193,7 @@
 
     invoke-virtual {v8, v1, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 922
+    .line 923
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     const/16 v6, 0xba
@@ -11200,7 +11204,7 @@
 
     invoke-virtual {v8, v1, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 924
+    .line 925
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -11209,7 +11213,7 @@
 
     const/16 v4, 0x4c
 
-    .line 925
+    .line 926
     invoke-static {v3, v4}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v6
@@ -11220,14 +11224,14 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 926
+    .line 927
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     sget v6, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 927
+    .line 928
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     const/16 v6, 0x10
@@ -11250,7 +11254,7 @@
 
     invoke-virtual {v1, v10, v12, v13, v6}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 928
+    .line 929
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     sget v6, Lorg/telegram/messenger/R$string;->Back:I
@@ -11263,7 +11267,7 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 929
+    .line 930
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     const/16 v6, 0x33
@@ -11276,14 +11280,14 @@
 
     invoke-virtual {v8, v1, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 931
+    .line 932
     new-instance v1, Lorg/telegram/ui/VoIPFragment$8;
 
     invoke-direct {v1, v0, v7}, Lorg/telegram/ui/VoIPFragment$8;-><init>(Lorg/telegram/ui/VoIPFragment;Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
-    .line 943
+    .line 944
     sget v6, Lorg/telegram/messenger/R$string;->VoipSpeaker:I
 
     const-string v12, "VoipSpeaker"
@@ -11294,7 +11298,7 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 944
+    .line 945
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     invoke-static {v3, v4}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
@@ -11307,7 +11311,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 945
+    .line 946
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     const/16 v3, 0xc
@@ -11330,7 +11334,7 @@
 
     invoke-virtual {v1, v4, v6, v12, v3}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 946
+    .line 947
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     const/16 v3, 0x35
@@ -11341,7 +11345,7 @@
 
     invoke-virtual {v8, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 947
+    .line 948
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
     new-instance v3, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda17;
@@ -11350,7 +11354,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 956
+    .line 957
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     new-instance v3, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda11;
@@ -11359,7 +11363,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 961
+    .line 962
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->isLockOnScreen()Z
@@ -11368,12 +11372,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 962
+    .line 963
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 965
+    .line 966
     :cond_3
     new-instance v1, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
@@ -11383,10 +11387,10 @@
 
     const/16 v3, 0x50
 
-    .line 966
+    .line 967
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 967
+    .line 968
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     new-instance v3, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda27;
@@ -11395,7 +11399,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->setOnViewsUpdated(Ljava/lang/Runnable;)V
 
-    .line 971
+    .line 972
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     const/4 v12, -0x1
@@ -11418,14 +11422,14 @@
 
     invoke-virtual {v8, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 973
+    .line 974
     new-instance v1, Lorg/telegram/ui/Components/HintView;
 
     invoke-direct {v1, v7, v2}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;I)V
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->tapToVideoTooltip:Lorg/telegram/ui/Components/HintView;
 
-    .line 974
+    .line 975
     sget v3, Lorg/telegram/messenger/R$string;->TapToTurnCamera:I
 
     const-string v4, "TapToTurnCamera"
@@ -11436,7 +11440,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/HintView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 975
+    .line 976
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->tapToVideoTooltip:Lorg/telegram/ui/Components/HintView;
 
     const/4 v12, -0x2
@@ -11457,7 +11461,7 @@
 
     invoke-virtual {v8, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 976
+    .line 977
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->tapToVideoTooltip:Lorg/telegram/ui/Components/HintView;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -11466,27 +11470,27 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/HintView;->setBottomOffset(I)V
 
-    .line 977
+    .line 978
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->tapToVideoTooltip:Lorg/telegram/ui/Components/HintView;
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 979
+    .line 980
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
-    .line 981
+    .line 982
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v1
 
     if-eqz v1, :cond_6
 
-    .line 983
+    .line 984
     iget-boolean v2, v0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
     if-nez v2, :cond_5
 
-    .line 984
+    .line 985
     iget-object v1, v1, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     if-eqz v1, :cond_4
@@ -11500,7 +11504,7 @@
     :cond_4
     iput-boolean v9, v0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
-    .line 986
+    .line 987
     :cond_5
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/VoIPFragment;->initRenderers()V
 
@@ -11519,12 +11523,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 455
+    .line 456
     sget p2, Lorg/telegram/messenger/NotificationCenter;->voipServiceCreated:I
 
     if-ne p1, p2, :cond_0
 
-    .line 456
+    .line 457
     iget p1, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     const/16 p2, 0x11
@@ -11537,29 +11541,29 @@
 
     if-eqz p1, :cond_2
 
-    .line 457
+    .line 458
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {p1}, Lorg/webrtc/TextureViewRenderer;->release()V
 
-    .line 458
+    .line 459
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {p1}, Lorg/webrtc/TextureViewRenderer;->release()V
 
-    .line 459
+    .line 460
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
     invoke-virtual {p1}, Lorg/webrtc/TextureViewRenderer;->release()V
 
-    .line 460
+    .line 461
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->initRenderers()V
 
-    .line 461
+    .line 462
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p1
@@ -11568,7 +11572,7 @@
 
     goto :goto_0
 
-    .line 463
+    .line 464
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
@@ -11576,18 +11580,18 @@
 
     const/4 p1, 0x1
 
-    .line 464
+    .line 465
     invoke-direct {p0, p1}, Lorg/telegram/ui/VoIPFragment;->updateKeyView(Z)V
 
     goto :goto_0
 
-    .line 465
+    .line 466
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->closeInCallActivity:I
 
     if-ne p1, p2, :cond_2
 
-    .line 466
+    .line 467
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
@@ -11602,7 +11606,7 @@
 
     const/4 v0, 0x1
 
-    .line 479
+    .line 480
     invoke-direct {p0, v0}, Lorg/telegram/ui/VoIPFragment;->updateButtons(Z)V
 
     return-void
@@ -11619,12 +11623,12 @@
 .method public onCameraSwitch(Z)V
     .locals 0
 
-    .line 493
+    .line 494
     iget p1, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 494
+    .line 495
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     return-void
@@ -11633,7 +11637,7 @@
 .method public onMediaStateUpdated(II)V
     .locals 0
 
-    .line 484
+    .line 485
     iget p1, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
@@ -11642,17 +11646,17 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 485
+    .line 486
     iget-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
     if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    .line 486
+    .line 487
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
-    .line 488
+    .line 489
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
@@ -11662,7 +11666,7 @@
 .method public onPauseInternal()V
     .locals 9
 
-    .line 2335
+    .line 2336
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
     const-string v1, "power"
@@ -11673,27 +11677,27 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 2338
+    .line 2339
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x14
 
     if-lt v1, v2, :cond_0
 
-    .line 2339
+    .line 2340
     invoke-virtual {v0}, Landroid/os/PowerManager;->isInteractive()Z
 
     move-result v0
 
     goto :goto_0
 
-    .line 2341
+    .line 2342
     :cond_0
     invoke-virtual {v0}, Landroid/os/PowerManager;->isScreenOn()Z
 
     move-result v0
 
-    .line 2344
+    .line 2345
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
@@ -11701,7 +11705,7 @@
 
     move-result v3
 
-    .line 2346
+    .line 2347
     iget-boolean v4, p0, Lorg/telegram/ui/VoIPFragment;->canSwitchToPip:Z
 
     const/4 v5, 0x0
@@ -11710,7 +11714,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 2347
+    .line 2348
     sget-object v4, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v4, v4, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
@@ -11721,21 +11725,21 @@
 
     if-lt v1, v2, :cond_1
 
-    .line 2348
+    .line 2349
     sget-object v6, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v6, v6, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     if-eqz v6, :cond_1
 
-    .line 2349
+    .line 2350
     invoke-virtual {v6}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
 
     move-result v6
 
     sub-int/2addr v4, v6
 
-    .line 2351
+    .line 2352
     :cond_1
     sget-object v6, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
@@ -11753,21 +11757,21 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 2352
+    .line 2353
     sget-object v1, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     if-eqz v1, :cond_2
 
-    .line 2353
+    .line 2354
     invoke-virtual {v1}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v1
 
     sput v1, Lorg/telegram/ui/Components/voip/VoIPPiPView;->topInset:I
 
-    .line 2354
+    .line 2355
     sget-object v1, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
@@ -11778,7 +11782,7 @@
 
     sput v1, Lorg/telegram/ui/Components/voip/VoIPPiPView;->bottomInset:I
 
-    .line 2358
+    .line 2359
     :cond_2
     iget-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
@@ -11788,7 +11792,7 @@
 
     if-nez v0, :cond_4
 
-    .line 2359
+    .line 2360
     :cond_3
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -11798,7 +11802,7 @@
 
     const/4 v1, 0x1
 
-    .line 2361
+    .line 2362
     invoke-virtual {v0, v5, v1}, Lorg/telegram/messenger/voip/VoIPService;->setVideoState(ZI)V
 
     :cond_4
@@ -11808,17 +11812,17 @@
 .method public onResumeInternal()V
     .locals 4
 
-    .line 2367
+    .line 2368
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 2368
+    .line 2369
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->finish()V
 
-    .line 2370
+    .line 2371
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -11828,7 +11832,7 @@
 
     const/4 v1, 0x0
 
-    .line 2372
+    .line 2373
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->getVideoState(Z)I
 
     move-result v2
@@ -11839,22 +11843,22 @@
 
     const/4 v2, 0x2
 
-    .line 2373
+    .line 2374
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/voip/VoIPService;->setVideoState(ZI)V
 
-    .line 2375
+    .line 2376
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     goto :goto_0
 
-    .line 2377
+    .line 2378
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish()V
 
-    .line 2380
+    .line 2381
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->activity:Landroid/app/Activity;
 
@@ -11878,7 +11882,7 @@
 .method public onScreenCastStart()V
     .locals 2
 
-    .line 2201
+    .line 2202
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->previewDialog:Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
     if-nez v0, :cond_0
@@ -11888,7 +11892,7 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 2204
+    .line 2205
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;->dismiss(ZZ)V
 
     return-void
@@ -11903,12 +11907,12 @@
 .method public onSignalBarsCountChanged(I)V
     .locals 1
 
-    .line 472
+    .line 473
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->statusTextView:Lorg/telegram/ui/Components/voip/VoIPStatusTextView;
 
     if-eqz v0, :cond_0
 
-    .line 473
+    .line 474
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;->setSignalBarCount(I)V
 
     :cond_0
@@ -11918,23 +11922,23 @@
 .method public onStateChanged(I)V
     .locals 1
 
-    .line 444
+    .line 445
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     if-eq v0, p1, :cond_0
 
-    .line 445
+    .line 446
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
-    .line 446
+    .line 447
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
-    .line 447
+    .line 448
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     if-eqz p1, :cond_0
 
-    .line 448
+    .line 449
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
     :cond_0
@@ -11944,24 +11948,24 @@
 .method public onVideoAvailableChange(Z)V
     .locals 1
 
-    .line 499
+    .line 500
     iget v0, p0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     iput v0, p0, Lorg/telegram/ui/VoIPFragment;->previousState:I
 
     if-eqz p1, :cond_0
 
-    .line 500
+    .line 501
     iget-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
     if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    .line 501
+    .line 502
     iput-boolean p1, p0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z
 
-    .line 503
+    .line 504
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
@@ -11973,10 +11977,10 @@
 
     const/4 v0, 0x1
 
-    .line 1139
+    .line 1140
     iput-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->enterFromPiP:Z
 
-    .line 1140
+    .line 1141
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v1
@@ -11985,7 +11989,7 @@
 
     const/4 v2, 0x0
 
-    .line 1141
+    .line 1142
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/voip/VoIPService;->getVideoState(Z)I
 
     move-result v1
@@ -11994,7 +11998,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1142
+    .line 1143
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
@@ -12005,7 +12009,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->setStub(Lorg/telegram/ui/Components/voip/VoIPTextureView;)V
 
-    .line 1143
+    .line 1144
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->currentUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
@@ -12016,7 +12020,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->setStub(Lorg/telegram/ui/Components/voip/VoIPTextureView;)V
 
-    .line 1145
+    .line 1146
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
@@ -12024,36 +12028,24 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1146
+    .line 1147
     invoke-direct {p0}, Lorg/telegram/ui/VoIPFragment;->updateViewState()V
 
-    .line 1147
+    .line 1148
     iput-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->switchingToPip:Z
 
-    .line 1148
+    .line 1149
     sput-boolean v0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->switchingToPip:Z
 
-    .line 1149
+    .line 1150
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->prepareForTransition()V
 
-    .line 1150
-    iget v0, p0, Lorg/telegram/ui/VoIPFragment;->currentAccount:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v0
-
-    iget v1, p0, Lorg/telegram/ui/VoIPFragment;->animationIndex:I
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->setAnimationInProgress(I[I)I
-
-    move-result v0
-
-    iput v0, p0, Lorg/telegram/ui/VoIPFragment;->animationIndex:I
-
     .line 1151
+    iget-object v0, p0, Lorg/telegram/ui/VoIPFragment;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
+
+    .line 1152
     new-instance v0, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda23;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/VoIPFragment;)V
@@ -12068,7 +12060,7 @@
 .method public switchToPip()V
     .locals 7
 
-    .line 1076
+    .line 1077
     iget-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->isFinished:Z
 
     if-nez v0, :cond_5
@@ -12090,17 +12082,17 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 1079
+    .line 1080
     iput-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->isFinished:Z
 
-    .line 1080
+    .line 1081
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v1
 
     if-eqz v1, :cond_2
 
-    .line 1081
+    .line 1082
     sget-object v1, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/VoIPFragment;->windowView:Lorg/telegram/ui/Components/voip/VoIPWindowView;
@@ -12109,7 +12101,7 @@
 
     move-result v1
 
-    .line 1082
+    .line 1083
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x14
@@ -12122,14 +12114,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 1083
+    .line 1084
     invoke-virtual {v4}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
 
     move-result v4
 
     sub-int/2addr v1, v4
 
-    .line 1085
+    .line 1086
     :cond_1
     sget-object v4, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
@@ -12147,21 +12139,21 @@
 
     if-lt v2, v3, :cond_2
 
-    .line 1086
+    .line 1087
     sget-object v1, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
 
     if-eqz v1, :cond_2
 
-    .line 1087
+    .line 1088
     invoke-virtual {v1}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v1
 
     sput v1, Lorg/telegram/ui/Components/voip/VoIPPiPView;->topInset:I
 
-    .line 1088
+    .line 1089
     sget-object v1, Lorg/telegram/ui/VoIPFragment;->instance:Lorg/telegram/ui/VoIPFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/VoIPFragment;->lastInsets:Landroid/view/WindowInsets;
@@ -12172,7 +12164,7 @@
 
     sput v1, Lorg/telegram/ui/Components/voip/VoIPPiPView;->bottomInset:I
 
-    .line 1091
+    .line 1092
     :cond_2
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->getInstance()Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
@@ -12182,7 +12174,7 @@
 
     return-void
 
-    .line 1095
+    .line 1096
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->speakerPhoneIcon:Landroid/widget/ImageView;
 
@@ -12210,7 +12202,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1096
+    .line 1097
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -12231,7 +12223,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1097
+    .line 1098
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->emojiLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -12252,7 +12244,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1098
+    .line 1099
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->statusLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -12273,7 +12265,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1099
+    .line 1100
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -12296,7 +12288,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1100
+    .line 1101
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->bottomShadow:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -12317,7 +12309,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1101
+    .line 1102
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->topShadow:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -12338,7 +12330,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1102
+    .line 1103
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -12359,7 +12351,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1103
+    .line 1104
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -12380,15 +12372,15 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1105
+    .line 1106
     sput-boolean v0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->switchingToPip:Z
 
-    .line 1106
+    .line 1107
     iput-boolean v0, p0, Lorg/telegram/ui/VoIPFragment;->switchingToPip:Z
 
     const/4 v0, 0x0
 
-    .line 1107
+    .line 1108
     invoke-virtual {p0, v0}, Lorg/telegram/ui/VoIPFragment;->createPiPTransition(Z)Landroid/animation/Animator;
 
     move-result-object v0
@@ -12397,38 +12389,26 @@
 
     return-void
 
-    .line 1113
-    :cond_4
-    iget v1, p0, Lorg/telegram/ui/VoIPFragment;->currentAccount:I
-
-    invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v1
-
-    iget v2, p0, Lorg/telegram/ui/VoIPFragment;->animationIndex:I
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v1, v2, v6}, Lorg/telegram/messenger/NotificationCenter;->setAnimationInProgress(I[I)I
-
-    move-result v1
-
-    iput v1, p0, Lorg/telegram/ui/VoIPFragment;->animationIndex:I
-
     .line 1114
+    :cond_4
+    iget-object v1, p0, Lorg/telegram/ui/VoIPFragment;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    invoke-virtual {v1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
+
+    .line 1115
     new-instance v1, Lorg/telegram/ui/VoIPFragment$12;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/VoIPFragment$12;-><init>(Lorg/telegram/ui/VoIPFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1133
+    .line 1134
     invoke-virtual {v0, v3, v4}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 1134
+    .line 1135
     invoke-virtual {v0, v5}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1135
+    .line 1136
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
     :cond_5

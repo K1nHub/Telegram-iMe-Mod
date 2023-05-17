@@ -38,7 +38,7 @@
     .line 880
     iput-object v0, p0, Lio/grpc/NameResolver$ConfigOrError;->config:Ljava/lang/Object;
 
-    const-string v0, "status"
+    const-string/jumbo v0, "status"
 
     .line 881
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;Lorg/telegram/ui/Cells/SharedLinkCell;Lorg/telegram/messenger/MessageObject;Z)V
     .locals 0
 
-    .line 1221
+    .line 1239
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$2;->val$sharedLinkCell:Lorg/telegram/ui/Cells/SharedLinkCell;
@@ -50,7 +50,7 @@
 .method public onPreDraw()Z
     .locals 4
 
-    .line 1224
+    .line 1242
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$2;->val$sharedLinkCell:Lorg/telegram/ui/Cells/SharedLinkCell;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1225
+    .line 1243
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -74,7 +74,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1226
+    .line 1244
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->set(IJ)V
 
-    .line 1227
+    .line 1245
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$2;->val$sharedLinkCell:Lorg/telegram/ui/Cells/SharedLinkCell;
 
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 1229
+    .line 1247
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$2;->val$sharedLinkCell:Lorg/telegram/ui/Cells/SharedLinkCell;
 

@@ -27,7 +27,7 @@ public class TopicSearchCell extends FrameLayout {
         this.backupImageView = new BackupImageView(context);
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (LocaleController.isRTL) {
@@ -41,7 +41,7 @@ public class TopicSearchCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(48), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
     }
 
     public void setTopic(TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
@@ -56,7 +56,7 @@ public class TopicSearchCell extends FrameLayout {
         if (backupImageView == null || backupImageView.getImageReceiver() == null || !(this.backupImageView.getImageReceiver().getDrawable() instanceof ForumUtilities.GeneralTopicDrawable)) {
             return;
         }
-        ((ForumUtilities.GeneralTopicDrawable) this.backupImageView.getImageReceiver().getDrawable()).setColor(Theme.getColor("chats_archiveBackground"));
+        ((ForumUtilities.GeneralTopicDrawable) this.backupImageView.getImageReceiver().getDrawable()).setColor(Theme.getColor(Theme.key_chats_archiveBackground));
     }
 
     public TLRPC$TL_forumTopic getTopic() {
@@ -67,11 +67,11 @@ public class TopicSearchCell extends FrameLayout {
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.drawDivider) {
-            int m50dp = AndroidUtilities.m50dp(56);
+            int m54dp = AndroidUtilities.m54dp(56);
             if (LocaleController.isRTL) {
-                canvas.drawLine(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - 1, getMeasuredWidth() - m50dp, getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - 1, getMeasuredWidth() - m54dp, getMeasuredHeight() - 1, Theme.dividerPaint);
             } else {
-                canvas.drawLine(m50dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(m54dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
             }
         }
     }

@@ -78,7 +78,7 @@
 
     iput p2, p0, Lorg/telegram/messenger/ContactsRemoteViewsFactory;->appWidgetId:I
 
-    const-string p2, "shortcut_widget"
+    const-string/jumbo p2, "shortcut_widget"
 
     .line 55
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;

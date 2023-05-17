@@ -18,11 +18,11 @@
 
 .field private isDisabled:Z
 
-.field private key1:Ljava/lang/String;
+.field private key1:I
 
-.field private key2:Ljava/lang/String;
+.field private key2:I
 
-.field private key3:Ljava/lang/String;
+.field private key3:I
 
 .field private progress:F
 
@@ -90,41 +90,41 @@
 
     if-eqz p1, :cond_1
 
-    const-string p3, "dialogCheckboxSquareUnchecked"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogCheckboxSquareUnchecked:I
 
     goto :goto_0
 
     :cond_1
-    const-string p3, "checkboxSquareUnchecked"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareUnchecked:I
 
     :goto_0
-    iput-object p3, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key1:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key1:I
 
     if-eqz p1, :cond_2
 
-    const-string p3, "dialogCheckboxSquareBackground"
+    .line 74
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogCheckboxSquareBackground:I
 
     goto :goto_1
 
     :cond_2
-    const-string p3, "checkboxSquareBackground"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareBackground:I
 
-    .line 74
     :goto_1
-    iput-object p3, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key2:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key2:I
 
     if-eqz p1, :cond_3
 
-    const-string p1, "dialogCheckboxSquareCheck"
+    .line 75
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogCheckboxSquareCheck:I
 
     goto :goto_2
 
     :cond_3
-    const-string p1, "checkboxSquareCheck"
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareCheck:I
 
-    .line 75
     :goto_2
-    iput-object p1, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key3:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key3:I
 
     .line 77
     new-instance p1, Landroid/graphics/RectF;
@@ -238,39 +238,16 @@
     return v0
 .end method
 
-.method protected getThemedColor(Ljava/lang/String;)I
+.method protected getThemedColor(I)I
     .locals 1
 
     .line 207
     iget-object v0, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 208
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -325,16 +302,16 @@
 
     .line 163
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key1:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key1:I
 
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/CheckBoxSquare;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/CheckBoxSquare;->getThemedColor(I)I
 
     move-result v0
 
     .line 164
-    iget-object v1, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key2:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key2:I
 
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/CheckBoxSquare;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/CheckBoxSquare;->getThemedColor(I)I
 
     move-result v1
 
@@ -463,15 +440,15 @@
 
     if-eqz v4, :cond_2
 
-    const-string v4, "dialogCheckboxSquareDisabled"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogCheckboxSquareDisabled:I
 
     goto :goto_1
 
     :cond_2
-    const-string v4, "checkboxSquareDisabled"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxSquareDisabled:I
 
     :goto_1
-    invoke-virtual {p0, v4}, Lorg/telegram/ui/Components/CheckBoxSquare;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v4}, Lorg/telegram/ui/Components/CheckBoxSquare;->getThemedColor(I)I
 
     move-result v4
 
@@ -628,9 +605,9 @@
     .line 193
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->checkboxSquare_checkPaint:Landroid/graphics/Paint;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key3:Ljava/lang/String;
+    iget v2, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key3:I
 
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/CheckBoxSquare;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/CheckBoxSquare;->getThemedColor(I)I
 
     move-result v2
 
@@ -835,17 +812,17 @@
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(III)V
     .locals 0
 
     .line 84
-    iput-object p1, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key1:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key1:I
 
     .line 85
-    iput-object p2, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key2:Ljava/lang/String;
+    iput p2, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key2:I
 
     .line 86
-    iput-object p3, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key3:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/CheckBoxSquare;->key3:I
 
     .line 87
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
